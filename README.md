@@ -14,7 +14,7 @@ This is my compilation of useful tools and preferences to work with vim, tmux an
 - add start_tmux_session.sh to the command to launch into iTerm2 preferences
 - run ```:PluginInstall``` from vim to launch the vundle install
 - run ```:PluginUpdqte```to update modules
-- Compile vim ```brew install path_vim_formula```
+- Compile vim ```brew install https://raw.githubusercontent.com/Homebrew/homebrew/master/Library/Formula/vim.rb```
 - Recompile command-t plugin 
 
 ```
