@@ -140,7 +140,7 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 "  syntax reset
 "endif
 :syntax enable
-set t_Co=256
+" set t_Co=256
 if has('gui_running') 
     colorscheme darkmate
 else
