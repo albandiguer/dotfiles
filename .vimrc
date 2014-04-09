@@ -144,7 +144,7 @@ set t_Co=256
 if has('gui_running') 
     colorscheme darkmate
 else
-    colorscheme vibrantink
+    colorscheme distinguished
 endif
 :set guifont=Menlo:h12
 :set nu
