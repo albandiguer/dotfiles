@@ -144,7 +144,7 @@ set t_Co=256
 if has('gui_running') 
     colorscheme darkmate
 else
-    colorscheme grb256
+    colorscheme vibrantink
 endif
 :set guifont=Menlo:h12
 :set nu
@@ -155,7 +155,9 @@ endif
 " expand width in fullscreen 
 " hide tab bar
 set showtabline=0
-set colorcolumn=80
+" set colorcolumn=80
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE POWERLINE
