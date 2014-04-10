@@ -155,8 +155,8 @@ endif
 " expand width in fullscreen 
 " hide tab bar
 set showtabline=0
-" set colorcolumn=80
-let &colorcolumn=join(range(81,999),",")
+set colorcolumn=80
+" let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -331,3 +331,9 @@ autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 map <C-n> :NERDTreeToggle<CR>
 " close vim if only open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom note
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Shared Notes']
+:let g:notes_tab_indents = 0
