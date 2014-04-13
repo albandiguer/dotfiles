@@ -335,5 +335,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom note
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:let g:VN_DefaultDir = "~/Documents/Notes" 
 :let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Shared Notes']
 :let g:notes_tab_indents = 0
