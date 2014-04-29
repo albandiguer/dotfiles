@@ -141,8 +141,13 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 "endif
 :syntax enable
 " set t_Co=256
+
+set colorcolumn=80
+" let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#eeeeee
+
 if has('gui_running') 
-    colorscheme darkmate
+    colorscheme vividchalk
 else
     colorscheme distinguished
 endif
@@ -155,9 +160,6 @@ endif
 " expand width in fullscreen 
 " hide tab bar
 set showtabline=0
-set colorcolumn=80
-" let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE POWERLINE

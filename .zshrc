@@ -18,6 +18,7 @@ alias vi='vim .'
 alias s='screen'
 alias sr='screen -r'
 alias j='jobs'
+alias notes='vim +RecentNotes'
 
 # Ruby related
 export RSPEC_FAIL_FAST='1'
