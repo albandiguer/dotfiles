@@ -147,9 +147,9 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=235 guibg=#eeeeee
 
 if has('gui_running') 
-    colorscheme vividchalk
+    colorscheme github
 else
-    colorscheme distinguished
+    colorscheme grb256
 endif
 :set guifont=Menlo:h12
 :set nu

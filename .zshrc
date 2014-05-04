@@ -19,6 +19,7 @@ alias s='screen'
 alias sr='screen -r'
 alias j='jobs'
 alias notes='vim +RecentNotes'
+alias c='clear'
 
 # Ruby related
 export RSPEC_FAIL_FAST='1'
@@ -59,4 +60,4 @@ CDPATH=$CDPATH:~/dev/
 for config_file (~/.zsh/after/*) source $config_file
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:$PATH
+export PATH=~/dev/dotfiles/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:$PATH
