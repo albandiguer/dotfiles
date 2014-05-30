@@ -41,6 +41,7 @@ Bundle 'benmills/vimux'
 Bundle 'mattn/webapi-vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
+Bundle 'markcornick/vim-bats'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -144,13 +145,13 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
 set colorcolumn=80
 " let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#eeeeee
 
 if has('gui_running') 
-    colorscheme github
+    colorscheme heroku " github
 else
     colorscheme grb256
 endif
+highlight ColorColumn ctermbg=235 guibg=#eeeeee
 :set guifont=Menlo:h12
 :set nu
 " remove scroll bars and tool bar
