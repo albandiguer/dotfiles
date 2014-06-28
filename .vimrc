@@ -42,6 +42,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 Bundle 'markcornick/vim-bats'
+Bundle 'hallison/vim-markdown'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
