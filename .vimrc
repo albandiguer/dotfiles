@@ -152,7 +152,7 @@ else
     colorscheme grb256
 endif
 highlight ColorColumn ctermbg=235 guibg=#eeeeee
-:set guifont=Menlo:h12
+:set guifont=Droid\ Sans\ Mono:h12
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
