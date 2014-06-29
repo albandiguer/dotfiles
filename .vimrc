@@ -13,7 +13,7 @@ call vundle#rc()
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
