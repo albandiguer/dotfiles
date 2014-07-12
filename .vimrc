@@ -13,7 +13,7 @@ call vundle#rc()
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
@@ -158,7 +158,7 @@ else
     colorscheme jellybeans
 endif
 highlight ColorColumn ctermbg=235 guibg=#eeeeee
-" :set guifont=Menlo:h12
+:set guifont=Droid\ Sans\ Mono:h12
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r

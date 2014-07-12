@@ -20,6 +20,7 @@ alias sr='screen -r'
 alias j='jobs'
 alias notes='vim +RecentNotes'
 alias c='clear'
+alias o='mvim'
 
 function count_inodes {
     for i in `find . -type d `; do echo `ls -a $i | wc -l` $i; done | sort -n
