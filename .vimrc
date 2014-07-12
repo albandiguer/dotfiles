@@ -19,6 +19,12 @@ Bundle 'gmarik/vundle'
 " Keep bundle commands between here and filetype plugin indent on.
 " scripts on GitHub repos
 Bundle 'wincent/command-t'
+" When command-t breaks because of ruby version, 
+" check version in vim :ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+" rbenv shell version
+" cd ~/.vim/bundle/command-t/ruby/command-t
+" ruby extconf.rb
+" make
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-fugitive'
@@ -145,15 +151,14 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 " set t_Co=256
 
 set colorcolumn=80
-" let &colorcolumn=join(range(81,999),",")
 
 if has('gui_running') 
     colorscheme heroku " github
 else
-    colorscheme grb256
+    colorscheme jellybeans
 endif
 highlight ColorColumn ctermbg=235 guibg=#eeeeee
-:set guifont=Menlo:h12
+" :set guifont=Menlo:h12
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
@@ -309,6 +314,27 @@ command! OpenChangedFiles :call OpenChangedFiles()
 " Insert the current time
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Selecta
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+" function! SelectaCommand(choice_command, selecta_args, vim_command)
+"     try
+"         silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+"     catch /Vim:Interrupt/
+"         " Swallow the ^C so that the redraw below happens; otherwise there
+"         " will be leftovers from selecta on the screen 
+"         redraw!
+"         return
+"     endtry
+"     redraw!
+"     exec a:vim_command . " " . selection
+" endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+" nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T: ignore stuff that can't be opened, and generated files
@@ -342,3 +368,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 :let g:VN_DefaultDir = "~/Documents/Notes" 
 :let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Shared Notes']
 :let g:notes_tab_indents = 0
+
+
