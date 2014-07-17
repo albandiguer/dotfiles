@@ -1,33 +1,34 @@
-# General Ack Settings
-####################################################################
-
-# only search with case sensitivity if there is mixed case
---smart-case
-# follow symlinks
---follow
---color
-
-# Ack Type Settings
-####################################################################
-
-
-# types to ignore by default
---nogettext
---ignore-file=is:tags
-
-# Don't search through
---ignore-dir=tags/
---ignore-dir=.tox
-
-#make sure ack knows how to search common filetypes used in rails projects
---type-add=css=scss
---type-add=ruby=.haml,.rselm,.feature,.ru,.lock
---type-set=coffeescript=.coffee
+# == blank lines freak out ack on Windows? ==
+# #
+--type-add=ruby=.haml,.rake,.rsel,.builder,.jbuilder
+--type-add=html=.erb,.haml,.tmpl,.spark,.slim
+--type-set=spark=.spark
+--type-set=slim=.slim
+--type-add=js=.coffee,.js.erb
 --type-set=coffee=.coffee
- 
- #make sure ack knows how to search common filetypes used in node.js projects
- --ignore-dir=node_modules
- --type-set=coffee=.coffee
- --type-set=jade=.jade
- --type-set=feature=.feature
- --type-set=json=.json
+--type-add=css=.scss,.sass,.less
+--type-set=less=.less
+--type-set=sass=.scss,sass
+--type-set=cucumber=.feature
+--type-set=markdown=.markdown,.md
+
+--ignore-dir=.bundle
+--ignore-dir=.tmp
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=doc
+--ignore-dir=coverage
+--ignore-dir=fixtures
+--ignore-dir=script
+--ignore-dir=system
+--ignore-dir=.jhw-cache
+--ignore-dir=node_modules
+--ignore-file=is:tags
+--ignore-file=is:markdown
+--ignore-file=is:._tags
+
+--sort-files
+--color
+--follow
+--group
