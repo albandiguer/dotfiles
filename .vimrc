@@ -49,6 +49,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 Bundle 'markcornick/vim-bats'
 Bundle 'hallison/vim-markdown'
+Bundle 'mileszs/ack.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -157,7 +158,8 @@ if has('gui_running')
 else
     colorscheme jellybeans
 endif
-highlight ColorColumn ctermbg=235 guibg=#eeeeee
+hi ColorColumn ctermbg=235 guibg=#eeeeee
+hi StatusLine ctermbg=73 ctermfg=232
 :set guifont=Droid\ Sans\ Mono:h12
 :set nu
 " remove scroll bars and tool bar

@@ -1,0 +1,33 @@
+# General Ack Settings
+####################################################################
+
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+--color
+
+# Ack Type Settings
+####################################################################
+
+
+# types to ignore by default
+--nogettext
+--ignore-file=is:tags
+
+# Don't search through
+--ignore-dir=tags/
+--ignore-dir=.tox
+
+#make sure ack knows how to search common filetypes used in rails projects
+--type-add=css=scss
+--type-add=ruby=.haml,.rselm,.feature,.ru,.lock
+--type-set=coffeescript=.coffee
+--type-set=coffee=.coffee
+ 
+ #make sure ack knows how to search common filetypes used in node.js projects
+ --ignore-dir=node_modules
+ --type-set=coffee=.coffee
+ --type-set=jade=.jade
+ --type-set=feature=.feature
+ --type-set=json=.json
