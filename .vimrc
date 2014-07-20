@@ -374,3 +374,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 :let g:notes_tab_indents = 0
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Edit crontab
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backupskip=/tmp/*,/private/tmp/*

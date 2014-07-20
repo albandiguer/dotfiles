@@ -19,6 +19,7 @@
 
   # branch
     b = branch -v                     # branch (verbose)
+    ba = branch -va
 
   # commit
     c = commit -m                     # commit with message
