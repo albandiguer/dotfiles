@@ -64,7 +64,7 @@ CDPATH=$CDPATH:~/dev/
 for config_file (~/.zsh/after/*) source $config_file
 
 # Customize to your needs...
-export PATH=./bin:~/dev/dotfiles/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:$PATH
+export PATH=./bin:~/dev/dotfiles/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH:/usr/X11/bin
 
 # Selecta magic commands 'brew install selecta'
 p() {

@@ -18,13 +18,14 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
 " scripts on GitHub repos
-Plugin 'wincent/command-t'
+" Plugin 'wincent/command-t'
 " When command-t breaks because of ruby version, 
 " check version in vim :ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
 " rbenv shell version
 " cd ~/.vim/bundle/command-t/ruby/command-t
 " ruby extconf.rb
 " make
+Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fugitive'
@@ -163,7 +164,7 @@ endif
 hi ColorColumn ctermbg=235 guibg=#eeeeee
 hi StatusLine ctermbg=73 ctermfg=232
 :set guifont=Droid\ Sans\ Mono:h12
-:set nu
+" :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
 :set guioptions-=L
@@ -373,8 +374,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 :let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Shared Notes']
 :let g:notes_tab_indents = 0
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edit crontab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backupskip=/tmp/*,/private/tmp/*
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set rtp+=/Users/adiguer/.vim/bundle/powerline/powerline/bindings/vim
+" call vam#ActivateAddons(['powerline'])
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<leader>f'
