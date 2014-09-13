@@ -51,6 +51,7 @@ Plugin 'xolox/vim-notes'
 Plugin 'markcornick/vim-bats'
 Plugin 'hallison/vim-markdown'
 Plugin 'mileszs/ack.vim'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -159,9 +160,9 @@ set colorcolumn=80
 if has('gui_running') 
     colorscheme heroku " github
 else
-    colorscheme jellybeans
+    colorscheme xoria256 "busierbee  khaki 
 endif
-hi ColorColumn ctermbg=235 guibg=#eeeeee
+hi ColorColumn ctermbg=76 guibg=#eeeeee
 hi StatusLine ctermbg=73 ctermfg=232
 :set guifont=Droid\ Sans\ Mono:h12
 " :set nu
