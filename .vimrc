@@ -160,7 +160,7 @@ set colorcolumn=80
 if has('gui_running') 
     colorscheme heroku " github
 else
-    colorscheme xoria256 "busierbee  khaki 
+    colorscheme grb256 "busierbee xoria256 khaki 
 endif
 hi ColorColumn ctermbg=76 guibg=#eeeeee
 hi StatusLine ctermbg=73 ctermfg=232

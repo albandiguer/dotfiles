@@ -73,3 +73,7 @@ p() {
 
 # brew install pip && pip install grip if needed
 alias preview_readme='grip'
+
+analyse_disk_usage() {
+    sudo du -a $1 | sort -nr | head -n 15
+}
