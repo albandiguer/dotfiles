@@ -52,6 +52,12 @@ Plugin 'markcornick/vim-bats'
 Plugin 'hallison/vim-markdown'
 Plugin 'mileszs/ack.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'jnurmine/Zenburn'
+Plugin 'burnettk/vim-angular'
+Plugin 'othree/html5.vim'
+
+
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,7 +89,7 @@ set showtabline=2
 set winwidth=79
 " set cursorline
 " This makes RVM work inside Vim. I have no idea why.
-set shell=bash
+" set shell=bash
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
@@ -130,7 +136,7 @@ augroup vimrcEx
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
 
   " Indent p tags
-  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+  " autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
@@ -157,14 +163,19 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
 set colorcolumn=80
 
-if has('gui_running') 
-    colorscheme heroku " github
-else
-    colorscheme grb256 "busierbee xoria256 khaki 
-endif
-hi ColorColumn ctermbg=76 guibg=#eeeeee
-hi StatusLine ctermbg=73 ctermfg=232
 :set guifont=Droid\ Sans\ Mono:h12
+if has('gui_running') 
+    set guifont=Droid\ Sans\ Mono:h14
+    :set fu " fullscreen
+
+    "h80 sorcerer githu bkhaki 
+    colorscheme beachcomber 
+else
+    "grb256 xoria256 busierbee  
+    colorscheme grb256 
+endif
+hi ColorColumn ctermbg=235 guibg=#eeeeee
+hi StatusLine ctermbg=93 ctermfg=232
 " :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
@@ -177,10 +188,10 @@ set showtabline=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE POWERLINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%) 
-" source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/source_plugin.vim
-" python from powerline.bindings.vim import source_plugin; source_plugin()
-" :let g:Powerline_symbols = 'unicode'
+:let g:Powerline_symbols = 'unicode'
+" :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%) 
+" set rtp+=/Users/adiguer/.vim/bundle/powerline/powerline/bindings/vim
+" call vam#ActivateAddons(['powerline'])
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
@@ -381,12 +392,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set backupskip=/tmp/*,/private/tmp/*
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Powerline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set rtp+=/Users/adiguer/.vim/bundle/powerline/powerline/bindings/vim
-" call vam#ActivateAddons(['powerline'])
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set zsh as my term
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set shell=/bin/zsh

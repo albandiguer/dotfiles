@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="steeef"
 ZSH_THEME="af-magic"
+# ZSH_THEME="nicoulaj"
 
 # Unbreak broken, non-colored terminal                                                                                                                                                                 
 # export TERM='screen-256color'  
@@ -15,6 +16,7 @@ alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"                                        
 export GREP_OPTIONS="--color"
 alias vi='vim .'
+alias mvi='mvim .'
 alias s='screen'
 alias sr='screen -r'
 alias j='jobs'
@@ -77,3 +79,6 @@ alias preview_readme='grip'
 analyse_disk_usage() {
     sudo du -a $1 | sort -nr | head -n 15
 }
+#
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
