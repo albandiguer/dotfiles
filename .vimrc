@@ -55,6 +55,9 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'jnurmine/Zenburn'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/html5.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'fatih/vim-go'
+Plugin 'ekalinin/Dockerfile.vim'
 
 
 
@@ -172,10 +175,10 @@ if has('gui_running')
     colorscheme beachcomber 
 else
     "grb256 xoria256 busierbee  
-    colorscheme grb256 
+    colorscheme seoul256
 endif
 hi ColorColumn ctermbg=235 guibg=#eeeeee
-hi StatusLine ctermbg=93 ctermfg=232
+" hi StatusLine ctermbg=93 ctermfg=232
 " :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
@@ -400,3 +403,8 @@ let g:ctrlp_map = '<leader>f'
 " Set zsh as my term
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set shell=/bin/zsh
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TagBar 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-m> :TagbarToggle<CR>
