@@ -38,3 +38,4 @@ Session.vim
 .vim/bundle/
 # custom zsh conf
 .zsh/after/
+.rspec

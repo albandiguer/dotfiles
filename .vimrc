@@ -58,9 +58,7 @@ Plugin 'othree/html5.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
-
-
-
+Plugin 'bling/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -174,8 +172,8 @@ if has('gui_running')
     "h80 sorcerer githu bkhaki 
     colorscheme beachcomber 
 else
-    "grb256 xoria256 busierbee  
-    colorscheme seoul256
+    "grb256 xoria256 busierbee seoul256
+    colorscheme grb256
 endif
 hi ColorColumn ctermbg=235 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=232
@@ -191,7 +189,7 @@ set showtabline=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE POWERLINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:let g:Powerline_symbols = 'unicode'
+" :let g:Powerline_symbols = 'unicode'
 " :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%) 
 " set rtp+=/Users/adiguer/.vim/bundle/powerline/powerline/bindings/vim
 " call vam#ActivateAddons(['powerline'])
@@ -379,6 +377,7 @@ autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open nerdtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 " close vim if only open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
