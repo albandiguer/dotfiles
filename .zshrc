@@ -59,7 +59,7 @@ if [ -d ~/.ssh/id_rsa ]; then
   ssh-add ~/.ssh/id_rsa
 fi
 
-CDPATH=$CDPATH:~/dev/
+export CDPATH=$CDPATH:~/dev/
 
 
 # Include personal files, this is not indexed by git
@@ -82,3 +82,7 @@ analyse_disk_usage() {
 #
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# USB key workspace
+export BON='/Volumes/Bonjour'
+export CDPATH=$CDPATH:$BON/dev/os
