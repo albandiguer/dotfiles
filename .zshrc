@@ -38,7 +38,7 @@ export EDITOR='vim'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails git postgres virtualenv)
+plugins=(osx rails git postgres virtualenv)
 
 # To enable shims and autocompletion add to your profile
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
