@@ -5,9 +5,9 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="steeef"
-ZSH_THEME="af-magic"
-# ZSH_THEME="nicoulaj"
+# list themes: ./tools/theme_chooser.sh -s
+ZSH_THEME='crunch'
+
 
 # Unbreak broken, non-colored terminal                                                                                                                                                                 
 # export TERM='screen-256color'  
@@ -38,7 +38,7 @@ export EDITOR='vim'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx rails git postgres virtualenv)
+plugins=(osx rails git postgres virtualenv docker bundler github go)
 
 # To enable shims and autocompletion add to your profile
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -89,5 +89,9 @@ export CDPATH=$CDPATH:$BON/dev/os
 
 # Docker stuff
 function remove_dangling_containers {
-  docker images -q -f='dangling=true' | xargs docker rmi
+    docker images -q -f='dangling=true' | xargs docker rmi
+}
+
+function list_port_usage() {
+    sudo netstat -tulpn
 }
