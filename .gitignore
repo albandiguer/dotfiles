@@ -40,3 +40,5 @@ Session.vim
 # custom zsh conf
 .zsh/after/
 .rspec
+
+.ruby-version
