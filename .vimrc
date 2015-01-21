@@ -164,13 +164,13 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
 set colorcolumn=80
 
-:set guifont=Droid\ Sans\ Mono:h12
+:set guifont=Droid\ Sans\ Mono:h14
 if has('gui_running') 
     set guifont=Droid\ Sans\ Mono:h14
-    :set fu " fullscreen
+    " :set fu " fullscreen
 
     "h80 sorcerer githu bkhaki 
-    colorscheme beachcomber 
+    colorscheme lazarus
 else
     "grb256 xoria256 busierbee seoul256
     colorscheme grb256
@@ -357,7 +357,7 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T: ignore stuff that can't be opened, and generated files
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore =*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,*.pdf,*.jpeg,tmp/**,rdoc/**,spec/dummy/**,log/**,*.log,*.pdf,bin/**,*.ico,*.md
+set wildignore =*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,*.pdf,*.jpeg,tmp/**,rdoc/**,spec/dummy/**,log/**,*.log,*.pdf,bin/**,*.ico
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coffeescript vim
