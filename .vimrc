@@ -31,7 +31,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/gist-vim'
 " Plugin 'skwp/greplace.vim'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -58,7 +60,6 @@ Plugin 'othree/html5.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'bling/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
