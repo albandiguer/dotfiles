@@ -60,6 +60,8 @@ Plugin 'othree/html5.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'tmhedberg/matchit'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
