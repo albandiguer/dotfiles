@@ -95,3 +95,6 @@ function remove_dangling_containers {
 function list_port_usage() {
     sudo netstat -tulpn
 }
+
+alias compose='docker-compose'
+
