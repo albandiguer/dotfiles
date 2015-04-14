@@ -180,7 +180,7 @@ else
 endif
 hi ColorColumn ctermbg=235 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=232
-" :set nu
+:set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
 :set guioptions-=L
@@ -410,3 +410,8 @@ set shell=/bin/zsh
 " TagBar 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-m> :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Debug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:ia pry <CR>require 'pry'; binding.pry
