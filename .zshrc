@@ -98,3 +98,6 @@ function list_port_usage() {
 
 alias compose='docker-compose'
 
+
+# added by travis gem
+[ -f /Users/albandiguer/.travis/travis.sh ] && source /Users/albandiguer/.travis/travis.sh
