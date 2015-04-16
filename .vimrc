@@ -62,6 +62,7 @@ Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -415,3 +416,12 @@ map <C-m> :TagbarToggle<CR>
 " Debug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :ia pry <CR>require 'pry'; binding.pry
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Dispatch things tpope/vim-dispatch
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType javascript let b:dispatch = 'node %'
+autocmd FileType ruby let b:dispatch = 'node %'
+nnoremap <leader>d :Dispatch<CR>
+
+
