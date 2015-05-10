@@ -53,7 +53,7 @@ Plugin 'xolox/vim-notes'
 Plugin 'markcornick/vim-bats'
 Plugin 'hallison/vim-markdown'
 Plugin 'mileszs/ack.vim'
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'flazz/vim-colorschemes'
 Plugin 'jnurmine/Zenburn'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/html5.vim'
@@ -62,6 +62,7 @@ Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tmhedberg/matchit'
+Plugin 'acarapetis/vim-colors-github'
 " Plugin 'tpope/vim-dispatch'
 
 call vundle#end()            " required
@@ -176,8 +177,8 @@ if has('gui_running')
     "h80 sorcerer githu bkhaki 
     colorscheme lazarus
 else
-    "grb256 xoria256 busierbee seoul256
-    colorscheme grb256
+    "grb256 xoria256 busierbee seoul256 baycomb
+    colorscheme github 
 endif
 hi ColorColumn ctermbg=235 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=232
