@@ -180,8 +180,8 @@ else
     "grb256 xoria256 busierbee seoul256 baycomb
     colorscheme github 
 endif
-hi ColorColumn ctermbg=235 guibg=#eeeeee
-" hi StatusLine ctermbg=93 ctermfg=232
+hi ColorColumn ctermbg=76 guibg=#eeeeee
+hi StatusLine ctermbg=93 ctermfg=232
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
