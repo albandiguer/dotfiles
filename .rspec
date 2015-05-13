@@ -1,5 +1,4 @@
 --color
 --fail-fast
---tag ~ignore_by_ci
 --profile
 --order rand

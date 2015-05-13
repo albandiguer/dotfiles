@@ -181,7 +181,7 @@ else
     colorscheme github 
 endif
 hi ColorColumn ctermbg=76 guibg=#eeeeee
-hi StatusLine ctermbg=93 ctermfg=232
+hi StatusLine ctermbg=93 ctermfg=254
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
