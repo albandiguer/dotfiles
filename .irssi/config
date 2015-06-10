@@ -17,10 +17,7 @@ servers = (
   }
 );
 
-chatnets = {
-  Freenode = { type = "IRC"; };
-  sorcery = { type = "IRC"; };
-};
+chatnets = { Freenode = { type = "IRC"; }; sorcery = { type = "IRC"; }; };
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
@@ -192,4 +189,5 @@ statusbar = {
 settings = {
   core = { real_name = "Lcxf"; user_name = "Lcxf"; nick = "Lcxf"; };
   "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "weed"; };
 };
