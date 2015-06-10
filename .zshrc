@@ -89,7 +89,7 @@ export CDPATH=$CDPATH:$BON/dev/os
 
 # Docker stuff
 function remove_dangling_containers {
-    docker images -q -f='dangling=true' | xargs docker rmi
+    docker images -q -f='dangling=true' | xargs docker rmi -f
 }
 
 function list_port_usage() {
