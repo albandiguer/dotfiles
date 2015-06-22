@@ -102,3 +102,8 @@ alias compose='docker-compose'
 # added by travis gem
 [ -f /Users/albandiguer/.travis/travis.sh ] && source /Users/albandiguer/.travis/travis.sh
 alias tb='travis branches'
+
+
+function search() {
+    grep -nrI $1 .
+}
