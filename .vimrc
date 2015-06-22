@@ -177,8 +177,8 @@ if has('gui_running')
     "h80 sorcerer githu bkhaki 
     colorscheme lazarus
 else
-    "grb256 xoria256 busierbee seoul256 baycomb
-    colorscheme github 
+    "grb256 xoria256 busierbee seoul256 baycomb vivichalk
+    colorscheme vividchalk
 endif
 hi ColorColumn ctermbg=76 guibg=#eeeeee
 hi StatusLine ctermbg=93 ctermfg=254
@@ -382,6 +382,7 @@ autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open nerdtree
 map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 " close vim if only open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
