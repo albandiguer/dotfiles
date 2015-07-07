@@ -38,32 +38,34 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tpope/vim-bundler'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails.git'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jgdavey/vim-turbux'
 Plugin 'benmills/vimux'
 Plugin 'mattn/webapi-vim'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'markcornick/vim-bats'
+" Plugin 'xolox/vim-notes'
+" Plugin 'markcornick/vim-bats'
 Plugin 'hallison/vim-markdown'
 Plugin 'mileszs/ack.vim'
 " Plugin 'flazz/vim-colorschemes'
-Plugin 'jnurmine/Zenburn'
-Plugin 'burnettk/vim-angular'
+" Plugin 'jnurmine/Zenburn'
+" Plugin 'burnettk/vim-angular'
 Plugin 'othree/html5.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
 " Plugin 'tpope/vim-dispatch'
+Plugin 'jelera/vim-javascript-syntax'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -175,9 +177,11 @@ if has('gui_running')
     " :set fu " fullscreen
 
     "h80 sorcerer githu bkhaki 
-    colorscheme lazarus
+    colorscheme slate
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
+    " colorscheme grb256
+    colorscheme vividchalk
     colorscheme vividchalk
 endif
 hi ColorColumn ctermbg=76 guibg=#eeeeee
