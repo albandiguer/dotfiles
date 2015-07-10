@@ -63,7 +63,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
-" Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-dispatch'
 Plugin 'jelera/vim-javascript-syntax'
 
 
@@ -429,5 +429,8 @@ map <C-m> :TagbarToggle<CR>
 " autocmd FileType javascript let b:dispatch = 'node %'
 " autocmd FileType ruby let b:dispatch = 'node %'
 " nnoremap <leader>d :Dispatch<CR>
+
+" awesome paste
+xnoremap p pgvy
 
 
