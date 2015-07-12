@@ -433,4 +433,6 @@ map <C-m> :TagbarToggle<CR>
 " awesome paste
 xnoremap p pgvy
 
+" use system clipboard and paste easy everywhere.
+set clipboard=unnamed
 
