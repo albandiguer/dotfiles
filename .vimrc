@@ -406,7 +406,26 @@ set backupskip=/tmp/*,/private/tmp/*
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cache ctrlp in the disk for future use
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" unlet g:ctrlp_custom_ignore
+" this will be used by default seracher, not with a custom one like ag silver
+" searcher
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.capistrano$\|db$\|bin$\|node_modules$\|tmp$\|vendor$',
+    \ 'file': '\.woff$\|\.so$\|\.svg$\|\.ttf$\|\.eot$\|\.markdown$\|\.png$'
+    \ }
+
+" change the default engine for search
+" brew install ag
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" define the folders to ignore 
 let g:ctrlp_map = '<leader>f'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set zsh as my term
