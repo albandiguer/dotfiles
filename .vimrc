@@ -451,6 +451,8 @@ map <C-m> :TagbarToggle<CR>
 
 " awesome paste
 xnoremap p pgvy
+" select all
+map <C-a> <esc>ggVG<CR>
 
 " use system clipboard and paste easy everywhere.
 set clipboard=unnamed
