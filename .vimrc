@@ -65,6 +65,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'bling/vim-airline'
 
 
 call vundle#end()            " required
@@ -457,3 +458,11 @@ map <C-a> <esc>ggVG<CR>
 " use system clipboard and paste easy everywhere.
 set clipboard=unnamed
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
