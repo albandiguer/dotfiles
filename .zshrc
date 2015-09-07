@@ -110,3 +110,8 @@ function search() {
 function swaggy() {
     cd ~/dev/swagger-editor && npm start
 }
+
+# check who does things
+function whodidwhat() {
+    git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -nr
+}
