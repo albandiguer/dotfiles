@@ -49,7 +49,6 @@ Plugin 'jgdavey/vim-turbux'
 Plugin 'benmills/vimux'
 Plugin 'mattn/webapi-vim'
 Plugin 'xolox/vim-misc'
-" Plugin 'xolox/vim-notes'
 " Plugin 'markcornick/vim-bats'
 Plugin 'hallison/vim-markdown'
 Plugin 'mileszs/ack.vim'
@@ -65,7 +64,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 
 
 call vundle#end()            " required
