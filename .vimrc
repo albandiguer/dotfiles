@@ -64,7 +64,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 
 call vundle#end()            " required
@@ -95,7 +95,7 @@ set switchbuf=useopen
 set numberwidth=5
 set showtabline=2
 set winwidth=79
-" set cursorline
+set cursorline
 " This makes RVM work inside Vim. I have no idea why.
 " set shell=bash
 " Prevent Vim from clobbering the scrollback buffer. See

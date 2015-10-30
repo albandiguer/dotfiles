@@ -106,3 +106,7 @@ alias tb='travis branches'
 function search() {
     grep -nrI $1 .
 }
+
+function swaggy() {
+    cd ~/dev/swagger-editor && npm start
+}
