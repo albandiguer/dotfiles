@@ -180,9 +180,9 @@ if has('gui_running')
     colorscheme slate
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
-    " colorscheme grb256
-    colorscheme vividchalk
-    colorscheme vividchalk
+    colorscheme grb256
+    " colorscheme vividchalk
+    " colorscheme vividchalk
 endif
 hi ColorColumn ctermbg=76 guibg=#eeeeee
 hi StatusLine ctermbg=93 ctermfg=254
@@ -440,7 +440,7 @@ map <C-m> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PRY Debug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:ia pry <CR>require 'pry'; binding.pry
+:ia pry require 'pry'; binding.pry
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dispatch things tpope/vim-dispatch

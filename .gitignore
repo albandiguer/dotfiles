@@ -44,3 +44,6 @@ Session.vim
 .ruby-version
 
 node_modules/
+
+config/locales/tmp.yml
+.tags.haml-i18n-extractor

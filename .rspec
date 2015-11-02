@@ -2,4 +2,3 @@
 --fail-fast
 --profile
 --order rand
---tag ~ignore_by_ci
