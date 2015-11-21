@@ -37,7 +37,7 @@ export EDITOR='vim'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(osx rails git postgres virtualenv docker bundler github go jira node vundle)
+plugins=(osx zsh rails git postgres virtualenv docker bundler github go jira node vundle)
 
 # To enable shims and autocompletion add to your profile
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -115,3 +115,4 @@ function swaggy() {
 function whodidwhat() {
     git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -nr
 }
+

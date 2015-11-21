@@ -64,6 +64,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'wookiehangover/jshint.vim'
 " Plugin 'bling/vim-airline'
 
 
