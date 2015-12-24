@@ -64,7 +64,8 @@ Plugin 'tmhedberg/matchit'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'wookiehangover/jshint.vim'
+Plugin 'scrooloose/syntastic'
+" Plugin 'wookiehangover/jshint.vim'
 " Plugin 'bling/vim-airline'
 Plugin 'MattesGroeger/vim-bookmarks'
 
@@ -467,3 +468,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
