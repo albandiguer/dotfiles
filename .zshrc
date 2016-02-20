@@ -35,9 +35,25 @@ alias redis-server-start='redis-server /usr/local/etc/redis.conf'
 
 export EDITOR='vim'
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(osx zsh rails git postgres virtualenv docker bundler github go jira node vundle)
+# Which plugins would you like to load? (plugins can be found in
+# ~/.oh-my-zsh/plugins/*) Custom plugins may be added to
+# ~/.oh-my-zsh/custom/plugins/
+plugins=(
+    bundler
+    docker
+    docker-compose
+    git
+    github
+    go
+    jira
+    node
+    osx
+    postgres
+    rails
+    virtualenv
+    vundle
+    zsh
+)
 
 # To enable shims and autocompletion add to your profile
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -119,3 +135,13 @@ function whodidwhat() {
 function consuming_resources(){
     watch "ps aux | sort -rk 3,3 | head -n 6"
 }
+
+# load env for running docker machine 
+function loaddockermachineenv() {
+    FIRST_RUNNING_DOCKER_MACHINE=`docker-machine ls | grep Running | awk '{ print $1 }'`
+    if [ ! -z "$FIRST_RUNNING_DOCKER_MACHINE" ]; then
+        eval "$(docker-machine env $FIRST_RUNNING_DOCKER_MACHINE)"
+    fi;
+}
+loaddockermachineenv
+

@@ -61,6 +61,7 @@ Plugin 'tpope/vim-rails.git'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'xolox/vim-misc'
+Plugin 'slim-template/vim-slim'
 
 
 call vundle#end()            " required
