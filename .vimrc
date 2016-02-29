@@ -62,7 +62,10 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'slim-template/vim-slim'
+Plugin 'KevinGoodsell/vim-csexact'
+Plugin 'junegunn/seoul256.vim'
 
+let g:seoul256_background = 233
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -468,3 +471,5 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not recognized!', 'discarding unexpected']
+
