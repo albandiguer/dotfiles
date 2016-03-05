@@ -43,7 +43,7 @@ plugins=(
     docker
     docker-compose
     git
-    github
+    # github
     go
     jira
     node
