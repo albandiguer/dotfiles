@@ -184,8 +184,9 @@ else
     " colorscheme vividchalk
     " colorscheme vividchalk
 endif
-hi ColorColumn ctermbg=76 guibg=#eeeeee
-hi StatusLine ctermbg=93 ctermfg=254
+hi ColorColumn ctermbg=233 guibg=#eeeeee
+" hi StatusLine ctermbg=93 ctermfg=254
+hi StatusLine ctermbg=57 ctermfg=255
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
