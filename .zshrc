@@ -85,7 +85,7 @@ export PATH=./bin:~/dev/dotfiles/bin:/usr/local/share/npm/bin:/usr/local/bin:/us
 
 # Selecta magic commands 'brew install selecta'
 p() {
-    cd $(find ~/dev -maxdepth 1 -type d | selecta)
+    cd $(find . -maxdepth 1 -type d | selecta)
 }
 
 # brew install pip && pip install grip if needed
