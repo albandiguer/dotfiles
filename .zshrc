@@ -120,7 +120,8 @@ alias tb='travis branches'
 
 
 function search() {
-    grep -nrI $1 .
+    # grep -nrI $1 .
+    ack $1 .
 }
 
 function swaggy() {
