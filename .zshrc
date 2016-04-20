@@ -70,8 +70,8 @@ SSH_AUTH_SOCK=/tmp/501/ssh-agent.socket
 export SSH_AUTH_SOCK
 
 # Add private key to the auth agent
-if [ -d ~/.ssh/id_rsa ]; then
-  ssh-add ~/.ssh/id_rsa
+if [ -f ~/.ssh/id_rsa ]; then
+  ssh-add ~/.ssh/id_rsa 2> /dev/null
 fi
 
 export CDPATH=$CDPATH:~/dev/

@@ -64,6 +64,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'slim-template/vim-slim'
 Plugin 'KevinGoodsell/vim-csexact'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'vim-scripts/BufOnly.vim'
 
 let g:seoul256_background = 233
 
