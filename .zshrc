@@ -111,6 +111,7 @@ function list_port_usage() {
     sudo netstat -tulpn
 }
 
+<<<<<<< HEAD
 alias compose='docker-compose'
 
 
@@ -146,3 +147,5 @@ function loaddockermachineenv() {
 }
 loaddockermachineenv
 
+## fancy cat
+alias ccat='pygmentize -g'

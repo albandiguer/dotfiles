@@ -1,11 +1,5 @@
 #!/bin/zsh
 
-# TODO finish
-# symlink .vim directory
-# Do something for .zsh/after/ files ?
-
-echo 'Magic starting'
-
 DIR=~/dev/dotfiles
 for file in $DIR/.* 
 do
