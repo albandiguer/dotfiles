@@ -1,3 +1,5 @@
+all: dev brew brew-deps oh-my-zsh links vim-plugins
+
 dev:
 	mkdir dev
 	
@@ -10,6 +12,14 @@ oh-my-zsh:
 brew-deps:
 	brew install git
 	brew install tmux
+	brew install ack
+	brew install ctags
+	brew install rbenv
+	brew install ruby-build
+	brew install wget
+	brew install watch
+	brew install the_silver_searcher
+	brew install vim
 
 vim-plugins:
 	vim +PluginInstall
