@@ -65,6 +65,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'KevinGoodsell/vim-csexact'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'bronson/vim-trailing-whitespace'
 
 let g:seoul256_background = 233
 
