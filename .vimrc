@@ -170,12 +170,11 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 "if exists("syntax_on")
 "  syntax reset
 "endif
-:syntax enable
-" set t_Co=256
+syntax enable
+syntax on
+:set t_Co=256
 
 set colorcolumn=80
-
-:set guifont=Droid\ Sans\ Mono:h14
 if has('gui_running') 
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
@@ -184,9 +183,9 @@ if has('gui_running')
     colorscheme slate
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
-    colorscheme grb256
-    " colorscheme vividchalk
-    " colorscheme vividchalk
+    " colorscheme grb256
+    colorscheme vividchalk
+    colorscheme vividchalk
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=254
