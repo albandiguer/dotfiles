@@ -26,7 +26,7 @@ Plugin 'gmarik/Vundle.vim'
 " ruby extconf.rb
 " make
 
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'MattesGroeger/vim-bookmarks'
@@ -192,13 +192,10 @@ if has('gui_running')
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
     " colorscheme grb256
-<<<<<<< HEAD
-    colorscheme vividchalk
-    colorscheme vividchalk
-=======
+    " colorscheme vividchalk
+    " colorscheme vividchalk
     colorscheme seoul256
     " colorscheme vividchalk
->>>>>>> Disable cursorline
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=254
