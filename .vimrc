@@ -26,8 +26,8 @@ Plugin 'gmarik/Vundle.vim'
 " ruby extconf.rb
 " make
 
-" Plugin 'bling/vim-airline'
-" Plugin 'wookiehangover/jshint.vim'
+Plugin 'bling/vim-airline'
+Plugin 'wookiehangover/jshint.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Raimondi/delimitMate'
@@ -63,9 +63,17 @@ Plugin 'vim-scripts/closetag.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'slim-template/vim-slim'
 Plugin 'KevinGoodsell/vim-csexact'
-Plugin 'junegunn/seoul256.vim'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'bronson/vim-trailing-whitespace'
+" Colors 
+" 
+Plugin 'junegunn/seoul256.vim'
+Plugin 'vim-scripts/swamplight'
+Plugin 'vim-scripts/saturn.vim'
+Plugin 'vim-scripts/khaki.vim'
+Plugin 'stulzer/heroku-colorscheme'
+Plugin 'Donearm/Laederon'
+Plugin 'mtglsk/wikipedia.vim'
 
 let g:seoul256_background = 233
 
@@ -97,7 +105,7 @@ set switchbuf=useopen
 set numberwidth=5
 set showtabline=2
 set winwidth=79
-set cursorline
+set nocursorline
 " This makes RVM work inside Vim. I have no idea why.
 " set shell=bash
 " Prevent Vim from clobbering the scrollback buffer. See
@@ -184,8 +192,13 @@ if has('gui_running')
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
     " colorscheme grb256
+<<<<<<< HEAD
     colorscheme vividchalk
     colorscheme vividchalk
+=======
+    colorscheme seoul256
+    " colorscheme vividchalk
+>>>>>>> Disable cursorline
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=254
