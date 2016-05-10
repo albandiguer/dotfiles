@@ -188,14 +188,13 @@ if has('gui_running')
     " :set fu " fullscreen
 
     "h80 sorcerer githu bkhaki 
-    colorscheme slate
+    colorscheme seoul256-light
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
     " colorscheme grb256
     " colorscheme vividchalk
     " colorscheme vividchalk
     colorscheme seoul256
-    " colorscheme vividchalk
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=254
