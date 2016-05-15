@@ -1,4 +1,4 @@
-all: dev brew brew-deps oh-my-zsh links vim-plugins
+all: dev brew brew-deps zsh links vim-plugins
 
 dev:
 	cd ~ && mkdir dev || true
@@ -6,9 +6,11 @@ dev:
 brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-oh-my-zsh:
+zsh:
+	# oh my zsh
 	cd ~/dev && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	
+	chsh -s $(which zsh)
+
 brew-deps:
 	brew install git
 	brew install tmux
@@ -20,6 +22,7 @@ brew-deps:
 	brew install watch
 	brew install the_silver_searcher
 	brew install vim
+	brew install cmake # for compiling YCM
 
 vim-plugins:
 	mkdir ~/.vim/bundle
@@ -27,7 +30,7 @@ vim-plugins:
 	vim +PluginInstall
 	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
 	cd ~/.vim/bundle/YouCompleteMe
-	chmod -x install.sh && ./install.sh
+	chmod -x install.py && ./install.py
 
 links:
 	ln -sf `pwd`/.ackrc ~/.ackrc || true 
@@ -39,7 +42,8 @@ links:
 	ln -sf `pwd`/.pryrc ~/.pryrc || true 
 	ln -sf `pwd`/.gitconfig ~/.gitconfig || true 
 	ln -sf `pwd`/.gitignore ~/.gitignore || true 
-	ln -sf `pwd`/.zshrc ~/.zsrhc || true 
+	ln -sf `pwd`/.zshrc ~/.zshrc || true 
+	mkdir -p ~/.zsh/after
 	ln -sf `pwd`/.gemrc ~/.gemrc || true 
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true 
 	ln -sf `pwd`/.ctags ~/.ctags || true 
