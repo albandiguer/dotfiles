@@ -4,6 +4,7 @@ dev:
 	cd ~ && mkdir dev || true
 	
 brew:
+	xcode-select --install || true
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 zsh:

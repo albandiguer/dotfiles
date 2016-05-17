@@ -184,11 +184,12 @@ syntax on
 
 set colorcolumn=80
 if has('gui_running') 
+    autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
 
     "h80 sorcerer githu bkhaki 
-    colorscheme slate
+    colorscheme github
 else
     "grb256 xoria256 busierbee seoul256 baycomb vivichalk
     " colorscheme grb256
