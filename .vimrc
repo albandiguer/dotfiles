@@ -48,7 +48,7 @@ Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'othree/html5.vim'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skwp/greplace.vim'
 Plugin 'tmhedberg/matchit'
@@ -187,16 +187,9 @@ if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
-
-    "h80 sorcerer githu bkhaki 
     colorscheme github
 else
-    "grb256 xoria256 busierbee seoul256 baycomb vivichalk
-    " colorscheme grb256
-    " colorscheme vividchalk
-    " colorscheme vividchalk
-    colorscheme seoul256
-    " colorscheme vividchalk
+    colorscheme grb256
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
 " hi StatusLine ctermbg=93 ctermfg=254

@@ -123,6 +123,7 @@ function search() {
     # grep -nrI $1 .
     ack $1 .
 }
+alias se='search'
 
 function swaggy() {
     cd ~/dev/swagger-editor && npm start
