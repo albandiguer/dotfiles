@@ -145,7 +145,7 @@ function loaddockermachineenv() {
         eval "$(docker-machine env $FIRST_RUNNING_DOCKER_MACHINE)"
     fi;
 }
-loaddockermachineenv
+# loaddockermachineenv
 
 ## fancy cat
 alias ccat='pygmentize -g'

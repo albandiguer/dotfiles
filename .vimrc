@@ -48,7 +48,7 @@ Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'othree/html5.vim'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skwp/greplace.vim'
 Plugin 'tmhedberg/matchit'
@@ -184,6 +184,7 @@ syntax on
 
 set colorcolumn=80
 if has('gui_running') 
+    autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
     colorscheme github
