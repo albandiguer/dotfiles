@@ -186,18 +186,12 @@ set colorcolumn=80
 if has('gui_running') 
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
-
-    "h80 sorcerer githu bkhaki 
-    colorscheme seoul256-light
+    colorscheme github
 else
-    "grb256 xoria256 busierbee seoul256 baycomb vivichalk
-    " colorscheme grb256
-    " colorscheme vividchalk
-    " colorscheme vividchalk
-    colorscheme seoul256
+    colorscheme grb256
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
-" hi StatusLine ctermbg=93 ctermfg=254
+hi StatusLine ctermbg=93 ctermfg=254
 hi StatusLine ctermbg=57 ctermfg=255
 :set nu
 " remove scroll bars and tool bar
@@ -324,9 +318,12 @@ map <leader>gR :call ShowRoutes()<cr>
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This use vimux and turbux and vim-rails
+let g:VimuxUseNearestPane = 1
 let g:no_turbux_mappings = 1
 map <leader>m <Plug>SendTestToTmux
 map <leader>M <Plug>SendFocusedTestToTmux
+let g:turbux_command_rspec = 'rspec --drb'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Md5 COMMAND
