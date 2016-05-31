@@ -27,7 +27,7 @@ Plugin 'gmarik/Vundle.vim'
 " make
 
 " Plugin 'bling/vim-airline'
-Plugin 'wookiehangover/jshint.vim'
+" Plugin 'wookiehangover/jshint.vim' 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Raimondi/delimitMate'
@@ -62,8 +62,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'slim-template/vim-slim'
-Plugin 'KevinGoodsell/vim-csexact'
-Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
+Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
 Plugin 'bronson/vim-trailing-whitespace'
 " Colors 
 " 
