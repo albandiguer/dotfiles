@@ -24,6 +24,7 @@ brew-deps:
 	brew install the_silver_searcher
 	brew install vim
 	brew install cmake # for compiling YCM
+	brew install nodenv
 
 vim-plugins:
 	mkdir ~/.vim/bundle
