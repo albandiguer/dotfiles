@@ -83,6 +83,9 @@ for config_file (~/.zsh/after/*) source $config_file
 # Customize to your needs...
 export PATH=./bin:~/dev/dotfiles/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/X11/bin
 
+# init nodenv
+eval "$(nodenv init -)"
+
 # Selecta magic commands 'brew install selecta'
 p() {
     cd $(find . -maxdepth 1 -type d | selecta)
