@@ -456,9 +456,9 @@ map <C-m> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dispatch things tpope/vim-dispatch
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocmd FileType javascript let b:dispatch = 'node %'
-" autocmd FileType ruby let b:dispatch = 'node %'
-" nnoremap <leader>d :Dispatch<CR>
+nnoremap <leader>d :Dispatch<CR>
+autocmd FileType javascript let b:dispatch = 'node %'
+autocmd FileType ruby let b:dispatch = 'rspec %'
 
 " awesome paste
 xnoremap p pgvy
