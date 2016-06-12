@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep bundle commands between here and filetype plugin indent on.
 " scripts on GitHub repos
 " Plugin 'wincent/command-t'
-" When command-t breaks because of ruby version, 
+" When command-t breaks because of ruby version,
 " check version in vim :ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
 " rbenv shell version
 " cd ~/.vim/bundle/command-t/ruby/command-t
@@ -27,7 +27,7 @@ Plugin 'gmarik/Vundle.vim'
 " make
 
 " Plugin 'bling/vim-airline'
-" Plugin 'wookiehangover/jshint.vim' 
+" Plugin 'wookiehangover/jshint.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Raimondi/delimitMate'
@@ -64,9 +64,9 @@ Plugin 'xolox/vim-misc'
 Plugin 'slim-template/vim-slim'
 Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
-Plugin 'bronson/vim-trailing-whitespace'
-" Colors 
-" 
+" Plugin 'bronson/vim-trailing-whitespace'
+" Colors
+"
 Plugin 'junegunn/seoul256.vim'
 Plugin 'vim-scripts/swamplight'
 Plugin 'vim-scripts/saturn.vim'
@@ -150,7 +150,7 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -167,7 +167,7 @@ augroup vimrcEx
   autocmd! CmdwinLeave * :call MapCR()
 augroup END
 
-" added for handlebars syntax highlighting 
+" added for handlebars syntax highlighting
 " see http://www.vim.org/scripts/script.php?script_id=3638
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
@@ -183,7 +183,7 @@ syntax on
 :set t_Co=256
 
 set colorcolumn=80
-if has('gui_running') 
+if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
@@ -199,7 +199,7 @@ hi StatusLine ctermbg=57 ctermfg=255
 :set guioptions-=r
 :set guioptions-=L
 :set guioptions-=T
-" expand width in fullscreen 
+" expand width in fullscreen
 " hide tab bar
 set showtabline=0
 
@@ -207,7 +207,7 @@ set showtabline=0
 " STATUS LINE POWERLINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :let g:Powerline_symbols = 'unicode'
-" :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%) 
+" :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 " set rtp+=/Users/adiguer/.vim/bundle/powerline/powerline/bindings/vim
 " call vam#ActivateAddons(['powerline'])
 
@@ -362,7 +362,7 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 "         silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
 "     catch /Vim:Interrupt/
 "         " Swallow the ^C so that the redraw below happens; otherwise there
-"         " will be leftovers from selecta on the screen 
+"         " will be leftovers from selecta on the screen
 "         redraw!
 "         return
 "     endtry
@@ -405,7 +405,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom note
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:let g:VN_DefaultDir = "~/Documents/Notes" 
+:let g:VN_DefaultDir = "~/Documents/Notes"
 :let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Shared Notes']
 :let g:notes_tab_indents = 0
 
@@ -434,7 +434,7 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" define the folders to ignore 
+" define the folders to ignore
 let g:ctrlp_map = '<leader>f'
 
 
@@ -444,7 +444,7 @@ let g:ctrlp_map = '<leader>f'
 set shell=/bin/zsh
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TagBar 
+" TagBar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-m> :TagbarToggle<CR>
 
@@ -484,3 +484,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not recognized!', 'discarding unexpected']
 
+
+""" Remove white space
+autocmd FileType scss,css,rb,js,jsx,html autocmd BufWritePre <buffer> :%s/\s\+$//e
