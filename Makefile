@@ -33,6 +33,7 @@ vim-plugins:
 	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
 	cd ~/.vim/bundle/YouCompleteMe
 	chmod -x install.py && ./install.py
+	cd ~/.vim/bundle/tern_for_vim && npm install
 
 links:
 	ln -sf `pwd`/.ackrc ~/.ackrc || true 
