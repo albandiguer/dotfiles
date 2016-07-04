@@ -52,5 +52,6 @@ links:
 	ln -sf `pwd`/.ctags ~/.ctags || true 
 	ln -sf `pwd`/.jshintrc ~/.jshintrc || true 
 	ln -sf `pwd`/.rspec ~/.rspec || true 
+	ln -sf `pwd`/.babelrc ~/.babelrc || true 
 
 
