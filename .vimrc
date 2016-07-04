@@ -64,6 +64,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'slim-template/vim-slim'
 Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 " Plugin 'bronson/vim-trailing-whitespace'
 " Colors
 "
