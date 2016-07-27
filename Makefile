@@ -21,7 +21,7 @@ brew-deps:
 	brew install ruby-build
 	brew install wget
 	brew install watch
-	brew install the_silver_searcher
+	brew install the_silver_searcher # Hella fast ag
 	brew install vim
 	brew install cmake # for compiling YCM
 	brew install nodenv
