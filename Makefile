@@ -1,4 +1,4 @@
-all: dev brew brew-deps zsh links vim-plugins
+all: dev brew brew-deps dns-config zsh links vim-plugins
 
 dev:
 	cd ~ && mkdir dev || true
@@ -37,6 +37,9 @@ vim-plugins:
 	chmod -x install.py && ./install.py
 	cd ~/.vim/bundle/tern_for_vim && npm install
 
+dns-config:
+	cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
+
 links:
 	ln -sf `pwd`/.ackrc ~/.ackrc || true 
 	ln -sf `pwd`/.aprc ~/.aprc || true 
@@ -55,5 +58,6 @@ links:
 	ln -sf `pwd`/.jshintrc ~/.jshintrc || true 
 	ln -sf `pwd`/.rspec ~/.rspec || true 
 	ln -sf `pwd`/.babelrc ~/.babelrc || true 
+	ln -sf `pwd`/.inputrc ~/.inputrc || true 
 
 
