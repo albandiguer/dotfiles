@@ -153,6 +153,7 @@ augroup vimrcEx
   autocmd FileType python set sw=4 sts=4 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -185,17 +186,17 @@ syntax on
 :set t_Co=256
 
 set colorcolumn=80
+hi ColorColumn ctermbg=233 guibg=#eeeeee
+hi StatusLine ctermbg=93 ctermfg=254
+hi StatusLine ctermbg=57 ctermfg=255
 if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
     colorscheme github
 else
-    colorscheme grb256
+    colorscheme hybrid
 endif
-hi ColorColumn ctermbg=233 guibg=#eeeeee
-hi StatusLine ctermbg=93 ctermfg=254
-hi StatusLine ctermbg=57 ctermfg=255
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r

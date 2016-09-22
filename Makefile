@@ -13,18 +13,20 @@ zsh:
 	chsh -s $(which zsh)
 
 brew-deps:
-	brew install git
-	brew install tmux
-	brew install ack
-	brew install ctags
-	brew install rbenv
-	brew install ruby-build
-	brew install wget
-	brew install watch
-	brew install the_silver_searcher # Hella fast ag
-	brew install vim
-	brew install cmake # for compiling YCM
-	brew install nodenv
+	brew up
+	brew install ack || true 
+	brew install cmake # for compiling YCM || true 
+	brew install ctags || true 
+	brew install dnsmasq || true 
+	brew install git || true
+	brew install nodenv || true 
+	brew install rbenv || true 
+	brew install ruby-build || true 
+	brew install the_silver_searcher || true 
+	brew install tmux || true 
+	brew install vim || true 
+	brew install watch || true 
+	brew install wget || true 
 
 vim-plugins:
 	mkdir ~/.vim/bundle
