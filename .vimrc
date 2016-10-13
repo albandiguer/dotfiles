@@ -26,8 +26,6 @@ Plugin 'gmarik/Vundle.vim'
 " ruby extconf.rb
 " make
 
-" Plugin 'bling/vim-airline'
-" Plugin 'wookiehangover/jshint.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Raimondi/delimitMate'
@@ -48,7 +46,6 @@ Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'othree/html5.vim'
-" Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'skwp/greplace.vim'
 Plugin 'tmhedberg/matchit'
@@ -66,7 +63,8 @@ Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-" Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'Shutnik/jshint2.vim'
 " Colors
 "
 Plugin 'junegunn/seoul256.vim'
@@ -496,3 +494,25 @@ let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not
 
 """ Remove white space
 autocmd FileType scss,css,rb,js,jsx,html autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JShint config 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let jshint2_save = 1
+let jshint2_min_height = 3
+let jshint2_max_height = 8
+" jshint validation
+nnoremap <silent><F1> :JSHint<CR>
+inoremap <silent><F1> <C-O>:JSHint<CR>
+vnoremap <silent><F1> :JSHint<CR>
+
+" show next jshint error
+nnoremap <silent><F2> :lnext<CR>
+inoremap <silent><F2> <C-O>:lnext<CR>
+vnoremap <silent><F2> :lnext<CR>
+
+" show previous jshint error
+nnoremap <silent><F3> :lprevious<CR>
+inoremap <silent><F3> <C-O>:lprevious<CR>
+vnoremap <silent><F3> :lprevious<CR>
