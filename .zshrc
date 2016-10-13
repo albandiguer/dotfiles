@@ -153,3 +153,7 @@ function loaddockermachineenv() {
 ## fancy cat
 alias ccat='pygmentize -g'
 alias json='python -mjson.tool'
+
+# Faster keyboard
+defaults write -g InitialKeyRepeat -int 12 # lowest via ux is 15
+defaults write -g KeyRepeat -int 1 # lowest via ux is  2 

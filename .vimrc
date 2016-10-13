@@ -57,7 +57,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'xolox/vim-misc'
@@ -195,7 +195,7 @@ if has('gui_running')
     " :set fu " fullscreen
     colorscheme github
 else
-    colorscheme hybrid
+    colorscheme grb256
 endif
 :set nu
 " remove scroll bars and tool bar

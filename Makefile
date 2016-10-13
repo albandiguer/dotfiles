@@ -34,11 +34,19 @@ vim-plugins:
 	vim +PluginInstall
 	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
 	cd ~/.vim/bundle/YouCompleteMe
-	chmod -x install.py && ./install.py
+	chmod -x install.py && ./install.py --clang-completer
 	cd ~/.vim/bundle/tern_for_vim && npm install
 
 dns-config:
+	# Copy the default configuration file.
+	# cp $(brew list dnsmasq | grep /dnsmasq.conf.example$) /usr/local/etc/dnsmasq.conf
+	# Copy the daemon configuration file into place.
+	# sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
+	# Start Dnsmasq automatically.
+	# sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 	cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
+	cp `pwd`/apache-dev.conf /private/etc/apache2/other/ 
+	sudo apachectl -e info -k restart
 
 links:
 	ln -sf `pwd`/.ackrc ~/.ackrc || true 
