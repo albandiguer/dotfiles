@@ -34,7 +34,7 @@ vim-plugins:
 	vim +PluginInstall
 	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
 	cd ~/.vim/bundle/YouCompleteMe
-	chmod -x install.py && ./install.py --clang-completer
+	chmod -x install.py && ./install.py --clang-completer --tern-completer
 	cd ~/.vim/bundle/tern_for_vim && npm install
 
 dns-config:
