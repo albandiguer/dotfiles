@@ -9,13 +9,14 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='crunch'
 
 
-# Unbreak broken, non-colored terminal                                                                                                                                                                 
-# export TERM='screen-256color'  
+# Unbreak broken, non-colored terminal
+# export TERM='screen-256color'
 # alias tmux="tmux -2"
-alias duh='du -csh'                                                             
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"                                        
+alias duh='du -csh'
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 alias vi='vim .'
+alias nvi='nvim .'
 alias mvi='mvim .'
 alias s='screen'
 alias sr='screen -r'
@@ -141,7 +142,7 @@ function consuming_resources(){
     watch "ps aux | sort -rk 3,3 | head -n 6"
 }
 
-# load env for running docker machine 
+# load env for running docker machine
 function loaddockermachineenv() {
     FIRST_RUNNING_DOCKER_MACHINE=`docker-machine ls | grep Running | awk '{ print $1 }'`
     if [ ! -z "$FIRST_RUNNING_DOCKER_MACHINE" ]; then
@@ -157,3 +158,13 @@ alias json='python -mjson.tool'
 # Faster keyboard
 defaults write -g InitialKeyRepeat -int 12 # lowest via ux is 15
 defaults write -g KeyRepeat -int 1 # lowest via ux is  2 
+
+# Brew keg only symlinks
+# e.g. sqlite
+# export PATH="$(brew --prefix sqlite)/bin:$PATH"
+# export PATH="$(brew --prefix mysql55)/bin:$PATH"
+
+# Wed 12 Oct 2016 issues for the rails server to locate some mysql things
+# export PATH=$PATH:"$(brew --prefix mysql55)/bin"
+# export DYLD_LIBRARY_PATH="$(brew --prefix mysql55)/lib":$DYLD_LIBRARY_PATH
+

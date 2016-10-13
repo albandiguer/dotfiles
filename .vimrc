@@ -191,10 +191,13 @@ if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
-    colorscheme github
+    colorscheme github 
 else
+    " colorscheme khaki
     colorscheme grb256
+    " colorscheme hybrid
 endif
+hi ColorColumn ctermbg=233 guibg=#eeeeee
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
