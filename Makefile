@@ -67,5 +67,6 @@ links:
 	ln -sf `pwd`/.rspec ~/.rspec || true 
 	ln -sf `pwd`/.babelrc ~/.babelrc || true 
 	ln -sf `pwd`/.inputrc ~/.inputrc || true 
+	ln -sf `pwd`/.tern-config  ~/.tern-config || true 
 
 
