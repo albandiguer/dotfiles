@@ -29,6 +29,7 @@ brew-deps:
 	brew install wget || true 
 
 vim-plugins:
+	npm i jshint -g
 	mkdir ~/.vim/bundle
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall
