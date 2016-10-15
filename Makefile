@@ -1,4 +1,4 @@
-all: dev brew brew-deps dns-config zsh links vim-plugins
+all: dev brew brew-deps dns apache-conf zsh links vim-plugins
 
 dev:
 	cd ~ && mkdir dev || true
@@ -26,6 +26,7 @@ brew-deps:
 	brew install vim || true
 	brew install watch || true
 	brew install wget || true
+	brew unlink ruby
 
 vim-plugins:
 	npm i jshint -g
@@ -37,14 +38,14 @@ vim-plugins:
 	chmod -x install.py && ./install.py --clang-completer --tern-completer
 	cd ~/.vim/bundle/tern_for_vim && npm install
 
-dns-config:
+dns:
 	brew install dnsmasq || true
-	# Copy the default configuration file.
-	cp $(brew list dnsmasq | grep /dnsmasq.conf.example) /usr/local/etc/dnsmasq.conf
-	# Copy the daemon configuration file into place.
-	# sudo cp "$(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$)" /Library/LaunchDaemons/
-	# Start Dnsmasq automatically.
-	# sudo "launchctl" load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+	cp `pwd`/dnsmasq.conf /usr/local/etc/dnsmasq.conf
+	sudo ln -s `pwd`/resolver /etc
+	sudo brew services restart dnsmasq # sudo because it needs to be in /Library/LaunchDaemons, see $brew services
+
+apache-conf:
+	# TODO
 
 links:
 	ln -sf `pwd`/.ackrc ~/.ackrc || true
