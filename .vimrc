@@ -63,8 +63,9 @@ Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Shutnik/jshint2.vim'
+Plugin 'tpope/vim-surround'
 " Colors
 "
 Plugin 'junegunn/seoul256.vim'
@@ -191,7 +192,7 @@ if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
     set guifont=Droid\ Sans\ Mono:h14
     " :set fu " fullscreen
-    colorscheme github 
+    colorscheme github
 else
     " colorscheme khaki
     colorscheme grb256
@@ -500,7 +501,7 @@ autocmd FileType scss,css,rb,js,jsx,html autocmd BufWritePre <buffer> :%s/\s\+$/
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JShint config 
+" JShint config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let jshint2_save = 1
 let jshint2_min_height = 3
@@ -519,3 +520,8 @@ vnoremap <silent><F2> :lnext<CR>
 nnoremap <silent><F3> :lprevious<CR>
 inoremap <silent><F3> <C-O>:lprevious<CR>
 vnoremap <silent><F3> :lprevious<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remove trailing whitespace
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre * StripWhitespace
