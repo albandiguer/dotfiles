@@ -24,9 +24,9 @@ brew-deps:
 	brew install the_silver_searcher || true
 	brew install tmux || true
 	brew install vim || true
+	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew install watch || true
 	brew install wget || true
-	brew unlink ruby
 
 vim-plugins:
 	npm i jshint -g
@@ -40,12 +40,17 @@ vim-plugins:
 
 dns:
 	brew install dnsmasq || true
-	cp `pwd`/dnsmasq.conf /usr/local/etc/dnsmasq.conf
-	sudo ln -s `pwd`/resolver /etc
+	ln -s `pwd`/dnsmasq.conf /usr/local/etc/ || true
+	sudo ln -s `pwd`/resolver /etc || true
 	sudo brew services restart dnsmasq # sudo because it needs to be in /Library/LaunchDaemons, see $brew services
 
 apache-conf:
-	# TODO
+	# Inside /private/etc/apache2/httpd.conf
+	# Uncomment Include /private/etc/apache2/extra/httpd-vhosts.conf
+	# Uncomment LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
+	sudo rm /private/etc/apache2/extra/httpd-vhosts.conf || true
+	sudo ln -s `pwd`/httpd-vhosts.conf /private/etc/apache2/extra/
+	sudo apachectl restart
 
 links:
 	ln -sf `pwd`/.ackrc ~/.ackrc || true
