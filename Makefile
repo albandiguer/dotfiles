@@ -49,7 +49,7 @@ apache-conf:
 	# Uncomment Include /private/etc/apache2/extra/httpd-vhosts.conf
 	# Uncomment LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
 	sudo rm /private/etc/apache2/extra/httpd-vhosts.conf || true
-	sudo ln -s `pwd`/httpd-vhosts.conf /private/etc/apache2/extra/
+	sudo ln -sf `pwd`/httpd-vhosts.conf /private/etc/apache2/extra/ || true
 	sudo apachectl restart
 
 links:
