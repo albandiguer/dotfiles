@@ -30,7 +30,7 @@ brew-deps:
 
 vim-plugins:
 	npm i jshint -g
-	mkdir ~/.vim/bundle
+	mkdir ~/.vim/bundle || true
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall
 	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
