@@ -168,3 +168,8 @@ defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 # export PATH=$PATH:"$(brew --prefix mysql55)/bin"
 # export DYLD_LIBRARY_PATH="$(brew --prefix mysql55)/lib":$DYLD_LIBRARY_PATH
 
+function ci+ {
+  ticket= git rev-parse --abbrev-ref HEAD | egrep -o 'BBN-[0-9]+'
+  git commit -m "[$ticket][skip-ci] $1"
+}
+
