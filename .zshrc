@@ -82,7 +82,7 @@ export CDPATH=$CDPATH:~/dev/
 for config_file (~/.zsh/after/*) source $config_file
 
 # Customize to your needs...
-export PATH=./bin:~/dev/dotfiles/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/X11/bin
+export PATH=./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # init nodenv
 eval "$(nodenv init -)"
@@ -100,7 +100,7 @@ analyse_disk_usage() {
 }
 #
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# export PATH="/usr/local/heroku/bin:$PATH"
 
 # USB key workspace
 export BON='/Volumes/Bonjour'
@@ -157,7 +157,7 @@ alias json='python -mjson.tool'
 
 # Faster keyboard
 defaults write -g InitialKeyRepeat -int 12 # lowest via ux is 15
-defaults write -g KeyRepeat -int 1 # lowest via ux is  2 
+defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 
 # Brew keg only symlinks
 # e.g. sqlite

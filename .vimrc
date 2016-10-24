@@ -64,7 +64,6 @@ Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'Shutnik/jshint2.vim'
 Plugin 'tpope/vim-surround'
 " Colors
 "
@@ -493,35 +492,51 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not recognized!', 'discarding unexpected']
 
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-""" Remove white space
-autocmd FileType scss,css,rb,js,jsx,html autocmd BufWritePre <buffer> :%s/\s\+$//e
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_w = 1
+let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_jsx_checkers = ['jsxhint']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JShint config
+" JShint config - commented, using ESLint
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let jshint2_save = 1
-let jshint2_min_height = 3
-let jshint2_max_height = 8
-" jshint validation
-nnoremap <silent><F1> :JSHint<CR>
-inoremap <silent><F1> <C-O>:JSHint<CR>
-vnoremap <silent><F1> :JSHint<CR>
+" let jshint2_save = 1
+" let jshint2_min_height = 3
+" let jshint2_max_height = 8
+" " jshint validation
+" nnoremap <silent><F1> :JSHint<CR>
+" inoremap <silent><F1> <C-O>:JSHint<CR>
+" vnoremap <silent><F1> :JSHint<CR>
 
-" show next jshint error
-nnoremap <silent><F2> :lnext<CR>
-inoremap <silent><F2> <C-O>:lnext<CR>
-vnoremap <silent><F2> :lnext<CR>
+" " show next jshint error
+" nnoremap <silent><F2> :lnext<CR>
+" inoremap <silent><F2> <C-O>:lnext<CR>
+" vnoremap <silent><F2> :lnext<CR>
 
-" show previous jshint error
-nnoremap <silent><F3> :lprevious<CR>
-inoremap <silent><F3> <C-O>:lprevious<CR>
-vnoremap <silent><F3> :lprevious<CR>
+" " show previous jshint error
+" nnoremap <silent><F3> :lprevious<CR>
+" inoremap <silent><F3> <C-O>:lprevious<CR>
+" vnoremap <silent><F3> :lprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove trailing whitespace
