@@ -500,11 +500,10 @@ let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_w = 1
 let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_jsx_checkers = ['jsxhint']
 
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'

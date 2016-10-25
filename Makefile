@@ -29,7 +29,7 @@ brew-deps:
 	brew install wget || true
 
 vim-plugins:
-	npm i eslint -g
+	npm install eslint babel-eslint eslint-plugin-react -g
 	mkdir ~/.vim/bundle || true
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall
@@ -69,9 +69,11 @@ links:
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
 	ln -sf `pwd`/.ctags ~/.ctags || true
 	ln -sf `pwd`/.jshintrc ~/.jshintrc || true
+	ln -sf `pwd`/.eslintrc ~/.eslintrc || true
 	ln -sf `pwd`/.rspec ~/.rspec || true
 	ln -sf `pwd`/.babelrc ~/.babelrc || true
 	ln -sf `pwd`/.inputrc ~/.inputrc || true
 	ln -sf `pwd`/.tern-config  ~/.tern-config || true
+
 
 
