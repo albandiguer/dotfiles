@@ -47,6 +47,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 Plugin 'skwp/greplace.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomtom/tlib_vim'
@@ -193,8 +194,8 @@ if has('gui_running')
     " :set fu " fullscreen
     colorscheme github
 else
-    " colorscheme khaki
-    colorscheme grb256
+    colorscheme khaki
+    " colorscheme grb256
     " colorscheme hybrid
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
