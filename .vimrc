@@ -196,8 +196,8 @@ if has('gui_running')
     " :set fu " fullscreen
     colorscheme github
 else
-    colorscheme khaki
-    " colorscheme grb256
+    " colorscheme khaki
+    colorscheme grb256
     " colorscheme hybrid
 endif
 hi ColorColumn ctermbg=233 guibg=#eeeeee
@@ -501,9 +501,9 @@ let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_loc_list_height = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_w = 1
 let g:syntastic_javascript_checkers = ['eslint']
