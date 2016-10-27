@@ -510,6 +510,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_haml_checkers = ['haml']
 let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_zsh_checkers = ['zsh']
 
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'

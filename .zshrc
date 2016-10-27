@@ -89,7 +89,7 @@ eval "$(nodenv init -)"
 
 # Selecta magic commands 'brew install selecta'
 p() {
-    cd $(find . -maxdepth 1 -type d | selecta)
+  cd $(find . -maxdepth 1 -type d | selecta)
 }
 
 # brew install pip && pip install grip if needed
@@ -108,11 +108,11 @@ export CDPATH=$CDPATH:$BON/dev/os
 
 # Docker stuff
 function remove_dangling_containers {
-    docker images -q -f='dangling=true' | xargs docker rmi -f
+  docker images -q -f='dangling=true' | xargs docker rmi -f
 }
 
 function list_port_usage() {
-    sudo netstat -tulpn
+  sudo netstat -tulpn
 }
 
 alias compose='docker-compose'
@@ -124,30 +124,30 @@ alias tb='travis branches'
 
 
 function search() {
-    # grep -nrI $1 .
-    ack $1 .
+  # grep -nrI $1 .
+  ack $1 .
 }
 alias se='search'
 
 function swaggy() {
-    cd ~/dev/swagger-editor && npm start
+  cd ~/dev/swagger-editor && npm start
 }
 
 # check who does things
 function whodidwhat() {
-    git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -nr
+  git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -nr
 }
 
 function consuming_resources(){
-    watch "ps aux | sort -rk 3,3 | head -n 6"
+  watch "ps aux | sort -rk 3,3 | head -n 6"
 }
 
 # load env for running docker machine
 function loaddockermachineenv() {
-    FIRST_RUNNING_DOCKER_MACHINE=`docker-machine ls | grep Running | awk '{ print $1 }'`
-    if [ ! -z "$FIRST_RUNNING_DOCKER_MACHINE" ]; then
-        eval "$(docker-machine env $FIRST_RUNNING_DOCKER_MACHINE)"
-    fi;
+  FIRST_RUNNING_DOCKER_MACHINE=`docker-machine ls | grep Running | awk '{ print $1 }'`
+  if [ ! -z "$FIRST_RUNNING_DOCKER_MACHINE" ]; then
+    eval "$(docker-machine env $FIRST_RUNNING_DOCKER_MACHINE)"
+  fi;
 }
 # loaddockermachineenv
 
@@ -167,9 +167,4 @@ defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 # Wed 12 Oct 2016 issues for the rails server to locate some mysql things
 # export PATH=$PATH:"$(brew --prefix mysql55)/bin"
 # export DYLD_LIBRARY_PATH="$(brew --prefix mysql55)/lib":$DYLD_LIBRARY_PATH
-
-function ci+ {
-  ticket= git rev-parse --abbrev-ref HEAD | egrep -o 'BBN-[0-9]+'
-  git commit -m "[$ticket][skip-ci] $1"
-}
 
