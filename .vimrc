@@ -66,6 +66,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-surround'
+Plugin 'ap/vim-buftabline'
+
 " Colors
 "
 Plugin 'junegunn/seoul256.vim'
