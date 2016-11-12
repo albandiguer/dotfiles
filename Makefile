@@ -74,6 +74,7 @@ links:
 	ln -sf `pwd`/.babelrc ~/.babelrc || true
 	ln -sf `pwd`/.inputrc ~/.inputrc || true
 	ln -sf `pwd`/.tern-config  ~/.tern-config || true
+	ln -sf `pwd`/.rubocop.yml  ~/.rubocop.yml || true
 
 
 
