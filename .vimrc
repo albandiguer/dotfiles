@@ -479,9 +479,7 @@ xnoremap p pgvy
 map <C-a> <esc>ggVG<CR>
 
 " use system clipboard and paste easy everywhere.
-if $TMUX == ''
-  set clipboard+=unnamed
-endif
+set clipboard^=unnamed
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline config

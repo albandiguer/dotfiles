@@ -27,6 +27,7 @@ brew-deps:
 	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew install watch || true
 	brew install wget || true
+	brew install reattach-to-user-namespace || true
 
 vim-plugins:
 	npm install eslint babel-eslint eslint-plugin-react -g
