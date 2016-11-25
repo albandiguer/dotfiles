@@ -192,7 +192,7 @@ hi StatusLine ctermbg=93 ctermfg=254
 hi StatusLine ctermbg=57 ctermfg=255
 if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
-    set guifont=Droid\ Sans\ Mono:h14
+    set guifont=Monaco:h14
     " :set fu " fullscreen
     colorscheme github
 else
