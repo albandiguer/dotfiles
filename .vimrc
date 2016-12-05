@@ -498,22 +498,29 @@ let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
+"
+" e.g. To disable all style messages:
+" let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_loc_list_height = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_w = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_enable_highlighting = 0
+
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_haml_checkers = ['haml']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_zsh_checkers = ['zsh']
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+" let g:syntastic_error_symbol = '❌'
+" let g:syntastic_style_error_symbol = '⁉️'
+" let g:syntastic_warning_symbol = '⚠️'
+" let g:syntastic_style_warning_symbol = '💩'
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
