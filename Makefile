@@ -77,5 +77,8 @@ links:
 	ln -sf `pwd`/.tern-config  ~/.tern-config || true
 	ln -sf `pwd`/.rubocop.yml  ~/.rubocop.yml || true
 
+visual-studio-conf:
+	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+	defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
 
