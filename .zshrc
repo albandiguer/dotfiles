@@ -83,6 +83,7 @@ for config_file (~/.zsh/after/*) source $config_file
 
 # Customize to your needs...
 export PATH=./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=./node_modules/.bin:$PATH
 
 # init nodenv
 eval "$(nodenv init -)"
