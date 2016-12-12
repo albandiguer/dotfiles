@@ -82,5 +82,5 @@ visual-studio-conf:
 	defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
 ruby-autocomplete:
-	gem install rcodetools fastri
+	gem install rcodetools fastri ruby-debug-ide
 
