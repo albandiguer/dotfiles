@@ -28,6 +28,7 @@ brew-deps:
 	brew install watch || true
 	brew install wget || true
 	brew install reattach-to-user-namespace || true
+	brew install selecta || true
 
 vim-plugins:
 	npm install eslint babel-eslint eslint-plugin-react -g
