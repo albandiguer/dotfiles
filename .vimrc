@@ -31,7 +31,8 @@ Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'acarapetis/vim-colors-github'
-Plugin 'benmills/vimux'
+" Plugin 'benmills/vimux'
+Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'garbas/vim-snipmate'
@@ -327,10 +328,11 @@ map <leader>gR :call ShowRoutes()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This use vimux and turbux and vim-rails
 let g:VimuxUseNearestPane = 1
-let g:no_turbux_mappings = 1 " removes the default mappings
+let g:no_turbux_mappings = 1
+let g:turbux_runner = 'tslime'
 map <leader>m <Plug>SendTestToTmux
 map <leader>M <Plug>SendFocusedTestToTmux
-" let g:turbux_command_rspec = 'rspec'
+let g:turbux_command_rspec = 'rspec'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
