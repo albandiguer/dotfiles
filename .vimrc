@@ -327,10 +327,10 @@ map <leader>gR :call ShowRoutes()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This use vimux and turbux and vim-rails
 let g:VimuxUseNearestPane = 1
-let g:no_turbux_mappings = 1
+let g:no_turbux_mappings = 1 " removes the default mappings
 map <leader>m <Plug>SendTestToTmux
 map <leader>M <Plug>SendFocusedTestToTmux
-let g:turbux_command_rspec = 'rspec --drb'
+" let g:turbux_command_rspec = 'rspec'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -488,7 +488,7 @@ xnoremap p pgvy
 map <C-a> <esc>ggVG<CR>
 
 " use system clipboard and paste easy everywhere.
-set clipboard^=unnamed
+" set clipboard^=unnamed
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline config
