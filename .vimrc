@@ -328,8 +328,8 @@ map <leader>gR :call ShowRoutes()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This use vimux and turbux and vim-rails
 let g:VimuxUseNearestPane = 1
-let g:no_turbux_mappings = 1
 let g:turbux_runner = 'tslime'
+let g:no_turbux_mappings = 1
 map <leader>m <Plug>SendTestToTmux
 map <leader>M <Plug>SendFocusedTestToTmux
 let g:turbux_command_rspec = 'rspec'
