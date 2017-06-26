@@ -42,6 +42,7 @@ vim-plugins:
 
 dns:
 	brew install dnsmasq || true
+	rm /usr/local/etc/dnsmasq.conf
 	ln -s `pwd`/dnsmasq.conf /usr/local/etc/ || true
 	sudo ln -s `pwd`/resolver /etc || true
 	sudo brew services restart dnsmasq # sudo because it needs to be in /Library/LaunchDaemons, see $brew services
