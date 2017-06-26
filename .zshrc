@@ -40,11 +40,11 @@ export EDITOR='vim'
 # ~/.oh-my-zsh/plugins/*) Custom plugins may be added to
 # ~/.oh-my-zsh/custom/plugins/
 plugins=(
+    aws
     bundler
     docker
     docker-compose
     git
-    # github
     go
     jira
     node
@@ -54,6 +54,9 @@ plugins=(
     virtualenv
     vundle
     zsh
+    yarn
+    node
+    terraform
 )
 
 # To enable shims and autocompletion add to your profile
@@ -77,12 +80,11 @@ fi
 
 export CDPATH=$CDPATH:~/dev/
 
+# Customize to your needs...
+export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Include personal files, this is not indexed by git
 for config_file (~/.zsh/after/*) source $config_file
-
-# Customize to your needs...
-export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # init nodenv
 eval "$(nodenv init -)"
@@ -159,12 +161,13 @@ alias json='python -mjson.tool'
 defaults write -g InitialKeyRepeat -int 12 # lowest via ux is 15
 defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 
-# Brew keg only symlinks
+# Bre keg only symlinks
 # e.g. sqlite
 # export PATH="$(brew --prefix sqlite)/bin:$PATH"
-# export PATH="$(brew --prefix mysql55)/bin:$PATH"
+# export PATH="$(brew --prefix mysql@5.5)/bin:$PATH"
 
 # Wed 12 Oct 2016 issues for the rails server to locate some mysql things
 # export PATH=$PATH:"$(brew --prefix mysql55)/bin"
-# export DYLD_LIBRARY_PATH="$(brew --prefix mysql55)/lib":$DYLD_LIBRARY_PATH
+# export DYLD_LIBRARY_PATH="$(brew --prefix mysql@5.5)/lib":$DYLD_LIBRARY_PATH
+# export LD_LIBRARY_PATH="$(brew --prefix mysql@5.5)/lib":$LD_LIBRARY_PATH
 

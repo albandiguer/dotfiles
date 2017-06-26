@@ -46,6 +46,12 @@ dns:
 	sudo ln -s `pwd`/resolver /etc || true
 	sudo brew services restart dnsmasq # sudo because it needs to be in /Library/LaunchDaemons, see $brew services
 
+tbb-mysql55:
+	brew install mysql@5.5 || true
+	mysql -uroot --execute="create user 'tbb'@'localhost' identified by 'password';"
+	mysql -uroot --execute="grant all on *.* TO 'tbb'@'localhost';"
+	mysql -uroot --execute="create database bb_dev"
+
 apache-conf:
 	# Inside /private/etc/apache2/httpd.conf
 	# Uncomment Include /private/etc/apache2/extra/httpd-vhosts.conf

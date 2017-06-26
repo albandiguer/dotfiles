@@ -69,6 +69,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'xolox/vim-misc'
+Plugin 'posva/vim-vue'
+
 
 " Colors
 "
@@ -198,11 +200,8 @@ if has('gui_running')
     " :set fu " fullscreen
     colorscheme github
 else
-    " colorscheme khaki
-    colorscheme grb256
-    " colorscheme hybrid
+    colorscheme swamplight
 endif
-hi ColorColumn ctermbg=233 guibg=#eeeeee
 :set nu
 " remove scroll bars and tool bar
 :set guioptions-=r
