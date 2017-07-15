@@ -30,15 +30,22 @@ brew-deps:
 	brew install reattach-to-user-namespace || true
 	brew install selecta || true
 
-vim-plugins:
-	npm install eslint babel-eslint eslint-plugin-react -g
+linters:
+	yarn global add eslint babel-eslint eslint-plugin-react -g
+
+install-vundle:
 	mkdir ~/.vim/bundle || true
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall
+
+command-t:
 	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
-	cd ~/.vim/bundle/YouCompleteMe
-	chmod -x install.py && ./install.py --clang-completer --tern-completer
-	cd ~/.vim/bundle/tern_for_vim && npm install
+
+ycm:
+	cd ~/.vim/bundle/YouCompleteMe && chmod +x install.py && ./install.py --clang-completer --tern-completer
+
+tern:
+	cd ~/.vim/bundle/tern_for_vim && yarn install
 
 dns:
 	brew install dnsmasq || true

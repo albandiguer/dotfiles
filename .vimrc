@@ -26,65 +26,69 @@ Plugin 'gmarik/Vundle.vim'
 " ruby extconf.rb
 " make
 
-" Plugin 'benmills/vimux'
-Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'ap/vim-buftabline'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ekalinin/Dockerfile.vim'
+" http://vimawesome.com/plugin/vim-addon-mw-utils
+" Used by other libs
+Plugin 'MarcWeber/vim-addon-mw-utils' " vim-snipmate dep
+Plugin 'tomtom/tlib_vim' " vim-snipmate dep
+
 Plugin 'garbas/vim-snipmate'
-Plugin 'hallison/vim-markdown'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'jgdavey/tslime.vim'
-Plugin 'jgdavey/vim-turbux'
-Plugin 'kien/ctrlp.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'skwp/greplace.vim'
-Plugin 'slim-template/vim-slim'
-Plugin 'tmhedberg/matchit'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-commentary'
+Plugin 'honza/vim-snippets'
+" Plugin 'hallison/vim-markdown'
+" Plugin 'mattn/emmet-vim' " Simplify html, ul>li*3...
+" Plugin 'mileszs/ack.vim'
+" Plugin 'tmhedberg/matchit'
+" Plugin 'xolox/vim-misc' ???
+
+" IDE
+Plugin 'ap/vim-buftabline'
+Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'Valloric/YouCompleteMe' " AutoComplete
+Plugin 'marijnh/tern_for_vim' "provides Tern-based JavaScript editing support.
+Plugin 'ntpeters/vim-better-whitespace' "Strip white spaces
+Plugin 'vim-ruby/vim-ruby' "Ruby omnicompletion
+Plugin 'tpope/vim-rails' "Extract partials etc, :Alternate, :R
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-commentary'
+Plugin 'skwp/greplace.vim' " Gsearch and Greplace
+Plugin 'majutsushi/tagbar'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
+Plugin 'kien/ctrlp.vim' " Fuzzy search
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic' " Linter
+Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
+Plugin 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
+Plugin 'jgdavey/vim-turbux' "Ruby tests
+
+" Faster typing
 Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'xolox/vim-misc'
+Plugin 'Raimondi/delimitMate' " Close parenthesis quotes etc
+" Plugin 'vim-scripts/closetag.vim' " Close html tags
+
+" Templates syntax
+" Consider https://github.com/sheerun/vim-polyglot
+Plugin 'mxw/vim-jsx'
+" Plugin 'othree/html5.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'posva/vim-vue'
 
+" JS
+Plugin 'jelera/vim-javascript-syntax'
 
 " Colors
-"
+Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'junegunn/seoul256.vim'
 Plugin 'vim-scripts/swamplight'
 Plugin 'vim-scripts/saturn.vim'
-Plugin 'vim-scripts/khaki.vim'
-Plugin 'stulzer/heroku-colorscheme'
-Plugin 'Donearm/Laederon'
-Plugin 'mtglsk/wikipedia.vim'
+Plugin 'acarapetis/vim-colors-github'
 
-let g:seoul256_background = 233
 
 call vundle#end()            " required
+
+let g:seoul256_background = 233
 filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,6 +182,8 @@ augroup END
 " added for handlebars syntax highlighting
 " see http://www.vim.org/scripts/script.php?script_id=3638
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
@@ -186,12 +192,12 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 "if exists("syntax_on")
 "  syntax reset
 "endif
+set background=dark
 syntax enable
 syntax on
 :set t_Co=256
 
 set colorcolumn=80
-hi ColorColumn ctermbg=233 guibg=#eeeeee
 hi StatusLine ctermbg=93 ctermfg=254
 hi StatusLine ctermbg=57 ctermfg=255
 if has('gui_running')
@@ -200,7 +206,7 @@ if has('gui_running')
     " :set fu " fullscreen
     colorscheme github
 else
-    colorscheme swamplight
+    colorscheme grb256
 endif
 :set nu
 " remove scroll bars and tool bar
@@ -209,7 +215,7 @@ endif
 :set guioptions-=T
 " expand width in fullscreen
 " hide tab bar
-set showtabline=0
+set showtabline=1
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
@@ -338,7 +344,6 @@ map <leader>m <Plug>SendTestToTmux
 map <leader>M <Plug>SendFocusedTestToTmux
 let g:turbux_command_rspec = 'rspec'
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Md5 COMMAND
 " Show the MD5 of the current buffer
@@ -402,18 +407,9 @@ nnoremap <leader>b :call SelectaBuffer()<cr>
 set wildignore =*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,*.pdf,*.jpeg,tmp/**,rdoc/**,spec/dummy/**,log/**,*.log,*.pdf,bin/**,*.ico
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Coffeescript vim
+" Gist config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Gist
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:github_user='albandiguer'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Prettify json
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
-
+let g:github_user='alban.diguer@gmail.com'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom Nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -462,6 +458,7 @@ let g:ctrlp_map = '<leader>f'
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
+  let g:grep_cmd_opts = '--line-numbers --noheading'
 
   " Use ag in CtrlP for listing files. Lightning fast and respects
   " .gitignore
@@ -469,6 +466,8 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  let g:ackprg = 'ag --vimgrep'
 endif"
 
 " bind K to grep word under cursor
@@ -477,13 +476,6 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ack use ag the silver searcher
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -551,11 +543,6 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_haml_checkers = ['haml']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_zsh_checkers = ['zsh']
-
-" let g:syntastic_error_symbol = '❌'
-" let g:syntastic_style_error_symbol = '⁉️'
-" let g:syntastic_warning_symbol = '⚠️'
-" let g:syntastic_style_warning_symbol = '💩'
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
