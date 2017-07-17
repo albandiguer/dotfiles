@@ -15,7 +15,7 @@ zsh:
 brew-deps:
 	brew up
 	brew install ack || true
-	brew install cmake # for compiling YCM || true
+	brew install cmake || true # for compiling YCM || true
 	brew install ctags || true
 	brew install git || true
 	brew install nodenv || true
@@ -24,12 +24,13 @@ brew-deps:
 	brew install the_silver_searcher || true
 	brew install tmux || true
 	brew install vim || true
-	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew install watch || true
 	brew install wget || true
 	brew install reattach-to-user-namespace || true
 	brew install selecta || true
 	brew install tern || true
+	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
+	brew unlink node
 
 linters:
 	yarn global add eslint babel-eslint eslint-plugin-react -g
