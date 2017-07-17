@@ -29,6 +29,7 @@ brew-deps:
 	brew install wget || true
 	brew install reattach-to-user-namespace || true
 	brew install selecta || true
+	brew install tern || true
 
 linters:
 	yarn global add eslint babel-eslint eslint-plugin-react -g
