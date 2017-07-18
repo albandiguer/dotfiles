@@ -28,11 +28,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " http://vimawesome.com/plugin/vim-addon-mw-utils
 " Used by other libs
-Plugin 'MarcWeber/vim-addon-mw-utils' " vim-snipmate dep
-Plugin 'tomtom/tlib_vim' " vim-snipmate dep
+" Plugin 'MarcWeber/vim-addon-mw-utils' " vim-snipmate dep
+" Plugin 'tomtom/tlib_vim' " vim-snipmate dep
 
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 " Plugin 'hallison/vim-markdown'
 " Plugin 'mattn/emmet-vim' " Simplify html, ul>li*3...
 " Plugin 'mileszs/ack.vim'
@@ -62,6 +60,9 @@ Plugin 'vim-syntastic/syntastic' " Linter
 Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
 Plugin 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
 Plugin 'jgdavey/vim-turbux' "Ruby tests
+Bundle 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -549,6 +550,18 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YCM ultisnips etc.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JShint config - commented, using ESLint
