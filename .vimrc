@@ -81,7 +81,7 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'jelera/vim-javascript-syntax'
 
 " Colors
-Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
+" Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'junegunn/seoul256.vim'
 Plugin 'vim-scripts/swamplight'
 Plugin 'vim-scripts/saturn.vim'
@@ -97,6 +97,8 @@ filetype plugin indent on    " required
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+set ttyfast
+set lazyredraw
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
@@ -110,6 +112,10 @@ set laststatus=2
 set showmatch
 set incsearch
 set hlsearch
+
+set ttimeout
+set ttimeoutlen=250
+set notimeout
 " make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
 " highlight current line
