@@ -75,6 +75,7 @@ Plugin 'mxw/vim-jsx'
 " Plugin 'othree/html5.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'posva/vim-vue'
+Plugin 'lambdatoast/elm.vim'
 
 " JS
 Plugin 'jelera/vim-javascript-syntax'
