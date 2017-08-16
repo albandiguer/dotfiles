@@ -34,7 +34,6 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'hallison/vim-markdown'
 " Plugin 'mattn/emmet-vim' " Simplify html, ul>li*3...
 " Plugin 'mileszs/ack.vim'
-" Plugin 'tmhedberg/matchit'
 " Plugin 'xolox/vim-misc' ???
 
 " IDE
@@ -63,6 +62,7 @@ Plugin 'jgdavey/vim-turbux' "Ruby tests
 Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tmhedberg/matchit' " Jump to end of block
 
 " Faster typing
 Plugin 'tpope/vim-surround'
