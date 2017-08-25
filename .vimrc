@@ -63,6 +63,7 @@ Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/matchit' " Jump to end of block
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -93,7 +94,6 @@ call vundle#end()            " required
 
 let g:seoul256_background = 233
 filetype plugin indent on    " required
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -597,3 +597,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " Remove trailing whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePre * StripWhitespace
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim markdown preview config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='Google Chrome'
