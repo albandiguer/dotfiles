@@ -16,14 +16,13 @@ alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 alias vi='vim .'
-alias nvi='nvim .'
 alias mvi='mvim .'
+alias o='mvi'
 alias s='screen'
 alias sr='screen -r'
 alias j='jobs'
 alias notes='vim +RecentNotes'
 alias c='clear'
-alias o='mvim'
 
 function count_inodes {
     for i in `find . -type d `; do echo `ls -a $i | wc -l` $i; done | sort -n
@@ -40,23 +39,23 @@ export EDITOR='vim'
 # ~/.oh-my-zsh/plugins/*) Custom plugins may be added to
 # ~/.oh-my-zsh/custom/plugins/
 plugins=(
-    aws
-    bundler
-    docker
-    docker-compose
-    git
-    go
-    jira
-    node
-    osx
-    postgres
-    rails
-    virtualenv
-    vundle
-    zsh
-    yarn
-    node
-    terraform
+  aws
+  bundler
+  docker
+  docker-compose
+  git
+  go
+  jira
+  node
+  osx
+  postgres
+  rails
+  virtualenv
+  vundle
+  zsh
+  yarn
+  node
+  terraform
 )
 
 # To enable shims and autocompletion add to your profile
@@ -133,11 +132,6 @@ alias se='search'
 
 function swaggy() {
   cd ~/dev/swagger-editor && npm start
-}
-
-# check who does things
-function whodidwhat() {
-  git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD |grep  "^author "|sort|uniq -c|sort -nr
 }
 
 function consuming_resources(){
