@@ -171,3 +171,10 @@ defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 # export DYLD_LIBRARY_PATH="$(brew --prefix mysql@5.5)/lib":$DYLD_LIBRARY_PATH
 # export LD_LIBRARY_PATH="$(brew --prefix mysql@5.5)/lib":$LD_LIBRARY_PATH
 
+function unmountDisk() {
+  diskutil list | selecta | awk '{print $NF}' | xargs diskutil unmountDisk
+}
+
+function mountDisk() {
+  diskutil list | selecta | awk '{print $NF}' | xargs diskutil mountDisk
+}
