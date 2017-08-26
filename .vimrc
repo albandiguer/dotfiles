@@ -64,6 +64,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/matchit' " Jump to end of block
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'Quramy/tsuquyomi' " Typescript intellisense
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -604,3 +605,8 @@ autocmd BufWritePre * StripWhitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tsuquyami config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tsuquyomi_completion_detail = 1
