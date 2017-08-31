@@ -47,15 +47,15 @@ plugins=(
   go
   jira
   node
+  npm
   osx
   postgres
   rails
+  terraform
   virtualenv
   vundle
-  zsh
   yarn
-  node
-  terraform
+  zsh
 )
 
 # To enable shims and autocompletion add to your profile
