@@ -575,27 +575,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JShint config - commented, using ESLint
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let jshint2_save = 1
-" let jshint2_min_height = 3
-" let jshint2_max_height = 8
-" " jshint validation
-" nnoremap <silent><F1> :JSHint<CR>
-" inoremap <silent><F1> <C-O>:JSHint<CR>
-" vnoremap <silent><F1> :JSHint<CR>
-
-" " show next jshint error
-" nnoremap <silent><F2> :lnext<CR>
-" inoremap <silent><F2> <C-O>:lnext<CR>
-" vnoremap <silent><F2> :lnext<CR>
-
-" " show previous jshint error
-" nnoremap <silent><F3> :lprevious<CR>
-" inoremap <silent><F3> <C-O>:lprevious<CR>
-" vnoremap <silent><F3> :lprevious<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove trailing whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePre * StripWhitespace
