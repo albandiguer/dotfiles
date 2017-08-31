@@ -549,7 +549,7 @@ let g:syntastic_check_on_w = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_enable_highlighting = 0
 
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_haml_checkers = ['haml']
