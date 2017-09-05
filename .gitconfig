@@ -36,7 +36,8 @@
     cp = cherry-pick               # grab a change from a branch
 
   # diff
-	d = difftool
+    d = difftool
+    dif = diff
     dc = diff --cached                # diff staged changes
     last = diff HEAD^                 # diff last committed change
 
