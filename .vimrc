@@ -217,7 +217,7 @@ if has('gui_running')
     set linespace=3
     colorscheme grb256
 else
-    colorscheme grb256
+    colorscheme seoul256
 endif
 :set nu
 " remove scroll bars and tool bar
@@ -510,6 +510,7 @@ map <C-m> :TagbarToggle<CR>
 nnoremap <leader>d :Dispatch<CR>
 autocmd FileType javascript let b:dispatch = 'node %'
 autocmd FileType ruby let b:dispatch = 'rspec %'
+autocmd FileType typescript let b:dispatch = 'yarn test %'
 
 " awesome paste
 xnoremap p pgvy
