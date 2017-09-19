@@ -215,7 +215,7 @@ if has('gui_running')
     set guifont=Monaco:h11
     " :set fu " fullscreen
     set linespace=3
-    colorscheme grb256
+    colorscheme hybrid
 else
     colorscheme seoul256
 endif

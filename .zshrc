@@ -51,6 +51,7 @@ plugins=(
   osx
   postgres
   rails
+  spring
   terraform
   virtualenv
   vundle
