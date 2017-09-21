@@ -57,6 +57,7 @@ plugins=(
   vundle
   yarn
   zsh
+  kubectl
 )
 
 # To enable shims and autocompletion add to your profile

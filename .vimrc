@@ -590,3 +590,9 @@ let vim_markdown_preview_browser='Google Chrome'
 " tsuquyami config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tsuquyomi_completion_detail = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Try to add Turbux for typescript
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:turbux_command_typescript='yarn test'
+

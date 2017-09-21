@@ -32,6 +32,7 @@ brew-deps:
 	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew unlink node
 	brew install grip || true # preview MD files
+  brew cask install licecap || true
 
 linters:
 	yarn global add eslint babel-eslint eslint-plugin-react -g
