@@ -33,6 +33,7 @@ brew-deps:
 	brew unlink node
 	brew install grip || true # preview MD files
   brew cask install licecap || true
+  brew cask install iterm2 || true
 
 linters:
 	yarn global add eslint babel-eslint eslint-plugin-react -g
