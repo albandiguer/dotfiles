@@ -26,12 +26,9 @@ Plugin 'gmarik/Vundle.vim'
 " ruby extconf.rb
 " make
 
-" http://vimawesome.com/plugin/vim-addon-mw-utils
-" Used by other libs
-" Plugin 'MarcWeber/vim-addon-mw-utils' " vim-snipmate dep
-" Plugin 'tomtom/tlib_vim' " vim-snipmate dep
 
-" Plugin 'hallison/vim-markdown'
+Plugin 'MarcWeber/vim-addon-manager'
+
 " Plugin 'mattn/emmet-vim' " Simplify html, ul>li*3...
 " Plugin 'mileszs/ack.vim'
 " Plugin 'xolox/vim-misc' ???
@@ -570,6 +567,11 @@ highlight link SyntasticStyleWarningSign SignColumn
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"https://github.com/honza/vim-snippets
+" assuming you want to use snipmate snippet engine
+" ActivateAddons vim-snippets snipmate
+call vam#ActivateAddons(['vim-snippets', 'snipmate'])
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
