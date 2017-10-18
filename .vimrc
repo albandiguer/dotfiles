@@ -86,6 +86,7 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'vim-scripts/swamplight'
 Plugin 'vim-scripts/saturn.vim'
 Plugin 'acarapetis/vim-colors-github'
+Plugin 'mswift42/vim-themes'
 
 
 call vundle#end()            " required
@@ -215,7 +216,7 @@ if has('gui_running')
     set linespace=3
     colorscheme hybrid
 else
-    colorscheme seoul256
+    colorscheme triplejelly
 endif
 :set nu
 " remove scroll bars and tool bar
