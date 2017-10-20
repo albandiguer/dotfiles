@@ -30,11 +30,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-manager'
 
 " Plugin 'mattn/emmet-vim' " Simplify html, ul>li*3...
-" Plugin 'mileszs/ack.vim'
 " Plugin 'xolox/vim-misc' ???
 
 " IDE
-Plugin 'ap/vim-buftabline'
+Plugin 'ap/vim-buftabline' "Display buffers up there
 Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Valloric/YouCompleteMe' " AutoComplete
@@ -50,7 +49,7 @@ Plugin 'skwp/greplace.vim' " Gsearch and Greplace
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
-Plugin 'kien/ctrlp.vim' " Fuzzy search
+" Plugin 'kien/ctrlp.vim' " Fuzzy search
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic' " Linter
 Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
@@ -61,7 +60,10 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/matchit' " Jump to end of block
 Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'Quramy/tsuquyomi' " Typescript intellisense
+Plugin 'Quramy/tsuquyomi' " Typescript intellisense support
+set rtp+=/usr/local/opt/fzf
+Plugin 'junegunn/fzf.vim' " fuzzy search
+Plugin 'mileszs/ack.vim'
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -443,21 +445,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set backupskip=/tmp/*,/private/tmp/*
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP
+" FZF config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cache ctrlp in the disk for future use
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-
-" unlet g:ctrlp_custom_ignore
-" this will be used by default seracher, not with a custom one like ag silver
-" searcher
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.capistrano$\|db$\|bin$\|node_modules$\|tmp$\|vendor$',
-    \ 'file': '\.woff$\|\.so$\|\.svg$\|\.ttf$\|\.eot$\|\.markdown$\|\.png$'
-    \ }
-
-" define the folders to ignore
-let g:ctrlp_map = '<leader>f'
+nmap ; :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>r :Tags<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ag the silver searcher
@@ -470,23 +462,15 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:grep_cmd_opts = '--line-numbers --noheading'
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects
-  " .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
   let g:ackprg = 'ag --vimgrep'
 endif"
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
+" command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+" nnoremap \ :Ag<SPACE>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set zsh as my term
@@ -519,14 +503,6 @@ map <C-a> <esc>ggVG<CR>
 " use system clipboard and paste easy everywhere.
 " set clipboard^=unnamed
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Airline config
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic config

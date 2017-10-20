@@ -87,6 +87,29 @@ export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/l
 # Include personal files, this is not indexed by git
 for config_file (~/.zsh/after/*) source $config_file
 
+# link fzf installed via Homebrew
+if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  source /usr/local/opt/fzf/shell/completion.zsh
+fi
+
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+# fzf + ag configuration
+if _has fzf && _has ag; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi
+
+
 # init nodenv
 eval "$(nodenv init -)"
 
@@ -131,10 +154,6 @@ function search() {
   ack $1 .
 }
 alias se='search'
-
-function swaggy() {
-  cd ~/dev/swagger-editor && npm start
-}
 
 function consuming_resources(){
   watch "ps aux | sort -rk 3,3 | head -n 6"

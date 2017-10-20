@@ -28,12 +28,13 @@ brew-deps:
 	brew install wget || true
 	brew install reattach-to-user-namespace || true
 	brew install selecta || true
+	brew install ag # the silver searcher
 	# brew install tern || true
 	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew unlink node
 	brew install grip || true # preview MD files
-  brew cask install licecap || true
-  brew cask install iterm2 || true
+	brew cask install licecap || true
+	brew cask install iterm2 || true
 
 linters:
 	yarn global add eslint babel-eslint eslint-plugin-react -g
@@ -51,6 +52,9 @@ ycm:
 
 tern:
 	cd ~/.vim/bundle/tern_for_vim && yarn install
+
+fzf:  # fuzzy search engine
+	brew install fzf || true
 
 dns:
 	brew install dnsmasq || true
@@ -103,4 +107,8 @@ visual-studio-conf:
 
 ruby-autocomplete:
 	gem install rcodetools fastri ruby-debug-ide
+
+fonts:
+	brew tap caskroom/fonts && brew cask install font-iosevka
+
 
