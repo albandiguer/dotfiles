@@ -49,9 +49,8 @@ Plugin 'skwp/greplace.vim' " Gsearch and Greplace
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
-" Plugin 'kien/ctrlp.vim' " Fuzzy search
+Plugin 'w0rp/ale' " Syntax checker https://vimawesome.com/plugin/ale
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic' " Linter
 Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
 Plugin 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
 Plugin 'jgdavey/vim-turbux' "Ruby tests
@@ -467,6 +466,8 @@ endif"
 
 " bind K to grep word under cursor
 " nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"
+nnoremap K :Ack! "\b<cword>\b" <CR>
 
 " bind \ (backward slash) to grep shortcut
 " command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -505,37 +506,15 @@ map <C-a> <esc>ggVG<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic config
+" ALE syntax checkers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-', 'is not recognized!', 'discarding unexpected']
+" Enable completion where available.
+let g:ale_completion_enabled = 1
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"
-" e.g. To disable all style messages:
-" let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_w = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_enable_highlighting = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_haml_checkers = ['haml']
-let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_zsh_checkers = ['zsh']
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM ultisnips etc.
