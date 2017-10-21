@@ -1,43 +1,55 @@
-# Path to your oh-my-zsh configuration.
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Utility functions
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+analyse_disk_usage() {
+  sudo du -a $1 | sort -nr | head -n 15
+}
+
+duh() {
+  du -csh
+}
+
+remove_dangling_containers() {
+  docker images -q -f='dangling=true' | xargs docker rmi -f
+}
+
+list_port_usage() {
+  sudo netstat -tulpn
+}
+
+why_lag() {
+  watch "ps aux | sort -rk 3,3 | head -n 6"
+}
+
+catjson() {
+  cat $1 | python -mjson.tool
+}
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# aliases, plugins and exports
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ZSH=$HOME/.oh-my-zsh
-export ZSH
+ZSH_THEME='muse' # PROTIP list themes: ./tools/theme_chooser.sh -s
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# list themes: ./tools/theme_chooser.sh -s
-ZSH_THEME='muse'
-
-# Unbreak broken, non-colored terminal
-# export TERM='screen-256color'
-# alias tmux="tmux -2"
-alias duh='du -csh'
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-export GREP_OPTIONS="--color"
 alias vi='vim .'
 alias mvi='mvim .'
-alias o='mvi'
-alias s='screen'
-alias sr='screen -r'
-alias j='jobs'
-alias notes='vim +RecentNotes'
 alias c='clear'
 
-function count_inodes {
-    for i in `find . -type d `; do echo `ls -a $i | wc -l` $i; done | sort -n
-}
-# Ruby related
-export RSPEC_FAIL_FAST='1'
-
-#redis restart
-alias redis-server-start='redis-server /usr/local/etc/redis.conf'
-
+export ZSH
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export GREP_OPTIONS="--color"
 export EDITOR='vim'
+export CDPATH=$CDPATH:~/dev/
+export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export BON='/Volumes/Bonjour' # usb key
+export CDPATH=$CDPATH:$BON/dev/os # fancy cd for workspaces
 
-# Which plugins would you like to load? (plugins can be found in
-# ~/.oh-my-zsh/plugins/*) Custom plugins may be added to
-# ~/.oh-my-zsh/custom/plugins/
+# list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
 plugins=(
   aws
   bundler
@@ -60,11 +72,28 @@ plugins=(
   kubectl
 )
 
-# To enable shims and autocompletion add to your profile
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 source $ZSH/oh-my-zsh.sh
+# Include personal files, this is not indexed by git
+for config_file (~/.zsh/after/*) source $config_file
 
+# Faster keyboard
+defaults write -g InitialKeyRepeat -int 11 # lowest via ux is 15
+defaults write -g KeyRepeat -int 1 # lowest via ux is  2
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# enable RBENV/NODENV shims and autocompletion
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if _has rbenv; then
+  eval "$(rbenv init -)"
+fi
+
+if _has nodenv; then
+  eval "$(nodenv init -)"
+fi
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# SSH agent loading
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Create agent/socket to hold private key
 if [ ! -d /tmp/501 ]; then
   mkdir /tmp/501
@@ -79,24 +108,15 @@ if [ -f ~/.ssh/id_rsa ]; then
   ssh-add ~/.ssh/id_rsa 2> /dev/null
 fi
 
-export CDPATH=$CDPATH:~/dev/
-
-# Customize to your needs...
-export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
-# Include personal files, this is not indexed by git
-for config_file (~/.zsh/after/*) source $config_file
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# FZF config
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 # link fzf installed via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
   source /usr/local/opt/fzf/shell/completion.zsh
 fi
-
-# Returns whether the given command is executable or aliased.
-_has() {
-  return $( whence $1 >/dev/null )
-}
 
 # fzf + ag configuration
 if _has fzf && _has ag; then
@@ -109,87 +129,8 @@ if _has fzf && _has ag; then
   '
 fi
 
-
-# init nodenv
-eval "$(nodenv init -)"
-
-# Selecta magic commands 'brew install selecta'
-p() {
-  cd $(find . -maxdepth 1 -type d | selecta)
-}
-
-# brew install pip && pip install grip if needed
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# PREVIEW README brew install pip && pip install grip if needed
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias preview_readme='grip'
 
-analyse_disk_usage() {
-    sudo du -a $1 | sort -nr | head -n 15
-}
-#
-### Added by the Heroku Toolbelt
-# export PATH="/usr/local/heroku/bin:$PATH"
-
-# USB key workspace
-export BON='/Volumes/Bonjour'
-export CDPATH=$CDPATH:$BON/dev/os
-
-# Docker stuff
-function remove_dangling_containers {
-  docker images -q -f='dangling=true' | xargs docker rmi -f
-}
-
-function list_port_usage() {
-  sudo netstat -tulpn
-}
-
-alias compose='docker-compose'
-
-
-# added by travis gem
-[ -f /Users/albandiguer/.travis/travis.sh ] && source /Users/albandiguer/.travis/travis.sh
-alias tb='travis branches'
-
-
-function search() {
-  # grep -nrI $1 .
-  ack $1 .
-}
-alias se='search'
-
-function consuming_resources(){
-  watch "ps aux | sort -rk 3,3 | head -n 6"
-}
-
-# load env for running docker machine
-function loaddockermachineenv() {
-  FIRST_RUNNING_DOCKER_MACHINE=`docker-machine ls | grep Running | awk '{ print $1 }'`
-  if [ ! -z "$FIRST_RUNNING_DOCKER_MACHINE" ]; then
-    eval "$(docker-machine env $FIRST_RUNNING_DOCKER_MACHINE)"
-  fi;
-}
-# loaddockermachineenv
-
-## fancy cat
-alias ccat='pygmentize -g'
-alias json='python -mjson.tool'
-
-# Faster keyboard
-defaults write -g InitialKeyRepeat -int 11 # lowest via ux is 15
-defaults write -g KeyRepeat -int 1 # lowest via ux is  2
-
-# Bre keg only symlinks
-# e.g. sqlite
-# export PATH="$(brew --prefix sqlite)/bin:$PATH"
-# export PATH="$(brew --prefix mysql@5.5)/bin:$PATH"
-
-# Wed 12 Oct 2016 issues for the rails server to locate some mysql things
-# export PATH=$PATH:"$(brew --prefix mysql55)/bin"
-# export DYLD_LIBRARY_PATH="$(brew --prefix mysql@5.5)/lib":$DYLD_LIBRARY_PATH
-# export LD_LIBRARY_PATH="$(brew --prefix mysql@5.5)/lib":$LD_LIBRARY_PATH
-
-function unmountDisk() {
-  diskutil list | selecta | awk '{print $NF}' | xargs diskutil unmountDisk
-}
-
-function mountDisk() {
-  diskutil list | selecta | awk '{print $NF}' | xargs diskutil mountDisk
-}
