@@ -46,7 +46,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
 Plugin 'skwp/greplace.vim' " Gsearch and Greplace
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plugin 'w0rp/ale' " Syntax checker https://vimawesome.com/plugin/ale
@@ -479,11 +478,6 @@ nnoremap K :Ack! "\b<cword>\b" <CR>
 set shell=/bin/zsh
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TagBar
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-m> :TagbarToggle<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PRY Debug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :ia pry require 'pry'; binding.pry
@@ -509,7 +503,8 @@ map <C-a> <esc>ggVG<CR>
 " ALE syntax checkers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable completion where available.
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
+let g:ale_lint_on_save = 1
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
