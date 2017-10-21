@@ -92,8 +92,8 @@ links:
 	ln -sf `pwd`/.gemrc ~/.gemrc || true
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
 	ln -sf `pwd`/.ctags ~/.ctags || true
-	ln -sf `pwd`/.jshintrc ~/.jshintrc || true
-	ln -sf `pwd`/.eslintrc ~/.eslintrc || true
+	# ln -sf `pwd`/.jshintrc ~/.jshintrc || true
+	# ln -sf `pwd`/.eslintrc ~/.eslintrc || true
 	ln -sf `pwd`/.rspec ~/.rspec || true
 	ln -sf `pwd`/.babelrc ~/.babelrc || true
 	ln -sf `pwd`/.inputrc ~/.inputrc || true

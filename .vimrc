@@ -73,6 +73,7 @@ Plugin 'vim-scripts/swamplight'
 Plugin 'vim-scripts/saturn.vim'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'mswift42/vim-themes'
+Plugin 'romainl/Apprentice'
 
 call vundle#end()            " required
 
@@ -163,21 +164,22 @@ autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 syntax on
-:set t_Co=256
+set t_Co=256
 set colorcolumn=80
 
 if has('gui_running')
-    autocmd! GUIEnter * set vb t_vb=
-    set guifont=Monaco:h11
-    set linespace=3
-    colorscheme hybrid
-    " remove scroll bars and tool bar
-    :set guioptions-=r
-    :set guioptions-=L
-    :set guioptions-=T
+  autocmd! GUIEnter * set vb t_vb=
+  set guifont=Monaco:h11
+  set linespace=3
+  colorscheme hybrid
+  " remove scroll bars and tool bar
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions-=T
 else
-    let g:seoul256_background = 233
-    colorscheme triplejelly
+  " set termguicolors
+  let g:seoul256_background = 233
+  colorscheme triplejelly
 endif
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"

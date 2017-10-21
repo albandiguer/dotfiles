@@ -35,6 +35,7 @@ catjson() {
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='muse' # PROTIP list themes: ./tools/theme_chooser.sh -s
+TERM=xterm-256color
 
 alias vi='vim .'
 alias mvi='mvim .'
@@ -48,6 +49,7 @@ export CDPATH=$CDPATH:~/dev/
 export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export BON='/Volumes/Bonjour' # usb key
 export CDPATH=$CDPATH:$BON/dev/os # fancy cd for workspaces
+export TERM
 
 # list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
 plugins=(
