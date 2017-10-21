@@ -54,17 +54,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate' " Close parenthesis quotes etc
 
-" Templates syntax
-" Consider https://github.com/sheerun/vim-polyglot
-Plugin 'mxw/vim-jsx'
-" Plugin 'othree/html5.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'posva/vim-vue'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'leafgarland/typescript-vim'
-
-" JS
-Plugin 'jelera/vim-javascript-syntax'
+" Languages packs
+Plugin 'sheerun/vim-polyglot'
 
 " Colors
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
