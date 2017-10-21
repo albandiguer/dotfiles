@@ -8,7 +8,6 @@ brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 zsh:
-	# oh my zsh
 	cd ~/dev && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	chsh -s $(which zsh)
 
@@ -27,7 +26,7 @@ brew-deps:
 	brew install watch || true
 	brew install wget || true
 	brew install reattach-to-user-namespace || true
-	brew install selecta || true
+	# brew install selecta || true
 	brew install ag # the silver searcher
 	# brew install tern || true
 	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
@@ -64,7 +63,7 @@ dns:
 	sudo brew services restart dnsmasq # sudo because it needs to be in /Library/LaunchDaemons, see $brew services
 
 tbb-mysql55:
-	brew install mysql@5.5 || true
+	brew install mysql@5.6 || true
 	mysql -uroot --execute="create user 'tbb'@'localhost' identified by 'password';"
 	mysql -uroot --execute="grant all on *.* TO 'tbb'@'localhost';"
 	mysql -uroot --execute="create database bb_dev"

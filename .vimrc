@@ -1,36 +1,24 @@
+set nocompatible
+
+" add runtime paths
+set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=/usr/local/opt/fzf
+
+set shell=/bin/zsh " set shell
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
+" initialize Vundle
 call vundle#begin()
-" alternatively, pass a path where Vundle should install bundles
-"let path = '~/some/path/here'
-"call vundle#rc(path)
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep bundle commands between here and filetype plugin indent on.
-" scripts on GitHub repos
-" Plugin 'wincent/command-t'
-" When command-t breaks because of ruby version,
-" check version in vim :ruby puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
-" rbenv shell version
-" cd ~/.vim/bundle/command-t/ruby/command-t
-" ruby extconf.rb
-" make
-
-
+" Handle addons
 Plugin 'MarcWeber/vim-addon-manager'
-
-" Plugin 'mattn/emmet-vim' " Simplify html, ul>li*3...
-" Plugin 'xolox/vim-misc' ???
 
 " IDE
 Plugin 'ap/vim-buftabline' "Display buffers up there
@@ -59,14 +47,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/matchit' " Jump to end of block
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'Quramy/tsuquyomi' " Typescript intellisense support
-set rtp+=/usr/local/opt/fzf
 Plugin 'junegunn/fzf.vim' " fuzzy search
 Plugin 'mileszs/ack.vim'
 
 " Faster typing
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate' " Close parenthesis quotes etc
-" Plugin 'vim-scripts/closetag.vim' " Close html tags
 
 " Templates syntax
 " Consider https://github.com/sheerun/vim-polyglot
@@ -88,69 +74,56 @@ Plugin 'vim-scripts/saturn.vim'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'mswift42/vim-themes'
 
-
 call vundle#end()            " required
 
-let g:seoul256_background = 233
 filetype plugin indent on    " required
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-set ttyfast
-set lazyredraw
-" allow unsaved background buffers and remember marks/undo for them
-set hidden
-" remember more commands and search history
-set history=10000
+set ttyfast " speed up redraws
+set lazyredraw " speed up redraws
+set hidden " allow unsaved background buffers and remember marks/undo for them
+set history=10000 " remember more commands and search history
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set autoindent
 set laststatus=2
-set showmatch
+set showmatch " when a bracket is inserted, briefly show the matching one
 set incsearch
 set hlsearch
-
 set ttimeout
 set ttimeoutlen=250
 set notimeout
-" make searches case-sensitive only if they contain upper-case characters
-set ignorecase smartcase
-" highlight current line
-set cmdheight=2
+set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
+set cmdheight=2 " highlight current line
 set switchbuf=useopen
-set numberwidth=5
+set numberwidth=5 " number of columns used for line number display
 set showtabline=2
 set winwidth=79
 set nocursorline
-" This makes RVM work inside Vim. I have no idea why.
-" set shell=bash
-" Prevent Vim from clobbering the scrollback buffer. See
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
-" keep more context when scrolling off the end of a buffer
-set scrolloff=3
-" Store temporary files in a central spot
-set backup
+set scrolloff=3 " keep more context when scrolling off the end of a buffer
+set backup " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/* " do not backup files for those patterns
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-" display incomplete commands
-set showcmd
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set showcmd " display incomplete commands
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 " use emacs-style tab completion when selecting files, etc
-set wildmode=longest,list
-" make tab completion for files/buffers act like bash
-set wildmenu
+set wildmode=longest,list:longest
+set wildmenu " make tab completion for files/buffers act like bash
 let mapleader=","
-" disable Ex mode
-map Q <Nop>
+map Q <Nop> " disable Ex mode
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+" set t_ti= t_te=
+set number " display number line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
@@ -173,14 +146,8 @@ augroup vimrcEx
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
   autocmd BufNewFile,BufRead *.ejs set filetype=html
 
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
-
-  " Indent p tags
-  " autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
-
-  " Don't syntax highlight markdown because it's often wrong
-  autocmd! FileType mkd setlocal syn=off
 
   " Leave the return key alone when in command line windows, since it's used
   " to run commands there.
@@ -188,60 +155,39 @@ augroup vimrcEx
   autocmd! CmdwinLeave * :call MapCR()
 augroup END
 
-" added for handlebars syntax highlighting
-" see http://www.vim.org/scripts/script.php?script_id=3638
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+autocmd BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLOR
+" THEME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"hi clear
-"if exists("syntax_on")
-"  syntax reset
-"endif
-set background=dark
 syntax enable
 syntax on
 :set t_Co=256
-
 set colorcolumn=80
-hi StatusLine ctermbg=93 ctermfg=254
-hi StatusLine ctermbg=57 ctermfg=255
+
 if has('gui_running')
     autocmd! GUIEnter * set vb t_vb=
     set guifont=Monaco:h11
-    " :set fu " fullscreen
     set linespace=3
     colorscheme hybrid
+    " remove scroll bars and tool bar
+    :set guioptions-=r
+    :set guioptions-=L
+    :set guioptions-=T
 else
+    let g:seoul256_background = 233
     colorscheme triplejelly
 endif
-:set nu
-" remove scroll bars and tool bar
-:set guioptions-=r
-:set guioptions-=L
-:set guioptions-=T
-" expand width in fullscreen
-" hide tab bar
-set showtabline=1
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" STATUS LINE POWERLINE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" :let g:Powerline_symbols = 'unicode'
-" :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-" set rtp+=/Users/adiguer/.vim/bundle/powerline/powerline/bindings/vim
-" call vam#ActivateAddons(['powerline'])
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" copy in the system clipboard
 map <leader>y "*y
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
@@ -249,21 +195,20 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 " Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space>
-" Can't be bothered to understand ESC vs <c-c> in insert mode
+imap <c-l> <space>=>
+" ESC = <c-c> in insert mode
 imap <c-c> <esc>
 " Clear the search buffer when hitting return
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
+nnoremap <cr> :nohlsearch<cr>
+" switch previous buffer
 nnoremap <leader><leader> <c-^>
-" Menu for the buffers
-nnoremap <F5> :buffers<CR>:buffer<space>
-
+" select all
+map <C-a> <esc>ggVG<CR>
+" awesome paste
+xnoremap p pgvy
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ARROW KEYS ARE UNACCEPTABLE
+" REMOVE ARROW KEYS USE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <Left> <Nop>
 map <Right> <Nop>
@@ -305,45 +250,6 @@ endfunction
 :map <leader>p :PromoteToLet<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>gr :topleft :split config/routes.rb<cr>
-function! ShowRoutes()
-  " Requires 'scratch' plugin
-  :topleft 50 :split __Routes__
-  " Make sure Vim doesn't write __Routes__ as a file
-  :set buftype=nofile
-  " Delete everything
-  :normal 1GdG
-  " Put routes output in buffer
-  :0r! rake -s routes
-  " Size window to number of lines (1 plus rake output length)
-  :exec ":normal " . line("$") . "_ "
-  " Move cursor to bottom
-  :normal 1GG
-  " Delete empty trailing line
-  :normal dd
-endfunction
-map <leader>gR :call ShowRoutes()<cr>
-" map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-" map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-" map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-" map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-" map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-" map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-" map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
-" map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
-" map <leader>gg :topleft 30 :split Gemfile<cr>
-" map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
-" map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-" map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SWITCH BETWEEN TEST AND PRODUCTION CODE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" use vim-rails from now :R :A
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This use vimux and turbux and vim-rails
@@ -353,6 +259,7 @@ let g:no_turbux_mappings = 1
 map <leader>m <Plug>SendTestToTmux
 map <leader>M <Plug>SendFocusedTestToTmux
 let g:turbux_command_rspec = 'rspec'
+let g:turbux_command_typescript='yarn test' " no good, work on it
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Md5 COMMAND
@@ -361,65 +268,16 @@ let g:turbux_command_rspec = 'rspec'
 command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line2>), '\n')) . '| md5')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OpenChangedFiles COMMAND
-" Open a split for each dirty file in git
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! OpenChangedFiles()
-  only " Close all windows, unless they're modified
-  let status = system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
-  let filenames = split(status, "\n")
-  exec "edit " . filenames[0]
-  for filename in filenames[1:]
-    exec "sp " . filename
-  endfor
-endfunction
-command! OpenChangedFiles :call OpenChangedFiles()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " InsertTime COMMAND
 " Insert the current time
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Selecta
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Run a given vim command on the results of fuzzy selecting from a given shell
-" command. See usage below.
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    " Swallow the ^C so that the redraw below happens; otherwise there
-    " will be leftovers from selecta on the screen
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
-
-" Find all files in all non-dot directories starting in the working directory.
-" Fuzzy select one of those. Open the selected file with :e.
-" nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
-"
-function! SelectaBuffer()
-  let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
-  let buffers = map(bufnrs, 'bufname(v:val)')
-  call SelectaCommand('echo "' . join(buffers, "\n") . '"', "", ":b")
-endfunction
-
-" Fuzzy select a buffer. Open the selected buffer with :b.
-nnoremap <leader>b :call SelectaBuffer()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T: ignore stuff that can't be opened, and generated files
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore =*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,*.pdf,*.jpeg,tmp/**,rdoc/**,spec/dummy/**,log/**,*.log,*.pdf,bin/**,*.ico
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gist config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:github_user='alban.diguer@gmail.com'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom Nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -429,18 +287,6 @@ map <C-b> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 " close vim if only open window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custom note
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:let g:VN_DefaultDir = "~/Documents/Notes"
-:let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Shared Notes']
-:let g:notes_tab_indents = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Edit crontab
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set backupskip=/tmp/*,/private/tmp/*
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF config
@@ -453,63 +299,38 @@ nmap <Leader>r :Tags<CR>
 " Ag the silver searcher
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " change the default engine for search
-" brew install ag
-" The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
   let g:grep_cmd_opts = '--line-numbers --noheading'
-
   let g:ackprg = 'ag --vimgrep'
 endif"
 
-" bind K to grep word under cursor
-" nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
-"
 nnoremap K :Ack! "\b<cword>\b" <CR>
 
-" bind \ (backward slash) to grep shortcut
-" command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-" nnoremap \ :Ag<SPACE>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set zsh as my term
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set shell=/bin/zsh
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PRY Debug
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:ia pry require 'pry'; binding.pry
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Dispatch things tpope/vim-dispatch
+" VIM-DISPATCH
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>d :Dispatch<CR>
 autocmd FileType javascript let b:dispatch = 'node %'
 autocmd FileType ruby let b:dispatch = 'rspec %'
 autocmd FileType typescript let b:dispatch = 'yarn test %'
 
-" awesome paste
-xnoremap p pgvy
-" select all
-map <C-a> <esc>ggVG<CR>
-
-" use system clipboard and paste easy everywhere.
-" set clipboard^=unnamed
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE syntax checkers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable completion where available.
 let g:ale_completion_enabled = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_ling_on_enter = 1 " on opening a file
 let g:ale_lint_on_save = 1
+let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM ultisnips etc.
@@ -519,7 +340,7 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
-"https://github.com/honza/vim-snippets
+" https://github.com/honza/vim-snippets
 " assuming you want to use snipmate snippet engine
 " ActivateAddons vim-snippets snipmate
 call vam#ActivateAddons(['vim-snippets', 'snipmate'])
@@ -544,9 +365,4 @@ let vim_markdown_preview_browser='Google Chrome'
 " tsuquyami config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tsuquyomi_completion_detail = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Try to add Turbux for typescript
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:turbux_command_typescript='yarn test'
 

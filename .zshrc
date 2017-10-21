@@ -1,13 +1,13 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+export ZSH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # list themes: ./tools/theme_chooser.sh -s
-ZSH_THEME='crunch'
-
+ZSH_THEME='muse'
 
 # Unbreak broken, non-colored terminal
 # export TERM='screen-256color'
@@ -173,7 +173,7 @@ alias ccat='pygmentize -g'
 alias json='python -mjson.tool'
 
 # Faster keyboard
-defaults write -g InitialKeyRepeat -int 12 # lowest via ux is 15
+defaults write -g InitialKeyRepeat -int 11 # lowest via ux is 15
 defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 
 # Bre keg only symlinks
