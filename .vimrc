@@ -59,12 +59,13 @@ Plugin 'sheerun/vim-polyglot'
 
 " Colors
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
-Plugin 'junegunn/seoul256.vim'
-Plugin 'vim-scripts/swamplight'
-Plugin 'vim-scripts/saturn.vim'
 Plugin 'acarapetis/vim-colors-github'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'mswift42/vim-themes'
 Plugin 'romainl/Apprentice'
+Plugin 'vim-scripts/saturn.vim'
+Plugin 'vim-scripts/swamplight'
 
 call vundle#end()            " required
 
@@ -155,17 +156,12 @@ autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 syntax on
-set t_Co=256
 set colorcolumn=80
-
 set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 if has('gui_running')
   autocmd! GUIEnter * set vb t_vb=
   set guifont=Monaco:h11
-  set linespace=3
   colorscheme hybrid
   " remove scroll bars and tool bar
   set guioptions-=r
@@ -174,7 +170,7 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
-  colorscheme triplejelly
+  colorscheme vividchalk
 endif
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -324,7 +320,6 @@ let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
-
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
