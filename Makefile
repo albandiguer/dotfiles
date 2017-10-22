@@ -43,9 +43,6 @@ install-vundle:
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall
 
-command-t:
-	cd ~/.vim/bundle/command-t/ruby/commant-t && ruby extconf.rb && make
-
 ycm:
 	cd ~/.vim/bundle/YouCompleteMe && chmod +x install.py && ./install.py --clang-completer --tern-completer
 
