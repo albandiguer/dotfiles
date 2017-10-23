@@ -66,6 +66,8 @@ Plugin 'mswift42/vim-themes'
 Plugin 'romainl/Apprentice'
 Plugin 'vim-scripts/saturn.vim'
 Plugin 'vim-scripts/swamplight'
+Plugin 'rakr/vim-one'
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()            " required
 
@@ -314,7 +316,7 @@ autocmd FileType typescript let b:dispatch = 'yarn test %'
 " Enable completion where available.
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_ling_on_enter = 1 " on opening a file
+let g:ale_ling_on_enter = 0 " on opening a file
 let g:ale_lint_on_save = 1
 let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
 let g:ale_sign_error = '>>'
