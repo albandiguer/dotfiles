@@ -60,6 +60,7 @@ Plugin 'sheerun/vim-polyglot'
 " Colors
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'acarapetis/vim-colors-github'
+Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'mswift42/vim-themes'
@@ -172,7 +173,8 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
-  colorscheme vividchalk
+  set background=dark
+  colorscheme gruvbox
 endif
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
