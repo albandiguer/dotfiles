@@ -1,4 +1,4 @@
-all: dev brew brew-deps dns apache-conf zsh links vim-plugins
+all: dev brew brew-deps dns apache-conf zsh tmux links vim-plugins
 
 dev:
 	cd ~ && mkdir dev || true
@@ -21,7 +21,6 @@ brew-deps:
 	brew install rbenv || true
 	brew install ruby-build || true
 	brew install the_silver_searcher || true
-	brew install tmux || true
 	brew install vim || true
 	brew install watch || true
 	brew install wget || true
@@ -34,6 +33,13 @@ brew-deps:
 	brew install grip || true # preview MD files
 	brew cask install licecap || true
 	brew cask install iterm2 || true
+
+tmux:
+	brew install tmux || true
+	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
+	mkdir -p ~/.tmux/plugins
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	# open a tmux session and type CtrlB I to install plugins
 
 linters:
 	yarn global add eslint babel-eslint eslint-plugin-react -g
@@ -87,7 +93,6 @@ links:
 	ln -sf `pwd`/.zshrc ~/.zshrc || true
 	mkdir -p ~/.zsh/after
 	ln -sf `pwd`/.gemrc ~/.gemrc || true
-	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
 	ln -sf `pwd`/.ctags ~/.ctags || true
 	# ln -sf `pwd`/.jshintrc ~/.jshintrc || true
 	# ln -sf `pwd`/.eslintrc ~/.eslintrc || true
