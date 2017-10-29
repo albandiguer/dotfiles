@@ -10,6 +10,7 @@ brew:
 zsh:
 	cd ~/dev && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	chsh -s $(which zsh)
+	ln -sf `pwd`/.zshrc ~/.zshrc || true
 
 brew-deps:
 	brew up
@@ -90,7 +91,6 @@ links:
 	ln -sf `pwd`/.pryrc ~/.pryrc || true
 	ln -sf `pwd`/.gitconfig ~/.gitconfig || true
 	ln -sf `pwd`/.gitignore ~/.gitignore || true
-	ln -sf `pwd`/.zshrc ~/.zshrc || true
 	mkdir -p ~/.zsh/after
 	ln -sf `pwd`/.gemrc ~/.gemrc || true
 	ln -sf `pwd`/.ctags ~/.ctags || true
