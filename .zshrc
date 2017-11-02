@@ -74,8 +74,10 @@ plugins=(
   docker
   docker-compose
   git
+  # git-flow
   go
   jira
+  kubectl
   node
   npm
   osx
@@ -87,7 +89,6 @@ plugins=(
   vundle
   yarn
   zsh
-  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh

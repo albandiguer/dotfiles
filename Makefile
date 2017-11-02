@@ -25,6 +25,7 @@ brew-deps:
 	brew install vim || true
 	brew install watch || true
 	brew install wget || true
+	brew install tree || true
 	brew install reattach-to-user-namespace || true
 	# brew install selecta || true
 	brew install ag # the silver searcher
