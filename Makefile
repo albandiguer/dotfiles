@@ -113,4 +113,10 @@ ruby-autocomplete:
 fonts:
 	brew tap caskroom/fonts && brew cask install font-iosevka
 
+expose-local:
+	# brew cask install ngrok
+	# ngrok http 3003
+	npm install -g localtunnel
+	lt -p 3003
+
 
