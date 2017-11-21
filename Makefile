@@ -36,6 +36,11 @@ brew-deps:
 	brew cask install licecap || true
 	brew cask install iterm2 || true
 
+aws:
+	brew install awscli | true
+	# see vault for credentials
+	aws configure
+
 tmux:
 	brew install tmux || true
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
@@ -118,5 +123,8 @@ expose-local:
 	# ngrok http 3003
 	npm install -g localtunnel
 	lt -p 3003
+
+haskell:
+	brew cask install haskell-platform || true
 
 
