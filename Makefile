@@ -35,6 +35,7 @@ brew-deps:
 	brew install grip || true # preview MD files
 	brew cask install licecap || true
 	brew cask install iterm2 || true
+	brew cask install postman
 
 aws:
 	brew install awscli | true
