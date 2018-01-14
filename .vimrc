@@ -174,7 +174,7 @@ else
   " set termguicolors
   let g:seoul256_background = 233
   set background=dark
-  colorscheme grb256
+  colorscheme anderson
 endif
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
