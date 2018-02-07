@@ -22,7 +22,7 @@ Plugin 'MarcWeber/vim-addon-manager'
 
 " IDE
 Plugin 'ap/vim-buftabline' "Display buffers up there
-Plugin 'vim-scripts/BufOnly.vim' "Close inactive buffers
+Plugin 'schickling/vim-bufonly' "Close inactive buffers
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Valloric/YouCompleteMe' " AutoComplete
 Plugin 'marijnh/tern_for_vim' "provides Tern-based JavaScript editing support.
@@ -69,6 +69,7 @@ Plugin 'vim-scripts/saturn.vim'
 Plugin 'vim-scripts/swamplight'
 Plugin 'rakr/vim-one'
 Plugin 'joshdick/onedark.vim'
+Plugin 'ciaranm/inkpot'
 
 call vundle#end()            " required
 
@@ -174,7 +175,7 @@ else
   " set termguicolors
   let g:seoul256_background = 233
   set background=dark
-  colorscheme anderson
+  colorscheme scheakur
 endif
 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -291,6 +292,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>r :Tags<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bufonly config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap ' :Bonly<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ag the silver searcher
