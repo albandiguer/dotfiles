@@ -323,19 +323,22 @@ autocmd FileType typescript let b:dispatch = 'yarn test %'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable completion where available.
 let g:ale_completion_enabled = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0 " on opening a file
-let g:ale_lint_on_save = 1
 let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
 let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_open_list=1
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_lint_delay = 0 " 300 (in ms)
+let g:ale_lint_on_enter = 0 " on opening a file
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_open_list=0
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠ '
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_linters = {
-\  'typescript': ['tslint', 'tsserver', 'typecheck']
+\  'typescript': ['tsserver', 'tslint']
 \}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -368,7 +371,14 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tsuquyami config
+" tsuquyami config - disable checks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_auto_open = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" some mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap ( :lopen<CR>
+nmap ) :lclose<CR>
 
