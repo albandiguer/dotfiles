@@ -152,8 +152,7 @@ augroup vimrcEx
   autocmd! CmdwinLeave * :call MapCR()
 augroup END
 
-autocmd BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
-autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
+" autocmd BufNewFile,BufRead *.json setlocal syntax=javascript
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " THEME
