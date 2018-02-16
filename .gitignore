@@ -47,3 +47,8 @@ node_modules/
 
 config/locales/tmp.yml
 .tags.haml-i18n-extractor
+
+# ----------------------------------------------------------------------------------------------
+# custo xterm file for italic handling
+# see .zshrc
+xterm-256color.terminfo
