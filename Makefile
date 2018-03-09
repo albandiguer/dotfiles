@@ -42,6 +42,9 @@ aws:
 	# see vault for credentials
 	aws configure
 
+awslocal:
+	pip2 install awscli-local
+
 tmux:
 	brew install tmux || true
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
