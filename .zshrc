@@ -164,3 +164,8 @@ alias preview_readme='grip'
 { infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > xterm-256color.terminfo
 # { infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > xterm-256color.terminfo
 tic xterm-256color.terminfo
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Python
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+eval "$(pyenv init -)"

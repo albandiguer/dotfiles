@@ -32,7 +32,7 @@ brew-deps:
 	# brew install tern || true
 	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew unlink node
-	brew install grip || true # preview MD files
+	brew install grip || true # preview Markdown files
 	brew cask install licecap || true
 	brew cask install iterm2 || true
 	brew cask install postman
@@ -41,6 +41,11 @@ aws:
 	brew install awscli | true
 	# see vault for credentials
 	aws configure
+
+python:
+	brew install pyenv
+	pyenv install 3.5.2
+	pyenv global 3.5.2
 
 awslocal:
 	pip2 install awscli-local
