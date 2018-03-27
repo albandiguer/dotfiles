@@ -88,6 +88,8 @@
 
   # type tolerance
   shwo = show
+	siteminder = config user.email \"alban.diguer@siteminder.com\"
+	perso = config user.email \"alban.diguer@gmail.com\"
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [merge]
