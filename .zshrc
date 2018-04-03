@@ -169,3 +169,5 @@ tic xterm-256color.terminfo
 # Python
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 eval "$(pyenv init -)"
+
+alias k='kubectl'
