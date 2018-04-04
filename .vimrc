@@ -310,6 +310,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
   let g:grep_cmd_opts = '--line-numbers --noheading'
   let g:ackprg = 'ag --vimgrep'
+  " let g:ackprg = 'ag --nogroup --nocolor --column'
 endif"
 
 nnoremap K :Ack! "\b<cword>\b" <CR>
