@@ -2,6 +2,7 @@
 .capistrano/
 bin/
 node_modules/
+coverage/
 tmp/
 vendor/
 dist/

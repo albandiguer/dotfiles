@@ -14,15 +14,28 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
+  },
+  {
+    address = "quakenet";
+    port = "0";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "yes";
   }
 );
 
-chatnets = { Freenode = { type = "IRC"; }; sorcery = { type = "IRC"; }; };
+chatnets = {
+  Freenode = { type = "IRC"; };
+  sorcery = { type = "IRC"; };
+  quakenet = { type = "IRC"; };
+};
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "#docker-fig"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#ywain"; chatnet = "sorcery"; autojoin = "yes"; }
+  { name = "#ywain"; chatnet = "sorcery"; autojoin = "yes"; },
+  { name = "#alteri"; chatnet = "sorcery"; autojoin = "yes"; },
+  { name = "#uthgard"; chatnet = "quakenet"; autojoin = "yes"; }
 );
 
 aliases = {
