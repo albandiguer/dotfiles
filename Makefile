@@ -42,13 +42,13 @@ aws:
 	# see vault for credentials
 	aws configure
 
+irc:
+	brew install irssi | true
+
 python:
 	brew install pyenv
 	pyenv install 3.5.2
 	pyenv global 3.5.2
-
-awslocal:
-	pip2 install awscli-local
 
 tmux:
 	brew install tmux || true
@@ -56,9 +56,6 @@ tmux:
 	mkdir -p ~/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	# open a tmux session and type CtrlB I to install plugins
-
-linters:
-	yarn global add eslint babel-eslint eslint-plugin-react -g
 
 install-vundle:
 	mkdir ~/.vim/bundle || true
@@ -80,12 +77,6 @@ dns:
 	ln -s `pwd`/dnsmasq.conf /usr/local/etc/ || true
 	sudo ln -s `pwd`/resolver /etc || true
 	sudo brew services restart dnsmasq # sudo because it needs to be in /Library/LaunchDaemons, see $brew services
-
-tbb-mysql55:
-	brew install mysql@5.6 || true
-	mysql -uroot --execute="create user 'tbb'@'localhost' identified by 'password';"
-	mysql -uroot --execute="grant all on *.* TO 'tbb'@'localhost';"
-	mysql -uroot --execute="create database bb_dev"
 
 apache-conf:
 	# Inside /private/etc/apache2/httpd.conf
@@ -121,9 +112,6 @@ visual-studio-conf:
 	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 	defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
-ruby-autocomplete:
-	gem install rcodetools fastri ruby-debug-ide
-
 fonts:
 	brew tap caskroom/fonts && brew cask install font-iosevka
 
@@ -132,8 +120,5 @@ expose-local:
 	# ngrok http 3003
 	npm install -g localtunnel
 	lt -p 3003
-
-haskell:
-	brew cask install haskell-platform || true
 
 

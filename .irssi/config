@@ -16,8 +16,9 @@ servers = (
     autoconnect = "yes";
   },
   {
-    address = "quakenet";
-    port = "0";
+    address = "irc.quakenet.org";
+    chatnet = "quakenet";
+    port = "6667";
     use_tls = "no";
     tls_verify = "no";
     autoconnect = "yes";
@@ -32,7 +33,7 @@ chatnets = {
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "#docker-fig"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#docker-fig"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#ywain"; chatnet = "sorcery"; autojoin = "yes"; },
   { name = "#alteri"; chatnet = "sorcery"; autojoin = "yes"; },
   { name = "#uthgard"; chatnet = "quakenet"; autojoin = "yes"; }
@@ -200,7 +201,7 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = "Lcxf"; user_name = "Lcxf"; nick = "Lcxf"; };
+  core = { real_name = "Lcx"; user_name = "Lcx"; nick = "Lcx"; };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "weed"; };
 };
