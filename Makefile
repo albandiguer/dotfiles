@@ -65,9 +65,6 @@ install-vundle:
 ycm:
 	cd ~/.vim/bundle/YouCompleteMe && chmod +x install.py && ./install.py --clang-completer --tern-completer
 
-tern:
-	cd ~/.vim/bundle/tern_for_vim && yarn install
-
 fzf:  # fuzzy search engine
 	brew install fzf || true
 
@@ -100,13 +97,9 @@ links:
 	mkdir -p ~/.zsh/after
 	ln -sf `pwd`/.gemrc ~/.gemrc || true
 	ln -sf `pwd`/.ctags ~/.ctags || true
-	# ln -sf `pwd`/.jshintrc ~/.jshintrc || true
-	# ln -sf `pwd`/.eslintrc ~/.eslintrc || true
 	ln -sf `pwd`/.rspec ~/.rspec || true
 	ln -sf `pwd`/.babelrc ~/.babelrc || true
 	ln -sf `pwd`/.inputrc ~/.inputrc || true
-	ln -sf `pwd`/.tern-config  ~/.tern-config || true
-	ln -sf `pwd`/.rubocop.yml  ~/.rubocop.yml || true
 
 visual-studio-conf:
 	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
@@ -121,4 +114,26 @@ expose-local:
 	npm install -g localtunnel
 	lt -p 3003
 
+# This is global level linting, todo: dbl check overrides work per project
+linters: eslint tslint
+	# npm i -g install-peerdeps
 
+eslint:
+	npm i -g eslint
+	npm i -g install-peerdeps
+	# -S silent
+	install-peerdeps eslint-config-airbnb -S -- -g
+	install-peerdeps eslint-config-prettier -S -- -g
+	ln -sf `pwd`/.eslintrc.json ~/.eslintrc.json
+
+# For typescript I pick this over use eslint-config-typescript as I already
+# have tslint (inc tsserver) for completion in ycm
+tslint:
+	npm i -g install-peerdeps
+	npm i -g tslint
+	install-peerdeps tslint-config-airbnb -S -- -g
+	npm i -g tslint-config-prettier
+	ln -sf `pwd`/tslint.json ~/tslint.json
+
+list-global-npm-deps:
+	npm ls -g --depth=0
