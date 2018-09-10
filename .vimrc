@@ -200,6 +200,8 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=>
+imap <c-k> <space>->
+imap <c-j> <space><-
 " ESC = <c-c> in insert mode
 imap <c-c> <esc>
 " Clear the search buffer when hitting return
