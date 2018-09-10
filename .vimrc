@@ -322,10 +322,13 @@ nnoremap K :Ack! "\b<cword>\b" <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM-DISPATCH
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>d :Dispatch!<CR>
+nnoremap <leader>d :Dispatch<CR>
+nnoremap <leader>D :Dispatch!<CR>
 autocmd FileType javascript let b:dispatch = 'node %'
 autocmd FileType ruby let b:dispatch = 'rspec %'
 autocmd FileType typescript let b:dispatch = 'npm run test %'
+" %:t:r current file without extension  (.hs)binding
+autocmd FileType haskell let b:dispatch = 'make TARGET=%:t:r'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE syntax checkers
