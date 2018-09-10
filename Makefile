@@ -137,3 +137,8 @@ tslint:
 
 list-global-npm-deps:
 	npm ls -g --depth=0
+
+haskell:
+	brew install haskell-stack
+	stack install brittany
+	stack install ghci # stack exec -- ghci

@@ -36,6 +36,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'skwp/greplace.vim' " Gsearch and Greplace
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
+Plugin 'mattn/emmet-vim' " Emmet html markup generation
 Plugin 'w0rp/ale' " Syntax checker https://vimawesome.com/plugin/ale
 Plugin 'scrooloose/nerdtree'
 Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
@@ -49,6 +50,7 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'Quramy/tsuquyomi' " Typescript intellisense support
 Plugin 'junegunn/fzf.vim' " fuzzy search
 Plugin 'mileszs/ack.vim'
+Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -352,6 +354,8 @@ let g:ale_fixers = {}
 " let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.typescript = ['prettier']
+let g:ale_fixers.haskell = ['brittany']
+" let g:ale_fixers = ['prettier', 'brittany']
 " let g:ale_fixers.html = ['prettier']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -395,3 +399,11 @@ let g:tsuquyomi_auto_open = 0
 nmap ( :lopen<CR>
 nmap ) :lclose<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Codi syntax
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:codi#interpreters = {
+    \ 'haskell': {
+      \ 'bin': ['/usr/local/bin/stack', 'exec',  '--',  'ghci', '-ignore-dot-ghci']
+    \ },
+  \ }
