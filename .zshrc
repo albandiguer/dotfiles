@@ -57,6 +57,8 @@ ZSH_THEME='muse' # PROTIP list themes: ~/.oh-my-zsh/tools/theme_chooser.sh -s
 alias vi='vim .'
 alias mvi='mvim .'
 alias c='clear'
+alias g='git'
+alias k='kubectl'
 
 export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -166,8 +168,15 @@ alias preview_readme='grip'
 tic ~/.zsh/xterm-256color.terminfo
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# Python
+# Load python env
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 eval "$(pyenv init -)"
 
-alias k='kubectl'
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Google cloud command completion
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if [ -d /usr/local/Caskroom/google-cloud-sdk ]; then
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+fi
+
