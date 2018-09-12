@@ -75,7 +75,7 @@ Plugin 'ciaranm/inkpot'
 
 call vundle#end()            " required
 
-filetype plugin indent on    " required
+filetype plugin indent on    " required, enable the ft plugin
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -175,7 +175,7 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
-  set background=dark
+  set background=light
   colorscheme scheakur
 endif
 
@@ -327,6 +327,7 @@ nnoremap <leader>D :Dispatch!<CR>
 autocmd FileType javascript let b:dispatch = 'node %'
 autocmd FileType ruby let b:dispatch = 'rspec %'
 autocmd FileType typescript let b:dispatch = 'npm run test %'
+autocmd FileType python let b:dispatch = 'python %'
 " %:t:r current file without extension  (.hs)binding
 autocmd FileType haskell let b:dispatch = 'make TARGET=%:t:r'
 
