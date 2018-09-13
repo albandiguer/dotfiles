@@ -356,11 +356,13 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_linters = {}
 let g:ale_linters.javascript = ['eslint']
 let g:ale_linters.typescript = ['tsserver', 'tslint']
+let g:ale_linters.python = ['flake8']
 let g:ale_fixers = {}
 " let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.typescript = ['prettier']
 let g:ale_fixers.haskell = ['brittany']
+let g:ale_fixers.python = ['black']
 " let g:ale_fixers = ['prettier', 'brittany']
 " let g:ale_fixers.html = ['prettier']
 

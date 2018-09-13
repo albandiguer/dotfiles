@@ -45,11 +45,6 @@ aws:
 irc:
 	brew install irssi | true
 
-python:
-	brew install pyenv
-	pyenv install 3.5.2
-	pyenv global 3.5.2
-
 tmux:
 	brew install tmux || true
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
@@ -140,5 +135,16 @@ list-global-npm-deps:
 
 haskell:
 	brew install haskell-stack
-	stack install brittany
+	stack install brittany # fixer
 	stack install ghci # stack exec -- ghci
+
+python:
+	brew install python@2 || true # python 2, could also use pyenv (pyenv install 3.xxx..)
+	pip install --upgrade pip
+	brew install pyenv
+	pyenv install 3.6.5
+	# pip install black # fixer, needs python 3.6+ : https://github.com/ambv/black
+	# pip install flake8
+	# use pyenv local command for that
+
+
