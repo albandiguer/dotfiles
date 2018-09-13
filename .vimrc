@@ -362,7 +362,7 @@ let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.typescript = ['prettier']
 let g:ale_fixers.haskell = ['brittany']
-let g:ale_fixers.python = ['black']
+let g:ale_fixers.python = ['black'] " mypy fixer would be great here
 " let g:ale_fixers = ['prettier', 'brittany']
 " let g:ale_fixers.html = ['prettier']
 
@@ -387,6 +387,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove trailing whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" could also be done via ALEFix generics, see ALEFixSuggest
 autocmd BufWritePre * StripWhitespace
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

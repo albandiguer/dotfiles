@@ -145,6 +145,7 @@ python:
 	pyenv install 3.6.5
 	# pip install black # fixer, needs python 3.6+ : https://github.com/ambv/black
 	# pip install flake8
+	# pip install mypy # add types dynamically
 	# use pyenv local command for that
 
 
