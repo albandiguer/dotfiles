@@ -58,7 +58,9 @@ install-vundle:
 	vim +PluginInstall
 
 ycm:
-	cd ~/.vim/bundle/YouCompleteMe && chmod +x install.py && ./install.py --clang-completer --tern-completer
+	# ycm use tsserver for js and ts files, see https://github.com/Valloric/YouCompleteMe
+	npm install -g typescript
+	cd ~/.vim/bundle/YouCompleteMe && chmod +x install.py && ./install.py --clang-completer
 
 fzf:  # fuzzy search engine
 	brew install fzf || true
