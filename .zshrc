@@ -64,10 +64,9 @@ export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 export EDITOR='vim'
-export CDPATH=$CDPATH:~/dev/
-export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export BON='/Volumes/Bonjour' # usb key
-export CDPATH=$CDPATH:$BON/dev/os # fancy cd for workspaces
+export CDPATH=$CDPATH:~/dev/:$BON/dev/os # fancy cd for workspaces
+export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
 plugins=(
@@ -91,6 +90,7 @@ plugins=(
   vundle
   yarn
   zsh
+  pip
 )
 
 source $ZSH/oh-my-zsh.sh

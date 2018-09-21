@@ -144,10 +144,9 @@ haskell:
 	stack install ghci # stack exec -- ghci
 
 python:
-	brew install python@2 || true # python 2, could also use pyenv (pyenv install 3.xxx..)
-	pip install --upgrade pip
 	brew install pyenv
-	pyenv install 3.6.5
+	pyenv install 3.7.0
+	pip install --upgrade pip
 	# pip install black # fixer, needs python 3.6+ : https://github.com/ambv/black
 	# pip install flake8
 	# pip install mypy # add types dynamically

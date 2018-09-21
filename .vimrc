@@ -51,6 +51,7 @@ Plugin 'Quramy/tsuquyomi' " Typescript intellisense support
 Plugin 'junegunn/fzf.vim' " fuzzy search
 Plugin 'mileszs/ack.vim'
 Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
+Plugin 'davidhalter/jedi-vim' " Python intellisense
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -140,7 +141,7 @@ augroup vimrcEx
   "for ruby, autoindent with two spaces, always expand tabs
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType make setlocal noexpandtab
-  autocmd FileType python set sw=2 sts=2 et
+  " autocmd FileType python set sw=2 sts=2 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
   autocmd BufNewFile,BufRead *.ejs set filetype=html
