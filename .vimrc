@@ -179,7 +179,7 @@ else
   " set background=light
   " colorscheme scheakur
   set background=dark
-  colorscheme gruvbox
+  colorscheme scheakur
 endif
 
 highlight Comment gui=italic
@@ -366,6 +366,7 @@ let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.typescript = ['prettier']
 let g:ale_fixers.haskell = ['brittany']
 let g:ale_fixers.python = ['black'] " mypy fixer would be great here
+let g:ale_python_black_options = '--line-length 79' " line length 88 by default
 " let g:ale_fixers = ['prettier', 'brittany']
 " let g:ale_fixers.html = ['prettier']
 
