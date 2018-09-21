@@ -111,8 +111,12 @@ expose-local:
 	lt -p 3003
 
 # This is global level linting, todo: dbl check overrides work per project
-linters: eslint tslint
+linters: prettier eslint tslint
 	# npm i -g install-peerdeps
+
+prettier:
+	npm i -g prettier
+
 
 eslint:
 	npm i -g eslint
