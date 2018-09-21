@@ -29,7 +29,6 @@ brew-deps:
 	brew install reattach-to-user-namespace || true
 	# brew install selecta || true
 	brew install ag # the silver searcher
-	# brew install tern || true
 	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
 	brew unlink node
 	brew install grip || true # preview Markdown files

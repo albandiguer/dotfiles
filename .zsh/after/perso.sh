@@ -16,3 +16,7 @@ export PATH=$PATH:"$(brew --prefix mysql56)/bin"
 # export DYLD_LIBRARY_PATH="$(brew --prefix mysql55)/lib":$DYLD_LIBRARY_PATH
 
 export HOMEBREW_GITHUB_API_TOKEN='token'
+
+weather() {
+  curl wttr.in/sydney
+}

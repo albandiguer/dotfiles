@@ -175,8 +175,10 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
-  set background=light
-  colorscheme scheakur
+  " set background=light
+  " colorscheme scheakur
+  set background=dark
+  colorscheme gruvbox
 endif
 
 highlight Comment gui=italic
