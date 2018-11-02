@@ -91,6 +91,7 @@ plugins=(
   yarn
   zsh
   pip
+  stack
 )
 
 source $ZSH/oh-my-zsh.sh

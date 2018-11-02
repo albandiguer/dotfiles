@@ -52,6 +52,7 @@ Plugin 'junegunn/fzf.vim' " fuzzy search
 Plugin 'mileszs/ack.vim'
 Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
 Plugin 'davidhalter/jedi-vim' " Python intellisense
+"TODO Plugin 'eaglemt/neco-ghc'
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -177,9 +178,12 @@ else
   " set termguicolors
   let g:seoul256_background = 233
   " set background=light
+  set background=light
   " colorscheme scheakur
-  set background=dark
-  colorscheme scheakur
+  colorscheme seoul256-light
+  " colorscheme challenger_deep
+  " colorscheme deep-space
+
 endif
 
 highlight Comment gui=italic
@@ -420,3 +424,10 @@ let g:codi#interpreters = {
       \ 'bin': ['/usr/local/bin/stack', 'exec',  '--',  'ghci', '-ignore-dot-ghci']
     \ },
   \ }
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap goto for jedi-vim as it clashes with dispatch (python files)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#goto_command = "<leader>G"
+
