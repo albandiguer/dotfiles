@@ -67,6 +67,8 @@ export EDITOR='vim'
 export BON='/Volumes/Bonjour' # usb key
 export CDPATH=$CDPATH:~/dev/:$BON/dev/os # fancy cd for workspaces
 export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# globally installed package (npm list -g --depth 0) be seen by node repl (inside repl type `module.paths`)
+export NODE_PATH=/Users/albandiguer/npm-global/lib/node_modules
 
 # list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
 plugins=(
@@ -81,6 +83,7 @@ plugins=(
   kubectl
   node
   npm
+  npx
   osx
   postgres
   rails
@@ -181,3 +184,10 @@ if [ -d /usr/local/Caskroom/google-cloud-sdk ]; then
   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 fi
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh

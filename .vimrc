@@ -177,12 +177,12 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
+  set background=dark
   " set background=light
-  set background=light
-  " colorscheme scheakur
-  colorscheme seoul256-light
+  colorscheme scheakur
+  " colorscheme seoul256-light
   " colorscheme challenger_deep
-  " colorscheme deep-space
+  colorscheme deep-space
 
 endif
 
@@ -364,6 +364,7 @@ let g:ale_linters = {}
 let g:ale_linters.javascript = ['eslint']
 let g:ale_linters.typescript = ['tsserver', 'tslint']
 let g:ale_linters.python = ['flake8']
+let g:ale_linters.sql = ['sqlint']
 let g:ale_fixers = {}
 " let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.javascript = ['prettier']
@@ -373,6 +374,7 @@ let g:ale_fixers.python = ['black'] " mypy fixer would be great here
 let g:ale_python_black_options = '--line-length 79' " line length 88 by default
 " let g:ale_fixers = ['prettier', 'brittany']
 " let g:ale_fixers.html = ['prettier']
+let g:ale_fixers.sql = ['sqlfmt'] " mypy fixer would be great here
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM ultisnips etc.

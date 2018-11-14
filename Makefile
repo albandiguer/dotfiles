@@ -135,6 +135,11 @@ tslint:
 	npm i -g tslint-config-prettier
 	ln -sf `pwd`/tslint.json ~/tslint.json
 
+# sql:
+# 	gem install sqlint
+# 	go get github.com/jackc/sqlfmt/
+
+
 list-global-npm-deps:
 	npm ls -g --depth=0
 
@@ -153,3 +158,4 @@ python:
 	# use pyenv local command for that
 
 
+.PHONY: sql
