@@ -1,4 +1,4 @@
-all: dev brew brew-deps dns apache-conf zsh tmux links vim-plugins
+all: dev brew brew-deps dns apache-conf zsh tmux links install-vundle ycm fzf fonts linters
 
 dev:
 	cd ~ && mkdir dev || true
@@ -34,10 +34,10 @@ brew-deps:
 	brew install grip || true # preview Markdown files
 	brew cask install licecap || true
 	brew cask install iterm2 || true
-	brew cask install postman
+	brew cask install postman || true
 
 aws:
-	brew install awscli | true
+	brew install awscli || true
 	# see vault for credentials
 	aws configure
 
