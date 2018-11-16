@@ -157,5 +157,8 @@ python:
 	# pip install mypy # add types dynamically
 	# use pyenv local command for that
 
+generate-ssh-key:
+	cd ~ && ssh-keygen -t rsa
+	pbcopy < ~/.ssh/id_rsa.pub
 
 .PHONY: sql tmux
