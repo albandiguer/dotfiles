@@ -28,9 +28,9 @@ brew-deps:
 	brew install tree || true
 	brew install reattach-to-user-namespace || true
 	# brew install selecta || true
-	brew install ag # the silver searcher
-	brew unlink ruby # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
-	brew unlink node
+	brew install ag || true # the silver searcher
+	brew unlink ruby || true # vim installs its own ruby dep, we unlink to avoid conflicts with rbenv
+	brew unlink node || true
 	brew install grip || true # preview Markdown files
 	brew cask install licecap || true
 	brew cask install iterm2 || true
@@ -53,12 +53,12 @@ tmux:
 
 install-vundle:
 	mkdir ~/.vim/bundle || true
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim || true
 	vim +PluginInstall
 
 ycm:
 	# ycm use tsserver for js and ts files, see https://github.com/Valloric/YouCompleteMe
-	npm install -g typescript
+	npm install -g typescript || true
 	cd ~/.vim/bundle/YouCompleteMe && chmod +x install.py && ./install.py --clang-completer
 
 fzf:  # fuzzy search engine
@@ -158,4 +158,4 @@ python:
 	# use pyenv local command for that
 
 
-.PHONY: sql
+.PHONY: sql tmux
