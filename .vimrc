@@ -182,7 +182,7 @@ else
   colorscheme scheakur
   " colorscheme seoul256-light
   " colorscheme challenger_deep
-  colorscheme deep-space
+  " colorscheme deep-space
 
 endif
 
