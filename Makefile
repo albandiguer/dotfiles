@@ -42,7 +42,7 @@ aws:
 	aws configure
 
 irc:
-	brew install irssi | true
+	brew install irssi || true
 
 tmux:
 	brew install tmux || true
