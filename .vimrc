@@ -25,7 +25,7 @@ Plugin 'ap/vim-buftabline' "Display buffers up there
 Plugin 'schickling/vim-bufonly' "Close inactive buffers
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Valloric/YouCompleteMe' " AutoComplete
-Plugin 'marijnh/tern_for_vim' "provides Tern-based JavaScript editing support.
+Plugin 'ternjs/tern_for_vim' "provides Tern-based JavaScript editing support.
 Plugin 'ntpeters/vim-better-whitespace' "Strip white spaces
 Plugin 'vim-ruby/vim-ruby' "Ruby omnicompletion
 Plugin 'tpope/vim-rails' "Extract partials etc, :Alternate, :R

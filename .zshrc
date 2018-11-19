@@ -175,6 +175,7 @@ tic ~/.zsh/xterm-256color.terminfo
 # Load python env
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 eval "$(pyenv init -)"
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Google cloud command completion
