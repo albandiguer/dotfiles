@@ -25,13 +25,13 @@ Plugin 'ap/vim-buftabline' "Display buffers up there
 Plugin 'schickling/vim-bufonly' "Close inactive buffers
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Valloric/YouCompleteMe' " AutoComplete
-Plugin 'ternjs/tern_for_vim' "provides Tern-based JavaScript editing support.
+" Plugin 'ternjs/tern_for_vim' "provides Tern-based JavaScript editing support. => g:tsuquyomi_javascript_support
 Plugin 'ntpeters/vim-better-whitespace' "Strip white spaces
 Plugin 'vim-ruby/vim-ruby' "Ruby omnicompletion
-Plugin 'tpope/vim-rails' "Extract partials etc, :Alternate, :R
+" Plugin 'tpope/vim-rails' "Extract partials etc, :Alternate, :R
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
 Plugin 'skwp/greplace.vim' " Gsearch and Greplace
 Plugin 'mattn/gist-vim'
@@ -39,10 +39,11 @@ Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plugin 'mattn/emmet-vim' " Emmet html markup generation
 Plugin 'w0rp/ale' " Syntax checker https://vimawesome.com/plugin/ale
 Plugin 'scrooloose/nerdtree'
-Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
+" Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
 Plugin 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
-Plugin 'jgdavey/vim-turbux' "Ruby tests
-Bundle 'ervandew/supertab'
+" Plugin 'jgdavey/vim-turbux' "Ruby tests
+Plugin 'janko-m/vim-test'
+Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/matchit' " Jump to end of block
@@ -179,8 +180,8 @@ else
   let g:seoul256_background = 233
   set background=dark
   " set background=light
-  colorscheme scheakur
-  " colorscheme seoul256-light
+  " colorscheme scheakur
+  colorscheme seoul256
   " colorscheme challenger_deep
   " colorscheme deep-space
 
@@ -266,13 +267,16 @@ endfunction
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This use vimux and turbux and vim-rails
-let g:VimuxUseNearestPane = 1
-let g:turbux_runner = 'tslime'
-let g:no_turbux_mappings = 1
-map <leader>m <Plug>SendTestToTmux
-map <leader>M <Plug>SendFocusedTestToTmux
-let g:turbux_command_rspec = 'rspec'
-let g:turbux_command_typescript='yarn test' " no good, work on it
+" let g:VimuxUseNearestPane = 1
+" let g:turbux_runner = 'tslime'
+" let g:no_turbux_mappings = 1
+" map <leader>m <Plug>SendTestToTmux
+" map <leader>M <Plug>SendFocusedTestToTmux
+" let g:turbux_command_rspec = 'rspec'
+" let g:turbux_command_typescript='yarn test' " no good, work on it
+let test#strategy = "dispatch"
+let test#javascript#jest#options = '--config="./jest.config.js" --runInBand'
+let test#javascript#jest#executable = 'node_modules/.bin/jest'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Md5 COMMAND
@@ -411,6 +415,7 @@ let vim_markdown_preview_browser='Google Chrome'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tsuquyomi_disable_quickfix = 1
 let g:tsuquyomi_auto_open = 0
+let g:tsuquyomi_javascript_support = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " some mappings

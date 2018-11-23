@@ -192,3 +192,6 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
+
+
+
