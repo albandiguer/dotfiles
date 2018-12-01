@@ -54,6 +54,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
 Plugin 'davidhalter/jedi-vim' " Python intellisense
 "TODO Plugin 'eaglemt/neco-ghc'
+Plugin 'heavenshell/vim-jsdoc'
 
 " Faster typing
 Plugin 'tpope/vim-surround'
