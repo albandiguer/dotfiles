@@ -182,7 +182,7 @@ else
   set background=dark
   " set background=light
   " colorscheme scheakur
-  colorscheme seoul256
+  colorscheme reykjavik
   " colorscheme challenger_deep
   " colorscheme deep-space
 
@@ -440,4 +440,3 @@ let g:codi#interpreters = {
 " Remap goto for jedi-vim as it clashes with dispatch (python files)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jedi#goto_command = "<leader>G"
-
