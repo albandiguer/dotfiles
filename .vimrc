@@ -365,21 +365,23 @@ let g:ale_set_quickfix = 0
 let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '⚠ '
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_linters = {}
-let g:ale_linters.javascript = ['eslint']
-let g:ale_linters.typescript = ['tsserver', 'tslint']
-let g:ale_linters.python = ['flake8']
-let g:ale_linters.sql = ['sqlint']
-let g:ale_fixers = {}
-" let g:ale_fixers.javascript = ['eslint']
-let g:ale_fixers.javascript = ['prettier']
-let g:ale_fixers.typescript = ['prettier']
-let g:ale_fixers.haskell = ['brittany']
-let g:ale_fixers.python = ['black'] " mypy fixer would be great here
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['tsserver', 'tslint'],
+      \ 'python': ['flake8'],
+      \ 'sql': ['sqlint']
+      \ }
+let g:ale_fixers = {
+      \ 'javascript': ['prettier'],
+      \ 'typescript': ['prettier'],
+      \ 'html': ['prettier'],
+      \ 'markdown': ['prettier'],
+      \ 'haskell': ['brittany'],
+      \ 'python': ['black'],
+      \ 'sql': ['sqlfmt'],
+      \ '*': ['remove_trailing_lines', 'trim_whitespace']
+      \ }
 let g:ale_python_black_options = '--line-length 79' " line length 88 by default
-" let g:ale_fixers = ['prettier', 'brittany']
-" let g:ale_fixers.html = ['prettier']
-let g:ale_fixers.sql = ['sqlfmt'] " mypy fixer would be great here
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM ultisnips etc.
