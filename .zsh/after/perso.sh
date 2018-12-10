@@ -2,7 +2,7 @@
 alias dm='docker-machine'
 # export vars  for docker
 dockerMachineEnvs () {
-  eval $(docker-machine env machinename)
+  eval $(docker-machine env default)
 }
 dockerMachineEnvs
 
