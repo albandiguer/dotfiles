@@ -35,6 +35,7 @@ brew-deps:
 	brew cask install licecap || true
 	brew cask install iterm2 || true
 	brew cask install postman || true
+	brew install tree || true # tree -L 2 .
 
 aws:
 	brew install awscli || true
@@ -135,6 +136,9 @@ tslint:
 	npm i -g tslint-config-prettier
 	ln -sf `pwd`/tslint.json ~/tslint.json
 
+tflint:
+	brew tap wata727/tflint
+	brew install tflint
 # sql:
 # 	gem install sqlint
 # 	go get github.com/jackc/sqlfmt/

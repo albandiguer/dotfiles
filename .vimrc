@@ -182,7 +182,7 @@ else
   set background=dark
   " set background=light
   " colorscheme scheakur
-  colorscheme reykjavik
+  colorscheme jellybeans
   " colorscheme challenger_deep
   " colorscheme deep-space
 
@@ -369,7 +369,8 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['tsserver', 'tslint'],
       \ 'python': ['flake8'],
-      \ 'sql': ['sqlint']
+      \ 'sql': ['sqlint'],
+      \ 'terraform': ['tflint']
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -379,6 +380,7 @@ let g:ale_fixers = {
       \ 'haskell': ['brittany'],
       \ 'python': ['black'],
       \ 'sql': ['sqlfmt'],
+      \ 'terraform': ['fmt'],
       \ '*': ['remove_trailing_lines', 'trim_whitespace']
       \ }
 let g:ale_python_black_options = '--line-length 79' " line length 88 by default
