@@ -59,6 +59,7 @@ alias mvi='mvim .'
 alias c='clear'
 alias g='git'
 alias k='kubectl'
+alias tf='terraform'
 
 export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -192,6 +193,3 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
-
-
-
