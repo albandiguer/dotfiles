@@ -5,11 +5,11 @@ dev:
 
 brew:
 	xcode-select --install || true
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$(shell curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 zsh:
-	cd ~/dev && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	chsh -s $(which zsh)
+	cd ~/dev && sh -c "$(shell curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	chsh -s $(shell which zsh)
 	ln -sf `pwd`/.zshrc ~/.zshrc || true
 
 brew-deps:
