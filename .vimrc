@@ -182,7 +182,8 @@ else
   set background=dark
   " set background=light
   " colorscheme scheakur
-  colorscheme jellybeans
+  " colorscheme jellybeans
+  colorscheme ayu
   " colorscheme challenger_deep
   " colorscheme deep-space
 
