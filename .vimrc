@@ -184,7 +184,7 @@ else
   " set background=light
   " colorscheme scheakur
   colorscheme jellybeans
-  colorscheme ayu
+  " colorscheme ayu
   " colorscheme deus
   " let ayucolor="mirage" " mirage/dark/light
   " colorscheme ayu
