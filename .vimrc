@@ -55,6 +55,7 @@ Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
 Plugin 'davidhalter/jedi-vim' " Python intellisense
 "TODO Plugin 'eaglemt/neco-ghc'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'Yggdroot/indentLine' " no workin
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -182,8 +183,11 @@ else
   set background=dark
   " set background=light
   " colorscheme scheakur
-  " colorscheme jellybeans
+  colorscheme jellybeans
   colorscheme ayu
+  " colorscheme deus
+  " let ayucolor="mirage" " mirage/dark/light
+  " colorscheme ayu
   " colorscheme challenger_deep
   " colorscheme deep-space
 
@@ -242,13 +246,13 @@ map <leader>v :view %%
 " RENAME CURRENT FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
 endfunction
 map <leader>n :call RenameFile()<cr>
 
@@ -415,6 +419,7 @@ autocmd BufWritePre * StripWhitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_toggle=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tsuquyami config - disable checks
