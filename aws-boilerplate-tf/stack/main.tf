@@ -1,6 +1,17 @@
-
 provider "aws" {
   region = "${var.aws_region}"
+}
+
+# Define a backend
+terraform {
+  backend "s3" {
+    encrypt        = true
+    bucket         = "aws-boilerplate-remote-tfstate-storage"
+    dynamodb_table = "aws-boilerplate-tf-state-lock"
+    region         = "ap-southeast-2"
+    key            = "aws-boilerplate.tfstate"
+    profile        = "default"
+  }
 }
 
 resource "aws_iam_user" "alban" {

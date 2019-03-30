@@ -62,8 +62,8 @@ xterm-256color.terminfo
 **/.terraform/*
 
 # .tfstate files
-*.tfstate
-*.tfstate.*
+# *.tfstate
+*.tfstate.backup
 
 # Crash log files
 crash.log
