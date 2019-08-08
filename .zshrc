@@ -73,12 +73,13 @@ export NODE_PATH=/Users/albandiguer/npm-global/lib/node_modules
 
 # list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
 plugins=(
+  # git-flow
   aws
   bundler
   docker
   docker-compose
+  docker-machine
   git
-  # git-flow
   go
   jira
   kubectl
@@ -86,16 +87,17 @@ plugins=(
   npm
   npx
   osx
+  pip
   postgres
   rails
   spring
+  stack
   terraform
-  virtualenv
+  tmux
+  # virtualenv
+  # virtualenvwrapper
   vundle
   yarn
-  zsh
-  pip
-  stack
 )
 
 source $ZSH/oh-my-zsh.sh
