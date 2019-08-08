@@ -66,6 +66,7 @@ Plugin 'sheerun/vim-polyglot'
 
 " Colors
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
+Plugin 'flazz/vim-colorschemes'
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'junegunn/seoul256.vim'
@@ -127,7 +128,9 @@ map Q <Nop> " disable Ex mode
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 " set t_ti= t_te=
-set number " display number line
+" set number " display number line
+set relativenumber
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
@@ -180,17 +183,18 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
-  set background=dark
-  " set background=light
+  " set background=dark
+  set background=light
   " colorscheme scheakur
-  colorscheme jellybeans
+  " colorscheme jellybeans
   " colorscheme ayu
   " colorscheme deus
   " let ayucolor="mirage" " mirage/dark/light
   " colorscheme ayu
   " colorscheme challenger_deep
   " colorscheme deep-space
-
+  " colorscheme minimalist
+  colorscheme greenvision
 endif
 
 highlight Comment gui=italic
@@ -351,7 +355,7 @@ autocmd FileType haskell let b:dispatch = 'make TARGET=%:t:r'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE syntax checkers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable completion where available.
+" let g:ale_completion_delay=200
 let g:ale_completion_enabled = 0
 let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
 let g:ale_echo_msg_error_str = 'E'
@@ -360,10 +364,11 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_options = '--no-semi --single-quote'
 let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_lint_delay = 0 " 300 (in ms)
+let g:ale_lint_delay = 200 " (in ms)
 let g:ale_lint_on_enter = 0 " on opening a file
 let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
 let g:ale_open_list=0
 let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
@@ -378,7 +383,7 @@ let g:ale_linters = {
       \ 'terraform': ['tflint']
       \ }
 let g:ale_fixers = {
-      \ 'javascript': ['prettier'],
+      \ 'javascript': ['eslint'],
       \ 'typescript': ['prettier'],
       \ 'html': ['prettier'],
       \ 'markdown': ['prettier'],
@@ -397,6 +402,7 @@ let g:ale_python_black_options = '--line-length 79' " line length 88 by default
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_max_num_candidates=3
 
 " https://github.com/honza/vim-snippets
 " assuming you want to use snipmate snippet engine
