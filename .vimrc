@@ -3,6 +3,7 @@ set nocompatible
 " add runtime paths
 set rtp+=~/.vim/bundle/Vundle.vim/
 set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/ag
 
 set shell=/bin/zsh " set shell
 
@@ -175,11 +176,12 @@ set termguicolors
 if has('gui_running')
   autocmd! GUIEnter * set vb t_vb=
   set guifont=Monaco:h11
-  colorscheme hybrid
+  colorscheme leya
   " remove scroll bars and tool bar
   set guioptions-=r
   set guioptions-=L
   set guioptions-=T
+  set linespace=4
 else
   " set termguicolors
   let g:seoul256_background = 233
