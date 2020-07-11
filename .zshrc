@@ -60,6 +60,7 @@ alias c='clear'
 alias g='git'
 alias k='kubectl'
 alias tf='terraform'
+alias t='tree -L 2'
 
 export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -93,7 +94,7 @@ plugins=(
   virtualenv
   vundle
   yarn
-  zsh
+  # zsh
   pip
   stack
 )
@@ -109,9 +110,9 @@ defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # enable RBENV/NODENV shims and autocompletion
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if _has rbenv; then
-  eval "$(rbenv init -)"
-fi
+# if _has rbenv; then
+eval "$(rbenv init -)"
+# fi
 
 if _has nodenv; then
   eval "$(nodenv init -)"
@@ -177,6 +178,7 @@ tic ~/.zsh/xterm-256color.terminfo
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv init -)"
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Google cloud command completion
@@ -193,3 +195,7 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/s115121/.nodenv/versions/11.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/s115121/.nodenv/versions/11.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh

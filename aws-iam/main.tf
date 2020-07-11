@@ -1,4 +1,3 @@
-
 provider "aws" {
   region = "${var.aws_region}"
 }
@@ -20,10 +19,10 @@ resource "aws_iam_user_group_membership" "alban_admin" {
 }
 
 resource "aws_iam_group_policy" "admin" {
-  name = "admin_policy"
+  name  = "admin_policy"
   group = "${aws_iam_group.administrators.id}"
 
-  policy=<<EOF
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -37,5 +36,3 @@ resource "aws_iam_group_policy" "admin" {
 }
 EOF
 }
-
-

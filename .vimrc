@@ -68,6 +68,7 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'mswift42/vim-themes'
@@ -127,7 +128,8 @@ map Q <Nop> " disable Ex mode
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 " set t_ti= t_te=
-set number " display number line
+set nu rnu " display number line
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
@@ -172,7 +174,7 @@ set termguicolors
 if has('gui_running')
   autocmd! GUIEnter * set vb t_vb=
   set guifont=Monaco:h11
-  colorscheme hybrid
+  colorscheme heliotrope
   " remove scroll bars and tool bar
   set guioptions-=r
   set guioptions-=L
@@ -180,16 +182,37 @@ if has('gui_running')
 else
   " set termguicolors
   let g:seoul256_background = 233
-  set background=dark
+  set background=light
   " set background=light
   " colorscheme scheakur
-  colorscheme jellybeans
-  colorscheme ayu
+  " colorscheme angr
+  " colorscheme space-vim-dark
+  " colorscheme pyte
+  " colorscheme PaperColor
   " colorscheme deus
-  " let ayucolor="mirage" " mirage/dark/light
-  " colorscheme ayu
   " colorscheme challenger_deep
   " colorscheme deep-space
+  " colorscheme jellybeans
+  " colorscheme materialbox
+  " colorscheme tender
+  " colorscheme apprentice
+  " colorscheme minimalist
+  " colorscheme soft-morning
+  " colorscheme mayansmoke
+  " colorscheme synic
+  colorscheme autumnleaf
+  " colorscheme metalheart
+  " colorscheme mac_classic
+  " colorscheme guepardo
+  " colorscheme fokus
+  " colorscheme sole
+  " colorscheme leya
+  " colorscheme pleasant
+  " color  mushroom
+  " color macvim-light
+
+  " let ayucolor="light" " mirage/dark/light
+  " colorscheme ayu
 
 endif
 
@@ -207,15 +230,10 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " copy in the system clipboard
 map <leader>y "*y
-" Move around splits with <c-hjkl>
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
 " Insert a hash rocket with <c-l>
-imap <c-l> <space>=>
-imap <c-k> <space>->
-imap <c-j> <space><-
+imap <C-l> <space>=>
+imap <C-k> <space>->
+imap <C-j> <space><-
 " ESC = <c-c> in insert mode
 imap <c-c> <esc>
 " Clear the search buffer when hitting return
@@ -226,6 +244,8 @@ nnoremap <leader><leader> <c-^>
 map <C-a> <esc>ggVG<CR>
 " awesome paste
 xnoremap p pgvy
+
+set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " REMOVE ARROW KEYS USE
@@ -364,7 +384,7 @@ let g:ale_lint_delay = 0 " 300 (in ms)
 let g:ale_lint_on_enter = 0 " on opening a file
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_open_list=0
+let g:ale_open_list = 0
 let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
 let g:ale_sign_error = '⨉'
@@ -378,14 +398,14 @@ let g:ale_linters = {
       \ 'terraform': ['tflint']
       \ }
 let g:ale_fixers = {
-      \ 'javascript': ['prettier'],
+      \ 'javascript': ['eslint'],
       \ 'typescript': ['prettier'],
       \ 'html': ['prettier'],
       \ 'markdown': ['prettier'],
       \ 'haskell': ['brittany'],
       \ 'python': ['black'],
       \ 'sql': ['sqlfmt'],
-      \ 'terraform': ['fmt'],
+      \ 'terraform': ['terraform'],
       \ '*': ['remove_trailing_lines', 'trim_whitespace']
       \ }
 let g:ale_python_black_options = '--line-length 79' " line length 88 by default
@@ -448,3 +468,12 @@ let g:codi#interpreters = {
 " Remap goto for jedi-vim as it clashes with dispatch (python files)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jedi#goto_command = "<leader>G"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" indentline config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:indentLine_char = '│'
+" let g:indentLine_first_char = '│'
+" let g:indentLine_showFirstIndentLevel = 1
+" let g:indentLine_setColors = 0
+" let g:indentLine_color_term = 239
