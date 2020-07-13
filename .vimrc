@@ -128,7 +128,9 @@ map Q <Nop> " disable Ex mode
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 " set t_ti= t_te=
-set nu rnu " display number line
+set number " display number line
+autocmd InsertEnter * :set relativenumber
+autocmd InsertLeave * :set norelativenumber
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
