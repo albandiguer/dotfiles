@@ -202,7 +202,8 @@ else
   " colorscheme soft-morning
   " colorscheme mayansmoke
   " colorscheme synic
-  colorscheme autumnleaf
+  " colorscheme autumnleaf
+  colorscheme lodestone
   " colorscheme metalheart
   " colorscheme mac_classic
   " colorscheme guepardo
