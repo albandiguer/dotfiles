@@ -46,6 +46,10 @@ _has_truecolor() {
   }'
 }
 
+nudge_audio_driver() {
+  alsa-info --with-aplay --with-alsactl
+}
+
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # aliases, plugins and exports
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -60,16 +64,19 @@ alias c='clear'
 alias g='git'
 alias k='kubectl'
 alias tf='terraform'
+alias stocks='mop'
 
 export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-export GREP_OPTIONS="--color"
-export EDITOR='vim'
-export BON='/Volumes/Bonjour' # usb key
-export CDPATH=$CDPATH:~/dev/:$BON/dev/os # fancy cd for workspaces
-export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# export GREP_OPTIONS="--color"
+# export EDITOR='nvim'
+# export BON='/Volumes/Bonjour' # usb key
+export NODENV_ROOT="$HOME/.nodenv"
+export CDPATH=$CDPATH:$HOME/dev/ # fancy cd for workspaces
+export PATH=$HOME/.local/bin:./node_modules/.bin:./bin:$NODENV_ROOT/bin:$HOME/dev/dotfiles/bin:$HOME/npm-global/bin:$PATH
+
 # globally installed package (npm list -g --depth 0) be seen by node repl (inside repl type `module.paths`)
-export NODE_PATH=/Users/albandiguer/npm-global/lib/node_modules
+# export NODE_PATH=/Users/albandiguer/npm-global/lib/node_modules
 
 # list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
 plugins=(
@@ -80,16 +87,14 @@ plugins=(
   docker-compose
   docker-machine
   git
-  go
+  golang
   jira
   kubectl
   node
   npm
   npx
-  osx
   pip
   postgres
-  rails
   spring
   stack
   terraform
@@ -177,8 +182,24 @@ tic ~/.zsh/xterm-256color.terminfo
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Load python env
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
-eval "$(pyenv init -)"
+# export PYTHON_CONFIGURE_OPTS="--enable-framework"
+# eval "$(pyenv init -)"
+# export PYTHON="/usr/bin/python3"
+# export NODE_GYP_FORCE_PYTHON=
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH" # pyenv in the path
+
+if _has pyenv; then
+  eval "$(pyenv init -)"
+fi
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Golang env
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+export GOROOT="/usr/local/go" # go itself
+export GOPATH="$HOME/go" # go packages
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Google cloud command completion
@@ -195,3 +216,8 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
+
+# start tmux on login
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi

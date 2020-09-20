@@ -8,9 +8,12 @@ brew:
 	/usr/bin/ruby -e "$(shell curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 zsh:
-	cd ~/dev && sh -c "$(shell curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	chsh -s $(shell which zsh)
+	sudo apt install zsh
 	ln -sf `pwd`/.zshrc ~/.zshrc || true
+	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	mkdir -p ~/.zsh/after
+	# INSTALL oh-my-zsh
+	# https://github.com/ohmyzsh/ohmyzsh
 
 brew-deps:
 	brew up
@@ -46,16 +49,14 @@ irc:
 	brew install irssi || true
 
 tmux:
-	brew install tmux || true
 	ln -sf `pwd`/.tmux.conf ~/.tmux.conf || true
 	mkdir -p ~/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	# open a tmux session and type CtrlB I to install plugins
 
-install-vundle:
-	mkdir ~/.vim/bundle || true
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim || true
-	vim +PluginInstall
+vim-plug:
+	 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 ycm:
 	# ycm use tsserver for js and ts files, see https://github.com/Valloric/YouCompleteMe
@@ -82,21 +83,10 @@ apache-conf:
 	sudo apachectl restart
 
 links:
-	ln -sf `pwd`/.ackrc ~/.ackrc || true
-	ln -sf `pwd`/.aprc ~/.aprc || true
-	ln -sf `pwd`/.editrc ~/.editrc || true
-	ln -sf `pwd`/.gemrc ~/.gemrc || true
-	ln -sf `pwd`/.vimrc ~/.vimrc || true
-	ln -sf `pwd`/.vim ~/.vim || true
-	ln -sf `pwd`/.pryrc ~/.pryrc || true
+	ln -sf `pwd`/.config/nvim ~/.config/nvim || true
 	ln -sf `pwd`/.gitconfig ~/.gitconfig || true
 	ln -sf `pwd`/.gitignore ~/.gitignore || true
-	mkdir -p ~/.zsh/after
-	ln -sf `pwd`/.gemrc ~/.gemrc || true
-	ln -sf `pwd`/.ctags ~/.ctags || true
-	ln -sf `pwd`/.rspec ~/.rspec || true
-	ln -sf `pwd`/.babelrc ~/.babelrc || true
-	ln -sf `pwd`/.inputrc ~/.inputrc || true
+	ln -sf `pwd`/.gitmodules ~/.gitmodules || true
 
 visual-studio-conf:
 	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
@@ -153,9 +143,9 @@ haskell:
 	stack install ghci # stack exec -- ghci
 
 python:
-	brew install pyenv
-	pyenv install 3.7.0
-	pip install --upgrade pip
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+	# pyenv install 3.7.0
+	# pip install --upgrade pip
 	# pip install black # fixer, needs python 3.6+ : https://github.com/ambv/black
 	# pip install flake8
 	# pip install mypy # add types dynamically
@@ -164,5 +154,9 @@ python:
 generate-ssh-key:
 	cd ~ && ssh-keygen -t rsa
 	pbcopy < ~/.ssh/id_rsa.pub
+
+missing-snap-programs-icons-in-start-menu:
+	sudo cp /var/lib/snapd/desktop/applications/*.desktop /usr/share/applications/
+
 
 .PHONY: sql tmux

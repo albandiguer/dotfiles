@@ -2,8 +2,8 @@ set nocompatible
 
 " add runtime paths
 set rtp+=~/.vim/bundle/Vundle.vim/
-set rtp+=/usr/local/opt/fzf
-set rtp+=/usr/local/opt/ag
+set rtp+=/usr/bin/fzf
+set rtp+=/usr/bin/ag
 
 set shell=/bin/zsh " set shell
 
@@ -13,7 +13,8 @@ set shell=/bin/zsh " set shell
 filetype off                  " required
 
 " initialize Vundle
-call vundle#begin()
+" call vundle#begin()
+call plug#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -25,25 +26,25 @@ Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'ap/vim-buftabline' "Display buffers up there
 Plugin 'schickling/vim-bufonly' "Close inactive buffers
 Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'Valloric/YouCompleteMe' " AutoComplete
+" Plugin 'Valloric/YouCompleteMe' " AutoComplete
 " Plugin 'ternjs/tern_for_vim' "provides Tern-based JavaScript editing support. => g:tsuquyomi_javascript_support
 Plugin 'ntpeters/vim-better-whitespace' "Strip white spaces
-Plugin 'vim-ruby/vim-ruby' "Ruby omnicompletion
+" Plugin 'vim-ruby/vim-ruby' "Ruby omnicompletion
 " Plugin 'tpope/vim-rails' "Extract partials etc, :Alternate, :R
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 " Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
-Plugin 'skwp/greplace.vim' " Gsearch and Greplace
+" Plugin 'skwp/greplace.vim' " Gsearch and Greplace
 Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
-Plugin 'mattn/emmet-vim' " Emmet html markup generation
+" Plugin 'mattn/webapi-vim' " Auth in vim, used by gist-vim
+" Plugin 'mattn/emmet-vim' " Emmet html markup generation
 Plugin 'w0rp/ale' " Syntax checker https://vimawesome.com/plugin/ale
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 " Plugin 'jgdavey/tslime.vim' "send portion of text from a vim buffer to a running tmux session
 Plugin 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
 " Plugin 'jgdavey/vim-turbux' "Ruby tests
-Plugin 'janko-m/vim-test'
+" Plugin 'janko-m/vim-test'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -52,11 +53,11 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'Quramy/tsuquyomi' " Typescript intellisense support
 Plugin 'junegunn/fzf.vim' " fuzzy search
 Plugin 'mileszs/ack.vim'
-Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
-Plugin 'davidhalter/jedi-vim' " Python intellisense
+" Plugin 'metakirby5/codi.vim' " scratchpad, evaluates and print result
+" Plugin 'davidhalter/jedi-vim' " Python intellisense
 "TODO Plugin 'eaglemt/neco-ghc'
 Plugin 'heavenshell/vim-jsdoc'
-Plugin 'Yggdroot/indentLine' " no workin
+" Plugin 'Yggdroot/indentLine' " no workin
 
 " Faster typing
 Plugin 'tpope/vim-surround'
@@ -67,20 +68,21 @@ Plugin 'sheerun/vim-polyglot'
 
 " Colors
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
-Plugin 'flazz/vim-colorschemes'
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'mswift42/vim-themes'
-Plugin 'romainl/Apprentice'
-Plugin 'vim-scripts/saturn.vim'
-Plugin 'vim-scripts/swamplight'
-Plugin 'rakr/vim-one'
-Plugin 'joshdick/onedark.vim'
-Plugin 'ciaranm/inkpot'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'acarapetis/vim-colors-github'
+" Plugin 'rafi/awesome-vim-colorschemes'
+" Plugin 'junegunn/seoul256.vim'
+" Plugin 'morhetz/gruvbox'
+" Plugin 'mswift42/vim-themes'
+" Plugin 'romainl/Apprentice'
+" Plugin 'vim-scripts/saturn.vim'
+" Plugin 'vim-scripts/swamplight'
+" Plugin 'rakr/vim-one'
+" Plugin 'joshdick/onedark.vim'
+" Plugin 'ciaranm/inkpot'
 
-call vundle#end()            " required
+" Initialize plugin system
+call plug#end()
 
 filetype plugin indent on    " required, enable the ft plugin
 
@@ -184,9 +186,9 @@ if has('gui_running')
   set linespace=4
 else
   " set termguicolors
-  let g:seoul256_background = 233
+  " let g:seoul256_background = 233
   " set background=dark
-  set background=light
+  " set background=light
   " colorscheme scheakur
   " colorscheme jellybeans
   " colorscheme ayu
@@ -196,7 +198,7 @@ else
   " colorscheme challenger_deep
   " colorscheme deep-space
   " colorscheme minimalist
-  colorscheme greenvision
+  " colorscheme greenvision
 endif
 
 highlight Comment gui=italic
