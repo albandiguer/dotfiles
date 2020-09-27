@@ -67,13 +67,15 @@ Plug 'junegunn/fzf.vim' " fuzzy search
 Plug 'schickling/vim-bufonly' "Close inactive buffers
 Plug 'mileszs/ack.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'heavenshell/vim-jsdoc'
+Plug 'heavenshell/vim-jsdoc', { 'do': 'make install', 'for': ['javascript', 'typescript', 'javascript.jsx']}
 Plug 'tmhedberg/matchit' " Jump to end of block
-Plug 'Quramy/tsuquyomi' " Typescript intellisense support
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'scrooloose/nerdtree'
+Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plug 'mattn/gist-vim'
 
+" Autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -235,3 +237,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " VIM MARKDOWN PREVIEW
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let vim_markdown_preview_github=1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COMPLETION CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
