@@ -50,6 +50,11 @@ nudge_audio_driver() {
   alsa-info --with-aplay --with-alsactl
 }
 
+yah()  {
+  chromium "https://finance.yahoo.com/quote/$1"
+}
+
+
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # aliases, plugins and exports
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
