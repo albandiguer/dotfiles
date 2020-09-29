@@ -4,6 +4,7 @@ set nocompatible
 syntax enable
 filetype plugin on
 
+
 " Search down into subfolders
 " Provides tab-completion for all file-related
 set path+=**
@@ -73,6 +74,9 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plug 'mattn/gist-vim'
+
+
+Plug 'lodestone/lodestone.vim' " colorscheme
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -248,3 +252,9 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme lodestone
