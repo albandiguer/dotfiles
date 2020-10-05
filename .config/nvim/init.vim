@@ -17,7 +17,7 @@ let g:netrw_banner=0
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " copy in the system clipboard
-map <leader>y "*y
+map <leader>y "+y
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=>
 " Move around splits with <c-hjkl>
@@ -257,4 +257,4 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorscheme lodestone
+colorscheme lodestone
