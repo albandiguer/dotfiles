@@ -17,7 +17,7 @@ let g:netrw_banner=0
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " copy in the system clipboard
-map <leader>y "+y
+map <leader>y "*y
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=>
 " Move around splits with <c-hjkl>
@@ -39,6 +39,9 @@ xnoremap p pgvy
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+nmap ( :lopen<CR>
+nmap ) :lclose<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " REMOVE ARROW KEYS USE
