@@ -54,8 +54,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='muse' # PROTIP list themes: ~/.oh-my-zsh/tools/theme_chooser.sh -s
 # ZSH_THEME='crunch' # PROTIP list themes: ~/.oh-my-zsh/tools/theme_chooser.sh -s
 
-alias vi='vim .'
-alias mvi='mvim .'
+alias vi='nvim .'
 alias c='clear'
 alias g='git'
 alias k='kubectl'
