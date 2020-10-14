@@ -52,10 +52,9 @@ tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	# open a tmux session and type CtrlB I to install plugins
 
-install-vundle:
-	mkdir ~/.vim/bundle || true
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim || true
-	vim +PluginInstall
+vim-plug:
+	 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 ycm:
 	# ycm use tsserver for js and ts files, see https://github.com/Valloric/YouCompleteMe
@@ -82,21 +81,10 @@ apache-conf:
 	sudo apachectl restart
 
 links:
-	ln -sf `pwd`/.ackrc ~/.ackrc || true
-	ln -sf `pwd`/.aprc ~/.aprc || true
-	ln -sf `pwd`/.editrc ~/.editrc || true
-	ln -sf `pwd`/.gemrc ~/.gemrc || true
-	ln -sf `pwd`/.vimrc ~/.vimrc || true
-	ln -sf `pwd`/.vim ~/.vim || true
-	ln -sf `pwd`/.pryrc ~/.pryrc || true
+	ln -sf `pwd`/.config/nvim ~/.config/nvim || true
 	ln -sf `pwd`/.gitconfig ~/.gitconfig || true
 	ln -sf `pwd`/.gitignore ~/.gitignore || true
-	mkdir -p ~/.zsh/after
-	ln -sf `pwd`/.gemrc ~/.gemrc || true
-	ln -sf `pwd`/.ctags ~/.ctags || true
-	ln -sf `pwd`/.rspec ~/.rspec || true
-	ln -sf `pwd`/.babelrc ~/.babelrc || true
-	ln -sf `pwd`/.inputrc ~/.inputrc || true
+	ln -sf `pwd`/.gitmodules ~/.gitmodules || true
 
 visual-studio-conf:
 	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
