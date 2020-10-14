@@ -77,6 +77,8 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plug 'mattn/gist-vim'
+Plug 'goerz/jupytext.vim' " Edit jupyter notebooks
+
 
 
 Plug 'lodestone/lodestone.vim' " colorscheme
