@@ -80,7 +80,7 @@ plugins=(
   docker-compose
   docker-machine
   git
-  go
+  golang
   jira
   kubectl
   node

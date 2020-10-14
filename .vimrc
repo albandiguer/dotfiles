@@ -67,18 +67,25 @@ Plugin 'sheerun/vim-polyglot'
 
 " Colors
 " Plugin 'KevinGoodsell/vim-csexact' "Gvim colorschemes
-Plugin 'flazz/vim-colorschemes'
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'mswift42/vim-themes'
-Plugin 'romainl/Apprentice'
-Plugin 'vim-scripts/saturn.vim'
-Plugin 'vim-scripts/swamplight'
-Plugin 'rakr/vim-one'
-Plugin 'joshdick/onedark.vim'
-Plugin 'ciaranm/inkpot'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'acarapetis/vim-colors-github'
+" Plugin 'rafi/awesome-vim-colorschemes'
+" Plugin 'junegunn/seoul256.vim'
+" Plugin 'morhetz/gruvbox'
+" Plugin 'mswift42/vim-themes'
+" Plugin 'romainl/Apprentice'
+" Plugin 'vim-scripts/saturn.vim'
+" Plugin 'vim-scripts/swamplight'
+" Plugin 'rakr/vim-one'
+" Plugin 'joshdick/onedark.vim'
+" Plugin 'ciaranm/inkpot'
+Plugin 'victorze/foo'
+Plugin 'kjssad/quantum.vim'
+Plugin 'kyledoherty/espresso-colors-vim'
+Plugin 'vim-scripts/Heliotrope'
+Plugin 'vim-scripts/pacific.vim'
+
+" Plugin 'evanram/mandevilla'
 
 call vundle#end()            " required
 
@@ -129,8 +136,8 @@ map Q <Nop> " disable Ex mode
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 " set t_ti= t_te=
-" set number " display number line
-set relativenumber
+set number " display number line
+" set relativenumber
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,28 +183,17 @@ set termguicolors
 if has('gui_running')
   autocmd! GUIEnter * set vb t_vb=
   set guifont=Monaco:h11
-  colorscheme leya
   " remove scroll bars and tool bar
   set guioptions-=r
   set guioptions-=L
   set guioptions-=T
   set linespace=4
 else
-  " set termguicolors
   let g:seoul256_background = 233
-  " set background=dark
-  set background=light
-  " colorscheme scheakur
-  " colorscheme jellybeans
-  " colorscheme ayu
-  " colorscheme deus
-  " let ayucolor="mirage" " mirage/dark/light
-  " colorscheme ayu
-  " colorscheme challenger_deep
-  " colorscheme deep-space
-  " colorscheme minimalist
-  colorscheme greenvision
 endif
+
+set background=light
+colorscheme foo-abyss
 
 highlight Comment gui=italic
 highlight Comment cterm=italic
