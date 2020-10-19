@@ -17,7 +17,7 @@ let g:netrw_banner=0
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " copy in the system clipboard
-map <leader>y "*y
+map <leader>y "+y
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=>
 " Move around splits with <c-hjkl>
@@ -78,8 +78,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plug 'mattn/gist-vim'
 
+Plug 'lodestone/lodestone.vim'
 
-Plug 'lodestone/lodestone.vim' " colorscheme
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -260,4 +260,4 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorscheme lodestone
+colorscheme lodestone
