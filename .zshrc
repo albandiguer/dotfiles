@@ -46,6 +46,10 @@ _has_truecolor() {
   }'
 }
 
+yah() {
+  open "https://finance.yahoo.com/quote/$1"
+}
+
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # aliases, plugins and exports
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -60,6 +64,7 @@ alias c='clear'
 alias g='git'
 alias k='kubectl'
 alias tf='terraform'
+alias stocks='mop'
 
 export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -89,7 +94,6 @@ plugins=(
   osx
   pip
   postgres
-  rails
   spring
   stack
   terraform
@@ -195,3 +199,10 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Golang env
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# export GOROOT="/usr/local/bin/go" # go itself
+export GOPATH="$HOME/go" # go packages
+export PATH="$PATH:$GOPATH/bin"
