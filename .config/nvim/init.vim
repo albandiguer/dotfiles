@@ -77,9 +77,9 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plug 'mattn/gist-vim'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " not sure if rely on ALE or COC to integrate prettier
 
 Plug 'lodestone/lodestone.vim'
-
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
