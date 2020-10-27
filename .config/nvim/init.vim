@@ -1,6 +1,9 @@
 " vim not vi
 set nocompatible
 
+"
+set colorcolumn=80
+
 syntax enable
 filetype plugin on
 
@@ -60,7 +63,7 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace' "Strip white spaces
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'w0rp/ale' " Syntax checker https://vimawesome.com/plugin/ale
+Plug 'dense-analysis/ale' " Syntax checker https://vimawesome.com/plugin/ale
 Plug 'christoomey/vim-tmux-navigator' "navigate seamlessly between vim and tmux
 Plug 'Raimondi/delimitMate' " Close parenthesis quotes etc
 Plug 'tpope/vim-commentary'
@@ -77,7 +80,6 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/webapi-vim' " Auth in vim, used by gist-vim
 Plug 'mattn/gist-vim'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " not sure if rely on ALE or COC to integrate prettier
 
 Plug 'lodestone/lodestone.vim'
 
