@@ -86,6 +86,9 @@ Plug 'lodestone/lodestone.vim'
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Automatically clear search highlight
+Plug 'junegunn/vim-slash'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

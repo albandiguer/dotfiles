@@ -206,3 +206,12 @@ fi
 # export GOROOT="/usr/local/bin/go" # go itself
 export GOPATH="$HOME/go" # go packages
 export PATH="$PATH:$GOPATH/bin"
+
+
+work() {
+  docker run -ti --rm \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -v $(which docker):$(which docker) \
+          -v $(pwd):/home/albandiguer/workspace \
+          albandiguer/nvim:latest
+}
