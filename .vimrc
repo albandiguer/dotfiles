@@ -203,7 +203,8 @@ else
   " colorscheme mayansmoke
   " colorscheme synic
   " colorscheme autumnleaf
-  colorscheme lodestone
+  " colorscheme lodestone
+  " colorscheme mellow
   " colorscheme metalheart
   " colorscheme mac_classic
   " colorscheme guepardo
@@ -213,6 +214,8 @@ else
   " colorscheme pleasant
   " color  mushroom
   " color macvim-light
+  " color grb256
+  color coffee
 
   " let ayucolor="light" " mirage/dark/light
   " colorscheme ayu
@@ -480,3 +483,5 @@ let g:jedi#goto_command = "<leader>G"
 " let g:indentLine_showFirstIndentLevel = 1
 " let g:indentLine_setColors = 0
 " let g:indentLine_color_term = 239
+" copy in the system clipboard
+map <leader>y "*y

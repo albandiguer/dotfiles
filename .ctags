@@ -8,7 +8,6 @@
 --exclude=*.mkd
 --exclude=*.min.js
 --exclude=*-min.js
---exclude=node_modules
+--exclude=*node_modules*
 --exclude=*.bxslider.js
 --exclude=*/bower_components/*
-

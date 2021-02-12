@@ -26,25 +26,6 @@ why_lag() {
   watch "ps aux | sort -rk 3,3 | head -n 6"
 }
 
-catjson() {
-  cat $1 | python -mjson.tool
-}
-
-_has_truecolor() {
-  awk 'BEGIN{
-    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s s s s s s s s s s s s s s s s;
-    for (colnum = 0; colnum<256; colnum++) {
-        r = 255-(colnum*255/255);
-        g = (colnum*510/255);
-        b = (colnum*255/255);
-        if (g>255) g = 510-g;
-        printf "\033[48;2;%d;%d;%dm", r,g,b;
-        printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
-        printf "%s\033[0m", substr(s,colnum+1,1);
-    }
-    printf "\n";
-  }'
-}
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # aliases, plugins and exports
@@ -66,42 +47,42 @@ export ZSH
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 export EDITOR='vim'
-export BON='/Volumes/Bonjour' # usb key
+# export BON='/Volumes/Bonjour' # usb key
 export CDPATH=$CDPATH:~/dev/:$BON/dev/os # fancy cd for workspaces
-export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH:~/.virtualenvs/awscli/bin
 # globally installed package (npm list -g --depth 0) be seen by node repl (inside repl type `module.paths`)
 export NODE_PATH=/Users/albandiguer/npm-global/lib/node_modules
 
 # list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
-plugins=(
-  aws
-  bundler
-  docker
-  docker-compose
-  git
-  # git-flow
-  go
-  jira
-  kubectl
-  node
-  npm
-  npx
-  osx
-  postgres
-  rails
-  spring
-  terraform
-  virtualenv
-  vundle
-  yarn
-  # zsh
-  pip
-  stack
-)
+# plugins=(
+#   aws
+#   bundler
+#   docker
+#   docker-compose
+#   git
+#   # git-flow
+#   go
+#   jira
+#   kubectl
+#   node
+#   npm
+#   npx
+#   osx
+#   postgres
+#   rails
+#   spring
+#   terraform
+#   virtualenv
+#   vundle
+#   yarn
+#   # zsh
+#   pip
+#   stack
+# )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 # Include personal files, this is not indexed by git
-for config_file (~/.zsh/after/*) source $config_file
+# for config_file (~/.zsh/after/*); do source $config_file; done
 
 # Faster keyboard
 defaults write -g InitialKeyRepeat -int 11 # lowest via ux is 15
@@ -111,12 +92,12 @@ defaults write -g KeyRepeat -int 1 # lowest via ux is  2
 # enable RBENV/NODENV shims and autocompletion
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # if _has rbenv; then
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 # fi
 
-if _has nodenv; then
-  eval "$(nodenv init -)"
-fi
+# if _has nodenv; then
+#   eval "$(nodenv init -)"
+# fi
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # SSH agent loading
@@ -140,26 +121,26 @@ fi
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 # link fzf installed via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
-fi
+# if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+#   source /usr/local/opt/fzf/shell/key-bindings.zsh
+#   source /usr/local/opt/fzf/shell/completion.zsh
+# fi
 
 # fzf + ag configuration
-if _has fzf && _has ag; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-  '
-fi
+# if _has fzf && _has ag; then
+#   export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+#   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+#   export FZF_DEFAULT_OPTS='
+#   --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+#   --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+#   '
+# fi
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # PREVIEW README brew install pip && pip install grip if needed
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias preview_readme='grip'
+# alias preview_readme='grip'
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # change tab description for zshell
@@ -169,33 +150,71 @@ alias preview_readme='grip'
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Add italic support
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-{ infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > ~/.zsh/xterm-256color.terminfo
+# { infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > ~/.zsh/xterm-256color.terminfo
 # { infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > xterm-256color.terminfo
-tic ~/.zsh/xterm-256color.terminfo
+# tic ~/.zsh/xterm-256color.terminfo
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Load python env
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
-eval "$(pyenv init -)"
+# export PYTHON_CONFIGURE_OPTS="--enable-framework"
+# eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv init -)"
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Google cloud command completion
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if [ -d /usr/local/Caskroom/google-cloud-sdk ]; then
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-fi
+# if [ -d /usr/local/Caskroom/google-cloud-sdk ]; then
+#   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+#   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# fi
 
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh
+# [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
+# [[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
 
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/s115121/.nodenv/versions/11.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/s115121/.nodenv/versions/11.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+# [[ -f /Users/s115121/.nodenv/versions/11.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/s115121/.nodenv/versions/11.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+
+
+
+
+do-oven-dev () {
+  docker run -it --rm -e PASS=${PASS} -e USER=${USER} -e http_proxy=${PROXY} -e https_proxy=${PROXY} -e no_proxy=127.0.0.1,localhost,.auiag.corp,.iag.com.au -e HTTP_PROXY=${PROXY} -e HTTPS_PROXY=${PROXY} -v ${HOME}/dev/oven.cfg:/app/oven.cfg -v ${HOME}/dev/cred-files:/cred-files swrepos.auiag.corp/cloud-foundations/oven:latest -c /app/oven.cfg -u ${USER} -p ${PASS} -o /cred-files/dev
+}
+
+# https://gist.github.com/albandiguer/53cae4d6e5d59721d4e1d34dc56e5505
+defaults write org.macosforge.xquartz.X11.plist nolisten_tcp 0
+export DISPLAY=`HOSTNAME`:0
+xhost `hostname` > /dev/null # host allowed to connect to x server
+# TODO in xquartz, enable Update pasteboard immediately when new text is selected
+# Run a work container, mount targeted directory
+# TODO add another parameter to know the kind of language used - node, web, haskell...
+# default to albandiguer/nvim:latest
+code() {
+  case $2 in
+    js)
+      IMAGE=albandiguer/nodejs-dev:erbium
+      ;;
+    *)
+      IMAGE=albandiguer/nvim:latest
+      ;;
+  esac
+
+  docker run -ti --rm \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -v $(which docker):$(which docker) \
+          -v $(pwd)/$1:/home/albandiguer/$1 \
+          -v ~/.ssh:/home/albandiguer/.ssh \
+          -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
+          -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+          -v /tmp/tmux-resurrect:/tmp/tmux-resurrect \
+          -e DISPLAY=$DISPLAY \
+          -v /tmp/.X11-unix:/tmp/.X11-unix \
+          $IMAGE
+}
