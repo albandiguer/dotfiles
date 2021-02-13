@@ -1,3 +1,4 @@
+PS1='%m %2d $ '
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Utility functions
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,22 +87,42 @@ code() {
       IMAGE=albandiguer/nodejs-dev:erbium
       ;;
     *)
-      IMAGE=albandiguer/nvim:latest
+      #IMAGE=albandiguer/ubuntu-dev-base:latest
+      IMAGE=fixsocket:latest
       ;;
   esac
 
+  # https://github.com/nardeas/ssh-agent
+  docker run --rm --volumes-from=ssh-agent -v ~/.ssh:/.ssh -it docker-ssh-agent:latest ssh-add /root/.ssh/id_rsa
+  # When old macbook pro is phased out we can just directly mount the ssh agent like that
+	# -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+	# -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+	# at the moment we have 
+	# --volumes-from=ssh-agent \
+	# -e SSH_AUTH_SOCK=/.ssh-agent/socket \
+
+  # Could also do a uname -r based solution (old mbp = 15.6.0)
+
+
+  # IO: docker cli, current dir, ssh access, tmux res, copypaste
   docker run -ti --rm \
+	  --privileged \
           -v /var/run/docker.sock:/var/run/docker.sock \
           -v $(which docker):$(which docker) \
           -v $(pwd)/$1:/home/albandiguer/$1 \
-          -v ~/.ssh:/home/albandiguer/.ssh \
-          -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
-          -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+	  -v ~/.ssh:/home/albandiguer/.ssh \
+	  --volumes-from=ssh-agent \
+	  -e SSH_AUTH_SOCK=/.ssh-agent/socket \
           -v /tmp/tmux-resurrect:/tmp/tmux-resurrect \
           -e DISPLAY=$DISPLAY \
           -v /tmp/.X11-unix:/tmp/.X11-unix \
           $IMAGE
+
+
+
+
 }
+
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # FZF config
@@ -156,4 +177,7 @@ fi
 
 
 # TODO add function for aws cli
-#
+
+
+# Load docker config
+eval $(docker-machine env default)
