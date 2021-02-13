@@ -88,7 +88,7 @@ code() {
       ;;
     *)
       #IMAGE=albandiguer/ubuntu-dev-base:latest
-      IMAGE=fixsocket:latest
+      IMAGE=albandiguer/nvim:latest
       ;;
   esac
 
