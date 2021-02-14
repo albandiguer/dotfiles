@@ -111,8 +111,10 @@ code() {
       ;;
   esac
 
+  # OLD MB shenanigans - DISABLED ATM -
   # Run agent if not up
   # https://github.com/nardeas/ssh-agent
+  : '
   if [[ -z $(docker ps | grep nardeas) ]] then
 	echo "starting nardeas/ssh-agent";
 	docker run -d \
@@ -121,16 +123,17 @@ code() {
   else 
 	echo "nardeas/ssh-agent is already started";
   fi
+  '
 
   # Add keys to agent
+  : '
   docker run --rm \
 	  --volumes-from=ssh-agent \
 	  -v ~/.ssh:/.ssh \
 	  -it nardeas/ssh-agent ssh-add /root/.ssh/id_rsa
-  
+  '
 
-
-  # When old macbook pro is phased out we can just directly mount the ssh agent like that
+  # When old macbook pro is out we can just directly mount the ssh agent like that
 	# -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
 	# -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
 	# -v ~/.ssh:/home/albandiguer/.ssh \
@@ -144,11 +147,12 @@ code() {
   # IO: docker cli, current dir, ssh access, tmux res, copypaste
   docker run -ti --rm \
 	  --privileged \
-          -v /var/run/docker.sock:/var/run/docker.sock \
+	  -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+	  -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+	  -v ~/.ssh:/home/albandiguer/.ssh \
+	  -v /var/run/docker.sock:/var/run/docker.sock \
           -v $(which docker):$(which docker) \
           -v $(pwd)/$1:/home/albandiguer/$1 \
-	  --volumes-from=ssh-agent \
-	  -e SSH_AUTH_SOCK=/.ssh-agent/socket \
           -v /tmp/tmux-resurrect:/tmp/tmux-resurrect \
           -e DISPLAY=$DISPLAY \
           -v /tmp/.X11-unix:/tmp/.X11-unix \
