@@ -11,6 +11,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
 	git
 	docker
+	aws
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -160,7 +161,7 @@ code() {
 
 }
 
-alias aws='docker run --rm -ti -v ~/.aws:/root/.aws amazon/aws-cli'
+# alias aws='docker run --rm -ti -v ~/.aws:/root/.aws amazon/aws-cli'
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # FZF config

@@ -14,6 +14,7 @@ brew-deps:
 	brew up
 	brew install ack || true
 	brew install git || true
+	brew install awscli || true
 	brew install neovim || true
 	brew install wget || true
 	brew install tree || true
