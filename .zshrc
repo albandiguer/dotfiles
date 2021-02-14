@@ -103,7 +103,7 @@ xhost `hostname` > /dev/null # host allowed to connect to x serverx26
 code() {
   case $2 in
     js)
-      IMAGE=albandiguer/nodejs-dev:erbium
+      IMAGE=albandiguer/nodejs-dev:current
       ;;
     *)
       #IMAGE=albandiguer/ubuntu-dev-base:latest
