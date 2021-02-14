@@ -1,6 +1,7 @@
 symlinks:
 	ln -sf `pwd`/.zshrc ~/.zshrc || true
 	ln -sf `pwd`/.inputrc ~/.inputrc || true
+	ln -sf `pwd`/.gitconfig ~/.gitconfig || true
 
 nvim:
 	brew install neovim
