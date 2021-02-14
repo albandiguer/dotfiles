@@ -1,6 +1,6 @@
 # From ohmyzsh
 # Path to your oh-my-zsh installation.
-export ZSH="/Volumes/addup/albandiguer/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -214,4 +214,6 @@ fi
 
 
 # Load docker config
-eval $(docker-machine env default)
+if _has docker-machine; then
+	eval $(docker-machine env default)
+fi;
