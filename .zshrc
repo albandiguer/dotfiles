@@ -1,4 +1,20 @@
-PS1='%m %2d $ '
+# From ohmyzsh
+# Path to your oh-my-zsh installation.
+export ZSH="/Volumes/addup/albandiguer/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+plugins=(
+	git
+	docker
+)
+
+source $ZSH/oh-my-zsh.sh
+
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Utility functions
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,6 +63,7 @@ _has_truecolor() {
   }'
 }
 
+
 yah() {
   open "https://finance.yahoo.com/quote/$1"
 }
@@ -69,6 +86,8 @@ alias vi='nvim .'
 alias vim="nvim"
 alias c='clear'
 alias g='git'
+alias gst='git status'
+
 export EDITOR='vim'
 export CDPATH=$CDPATH:~/dev/
 
@@ -92,11 +111,29 @@ code() {
       ;;
   esac
 
+  # Run agent if not up
   # https://github.com/nardeas/ssh-agent
-  docker run --rm --volumes-from=ssh-agent -v ~/.ssh:/.ssh -it docker-ssh-agent:latest ssh-add /root/.ssh/id_rsa
+  if [[ -z $(docker ps | grep nardeas) ]] then
+	echo "starting nardeas/ssh-agent";
+	docker run -d \
+		--name=ssh-agent\
+		nardeas/ssh-agent
+  else 
+	echo "nardeas/ssh-agent is already started";
+  fi
+
+  # Add keys to agent
+  docker run --rm \
+	  --volumes-from=ssh-agent \
+	  -v ~/.ssh:/.ssh \
+	  -it nardeas/ssh-agent ssh-add /root/.ssh/id_rsa
+  
+
+
   # When old macbook pro is phased out we can just directly mount the ssh agent like that
 	# -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
 	# -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+	# -v ~/.ssh:/home/albandiguer/.ssh \
 	# at the moment we have 
 	# --volumes-from=ssh-agent \
 	# -e SSH_AUTH_SOCK=/.ssh-agent/socket \
@@ -110,7 +147,6 @@ code() {
           -v /var/run/docker.sock:/var/run/docker.sock \
           -v $(which docker):$(which docker) \
           -v $(pwd)/$1:/home/albandiguer/$1 \
-	  -v ~/.ssh:/home/albandiguer/.ssh \
 	  --volumes-from=ssh-agent \
 	  -e SSH_AUTH_SOCK=/.ssh-agent/socket \
           -v /tmp/tmux-resurrect:/tmp/tmux-resurrect \
@@ -118,25 +154,19 @@ code() {
           -v /tmp/.X11-unix:/tmp/.X11-unix \
           $IMAGE
 
-
-
-
 }
-
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # FZF config
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # fzf + ag configuration
-if _has fzf && _has ag; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-  '
-fi
+# if _has fzf && _has ag; then
+#  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+#  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+#  export FZF_DEFAULT_OPTS='
+#  '
+#fi
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Faster keyboard
