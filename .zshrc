@@ -9,9 +9,11 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(
-	git
-	docker
 	aws
+	brew
+	docker
+	docker-machine
+	git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -88,6 +90,7 @@ alias vim="nvim"
 alias c='clear'
 alias g='git'
 alias gst='git status'
+alias dm='docker-machine'
 
 export EDITOR='vim'
 export CDPATH=$CDPATH:~/dev/
