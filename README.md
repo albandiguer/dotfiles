@@ -1,10 +1,12 @@
-# Alban's Dotfiles
+# Dotfiles
 
-## Setup a machine
+
+## Docker
+
+for containerized dev environments, use
 
 ```
-    make all
+    code <directory> <lang>
 ```
 
-- add start_tmux_session.sh to the command to launch into iTerm2 preferences
-- create your personal zsh (one per project ?) config files into ~/.zsh/after/
+

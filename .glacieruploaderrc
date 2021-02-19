@@ -1,3 +1,0 @@
-credentials=~/.aws.properties
-endpoint=https://glacier.ap-southeast-2.amazonaws.com
-vault=sxe

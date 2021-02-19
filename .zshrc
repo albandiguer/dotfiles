@@ -1,3 +1,23 @@
+# From ohmyzsh
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+plugins=(
+	aws
+	brew
+	docker
+	docker-machine
+	git
+)
+
+source $ZSH/oh-my-zsh.sh
+
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Utility functions
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -46,77 +66,136 @@ _has_truecolor() {
   }'
 }
 
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# aliases, plugins and exports
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-ZSH=$HOME/.oh-my-zsh
-# ZSH_THEME='josh' # PROTIP list themes: ~/.oh-my-zsh/tools/theme_chooser.sh -s
-ZSH_THEME='muse' # PROTIP list themes: ~/.oh-my-zsh/tools/theme_chooser.sh -s
-# ZSH_THEME='crunch' # PROTIP list themes: ~/.oh-my-zsh/tools/theme_chooser.sh -s
 
-alias vi='vim .'
-alias mvi='mvim .'
+yah() {
+  open "https://finance.yahoo.com/quote/$1"
+}
+
+
+listGlobalNpmPackages() {
+	npm ls -g --depth=0
+}
+
+generateSSHKey() {
+	cd ~ && ssh-keygen -t rsa
+	pbcopy < ~/.ssh/id_rsa.pub
+}
+
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# Some config
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias vi='nvim .'
+alias vim="nvim"
 alias c='clear'
 alias g='git'
-alias k='kubectl'
-alias tf='terraform'
+alias gst='git status'
+alias dm='docker-machine'
 
-export ZSH
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-export GREP_OPTIONS="--color"
 export EDITOR='vim'
-export BON='/Volumes/Bonjour' # usb key
-export CDPATH=$CDPATH:~/dev/:$BON/dev/os # fancy cd for workspaces
-export PATH=./node_modules/.bin:./bin:~/dev/dotfiles/bin:~/npm-global/bin:/usr/local/bin:/usr/local/sbin:$PATH
-# globally installed package (npm list -g --depth 0) be seen by node repl (inside repl type `module.paths`)
-export NODE_PATH=/Users/albandiguer/npm-global/lib/node_modules
+export CDPATH=$CDPATH:~/dev/
 
-# list of oh-my-zsh plugins : ~/.oh-my-zsh/plugins/*
-plugins=(
-  # git-flow
-  aws
-  bundler
-  docker
-  docker-compose
-  docker-machine
-  git
-  go
-  jira
-  kubectl
-  node
-  npm
-  npx
-  osx
-  pip
-  postgres
-  rails
-  spring
-  stack
-  terraform
-  tmux
-  # virtualenv
-  # virtualenvwrapper
-  vundle
-  yarn
-)
 
-source $ZSH/oh-my-zsh.sh
-# Include personal files, this is not indexed by git
-for config_file (~/.zsh/after/*) source $config_file
+# https://gist.github.com/albandiguer/53cae4d6e5d59721d4e1d34dc56e5505
+defaults write org.macosforge.xquartz.X11.plist nolisten_tcp 0
+export DISPLAY=`HOSTNAME`:0
+xhost `hostname` > /dev/null # host allowed to connect to x serverx26
+# TODO in xquartz, enable Update pasteboard immediately when new text is selected
+# Run a work container, mount targeted directory
+# TODO add another parameter to know the kind of language used - node, web, haskell...
+# default to albandiguer/nvim:latest
+code() {
+  case $2 in
+    js)
+      IMAGE=albandiguer/nodejs-dev:current
+      ;;
+    *)
+      #IMAGE=albandiguer/ubuntu-dev-base:latest
+      IMAGE=albandiguer/nvim:latest
+      ;;
+  esac
 
+  # OLD MB shenanigans - DISABLED ATM -
+  # Run agent if not up
+  # https://github.com/nardeas/ssh-agent
+  : '
+  if [[ -z $(docker ps | grep nardeas) ]] then
+	echo "starting nardeas/ssh-agent";
+	docker run -d \
+		--name=ssh-agent\
+		nardeas/ssh-agent
+  else 
+	echo "nardeas/ssh-agent is already started";
+  fi
+  '
+
+  # Add keys to agent
+  : '
+  docker run --rm \
+	  --volumes-from=ssh-agent \
+	  -v ~/.ssh:/.ssh \
+	  -it nardeas/ssh-agent ssh-add /root/.ssh/id_rsa
+  '
+
+  # When old macbook pro is out we can just directly mount the ssh agent like that
+	# -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+	# -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+	# -v ~/.ssh:/home/albandiguer/.ssh \
+	# at the moment we have 
+	# --volumes-from=ssh-agent \
+	# -e SSH_AUTH_SOCK=/.ssh-agent/socket \
+
+  # Could also do a uname -r based solution (old mbp = 15.6.0)
+
+
+  # IO: docker cli, current dir, ssh access, tmux res, copypaste
+  docker run -ti --rm \
+	  --privileged \
+	  -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+	  -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+	  -v ~/.ssh:/home/albandiguer/.ssh \
+	  -v /var/run/docker.sock:/var/run/docker.sock \
+          -v $(which docker):$(which docker) \
+          -v $(pwd)/$1:/home/albandiguer/$1 \
+          -v /tmp/tmux-resurrect:/tmp/tmux-resurrect \
+          -e DISPLAY=$DISPLAY \
+          -v /tmp/.X11-unix:/tmp/.X11-unix \
+          $IMAGE
+
+}
+
+# alias aws='docker run --rm -ti -v ~/.aws:/root/.aws amazon/aws-cli'
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# FZF config
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# fzf + ag configuration
+# if _has fzf && _has ag; then
+#  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+#  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+#  export FZF_DEFAULT_OPTS='
+#  '
+#fi
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Faster keyboard
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 defaults write -g InitialKeyRepeat -int 11 # lowest via ux is 15
 defaults write -g KeyRepeat -int 1 # lowest via ux is  2
+# https://gist.github.com/albandiguer/53cae4d6e5d59721d4e1d34dc56e5505
+defaults write org.macosforge.xquartz.X11.plist nolisten_tcp 0
+export DISPLAY=`HOSTNAME`:0
+xhost `hostname` > /dev/null # host allowed to connect to x serverx26
+# TODO in xquartz, enable Update pasteboard immediately when new text is selected
+# Run a work container, mount targeted directory
+# TODO add another parameter to know the kind of language used - node, web, haskell...
+# default to albandiguer/nvim:latest
 
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# enable RBENV/NODENV shims and autocompletion
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if _has rbenv; then
-  eval "$(rbenv init -)"
-fi
-
-if _has nodenv; then
-  eval "$(nodenv init -)"
+# link fzf installed via Homebrew
+if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  source /usr/local/opt/fzf/shell/completion.zsh
 fi
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,62 +215,11 @@ if [ -f ~/.ssh/id_rsa ]; then
   ssh-add ~/.ssh/id_rsa 2> /dev/null
 fi
 
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# FZF config
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-# link fzf installed via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
-fi
-
-# fzf + ag configuration
-if _has fzf && _has ag; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-  '
-fi
-
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# PREVIEW README brew install pip && pip install grip if needed
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias preview_readme='grip'
-
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# change tab description for zshell
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# TODO add function for aws cli
 
 
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# Add italic support
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-{ infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > ~/.zsh/xterm-256color.terminfo
-# { infocmp -1 xterm-256color ; echo -e "\tsitm=\\E[3m,\n\tritm=\\E[23m,"; } > xterm-256color.terminfo
-tic ~/.zsh/xterm-256color.terminfo
-
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# Load python env
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
-eval "$(pyenv init -)"
-
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# Google cloud command completion
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if [ -d /usr/local/Caskroom/google-cloud-sdk ]; then
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-fi
-
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/albandiguer/dev/haskell-playground/s3playground/node_modules/tabtab/.completions/sls.zsh
+# Load docker config
+if _has docker-machine; then
+	eval $(docker-machine env default)
+fi;
