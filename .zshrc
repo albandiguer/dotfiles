@@ -157,9 +157,9 @@ code() {
 	  -v /var/run/docker.sock:/var/run/docker.sock \
           -v $(which docker):$(which docker) \
           -v $(pwd)/$1:/home/albandiguer/$1 \
-          -v /tmp/tmux-resurrect:/tmp/tmux-resurrect \
           -e DISPLAY=$DISPLAY \
           -v /tmp/.X11-unix:/tmp/.X11-unix \
+	  -v ~/.tmux/resurrect:/tmp/tmux-resurrect \
           $IMAGE
 
 }
