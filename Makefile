@@ -10,6 +10,7 @@ brew:
 	xcode-select --install || true
 	/usr/bin/ruby -e "$(shell curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# XXX consider Nix pkg as a rep
 brew-deps:
 	brew up
 	brew install ack || true

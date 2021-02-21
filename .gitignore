@@ -89,3 +89,6 @@ override.tf.json
 # Dont commit plugins
 .config/nvim/plugged/
 # ----------------------------------------------------------------------------------------------
+#
+#
+.zcompdump*
