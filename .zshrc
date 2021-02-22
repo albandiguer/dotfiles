@@ -81,6 +81,9 @@ generateSSHKey() {
 	pbcopy < ~/.ssh/id_rsa.pub
 }
 
+youtube-to-mp3() {
+	docker run --rm -i -e PGID=$(id -g) -e PUID=$(id -u) -v "$(pwd)":/workdir:rw mikenye/youtube-dl  https://www.youtube.com/watch\?v\=$1 --extract-audio --audio-format mp3
+}
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Some config
