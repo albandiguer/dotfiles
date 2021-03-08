@@ -110,8 +110,11 @@ xhost `hostname` > /dev/null # host allowed to connect to x serverx26
 code() {
   case $2 in
     js)
-      IMAGE=albandiguer/nodejs-dev:current
+      IMAGE=albandiguer/nodejs-dev:latest
       ;;
+    tf)
+	IMAGE=albandiguer/terraform-dev:latest
+	;;
     *)
       #IMAGE=albandiguer/ubuntu-dev-base:latest
       IMAGE=albandiguer/nvim:latest
