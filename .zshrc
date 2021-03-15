@@ -108,7 +108,7 @@ xhost `hostname` > /dev/null # host allowed to connect to x serverx26
 # TODO add another parameter to know the kind of language used - node, web, haskell...
 # default to albandiguer/nvim:latest
 code() {
-  case $2 in
+  case $1 in
     js)
       IMAGE=albandiguer/nodejs-dev:latest
       ;;
@@ -117,7 +117,7 @@ code() {
 	;;
     *)
       #IMAGE=albandiguer/ubuntu-dev-base:latest
-      IMAGE=albandiguer/nvim:latest
+      IMAGE=albandiguer/nodejs-dev:latest
       ;;
   esac
 
@@ -154,6 +154,8 @@ code() {
   # Could also do a uname -r based solution (old mbp = 15.6.0)
 
 
+  folder=`basename $(pwd)`
+
   # IO: docker cli, current dir, ssh access, tmux res, copypaste
   docker run -ti --rm \
 	  --privileged \
@@ -162,7 +164,7 @@ code() {
 	  -v ~/.ssh:/home/albandiguer/.ssh \
 	  -v /var/run/docker.sock:/var/run/docker.sock \
           -v $(which docker):$(which docker) \
-          -v $(pwd)/$1:/home/albandiguer/$1 \
+	  -v $(pwd):/home/albandiguer/$folder \
           -e DISPLAY=$DISPLAY \
           -v /tmp/.X11-unix:/tmp/.X11-unix \
 	  -v ~/.tmux/resurrect:/tmp/tmux-resurrect \
