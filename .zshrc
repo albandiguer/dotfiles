@@ -108,18 +108,19 @@ xhost `hostname` > /dev/null # host allowed to connect to x serverx26
 # TODO add another parameter to know the kind of language used - node, web, haskell...
 # default to albandiguer/nvim:latest
 code() {
-  case $1 in
-    js)
-      IMAGE=albandiguer/nodejs-dev:latest
-      ;;
-    tf)
-	IMAGE=albandiguer/terraform-dev:latest
-	;;
-    *)
-      #IMAGE=albandiguer/ubuntu-dev-base:latest
-      IMAGE=albandiguer/nodejs-dev:latest
-      ;;
-  esac
+  #case $1 in
+  #  js)
+  #    IMAGE=albandiguer/nodejs-dev:latest
+  #    ;;
+  #  tf)
+  #    IMAGE=albandiguer/terraform-dev:latest
+  #    ;;
+  #  *)
+  #    #IMAGE=albandiguer/ubuntu-dev-base:latest
+  #    IMAGE=albandiguer/nodejs-dev:latest
+  #    ;;
+  #esac
+  IMAGE=albandiguer/leaf-dev:latest
 
   # OLD MB shenanigans - DISABLED ATM -
   # Run agent if not up
@@ -130,7 +131,7 @@ code() {
 	docker run -d \
 		--name=ssh-agent\
 		nardeas/ssh-agent
-  else 
+  else
 	echo "nardeas/ssh-agent is already started";
   fi
   '
@@ -147,28 +148,27 @@ code() {
 	# -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
 	# -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
 	# -v ~/.ssh:/home/albandiguer/.ssh \
-	# at the moment we have 
+	# at the moment we have
 	# --volumes-from=ssh-agent \
 	# -e SSH_AUTH_SOCK=/.ssh-agent/socket \
 
   # Could also do a uname -r based solution (old mbp = 15.6.0)
 
-
   folder=`basename $(pwd)`
 
   # IO: docker cli, current dir, ssh access, tmux res, copypaste
   docker run -ti --rm \
-	  --privileged \
-	  -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
-	  -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
-	  -v ~/.ssh:/home/albandiguer/.ssh \
-	  -v /var/run/docker.sock:/var/run/docker.sock \
-          -v $(which docker):$(which docker) \
-	  -v $(pwd):/home/albandiguer/$folder \
-          -e DISPLAY=$DISPLAY \
-          -v /tmp/.X11-unix:/tmp/.X11-unix \
-	  -v ~/.tmux/resurrect:/tmp/tmux-resurrect \
-          $IMAGE
+    --privileged \
+    -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
+    -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+    -v ~/.ssh:/home/albandiguer/.ssh \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $(which docker):$(which docker) \
+    -v $(pwd):/home/albandiguer/$folder \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ~/.tmux/resurrect:/tmp/tmux-resurrect \
+    $IMAGE
 
 }
 
@@ -229,5 +229,5 @@ fi
 
 # Load docker config
 if _has docker-machine; then
-	eval $(docker-machine env default)
+  eval $(docker-machine env default)
 fi;
