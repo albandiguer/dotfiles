@@ -98,10 +98,12 @@ alias dm='docker-machine'
 export EDITOR='vim'
 export CDPATH=$CDPATH:~/dev/
 
+export PATH="$HOME/.nodenv/shims:$PATH"
+
 
 # https://gist.github.com/albandiguer/53cae4d6e5d59721d4e1d34dc56e5505
-defaults write org.macosforge.xquartz.X11.plist nolisten_tcp 0
-export DISPLAY=`HOSTNAME`:0
+# defaults write org.macosforge.xquartz.X11.plist nolisten_tcp 0
+# export DISPLAY=`HOSTNAME`:0
 xhost `hostname` > /dev/null # host allowed to connect to x serverx26
 # TODO in xquartz, enable Update pasteboard immediately when new text is selected
 # Run a work container, mount targeted directory

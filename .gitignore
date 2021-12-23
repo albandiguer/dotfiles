@@ -92,3 +92,6 @@ override.tf.json
 #
 #
 .zcompdump*
+
+# VSCODE
+.vscode
