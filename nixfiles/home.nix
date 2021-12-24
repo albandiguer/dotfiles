@@ -10,7 +10,6 @@
     # fzf
     # fzf-zsh
     nix-prefetch-github
-    nixfmt
     roboto-slab # used by AltaCV
     lato # used by AltaCV
     # rnix-lsp

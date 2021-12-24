@@ -124,7 +124,8 @@
       let g:ale_disable_lsp = 1
 
       " https://github.com/ms-jpq/chadtree/issues/110
-      let g:coq_settings = {'xdg': v:true}
+      " start coq automatically
+      let g:coq_settings = {'xdg': v:true, 'auto_start': v:true }
 
       " TrySolve the parse buffer issue
       " let g:prettier#config#single_quote = 'true'
@@ -142,10 +143,12 @@
       nnoremap K :Ack! "\b<cword>\b" <CR>
 
       lua << EOF
+        local lspconfig = require('lspconfig')
+        local coq = require('coq')
         -- run :LspInstall <lsp> in vim to install them
-        require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
-        require'lspconfig'.texlab.setup{on_attach=require'completion'.on_attach}
-        require'lspconfig'.tailwindcss.setup{on_attach=require'completion'.on_attach}
+        -- lspconfig.tsserver.setup{on_attach=require'completion'.on_attach}
+        -- lspconfig.texlab.setup{on_attach=require'completion'.on_attach}
+        -- lspconfig.tailwindcss.setup{on_attach=require'completion'.on_attach}
 
 
         require'nvim-treesitter.configs'.setup {
@@ -170,12 +173,18 @@
             -- This setup() function is exactly the same as lspconfig's setup function.
             -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
             server:setup(opts)
+            -- https://github.com/ms-jpq/coq_nvim
+            server:setup(coq.lsp_ensure_capabilities(opts))
         end)
       EOF
     '';
 
     # install needed binaries here
     extraPackages = with pkgs; [
+      nixfmt
+      rustfmt
+
+      universal-ctags
       # used to compile tree-sitter grammar
       tree-sitter
 
@@ -266,6 +275,18 @@
           };
         };
 
+        nvim-coq-artifacts = pkgs.vimUtils.buildVimPlugin {
+          name = "nvim-coq-artifacts";
+          src = pkgs.fetchFromGitHub {
+            owner = "ms-jpq";
+            repo = "coq.artifacts";
+            rev = "23cd2525db1d3e2bdc9d3a1768c76c76983844a7";
+            sha256 = "1q2xb8mvw9iybbq2707d7q12mh1c2p62gmcavwajqiqqacj072wg";
+            fetchSubmodules = true;
+
+          };
+        };
+
         # zenbones-nvim = pkgs.vimUtils.buildVimPlugin {
         #   name = "zenbones-vim";
         #   src = pkgs.fetchFromGitHub {
@@ -289,26 +310,27 @@
         # };
       in [
         # papaya-vim
+        # tabnine-vim
         # vim-theme-papaya
+        # zenbones-nvim
         ack-vim
         ale
         aylin-vim
         ayu-vim
         catppuccin-vim
-        # completion-nvim # no longer maintained, switch to something better like coq_nvim
-        nvim-coq
         context-vim
+        copilot-vim
         delimitMate
         editorconfig-vim
         everforest-vim
         fzf-vim
         gruvbox-community
         nerdtree
-        nvim-lspconfig
+        nvim-coq
+        nvim-coq-artifacts
         nvim-lsp-installer
+        nvim-lspconfig
         nvim-treesitter
-        copilot-vim
-        # tabnine-vim
         tabular
         vim-airline
         vim-better-whitespace
@@ -317,12 +339,11 @@
         vim-dispatch
         vim-fugitive
         vim-gist
+        vim-jsdoc
         vim-nix
         vim-prettier
         vim-slash
         webapi-vim # used by vim-gist for api call
-        # zenbones-nvim
-        vim-jsdoc
 
         # or you can use our function to directly fetch plugins from git
         # (plugin "schickling/vim-bufonly")
