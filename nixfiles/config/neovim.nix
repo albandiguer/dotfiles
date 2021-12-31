@@ -117,15 +117,32 @@
             \ 'nix': ['nixfmt'],
             \ 'json': ['prettier'],
             \ 'rust': ['rustfmt'],
+            \ 'latex': ['latexindent'],
             \ '*': ['remove_trailing_lines', 'trim_whitespace']
             \ }
       let g:ale_python_black_options = '--line-length 78' " line length 88 by default
+
       " TODO look into COC/ALE integration, https://github.com/dense-analysis/ale#faq-coc-nvim
       let g:ale_disable_lsp = 1
 
       " https://github.com/ms-jpq/chadtree/issues/110
       " start coq automatically
-      let g:coq_settings = {'xdg': v:true, 'auto_start': v:true }
+      let g:coq_settings = {
+        \ 'xdg': v:true,
+        \ 'auto_start': v:true,
+        \ 'keymap': {
+        \    'recommended': v:false,
+        \    'jump_to_mark': "<nop>"
+        \ },
+        \ 'clients': {
+        \   'tabnine.enabled': v:false " disable tabnine as it generates a ycm error
+        \ }
+        \ }
+
+      " 'keymap' = {
+      "   'recommended': v:false,
+      "   'jump_to_mark': "<nop>"
+      " }
 
       " TrySolve the parse buffer issue
       " let g:prettier#config#single_quote = 'true'
@@ -183,6 +200,7 @@
     extraPackages = with pkgs; [
       nixfmt
       rustfmt
+      # texlive.combined.scheme-full
 
       universal-ctags
       # used to compile tree-sitter grammar
@@ -193,7 +211,7 @@
       # python38Packages.black
       # python38Packages.flake8
       # python38Packages
-      python38Packages.virtualenv
+      python38Packages.virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
 
       # installs different language servers for neovim-lsp
       # have a look on the link below to figure out the ones for your languages
@@ -310,7 +328,6 @@
         # };
       in [
         # papaya-vim
-        # tabnine-vim
         # vim-theme-papaya
         # zenbones-nvim
         ack-vim
@@ -319,7 +336,7 @@
         ayu-vim
         catppuccin-vim
         context-vim
-        copilot-vim
+        copilot-vim # github copilot
         delimitMate
         editorconfig-vim
         everforest-vim
@@ -331,6 +348,7 @@
         nvim-lsp-installer
         nvim-lspconfig
         nvim-treesitter
+        # tabnine-vim
         tabular
         vim-airline
         vim-better-whitespace

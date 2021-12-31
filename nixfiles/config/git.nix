@@ -27,6 +27,7 @@
         st = "status";
       };
       github.user = "albandiguer";
+      diff.tool = "nvim";
       format.pretty =
         "format:%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(blue)%an%C(reset) %s";
       core.excludesfile = ".gitignore";
