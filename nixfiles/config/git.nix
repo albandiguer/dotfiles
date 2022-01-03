@@ -17,7 +17,7 @@
         co = "checkout";
         cp = "cherry-pick";
         d = "difftool";
-        dc = "difftool --cached";
+        dc = "diff --cached";
         l = "log --graph --date=short";
         nb = "checkout -b";
         ps = "push";

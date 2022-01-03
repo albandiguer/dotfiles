@@ -127,6 +127,7 @@
 
       " https://github.com/ms-jpq/chadtree/issues/110
       " start coq automatically
+      " disable tabnine as it generates a ycm error
       let g:coq_settings = {
         \ 'xdg': v:true,
         \ 'auto_start': v:true,
@@ -135,7 +136,7 @@
         \    'jump_to_mark': "<nop>"
         \ },
         \ 'clients': {
-        \   'tabnine.enabled': v:false " disable tabnine as it generates a ycm error
+        \   'tabnine.enabled': v:false 
         \ }
         \ }
 
@@ -200,11 +201,13 @@
     extraPackages = with pkgs; [
       nixfmt
       rustfmt
+      wget # used by lsp-installer , use :checkhealth in vim
       # texlive.combined.scheme-full
 
       universal-ctags
       # used to compile tree-sitter grammar
       tree-sitter
+      # tree-sitter-grammars.tree-sitter-python
 
       # nodePackages.lehre
       # python38Packages.python-language-server

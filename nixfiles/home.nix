@@ -7,6 +7,7 @@
     lorri
     nodejs-17_x
     tree
+    wget
     # fzf
     # fzf-zsh
     nix-prefetch-github
