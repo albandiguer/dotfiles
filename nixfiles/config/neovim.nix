@@ -136,7 +136,7 @@
         \    'jump_to_mark': "<nop>"
         \ },
         \ 'clients': {
-        \   'tabnine.enabled': v:false 
+        \   'tabnine.enabled': v:false
         \ }
         \ }
 
@@ -211,10 +211,10 @@
 
       # nodePackages.lehre
       # python38Packages.python-language-server
-      # python38Packages.black
-      # python38Packages.flake8
+      python39Packages.black
+      python39Packages.flake8
       # python38Packages
-      python38Packages.virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
+      python39Packages.virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
 
       # installs different language servers for neovim-lsp
       # have a look on the link below to figure out the ones for your languages
