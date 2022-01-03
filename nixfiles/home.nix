@@ -21,6 +21,8 @@
         # "Iosevka"
         # "UbuntuMono"
         # "Monofur"
+        "Terminus"
+        "Hasklig"
         "FantasqueSansMono"
         "VictorMono"
       ];
