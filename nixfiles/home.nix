@@ -27,8 +27,9 @@
     }) # required for devicons
   ];
 
+  # AI driven ctrl R, overkill?
   programs.mcfly = {
-    enable = true;
+    enable = false;
     enableZshIntegration = true;
   };
 
@@ -41,7 +42,7 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  imports = [ config/zsh.nix config/git.nix config/neovim.nix ];
+  imports = [ config/zsh.nix config/fzf.nix config/git.nix config/neovim.nix ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

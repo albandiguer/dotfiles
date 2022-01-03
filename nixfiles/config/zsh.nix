@@ -3,9 +3,17 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+
     # shellInit = ''
     #   eval "$(mcfly init zsh)"
     # '';
+    # shellInit = ''
+    # if [ -n "${commands[fzf-share]}" ]; then
+	    # source "$(fzf-share)/key-bindings.zsh"
+	    # source "$(fzf-share)/completion.zsh"
+    # fi
+    # '';
+
     plugins = [{
       name = "zsh-nix-shell";
       file = "nix-shell.plugin.zsh";
@@ -22,5 +30,6 @@
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
+
   };
 }
