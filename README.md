@@ -1,12 +1,17 @@
-# Dotfiles
+# Nix based dotfiles
 
+Apply changes 
 
-## Docker
-
-for containerized dev environments, use
-
+```shell
+home-manager switch
 ```
-    code <directory> <lang>
+
+Update environment with
+
+```shell
+nix-channel --update
 ```
+
+
 
 
