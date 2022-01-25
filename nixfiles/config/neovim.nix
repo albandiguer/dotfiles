@@ -355,6 +355,7 @@
         tabular
         vim-airline
         vim-better-whitespace
+        vim-bookmarks
         vim-commentary
         vim-devicons
         vim-dispatch
