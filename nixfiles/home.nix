@@ -7,6 +7,8 @@
     lorri
     nodejs-17_x
     tree
+    # marktext not supported in aarch64
+    ack
     wget
     # fzf
     # fzf-zsh

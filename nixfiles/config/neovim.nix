@@ -241,16 +241,16 @@
           };
         };
 
-        everforest-vim = pkgs.vimUtils.buildVimPlugin {
-          name = "everforest-vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "sainnhe";
-            repo = " everforest";
-            rev = "0a3f030f02e9438f834b2775aad00499d0ce6098";
-            sha256 = "1nzbaq29as8g4vakd2cnbqfrlf8pwbpid034994013qb8vl7ksq9";
-            fetchSubmodules = true;
-          };
-        };
+        # everforest-vim = pkgs.vimUtils.buildVimPlugin {
+        #   name = "everforest-vim";
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "sainnhe";
+        #     repo = " everforest";
+        #     rev = "0a3f030f02e9438f834b2775aad00499d0ce6098";
+        #     sha256 = "1nzbaq29as8g4vakd2cnbqfrlf8pwbpid034994013qb8vl7ksq9";
+        #     fetchSubmodules = true;
+        #   };
+        # };
 
         aylin-vim = pkgs.vimUtils.buildVimPlugin {
           name = "aylin-vim";
@@ -342,7 +342,7 @@
         copilot-vim # github copilot
         delimitMate
         editorconfig-vim
-        everforest-vim
+        # everforest-vim
         fzf-vim
         gruvbox-community
         nerdtree
