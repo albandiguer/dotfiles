@@ -40,6 +40,12 @@
     enableZshIntegration = true;
   };
 
+  programs.tmux = {
+    enable = true;
+    keyMode = "vi";
+    baseIndex = 1;
+  };
+
   # enable direnv to autostart nix-shell in directories
   # Create a file called .envrc in your project directory.
   # echo use_nix > .envrc

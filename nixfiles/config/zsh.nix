@@ -4,6 +4,11 @@
     enable = true;
     enableCompletion = true;
 
+    initExtra = ''
+      source <(kubectl completion zsh)
+      source <(minikube completion zsh)
+    '';
+
     # shellInit = ''
     #   eval "$(mcfly init zsh)"
     # '';
