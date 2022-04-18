@@ -40,12 +40,6 @@
     enableZshIntegration = true;
   };
 
-  programs.tmux = {
-    enable = true;
-    keyMode = "vi";
-    baseIndex = 1;
-  };
-
   # enable direnv to autostart nix-shell in directories
   # Create a file called .envrc in your project directory.
   # echo use_nix > .envrc
@@ -55,7 +49,13 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  imports = [ config/zsh.nix config/fzf.nix config/git.nix config/neovim.nix ];
+  imports = [
+    config/zsh.nix
+    config/fzf.nix
+    config/git.nix
+    config/neovim.nix
+    config/tmux.nix
+  ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
