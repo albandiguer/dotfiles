@@ -9,6 +9,11 @@
       source <(minikube completion zsh)
     '';
 
+    sessionVariables = {
+      ZSH_TMUX_AUTOSTART="true";
+      ZSH_TMUX_AUTOCONNECT="true";
+    };
+
     # shellInit = ''
     #   eval "$(mcfly init zsh)"
     # '';
@@ -32,7 +37,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ "git"  "tmux" ];
       theme = "robbyrussell";
     };
 
