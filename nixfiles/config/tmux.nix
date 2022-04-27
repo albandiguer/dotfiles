@@ -5,15 +5,12 @@
     baseIndex = 1;
     extraConfig = ''
       set -ga terminal-overrides ",*col*:Tc"
-      # navigate around split panes with C-{h/j/k/l}
-      bind-key -n C-h select-pane -L
-      bind-key -n C-j select-pane -D
-      bind-key -n C-k select-pane -U
-      bind-key -n C-l select-pane -R
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
       # mouse
       set -g mouse on
+      # continuum
+      # set -g @continuum-restore 'on'
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"
       bind '-' split-window -c "#{pane_current_path}"
@@ -34,6 +31,23 @@
       set-window-option -g window-status-format '#[bg=colour8]#[fg=colour3] #I #[fg=colour15]#W#[fg=colour5]#F# '
       set-window-option -g window-status-current-format '#[bg=colour8]#[fg=colour3] #I #[bg=colour7]#[fg=colour8] #W#[fg=colour0]#F #[bg=colour8]'
     '';
+
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+          set -g @resurrect-strategy-nvim 'session'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+        '';
+      }
+      tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
+    ];
+
   };
 
 }

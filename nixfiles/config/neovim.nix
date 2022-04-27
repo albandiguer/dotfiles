@@ -7,6 +7,7 @@
       set mouse=a
       set number
       set termguicolors
+      set ignorecase smartcase " search words case insensitive
       let mapleader=","
       set colorcolumn=80
       autocmd Filetype gitcommit setl colorcolumn=72
@@ -355,6 +356,8 @@
         tabular
         vim-airline
         vim-better-whitespace
+        vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
+        vim-obsession
         vim-bookmarks
         vim-commentary
         vim-devicons
