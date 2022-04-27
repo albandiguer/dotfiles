@@ -10,8 +10,6 @@
     # marktext not supported in aarch64
     ack
     wget
-    # fzf
-    # fzf-zsh
     nix-prefetch-github
     roboto-slab # used by AltaCV
     lato # used by AltaCV

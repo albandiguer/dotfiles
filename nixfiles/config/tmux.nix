@@ -2,15 +2,14 @@
   programs.tmux = {
     enable = true;
     keyMode = "vi";
-    baseIndex = 1;
     extraConfig = ''
       set -ga terminal-overrides ",*col*:Tc"
       # get rid of the half-second escape time for kakoune's escape key
       set -sg escape-time 25
+
       # mouse
       set -g mouse on
-      # continuum
-      # set -g @continuum-restore 'on'
+
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"
       bind '-' split-window -c "#{pane_current_path}"
@@ -18,6 +17,7 @@
       bind '|' split-window -h -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
       bind l select-layout main-vertical
+
       # status line (thanks, Ju!)
       set-option -g status-justify left
       set-option -g status-left '#[bg=colour2] #[bg=colour8] #[bg=colour0] #S '
@@ -37,12 +37,6 @@
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''
           set -g @resurrect-strategy-nvim 'session'
-        '';
-      }
-      {
-        plugin = tmuxPlugins.continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
         '';
       }
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
