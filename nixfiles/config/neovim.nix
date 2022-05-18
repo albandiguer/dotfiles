@@ -108,6 +108,7 @@
       let g:ale_fixers = {
             \ 'javascript': ['eslint'],
             \ 'typescript': ['prettier'],
+            \ 'typescriptreact': ['prettier'],
             \ 'html': ['prettier'],
             \ 'markdown': ['prettier'],
             \ 'haskell': ['brittany'],

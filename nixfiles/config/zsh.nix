@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -10,8 +9,8 @@
     '';
 
     sessionVariables = {
-      ZSH_TMUX_AUTOSTART="true";
-      ZSH_TMUX_AUTOCONNECT="true";
+      ZSH_TMUX_AUTOSTART = "true";
+      ZSH_TMUX_AUTOCONNECT = "true";
     };
 
     # shellInit = ''
@@ -19,8 +18,8 @@
     # '';
     # shellInit = ''
     # if [ -n "${commands[fzf-share]}" ]; then
-	    # source "$(fzf-share)/key-bindings.zsh"
-	    # source "$(fzf-share)/completion.zsh"
+    # source "$(fzf-share)/key-bindings.zsh"
+    # source "$(fzf-share)/completion.zsh"
     # fi
     # '';
 

@@ -10,6 +10,9 @@
       # mouse
       set -g mouse on
 
+      # increase history size
+      set -g history-limit 5000
+
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"
       bind '-' split-window -c "#{pane_current_path}"
@@ -40,6 +43,7 @@
         '';
       }
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
+      tmuxPlugins.yank
     ];
 
   };
