@@ -1,6 +1,6 @@
 # Nix based dotfiles
 
-Apply changes 
+Apply changes
 
 ```shell
 home-manager switch
@@ -14,6 +14,7 @@ home-manager switch
 ```
 
 Prefetch a package
+
 ```shell
 nix-prefetch-github owner repo
 ```
@@ -21,5 +22,10 @@ nix-prefetch-github owner repo
 Fix latexindent
 https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos
 
+## Install an lsp
 
+```
+:LspInstall
+```
 
+then select in list, the server will start automatically when available
