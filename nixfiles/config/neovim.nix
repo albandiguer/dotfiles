@@ -134,7 +134,7 @@
         \ 'xdg': v:true,
         \ 'auto_start': v:true,
         \ 'keymap': {
-        \    'recommended': v:false,
+        \    'recommended': v:true,
         \    'jump_to_mark': "<nop>"
         \ },
         \ 'clients': {
@@ -163,7 +163,7 @@
       nnoremap K :Ack! "\b<cword>\b" <CR>
 
       lua << EOF
-        local lspconfig = require('lspconfig')
+        -- local lspconfig = require('lspconfig')
         local coq = require('coq')
         -- run :LspInstall <lsp> in vim to install them
         -- lspconfig.tsserver.setup{on_attach=require'completion'.on_attach}
