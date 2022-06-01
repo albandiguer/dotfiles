@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     silver-searcher
     # use lorri init in project directories to setup the shell.nix file
     lorri
-    nodejs-17_x
+    nodejs
     tree
     # marktext not supported in aarch64
     ack

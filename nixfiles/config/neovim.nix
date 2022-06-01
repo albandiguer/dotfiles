@@ -142,6 +142,11 @@
         \ }
         \ }
 
+      " TODO? add copilot to coq suggestions
+      " https://github.com/ms-jpq/coq.thirdparty
+      " see :COQhelp custom_sources, TODO add that somewhere:
+      " { src = "copilot", short_name = "COP", accept_key = "<c-f>" }
+
       " 'keymap' = {
       "   'recommended': v:false,
       "   'jump_to_mark': "<nop>"
@@ -199,7 +204,20 @@
       EOF
     '';
 
-    # install needed binaries here
+    # Enable Python 3 provider.
+    # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.withPython3
+    withPython3 = true; # default is true so this redundant
+    extraPython3Packages = (ps:
+      with ps; [
+        # black # this one currently broken because of https://github.com/NixOS/nixpkgs/pull/172397
+        flake8
+        virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
+      ]);
+
+    # withNodeJs = true; no extraNodePackages to do the same as above with python?
+
+    # Extra packages available to nvim
+    # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.extraPackages
     extraPackages = with pkgs; [
       nixfmt
       rustfmt
@@ -211,16 +229,10 @@
       tree-sitter
       # tree-sitter-grammars.tree-sitter-python
 
-      # nodePackages.lehre
-      # python38Packages.python-language-server
-      python39Packages.black
-      python39Packages.flake8
-      # python38Packages
-      python39Packages.virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
-
       # installs different language servers for neovim-lsp
       # have a look on the link below to figure out the ones for your languages
       # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
+      # nodePackages.lehre
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.prettier
@@ -233,6 +245,7 @@
 
     plugins = with pkgs.vimPlugins;
       let
+        # plugin that shows the context - top of the screen above horizontal bar
         context-vim = pkgs.vimUtils.buildVimPlugin {
           name = "context-vim";
           src = pkgs.fetchFromGitHub {
@@ -309,6 +322,14 @@
 
           };
         };
+
+        # nvim-coq-3rdparty = pkgs.vimUtils.buildVimPlugin {
+        #   name = "nvim-coq-3rdparty";
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "ms-jpq";
+        #     repo = "coq.thirdparty";
+        #   };
+        # };
 
         # zenbones-nvim = pkgs.vimUtils.buildVimPlugin {
         #   name = "zenbones-vim";
