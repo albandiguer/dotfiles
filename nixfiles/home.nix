@@ -11,7 +11,8 @@
     # marktext not supported in aarch64
     ack
     wget
-    nix-prefetch-github
+    nix-prefetch-git
+    # nix-prefetch-github no working cant verify sha256 sums
     roboto-slab # used by AltaCV
     lato # used by AltaCV
     # rnix-lsp

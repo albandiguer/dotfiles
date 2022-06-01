@@ -305,8 +305,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "ms-jpq";
             repo = "coq_nvim";
-            rev = "f158c34b1796a5afa9836b2005385402d14d7156";
-            sha256 = "1a9vmk9cwlaawq4p1gkfjgznahj5g807ppb0s2w38fv3rbyb155z";
+            rev = "409c1c1e90613e44b84f735a6b3898e4cf41b749";
+            sha256 = "02yyxpmzfwykq7bznpxah346ld3k5ywmlapi050m1qcjkyhq3phz";
             fetchSubmodules = true;
           };
         };
@@ -341,7 +341,7 @@
         #     fetchSubmodules = true;
         #   };
         # };
-        # use nix-prefetch-github to finc dets
+        # use nix-prefetch-git to find dets
         # papaya-vim = pkgs.vimUtils.buildVimPlugin {
         #   name = "vim-theme-papaya";
         #   src = pkgs.fetchFromGitHub {
