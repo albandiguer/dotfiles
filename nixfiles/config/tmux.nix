@@ -11,7 +11,7 @@
       set -g mouse on
 
       # increase history size
-      set -g history-limit 5000
+      set -g history-limit 10000
 
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"
