@@ -33,9 +33,16 @@ then select in list, the server will start automatically when available
 
 ### Thoughts on Built-in LSP, ALE, Completion, linting, fixing ...
 
-Neovim comes with Built-in LSP support. LSPs come with linting and fixing
-capabilities for some. Not all linters are LSP however so we disable LSP
+Neovim comes with Built-in LSP support. LSPs include linting and fixing
+capabilities for some. Not all linters are LSP however, like prettier so we disable LSP
 built-in linting and let ALE do the linting and fixing for now.
+
+```nix
+      " Disable diagnostic from neovim built in lsp, ALE does the job
+      autocmd BufEnter * lua vim.diagnostic.disable()
+```
+
+
 
 Some filetypes should leverage completion from different LSPs depending on the
 project. For example, typescript files can be using tsserver or denols.
