@@ -42,7 +42,12 @@ built-in linting and let ALE do the linting and fixing for now.
       autocmd BufEnter * lua vim.diagnostic.disable()
 ```
 
+and turned off ALE completion
 
+```vim
+let g:ale_completion_enabled = 0
+
+```
 
 Some filetypes should leverage completion from different LSPs depending on the
 project. For example, typescript files can be using tsserver or denols.

@@ -1,0 +1,2 @@
+default:
+	home-manager switch
