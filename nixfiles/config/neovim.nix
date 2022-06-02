@@ -75,6 +75,7 @@
       " Avoid showing message extra message when using completion
       set shortmess+=c
 
+
       " ALE syntax checkers
       " let g:ale_completion_delay=200
       let g:ale_completion_enabled = 0
@@ -96,9 +97,11 @@
       let g:ale_sign_error = '⨉'
       let g:ale_sign_warning = '⚠ '
       let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+      " tsserver not used for typescript as we dev deno atm
       let g:ale_linters = {
             \ 'javascript': ['eslint'],
-            \ 'typescript': ['tsserver', 'tslint'],
+            \ 'typescript': ['deno'],
+            \ 'typescriptreact': ['deno'],
             \ 'nix': ['nix'],
             \ 'python': ['flake8'],
             \ 'sql': ['sqlint'],
@@ -107,8 +110,8 @@
             \ }
       let g:ale_fixers = {
             \ 'javascript': ['eslint'],
-            \ 'typescript': ['prettier'],
-            \ 'typescriptreact': ['prettier'],
+            \ 'typescript': ['deno', 'prettier'],
+            \ 'typescriptreact': ['deno', 'prettier'],
             \ 'html': ['prettier'],
             \ 'markdown': ['prettier'],
             \ 'haskell': ['brittany'],
@@ -124,8 +127,9 @@
             \ }
       let g:ale_python_black_options = '--line-length 78' " line length 88 by default
 
-      " TODO look into COC/ALE integration, https://github.com/dense-analysis/ale#faq-coc-nvim
-      let g:ale_disable_lsp = 1
+      " Ideally I want to use ALE for fixing/linting
+      " This to 1 prevent ale using lsps for linting/fixing
+      let g:ale_disable_lsp = 0
 
       " https://github.com/ms-jpq/chadtree/issues/110
       " start coq automatically
@@ -189,11 +193,15 @@
         -- Alternatively, you may also register handlers on specific server instances instead (see example below).
         lsp_installer.on_server_ready(function(server)
             local opts = {}
+            local nvim_lsp = require('lspconfig')
 
             -- (optional) Customize the options passed to the server
-            -- if server.name == "tsserver" then
-            --     opts.root_dir = function() ... end
-            -- end
+            if server.name == "denols" then
+                -- opts.root_dir = function() ... end
+                -- NOTE: what is nvim_lsp
+                opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
+            end
+
 
             -- This setup() function is exactly the same as lspconfig's setup function.
             -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -201,7 +209,11 @@
             -- https://github.com/ms-jpq/coq_nvim
             server:setup(coq.lsp_ensure_capabilities(opts))
         end)
+
       EOF
+
+      " Disable diagnostic from neovim built in lsp, ALE does the job
+      autocmd BufEnter * lua vim.diagnostic.disable()
     '';
 
     # Enable Python 3 provider.
@@ -219,6 +231,7 @@
     # Extra packages available to nvim
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.extraPackages
     extraPackages = with pkgs; [
+      deno
       nixfmt
       rustfmt
       wget # used by lsp-installer , use :checkhealth in vim
