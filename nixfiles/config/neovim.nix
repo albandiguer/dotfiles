@@ -202,6 +202,10 @@
                 opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
             end
 
+            if server.name == "tsserver" then
+                opts.root_dir = nvim_lsp.util.root_pattern("package.json")
+            end
+
 
             -- This setup() function is exactly the same as lspconfig's setup function.
             -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md

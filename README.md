@@ -38,8 +38,8 @@ capabilities for some. Not all linters are LSP however, like prettier so we disa
 built-in linting and let ALE do the linting and fixing for now.
 
 ```nix
-      " Disable diagnostic from neovim built in lsp, ALE does the job
-      autocmd BufEnter * lua vim.diagnostic.disable()
+" Disable diagnostic from neovim built in lsp, ALE does the job
+autocmd BufEnter * lua vim.diagnostic.disable()
 ```
 
 and turned off ALE completion
@@ -58,12 +58,12 @@ file we load denols
 [denoland issue](https://github.com/denoland/deno/issues/13228)
 
 ```nix
-    -- (optional) Customize the options passed to the server
-    if server.name == "denols" then
-        -- opts.root_dir = function() ... end
-        -- NOTE: what is nvim_lsp
-        opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
-    end
+-- (optional) Customize the options passed to the server
+if server.name == "denols" then
+    -- opts.root_dir = function() ... end
+    -- NOTE: what is nvim_lsp
+    opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
+end
 ```
 
 ## Todos
