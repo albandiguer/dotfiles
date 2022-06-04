@@ -5,14 +5,13 @@
 Apply changes to home-manager config
 
 ```shell
-home-manager switch
+make
 ```
 
 Update environment and deps with
 
 ```shell
-nix-channel --update
-home-manager switch
+make update
 ```
 
 Prefetch a package
