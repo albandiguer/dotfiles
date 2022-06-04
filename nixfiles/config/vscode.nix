@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }: {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    # package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
       esbenp.prettier-vscode
+      github.copilot
     ];
     # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
     #   name = "catpuccin.catpuccin-vsc";
