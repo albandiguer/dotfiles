@@ -2,7 +2,16 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [ asvetliakov.vscode-neovim ];
+    extensions = with pkgs.vscode-extensions; [
+      asvetliakov.vscode-neovim
+      esbenp.prettier-vscode
+    ];
+    # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+    #   name = "catpuccin.catpuccin-vsc";
+    #   publisher = "Catpuccin";
+    #   version = "v1.0.6";
+    #   sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+    # }];
   };
 }
 
