@@ -55,6 +55,7 @@
     config/git.nix
     config/neovim.nix
     config/tmux.nix
+    config/vscode.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

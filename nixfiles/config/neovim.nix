@@ -309,6 +309,12 @@
           };
         };
 
+        # NOTE cannot update this one at the moment
+        #        build flags: SHELL=/nix/store/lkw407y1x1v5bg6hc290c5ry1qaabbgl-bash-5.1-p16/bin/bash
+        # git clone --depth 1 https://github.com/nvim-lua/plenary.nvim dependencies/pack/vendor/start/plenary.nvim
+        # /nix/store/lkw407y1x1v5bg6hc290c5ry1qaabbgl-bash-5.1-p16/bin/bash: line 1: git: command not found
+        # make: *** [Makefile:5: dependencies] Error 127
+        # builder for '/nix/store/q5kszf01f2salq2lpv9vyxd3536hzlhq-vimplugin-nvim-lsp-installer.drv' failed with exit code 2
         nvim-lsp-installer = pkgs.vimUtils.buildVimPlugin {
           name = "nvim-lsp-installer";
           src = pkgs.fetchFromGitHub {
