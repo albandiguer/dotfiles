@@ -187,12 +187,13 @@
           textobjects = { enable = true },
         }
 
-        local lsp_installer = require("nvim-lsp-installer")
 
         -- Register a handler that will be called for all installed servers.
         -- Alternatively, you may also register handlers on specific server instances instead (see example below).
-        lsp_installer.on_server_ready(function(server)
-            local opts = {}
+        require("nvim-lsp-installer").on_server_ready(function(server)
+            local opts = {
+              on_attach = on_attach
+            }
             local nvim_lsp = require('lspconfig')
 
             -- (optional) Customize the options passed to the server
@@ -200,6 +201,8 @@
                 -- opts.root_dir = function() ... end
                 -- NOTE: what is nvim_lsp
                 opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
+                opts.init_options.lint = true
+                opts.settings = {}
             end
 
             if server.name == "tsserver" then
@@ -209,8 +212,8 @@
 
             -- This setup() function is exactly the same as lspconfig's setup function.
             -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-            server:setup(opts)
             -- https://github.com/ms-jpq/coq_nvim
+            -- server:setup(opts)
             server:setup(coq.lsp_ensure_capabilities(opts))
         end)
 
@@ -336,7 +339,6 @@
             rev = "23cd2525db1d3e2bdc9d3a1768c76c76983844a7";
             sha256 = "1q2xb8mvw9iybbq2707d7q12mh1c2p62gmcavwajqiqqacj072wg";
             fetchSubmodules = true;
-
           };
         };
 
