@@ -45,7 +45,6 @@ and turned off ALE completion
 
 ```vim
 let g:ale_completion_enabled = 0
-
 ```
 
 Some filetypes should leverage completion from different LSPs depending on the
@@ -70,3 +69,5 @@ end
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 
 - [ ] Consider remonving ALE and do everything with Built-in LSP client
+
+- [ ] Add Docker ?
