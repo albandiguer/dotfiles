@@ -70,4 +70,3 @@ end
 
 - [ ] Consider remonving ALE and do everything with Built-in LSP client
 
-- [ ] Add Docker ?
