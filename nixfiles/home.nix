@@ -12,6 +12,7 @@
     lorri
     nodejs
     tree
+    htop
     # marktext not supported in aarch64
     ack
     wget
