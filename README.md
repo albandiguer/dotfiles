@@ -66,6 +66,8 @@ end
 
 Added a config file in ~/.config/nix/nix.conf
 
+### Nix flakes config
+
 ```nix
 experimental-features = nix-command flakes
 ```
