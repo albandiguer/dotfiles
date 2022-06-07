@@ -64,9 +64,14 @@ if server.name == "denols" then
 end
 ```
 
+Added a config file in ~/.config/nix/nix.conf
+
+```nix
+experimental-features = nix-command flakes
+```
+
 ## Todos
 
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 
 - [ ] Consider remonving ALE and do everything with Built-in LSP client
-

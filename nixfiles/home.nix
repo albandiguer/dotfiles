@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+
+  # Avoid programs alike vscode copilot unfree licensed to complain
+  nixpkgs.config.allowUnfree = true;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     silver-searcher
@@ -43,7 +47,7 @@
   # enable direnv to autostart nix-shell in directories
   # Create a file called .envrc in your project directory.
   # echo use_nix > .envrc
-  # use lorri init to start a new config file
+  # OR use lorri init to start a new config file
   # Then run:
   # direnv allow .
   programs.direnv.enable = true;
