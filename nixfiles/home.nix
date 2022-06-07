@@ -38,12 +38,6 @@
     }) # required for devicons
   ];
 
-  # AI driven ctrl R, overkill?
-  programs.mcfly = {
-    enable = false;
-    enableZshIntegration = true;
-  };
-
   # enable direnv to autostart nix-shell in directories
   # Create a file called .envrc in your project directory.
   # echo use_nix > .envrc
