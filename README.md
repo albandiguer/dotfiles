@@ -64,9 +64,9 @@ if server.name == "denols" then
 end
 ```
 
-Added a config file in ~/.config/nix/nix.conf
-
 ### Nix flakes config
+
+Added a config file in ~/.config/nix/nix.conf
 
 ```nix
 experimental-features = nix-command flakes
