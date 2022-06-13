@@ -7,6 +7,26 @@
     initExtra = ''
       source <(kubectl completion zsh)
       source <(minikube completion zsh)
+
+      alias nsn="nix search nixpkgs"
+
+
+      # >>> conda initialize >>>
+      # !! Contents within this block are managed by 'conda init' !!
+      __conda_setup="$('/Users/albandiguer/dev/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+      if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+      else
+          if [ -f "/Users/albandiguer/dev/miniforge3/etc/profile.d/conda.sh" ]; then
+              . "/Users/albandiguer/dev/miniforge3/etc/profile.d/conda.sh"
+          else
+              export PATH="/Users/albandiguer/dev/miniforge3/bin:$PATH"
+          fi
+      fi
+      unset __conda_setup
+      # <<< conda initialize <<<
+
+
     '';
 
     sessionVariables = {

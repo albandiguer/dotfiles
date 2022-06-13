@@ -100,7 +100,7 @@
       " tsserver not used for typescript as we dev deno atm
       let g:ale_linters = {
             \ 'javascript': ['eslint'],
-            \ 'typescript': ['deno'],
+            \ 'typescript': ['tsserver'],
             \ 'typescriptreact': ['deno'],
             \ 'nix': ['nix'],
             \ 'python': ['flake8'],
@@ -174,10 +174,10 @@
       lua << EOF
         -- local lspconfig = require('lspconfig')
         local coq = require('coq')
-        -- run :LspInstall <lsp> in vim to install them
+        -- run :LspInstall <lsp> in vim to install servers
+
+        -- previously we were doing, no lazy loading
         -- lspconfig.tsserver.setup{on_attach=require'completion'.on_attach}
-        -- lspconfig.texlab.setup{on_attach=require'completion'.on_attach}
-        -- lspconfig.tailwindcss.setup{on_attach=require'completion'.on_attach}
 
 
         require'nvim-treesitter.configs'.setup {

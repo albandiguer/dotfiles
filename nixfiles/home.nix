@@ -11,6 +11,7 @@
     # use lorri init in project directories to setup the shell.nix file
     lorri
     nodejs
+    deno
     tree
     htop
     # marktext not supported in aarch64
