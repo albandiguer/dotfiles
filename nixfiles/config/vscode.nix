@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: {
   programs.vscode = {
-    enable = true;
+    enable = false;
     # package = pkgs.vscodium; # oss vscode not work with Copilot
     extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim

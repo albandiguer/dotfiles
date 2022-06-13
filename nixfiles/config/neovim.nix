@@ -50,7 +50,6 @@
       noremap <c-h> <C-w>h
       noremap <c-l> <C-w>l
 
-      set completeopt=menuone,noinsert,noselect
 
       " Open nerdtree
       map <C-n> :NERDTreeToggle<CR>
@@ -66,8 +65,9 @@
       nmap <Leader>b :Buffers<CR>
 
       " Use <Tab> and <S-Tab> to navigate through popup menu
-      inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-      inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+      " NOTE disabled as we want to use copilot as well
+      " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+      " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
       " Set completeopt to have a better completion experience
       set completeopt=menuone,noinsert,noselect
@@ -130,6 +130,9 @@
       " Ideally I want to use ALE for fixing/linting
       " This to 1 prevent ale using lsps for linting/fixing
       let g:ale_disable_lsp = 0
+
+      " not auto start coq
+      let g:coq_settings = { 'auto_start': 'shut-up' }
 
       " https://github.com/ms-jpq/chadtree/issues/110
       " start coq automatically
@@ -201,7 +204,7 @@
                 -- opts.root_dir = function() ... end
                 -- NOTE: what is nvim_lsp
                 opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
-                opts.init_options.lint = true
+                opts.init_options.lint = true -- trying: let denols lint
                 opts.settings = {}
             end
 
