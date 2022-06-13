@@ -77,3 +77,8 @@ experimental-features = nix-command flakes
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 
 - [ ] Consider remonving ALE and do everything with Built-in LSP client
+
+## Condas
+
+conda installed for apple silicon, not handled by nix/dotfiles for now 
+https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
