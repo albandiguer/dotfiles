@@ -5,6 +5,9 @@
   # Avoid programs alike vscode copilot unfree licensed to complain
   nixpkgs.config.allowUnfree = true;
 
+  # For broken packages use the following
+  # nixpkgs.config.allowBroken = true;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     silver-searcher

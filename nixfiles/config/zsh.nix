@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }: {
   programs.zsh = {
     enable = true;
+
     enableCompletion =
       false; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 

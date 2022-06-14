@@ -1,6 +1,11 @@
 { config, pkgs, ... }: {
+
+  # For black (python fixer) we allow broken
+  nixpkgs.config.allowBroken = true;
+
   programs.neovim = {
     enable = true;
+
     extraConfig = ''
       colorscheme catppuccin "ayu everforest
       let g:context_nvim_no_redraw = 1
@@ -109,7 +114,7 @@
             \ 'rust': ['rustc']
             \ }
       let g:ale_fixers = {
-            \ 'javascript': ['eslint'],
+            \ 'javascript': ['eslint', 'prettier'],
             \ 'typescript': ['deno', 'prettier'],
             \ 'typescriptreact': ['deno', 'prettier'],
             \ 'html': ['prettier'],
@@ -231,7 +236,7 @@
     withPython3 = true; # default is true so this redundant
     extraPython3Packages = (ps:
       with ps; [
-        # black # this one currently broken because of https://github.com/NixOS/nixpkgs/pull/172397
+        black # this one currently broken because of https://github.com/NixOS/nixpkgs/pull/172397
         flake8
         virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
       ]);
