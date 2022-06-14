@@ -198,11 +198,11 @@
 
         -- Register a handler that will be called for all installed servers.
         -- Alternatively, you may also register handlers on specific server instances instead (see example below).
+        local nvim_lsp = require('lspconfig')
         require("nvim-lsp-installer").on_server_ready(function(server)
             local opts = {
               on_attach = on_attach
             }
-            local nvim_lsp = require('lspconfig')
 
             -- (optional) Customize the options passed to the server
             if server.name == "denols" then
