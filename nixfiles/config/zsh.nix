@@ -9,7 +9,7 @@
       source <(kubectl completion zsh)
       source <(minikube completion zsh)
 
-      alias nsn="nix search nixpkgs"
+      alias nixsearch="nix search nixpkgs"
 
 
       # >>> conda initialize >>>
@@ -27,6 +27,9 @@
       unset __conda_setup
       # <<< conda initialize <<<
 
+      alias condaenvs="conda env list"
+      # use: conda activate mlp | base to activate an environment
+      # use: conda deactivate to deactivate environment
 
     '';
 
