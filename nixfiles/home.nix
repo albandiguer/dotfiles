@@ -16,6 +16,7 @@
     nodejs
     deno
     tree
+    niv # Painless dependencies for Nix projects
     htop
     # marktext not supported in aarch64
     ack
