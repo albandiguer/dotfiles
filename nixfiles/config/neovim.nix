@@ -6,230 +6,7 @@
   programs.neovim = {
     enable = true;
 
-    extraConfig = ''
-      colorscheme catppuccin "ayu everforest
-      let g:context_nvim_no_redraw = 1
-      set mouse=a
-      set number
-      set termguicolors
-      set ignorecase smartcase " search words case insensitive
-      let mapleader=","
-      set colorcolumn=80
-      autocmd Filetype gitcommit setl colorcolumn=72
-
-      " disable ex mode
-      map Q <Nop>
-
-      " Copy to system clipboard
-      map <leader>y "+y
-      imap <C-l> <space>=>
-      imap <C-k> <space>->
-      imap <c-c> <esc>
-
-      " vim-dispatch
-      noremap <leader>d :Dispatch<CR>
-
-      " switch previous buffer
-      nnoremap <leader><leader> <c-^>
-
-      " select all
-      map <C-a> <esc>ggVG<CR>
-      " awesome paste, lets see
-      xnoremap p pgvy
-
-      " easy lopen lclose
-      nmap ( :lopen<CR>
-      nmap ) :lclose<CR>
-
-      " when a bracket is inserted, briefly show the matching one
-      set showmatch
-
-      " disable arrow keys
-      map <Left> <Nop>
-      map <Right> <Nop>
-      map <Up> <Nop>
-      map <Down> <Nop>
-      " map ctrl hjkl
-      noremap <c-k> <C-w>k
-      noremap <c-j> <C-w>j
-      noremap <c-h> <C-w>h
-      noremap <c-l> <C-w>l
-
-
-      " Open nerdtree
-      map <C-n> :NERDTreeToggle<CR>
-      map <C-b> :NERDTreeFind<CR>
-      let NERDTreeShowHidden=1
-      " close vim if only open window is nerdtree
-      autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-      " FZF config
-      nmap ; :Buffers<CR>
-      nmap <Leader>f :GFiles<CR>
-      nmap <Leader>r :Tags<CR>
-      nmap <Leader>b :Buffers<CR>
-
-      " Use <Tab> and <S-Tab> to navigate through popup menu
-      " NOTE disabled as we want to use copilot as well
-      " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-      " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-      " Set completeopt to have a better completion experience
-      set completeopt=menuone,noinsert,noselect
-
-      " Avoid showing message extra message when using completion
-      set shortmess+=c
-
-
-      " ALE syntax checkers
-      " let g:ale_completion_delay=200
-      let g:ale_completion_enabled = 0
-      let g:ale_echo_cursor = 0 " fasten things a lot (see vim profile)
-      let g:ale_echo_msg_error_str = 'E'
-      let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-      let g:ale_echo_msg_warning_str = 'W'
-      let g:ale_fix_on_save = 1
-      let g:ale_javascript_prettier_options = '--no-semi --single-quote'
-      let g:ale_javascript_prettier_use_local_config = 1
-      let g:ale_lint_delay = 200 " (in ms)
-      let g:ale_lint_on_enter = 0 " on opening a file
-      let g:ale_lint_on_save = 1
-      let g:ale_lint_on_text_changed = 0
-      let g:ale_lint_on_insert_leave = 0
-      let g:ale_open_list=0
-      let g:ale_set_loclist = 1
-      let g:ale_set_quickfix = 0
-      let g:ale_sign_error = '⨉'
-      let g:ale_sign_warning = '⚠ '
-      let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-      " tsserver not used for typescript as we dev deno atm
-      let g:ale_linters = {
-            \ 'javascript': ['eslint'],
-            \ 'typescript': ['tsserver'],
-            \ 'typescriptreact': ['deno'],
-            \ 'nix': ['nix'],
-            \ 'python': ['flake8'],
-            \ 'sql': ['sqlint'],
-            \ 'terraform': ['tflint'],
-            \ 'rust': ['rustc']
-            \ }
-      let g:ale_fixers = {
-            \ 'javascript': ['eslint', 'prettier'],
-            \ 'typescript': ['deno', 'prettier'],
-            \ 'typescriptreact': ['deno', 'prettier'],
-            \ 'html': ['prettier'],
-            \ 'markdown': ['prettier'],
-            \ 'haskell': ['brittany'],
-            \ 'python': ['black'],
-            \ 'sql': ['sqlfmt'],
-            \ 'elm': ['elm-format'],
-            \ 'terraform': ['terraform'],
-            \ 'nix': ['nixfmt'],
-            \ 'json': ['prettier'],
-            \ 'rust': ['rustfmt'],
-            \ 'latex': ['latexindent'],
-            \ '*': ['remove_trailing_lines', 'trim_whitespace']
-            \ }
-      let g:ale_python_black_options = '--line-length 78' " line length 88 by default
-
-      " Ideally I want to use ALE for fixing/linting
-      " This to 1 prevent ale using lsps for linting/fixing
-      let g:ale_disable_lsp = 0
-
-      " not auto start coq
-      let g:coq_settings = { 'auto_start': 'shut-up' }
-
-      " https://github.com/ms-jpq/chadtree/issues/110
-      " start coq automatically
-      " disable tabnine as it generates a ycm error
-      let g:coq_settings = {
-        \ 'xdg': v:true,
-        \ 'auto_start': v:true,
-        \ 'keymap': {
-        \    'recommended': v:true,
-        \    'jump_to_mark': "<nop>"
-        \ },
-        \ 'clients': {
-        \   'tabnine.enabled': v:false
-        \ }
-        \ }
-
-      " TODO? add copilot to coq suggestions
-      " https://github.com/ms-jpq/coq.thirdparty
-      " see :COQhelp custom_sources, TODO add that somewhere:
-      " { src = "copilot", short_name = "COP", accept_key = "<c-f>" }
-
-      " 'keymap' = {
-      "   'recommended': v:false,
-      "   'jump_to_mark': "<nop>"
-      " }
-
-      " TrySolve the parse buffer issue
-      " let g:prettier#config#single_quote = 'true'
-      " let g:prettier#config#trailing_comma = 'all'
-
-      " Ag the silver searcher
-      " change the default engine for search
-      if executable('ag')
-        set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
-        let g:grep_cmd_opts = '--line-numbers --noheading'
-        let g:ackprg = 'ag --vimgrep'
-        " let g:ackprg = 'ag --nogroup --nocolor --column'
-      endif"
-
-      nnoremap K :Ack! "\b<cword>\b" <CR>
-
-      lua << EOF
-        -- local lspconfig = require('lspconfig')
-        local coq = require('coq')
-        -- run :LspInstall <lsp> in vim to install servers
-
-        -- previously we were doing, no lazy loading
-        -- lspconfig.tsserver.setup{on_attach=require'completion'.on_attach}
-
-
-        require'nvim-treesitter.configs'.setup {
-          -- Modules and its options go here
-          highlight = { enable = true },
-          incremental_selection = { enable = true },
-          textobjects = { enable = true },
-        }
-
-
-        -- Register a handler that will be called for all installed servers.
-        -- Alternatively, you may also register handlers on specific server instances instead (see example below).
-        local nvim_lsp = require('lspconfig')
-        require("nvim-lsp-installer").on_server_ready(function(server)
-            local opts = {
-              on_attach = on_attach
-            }
-
-            -- (optional) Customize the options passed to the server
-            if server.name == "denols" then
-                -- opts.root_dir = function() ... end
-                -- NOTE: what is nvim_lsp
-                opts.root_dir = nvim_lsp.util.root_pattern("deno.json")
-                opts.init_options.lint = true -- trying: let denols lint
-                opts.settings = {}
-            end
-
-            if server.name == "tsserver" then
-                opts.root_dir = nvim_lsp.util.root_pattern("package.json")
-            end
-
-
-            -- This setup() function is exactly the same as lspconfig's setup function.
-            -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-            -- https://github.com/ms-jpq/coq_nvim
-            -- server:setup(opts)
-            server:setup(coq.lsp_ensure_capabilities(opts))
-        end)
-
-      EOF
-
-      " Disable diagnostic from neovim built in lsp, ALE does the job
-      autocmd BufEnter * lua vim.diagnostic.disable()
-    '';
+    extraConfig = builtins.readFile ./config.vim;
 
     # Enable Python 3 provider.
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.withPython3
@@ -238,7 +15,6 @@
       with ps; [
         black # this one currently broken because of https://github.com/NixOS/nixpkgs/pull/172397
         flake8
-        virtualenv # used by coq https://github.com/ms-jpq/coq_nvim#install
       ]);
 
     # withNodeJs = true; no extraNodePackages to do the same as above with python?
@@ -284,28 +60,6 @@
           };
         };
 
-        # everforest-vim = pkgs.vimUtils.buildVimPlugin {
-        #   name = "everforest-vim";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "sainnhe";
-        #     repo = " everforest";
-        #     rev = "0a3f030f02e9438f834b2775aad00499d0ce6098";
-        #     sha256 = "1nzbaq29as8g4vakd2cnbqfrlf8pwbpid034994013qb8vl7ksq9";
-        #     fetchSubmodules = true;
-        #   };
-        # };
-
-        aylin-vim = pkgs.vimUtils.buildVimPlugin {
-          name = "aylin-vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "AhmedAbdulrahman";
-            repo = "aylin.vim";
-            rev = "e4b2ad31d2bfad16fbe792d00180ac3d6888da7a";
-            sha256 = "1qc6dysg8jscb6rjcga45pbzv0hyi39pc010qk5gy1hvnm3qyhgn";
-            fetchSubmodules = true;
-          };
-        };
-
         catppuccin-vim = pkgs.vimUtils.buildVimPlugin {
           name = "catppuccin-vim";
           src = pkgs.fetchFromGitHub {
@@ -318,101 +72,66 @@
         };
 
         # NOTE cannot update this one at the moment
-        #        build flags: SHELL=/nix/store/lkw407y1x1v5bg6hc290c5ry1qaabbgl-bash-5.1-p16/bin/bash
-        # git clone --depth 1 https://github.com/nvim-lua/plenary.nvim dependencies/pack/vendor/start/plenary.nvim
-        # /nix/store/lkw407y1x1v5bg6hc290c5ry1qaabbgl-bash-5.1-p16/bin/bash: line 1: git: command not found
-        # make: *** [Makefile:5: dependencies] Error 127
-        # builder for '/nix/store/q5kszf01f2salq2lpv9vyxd3536hzlhq-vimplugin-nvim-lsp-installer.drv' failed with exit code 2
+        # hence dontBuild dontCheck
         nvim-lsp-installer = pkgs.vimUtils.buildVimPlugin {
           name = "nvim-lsp-installer";
+          dontBuild = true;
+          dontCheck = true;
           src = pkgs.fetchFromGitHub {
             owner = "williamboman";
             repo = "nvim-lsp-installer";
-            rev = "81125c9d4c076f55dab58c0ec2e282412767d134";
-            sha256 = "1mkg3rwwkmgr06nyr98gjfrxf3yw4xwjwdb8yg383kijx4sxvjql";
-            fetchSubmodules = true;
+            rev = "c13ea61d85e2170af35c06b47bcba143cf2f244b";
+            sha256 = "0p2x098z9cl5mz095f1nr7714bmxpcvyrfhwh5hrrggl1dhqflrh";
+            fetchSubmodules = false;
           };
         };
 
-        nvim-coq = pkgs.vimUtils.buildVimPlugin {
-          name = "nvim-coq";
+        # shirotelines.vim
+        # "owner": "yasukotelin",
+        # "repo": "shirotelin",
+        # "rev": "c486f6f1c88acb585859b8d96dd68eafeb14bbd3",
+        # "sha256": "LkMJNIjkpOV4kBnn4XOzipA9DMtaYYwLpL5zcYK2LgE=",
+        # "fetchSubmodules": false,
+        # "leaveDotGit": false,
+        # "deepClone": false
+        shirotelin-vim = pkgs.vimUtils.buildVimPlugin {
+          name = "shirotelin-vim";
           src = pkgs.fetchFromGitHub {
-            owner = "ms-jpq";
-            repo = "coq_nvim";
-            rev = "409c1c1e90613e44b84f735a6b3898e4cf41b749";
-            sha256 = "02yyxpmzfwykq7bznpxah346ld3k5ywmlapi050m1qcjkyhq3phz";
-            fetchSubmodules = true;
+            owner = "yasukotelin";
+            repo = "shirotelin";
+            rev = "c486f6f1c88acb585859b8d96dd68eafeb14bbd3";
+            sha256 = "LkMJNIjkpOV4kBnn4XOzipA9DMtaYYwLpL5zcYK2LgE=";
+            fetchSubmodules = false;
           };
         };
 
-        nvim-coq-artifacts = pkgs.vimUtils.buildVimPlugin {
-          name = "nvim-coq-artifacts";
-          src = pkgs.fetchFromGitHub {
-            owner = "ms-jpq";
-            repo = "coq.artifacts";
-            rev = "23cd2525db1d3e2bdc9d3a1768c76c76983844a7";
-            sha256 = "1q2xb8mvw9iybbq2707d7q12mh1c2p62gmcavwajqiqqacj072wg";
-            fetchSubmodules = true;
-          };
-        };
-
-        # nvim-coq-3rdparty = pkgs.vimUtils.buildVimPlugin {
-        #   name = "nvim-coq-3rdparty";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "ms-jpq";
-        #     repo = "coq.thirdparty";
-        #   };
-        # };
-
-        # zenbones-nvim = pkgs.vimUtils.buildVimPlugin {
-        #   name = "zenbones-vim";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "mcchrish";
-        #     repo = "zenbones.nvim";
-        #     rev = "fdf17ce3ddd0ea637be86450347d9988d74e6a65";
-        #     sha256 = "14n2d5vc51rh3dzk4l7h75dcr3a11vja4zvyq8qng0cacy8ds0ph";
-        #     fetchSubmodules = true;
-        #   };
-        # };
-        # use nix-prefetch-git to find dets
-        # papaya-vim = pkgs.vimUtils.buildVimPlugin {
-        #   name = "vim-theme-papaya";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner= "HenryNewcomer";
-        #     repo= "vim-theme-papaya";
-        #     rev= "dcb18be55215f44418d75b6f071773f80ed87caa";
-        #     sha256= "1rway5wyyqmzjrjmbpvd6h7flfkrmydcj6r6i7x609dplx9yhy7w";
-        #     fetchSubmodules= true;
-        #   };
-        # };
       in [
-        # papaya-vim
-        # vim-theme-papaya
-        # zenbones-nvim
         ack-vim
         ale
-        aylin-vim
         ayu-vim
         catppuccin-vim
+        cmp-buffer
+        cmp-cmdline
+        cmp-copilot
+        cmp-nvim-lsp
+        cmp-path
+        cmp-vsnip
         context-vim
         copilot-vim # github copilot
         delimitMate
         editorconfig-vim
-        # everforest-vim
-        fzf-vim
-        gruvbox-community
+        fzf-vim # Replace with Telescope
         nerdtree
-        nvim-coq
-        nvim-coq-artifacts
+        # null-ls-nvim
+        nvim-cmp
         nvim-lsp-installer
         nvim-lspconfig
         nvim-treesitter
-        # tabnine-vim
+        shirotelin-vim
         tabular
+        # trouble-nvim TODO add this when ALE is out
         vim-airline
         vim-better-whitespace
-        vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
-        vim-obsession
         vim-bookmarks
         vim-commentary
         vim-devicons
@@ -420,9 +139,11 @@
         vim-fugitive
         vim-gist
         vim-jsdoc
-        vim-nix
+        # vim-nix this not necessary with tree-sitter nix
+        vim-obsession
         vim-prettier
         vim-slash
+        vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
         webapi-vim # used by vim-gist for api call
 
         # or you can use our function to directly fetch plugins from git
