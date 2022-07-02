@@ -70,60 +70,6 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing extra message when using completion
 set shortmess+=c
 
-" ALE syntax checkers
-" TODO try https://github.com/jose-elias-alvarez/null-ls.nvim as a replacement
-" so it integrates with lsp
-" let g:ale_completion_delay=200
-let g:ale_completion_enabled = 0
-let g:ale_disable_lsp = 1 " https://github.com/dense-analysis/ale#5xxii-how-can-i-use-ale-and-vim-lsp-together
-let g:ale_echo_cursor = 0 " fasten things a lot
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_fix_on_save = 1
-let g:ale_lint_delay = 200 " (in ms)
-let g:ale_lint_on_enter = 0 " on opening a file
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_insert_leave = 0
-let g:ale_open_list=0
-let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
-let g:ale_sign_error = '⨉'
-let g:ale_sign_warning = '⚠ '
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_javascript_prettier_options = '--no-semi --single-quote'
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_python_black_options = '--line-length 78' " line length 88 by default
-
-let g:ale_linters = {
-			\ 'javascript': ['eslint'],
-			\ 'typescript': ['tsserver'],
-			\ 'typescriptreact': ['deno'],
-			\ 'nix': ['nix'],
-			\ 'python': ['flake8'],
-			\ 'sql': ['sqlint'],
-			\ 'terraform': ['tflint'],
-			\ 'rust': ['rustc']
-			\ }
-let g:ale_fixers = {
-			\ 'javascript': ['eslint', 'prettier'],
-			\ 'typescript': ['deno', 'prettier'],
-			\ 'typescriptreact': ['deno', 'prettier'],
-			\ 'html': ['prettier'],
-			\ 'markdown': ['prettier'],
-			\ 'haskell': ['brittany'],
-			\ 'python': ['black'],
-			\ 'sql': ['sqlfmt'],
-			\ 'elm': ['elm-format'],
-			\ 'terraform': ['terraform'],
-			\ 'nix': ['nixfmt'],
-			\ 'json': ['prettier'],
-			\ 'rust': ['rustfmt'],
-			\ 'latex': ['latexindent'],
-			\ '*': ['remove_trailing_lines', 'trim_whitespace']
-			\ }
-
 " Ag the silver searcher
 " change the default engine for search
 if executable('ag')
@@ -138,7 +84,7 @@ nnoremap K :Ack! "\b<cword>\b" <CR>
 lua << EOF
 
 
-	-- local lspconfig = require('lspconfig')
+	local lspconfig = require('lspconfig')
 	local cmp = require'cmp'
 	-- run :LspInstall <lsp> in vim to install servers
 
@@ -196,53 +142,11 @@ lua << EOF
 
 	-- Register a handler that will be called for all installed servers.
 	-- Alternatively, you may also register handlers on specific server instances instead (see example below).
-	local nvim_lsp = require('lspconfig')
 
 	-- Register a handler for the "javascript" language.
-	nvim_lsp.tsserver.setup {
+	lspconfig.tsserver.setup {
 		-- See documentation for the options.
-		capabilities = capabilities,
-		on_attach = function(client)
-			-- Call initialize() on the client.
-			-- This will load the language server and then trigger
-			-- the on_attach callback for the client.
-			require'completion'.on_attach(client)
-		end,
-	}
-
-
-	-- Register a handler for the "deno" language.
-	nvim_lsp.deno.setup {
-		on_attach = function(client)
-			-- Enable completion and hover for the "deno" language.
-			vim.lsp.callbacks.on_attach(client, nil, capabilities)
-		end,
-		capabilities = capabilities,
-		settings = {
-			deno = {
-				completion = {
-					enable = true,
-				},
-				definition = {
-					enable = true,
-				},
-				hover = {
-					enable = true,
-				},
-				references = {
-					enable = true,
-				},
-				rename = {
-					enable = true,
-				},
-				signatureHelp = {
-					enable = true,
-				},
-				typeDefinition = {
-					enable = true,
-				},
-			},
-		},
+		capabilities = capabilities
 	}
 
 	require("nvim-lsp-installer").setup({
@@ -257,7 +161,19 @@ lua << EOF
 		}
 	})
 
-EOF
+	require("null-ls").setup({
+	    sources = {
+		require("null-ls").builtins.formatting.stylua,
+		require("null-ls").builtins.formatting.prettier,
+		require("null-ls").builtins.diagnostics.eslint,
+		require("null-ls").builtins.completion.spell
+	    },
+	})
 
-" Disable diagnostic from neovim built in lsp, ALE does the job
-autocmd BufEnter * lua vim.diagnostic.disable()
+	require("trouble").setup({
+		-- your configuration comes here
+		-- or leave it empty to use the default settings
+		-- refer to the configuration section below
+	})
+
+EOF

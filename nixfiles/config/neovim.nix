@@ -37,12 +37,12 @@
       # have a look on the link below to figure out the ones for your languages
       # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
       # nodePackages.lehre
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      nodePackages.prettier
-      nodePackages.eslint
+      # nodePackages.typescript
+      # nodePackages.typescript-language-server
+      # nodePackages.prettier
+      # nodePackages.eslint
 
-      elmPackages.elm-format
+      # elmPackages.elm-format
       # rust-analyzer
       # haskellPackages.brittany
     ];
@@ -86,28 +86,8 @@
           };
         };
 
-        # shirotelines.vim
-        # "owner": "yasukotelin",
-        # "repo": "shirotelin",
-        # "rev": "c486f6f1c88acb585859b8d96dd68eafeb14bbd3",
-        # "sha256": "LkMJNIjkpOV4kBnn4XOzipA9DMtaYYwLpL5zcYK2LgE=",
-        # "fetchSubmodules": false,
-        # "leaveDotGit": false,
-        # "deepClone": false
-        shirotelin-vim = pkgs.vimUtils.buildVimPlugin {
-          name = "shirotelin-vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "yasukotelin";
-            repo = "shirotelin";
-            rev = "c486f6f1c88acb585859b8d96dd68eafeb14bbd3";
-            sha256 = "LkMJNIjkpOV4kBnn4XOzipA9DMtaYYwLpL5zcYK2LgE=";
-            fetchSubmodules = false;
-          };
-        };
-
       in [
         ack-vim
-        ale
         ayu-vim
         catppuccin-vim
         cmp-buffer
@@ -122,14 +102,13 @@
         editorconfig-vim
         fzf-vim # Replace with Telescope
         nerdtree
-        # null-ls-nvim
+        null-ls-nvim
         nvim-cmp
         nvim-lsp-installer
         nvim-lspconfig
         nvim-treesitter
-        shirotelin-vim
         tabular
-        # trouble-nvim TODO add this when ALE is out
+        trouble-nvim
         vim-airline
         vim-better-whitespace
         vim-bookmarks
@@ -139,7 +118,7 @@
         vim-fugitive
         vim-gist
         vim-jsdoc
-        # vim-nix this not necessary with tree-sitter nix
+        vim-nix # so it is not lost with nix file, commenting etc
         vim-obsession
         vim-prettier
         vim-slash
