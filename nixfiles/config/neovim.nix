@@ -16,8 +16,8 @@
     withPython3 = true; # default is true so this redundant
     extraPython3Packages = ps:
       with ps; [
-        black # this one currently broken because of https://github.com/NixOS/nixpkgs/pull/172397
-        flake8
+        # black # not working for null-ls, require it in extraPackages
+        # flake8
       ];
 
     # withNodeJs = true; no extraNodePackages to do the same as above with python?
@@ -49,6 +49,8 @@
       nodePackages.prettier
       nodePackages.eslint
       vim-vint
+      black # python fmt
+      python39Packages.flake8
 
       # elmPackages.elm-format
       # rust-analyzer

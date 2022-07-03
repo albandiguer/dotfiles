@@ -5,7 +5,7 @@ set mouse=a
 set number
 set termguicolors
 set ignorecase smartcase " search words case insensitive
-let mapleader=","
+let mapleader=','
 set colorcolumn=80
 autocmd Filetype gitcommit setl colorcolumn=72
 
@@ -233,8 +233,10 @@ lua << EOF
 		null_ls.builtins.code_actions.statix,
 		null_ls.builtins.completion.spell,
 		null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra,
+		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
 	    },
