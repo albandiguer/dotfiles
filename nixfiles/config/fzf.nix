@@ -1,1 +1,6 @@
-{ config, pkgs, lib, ... }: { programs.fzf = { enable = true; }; }
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {programs.fzf = {enable = true;};}

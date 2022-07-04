@@ -25,6 +25,7 @@
     # Extra packages available to nvim
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.extraPackages
     extraPackages = with pkgs; [
+      cargo # deps for lsp rnix
       # deno
       # nixfmt
       # rustfmt

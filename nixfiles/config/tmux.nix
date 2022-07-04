@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.tmux = {
     enable = true;
     keyMode = "vi";
@@ -46,7 +51,5 @@
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
       tmuxPlugins.yank
     ];
-
   };
-
 }

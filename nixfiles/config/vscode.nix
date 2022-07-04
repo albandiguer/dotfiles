@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium; # oss vscode not work with Copilot
@@ -15,4 +20,3 @@
     # }];
   };
 }
-

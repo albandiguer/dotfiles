@@ -198,6 +198,9 @@ lua << EOF
 		on_attach = on_attach
 	}
 
+	lspconfig.vimls.setup {}
+	lspconfig.rnix.setup {}
+
 	-- Async formatting on save callback
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#code-1
 	local async_formatting = function(bufnr)
@@ -247,6 +250,7 @@ lua << EOF
 		null_ls.builtins.formatting.stylua,
 	    },
 		debug = false,
+		-- Async formatting on save
 		on_attach = function(client, bufnr)
 			if client.supports_method("textDocument/formatting") then
 			    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
