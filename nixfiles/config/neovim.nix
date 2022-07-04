@@ -96,6 +96,7 @@
         };
       };
     in [
+      # copilot-vim # github copilot => disabled we use cmp
       ack-vim
       ayu-vim
       catppuccin-vim
@@ -106,7 +107,6 @@
       cmp-path
       cmp-vsnip
       context-vim
-      copilot-vim # github copilot
       delimitMate
       editorconfig-vim
       fzf-vim # Replace with Telescope
@@ -135,7 +135,6 @@
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
       vim-vsnip
       webapi-vim # used by vim-gist for api call
-
       # or you can use our function to directly fetch plugins from git
       # (plugin "schickling/vim-bufonly")
     ]; # Only loaded if programs.neovim.extraConfig is set
