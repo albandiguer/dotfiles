@@ -30,10 +30,10 @@
     # rnix-lsp
     (nerdfonts.override {
       fonts = [
-        # "FiraCode"
+        "FiraCode"
         # "DroidSansMono"
         # "Iosevka"
-        # "UbuntuMono"
+        "UbuntuMono"
         # "Monofur"
         "CascadiaCode"
         "JetBrainsMono"
