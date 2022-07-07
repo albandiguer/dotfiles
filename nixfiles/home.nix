@@ -17,6 +17,7 @@
     lorri
     nodejs
     deno
+    watch
     tree
     niv # Painless dependencies for Nix projects
     htop
@@ -45,6 +46,8 @@
       ];
     }) # required for devicons
   ];
+
+  # services.lorri.enable = true; not compat on darwin, do lorri daemon manually
 
   # enable direnv to autostart nix-shell in directories
   # Create a file called .envrc in your project directory.
