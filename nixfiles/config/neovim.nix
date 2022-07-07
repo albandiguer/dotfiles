@@ -9,6 +9,7 @@
   programs.neovim = {
     enable = true;
 
+    # TODO load lua file see youtube video abt that
     extraConfig = builtins.readFile ./config.vim;
 
     # Enable Python 3 provider.
@@ -19,6 +20,8 @@
         # black # not working for null-ls, require it in extraPackages
         # flake8
       ];
+
+    # generatedConfigs thats where we would set things like nvchad
 
     # withNodeJs = true; no extraNodePackages to do the same as above with python?
 
@@ -52,6 +55,7 @@
       vim-vint
       black # python fmt
       python39Packages.flake8
+      stylua
 
       # elmPackages.elm-format
       # rust-analyzer

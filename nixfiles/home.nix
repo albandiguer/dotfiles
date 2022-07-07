@@ -1,7 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
-
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Avoid programs alike vscode copilot unfree licensed to complain
   nixpkgs.config.allowUnfree = true;
 
