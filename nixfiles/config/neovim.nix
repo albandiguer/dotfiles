@@ -51,7 +51,7 @@
       alejandra
       statix
       nodePackages.prettier
-      nodePackages.eslint
+      # nodePackages.eslint  => install locally in projects
       vim-vint
       black # python fmt
       python39Packages.flake8

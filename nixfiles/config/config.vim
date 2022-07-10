@@ -35,8 +35,16 @@ xnoremap p pgvy
 nmap ( :Trouble<CR>
 nmap ) :TroubleClose<CR>
 
+
+" https://twitter.com/vim_tricks/status/1545065274369609728
+" eselect pasted text with gp
+nnoremap gp `[v`]
+
 " when a bracket is inserted, briefly show the matching one
 set showmatch
+
+" https://twitter.com/vim_tricks/status/1545752287192170503
+set shiftround
 
 " disable arrow keys
 map <Left> <Nop>
@@ -190,7 +198,6 @@ lua << EOF
 		-- See documentation for the options.
 		capabilities = capabilities,
 		on_attach = on_attach
-
 	}
 
 	lspconfig.jedi_language_server.setup {
@@ -198,9 +205,30 @@ lua << EOF
 		on_attach = on_attach
 	}
 
-	lspconfig.vimls.setup {}
-	lspconfig.rnix.setup {}
-	lspconfig.sumneko_lua.setup {}
+	lspconfig.tflint.setup {
+		capabilities = capabilities,
+		on_attach = on_attach
+	}
+
+	lspconfig.vimls.setup {
+		capabilities = capabilities,
+		on_attach = on_attach
+	}
+
+	lspconfig.rnix.setup {
+		capabilities = capabilities,
+		on_attach = on_attach
+	}
+
+	lspconfig.sumneko_lua.setup {
+		capabilities = capabilities,
+		on_attach = on_attach
+	}
+
+	lspconfig.sorbet.setup {
+		capabilities = capabilities,
+		on_attach = on_attach
+	}
 
 	-- Async formatting on save callback
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#code-1
@@ -244,11 +272,14 @@ lua << EOF
 		-- null_ls.builtins.completion.spell,
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.flake8,
+		null_ls.builtins.diagnostics.rubocop,
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.rubocop,
+		null_ls.builtins.formatting.terraform_fmt,
 	    },
 		debug = false,
 		-- Async formatting on save

@@ -1,4 +1,31 @@
+This repo is to keep track of my config, and as a memo for the future. 
+
+# IAM & AWS
+
+ `aws-boilerplate-tf` direcotry for the details
+
+The tf state is stored in s3 and state lock in dynamodb, as described in  `/backend`
+
+To modify the aws config, modify the badly named `/stack` directory
+
+## `IAM` config as following
+
+| IAM user | Role  |
+| -------- | ----- |
+| alban    | admin |
+| dev      | dev   |
+
+
+
 # Nix based dotfiles
+
+## Setup
+
+symlink `nixfiles` directory to `~/.config/nixpkgs`
+
+```
+ ln -s ~/dev/dotfiles/nixfiles ~/.config/nixpkgs
+```
 
 ## BAU commands
 
@@ -20,7 +47,7 @@ Prefetch a package
 nix-prefetch-git url
 ```
 
-## Memo & Thoughts
+## LSPs
 
 ### Install an lsp
 
@@ -76,9 +103,9 @@ experimental-features = nix-command flakes
 
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 
-- [ ] Consider remonving ALE and do everything with Built-in LSP client
+- [x] Consider remonving ALE and do everything with Built-in LSP client
 
 ## Condas
 
-conda installed for apple silicon, not handled by nix/dotfiles for now 
+conda installed for apple silicon, not handled by nix/dotfiles for now
 https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706

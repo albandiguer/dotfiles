@@ -12,6 +12,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    # joplin-desktop
+    # joplin
     silver-searcher
     # use lorri init in project directories to setup the shell.nix file
     lorri

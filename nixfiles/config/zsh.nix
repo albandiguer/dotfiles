@@ -68,7 +68,15 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git"];
+      plugins = [
+        "git"
+        "aws"
+        "docker"
+        "docker-compose"
+        "minikube"
+        "kubectl"
+        "terraform"
+      ];
       theme = "robbyrussell";
     };
   };
