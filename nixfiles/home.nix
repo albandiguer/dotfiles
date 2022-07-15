@@ -12,6 +12,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    awscli2
+    # awless # https://github.com/wallix/awless
     # joplin-desktop
     # joplin
     silver-searcher

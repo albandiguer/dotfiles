@@ -2,5 +2,6 @@
 pkgs.mkShell {
   buildInputs = [
     pkgs.terraform
+    pkgs.terraform-providers.aws
   ];
 }

@@ -50,6 +50,7 @@
       # null-ls deps
       alejandra
       statix
+      terraform # for terraform_fmt
       nodePackages.prettier
       # nodePackages.eslint  => install locally in projects
       vim-vint
@@ -99,6 +100,25 @@
           fetchSubmodules = false;
         };
       };
+
+      nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
+        plugins:
+          with pkgs.tree-sitter-grammars; [
+            tree-sitter-cmake
+            tree-sitter-elm
+            tree-sitter-graphql
+            tree-sitter-haskell
+            tree-sitter-hcl
+            tree-sitter-html
+            tree-sitter-javascript
+            tree-sitter-lua
+            tree-sitter-nix
+            tree-sitter-python
+            tree-sitter-ruby
+            tree-sitter-vim
+            tree-sitter-yaml
+          ]
+      );
     in [
       # copilot-vim # github copilot => disabled we use cmp
       ack-vim
@@ -119,7 +139,7 @@
       nvim-cmp
       nvim-lsp-installer
       nvim-lspconfig
-      nvim-treesitter
+      nvim-treesitter-with-plugins
       nvim-web-devicons
       tabular
       trouble-nvim
