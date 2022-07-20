@@ -7,11 +7,14 @@
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium; # oss vscode not work with Copilot
+
     extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
       esbenp.prettier-vscode
       github.copilot
+      hashicorp.terraform
     ];
+
     # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
     #   name = "catpuccin.catpuccin-vsc";
     #   publisher = "Catpuccin";

@@ -1,9 +1,16 @@
 provider "aws" {
-  region = "${var.aws_region}"
+  region = var.aws_region
 }
 
 # Define a backend
 terraform {
+  # required_providers {
+  #   aws = {
+  #     source  = "hashicorp/aws"
+  #     version = "~> 4.22.0"
+  #   }
+  # }
+
   backend "s3" {
     encrypt        = true
     bucket         = "aws-boilerplate-remote-tfstate-storage"
@@ -23,18 +30,18 @@ resource "aws_iam_group" "administrators" {
 }
 
 resource "aws_iam_user_group_membership" "alban_admin" {
-  user = "${aws_iam_user.alban.name}"
+  user = aws_iam_user.alban.name
 
   groups = [
-    "${aws_iam_group.administrators.name}",
+    aws_iam_group.administrators.name,
   ]
 }
 
 resource "aws_iam_group_policy" "admin" {
-  name = "admin_policy"
-  group = "${aws_iam_group.administrators.id}"
+  name  = "admin_policy"
+  group = aws_iam_group.administrators.id
 
-  policy=<<EOF
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -48,5 +55,3 @@ resource "aws_iam_group_policy" "admin" {
 }
 EOF
 }
-
-

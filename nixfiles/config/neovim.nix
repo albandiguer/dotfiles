@@ -104,6 +104,7 @@
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
         plugins:
           with pkgs.tree-sitter-grammars; [
+            tree-sitter-c
             tree-sitter-cmake
             tree-sitter-elm
             tree-sitter-graphql
