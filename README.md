@@ -15,8 +15,6 @@ To modify the aws config, modify the badly named `/stack` directory
 | alban    | admin |
 | dev      | dev   |
 
-
-
 # Nix based dotfiles
 
 ## Setup

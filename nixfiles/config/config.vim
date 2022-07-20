@@ -193,42 +193,20 @@ lua << EOF
 
 	local lspconfig = require('lspconfig')
 
+	-- Options for the lsps setup
+	local options = {
+		capabilities = capabilities,
+		on_attach = on_attach
+	};
+
 	-- Register a handler for the "javascript" language.
-	lspconfig.tsserver.setup {
-		-- See documentation for the options.
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
-
-	lspconfig.jedi_language_server.setup {
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
-
-	lspconfig.tflint.setup {
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
-
-	lspconfig.vimls.setup {
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
-
-	lspconfig.rnix.setup {
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
-
-	lspconfig.sumneko_lua.setup {
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
-
-	lspconfig.sorbet.setup {
-		capabilities = capabilities,
-		on_attach = on_attach
-	}
+	lspconfig.tsserver.setup(options)
+	lspconfig.jedi_language_server.setup(options)
+	lspconfig.tflint.setup(options)
+	lspconfig.vimls.setup(options)
+	lspconfig.rnix.setup(options)
+	lspconfig.sumneko_lua.setup(options)
+	lspconfig.sorbet.setup(options)
 
 	-- Async formatting on save callback
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#code-1

@@ -4,13 +4,6 @@ provider "aws" {
 
 # Define a backend
 terraform {
-  # required_providers {
-  #   aws = {
-  #     source  = "hashicorp/aws"
-  #     version = "~> 4.22.0"
-  #   }
-  # }
-
   backend "s3" {
     encrypt        = true
     bucket         = "aws-boilerplate-remote-tfstate-storage"

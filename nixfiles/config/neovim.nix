@@ -30,6 +30,7 @@
     extraPackages = with pkgs; [
       cargo # deps for lsp rnix
       # deno
+      gcc # to compile tree-sitter grammars lol
       # nixfmt
       # rustfmt
       wget # used by lsp-installer , use :checkhealth in vim
