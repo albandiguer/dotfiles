@@ -1,0 +1,4 @@
+default: infosec
+
+infosec:
+	tfsec
