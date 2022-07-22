@@ -1,19 +1,14 @@
-This repo is to keep track of my config, and as a memo for the future. 
+This repo is to keep track of my config, and as a memo for the future.
 
 # IAM & AWS
 
- `aws-boilerplate-tf` direcotry for the details
+`aws-infra` direcotry for the details
 
-The tf state is stored in s3 and state lock in dynamodb, as described in  `/backend`
+Terraform state is in s3 and state lock handled with dynamodb
+Modify aws infra in `aws-infra/stack`
 
-To modify the aws config, modify the badly named `/stack` directory
-
-## `IAM` config as following
-
-| IAM user | Role  |
-| -------- | ----- |
-| alban    | admin |
-| dev      | dev   |
+[backend infra](aws-infra/backend/tfdocs.md)
+[stack infra](aws-infra/stack/tfdocs.md)
 
 # Nix based dotfiles
 

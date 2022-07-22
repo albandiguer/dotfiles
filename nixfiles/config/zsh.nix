@@ -11,6 +11,9 @@
       false; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 
     initExtra = ''
+      # Add local directory node_modules/.bin to PATH.
+      export PATH="./node_modules/.bin:$PATH";
+
       source <(kubectl completion zsh)
       source <(minikube completion zsh)
 

@@ -2,7 +2,8 @@ provider "aws" {
   region = var.aws_region
 }
 
-# Define a backend
+# Backend stored in s3
+# not worth it as opposed to local + github checkin
 terraform {
   backend "s3" {
     encrypt        = true
