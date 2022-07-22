@@ -6,12 +6,11 @@ provider "aws" {
 # not worth it as opposed to local + github checkin
 terraform {
   backend "s3" {
-    encrypt        = true
-    bucket         = "aws-boilerplate-remote-tfstate-storage"
-    dynamodb_table = "aws-boilerplate-tf-state-lock"
+    bucket         = "albandiguer-terraform-state-tf-state-ap-southeast-2"
+    key            = "dotfiles-resources"
+    dynamodb_table = "terraform-state-lock"
     region         = "ap-southeast-2"
-    key            = "aws-boilerplate.tfstate"
-    profile        = "default"
+    encrypt        = true
   }
 }
 

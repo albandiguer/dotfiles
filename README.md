@@ -2,13 +2,13 @@ This repo is to keep track of my config, and as a memo for the future.
 
 # IAM & AWS
 
-`aws-infra` direcotry for the details
+`aws-infra` directory for the details
 
-Terraform state is in s3 and state lock handled with dynamodb
-Modify aws infra in `aws-infra/stack`
+We bootstrap a `terraform` backend for accounts management and all sorts of personal projects. The backend is in s3/dynamodb.
+[backend infra](aws-infra/tf-backend/tfdocs.md)
 
-[backend infra](aws-infra/backend/tfdocs.md)
-[stack infra](aws-infra/stack/tfdocs.md)
+Additional accounts created in `/stack`
+[stack infra](aws-infra/tf-misc/tfdocs.md)
 
 # Nix based dotfiles
 
@@ -40,7 +40,17 @@ Prefetch a package
 nix-prefetch-git url
 ```
 
-## LSPs
+## Languages
+
+### Languages
+
+Languages are being supported via few tools, `tree-sitter`, `native lsp` or `null-ls`. To configure them, change `config.vim` and `neovim.nix` + in `vim` use
+
+- `:TSConfig` for `tree-sitter`
+
+- `:Lsp<tab>`
+
+- `:Null<tab>`
 
 ### Install an lsp
 
