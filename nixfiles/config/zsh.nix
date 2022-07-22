@@ -11,14 +11,15 @@
       false; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 
     initExtra = ''
-      # Add local directory node_modules/.bin to PATH.
-      export PATH="./node_modules/.bin:$PATH";
+      # Add local directory ./node_modules/.bin
+      # + a global directory for `npm i -g` https://matthewrhone.dev/nixos-npm-globally
+      export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH";
+      export NODE_PATH=~/.npm-packages/lib/node_modules
 
       source <(kubectl completion zsh)
       source <(minikube completion zsh)
 
       alias nixsearch="nix search nixpkgs"
-
 
       # >>> conda initialize >>>
       # !! Contents within this block are managed by 'conda init' !!

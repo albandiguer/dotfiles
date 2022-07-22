@@ -75,6 +75,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Symlink classic dotfiles
+  home.file.".npmrc".source = config/.npmrc;
+
   # set your user tokens as enivornment variables, such as ~/.secrets
   # See the README for examples.
 
