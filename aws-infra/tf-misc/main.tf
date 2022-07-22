@@ -2,8 +2,9 @@ provider "aws" {
   region = var.aws_region
 }
 
-# Backend stored in s3
-# not worth it as opposed to local + github checkin
+# TODO: rep with IAM module
+# see submodules at https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest
+
 terraform {
   backend "s3" {
     bucket         = "albandiguer-terraform-state-tf-state-ap-southeast-2"

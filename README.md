@@ -1,4 +1,4 @@
-This repo is to keep track of my config, and as a memo for the future.
+my config in case the computer burns
 
 # IAM & AWS
 
