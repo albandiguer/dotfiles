@@ -20,6 +20,12 @@ To modify the aws config, modify the badly named `/stack` directory
 | --------- | ------ |
 | alban     | admin  |
 
+## Howto change the backend
+
+- Create the new backend
+- Point any config relying on the backend to the new backend
+- Delete the old backend
+
 ## TODOs
 
 - [ ] Migrate to later tf version
