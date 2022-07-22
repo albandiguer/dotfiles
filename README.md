@@ -4,11 +4,11 @@ my config in case the computer burns
 
 `aws-infra` directory for the details
 
-We bootstrap a `terraform` backend for accounts management and all sorts of personal projects. The backend is in s3/dynamodb.
-[backend infra](aws-infra/tf-backend/tfdocs.md)
+We bootstrap a `terraform` backend to store the state and lock of tf resources. The backend is currently in `s3` and `dynamodb`
+[tf-backend](aws-infra/tf-backend/tfdocs.md)
 
-Additional accounts created in `/stack`
-[stack infra](aws-infra/tf-misc/tfdocs.md)
+Additional resources created in `/tf-misc`
+[tf-misc](aws-infra/tf-misc/tfdocs.md)
 
 # Nix based dotfiles
 
