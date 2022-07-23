@@ -29,7 +29,29 @@
       github.user = "albandiguer";
       diff.tool = "nvim";
       format.pretty = "format:%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(blue)%an%C(reset) %s";
-      core.excludesfile = ".gitignore";
+      # core.excludesfile = ".gitignore";
     };
+    ignores = [
+      "*.swp"
+      "*.tfstate.backup"
+      "*~"
+      ".DS_Store"
+      "._*"
+      ".gitignore"
+      ".vscode"
+      ".Spotlight-V100"
+      "Session.vim"
+      "gitmodules"
+      "tags"
+      "node_modules/"
+      ".gem/"
+      ".terraform"
+      ".netrwhist"
+      ".zcompdump"
+      "*.log"
+    ];
+
+    # diff-so-fancy.enable = true;
+    difftastic.enable = true;
   };
 }
