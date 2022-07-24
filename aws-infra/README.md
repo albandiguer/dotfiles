@@ -6,8 +6,14 @@ the tfstate is stored in aws backend, see the backend directory for details.
 
 ## TF version
 
-current is `1.2.5`, use `niv` to fix the version?
-as described here https://xeiaso.net/blog/how-i-start-nix-2020-03-08
+`niv` is used to lock the nixpkgs-unstable version so we get a predictible tf
+
+more here
+https://github.com/nmattia/niv#update
+https://xeiaso.net/blog/how-i-start-nix-2020-03-08
+
+- `niv init` to get `nix/sources.*` to fix the nixpkgs version
+- use that source in `shell.nix`
 
 ## Memo
 
