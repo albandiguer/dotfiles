@@ -1,5 +1,10 @@
+locals {
+  paris  = "eu-west-3"
+  sydney = "ap-southeast-2"
+}
+
 provider "aws" {
-  region = var.aws_region
+  region = local.paris
 }
 
 # TODO: rep with IAM module
@@ -15,37 +20,60 @@ terraform {
   }
 }
 
-resource "aws_iam_user" "alban" {
-  name = "alban"
+# Create a role terraform can assume to crud resources + associated data
+data "aws_iam_policy_document" "resource_full_access" {
+  statement {
+    sid       = "FullAccess"
+    effect    = "Allow"
+    resources = ["arn:aws:s3:::bucketname/path/*"]
+
+    actions = [
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:GetObject",
+      "s3:DeleteObject",
+      "s3:ListBucket",
+      "s3:ListBucketMultipartUploads",
+      "s3:GetBucketLocation",
+      "s3:AbortMultipartUpload"
+    ]
+  }
 }
 
-resource "aws_iam_group" "administrators" {
-  name = "administrators"
+data "aws_iam_policy_document" "base" {
+  statement {
+    sid = "BaseAccess"
+
+    actions = [
+      "s3:ListBucket",
+      "s3:ListBucketVersions"
+    ]
+
+    resources = ["arn:aws:s3:::bucketname"]
+    effect    = "Allow"
+  }
 }
 
-resource "aws_iam_user_group_membership" "alban_admin" {
-  user = aws_iam_user.alban.name
+# https://registry.terraform.io/modules/cloudposse/iam-role/aws/latest
+module "role" {
+  source = "cloudposse/iam-role/aws"
+  # Cloud Posse recommends pinning every module to a specific version
+  # version     = "x.x.x"
 
-  groups = [
-    aws_iam_group.administrators.name,
+  enabled   = true
+  namespace = "eg"
+  stage     = "prod"
+  name      = "app"
+
+  policy_description = "Allow S3 FullAccess"
+  role_description   = "IAM role with permissions to perform actions on S3 resources"
+
+  principals = {
+    AWS = ["arn:aws:iam::123456789012:role/workers"]
+  }
+
+  policy_documents = [
+    data.aws_iam_policy_document.resource_full_access.json,
+    data.aws_iam_policy_document.base.json
   ]
-}
-
-resource "aws_iam_group_policy" "admin" {
-  name  = "admin_policy"
-  group = aws_iam_group.administrators.id
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1544790092768",
-      "Action": "*",
-      "Effect": "Allow",
-      "Resource": "*"
-    }
-  ]
-}
-EOF
 }

@@ -1,14 +1,15 @@
 locals {
-  /* region = "eu-west-3" */
-  region = "ap-southeast-2"
+  paris  = "eu-west-3"
+  sydney = "ap-southeast-2"
 }
 
 # Backend creation with the following module
 # https://registry.terraform.io/modules/trussworks/bootstrap/aws/latest
+# Add another backend in paris
 module "bootstrap" {
-  source = "trussworks/bootstrap/aws"
+  source  = "trussworks/bootstrap/aws"
   version = "~> 3.0.0"
 
-  region        = local.region
+  region        = local.paris
   account_alias = "albandiguer-terraform-state" # https://Your_Account_Alias.signin.aws.amazon.com/console/
 }

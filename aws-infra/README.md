@@ -15,6 +15,31 @@ https://xeiaso.net/blog/how-i-start-nix-2020-03-08
 - `niv init` to get `nix/sources.*` to fix the nixpkgs version
 - use that source in `shell.nix`
 
+```nix
+{
+  sources ? import ./nix/sources.nix,
+  pkgs ? import sources.nixpkgs {},
+}:
+pkgs.mkShell {
+...
+```
+
+to update `niv update nixpkgs -t url.tar.gz`
+
+### nixpkgs-unstable
+
+point to `nixpkgs-unstable`, run
+
+```
+niv modify nixpkgs -a branch=nixpkgs-unstable
+```
+
+### Older versions
+
+Can [be found here](https://lazamar.co.uk/nix-versions/?package=terraform&version=0.12.31&fullName=terraform-0.12.31&keyName=terraform_0_12&revision=c82b46413401efa740a0b994f52e9903a4f6dcd5&channel=nixpkgs-unstable#instructions)
+
+Then `niv add nixpkgs -t url.tar.gz` for an older nixpkgs version for example
+
 ## Memo
 
 The tf state is stored in s3 and state lock in dynamodb, as described in `/backend` directory.
