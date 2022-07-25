@@ -5,7 +5,6 @@ locals {
 
 # Backend creation with the following module
 # https://registry.terraform.io/modules/trussworks/bootstrap/aws/latest
-# Add another backend in paris
 module "bootstrap" {
   source  = "trussworks/bootstrap/aws"
   version = "~> 3.0.0"

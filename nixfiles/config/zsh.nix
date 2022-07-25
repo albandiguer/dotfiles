@@ -37,6 +37,8 @@
       # <<< conda initialize <<<
 
       alias condaenvs="conda env list"
+
+      alias prettyjson="python3 -mjson.tool"
       # use: conda activate mlp | base to activate an environment
       # use: conda deactivate to deactivate environment
 
