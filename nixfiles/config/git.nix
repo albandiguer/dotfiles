@@ -45,7 +45,7 @@
       "tags"
       "node_modules/"
       ".gem/"
-      ".terraform"
+      ".terraform/"
       ".netrwhist"
       ".zcompdump"
       "*.log"
