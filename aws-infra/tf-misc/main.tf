@@ -12,10 +12,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "albandiguer-terraform-state-tf-state-ap-southeast-2"
+    bucket         = "albandiguer-terraform-state-paris-tf-state-eu-west-3"
     key            = "dotfiles-resources"
     dynamodb_table = "terraform-state-lock"
-    region         = "ap-southeast-2"
+    region         = "eu-west-3"
     encrypt        = true
   }
 }
@@ -69,7 +69,7 @@ module "role" {
   role_description   = "IAM role with permissions to perform actions on S3 resources"
 
   principals = {
-    AWS = ["arn:aws:iam::123456789012:role/workers"]
+    AWS = ["arn:aws:iam::123456789012:role/workers"] # this will be assumed from web? with bitwarden oidc?
   }
 
   policy_documents = [

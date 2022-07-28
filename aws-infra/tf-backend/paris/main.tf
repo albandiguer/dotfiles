@@ -10,5 +10,5 @@ module "bootstrap" {
   version = "~> 3.0.0"
 
   region        = local.paris
-  account_alias = "albandiguer-terraform-state" # https://Your_Account_Alias.signin.aws.amazon.com/console/
+  account_alias = "albandiguer-terraform-state-paris" # https://Your_Account_Alias.signin.aws.amazon.com/console/
 }
