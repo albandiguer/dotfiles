@@ -10,5 +10,4 @@ in
     ];
 
     AWS_PROFILE = "default";
-    AWS_REGION = "ap-southeast-2";
   }
