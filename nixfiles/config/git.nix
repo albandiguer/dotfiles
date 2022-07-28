@@ -28,6 +28,7 @@
       };
       github.user = "albandiguer";
       diff.tool = "nvim";
+      add.interactive.useBuiltin = false;
       format.pretty = "format:%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(blue)%an%C(reset) %s";
       # core.excludesfile = ".gitignore";
     };
@@ -51,7 +52,7 @@
       "*.log"
     ];
 
-    # diff-so-fancy.enable = true;
-    difftastic.enable = true;
+    diff-so-fancy.enable = true;
+    # difftastic.enable = true;
   };
 }

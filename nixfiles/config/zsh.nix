@@ -42,6 +42,8 @@
       # use: conda activate mlp | base to activate an environment
       # use: conda deactivate to deactivate environment
 
+      # not closing shell on ctrl+d
+      setopt ignore_eof
     '';
 
     sessionVariables = {
