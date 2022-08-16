@@ -102,6 +102,27 @@
         };
       };
 
+      # {
+      #     "owner": "quanganhdo",
+      #     "repo": "grb256",
+      #     "rev": "3115044059b3adcd12ea525994de6a255a8bf783",
+      #     "sha256": "G5XG/4IuKZhbPR0JMpUjmctP5WPK7YwdR+WytNYcI2k=",
+      #     "fetchSubmodules": false,
+      #     "leaveDotGit": false,
+      #     "deepClone": false
+      # }%
+      nvim-grb256 = pkgs.vimUtils.buildVimPlugin {
+        name = "nvim-grb256";
+        src = pkgs.fetchFromGitHub {
+          owner = "quanganhdo";
+          repo = "grb256";
+          rev = "3115044059b3adcd12ea525994de6a255a8bf783";
+          sha256 = "G5XG/4IuKZhbPR0JMpUjmctP5WPK7YwdR+WytNYcI2k=";
+          fetchSubmodules = false;
+          # deepClone = false;
+        };
+      };
+
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
         plugins:
           with pkgs.tree-sitter-grammars; [
@@ -139,6 +160,7 @@
       nerdtree
       null-ls-nvim
       nvim-cmp
+      nvim-grb256
       nvim-lsp-installer
       nvim-lspconfig
       nvim-treesitter-with-plugins

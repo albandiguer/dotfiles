@@ -7,9 +7,7 @@ provider "aws" {
   region = local.paris
 }
 
-# TODO: rep with IAM module
-# see submodules at https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest
-
+# Define the backend (s3 paris)
 terraform {
   backend "s3" {
     bucket         = "albandiguer-terraform-state-paris-tf-state-eu-west-3"

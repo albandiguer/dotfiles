@@ -17,17 +17,18 @@
     # awless # https://github.com/wallix/awless
     # joplin-desktop
     # joplin
-    silver-searcher
+    # ack
+    silver-searcher # get use to ag instead of ack
     # use lorri init in project directories to setup the shell.nix file
     lorri
     nodejs
+    ngrok
     deno
     watch
     tree
     niv # Painless dependencies for Nix projects
     htop
     # marktext not supported in aarch64
-    ack
     wget
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums

@@ -1,5 +1,6 @@
 
-colorscheme catppuccin " test https://vimcolorschemes.com/yasukotelin/shirotelin
+" colorscheme catppuccin " test https://vimcolorschemes.com/yasukotelin/shirotelin
+colorscheme grb256
 let g:context_nvim_no_redraw = 1
 set mouse=a
 set number
@@ -84,19 +85,16 @@ set shortmess+=c
 " change the default engine for search
 if executable('ag')
 	set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
-	let g:grep_cmd_opts = '--line-numbers --noheading'
-	let g:ackprg = 'ag --vimgrep'
+	" let g:grep_cmd_opts = '--line-numbers --noheading'
+	let g:ackprg = 'ag --vimgrep --column'
 	" let g:ackprg = 'ag --nogroup --nocolor --column'
-endif"
+endif
 
 nnoremap K :Ack! "\b<cword>\b" <CR>
 
 lua << EOF
 
-
-	local cmp = require'cmp'
-
-	require'nvim-treesitter.configs'.setup {
+	require('nvim-treesitter.configs').setup {
 		-- Modules and its options go here
 		highlight = { enable = true },
 		incremental_selection = { enable = true },
@@ -104,9 +102,7 @@ lua << EOF
 		ensure_installed = { "javascript", "lua", "vim", "typescript", "python", "nix", "markdown" }
 	}
 
-
-
-
+	local cmp = require'cmp'
 	cmp.setup({
 		snippet = {
 			-- REQUIRED - you must specify a snippet engine
@@ -246,17 +242,17 @@ lua << EOF
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 	null_ls.setup({
 	    sources = {
-		null_ls.builtins.code_actions.statix,
+		null_ls.builtins.code_actions.statix, --  for nix
 		-- null_ls.builtins.completion.spell,
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.flake8,
-		null_ls.builtins.diagnostics.rubocop,
+		null_ls.builtins.diagnostics.rubocop, -- ruby static analysis
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.rubocop,
+		null_ls.builtins.formatting.rubocop, -- ruby formatter
 		null_ls.builtins.formatting.terraform_fmt,
 	    },
 		debug = false,

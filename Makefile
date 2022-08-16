@@ -5,5 +5,9 @@ update:
 	nix-channel --update
 	home-manager switch
 
-update-nix:
+upgrade-nix:
 	nix upgrade-nix
+
+
+cleanup:
+	# remove old generations

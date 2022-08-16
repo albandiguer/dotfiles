@@ -1,18 +1,10 @@
 my config in case the computer burns
 
-# IAM & AWS
-
-`aws-infra` directory for the details
-
-We bootstrap a `terraform` backend to store the state and lock of tf resources. The backend is currently in `s3` and `dynamodb`
-[tf-backend](aws-infra/tf-backend/tfdocs.md)
-
-Additional resources created in `/tf-misc`
-[tf-misc](aws-infra/tf-misc/tfdocs.md)
-
 # Nix based dotfiles
 
 ## Setup
+
+Install `nix` and `home-manager`
 
 symlink `nixfiles` directory to `~/.config/nixpkgs`
 
@@ -22,16 +14,16 @@ symlink `nixfiles` directory to `~/.config/nixpkgs`
 
 ## BAU commands
 
-Apply changes to home-manager config
-
-```shell
-make
-```
-
 Update environment and deps with
 
 ```shell
 make update
+```
+
+Apply changes to home-manager config
+
+```shell
+make
 ```
 
 Prefetch a package
@@ -39,6 +31,8 @@ Prefetch a package
 ```shell
 nix-prefetch-git url
 ```
+
+**protip**: to figure sha256, can also run `make` with a wrong sha and it will give the right one
 
 ## Languages
 
@@ -71,10 +65,20 @@ experimental-features = nix-command flakes
 ## Todos
 
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
-
-- [x] Consider remonving ALE and do everything with Built-in LSP client
+- [ ] Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
 
 ## Condas
 
 conda installed for apple silicon, not handled by nix/dotfiles for now
 https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
+
+# IAM & AWS
+
+`aws-infra` directory for the dets
+
+Bootstrap `terraform` backend to store states and lockfiles of tf resources.
+The backend is in `s3` + `dynamodb`
+[tf-backend](aws-infra/tf-backend/tfdocs.md)
+
+Additional resources created in `/tf-misc`
+[tf-misc](aws-infra/tf-misc/tfdocs.md)
