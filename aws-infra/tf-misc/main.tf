@@ -18,57 +18,55 @@ terraform {
   }
 }
 
-# Create a role terraform can assume to crud resources + associated data
+# Create a role to assume to interact with s3 resources 
 data "aws_iam_policy_document" "resource_full_access" {
   statement {
     sid       = "FullAccess"
     effect    = "Allow"
-    resources = ["arn:aws:s3:::bucketname/path/*"]
+    resources = ["arn:aws:s3:::*"]
 
     actions = [
       "s3:PutObject",
       "s3:PutObjectAcl",
       "s3:GetObject",
-      "s3:DeleteObject",
       "s3:ListBucket",
       "s3:ListBucketMultipartUploads",
       "s3:GetBucketLocation",
       "s3:AbortMultipartUpload"
     ]
+    #"s3:DeleteObject",
   }
 }
 
 data "aws_iam_policy_document" "base" {
   statement {
-    sid = "BaseAccess"
+    sid       = "BaseAccess"
+    effect    = "Allow"
+    resources = ["arn:aws:s3:::bucketname"]
 
     actions = [
       "s3:ListBucket",
       "s3:ListBucketVersions"
     ]
-
-    resources = ["arn:aws:s3:::bucketname"]
-    effect    = "Allow"
   }
 }
 
 # https://registry.terraform.io/modules/cloudposse/iam-role/aws/latest
 module "role" {
-  source = "cloudposse/iam-role/aws"
-  # Cloud Posse recommends pinning every module to a specific version
-  # version     = "x.x.x"
+  source  = "cloudposse/iam-role/aws"
+  version = "~> 0.16.2"
 
   enabled   = true
   namespace = "eg"
   stage     = "prod"
   name      = "app"
 
-  policy_description = "Allow S3 FullAccess"
+  policy_description = "Allow S3 FullAccess minus delete"
   role_description   = "IAM role with permissions to perform actions on S3 resources"
 
-  principals = {
-    AWS = ["arn:aws:iam::123456789012:role/workers"] # this will be assumed from web? with bitwarden oidc?
-  }
+  principals = {}
+  # AWS = ["arn:aws:iam::123456789012:role/workers"] # this will be assumed from web? with bitwarden oidc?
+  #}
 
   policy_documents = [
     data.aws_iam_policy_document.resource_full_access.json,

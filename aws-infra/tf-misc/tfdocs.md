@@ -13,16 +13,16 @@
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | ~> 0.16.2 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_iam_group.administrators](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group) | resource |
-| [aws_iam_group_policy.admin](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy) | resource |
-| [aws_iam_user.alban](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user) | resource |
-| [aws_iam_user_group_membership.alban_admin](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user_group_membership) | resource |
+| [aws_iam_policy_document.base](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.resource_full_access](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
