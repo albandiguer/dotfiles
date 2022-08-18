@@ -119,7 +119,6 @@
           rev = "3115044059b3adcd12ea525994de6a255a8bf783";
           sha256 = "G5XG/4IuKZhbPR0JMpUjmctP5WPK7YwdR+WytNYcI2k=";
           fetchSubmodules = false;
-          # deepClone = false;
         };
       };
 

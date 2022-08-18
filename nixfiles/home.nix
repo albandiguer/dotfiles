@@ -37,18 +37,22 @@
     # rnix-lsp
     (nerdfonts.override {
       fonts = [
-        "FiraCode"
-        # "DroidSansMono"
-        # "Iosevka"
-        "UbuntuMono"
-        # "Monofur"
-        "CascadiaCode"
-        "JetBrainsMono"
-        "Mononoki"
-        "Terminus"
-        # "Hasklig"
         "FantasqueSansMono"
+        "FiraCode"
+        "Hack"
+        "Iosevka"
+        "JetBrainsMono"
+        "UbuntuMono"
         "VictorMono"
+        # "CascadiaCode"
+        # "DroidSansMono"
+        # "Hasklig"
+        # "Meslo"
+        # "Monofur"
+        # "Mononoki"
+        # "ProggyClean"
+        # "SourceCodePro"
+        # "Terminus"
       ];
     }) # required for devicons
   ];
