@@ -66,6 +66,7 @@ experimental-features = nix-command flakes
 
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - [ ] Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
+- [ ] Switch from NERDTree to Nvim Tree https://github.com/kyazdani42/nvim-tree.lua (nixpkgs nvim-tree-lua)
 
 ## Condas
 
