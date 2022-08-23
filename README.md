@@ -1,5 +1,3 @@
-my dotfiles
-
 # Nix based dotfiles
 
 ## Setup
