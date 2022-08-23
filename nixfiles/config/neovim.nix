@@ -28,9 +28,9 @@
     # Extra packages available to nvim
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.extraPackages
     extraPackages = with pkgs; [
-      cargo # deps for lsp rnix
+      cargo # deps for rnix lsp
       # deno
-      gcc # to compile tree-sitter grammars lol
+      gcc # to compile tree-sitter grammars...
       # nixfmt
       # rustfmt
       wget # used by lsp-installer , use :checkhealth in vim
@@ -142,13 +142,12 @@
           ]
       );
     in [
-      # copilot-vim # github copilot => disabled we use cmp
       ack-vim
       ayu-vim
       catppuccin-vim
       cmp-buffer
       cmp-cmdline
-      cmp-copilot
+      # cmp-copilot
       cmp-nvim-lsp
       cmp-path
       cmp-vsnip

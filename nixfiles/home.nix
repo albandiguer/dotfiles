@@ -18,6 +18,7 @@
     # joplin-desktop
     # joplin
     # ack
+    slack
     silver-searcher # get use to ag instead of ack
     # use lorri init in project directories to setup the shell.nix file
     lorri

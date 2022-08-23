@@ -9,5 +9,9 @@ upgrade-nix:
 	nix upgrade-nix
 
 
+# Sometimes updating breaks things
+rollback:
+	nix-channel --rollback
+
 cleanup:
 	# remove old generations
