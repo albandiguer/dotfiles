@@ -87,47 +87,8 @@
         };
       };
 
-      # "rev": "6f30a4066c477617da95ecef8f88a697d2a7124c",
-      # "sha256": "4Mr8om0grkdMSxXvdEeEEGq4j/bfJouQN9FPiyKiFGk=",
-      # "fetchSubmodules": false,
-      mason-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "mason-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "williamboman";
-          repo = "mason.nvim";
-          rev = "6f30a4066c477617da95ecef8f88a697d2a7124c";
-          sha256 = "4Mr8om0grkdMSxXvdEeEEGq4j/bfJouQN9FPiyKiFGk=";
-          fetchSubmodules = false;
-        };
-        buildPhase = ''
-          export SHELL=/nix/store/2x88p3w28rayrk1xfsxjwhcvd4l0wsdi-home-manager-path/bin/zsh
-        '';
-      };
-
-      # "rev": "d9365e72afb2f876a62cd3cade555dc1a95031d9",
-      # "sha256": "dtkYG0bOvHSDD3xeZaT91sc8zeZL3WuMqV4t0M3wIlo=",
-      # "fetchSubmodules": false,
-      # "leaveDotGit": false,
-      mason-lspconfig-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "mason-lspconfig-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "williamboman";
-          repo = "mason-lspconfig.nvim";
-          rev = "d9365e72afb2f876a62cd3cade555dc1a95031d9";
-          sha256 = "dtkYG0bOvHSDD3xeZaT91sc8zeZL3WuMqV4t0M3wIlo=";
-          fetchSubmodules = false;
-        };
-      };
-
-      # {
-      #     "owner": "quanganhdo",
-      #     "repo": "grb256",
       #     "rev": "3115044059b3adcd12ea525994de6a255a8bf783",
       #     "sha256": "G5XG/4IuKZhbPR0JMpUjmctP5WPK7YwdR+WytNYcI2k=",
-      #     "fetchSubmodules": false,
-      #     "leaveDotGit": false,
-      #     "deepClone": false
-      # }%
       nvim-grb256 = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-grb256";
         src = pkgs.fetchFromGitHub {
@@ -172,12 +133,7 @@
       delimitMate
       editorconfig-vim
       fzf-vim # Replace with Telescope
-
-      #It's important that you set up the plugins in the following order:
-      mason-nvim
-      mason-lspconfig-nvim #https://github.com/williamboman/mason-lspconfig.nvim
       nvim-lspconfig
-
       nvim-grb256
       nerdtree
       null-ls-nvim
