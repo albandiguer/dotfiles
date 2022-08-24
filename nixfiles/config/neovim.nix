@@ -168,7 +168,7 @@
       cmp-nvim-lsp
       cmp-path
       cmp-vsnip
-      context-vim
+      # context-vim NOTE this breaks atm
       delimitMate
       editorconfig-vim
       fzf-vim # Replace with Telescope
