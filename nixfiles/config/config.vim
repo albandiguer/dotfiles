@@ -181,9 +181,9 @@ lua << EOF
 		end
 	end
 
-
+	require("mason").setup()
 	-- The only important thing is to make sure to call require("nvim-lsp-installer").setup {} before interacting with lspconfig
-	require("nvim-lsp-installer").setup({
+	require("mason-lspconfig").setup({
 		automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 	})
 
