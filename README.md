@@ -62,7 +62,9 @@ experimental-features = nix-command flakes
 
 ## Todos
 
-- Use `niv` to check-in dependencies (home-manager & nixpkgs) versions https://github.com/ryantm/home-manager-template
+- Use `niv` to check-in dependencies (home-manager & nixpkgs) versions
+  https://github.com/ryantm/home-manager-template
+  https://eevie.ro/posts/2022-01-24-how-i-nix.html
 - Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
 - Switch from `NERDTree` to `Nvim Tree` https://github.com/kyazdani42/nvim-tree.lua (nixpkgs nvim-tree-lua)
 - Rewrite `config.vim` in `lua`
