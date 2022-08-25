@@ -63,7 +63,7 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-b> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 " close vim if only open window is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " FZF config
 nmap ; :Buffers<CR>
@@ -99,8 +99,21 @@ lua << EOF
 		highlight = { enable = true },
 		incremental_selection = { enable = true },
 		textobjects = { enable = true },
-		ensure_installed = { "javascript", "lua", "vim", "typescript", "python", "nix", "markdown" }
+		ensure_installed = {
+			"javascript",
+			"lua",
+			"vim",
+			"typescript",
+			"python",
+			"nix",
+			"markdown"
+		}
 	}
+
+	require('treesitter-context').setup {
+		enable = true
+	}
+
 
 	local cmp = require'cmp'
 	cmp.setup({
@@ -189,7 +202,7 @@ lua << EOF
 		on_attach = on_attach
 	};
 
-	-- Register a handler for the "javascript" language.
+	-- Register handlers for languages, is that the right way to do?
 	lspconfig.tsserver.setup(options)
 	lspconfig.jedi_language_server.setup(options)
 	lspconfig.tflint.setup(options)

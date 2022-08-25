@@ -85,3 +85,12 @@ The backend is in `s3` + `dynamodb`
 
 Additional resources created in `/tf-misc`
 [tf-misc](aws-infra/tf-misc/tfdocs.md)
+
+# Tmux key mapping
+
+to select sessions named such as `<M-a>` in tmux sessions list selection.
+We change the profile in iterm2 keys> keys config
+
+```
+Right option key : Esc+
+```

@@ -72,12 +72,12 @@
   # programs.direnv.nix-direnv.enableFlakes = true;
 
   imports = [
-    config/zsh.nix
-    config/fzf.nix
-    config/git.nix
-    config/neovim.nix
-    config/tmux.nix
-    config/vscode.nix
+    ./zsh.nix
+    ./fzf.nix
+    ./git.nix
+    nvim/neovim.nix
+    ./tmux.nix
+    ./vscode.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
