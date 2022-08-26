@@ -36,6 +36,9 @@
       wget # used by lsp-installer , use :checkhealth in vim
       # texlive.combined.scheme-full
 
+      fd # Telescope dep
+      ripgrep # Telescope dep
+
       universal-ctags
       # used to compile tree-sitter grammar
       tree-sitter
@@ -121,7 +124,7 @@
       cmp-vsnip
       delimitMate
       editorconfig-vim
-      fzf-vim # Replace with Telescope
+      telescope-nvim
       nvim-lspconfig
       nvim-grb256
       nerdtree

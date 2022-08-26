@@ -65,10 +65,11 @@ let NERDTreeShowHidden=1
 " close vim if only open window is nerdtree
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" FZF config
-nmap ; :Buffers<CR>
-nmap <Leader>f :GFiles<CR>
-nmap <Leader>r :Tags<CR>
+" Telescope config
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap ; <cmd>Telescope buffers<cr>
+" nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 " NOTE disabled as we want to use copilot as well
