@@ -67,7 +67,7 @@ experimental-features = nix-command flakes
   https://eevie.ro/posts/2022-01-24-how-i-nix.html
 - Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
 - Switch from `NERDTree` to `Nvim Tree` https://github.com/kyazdani42/nvim-tree.lua (nixpkgs nvim-tree-lua)
-- Rewrite `config.vim` in `lua`
+- Rewrite `config.vim` in `lua` https://github.com/nanotee/nvim-lua-guide, look at this dotfiles https://github.com/elianiva/dotfiles
 - [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 
 ## Condas
@@ -94,3 +94,10 @@ We change the profile in iterm2 keys> keys config
 ```
 Right option key : Esc+
 ```
+
+# TODOs
+
+- [ ] Convert to init.vim to lua.vim https://www.youtube.com/watch?v=rUvjkBuKua4
+- [ ] Remove ack and do everything with grep/ag, https://www.google.com/search?client=firefox-b-d&q=vim+grep+open+quickfix+automatically, interesting read here https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
+- [ ] Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
+

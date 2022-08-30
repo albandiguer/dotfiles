@@ -9,8 +9,8 @@
   programs.neovim = {
     enable = true;
 
-    # TODO load lua file see youtube video abt that
-    extraConfig = builtins.readFile ./config.vim;
+    # TODO load lua file see youtube video abt that, which?
+    extraConfig = builtins.readFile ./init.vim;
 
     # Enable Python 3 provider.
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.withPython3
@@ -69,6 +69,9 @@
     ];
 
     plugins = with pkgs.vimPlugins; let
+      # TODO contribute upstream for this
+      # can simplify with flake (avoid sha resolution) ?
+      # https://www.reddit.com/r/NixOS/comments/mvk5l9/comment/gvqfag9/?utm_source=share&utm_medium=web2x&context=3
       catppuccin-vim = pkgs.vimUtils.buildVimPlugin {
         name = "catppuccin-vim";
         src = pkgs.fetchFromGitHub {
@@ -80,8 +83,7 @@
         };
       };
 
-      #     "rev": "3115044059b3adcd12ea525994de6a255a8bf783",
-      #     "sha256": "G5XG/4IuKZhbPR0JMpUjmctP5WPK7YwdR+WytNYcI2k=",
+      # TODO contribute upstream for this
       nvim-grb256 = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-grb256";
         src = pkgs.fetchFromGitHub {
@@ -116,10 +118,10 @@
       ack-vim
       ayu-vim
       catppuccin-vim
-      cmp-buffer
-      cmp-cmdline
+      cmp-buffer # nvim-cmp source for buffer words.
+      cmp-cmdline # nvim-cmp source for command line
       # cmp-copilot
-      cmp-nvim-lsp
+      cmp-nvim-lsp # nvim-cmp source for neovim's built-in language server client.
       cmp-path
       cmp-vsnip
       delimitMate
@@ -143,11 +145,11 @@
       vim-dispatch
       vim-fugitive
       vim-gist
-      vim-jsdoc
-      vim-nix # so it is not lost with nix file, commenting etc
-      vim-obsession
+      vim-jsdoc # ftplugin?
+      vim-nix # ftplugin?
+      vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
-      vim-slash
+      vim-slash # set of mappings for enhancing in-buffer search
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
       vim-vsnip
       webapi-vim # used by vim-gist for api call
