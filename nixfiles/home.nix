@@ -90,7 +90,7 @@
   # TODO convert that to automatically pick all files
   # https://teu5us.github.io/nix-lib.html
   home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
-    # (builtins.readFile nvim/lua/settings.lua)
+    (builtins.readFile nvim/lua/settings.lua)
     (builtins.readFile nvim/lua/treesitter.lua)
     (builtins.readFile nvim/lua/cmp.lua)
     (builtins.readFile nvim/lua/lspconfig.lua)

@@ -4,12 +4,7 @@
 " colorscheme catppuccin " test https://vimcolorschemes.com/yasukotelin/shirotelin
 colorscheme ayu
 let g:context_nvim_no_redraw = 1
-set mouse=a
-set number
-set termguicolors
-set ignorecase smartcase " search words case insensitive
 let mapleader=','
-set colorcolumn=80
 
 " close all buffers but current https://stackoverflow.com/a/42071865/549563
 nnoremap ' :%bd\|e#<CR>
