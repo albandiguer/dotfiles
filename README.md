@@ -102,4 +102,4 @@ Right option key : Esc+
 - [ ] Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
 - [ ] Add conventional commits
 - [ ] Re-enable github copilot
-- [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto?
+- [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto

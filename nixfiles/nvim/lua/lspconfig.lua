@@ -1,4 +1,5 @@
 -- Setup lspconfig.
+-- https://github.com/hrsh7th/cmp-nvim-lsp
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Register a handler that will be called for all installed servers.
@@ -51,6 +52,7 @@ local options = {
 	on_attach = on_attach,
 }
 
+-- TODO move all this in ftplugin
 -- Register handlers for languages, is that the right way to do?
 lspconfig.tsserver.setup(options)
 lspconfig.jedi_language_server.setup(options)
