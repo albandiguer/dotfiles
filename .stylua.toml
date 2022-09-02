@@ -1,5 +1,5 @@
 # NOTE this file is a per project config for THIS repo, so when we edit
 # lua files, stylua adopt a favored indenting, it is NOT a dotfiles to symlink
-# FIXME getting picked up intermittently
+# FIXME getting picked up intermittently ?
 indent_width = 2
 

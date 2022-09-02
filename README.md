@@ -105,3 +105,5 @@ Right option key : Esc+
 - TODO Remove ack and do everything with grep/ag, https://www.google.com/search?client=firefox-b-d&q=vim+grep+open+quickfix+automatically, interesting read here https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
 - TODO Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
 - TODO Add conventional commits
+- TODO Fix gist vim & remove gists
+- NOTE explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky

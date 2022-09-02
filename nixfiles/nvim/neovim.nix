@@ -9,6 +9,7 @@
   # Lua files for neovim need to be in :h runtimepath
   # https://github.com/nix-community/home-manager/issues/1834
   # TODO convert that to automatically pick all files? order?
+  # https://hhoeflin.github.io/nix/home_folder_nix/
   # https://teu5us.github.io/nix-lib.html
   home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
     (builtins.readFile lua/settings.lua)
@@ -23,6 +24,7 @@
   # neovim ftplugins, TODO loop
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
+  home.file."${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
 
   programs.neovim = {
     enable = true;
