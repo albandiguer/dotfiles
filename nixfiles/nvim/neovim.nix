@@ -17,6 +17,7 @@
     (builtins.readFile lua/lspconfig.lua)
     (builtins.readFile lua/null-ls.lua)
     (builtins.readFile lua/trouble.lua)
+    (builtins.readFile lua/todo-comments.lua)
   ];
 
   # neovim ftplugins, TODO loop
@@ -155,6 +156,7 @@
       nvim-treesitter-context
       nvim-web-devicons
       tabular
+      todo-comments-nvim
       trouble-nvim
       vim-airline
       vim-better-whitespace

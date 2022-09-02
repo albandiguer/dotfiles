@@ -98,10 +98,10 @@ Right option key : Esc+
 
 # TODOs
 
-- Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
-- Re-enable github copilot
-- Tweak lsp suggestions, start with Ruby
-- Convert to init.vim to lua.vim https://www.youtube.com/watch?v=rUvjkBuKua4
-- Remove ack and do everything with grep/ag, https://www.google.com/search?client=firefox-b-d&q=vim+grep+open+quickfix+automatically, interesting read here https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
-- Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
-- Add conventional commits
+- TODO Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
+- TODO Re-enable github copilot
+- TODO Tweak lsp suggestions, start with Ruby
+- TODO Convert to init.vim to lua.vim https://www.youtube.com/watch?v=rUvjkBuKua4
+- TODO Remove ack and do everything with grep/ag, https://www.google.com/search?client=firefox-b-d&q=vim+grep+open+quickfix+automatically, interesting read here https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
+- TODO Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
+- TODO Add conventional commits
