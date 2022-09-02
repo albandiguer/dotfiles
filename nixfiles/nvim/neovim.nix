@@ -19,8 +19,9 @@
     (builtins.readFile lua/trouble.lua)
   ];
 
-  # neovim ftplugins
+  # neovim ftplugins, TODO loop
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
+  home.file."${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
 
   programs.neovim = {
     enable = true;
@@ -138,6 +139,7 @@
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
       # cmp-copilot
+      cmp-conventionalcommits
       cmp-nvim-lsp # nvim-cmp source for neovim's built-in language server client.
       cmp-path
       cmp-vsnip
