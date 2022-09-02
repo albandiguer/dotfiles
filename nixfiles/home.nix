@@ -85,20 +85,6 @@
   # Symlink classic dotfiles
   home.file.".npmrc".source = config/.npmrc;
 
-  # Lua files for neovim
-  # https://github.com/nix-community/home-manager/issues/1834
-  # TODO convert that to automatically pick all files
-  # https://teu5us.github.io/nix-lib.html
-  home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
-    (builtins.readFile nvim/lua/settings.lua)
-    (builtins.readFile nvim/lua/treesitter.lua)
-    (builtins.readFile nvim/lua/cmp.lua)
-    (builtins.readFile nvim/lua/lspconfig.lua)
-    (builtins.readFile nvim/lua/null-ls.lua)
-    (builtins.readFile nvim/lua/trouble.lua)
-  ];
-
-
   # set your user tokens as enivornment variables, such as ~/.secrets
   # See the README for examples.
 

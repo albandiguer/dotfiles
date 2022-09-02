@@ -8,7 +8,6 @@ let mapleader=','
 
 " close all buffers but current https://stackoverflow.com/a/42071865/549563
 nnoremap ' :%bd\|e#<CR>
-" autocmd Filetype gitcommit setl colorcolumn=72
 
 " disable ex mode
 map Q <Nop>
@@ -59,7 +58,6 @@ noremap <c-j> <C-w>j
 noremap <c-h> <C-w>h
 noremap <c-l> <C-w>l
 
-" nerdtree
 map <C-n> :NERDTreeToggle<CR>
 map <C-b> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
@@ -92,7 +90,7 @@ if executable('ag')
 	" let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
-" TODO replace with Telescope grep (ag), remove Ack
+" TODO replace with grep (ag), remove Ack
 nnoremap K :Ack! "\b<cword>\b" <CR>
 
 lua require('main')

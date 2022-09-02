@@ -6,6 +6,22 @@
   # For black (python fixer) we allow broken
   nixpkgs.config.allowBroken = true;
 
+  # Lua files for neovim need to be in :h runtimepath
+  # https://github.com/nix-community/home-manager/issues/1834
+  # TODO convert that to automatically pick all files? order?
+  # https://teu5us.github.io/nix-lib.html
+  home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
+    (builtins.readFile lua/settings.lua)
+    (builtins.readFile lua/treesitter.lua)
+    (builtins.readFile lua/cmp.lua)
+    (builtins.readFile lua/lspconfig.lua)
+    (builtins.readFile lua/null-ls.lua)
+    (builtins.readFile lua/trouble.lua)
+  ];
+
+  # neovim ftplugins
+  home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
+
   programs.neovim = {
     enable = true;
 
@@ -63,6 +79,7 @@
       python39Packages.flake8
       stylua
 
+      sumneko-lua-language-server
       # elmPackages.elm-format
       # rust-analyzer
       # haskellPackages.brittany
@@ -115,7 +132,7 @@
           ]
       );
     in [
-      ack-vim
+      ack-vim # TODO remove, grep + ag is good enough
       ayu-vim
       catppuccin-vim
       cmp-buffer # nvim-cmp source for buffer words.
