@@ -64,8 +64,8 @@
       # tree-sitter-grammars.tree-sitter-python
 
       # LSP deps
-      cargo # deps for rnix lsp
-      sumneko-lua-language-server
+      cargo # rnix deps
+      sumneko-lua-language-server # lua
 
       # NULL-LS deps
       alejandra
@@ -77,7 +77,7 @@
       vim-vint
       black # python fmt
       python39Packages.flake8
-      stylua
+      # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
       # rust-analyzer
       # haskellPackages.brittany

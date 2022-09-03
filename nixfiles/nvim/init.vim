@@ -2,7 +2,7 @@
 " TODO convert vimscript to lua https://github.com/nanotee/nvim-lua-guide/
 " neat dotfiles here https://github.com/elianiva/dotfiles
 " colorscheme catppuccin " test https://vimcolorschemes.com/yasukotelin/shirotelin
-colorscheme ayu
+colorscheme grb256
 let g:context_nvim_no_redraw = 1
 let mapleader=','
 

@@ -25,7 +25,6 @@
 -- lspconfig.tflint.setup(options)
 -- lspconfig.vimls.setup(options)
 -- lspconfig.rnix.setup(options)
--- require("lspconfig").sorbet.setup(options)
 --
 -- TODO read this about global configuration
 -- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
@@ -42,7 +41,8 @@ local lsp_defaults = {
 
 local lspconfig = require("lspconfig")
 
--- override default config
+-- override global config
+-- :h lspconfig-global-defaults
 require("lspconfig").util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
 
 -- define key bindings
@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("User", {
 		bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 
 		-- Displays a function's signature information
-		bufmap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+		-- bufmap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 
 		-- Renames all references to the symbol under the cursor
 		bufmap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>")
