@@ -2,19 +2,10 @@
 -- inspiration here https://github.com/neovim/neovim/issues/12688
 -- https://jdhao.github.io/2021/08/12/nvim_sumneko_lua_conf/
 
-local lspconfig = require("lspconfig")
 local runtime_path = vim.split(package.path, ";")
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-lspconfig.sumneko_lua.setup({
-	capabilities = capabilities,
-	commands = {
-		Format = {
-			function()
-				require("stylua-nvim").format_file()
-			end,
-		},
-	},
+require("lspconfig").sumneko_lua.setup({
+	single_file_support = true,
 	settings = {
 		Lua = {
 			runtime = {

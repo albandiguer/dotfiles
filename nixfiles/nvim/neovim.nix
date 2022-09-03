@@ -48,30 +48,26 @@
     # Extra packages available to nvim
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.extraPackages
     extraPackages = with pkgs; [
-      cargo # deps for rnix lsp
-      # deno
-      gcc # to compile tree-sitter grammars...
+      gcc # to compile tree-sitter grammar
       # nixfmt
       # rustfmt
       wget # used by lsp-installer , use :checkhealth in vim
       # texlive.combined.scheme-full
 
-      fd # Telescope dep
-      ripgrep # Telescope dep
+      # Telescope deps
+      fd
+      ripgrep
 
       universal-ctags
-      # used to compile tree-sitter grammar
+      # Treesitter
       tree-sitter
       # tree-sitter-grammars.tree-sitter-python
 
-      # installs different language servers for neovim-lsp
-      # have a look on the link below to figure out the ones for your languages
-      # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
-      # nodePackages.lehre
-      # nodePackages.typescript
-      # nodePackages.typescript-language-server
+      # LSP deps
+      cargo # deps for rnix lsp
+      sumneko-lua-language-server
 
-      # null-ls deps
+      # NULL-LS deps
       alejandra
       statix
       rubocop
@@ -82,8 +78,6 @@
       black # python fmt
       python39Packages.flake8
       stylua
-
-      sumneko-lua-language-server
       # elmPackages.elm-format
       # rust-analyzer
       # haskellPackages.brittany
