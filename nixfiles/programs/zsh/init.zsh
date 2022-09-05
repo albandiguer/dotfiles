@@ -61,3 +61,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 function gri() {
 	git merge-base origin/master HEAD|xargs git rebase -i
 }
+
+function diffib() {
+	git merge-base origin/master HEAD|xargs git diff
+}
