@@ -16,6 +16,10 @@ tiling:
 	pgrep yabai | xargs kill -9 && yabai &
 	pgrep skhd | xargs kill -9 && skhd &
 
+tiling-stop:
+	pgrep yabai | xargs kill -9
+	pgrep skhd | xargs kill -9
+
 cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
 	home-manager expire-generations "-15 days"

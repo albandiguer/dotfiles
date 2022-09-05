@@ -38,6 +38,7 @@
     ignores = [
       "*.swp"
       "*.tfstate.backup"
+      "secrets.tfvars"
       "*~"
       ".DS_Store"
       "._*"

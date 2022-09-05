@@ -21,14 +21,14 @@
       yabai -m config mouse_follows_focus          off
       yabai -m config focus_follows_mouse          off
       yabai -m config window_placement             second_child
-      yabai -m config window_topmost               off
+      # yabai -m config window_topmost               off
       yabai -m config window_opacity               off
       yabai -m config window_opacity_duration      0.0
       yabai -m config window_shadow                off
-      yabai -m config window_border                on
-      yabai -m config window_border_width          1
-      yabai -m config active_window_border_color 0xFF40FF00
-      yabai -m config normal_window_border_color 0x00FFFFFF
+      # yabai -m config window_border                on
+      # yabai -m config window_border_width          1
+      # yabai -m config active_window_border_color 0xFF40FF00
+      # yabai -m config normal_window_border_color 0x00FFFFFF
 
 
       yabai -m config active_window_opacity        1.0
@@ -49,6 +49,39 @@
 
 
       # Float some windows
+      apps=(
+        "1Password"
+        "Asana"
+        "Books"
+        "Calendar"
+        "Dash"
+        "Discord"
+        "Docker"
+        "Finder"
+        "Insomnia"
+        "Licecap"
+        "Maps"
+        "Notes"
+        "Notion"
+        "Parallels"
+        "Desktop"
+        "Photo Booth"
+        "Podcasts"
+        "Postman"
+        "Preview"
+        "QuickTime"
+        "RapidAPI"
+        "Stocks"
+        "System"
+        "Todoist"
+        "Transmission"
+        "Weather"
+      )
+
+      # for app in
+      #   yabai -m rule --add app="$app" sticky=on layer=above manage=off
+      # done
+
       yabai -m rule --add app="^1Password.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Asana.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Books.*$" sticky=on layer=above manage=off
