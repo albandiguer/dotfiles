@@ -81,6 +81,7 @@
       sumneko-lua-language-server # lua
       rnix-lsp
       terraform-ls
+      sqls
       # solargraph # -> put it in Gemfiles
       # buf-language-server
       solargraph
@@ -202,7 +203,7 @@
       #     ]
       # );
     in [
-      # (plugin "schickling/vim-bufonly") function to directly fetch plugins from git
+      # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       cmp-copilot
       # nerdtree
       ack-vim

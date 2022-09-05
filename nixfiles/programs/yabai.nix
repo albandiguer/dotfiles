@@ -70,6 +70,7 @@
       yabai -m rule --add app="^System.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Todoist.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Weather.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Licecap.*$" sticky=on layer=above manage=off
 
       echo "yabai configuration loaded.."
     '';

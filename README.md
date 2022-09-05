@@ -108,15 +108,24 @@ experimental-features = nix-command flakes
 
 ## Condas
 
+
 Python distro
 
-miniconda installed for apple silicon (to be able to run tensorflow), not handled
-by nix/dotfiles for now
+### install opts
+miniconda install for apple silicon (to be able to run tensorflow), not handled
+by nix/dotfiles for now, easier is to install miniforge, see this article
 https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
+
+
+### commands
+
 
 ```
 # update conda itself
 conda update -n base conda
+
+# create an env 
+conda create -n <env> python=3.10
 
 # update all package 
 conda update --all

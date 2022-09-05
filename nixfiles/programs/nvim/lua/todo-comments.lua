@@ -12,5 +12,5 @@ require("todo-comments").setup({
 })
 
 -- Little hack here, map function is defined in settings.lua, nix concat all files together
-map("n", "<Leader>t", ":TodoLocList<CR>")
+-- map("n", "<Leader>t", ":TodoLocList<CR>") -- use that mapping for testing instead
 map("n", "t", ":TodoTelescope<CR>")

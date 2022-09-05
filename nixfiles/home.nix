@@ -9,11 +9,6 @@
     config.allowUnfree = true;
     # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
     # currently failing  https://github.com/nix-community/neovim-nightly-overlay/issues/164
-    # overlays = [
-    #   (import (builtins.fetchTarball {
-    #     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    #   }))
-    # ];
     # Pin to the latest working commit for now https://github.com/nix-community/neovim-nightly-overlay/pull/177
     overlays = [
       (
@@ -65,7 +60,7 @@
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
     nodejs
-    ruby_3_1
+    ruby_3_2
     postman
     roboto-slab # used by AltaCV
     silver-searcher # get use to ag instead of ack

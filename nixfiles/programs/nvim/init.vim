@@ -35,3 +35,7 @@ lua require('main')
 " let g:LanguageClient_serverCommands = { 'ruby': ['tcp://127.0.0.1:7658'] }
 " nnoremap <silent> Y :call LanguageClient#textDocument_hover()<CR>
 
+" easy testing with right side open tmux split
+" TODO move this in specific lua file?
+nnoremap <Leader>t :!tmux send-keys -t ':.1' 'make rspec %:'line(".") C-m<CR>
+nnoremap <Leader>T :!tmux send-keys -t ':.1' 'make rspec %' C-m<CR>

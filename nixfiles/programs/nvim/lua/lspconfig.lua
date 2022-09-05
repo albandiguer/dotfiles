@@ -139,3 +139,6 @@ require 'lspconfig'.terraformls.setup {}
 
 -- Yaml
 require 'lspconfig'.yamlls.setup {}
+
+-- SQL
+-- require 'lspconfig'.sqls.setup {}
