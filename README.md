@@ -2,7 +2,15 @@
 
 ## Setup
 
-Install `nix` and `home-manager`
+Install `nix` 
+```shell
+sh <(curl -L https://nixos.org/nix/install)
+```
+then `home-manager`
+```shell
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+nix-shell '<home-manager>' -A install
+```
 
 Symlink `nixfiles` to `~/.config/nixpkgs`
 
@@ -41,6 +49,13 @@ Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and
 ![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
 
 ### Shortcuts
+
+### tips
+
+Search + Replace all and save
+```
+ Telescope Grep to find the string project wise, CTRL+Q to add them all to the Quickfix list and then ‘:cdo s/StringOne/StringTwo/g | update’
+```
 
 #### Completion - CMP
 
@@ -104,13 +119,16 @@ Right option key : Esc+
 
 ## Todos
 
--  Fix gist vim & remove gists
--  Re-enable github copilot
--  Tweak lsp mappings (refactoring & code actions?)
--  Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
+- Fix gist vim & remove gists
+- Re-enable github copilot
+- Tweak lsp mappings (refactoring & code actions?)
+- Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
+- Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls
+- explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)
 - [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - configure friendly snip (rails...)
 - Look at latex editor config with preview (saved in Pocket)
 - editorconfig xdg
 - markdown formatter
+- switch algo for rsa key to ed25519

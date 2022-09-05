@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -22,6 +21,7 @@
     (builtins.readFile lua/trouble.lua)
     (builtins.readFile lua/todo-comments.lua)
     (builtins.readFile lua/snippets.lua)
+    (builtins.readFile lua/vim-dispatch.lua)
   ];
   # TODO convert that to automatically pick all files? order? something like this?
   # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
@@ -81,11 +81,13 @@
       terraform-ls
       # solargraph # -> put it in Gemfiles
       # buf-language-server
+      solargraph
+      buf-language-server # buf
 
       # NULL-LS (format/diagnostic/code-actions etc) deps
       alejandra # nix code formatter
       statix # nix lints
-      rubocop
+      # rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
       nodePackages.eslint
@@ -101,7 +103,6 @@
     ];
 
     plugins = with pkgs.vimPlugins; let
-      # TODO contribute upstream for this
       # can simplify with flake (avoid sha resolution) ?
       # https://www.reddit.com/r/NixOS/comments/mvk5l9/comment/gvqfag9/?utm_source=share&utm_medium=web2x&context=3
       catppuccin-vim = pkgs.vimUtils.buildVimPlugin {
@@ -115,7 +116,6 @@
         };
       };
 
-      # TODO contribute upstream for this
       nvim-grb256 = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-grb256";
         src = pkgs.fetchFromGitHub {
@@ -138,11 +138,47 @@
         };
       };
 
+      spaceduck-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "spaceduck-nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "pineapplegiant";
+          repo = "spaceduck";
+          rev = "350491f19343b24fa85809242089caa02d4dadce";
+          sha256 = "sha256-lE8y9BA2a4y0B6O3+NyOS7numoltmzhArgwTAner2fE=";
+          fetchSubmodules = true;
+        };
+      };
+
+      shiretolin-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "shiretolin-nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "yasukotelin";
+          repo = "shirotelin";
+          rev = "c486f6f1c88acb585859b8d96dd68eafeb14bbd3";
+          sha256 = "sha256-LkMJNIjkpOV4kBnn4XOzipA9DMtaYYwLpL5zcYK2LgE=";
+          fetchSubmodules = true;
+        };
+      };
+
+      # https://github.com/haishanh/night-owl.vim
+      nightowl-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "nightowl-nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "haishanh";
+          repo = "night-owl.vim";
+          rev = "783a41a27f7fe55ed91d1ec0f0351d06ae17fbc7";
+          sha256 = "sha256-dI/Ag3FXiSy2ec7wC9wNJ15uAiYZEtu6gyyqU6BT98k=";
+          fetchSubmodules = true;
+        };
+      };
+
+      # TODO add this theme owickstrom/vim-colors-paramount
+
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
         plugins:
           with pkgs.tree-sitter-grammars; [
             tree-sitter-c
-            tree-sitter-cmake
+            # tree-sitter-cmake
             tree-sitter-dockerfile
             tree-sitter-elm
             tree-sitter-graphql
@@ -157,23 +193,22 @@
             tree-sitter-nix
             tree-sitter-python
             tree-sitter-ruby
-            tree-sitter-tsx
-            tree-sitter-typescript
+            # tree-sitter-tsx
+            # tree-sitter-typescript
             tree-sitter-vim
             tree-sitter-yaml
           ]
       );
-    in [
+    in
+    [
       # (plugin "schickling/vim-bufonly") function to directly fetch plugins from git
       cmp-copilot
       # nerdtree
       ack-vim
       ayu-vim
-      catppuccin-vim
-      jellybeans-vim
+      # catppuccin-vim
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
-      # cmp-copilot
       cmp-conventionalcommits
       cmp-nvim-lsp # nvim-cmp source for neovim's built-in language server client.
       cmp-path
@@ -181,30 +216,35 @@
       delimitMate
       editorconfig-vim
       friendly-snippets
-      telescope-nvim
-      nvim-lspconfig
+      jellybeans-vim
       lspcontainers-nvim
       markdown-preview-nvim
-      nvim-grb256
-      # nerdtree
-      nvim-tree-lua
+      nightowl-nvim
       null-ls-nvim
       nvim-cmp
-      nvim-treesitter-with-plugins
+      nvim-grb256
+      nvim-lspconfig
+      nvim-tree-lua
       nvim-treesitter-context
+      nvim-treesitter-with-plugins
       nvim-web-devicons
+      # shiretolin-nvim
+      # spaceduck-nvim
       tabular
+      telescope-nvim
       todo-comments-nvim
       trouble-nvim
       vim-airline
-      vim-medic_chalk
       vim-better-whitespace
       vim-bookmarks
       vim-commentary
       vim-devicons
       vim-dispatch
       vim-fugitive
+      vim-gist
+      vim-mustache-handlebars
       vim-jsdoc # ftplugin?
+      # vim-medic_chalk
       vim-nix # ftplugin?
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
@@ -212,9 +252,7 @@
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
       vim-vsnip
       webapi-vim # used by vim-gist for api call
-      # or you can use our function to directly fetch plugins from git
-      # (plugin "schickling/vim-bufonly")
-    ]; # Only loaded if programs.neovim.extraConfig is set
+    ];
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;

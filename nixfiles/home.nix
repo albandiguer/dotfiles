@@ -8,6 +8,7 @@
     # Avoid programs alike vscode copilot unfree licensed to complain
     config.allowUnfree = true;
     # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
+    # currently failing  https://github.com/nix-community/neovim-nightly-overlay/issues/164
     # overlays = [
     #   (import (builtins.fetchTarball {
     #     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
@@ -20,40 +21,43 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    awscli2
-    google-cloud-sdk # gcloud
-    bitwarden-cli
-    # awless # https://github.com/wallix/awless
-    cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
-    github-cli
-    # pomotroid # unsupported aarch64
-    # commitizen
     # ack
-    slack
-    silver-searcher # get use to ag instead of ack
-    bash # macos is bash 3xx, need 4+
-    jq
-    # use lorri init in project directories to setup the shell.nix file
-    lorri
-    nodejs
-    buildpack # cloud native buildpacks, use pack...
-    ngrok
-    curlie
-    httpie
-    tldr # when man is tldr
-    deno
-    watch
-    tree
+    # awless # https://github.com/wallix/awless
+    # commitizen
     # niv # TODO re-enable, currently broken (30/12/22) cycle dependency detected Painless dependencies for Nix projects
-    htop
+    # pomotroid # unsupported aarch64
+    # rnix-lsp
+    # use lorri init in project directories to setup the shell.nix file
+    awscli2
+    bash # macos is bash 3xx, need 4+
+    bitwarden-cli
+    buildpack # cloud native buildpacks, use pack...
+    curlie
+    cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
+    deno
     duf # disk space etc
-    todoist
-    wget
+    github-cli
+    google-cloud-sdk # gcloud
+    heroku
+    htop
+    httpie
+    iredis # slick redis client
+    jq
+    jwt-cli
+    lato # used by AltaCV
+    lorri
+    ngrok
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
+    nodejs
     roboto-slab # used by AltaCV
-    lato # used by AltaCV
-    # rnix-lsp
+    silver-searcher # get use to ag instead of ack
+    slack
+    tldr # when man is tldr
+    todoist
+    tree
+    watch
+    wget
     (nerdfonts.override {
       fonts = [
         "FantasqueSansMono"
@@ -63,7 +67,8 @@
         "JetBrainsMono"
         "UbuntuMono"
         "VictorMono"
-        # "CascadiaCode"
+        "Hermit"
+        "CascadiaCode"
         # "DroidSansMono"
         # "Hasklig"
         # "Meslo"
@@ -71,6 +76,7 @@
         # "Mononoki"
         # "ProggyClean"
         # "SourceCodePro"
+        "Lilex"
         "ShareTechMono"
         "Terminus"
       ];

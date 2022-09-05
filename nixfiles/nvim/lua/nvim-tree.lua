@@ -2,9 +2,16 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
+	git = {
+		enabled = true,
+		ignore = false,
+	},
 	view = {
 		adaptive_size = true;
-	}
+	},
+	filters = {
+		dotfiles = false,
+	},
 })
 
 map('n', '<C-n>', ':NvimTreeToggle')

@@ -40,10 +40,7 @@
       unset __conda_setup
       # <<< conda initialize <<<
 
-      alias condaenvs="conda env lis
-
-      alias dk="docker"
-      alias dkc="docker-compose"
+      alias condaenvs="conda env list"
 
       alias prettyjson="python3 -mjson.tool"
       # use: conda activate mlp | base to activate an environment
@@ -56,6 +53,28 @@
       alias td="todoist"
       alias tdl="todoist l"
       alias tda="todoist a"
+
+      # heroku autocomplete setup
+      # infered from instructions given typing: heroku autocomplete
+      export HEROKU_AC_ZSH_SETUP_PATH=/Users/albandiguer/Library/Caches/heroku/autocomplete/zsh_setup;
+      test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+      # export HEROKU_ORGANIZATION=<org>
+
+      alias devbox="ssh ubuntu@51.68.38.158 -p 2222"
+
+      alias dk="docker"
+      alias dkc="docker-compose"
+
+      # psql/libpq PATH
+      export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+      # salesforce DX (sfdx) autocomplete
+      eval $(sfdx autocomplete:script zsh)
+
+      # function to rebase current branch on top of master, finding common ancestor as starting point
+      function gri() {
+        git merge-base origin/master HEAD|xargs git rebase -i
+      }
     '';
 
     sessionVariables = {
