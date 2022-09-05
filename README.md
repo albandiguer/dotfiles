@@ -94,9 +94,8 @@ flowchart LR
   regular-lsp --> nvim-lsp
   nvim-lsp --> cmp
   copilot --> cmp
-  vsnip --> cmp
-
-
+  luasnip --> cmp
+  friendly-snippets --> luasnip
 ```
 
 ## Gist
@@ -231,7 +230,7 @@ Config ideas here https://bryce-s.com/yabai/
 - [ ] Tweak lsp mappings (refactoring & code actions?)
 - [ ] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
-- [ ] configure friendly snip (rails...)
+- [x] configure friendly snippets (rails...)
 - [ ] Look at latex editor config with preview (saved in Pocket)
 - [ ] editorconfig xdg
 - [ ] markdown formatter
@@ -241,3 +240,4 @@ Config ideas here https://bryce-s.com/yabai/
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] https://rsapkf.netlify.app/weblog/vim-tmux-italics
+- [ ] evaluate vsnips vs luasnip

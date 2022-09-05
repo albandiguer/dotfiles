@@ -13,6 +13,7 @@ export LIBRARY_PATH=\
 $LIBRARY_PATH;
 
 export NODE_PATH=~/.npm-packages/lib/node_modules
+export EDITOR=nvim
 
 # Autocompletions
 source <(kubectl completion zsh)
@@ -65,5 +66,8 @@ function diffib {
 	git merge-base origin/master HEAD|xargs -I _ git diff _ -- $1
 }
 
+# rbenv init
 eval "$(rbenv init - zsh)"
 
+# graphite completion
+. <(gt completion)

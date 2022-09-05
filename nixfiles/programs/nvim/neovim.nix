@@ -126,6 +126,7 @@
       nodePackages_latest.yaml-language-server
       nodePackages_latest.bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
+      # nodePackages_latest.sql-language-server
       python310Packages.black # python fmt
       python310Packages.flake8
       vim-vint # for vimscripts
@@ -334,7 +335,7 @@
 
       cmp_luasnip
       luasnip
-      # friendly-snippets
+      friendly-snippets
       # vim-vsnip
     ];
   };

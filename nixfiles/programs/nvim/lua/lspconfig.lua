@@ -131,6 +131,8 @@ lspconfig.yamlls.setup {}
 
 -- SQL
 -- lspconfig.sqls.setup {}
+-- OR
+-- https://github.com/joe-re/sql-language-server
 
 -- Html (tx to nodePackages_latest.vscode-langservers-extracted)
 lspconfig.html.setup {

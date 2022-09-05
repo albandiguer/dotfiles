@@ -14,6 +14,7 @@
         c = "commit";
         chunkyadd = "add --patch";
         ci = "commit";
+        cih = "commit --reuse-message=HEAD";
         co = "checkout";
         cp = "cherry-pick";
         d = "difftool";
