@@ -1,1 +1,1 @@
--- require("lspconfig").sorbet.setup(options)
+require("lspconfig").solargraph.setup({})

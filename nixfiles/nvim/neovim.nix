@@ -66,6 +66,7 @@
       # LSP deps
       cargo # rnix deps
       sumneko-lua-language-server # lua
+      solargraph
 
       # NULL-LS deps
       alejandra
