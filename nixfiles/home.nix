@@ -31,7 +31,6 @@
     tree
     niv # Painless dependencies for Nix projects
     htop
-    heroku
     todoist
     # marktext # not supported in aarch64
     wget
