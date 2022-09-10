@@ -45,6 +45,9 @@
       # not closing shell on ctrl+d
       setopt ignore_eof
 
+      # docker-compose
+      alias docker-compose="dc"
+
       # todoist
       alias td="todoist"
       alias tdl="todoist l"
