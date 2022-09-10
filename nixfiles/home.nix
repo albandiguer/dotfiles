@@ -31,7 +31,9 @@
     tree
     niv # Painless dependencies for Nix projects
     htop
-    # marktext not supported in aarch64
+    heroku
+    todoist
+    # marktext # not supported in aarch64
     wget
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums

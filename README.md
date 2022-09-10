@@ -98,6 +98,7 @@ Right option key : Esc+
 
 # TODOs
 
+- XXX urgent singleton precondition in after/ftplugin -- in lua
 - TODO Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
 - TODO Re-enable github copilot
 - TODO Tweak lsp suggestions, start with Ruby
