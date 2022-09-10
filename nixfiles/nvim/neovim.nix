@@ -122,6 +122,7 @@
             tree-sitter-hcl
             tree-sitter-html
             tree-sitter-javascript
+            tree-sitter-typescript
             tree-sitter-lua
             tree-sitter-nix
             tree-sitter-python
