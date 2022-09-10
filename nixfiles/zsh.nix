@@ -44,6 +44,11 @@
 
       # not closing shell on ctrl+d
       setopt ignore_eof
+
+      # todoist
+      alias td="todoist"
+      alias tdl="todoist l"
+      alias tda="todoist a"
     '';
 
     sessionVariables = {
