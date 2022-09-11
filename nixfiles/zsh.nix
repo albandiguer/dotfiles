@@ -46,7 +46,7 @@
       setopt ignore_eof
 
       # docker-compose
-      alias docker-compose="dc"
+      # alias docker-compose="dkc"
 
       # todoist
       alias td="todoist"
