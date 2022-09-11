@@ -93,3 +93,42 @@ vim.api.nvim_create_autocmd("User", {
 		bufmap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 	end,
 })
+
+-- Ruby stuff
+require("lspconfig").solargraph.setup({
+	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
+	settings = {
+		solargraph = {
+			-- transport = "stdio",
+			diagnostics = true,
+			formatting = false,
+			init_options = {
+				formatting = false
+			}
+		}
+	}
+})
+
+-- Lua stuff
+require("lspconfig").sumneko_lua.setup({
+	settings = {
+		Lua = {
+			["diagnostics.globals"] = { 'vim' } -- do not warn on unrecognize 'vim' global
+		}
+	},
+	-- BUG not working yet, reuse the code from null-ls on attach to format on save, looks like the same api
+	on_attach = function(client, bufnr)
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.formatting_sync()
+				end,
+			})
+		end
+	end,
+
+})

@@ -1,10 +1,23 @@
--- add a buffer variable
--- if !exists("b:count")
--- let b:count = 1
--- else
--- let b:count += 1
--- endif
-
-require("lspconfig").solargraph.setup({}) -- https://solargraph.org/
-
--- TODO disable formatting as rubocop handles it? whats the solargraph formatter like
+-- require("lspconfig").solargraph.setup({
+-- 	cmd = { "docker-compose", "run", "-t", "-p", "7658:7658", "--rm", "app", "solargraph", "stdio" },
+-- 	settings = {
+-- 		solargraph = {
+-- 			transport = "stdio",
+-- 			-- transport = "external",
+-- 			-- externalServer = {
+-- 			-- 	host = "localhost",
+-- 			-- 	port = 7658
+-- 			-- },
+-- 			diagnostics = true,
+-- 			init_options = {
+-- 				formatting = true
+-- 			}
+-- 		}
+-- 	}
+-- })
+--
+-- NOTE this seems to be doing the trick
+-- https://github.com/autozimu/LanguageClient-neovim/blob/next/INSTALL.md
+--
+--
+-- XXX this guy may have a solution https://critchlow.xyz/2021/12/03/solargraph.html

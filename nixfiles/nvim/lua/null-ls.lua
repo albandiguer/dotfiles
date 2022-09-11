@@ -15,7 +15,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.prettier,
 		-- null_ls.builtins.formatting.stylua, -- sumneko now has a formatter
-		null_ls.builtins.formatting.rubocop, -- ruby formatter
+		-- null_ls.builtins.formatting.rubocop, -- ruby formatter
 		null_ls.builtins.formatting.terraform_fmt,
 	},
 	debug = true,

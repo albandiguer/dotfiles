@@ -66,7 +66,8 @@
       # LSP deps
       cargo # rnix deps
       sumneko-lua-language-server # lua
-      solargraph
+      # solargraph # -> put it in Gemfiles
+      # buf-language-server
 
       # NULL-LS deps
       alejandra

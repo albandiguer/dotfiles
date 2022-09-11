@@ -94,3 +94,10 @@ endif
 nnoremap K :Ack! "\b<cword>\b" <CR>
 
 lua require('main')
+
+
+
+" NOTE test of  https://github.com/autozimu/LanguageClient-neovim/blob/next/INSTALL.md
+" let g:LanguageClient_serverCommands = { 'ruby': ['tcp://127.0.0.1:7658'] }
+" nnoremap <silent> Y :call LanguageClient#textDocument_hover()<CR>
+
