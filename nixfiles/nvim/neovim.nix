@@ -126,6 +126,7 @@
             tree-sitter-typescript
             tree-sitter-lua
             tree-sitter-nix
+            tree-sitter-markdown
             tree-sitter-python
             tree-sitter-ruby
             tree-sitter-vim
