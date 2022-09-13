@@ -1,17 +1,18 @@
 require("nvim-treesitter.configs").setup({
 	-- Modules and its options go here
+	parser_install_dir = "~/.config/treesitter",
 	highlight = { enable = true },
 	incremental_selection = { enable = true },
 	textobjects = { enable = true },
 	ensure_installed = {
 		"javascript",
 		"lua",
-		"vim",
+		"markdown",
+		"nix",
+		"python",
 		"ruby",
 		"typescript",
-		"python",
-		"nix",
-		"markdown",
+		"vim",
 	},
 })
 
