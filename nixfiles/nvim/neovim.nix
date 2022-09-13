@@ -75,7 +75,7 @@
       rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
-      # nodePackages.eslint  => install locally in projects
+      nodePackages.eslint
       vim-vint
       black # python fmt
       python39Packages.flake8
