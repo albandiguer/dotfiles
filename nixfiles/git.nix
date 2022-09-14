@@ -23,6 +23,7 @@
         nb = "checkout -b";
         ps = "push";
         reset = "reset HEAD";
+        unstage = "restore --staged";
         s = "status";
         shwo = "show";
         st = "status";
