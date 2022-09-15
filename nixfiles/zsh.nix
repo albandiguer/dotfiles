@@ -17,7 +17,9 @@
       export NODE_PATH=~/.npm-packages/lib/node_modules
 
       source <(kubectl completion zsh)
-      source <(minikube completion zsh)
+      if [ -f minikube ]; then
+        source <(minikube completion zsh)
+      fi
 
       alias nixsearch="nix search nixpkgs"
 
