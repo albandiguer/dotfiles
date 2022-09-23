@@ -146,6 +146,7 @@
       cmp-vsnip
       delimitMate
       editorconfig-vim
+      friendly-snippets
       telescope-nvim
       nvim-lspconfig
       nvim-grb256
