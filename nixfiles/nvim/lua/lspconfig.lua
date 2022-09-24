@@ -95,6 +95,8 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 -- Ruby stuff
+-- could just be a tcp connection, so no lspconfig, just raw lsp conf
+-- see bookmarks firefox/dev on pretto macbook
 require("lspconfig").solargraph.setup({
 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
 	settings = {
@@ -116,7 +118,8 @@ require("lspconfig").sumneko_lua.setup({
 			["diagnostics.globals"] = { 'vim' } -- do not warn on unrecognize 'vim' global
 		}
 	},
-	-- BUG not working yet, reuse the code from null-ls on attach to format on save, looks like the same api
+	-- that is a reuse of the code from null-ls on attach to format on save,
+	-- looks like the same api
 	on_attach = function(client, bufnr)
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 		if client.supports_method("textDocument/formatting") then
