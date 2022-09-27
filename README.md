@@ -44,7 +44,7 @@ Languages are being supported via few tools, `tree-sitter`, `native lsp` & `null
 
 - `:Null<tab>`
 
-![diagram](./docs/images/Untitled-2022-09-25-1426.svg)
+![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
 
 ### Install an lsp
 
