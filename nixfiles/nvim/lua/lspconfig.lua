@@ -96,13 +96,16 @@ vim.api.nvim_create_autocmd("User", {
 
 -- could just be a tcp connection, so no lspconfig, just raw lsp conf
 -- see bookmarks firefox/dev on pretto macbook
+-- https://github.com/castwide/vscode-solargraph#extension-settings
 -- DOCKER version :
 -- 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
 lspconfig.solargraph.setup({
 	cmd = require 'lspcontainers'.command('solargraph'),
 	settings = {
-		diagnostics = false,
-		formatting = false
+		solargraph = {
+			diagnostics = false,
+			formatting = false
+		}
 	}
 })
 

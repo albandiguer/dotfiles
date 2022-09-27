@@ -32,7 +32,7 @@ nix-prefetch-git url
 
 **protip**: to figure sha256, can also run `make` with a wrong sha and it will give the right one
 
-## Languages
+## Settings
 
 ### Languages
 
