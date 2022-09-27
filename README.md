@@ -1,10 +1,10 @@
-# Nix based dotfiles
+# 📺 Nix based dotfiles
 
 ## Setup
 
 Install `nix` and `home-manager`
 
-symlink `nixfiles` directory to `~/.config/nixpkgs`
+Symlink `nixfiles`  to `~/.config/nixpkgs`
 
 ```
  ln -s ~/dev/dotfiles/nixfiles ~/.config/nixpkgs
@@ -32,9 +32,9 @@ nix-prefetch-git url
 
 **protip**: to figure sha256, can also run `make` with a wrong sha and it will give the right one
 
-## Settings
+## Neovim
 
-### Languages
+### Languages Support
 
 Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and `nvim_lsp`
 
@@ -44,7 +44,7 @@ Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and
 
 
 
-### Nix flakes config
+## Nix flakes config
 
 Added a config file in ~/.config/nix/nix.conf
 
@@ -52,23 +52,13 @@ Added a config file in ~/.config/nix/nix.conf
 experimental-features = nix-command flakes
 ```
 
-## Todos
-
-- Use `niv` to check-in dependencies (home-manager & nixpkgs) versions
-  https://github.com/ryantm/home-manager-template
-  https://eevie.ro/posts/2022-01-24-how-i-nix.html
-- Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
-- Switch from `NERDTree` to `Nvim Tree` https://github.com/kyazdani42/nvim-tree.lua (nixpkgs nvim-tree-lua)
-- Rewrite `config.vim` in `lua` https://github.com/nanotee/nvim-lua-guide, look at this dotfiles https://github.com/elianiva/dotfiles
-- [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
-
 ## Condas
 
 conda installed for apple silicon (to be able to run tensorflow), not handled
 by nix/dotfiles for now
 https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
 
-# IAM & AWS
+## IAM & AWS
 
 `aws-infra` directory for the dets
 
@@ -79,7 +69,9 @@ The backend is in `s3` + `dynamodb`
 Additional resources created in `/tf-misc`
 [tf-misc](aws-infra/tf-misc/tfdocs.md)
 
-# Tmux key mapping
+## Tmux
+
+### Keys
 
 to select sessions named such as `<M-a>` in tmux sessions list selection.
 We change the profile in iterm2 keys> keys config
@@ -88,7 +80,7 @@ We change the profile in iterm2 keys> keys config
 Right option key : Esc+
 ```
 
-# TODOs
+## Todos
 
 - XXX urgent singleton precondition in after/ftplugin -- in lua
 - XXX evaluate devcontainers vs lspcontainers.nvim https://github.com/lspcontainers/lspcontainers.nvim
@@ -102,3 +94,9 @@ Right option key : Esc+
 - TODO Add conventional commits
 - TODO Fix gist vim & remove gists
 - NOTE explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
+
+- Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)
+- Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
+- Switch from `NERDTree` to `Nvim Tree` [GitHub - kyazdani42/nvim-tree.lua: A file explorer tree for neovim written in lua](https://github.com/kyazdani42/nvim-tree.lua) (nixpkgs nvim-tree-lua)
+- Rewrite `config.vim` in `lua` [GitHub - nanotee/nvim-lua-guide: A guide to using Lua in Neovim](https://github.com/nanotee/nvim-lua-guide), look at this dotfiles [GitHub - elianiva/dotfiles: .](https://github.com/elianiva/dotfiles)
+- [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
