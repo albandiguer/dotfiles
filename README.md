@@ -36,13 +36,15 @@ nix-prefetch-git url
 
 ### Languages
 
-Languages are being supported via few tools, `tree-sitter`, `native lsp` or `null-ls`. To configure them, change `config.vim` and `neovim.nix` + in `vim` use
+Languages are being supported via few tools, `tree-sitter`, `native lsp` & `null-ls`. To configure them, change `config.vim` and `neovim.nix` + in `vim` use
 
 - `:TSConfig` for `tree-sitter`
 
 - `:Lsp<tab>`
 
 - `:Null<tab>`
+
+![diagram](./docs/images/Untitled-2022-09-25-1426.svg)
 
 ### Install an lsp
 
@@ -99,7 +101,7 @@ Right option key : Esc+
 # TODOs
 
 - XXX urgent singleton precondition in after/ftplugin -- in lua
-- XXX evaluate devcontainers vs lspcontainers.nvim
+- XXX evaluate devcontainers vs lspcontainers.nvim https://github.com/lspcontainers/lspcontainers.nvim
 - TODO lsp for dockerfiles
 - TODO Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
 - TODO Re-enable github copilot

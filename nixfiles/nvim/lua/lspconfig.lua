@@ -43,7 +43,7 @@ local lspconfig = require("lspconfig")
 
 -- override global config
 -- :h lspconfig-global-defaults
-require("lspconfig").util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
+lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
 
 -- define key bindings
 vim.api.nvim_create_autocmd("User", {
@@ -112,7 +112,7 @@ require("lspconfig").solargraph.setup({
 })
 
 -- Lua stuff
-require("lspconfig").sumneko_lua.setup({
+lspconfig.sumneko_lua.setup({
 	settings = {
 		Lua = {
 			["diagnostics.globals"] = { 'vim' } -- do not warn on unrecognize 'vim' global
