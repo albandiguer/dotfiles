@@ -22,6 +22,7 @@
     # ack
     slack
     silver-searcher # get use to ag instead of ack
+    bash # macos is bash 3xx, need 4+
     # use lorri init in project directories to setup the shell.nix file
     lorri
     nodejs
