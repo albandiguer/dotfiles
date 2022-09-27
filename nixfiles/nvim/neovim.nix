@@ -124,6 +124,7 @@
             tree-sitter-html
             tree-sitter-javascript
             tree-sitter-typescript
+            tree-sitter-dockerfile
             tree-sitter-lua
             tree-sitter-nix
             tree-sitter-markdown
