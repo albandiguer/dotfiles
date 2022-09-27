@@ -79,6 +79,7 @@
       vim-vint
       black # python fmt
       python39Packages.flake8
+      hadolint
       # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
       # rust-analyzer
@@ -150,6 +151,7 @@
       friendly-snippets
       telescope-nvim
       nvim-lspconfig
+      lspcontainers-nvim
       nvim-grb256
       nerdtree
       null-ls-nvim
