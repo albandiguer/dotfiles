@@ -36,23 +36,13 @@ nix-prefetch-git url
 
 ### Languages
 
-Languages are being supported via few tools, `tree-sitter`, `native lsp` & `null-ls`. To configure them, change `config.vim` and `neovim.nix` + in `vim` use
+Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and `nvim_lsp`
 
-- `:TSConfig` for `tree-sitter`
 
-- `:Lsp<tab>`
-
-- `:Null<tab>`
 
 ![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
 
-### Install an lsp
 
-```
-:LspInstall
-```
-
-then select in list, the server will start automatically when available
 
 ### Nix flakes config
 

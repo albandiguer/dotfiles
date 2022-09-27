@@ -94,25 +94,17 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
--- Ruby stuff
 -- could just be a tcp connection, so no lspconfig, just raw lsp conf
 -- see bookmarks firefox/dev on pretto macbook
--- lspconfig.solargraph.setup({
+-- DOCKER version :
 -- 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
--- 	settings = {
--- 		solargraph = {
--- 			-- transport = "stdio",
--- 			diagnostics = true,
--- 			formatting = false,
--- 			init_options = {
--- 				formatting = false
--- 			}
--- 		}
--- 	}
--- })
-lspconfig.solargraph.setup {
-	cmd = require 'lspcontainers'.command('solargraph')
-}
+lspconfig.solargraph.setup({
+	cmd = require 'lspcontainers'.command('solargraph'),
+	settings = {
+		diagnostics = false,
+		formatting = false
+	}
+})
 
 -- Lua stuff
 lspconfig.sumneko_lua.setup({

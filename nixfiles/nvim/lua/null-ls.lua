@@ -9,15 +9,15 @@ null_ls.setup({
 		-- null_ls.builtins.completion.spell,
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.flake8,
-		null_ls.builtins.diagnostics.hadolint,
-		-- null_ls.builtins.diagnostics.rubocop, -- ruby static analysis, solargraph does that
+		null_ls.builtins.diagnostics.hadolint, -- dockerfiles
+		null_ls.builtins.diagnostics.rubocop, -- ruby static analysis, solargraph does that
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.formatting.hadolint,
+		null_ls.builtins.formatting.hadolint, -- dockerfiles
 		-- null_ls.builtins.formatting.stylua, -- sumneko now has a formatter
-		-- null_ls.builtins.formatting.rubocop, -- ruby formatter
+		null_ls.builtins.formatting.rubocop, -- ruby formatter
 		null_ls.builtins.formatting.terraform_fmt,
 	},
 	debug = true,
