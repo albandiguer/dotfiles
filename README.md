@@ -42,6 +42,27 @@ Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and
 
 ![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
 
+### Shortcuts
+
+#### Completion - CMP
+
+```
+ctrl+space -> complete
+ctrl+b -> scroll docs up
+ctrl+f -> scroll docs down
+enter -> confirm
+```
+
+#### LSP
+
+Default behaviour of Ctrl n comes from that 
+
+[Improve completion popup menu | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
+
+```
+H -> Hover information
+```
+
 
 
 ## Nix flakes config

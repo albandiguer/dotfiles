@@ -1,8 +1,10 @@
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#code-1
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local null_ls = require("null-ls")
--- use to format on save
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- LspFormatting auto command group, clear = false so if there is a lsp
+-- formatting we let it do it. example: solargraph(w/rubocop) takes precendence
+-- on null_ls+rubocop
+local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 null_ls.setup({
 	sources = {
 		null_ls.builtins.code_actions.statix, --  for nix
@@ -23,9 +25,9 @@ null_ls.setup({
 	-- format on save
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_clear_autocmds({ group = formatting_augroup, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
+				group = formatting_augroup,
 				buffer = bufnr,
 				callback = function()
 					vim.lsp.buf.formatting_sync()

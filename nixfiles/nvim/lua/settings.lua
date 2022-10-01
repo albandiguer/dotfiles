@@ -2,6 +2,7 @@ local opt = vim.opt
 local g = vim.g
 
 -- Functional wrapper for mapping custom keybindings
+-- example: map("n", "(", "Trouble")
 function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
     if opts then
