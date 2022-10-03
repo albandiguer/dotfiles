@@ -4,7 +4,7 @@
 
 Install `nix` and `home-manager`
 
-Symlink `nixfiles`  to `~/.config/nixpkgs`
+Symlink `nixfiles` to `~/.config/nixpkgs`
 
 ```
  ln -s ~/dev/dotfiles/nixfiles ~/.config/nixpkgs
@@ -38,8 +38,6 @@ nix-prefetch-git url
 
 Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and `nvim_lsp`
 
-
-
 ![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
 
 ### Shortcuts
@@ -55,15 +53,18 @@ enter -> confirm
 
 #### LSP
 
-Default behaviour of Ctrl n comes from that 
+Default behaviour of Ctrl n comes from that, we overload it inside cmp settings
 
 [Improve completion popup menu | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
 
 ```
 H -> Hover information
+gt -> Type definition
+gs -> Signature
+gd -> Definition
+gr -> References
+
 ```
-
-
 
 ## Nix flakes config
 
@@ -94,7 +95,7 @@ Additional resources created in `/tf-misc`
 
 ### Keys
 
-to select sessions named such as `<M-a>` in tmux sessions list selection.
+Select sessions named such as `<M-a>` in tmux sessions list selection.
 We change the profile in iterm2 keys> keys config
 
 ```
