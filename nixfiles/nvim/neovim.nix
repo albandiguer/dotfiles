@@ -14,7 +14,8 @@
   home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
     (builtins.readFile lua/settings.lua)
     (builtins.readFile lua/treesitter.lua)
-    (builtins.readFile lua/nerdtree.lua)
+    # (builtins.readFile lua/nerdtree.lua)
+    (builtins.readFile lua/nvim-tree.lua)
     (builtins.readFile lua/telescope.lua)
     (builtins.readFile lua/cmp.lua)
     (builtins.readFile lua/lspconfig.lua)
@@ -155,7 +156,8 @@
       nvim-lspconfig
       lspcontainers-nvim
       nvim-grb256
-      nerdtree
+      # nerdtree
+      nvim-tree-lua
       null-ls-nvim
       nvim-cmp
       nvim-treesitter-with-plugins
