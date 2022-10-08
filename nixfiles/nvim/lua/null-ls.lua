@@ -35,4 +35,10 @@ null_ls.setup({
 			})
 		end
 	end,
+	should_attach = function(bufnr)
+		-- return not vim.api.nvim_buf_get_name(bufnr):match("^git://")
+		-- TODO condition to avoid starting null-ls/rubocop if there is a solargraph config
+		-- return not vim.api.nvim_buf_get_name
+	end
+
 })
