@@ -14,6 +14,8 @@
   home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
     (builtins.readFile lua/settings.lua)
     (builtins.readFile lua/treesitter.lua)
+    (builtins.readFile lua/nerdtree.lua)
+    (builtins.readFile lua/telescope.lua)
     (builtins.readFile lua/cmp.lua)
     (builtins.readFile lua/lspconfig.lua)
     (builtins.readFile lua/null-ls.lua)

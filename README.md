@@ -104,21 +104,14 @@ Right option key : Esc+
 
 ## Todos
 
-- XXX urgent singleton precondition in after/ftplugin -- in lua
-- XXX evaluate devcontainers vs lspcontainers.nvim https://github.com/lspcontainers/lspcontainers.nvim
-- TODO lsp for dockerfiles
-- TODO Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
-- TODO Re-enable github copilot
-- TODO Tweak lsp suggestions, start with Ruby
-- TODO Convert to init.vim to lua.vim https://www.youtube.com/watch?v=rUvjkBuKua4
-- TODO Remove ack and do everything with grep/ag, https://www.google.com/search?client=firefox-b-d&q=vim+grep+open+quickfix+automatically, interesting read here https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
-- TODO Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
-- TODO Add conventional commits
-- TODO Fix gist vim & remove gists
+-  Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
+-  Re-enable github copilot
+-  Tweak lsp mappings 
+-  Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
+-  Add conventional commits
+-  Fix gist vim & remove gists
 - NOTE explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 
 - Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)
-- Remove ack-vim and related config in `config.vim` remap grrep built-in to ag command
 - Switch from `NERDTree` to `Nvim Tree` [GitHub - kyazdani42/nvim-tree.lua: A file explorer tree for neovim written in lua](https://github.com/kyazdani42/nvim-tree.lua) (nixpkgs nvim-tree-lua)
-- Rewrite `config.vim` in `lua` [GitHub - nanotee/nvim-lua-guide: A guide to using Lua in Neovim](https://github.com/nanotee/nvim-lua-guide), look at this dotfiles [GitHub - elianiva/dotfiles: .](https://github.com/elianiva/dotfiles)
 - [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
