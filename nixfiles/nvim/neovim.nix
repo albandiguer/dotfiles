@@ -29,6 +29,9 @@
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
 
+  # gist-vim
+  # home.file.".gist-vim".source = ./.gist-vim;
+
   programs.neovim = {
     enable = true;
 

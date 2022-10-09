@@ -20,6 +20,9 @@
       if [ -f minikube ]; then
         source <(minikube completion zsh)
       fi
+      if [ -f gh ]; then
+        source <(gh completion -s zsh)
+      fi
 
       alias nixsearch="nix search nixpkgs"
 

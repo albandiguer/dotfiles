@@ -104,12 +104,9 @@ Right option key : Esc+
 
 ## Todos
 
--  Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
--  Re-enable github copilot
--  Tweak lsp mappings 
--  Add conventional commits
 -  Fix gist vim & remove gists
-- NOTE explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
-
+-  Re-enable github copilot
+-  Tweak lsp mappings (refactoring & code actions?)
+-  Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)
 - [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
