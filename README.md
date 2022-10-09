@@ -107,7 +107,6 @@ Right option key : Esc+
 -  Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto
 -  Re-enable github copilot
 -  Tweak lsp mappings 
--  Switch tmux session with fzf or Telescope https://github.com/camgraff/telescope-tmux.nvim
 -  Add conventional commits
 -  Fix gist vim & remove gists
 - NOTE explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
