@@ -29,9 +29,6 @@
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
 
-  # gist-vim
-  # home.file.".gist-vim".source = ./.gist-vim;
-
   programs.neovim = {
     enable = true;
 
@@ -176,7 +173,6 @@
       vim-devicons
       vim-dispatch
       vim-fugitive
-      vim-gist
       vim-jsdoc # ftplugin?
       vim-nix # ftplugin?
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
