@@ -7,6 +7,7 @@ in
       # terraform-providers.aws
       terraform-docs
       tfsec
+      graphviz # to visualize graph
     ];
 
     AWS_PROFILE = "default";
