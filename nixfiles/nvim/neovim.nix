@@ -69,6 +69,7 @@
       # LSP deps
       cargo # rnix deps
       sumneko-lua-language-server # lua
+      rnix-lsp
       # solargraph # -> put it in Gemfiles
       # buf-language-server
 

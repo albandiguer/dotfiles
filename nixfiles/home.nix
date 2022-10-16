@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   # Avoid programs alike vscode copilot unfree licensed to complain
   nixpkgs.config.allowUnfree = true;
@@ -18,8 +17,6 @@
     cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
     github-cli
     # commitizen
-    # joplin-desktop
-    # joplin
     # ack
     slack
     silver-searcher # get use to ag instead of ack

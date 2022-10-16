@@ -18,17 +18,18 @@
 -- 	end,
 -- }
 
--- TODO move all this in ftplugin
+-- TODO move all this in ftplugin ?
 -- Register handlers for languages, is that the right way to do?
 -- lspconfig.tsserver.setup(options)
 -- lspconfig.jedi_language_server.setup(options)
 -- lspconfig.tflint.setup(options)
 -- lspconfig.vimls.setup(options)
 -- lspconfig.rnix.setup(options)
---
--- TODO read this about global configuration
+
+
+local lspconfig = require("lspconfig")
+local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 -- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
---
 local lsp_defaults = {
 	flags = {
 		debounce_text_changes = 150,
@@ -36,17 +37,26 @@ local lsp_defaults = {
 	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	on_attach = function(client, bufnr)
 		vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
+
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = formatting_augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = formatting_augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.formatting_sync()
+				end,
+			})
+		end
 	end,
 }
 
-local lspconfig = require("lspconfig")
-local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- override global config
 -- :h lspconfig-global-defaults
 lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
 
--- define key bindings
+-- define auto command group
 vim.api.nvim_create_autocmd("User", {
 	pattern = "LspAttached",
 	desc = "LSP actions",
@@ -73,7 +83,7 @@ vim.api.nvim_create_autocmd("User", {
 -- TODO load this only if there is a .solargraph.yml file
 lspconfig.solargraph.setup({
 	cmd = require 'lspcontainers'.command('solargraph'),
-	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd()),
+	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd())
 })
 
 -- Lua stuff
@@ -82,24 +92,10 @@ lspconfig.sumneko_lua.setup({
 		Lua = {
 			["diagnostics.globals"] = { 'vim' } -- do not warn on unrecognize 'vim' global
 		}
-	},
-	-- that is a reuse of the code from null-ls on attach to format on save,
-	-- looks like the same api
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = formatting_augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = formatting_augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.formatting_sync()
-				end,
-			})
-		end
-	end,
-
+	}
 })
 
+-- Docker lsp
 lspconfig.dockerls.setup {
 	before_init = function(params)
 		params.processId = vim.NIL
@@ -107,3 +103,6 @@ lspconfig.dockerls.setup {
 	cmd = require 'lspcontainers'.command('dockerls'),
 	root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
 }
+
+-- Nix rnix-lsp
+lspconfig.rnix.setup {}
