@@ -28,6 +28,9 @@
       bind l select-layout main-vertical
       bind f display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
+      # unbind detach
+      unbind-key -T prefix d
+
       # status line (thanks, Ju!)
       set-option -g status-justify left
       set-option -g status-left '#[bg=colour2] #[bg=colour8] #[bg=colour0] #S '

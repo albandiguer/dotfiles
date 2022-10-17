@@ -16,6 +16,7 @@
     # awless # https://github.com/wallix/awless
     cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
     github-cli
+    # pomotroid # unsupported aarch64
     # commitizen
     # ack
     slack
