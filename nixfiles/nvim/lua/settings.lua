@@ -32,6 +32,7 @@ map('n', 'p', 'pgvy') -- paste de ouf
 -- https://twitter.com/vim_tricks/status/1545065274369609728
 map('n', 'gp', '`[v`]') -- reselect pasted text
 map('n', '<leader>m', ':Make') -- copy de ouf vim-dispatch
+map('n', '<leader>d', ':Dispatch') -- copy de ouf vim-dispatch
 map('n', '<C-a>', '<esc>ggVG<CR>') -- select all
 map('n', '<leader><leader>', '<c-^>')
 

@@ -58,7 +58,9 @@
         # "SourceCodePro"
         # "Terminus"
       ];
-    }) # required for devicons
+    }) # fonts with devicons
+    # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
+    # writeShellScriptBin "run-commands-on-git-revisions" "echo hellow world"
   ];
 
   # services.lorri.enable = true; not compat on darwin, do lorri daemon manually
