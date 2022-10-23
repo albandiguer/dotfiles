@@ -1,4 +1,4 @@
-# AWS Config
+# :mage_man: AWS Config
 
 setup necessary `aws` resources, mainly users, roles & attach policies
 
@@ -55,6 +55,11 @@ Rest of aws config is in badly named `/tf-misc` directory
 ## TODOs
 
 - [x] Migrate to later tf version
+
 - [ ] User module to handle config ? https://registry.terraform.io/modules/trussworks/bootstrap/aws/latest
+
 - [ ] We could have the `aws` provider in `shell.nix` as well, see https://discourse.nixos.org/t/terraform-how-you-override-a-version-using-nixpgks-way/10436/2
+
 - [ ] Document which backend is currently active, looks to be paris
+
+- [ ] Create the dns avoiding ads

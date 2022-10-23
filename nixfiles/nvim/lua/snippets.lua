@@ -1,1 +1,1 @@
-require 'luasnip'.filetype_extend("ruby", { "rails" })
+-- require 'luasnip'.filetype_extend("ruby", { "rails" })
