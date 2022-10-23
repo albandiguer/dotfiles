@@ -1,14 +1,12 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # For black (python fixer) we allow broken
   nixpkgs.config.allowBroken = true;
 
   # Lua files for neovim need to be in :h runtimepath
   # https://github.com/nix-community/home-manager/issues/1834
-  # TODO convert that to automatically pick all files? order?
   # https://hhoeflin.github.io/nix/home_folder_nix/
   # https://teu5us.github.io/nix-lib.html
   home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
@@ -23,6 +21,8 @@
     (builtins.readFile lua/trouble.lua)
     (builtins.readFile lua/todo-comments.lua)
   ];
+  # TODO convert that to automatically pick all files? order? something like this?
+  # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (map (n: "./lua/${n}") (builtins.attrNames (builtins.readDir ./lua)));
 
   # neovim ftplugins, TODO loop
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
@@ -83,7 +83,7 @@
       vim-vint
       black # python fmt
       python39Packages.flake8
-      hadolint
+      hadolint # docker linter
       # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
       # rust-analyzer
@@ -139,7 +139,8 @@
             tree-sitter-yaml
           ]
       );
-    in [
+    in
+    [
       ack-vim # TODO remove, grep + ag is good enough
       ayu-vim
       catppuccin-vim
