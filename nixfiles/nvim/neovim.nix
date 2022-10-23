@@ -20,9 +20,14 @@
     (builtins.readFile lua/null-ls.lua)
     (builtins.readFile lua/trouble.lua)
     (builtins.readFile lua/todo-comments.lua)
+    (builtins.readFile lua/snippets.lua)
   ];
   # TODO convert that to automatically pick all files? order? something like this?
-  # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (map (n: "./lua/${n}") (builtins.attrNames (builtins.readDir ./lua)));
+  # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
+  #   map
+  #     (n: (builtins.readFile "lua/${n}"))
+  #     (builtins.attrNames (builtins.readDir ./lua))
+  # );
 
   # neovim ftplugins, TODO loop
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
