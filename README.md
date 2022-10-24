@@ -112,3 +112,4 @@ Right option key : Esc+
 - [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - configure friendly snip (rails...)
 - Look at latex editor config with preview (saved in Pocket)
+- editorconfig xdg
