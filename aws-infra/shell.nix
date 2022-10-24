@@ -7,7 +7,7 @@ pkgs.mkShell {
     terraform
     # terraform-providers.aws
     terraform-docs
-    tfsec
+    tfsec # security scanner for terraform https://github.com/aquasecurity/tfsec
     graphviz # to visualize graph
   ];
 
