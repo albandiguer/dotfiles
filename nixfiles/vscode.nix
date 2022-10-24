@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   programs.vscode = {
     enable = true;
@@ -10,8 +9,8 @@
 
     extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
-      esbenp.prettier-vscode
-      github.copilot
+      # esbenp.prettier-vscode
+      # github.copilot
       hashicorp.terraform
     ];
 

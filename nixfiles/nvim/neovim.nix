@@ -12,7 +12,6 @@
   home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
     (builtins.readFile lua/settings.lua)
     (builtins.readFile lua/treesitter.lua)
-    # (builtins.readFile lua/nerdtree.lua)
     (builtins.readFile lua/nvim-tree.lua)
     (builtins.readFile lua/telescope.lua)
     (builtins.readFile lua/cmp.lua)
@@ -24,7 +23,7 @@
   ];
   # TODO convert that to automatically pick all files? order? something like this?
   # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
-  #   map
+  #   builtins.map
   #     (n: (builtins.readFile "lua/${n}"))
   #     (builtins.attrNames (builtins.readDir ./lua))
   # );
