@@ -32,7 +32,11 @@
     niv # Painless dependencies for Nix projects
     htop
     todoist
+<<<<<<< Updated upstream
     # marktext # not supported in aarch64
+=======
+    heroku
+>>>>>>> Stashed changes
     wget
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
