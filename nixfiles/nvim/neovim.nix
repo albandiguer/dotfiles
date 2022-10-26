@@ -78,13 +78,13 @@
       # buf-language-server
 
       # NULL-LS deps
-      alejandra
-      statix
+      alejandra # nix code formatter
+      statix # nix lints
       rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
       nodePackages.eslint
-      vim-vint
+      vim-vint # for vimscripts
       black # python fmt
       python39Packages.flake8
       hadolint # docker linter
