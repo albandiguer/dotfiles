@@ -126,19 +126,21 @@
           with pkgs.tree-sitter-grammars; [
             tree-sitter-c
             tree-sitter-cmake
+            tree-sitter-dockerfile
             tree-sitter-elm
             tree-sitter-graphql
             tree-sitter-haskell
             tree-sitter-hcl
             tree-sitter-html
             tree-sitter-javascript
-            tree-sitter-typescript
-            tree-sitter-dockerfile
+            tree-sitter-json
+            tree-sitter-json5
             tree-sitter-lua
-            tree-sitter-nix
             tree-sitter-markdown
+            tree-sitter-nix
             tree-sitter-python
             tree-sitter-ruby
+            tree-sitter-typescript
             tree-sitter-vim
             tree-sitter-yaml
           ]
@@ -161,6 +163,7 @@
       telescope-nvim
       nvim-lspconfig
       lspcontainers-nvim
+      markdown-preview-nvim
       nvim-grb256
       # nerdtree
       nvim-tree-lua
