@@ -34,7 +34,7 @@ local lsp_defaults = {
 	flags = {
 		debounce_text_changes = 150,
 	},
-	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	on_attach = function(client, bufnr)
 		vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 
@@ -44,7 +44,7 @@ local lsp_defaults = {
 				group = formatting_augroup,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.formatting_sync()
+					vim.lsp.buf.format()
 				end,
 			})
 		end
