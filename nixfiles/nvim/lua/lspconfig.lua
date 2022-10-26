@@ -82,13 +82,8 @@ vim.api.nvim_create_autocmd("User", {
 -- define settings in project .solargraph.yml
 -- TODO load this only if there is a .solargraph.yml file
 lspconfig.solargraph.setup({
-<<<<<<< Updated upstream
-	cmd = require 'lspcontainers'.command('solargraph'),
-	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd())
-=======
 	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd()),
-	cmd = { "./bin/solargraph" },
->>>>>>> Stashed changes
+	cmd = { "./bin/solargraph" }
 })
 
 -- Lua stuff
