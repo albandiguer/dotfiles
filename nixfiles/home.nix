@@ -25,6 +25,7 @@
     # use lorri init in project directories to setup the shell.nix file
     lorri
     nodejs
+    buildpack # cloud native buildpacks, use pack...
     ngrok
     deno
     watch
@@ -32,7 +33,6 @@
     niv # Painless dependencies for Nix projects
     htop
     todoist
-    heroku
     wget
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
