@@ -121,6 +121,17 @@
         };
       };
 
+      vim-medic_chalk = pkgs.vimUtils.buildVimPlugin {
+        name = "vim-medic_chalk";
+        src = pkgs.fetchFromGitHub {
+          owner = "KonnorRogers";
+          repo = "vim-medic_chalk";
+          rev = "0f904307708315d418d0d64b4bb1bbd36f2b8044";
+          sha256 = "eNbdQ1DfSkGkFFAnGv7JjmFzPz0jE1yR3VV9B4aiQ4A=";
+          fetchSubmodules = false;
+        };
+      };
+
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
         plugins:
           with pkgs.tree-sitter-grammars; [
@@ -176,6 +187,7 @@
       todo-comments-nvim
       trouble-nvim
       vim-airline
+      vim-medic_chalk
       vim-better-whitespace
       vim-bookmarks
       vim-commentary
