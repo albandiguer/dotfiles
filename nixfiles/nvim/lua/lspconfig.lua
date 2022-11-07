@@ -106,3 +106,8 @@ lspconfig.dockerls.setup {
 
 -- Nix rnix-lsp
 lspconfig.rnix.setup {}
+
+-- Marksman
+lspconfig.marksman.setup {
+	cmd = { 'marksman', 'server' }
+}

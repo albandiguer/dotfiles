@@ -71,8 +71,10 @@
   # OR use lorri init to start a new config file
   # Then run:
   # direnv allow .
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
   # optional for nix flakes support
   # programs.direnv.nix-direnv.enableFlakes = true;
 
@@ -89,6 +91,16 @@
 
   # Symlink classic dotfiles
   home.file.".npmrc".source = config/.npmrc;
+
+  # Marksman
+  home.file."bin/marksman" = {
+    source = builtins.fetchurl {
+      url = "https://github.com/artempyanykh/marksman/releases/download/2022-10-30/marksman-macos";
+      sha256 = "0h18izcvy4qiqp8irmz044097s7vq5vaf7xh0xrk757ck7qgs973";
+    };
+    executable = true;
+  };
+
 
   # set your user tokens as enivornment variables, such as ~/.secrets
   # See the README for examples.
