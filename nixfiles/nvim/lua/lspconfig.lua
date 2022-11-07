@@ -111,3 +111,7 @@ lspconfig.rnix.setup {}
 lspconfig.marksman.setup {
 	cmd = { 'marksman', 'server' }
 }
+
+
+-- terraform
+require 'lspconfig'.terraformls.setup {}
