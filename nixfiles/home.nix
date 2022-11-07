@@ -4,7 +4,15 @@
 , ...
 }: {
   # Avoid programs alike vscode copilot unfree licensed to complain
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    # nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
+    overlays = [
+      (import (builtins.fetchTarball {
+        url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+      }))
+    ];
+  };
 
   # For broken packages use the following
   # nixpkgs.config.allowBroken = true;
