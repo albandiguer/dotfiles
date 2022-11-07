@@ -93,7 +93,7 @@
   home.file.".npmrc".source = config/.npmrc;
 
   # Marksman
-  home.file."bin/marksman" = {
+  home.file.".bin/marksman" = {
     source = builtins.fetchurl {
       url = "https://github.com/artempyanykh/marksman/releases/download/2022-10-30/marksman-macos";
       sha256 = "0h18izcvy4qiqp8irmz044097s7vq5vaf7xh0xrk757ck7qgs973";

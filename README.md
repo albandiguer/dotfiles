@@ -86,7 +86,7 @@ https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
 
 Bootstrap `terraform` backend to store states and lockfiles of tf resources.
 The backend is in `s3` + `dynamodb`
-[tf-backend](aws-infra/tf-backend/tfdocs.md)
+[tf-backend](aws-infra/tf-backend/README.md)
 
 Additional resources created in `/tf-misc`
 [tf-misc](aws-infra/tf-misc/tfdocs.md)

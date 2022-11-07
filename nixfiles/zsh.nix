@@ -13,7 +13,7 @@
       initExtra = ''
         # Add local directory ./node_modules/.bin
         # + a global directory for `npm i -g` https://matthewrhone.dev/nixos-npm-globally
-        export PATH="./bin:./node_modules/.bin:$HOME/.npm-packages/bin:$PATH";
+        export PATH="./bin:./node_modules/.bin:$HOME/.bin:$HOME/.npm-packages/bin:$PATH";
         export NODE_PATH=~/.npm-packages/lib/node_modules
 
         source <(kubectl completion zsh)
