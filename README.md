@@ -113,4 +113,4 @@ Right option key : Esc+
 - configure friendly snip (rails...)
 - Look at latex editor config with preview (saved in Pocket)
 - editorconfig xdg
-- markdown formatter / lsp
+- markdown formatter
