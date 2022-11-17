@@ -35,6 +35,7 @@
     nodejs
     buildpack # cloud native buildpacks, use pack...
     ngrok
+    curlie
     deno
     watch
     tree
