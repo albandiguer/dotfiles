@@ -41,6 +41,7 @@
     tree
     niv # Painless dependencies for Nix projects
     htop
+    duf # disk space etc
     todoist
     wget
     nix-prefetch-git
