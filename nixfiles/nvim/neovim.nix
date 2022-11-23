@@ -163,6 +163,7 @@
       ack-vim # TODO remove, grep + ag is good enough
       ayu-vim
       catppuccin-vim
+      jellybeans-vim
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
       # cmp-copilot
