@@ -51,6 +51,17 @@ local lsp_defaults = {
 	end,
 }
 
+-- local format_on_save = function(client, bufnr)
+-- 	if client.supports_method("textDocument/formatting") then
+-- 		vim.api.nvim_clear_autocmds({ group = formatting_augroup, buffer = bufnr })
+-- 		vim.api.nvim_create_autocmd("BufWritePre", {
+-- 			group = formatting_augroup,
+-- 			buffer = bufnr,
+-- 			callback = function()
+-- 				vim.lsp.buf.formatting_sync()
+-- 			end,
+-- 		})
+-- end
 
 -- override global config
 -- :h lspconfig-global-defaults
@@ -74,6 +85,8 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
+
+-- Ruby
 -- could just be a tcp connection, so no lspconfig, just raw lsp conf
 -- see bookmarks firefox/dev on pretto macbook
 -- https://github.com/castwide/vscode-solargraph#extension-settings
@@ -86,7 +99,7 @@ lspconfig.solargraph.setup({
 	cmd = { "./bin/solargraph" }
 })
 
--- Lua stuff
+-- Lua
 lspconfig.sumneko_lua.setup({
 	settings = {
 		Lua = {
@@ -95,7 +108,7 @@ lspconfig.sumneko_lua.setup({
 	}
 })
 
--- Docker lsp
+-- Docker
 lspconfig.dockerls.setup {
 	before_init = function(params)
 		params.processId = vim.NIL
@@ -104,14 +117,16 @@ lspconfig.dockerls.setup {
 	root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
 }
 
--- Nix rnix-lsp
+-- Nix
 lspconfig.rnix.setup {}
 
--- Marksman
+-- Markdown
 lspconfig.marksman.setup {
 	cmd = { 'marksman', 'server' }
 }
 
-
--- terraform
+-- Terraform
 require 'lspconfig'.terraformls.setup {}
+
+-- Yaml
+require 'lspconfig'.yamlls.setup {}

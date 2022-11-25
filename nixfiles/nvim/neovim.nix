@@ -79,13 +79,14 @@
       # solargraph # -> put it in Gemfiles
       # buf-language-server
 
-      # NULL-LS deps
+      # NULL-LS (format/diagnostic/code-actions etc) deps
       alejandra # nix code formatter
       statix # nix lints
       rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
       nodePackages.eslint
+      nodePackages_latest.yaml-language-server
       vim-vint # for vimscripts
       black # python fmt
       python39Packages.flake8

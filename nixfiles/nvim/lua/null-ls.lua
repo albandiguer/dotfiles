@@ -7,8 +7,9 @@ local null_ls = require("null-ls")
 local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 null_ls.setup({
 	sources = {
-		null_ls.builtins.code_actions.statix, --  for nix
 		-- null_ls.builtins.completion.spell,
+		-- null_ls.builtins.formatting.stylua, -- sumneko now has a formatter
+		null_ls.builtins.code_actions.statix, --  for nix
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.diagnostics.hadolint, -- dockerfiles
@@ -16,8 +17,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra,
 		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.prettier,
-		-- null_ls.builtins.formatting.stylua, -- sumneko now has a formatter
+		null_ls.builtins.formatting.prettier.with({ filetypes = { "yaml" } }), -- TODO switch to yamlfmt
 		null_ls.builtins.formatting.rubocop, -- ruby formatter
 		null_ls.builtins.formatting.terraform_fmt,
 	},
