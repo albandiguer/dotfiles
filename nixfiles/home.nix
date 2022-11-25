@@ -20,6 +20,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     awscli2
+    google-cloud-sdk # gcloud
     bitwarden-cli
     # awless # https://github.com/wallix/awless
     cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
