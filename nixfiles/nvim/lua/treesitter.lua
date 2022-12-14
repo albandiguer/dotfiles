@@ -4,17 +4,17 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 	incremental_selection = { enable = true },
 	textobjects = { enable = true },
-	ensure_installed = {
-		"javascript",
-		"lua",
-		"markdown",
-		"python",
-		"nix",
-		"python",
-		"ruby",
-		"typescript",
-		"vim",
-	},
+	-- installed in neovim.nix
+	-- ensure_installed = {
+	-- 	"javascript",
+	-- 	"lua",
+	-- 	"markdown",
+	-- 	"nix",
+	-- 	"python",
+	-- 	"ruby",
+	-- 	"typescript",
+	-- 	"vim",
+	-- },
 })
 
 require("treesitter-context").setup({

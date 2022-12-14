@@ -6,7 +6,7 @@ the tfstate is stored in aws backend, see the backend directory for details.
 
 ## TF version
 
-`niv` is used to lock the nixpkgs-unstable version so we get a predictible tf
+`niv` is used to lock the nixpkgs-unstable version
 
 more here
 https://github.com/nmattia/niv#update

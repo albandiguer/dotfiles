@@ -3,10 +3,10 @@
 , lib
 , ...
 }: {
-  # Avoid programs alike vscode copilot unfree licensed to complain
   nixpkgs = {
+    # Avoid programs alike vscode copilot unfree licensed to complain
     config.allowUnfree = true;
-    # nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
+    # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
     overlays = [
       (import (builtins.fetchTarball {
         url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
@@ -37,6 +37,7 @@
     buildpack # cloud native buildpacks, use pack...
     ngrok
     curlie
+    tldr # when man is tldr
     deno
     watch
     tree
@@ -104,7 +105,7 @@
   # Symlink classic dotfiles
   home.file.".npmrc".source = config/.npmrc;
 
-  # Marksman
+  # Marksman, markdown lsp
   home.file.".bin/marksman" = {
     source = builtins.fetchurl {
       url = "https://github.com/artempyanykh/marksman/releases/download/2022-10-30/marksman-macos";
