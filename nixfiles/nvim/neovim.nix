@@ -154,6 +154,7 @@
             tree-sitter-nix
             tree-sitter-python
             tree-sitter-ruby
+            tree-sitter-tsx
             tree-sitter-typescript
             tree-sitter-vim
             tree-sitter-yaml
