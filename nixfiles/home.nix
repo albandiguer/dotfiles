@@ -42,7 +42,7 @@
     deno
     watch
     tree
-    niv # Painless dependencies for Nix projects
+    # niv # TODO re-enable, currently broken (30/12/22) cycle dependency detected Painless dependencies for Nix projects
     htop
     duf # disk space etc
     todoist
