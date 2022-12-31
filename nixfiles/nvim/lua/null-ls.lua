@@ -30,15 +30,15 @@ null_ls.setup({
 				group = formatting_augroup,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.formatting_sync()
+					vim.lsp.buf.format({ async = false })
 				end,
 			})
 		end
 	end,
-	should_attach = function(bufnr)
-		-- return not vim.api.nvim_buf_get_name(bufnr):match("^git://")
-		-- TODO condition to avoid starting null-ls/rubocop if there is a solargraph config
-		-- return not vim.api.nvim_buf_get_name
-	end
+	-- should_attach = function(bufnr)
+	-- return not vim.api.nvim_buf_get_name(bufnr):match("^git://")
+	-- TODO condition to avoid starting null-ls/rubocop if there is a solargraph config
+	-- return not vim.api.nvim_buf_get_name
+	-- end
 
 })

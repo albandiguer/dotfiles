@@ -3,7 +3,7 @@
 , ...
 }: {
   # For black (python fixer) we allow broken
-  nixpkgs.config.allowBroken = true;
+  # nixpkgs.config.allowBroken = true;
 
   # Lua files for neovim need to be in :h runtimepath
   # https://github.com/nix-community/home-manager/issues/1834
@@ -42,7 +42,9 @@
 
     # Enable Python 3 provider.
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.withPython3
+    # https://neovim.io/doc/user/provider.html
     withPython3 = true; # default is true so this redundant
+    # Plugins for python3 provider:
     extraPython3Packages = ps:
       with ps; [
         # black # not working for null-ls, require it in extraPackages
@@ -88,8 +90,8 @@
       nodePackages.eslint
       nodePackages_latest.yaml-language-server
       vim-vint # for vimscripts
-      black # python fmt
-      python39Packages.flake8
+      python310Packages.black # python fmt
+      python310Packages.flake8
       hadolint # docker linter
       # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
