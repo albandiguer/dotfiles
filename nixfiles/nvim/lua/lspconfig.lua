@@ -18,14 +18,6 @@
 -- 	end,
 -- }
 
--- TODO move all this in ftplugin ?
--- Register handlers for languages, is that the right way to do?
--- lspconfig.tsserver.setup(options)
--- lspconfig.jedi_language_server.setup(options)
--- lspconfig.tflint.setup(options)
--- lspconfig.vimls.setup(options)
--- lspconfig.rnix.setup(options)
-
 
 local lspconfig = require("lspconfig")
 local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -93,8 +85,8 @@ vim.api.nvim_create_autocmd("User", {
 -- DOCKER example :
 -- 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
 -- define settings in project .solargraph.yml
--- TODO load this only if there is a .solargraph.yml file
 lspconfig.solargraph.setup({
+	-- load this only if there is a .solargraph.yml file
 	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd()),
 	cmd = { "./bin/solargraph" }
 })

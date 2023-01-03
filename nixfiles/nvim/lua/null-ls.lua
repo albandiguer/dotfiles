@@ -5,6 +5,7 @@ local null_ls = require("null-ls")
 -- formatting we let it do it. example: solargraph(w/rubocop) takes precendence
 -- on null_ls+rubocop
 local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
+
 null_ls.setup({
 	sources = {
 		-- null_ls.builtins.completion.spell,
@@ -31,6 +32,10 @@ null_ls.setup({
 				buffer = bufnr,
 				callback = function()
 					vim.lsp.buf.format({ async = false })
+					-- if vim.lsp.buf.format() then
+					-- elseif vim.lsp.buf.formatting() then
+					-- 	vim.lsp.buf.formatting()
+					-- end
 				end,
 			})
 		end
