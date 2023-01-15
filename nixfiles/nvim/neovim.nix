@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -162,9 +163,11 @@
             tree-sitter-yaml
           ]
       );
-    in
-    [
-      ack-vim # TODO remove, grep + ag is good enough
+    in [
+      # (plugin "schickling/vim-bufonly") function to directly fetch plugins from git
+      cmp-copilot
+      # nerdtree
+      ack-vim
       ayu-vim
       catppuccin-vim
       jellybeans-vim
