@@ -27,8 +27,8 @@ map('i', '<C-k>', '<space>->')
 map('i', '<C-c>', '<esc>')
 
 map('n', 'Q', '<Nop>') -- disable ex mode
-map('n', '<leader>y', '"+y') -- copy de ouf
-map('n', 'p', 'pgvy') -- paste de ouf
+-- map('n', '<leader>y', '"+y') -- copy de ouf
+-- map('n', 'p', 'pgvy') -- paste de ouf
 -- https://twitter.com/vim_tricks/status/1545065274369609728
 map('n', 'gp', '`[v`]') -- reselect pasted text
 map('n', '<leader>m', ':Make') -- copy de ouf vim-dispatch
