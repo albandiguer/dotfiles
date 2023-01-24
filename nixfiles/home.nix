@@ -39,6 +39,7 @@
     buildpack # cloud native buildpacks, use pack...
     ngrok
     curlie
+    httpie
     tldr # when man is tldr
     deno
     watch
