@@ -68,9 +68,6 @@
       # psql/libpq PATH
       export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-      # salesforce DX (sfdx) autocomplete
-      eval $(sfdx autocomplete:script zsh)
-
       # function to rebase current branch on top of master, finding common ancestor as starting point
       function gri() {
         git merge-base origin/master HEAD|xargs git rebase -i
