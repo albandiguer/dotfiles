@@ -59,7 +59,7 @@
         "FantasqueSansMono"
         "FiraCode"
         "Hack"
-        "Iosevka"
+        # "Iosevka"
         "JetBrainsMono"
         "UbuntuMono"
         "VictorMono"
