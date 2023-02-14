@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -195,12 +194,13 @@
             tree-sitter-python
             tree-sitter-ruby
             # tree-sitter-tsx
-            # tree-sitter-typescript
+            tree-sitter-typescript
             tree-sitter-vim
             tree-sitter-yaml
           ]
       );
-    in [
+    in
+    [
       # (plugin "schickling/vim-bufonly") function to directly fetch plugins from git
       cmp-copilot
       # nerdtree
