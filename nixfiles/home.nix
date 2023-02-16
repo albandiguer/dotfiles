@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   nixpkgs = {
     # Avoid programs alike vscode copilot unfree licensed to complain
@@ -59,25 +60,25 @@
     wget
     (nerdfonts.override {
       fonts = [
+        "CascadiaCode"
         "FantasqueSansMono"
         "FiraCode"
         "Hack"
-        # "Iosevka"
+        "Hermit"
         "JetBrainsMono"
+        "Lilex"
+        "ShareTechMono"
+        "Terminus"
         "UbuntuMono"
         "VictorMono"
-        "Hermit"
-        "CascadiaCode"
         # "DroidSansMono"
         # "Hasklig"
+        # "Iosevka"
         # "Meslo"
         # "Monofur"
         # "Mononoki"
         # "ProggyClean"
         # "SourceCodePro"
-        "Lilex"
-        "ShareTechMono"
-        "Terminus"
       ];
     }) # fonts with devicons
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
@@ -114,13 +115,13 @@
   home.file.".npmrc".source = config/.npmrc;
 
   # Marksman, markdown lsp
-  home.file.".bin/marksman" = {
-    source = builtins.fetchurl {
-      url = "https://github.com/artempyanykh/marksman/releases/download/2022-10-30/marksman-macos";
-      sha256 = "0h18izcvy4qiqp8irmz044097s7vq5vaf7xh0xrk757ck7qgs973";
-    };
-    executable = true;
-  };
+  # home.file.".bin/marksman" = {
+  #   source = builtins.fetchurl {
+  #     url = "https://github.com/artempyanykh/marksman/releases/download/2022-10-30/marksman-macos";
+  #     sha256 = "0h18izcvy4qiqp8irmz044097s7vq5vaf7xh0xrk757ck7qgs973";
+  #   };
+  #   executable = true;
+  # };
 
   # set your user tokens as enivornment variables, such as ~/.secrets
   # See the README for examples.

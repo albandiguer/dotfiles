@@ -7,7 +7,9 @@
   programs.zsh = {
     enable = true;
 
-    enableCompletion = false; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
+    enableSyntaxHighlighting = true;
+    enableAutosuggestions = true;
+    enableCompletion = true; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 
     initExtra = ''
       # Add local directory ./node_modules/.bin
