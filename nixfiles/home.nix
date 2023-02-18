@@ -57,6 +57,7 @@
     todoist
     tree
     watch
+    yabai
     wget
     (nerdfonts.override {
       fonts = [
@@ -104,8 +105,10 @@
     ./zsh.nix
     ./fzf.nix
     ./git.nix
-    nvim/neovim.nix
+    ./nvim/neovim.nix
+    ./starship.nix
     ./tmux.nix
+    ./yabai.nix # TODO
     ./vscode.nix
   ];
   # Let Home Manager install and manage itself.
@@ -123,7 +126,7 @@
   #   executable = true;
   # };
 
-  # set your user tokens as enivornment variables, such as ~/.secrets
+  # set your user tokens as env variables, such as ~/.secrets
   # See the README for examples.
 
   # Home Manager needs a bit of information about you and the
