@@ -214,7 +214,7 @@
       cmp-path
       cmp-vsnip
       delimitMate
-      editorconfig-vim
+      editorconfig-nvim
       friendly-snippets
       jellybeans-vim
       lspcontainers-nvim
