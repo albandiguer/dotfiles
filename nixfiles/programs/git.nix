@@ -52,6 +52,7 @@
       ".netrwhist"
       ".zcompdump"
       "*.log"
+      "$XDG_CACHE_HOME/"
     ];
 
     diff-so-fancy.enable = true;
