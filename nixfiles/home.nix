@@ -47,10 +47,12 @@
     jwt-cli
     lato # used by AltaCV
     lorri
+    marksman
     ngrok
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
     nodejs
+    postman
     roboto-slab # used by AltaCV
     silver-searcher # get use to ag instead of ack
     slack

@@ -59,5 +59,5 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # function to rebase current branch on top of master, finding common ancestor as starting point
 function gri() {
-git merge-base origin/master HEAD|xargs git rebase -i
+	git merge-base origin/master HEAD|xargs git rebase -i
 }

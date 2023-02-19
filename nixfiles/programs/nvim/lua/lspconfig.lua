@@ -104,7 +104,7 @@ lspconfig.solargraph.setup({
 })
 
 -- Lua
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
 			["diagnostics.globals"] = { 'vim' } -- do not warn on unrecognize 'vim' global
@@ -121,7 +121,7 @@ lspconfig.dockerls.setup {
 	root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
 	settings = {
 		docker = {
-			formatter = true;
+			formatter = true,
 		}
 	}
 }
