@@ -42,6 +42,7 @@
     htop
     httpie
     iredis # slick redis client
+    iterm2
     jq
     jwt-cli
     lato # used by AltaCV
