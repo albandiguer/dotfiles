@@ -101,6 +101,7 @@
 
   # Symlink classic dotfiles
   home.file.".npmrc".source = config/.npmrc;
+  home.file.".editorconfig".source = config/.editorconfig;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

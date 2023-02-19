@@ -6,10 +6,10 @@ export NODE_PATH=~/.npm-packages/lib/node_modules
 
 source <(kubectl completion zsh)
 if [ -f minikube ]; then
-source <(minikube completion zsh)
+	source <(minikube completion zsh)
 fi
 if [ -f gh ]; then
-source <(gh completion -s zsh)
+	source <(gh completion -s zsh)
 fi
 
 alias nixsearch="nix search nixpkgs"
