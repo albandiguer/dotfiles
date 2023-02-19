@@ -57,7 +57,6 @@
     todoist
     tree
     watch
-    yabai
     wget
     (nerdfonts.override {
       fonts = [
@@ -88,46 +87,20 @@
 
   # services.lorri.enable = true; not compat on darwin, do lorri daemon manually
 
-  # enable direnv to autostart nix-shell in directories
-  # Create a file called .envrc in your project directory.
-  # echo use_nix > .envrc
-  # OR use lorri init to start a new config file
-  # Then run:
-  # direnv allow .
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-  # optional for nix flakes support
-  # programs.direnv.nix-direnv.enableFlakes = true;
-
   imports = [
-    ./zsh.nix
-    ./fzf.nix
-    ./git.nix
-    ./nvim/neovim.nix
-    ./starship.nix
-    ./tmux.nix
-    ./yabai.nix # TODO
-    ./vscode.nix
+    ./programs/zsh/zsh.nix
+    ./programs/fzf.nix
+    ./programs/git.nix
+    ./programs/nvim/neovim.nix
+    ./programs/starship.nix
+    ./programs/tmux.nix
+    ./programs/vscode.nix
+    ./programs/direnv.nix
+    ./programs/home-manager.nix
   ];
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   # Symlink classic dotfiles
   home.file.".npmrc".source = config/.npmrc;
-
-  # Marksman, markdown lsp
-  # home.file.".bin/marksman" = {
-  #   source = builtins.fetchurl {
-  #     url = "https://github.com/artempyanykh/marksman/releases/download/2022-10-30/marksman-macos";
-  #     sha256 = "0h18izcvy4qiqp8irmz044097s7vq5vaf7xh0xrk757ck7qgs973";
-  #   };
-  #   executable = true;
-  # };
-
-  # set your user tokens as env variables, such as ~/.secrets
-  # See the README for examples.
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -142,5 +115,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.11";
+  home.stateVersion = "22.11";
 }

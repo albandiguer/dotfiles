@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   programs.zsh = {
     enable = true;
@@ -11,7 +10,7 @@
     enableAutosuggestions = true;
     enableCompletion = true; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 
-    initExtra = builtins.readFile ./zsh/init.zsh;
+    initExtra = builtins.readFile ./init.zsh;
 
     sessionVariables = {
       ZSH_TMUX_AUTOSTART = "true";

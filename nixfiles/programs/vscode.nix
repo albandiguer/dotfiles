@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   programs.vscode = {
     enable = true;
@@ -26,6 +27,5 @@
     #   version = "v1.0.6";
     #   sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
     # }];
-
   };
 }
