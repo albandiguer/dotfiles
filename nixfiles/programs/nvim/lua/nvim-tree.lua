@@ -3,13 +3,13 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
 	git = {
-		ignore = false,
+		ignore = true,
 	},
 	view = {
 		adaptive_size = true,
 	},
 	filters = {
-		dotfiles = false,
+		dotfiles = true,
 	},
 })
 
