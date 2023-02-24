@@ -19,14 +19,15 @@
         d = "difftool";
         dc = "diff --cached";
         l = "log --graph --date=short";
+        last = "diff HEAD";
         lpwd = "log -- ."; # git log for files in current directory
         nb = "checkout -b";
         ps = "push";
         reset = "reset HEAD";
-        unstage = "restore --staged";
         s = "status";
         shwo = "show";
         st = "status";
+        unstage = "restore --staged";
       };
       github.user = "albandiguer";
       diff.tool = "nvim";
