@@ -18,6 +18,8 @@
       # increase history size
       set -g history-limit 25000
 
+      # set $TERM for tmux
+      set-option -g default-terminal "tmux-256color"
 
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"
