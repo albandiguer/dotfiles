@@ -191,10 +191,11 @@
             tree-sitter-lua
             tree-sitter-markdown
             tree-sitter-nix
-            tree-sitter-python
-            tree-sitter-ruby
+            # tree-sitter-python
+            # tree-sitter-ruby
             # tree-sitter-tsx
-            tree-sitter-typescript
+            # tree-sitter-typescript
+            # tree-sitter-mermaid
             tree-sitter-vim
             tree-sitter-yaml
           ]
