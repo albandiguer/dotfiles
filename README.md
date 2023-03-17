@@ -15,7 +15,7 @@ nix-shell '<home-manager>' -A install
 Symlink `nixfiles` to `~/.config/nixpkgs`
 
 ```
- ln -s ~/dev/dotfiles/nixfiles ~/.config/nixpkgs
+ ln -s ~/dev/dotfiles/nixfiles ~/.config/home-manager
 ```
 
 ## BAU commands
