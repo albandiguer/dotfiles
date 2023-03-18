@@ -19,7 +19,7 @@
         d = "difftool";
         dc = "diff --cached";
         l = "log --graph --date=short";
-        last = "diff HEAD";
+        last = "show HEAD";
         lpwd = "log -- ."; # git log for files in current directory
         nb = "checkout -b";
         ps = "push";
