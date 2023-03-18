@@ -60,6 +60,7 @@
     tree
     watch
     wget
+    yabai
     (nerdfonts.override {
       fonts = [
         "CascadiaCode"
@@ -100,6 +101,7 @@
     ./programs/vscode.nix
     ./programs/direnv.nix
     ./programs/home-manager.nix
+    ./programs/yabai.nix
   ];
 
   # Symlink classic dotfiles
