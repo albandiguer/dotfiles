@@ -218,6 +218,7 @@
       editorconfig-nvim
       friendly-snippets
       jellybeans-vim
+      kanagawa-nvim
       lspcontainers-nvim
       markdown-preview-nvim
       nightowl-nvim
