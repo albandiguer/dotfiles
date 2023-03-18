@@ -117,6 +117,13 @@ We change the profile in iterm2 keys> keys config
 Right option key : Esc+
 ```
 
+## Fonts
+
+Patch fonts for glyph like so
+```
+docker run --rm -v ~/dev/dotfiles/fonts/input/Input_Fonts/Input/:/in -v  ~/dev/dotfiles/fonts/input/patched:/out nerdfonts/patcher
+```
+
 ## Todos
 
 - Fix gist vim & remove gists
