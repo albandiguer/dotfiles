@@ -124,6 +124,11 @@ Patch fonts for glyph like so
 docker run --rm -v ~/dev/dotfiles/fonts/input/Input_Fonts/Input/:/in -v  ~/dev/dotfiles/fonts/input/patched:/out nerdfonts/patcher
 ```
 
+## Tile Manager
+
+Yabai installed, launch it with `yabai`. 
+Config ideas here https://bryce-s.com/yabai/
+
 ## Todos
 
 - Fix gist vim & remove gists
