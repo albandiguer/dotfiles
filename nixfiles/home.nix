@@ -41,7 +41,7 @@
     heroku
     htop
     httpie
-    iredis # slick redis client
+    # iredis # slick redis client
     jq
     jwt-cli
     lato # used by AltaCV
