@@ -55,6 +55,7 @@
     roboto-slab # used by AltaCV
     silver-searcher # get use to ag instead of ack
     slack
+    skhd
     tldr # when man is tldr
     todoist
     tree
@@ -102,6 +103,7 @@
     ./programs/direnv.nix
     ./programs/home-manager.nix
     ./programs/yabai.nix
+    ./programs/skhd.nix
   ];
 
   # Symlink classic dotfiles
