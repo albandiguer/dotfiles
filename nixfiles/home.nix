@@ -87,7 +87,8 @@
     # writeShellScriptBin "run-commands-on-git-revisions" "echo hellow world"
   ];
 
-  # services.lorri.enable = true; not compat on darwin, do lorri daemon manually
+  # WARN not compat on darwin, do lorri daemon manually
+  # services.lorri.enable = true;
 
   imports = [
     ./programs/zsh/zsh.nix
