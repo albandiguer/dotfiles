@@ -15,12 +15,23 @@
     executable = false;
     target = ".skhdrc";
     text = ''
-      shift + alt - h : yabai -m window --swap west
-      shift + alt - j : yabai -m window --swap south
-      shift + alt - k : yabai -m window --swap north
-      shift + alt - l : yabai -m window --swap east
+      shift + alt - h : yabai -m window --warp west
+      shift + alt - j : yabai -m window --warp south
+      shift + alt - k : yabai -m window --warp north
+      shift + alt - l : yabai -m window --warp east
 
-      alt - r : yabai -m space --rotate 90
+      # maximize a window
+      shift + alt - m : yabai -m window --toggle zoom-fullscreen
+
+      # balance out tree of windows (resize to occupy equal space)
+      shift + alt - b : yabai -m space --balance
+
+      # rotate layout
+      shift + alt - r : yabai -m space --rotate 90
+
+      # move windows prev/next space
+      alt - h : yabai -m window --space prev; yabai -m window --focus west
+      alt - l : yabai -m window --space next; yabai -m display --focus east
 
       # float / unfloat window and center on screen
       alt - t : yabai -m window --toggle float;\

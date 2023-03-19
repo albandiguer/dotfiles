@@ -6,16 +6,11 @@ require("nvim-treesitter.configs").setup({
 	textobjects = { enable = true },
 	-- installed in neovim.nix
 	ensure_installed = {
-		-- 	"javascript",
-		-- 	"lua",
-		-- 	"markdown",
-		-- 	"nix",
+		"mermaid",
 		"python",
 		"ruby",
-		"typescript",
 		"tsx",
-		-- 	"vim",
-		"mermaid"
+		"typescript"
 	},
 })
 

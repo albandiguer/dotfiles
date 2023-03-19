@@ -160,18 +160,6 @@
         };
       };
 
-      # https://github.com/haishanh/night-owl.vim
-      nightowl-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "nightowl-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "haishanh";
-          repo = "night-owl.vim";
-          rev = "783a41a27f7fe55ed91d1ec0f0351d06ae17fbc7";
-          sha256 = "sha256-dI/Ag3FXiSy2ec7wC9wNJ15uAiYZEtu6gyyqU6BT98k=";
-          fetchSubmodules = true;
-        };
-      };
-
       # TODO add this theme owickstrom/vim-colors-paramount
 
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
@@ -200,8 +188,7 @@
             tree-sitter-yaml
           ]
       );
-    in
-    [
+    in [
       # (plugin "schickling/vim-bufonly") function to directly fetch plugins from git
       cmp-copilot
       # nerdtree
@@ -221,7 +208,6 @@
       kanagawa-nvim
       lspcontainers-nvim
       markdown-preview-nvim
-      nightowl-nvim
       null-ls-nvim
       nvim-cmp
       nvim-grb256

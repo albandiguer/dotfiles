@@ -47,7 +47,7 @@
     lato # used by AltaCV
     lorri
     marksman
-    ngrok
+    # ngrok broken atm
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
     nodejs
@@ -64,10 +64,7 @@
     yabai
     (nerdfonts.override {
       fonts = [
-        "CascadiaCode"
         "FantasqueSansMono"
-        "FiraCode"
-        "Hack"
         "Hermit"
         "JetBrainsMono"
         "Lilex"
@@ -75,14 +72,6 @@
         "Terminus"
         "UbuntuMono"
         "VictorMono"
-        # "DroidSansMono"
-        # "Hasklig"
-        # "Iosevka"
-        # "Meslo"
-        # "Monofur"
-        # "Mononoki"
-        # "ProggyClean"
-        # "SourceCodePro"
       ];
     }) # fonts with devicons
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
