@@ -21,6 +21,8 @@ opt.termguicolors = true
 
 g['context_nvim_no_redraw'] = 1 -- context-nvim avoid flickering
 
+g['loaded_perl_provider'] = 0   -- do not load perl provider (checkhealth happy)
+
 
 map('i', '<C-l>', '<space>=>')
 map('i', '<C-k>', '<space>->')
@@ -31,9 +33,9 @@ map('n', 'Q', '<Nop>') -- disable ex mode
 -- map('n', 'p', 'pgvy') -- paste de ouf
 -- https://twitter.com/vim_tricks/status/1545065274369609728
 map('n', 'gp', '`[v`]') -- reselect pasted text
-map('n', '<leader>m', ':Make') -- copy de ouf vim-dispatch
-map('n', '<leader>d', ':Dispatch') -- copy de ouf vim-dispatch
-map('n', '<leader>p', ':MarkdownPreview<CR>') -- copy de ouf vim-dispatch
+map('n', '<leader>m', ':Make')
+map('n', '<leader>d', ':Dispatch')
+map('n', '<leader>p', ':MarkdownPreview<CR>')
 map('n', '<C-a>', '<esc>ggVG<CR>') -- select all
 map('n', '<leader><leader>', '<c-^>')
 
