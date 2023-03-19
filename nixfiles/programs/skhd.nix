@@ -15,26 +15,27 @@
     executable = false;
     target = ".skhdrc";
     text = ''
-      shift + alt - h : yabai -m window --warp west
-      shift + alt - j : yabai -m window --warp south
-      shift + alt - k : yabai -m window --warp north
-      shift + alt - l : yabai -m window --warp east
+      alt + cmd - h : yabai -m window --warp west
+      alt + cmd - l : yabai -m window --warp east
+      alt + cmd - k : yabai -m window --warp north
+      alt + cmd - j : yabai -m window --warp south
 
       # maximize a window
-      shift + alt - m : yabai -m window --toggle zoom-fullscreen
+      alt + cmd - f : yabai -m window --toggle zoom-fullscreen
 
       # balance out tree of windows (resize to occupy equal space)
-      shift + alt - b : yabai -m space --balance
+      alt + cmd - b : yabai -m space --balance
 
       # rotate layout
-      shift + alt - r : yabai -m space --rotate 90
+      alt + cmd - r : yabai -m space --rotate 90
 
       # move windows prev/next space
-      alt - h : yabai -m window --space prev; yabai -m window --focus west
-      alt - l : yabai -m window --space next; yabai -m display --focus east
+      alt + cmd - left : yabai -m window --space prev; yabai -m window --focus west
+      alt + cmd - right : yabai -m window --space next; yabai -m display --focus east
+
 
       # float / unfloat window and center on screen
-      alt - t : yabai -m window --toggle float;\
+      alt + cmd - t : yabai -m window --toggle float;\
       yabai -m window --grid 4:4:1:1:2:2
     '';
   };
