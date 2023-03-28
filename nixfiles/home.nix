@@ -51,6 +51,7 @@
     nix-prefetch-git
     nix-prefetch-github # no working at times cant verify sha256 sums
     nodejs
+    ruby_3_1
     postman
     roboto-slab # used by AltaCV
     silver-searcher # get use to ag instead of ack

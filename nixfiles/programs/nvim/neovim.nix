@@ -194,7 +194,6 @@
       # nerdtree
       ack-vim
       ayu-vim
-      # catppuccin-vim
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
       cmp-conventionalcommits
@@ -216,7 +215,6 @@
       nvim-treesitter-context
       nvim-treesitter-with-plugins
       nvim-web-devicons
-      # shiretolin-nvim
       spaceduck-nvim
       tabular
       telescope-nvim
@@ -232,7 +230,6 @@
       vim-gist
       vim-mustache-handlebars
       vim-jsdoc # ftplugin?
-      # vim-medic_chalk
       vim-nix # ftplugin?
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
