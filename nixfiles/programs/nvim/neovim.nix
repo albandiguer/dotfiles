@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -160,34 +161,35 @@
         };
       };
 
-      # TODO add this theme owickstrom/vim-colors-paramount
+      # TODO add theme owickstrom/vim-colors-paramount
 
-      nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
-        plugins:
-          with pkgs.tree-sitter-grammars; [
-            tree-sitter-c
-            # tree-sitter-cmake
-            tree-sitter-dockerfile
-            tree-sitter-elm
-            tree-sitter-graphql
-            tree-sitter-haskell
-            tree-sitter-hcl
-            tree-sitter-html
-            tree-sitter-javascript
-            tree-sitter-json
-            tree-sitter-json5
-            tree-sitter-lua
-            tree-sitter-markdown
-            tree-sitter-nix
-            # tree-sitter-python
-            # tree-sitter-ruby
-            # tree-sitter-tsx
-            # tree-sitter-typescript
-            # tree-sitter-mermaid
-            tree-sitter-vim
-            tree-sitter-yaml
-          ]
-      );
+      nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+      # nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
+      #   plugins:
+      #     with pkgs.tree-sitter-grammars; [
+      #       tree-sitter-c
+      #       # tree-sitter-cmake
+      #       tree-sitter-dockerfile
+      #       tree-sitter-elm
+      #       tree-sitter-graphql
+      #       tree-sitter-haskell
+      #       tree-sitter-hcl
+      #       tree-sitter-html
+      #       tree-sitter-javascript
+      #       tree-sitter-json
+      #       tree-sitter-json5
+      #       tree-sitter-lua
+      #       tree-sitter-markdown
+      #       tree-sitter-nix
+      #       # tree-sitter-python
+      #       # tree-sitter-ruby
+      #       # tree-sitter-tsx
+      #       # tree-sitter-typescript
+      #       # tree-sitter-mermaid
+      #       tree-sitter-vim
+      #       tree-sitter-yaml
+      #     ]
+      # );
     in [
       # (plugin "schickling/vim-bufonly") function to directly fetch plugins from git
       cmp-copilot
