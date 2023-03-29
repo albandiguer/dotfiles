@@ -13,6 +13,10 @@ upgrade-nix:
 rollback:
 	nix-channel --rollback
 
+tiling:
+	pgrep yabai | xargs kill -9 && yabai &
+	pgrep skhd | xargs kill -9 && skhd &
+
 cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
 	home-manager expire-generations "-30 days"
