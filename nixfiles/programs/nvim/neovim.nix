@@ -162,6 +162,16 @@
       };
 
       # TODO add theme owickstrom/vim-colors-paramount
+      vim-colors-paramount = pkgs.vimUtils.buildVimPlugin {
+        name = "vim-colors-paramount";
+        src = pkgs.fetchFromGitHub {
+          owner = "owickstrom";
+          repo = "vim-colors-paramount";
+          rev = "a5601d36fb6932e8d1a6f8b37b179a99b1456798";
+          sha256 = "sha256-j9nMjKYK7bqrGHprYp0ddLEWs1CNMudxXD13sOROVmY=";
+          fetchSubmodules = true;
+        };
+      };
 
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       # nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
@@ -229,6 +239,7 @@
       vim-devicons
       vim-dispatch
       vim-fugitive
+      vim-colors-paramount
       vim-gist
       vim-mustache-handlebars
       vim-jsdoc # ftplugin?

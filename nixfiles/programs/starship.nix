@@ -16,7 +16,13 @@
       #   error_symbol = "[➜](bold red)";
       # };
 
-      # package.disabled = true;
+      ruby.disabled = true;
+      nodejs.disabled = true;
+      package.disabled = true;
+      gcloud = {
+        disabled = false;
+        symbol = "🇬️ ";
+      };
     };
   };
 }
