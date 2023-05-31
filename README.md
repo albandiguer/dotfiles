@@ -17,8 +17,20 @@ Symlink `nixfiles` to `~/.config/nixpkgs`
 ```
  ln -s ~/dev/dotfiles/nixfiles ~/.config/home-manager
 ```
+## Post MacOS upgrade
+
+re-add in `/etc/zshrc`
+```
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+```
 
 ## BAU commands
+
+
 
 Update environment and deps with
 
