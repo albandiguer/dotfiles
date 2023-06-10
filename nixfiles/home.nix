@@ -9,10 +9,24 @@
     config.allowUnfree = true;
     # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
     # currently failing  https://github.com/nix-community/neovim-nightly-overlay/issues/164
+    # overlays = [
+    #   (import (builtins.fetchTarball {
+    #     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    #   }))
+    # ];
+    # Pin to the latest working commit for now https://github.com/nix-community/neovim-nightly-overlay/pull/177
     overlays = [
-      (import (builtins.fetchTarball {
-        url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-      }))
+      (
+        import (
+          let
+            # rev = "master";
+            rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7";
+          in
+            builtins.fetchTarball {
+              url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
+            }
+        )
+      )
     ];
   };
 
