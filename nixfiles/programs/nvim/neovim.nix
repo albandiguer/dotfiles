@@ -14,9 +14,9 @@
     (builtins.readFile lua/airline.lua)
     (builtins.readFile lua/settings.lua)
     (builtins.readFile lua/treesitter.lua)
+    (builtins.readFile lua/cmp.lua)
     (builtins.readFile lua/nvim-tree.lua)
     (builtins.readFile lua/telescope.lua)
-    (builtins.readFile lua/cmp.lua)
     (builtins.readFile lua/lspconfig.lua)
     (builtins.readFile lua/null-ls.lua)
     (builtins.readFile lua/trouble.lua)
@@ -91,7 +91,7 @@
       # rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
-      nodePackages.eslint
+      # nodePackages.eslint
       nodePackages_latest.yaml-language-server
       vim-vint # for vimscripts
       python310Packages.black # python fmt
