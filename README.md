@@ -156,3 +156,4 @@ Config ideas here https://bryce-s.com/yabai/
 - editorconfig xdg
 - markdown formatter
 - switch algo for rsa key to ed25519
+- test mermerd https://github.com/KarnerTh/mermerd

@@ -62,6 +62,7 @@ function gri() {
 	git merge-base origin/master HEAD|xargs git rebase -i
 }
 
-function diffib() {
-	git merge-base origin/master HEAD|xargs git diff
+# diff with common ancestor for path, all when path unspecified
+function diffib {
+	git merge-base origin/master HEAD|xargs -I _ git diff _ -- $1
 }

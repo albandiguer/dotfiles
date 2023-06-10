@@ -51,10 +51,13 @@
       # Float some windows
       yabai -m rule --add app="^1Password.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Asana.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Books.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Calendar.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Dash.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Discord.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Docker.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Finder.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Insomnia.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Maps.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Notes.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Photo\ Booth.*$" sticky=on layer=above manage=off
@@ -62,6 +65,7 @@
       yabai -m rule --add app="^Postman.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Preview.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^QuickTime.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^RapidAPI.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Stocks.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^System.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Todoist.*$" sticky=on layer=above manage=off

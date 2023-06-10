@@ -23,6 +23,7 @@
     (builtins.readFile lua/todo-comments.lua)
     (builtins.readFile lua/snippets.lua)
     (builtins.readFile lua/vim-dispatch.lua)
+    (builtins.readFile lua/markdown-preview.lua)
   ];
   # TODO convert that to automatically pick all files? order? something like this?
   # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
@@ -219,6 +220,7 @@
       kanagawa-nvim
       lspcontainers-nvim
       markdown-preview-nvim
+      melange-nvim
       null-ls-nvim
       nvim-cmp
       nvim-grb256
@@ -242,6 +244,7 @@
       vim-colors-paramount
       vim-gist
       vim-mustache-handlebars
+      vim-janah
       vim-jsdoc # ftplugin?
       vim-nix # ftplugin?
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
