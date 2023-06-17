@@ -77,6 +77,7 @@
     watch
     wget
     yabai
+    python311Packages.ipykernel
     (nerdfonts.override {
       fonts = [
         "FantasqueSansMono"

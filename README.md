@@ -103,9 +103,26 @@ experimental-features = nix-command flakes
 
 ## Condas
 
-conda installed for apple silicon (to be able to run tensorflow), not handled
+Python distro
+
+miniconda installed for apple silicon (to be able to run tensorflow), not handled
 by nix/dotfiles for now
 https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
+
+```
+# update conda itself
+conda update -n base conda
+
+# update all package 
+conda update --all
+
+# select a conda env 
+conda activate <env>
+
+# deactivate
+conda deactivate
+
+```
 
 ## IAM & AWS
 

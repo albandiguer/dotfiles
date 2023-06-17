@@ -41,6 +41,7 @@
         "minikube"
         "kubectl"
         "terraform"
+        "conda"
       ];
       theme = "robbyrussell";
     };

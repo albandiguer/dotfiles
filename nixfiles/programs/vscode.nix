@@ -11,8 +11,9 @@
     extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
       # esbenp.prettier-vscode
-      # github.copilot
+      github.copilot
       hashicorp.terraform
+      ms-toolsai.jupyter
     ];
     # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
     #   name = "castwide.solargraph";
