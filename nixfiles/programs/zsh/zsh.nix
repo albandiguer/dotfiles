@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   programs.zsh = {
     enable = true;
@@ -41,7 +40,6 @@
         "minikube"
         "kubectl"
         "terraform"
-        "conda"
       ];
       theme = "robbyrussell";
     };

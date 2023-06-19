@@ -122,6 +122,11 @@ conda activate <env>
 # deactivate
 conda deactivate
 
+# Install package
+conda install -n mlpy311 numpy --update-deps --force-reinstall
+conda install -n <env> numpy --update-deps --force-reinstall
+
+
 ```
 
 ## IAM & AWS
@@ -174,3 +179,4 @@ Config ideas here https://bryce-s.com/yabai/
 - markdown formatter
 - switch algo for rsa key to ed25519
 - test mermerd https://github.com/KarnerTh/mermerd
+- install nix-darwin & start services like lorri/yabai

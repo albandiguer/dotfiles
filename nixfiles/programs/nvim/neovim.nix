@@ -237,15 +237,18 @@
       vim-airline
       vim-better-whitespace
       vim-bookmarks
+      vim-colors-paramount
       vim-commentary
       vim-devicons
+      vim-dadbod
+      vim-dadbod-completion
+      vim-dadbod-ui
       vim-dispatch
       vim-fugitive
-      vim-colors-paramount
       vim-gist
-      vim-mustache-handlebars
       vim-janah
       vim-jsdoc # ftplugin?
+      vim-mustache-handlebars
       vim-nix # ftplugin?
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
