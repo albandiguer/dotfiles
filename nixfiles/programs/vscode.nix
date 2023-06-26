@@ -14,6 +14,7 @@
       github.copilot
       hashicorp.terraform
       ms-toolsai.jupyter
+      # ms-vsliveshare.vsliveshare
     ];
     # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
     #   name = "castwide.solargraph";
