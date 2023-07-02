@@ -1,12 +1,13 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   programs.zsh = {
     enable = true;
 
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     enableCompletion = true; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 
