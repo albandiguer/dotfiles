@@ -3,6 +3,9 @@ colorscheme jellybeans
 " close all buffers but current https://stackoverflow.com/a/42071865/549563
 nnoremap ' :%bd\|e#<CR>
 
+" easy testing with open split
+nnoremap T :!tmux send-keys -t ':.1' 'make rspec %' C-m
+
 " Clipboard
 set clipboard^=unnamed,unnamedplus
 "

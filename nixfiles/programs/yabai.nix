@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   # See this blog here
   # Copied from https://cmacr.ae/post/2020-05-13-yabai-module-in-nix-darwin-now-generally-available/
@@ -60,6 +59,7 @@
       yabai -m rule --add app="^Insomnia.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Maps.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Notes.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Notion.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Photo\ Booth.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Podcasts.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Postman.*$" sticky=on layer=above manage=off
