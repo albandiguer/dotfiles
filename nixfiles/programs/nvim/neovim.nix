@@ -253,6 +253,7 @@
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
       vim-slash # set of mappings for enhancing in-buffer search
+      vim-surround
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
       vim-vsnip
       webapi-vim # used by vim-gist for api call

@@ -2,23 +2,28 @@
 
 ## Setup
 
-Install `nix` 
+### Nix
 ```shell
 sh <(curl -L https://nixos.org/nix/install)
 ```
-then `home-manager`
+### home-manager
 ```shell
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 nix-shell '<home-manager>' -A install
 ```
 
 Symlink `nixfiles` to `~/.config/nixpkgs`
-
 ```
  ln -s ~/dev/dotfiles/nixfiles ~/.config/home-manager
 ```
-## Post MacOS upgrade
+### nix-darwin
+Have services etc configured with nix
 
+On [github](https://github.com/LnL7/nix-darwin)
+
+## Help
+
+### Fix Post MacOS upgrade
 re-add in `/etc/zshrc`
 ```
 # Nix
@@ -153,10 +158,15 @@ Right option key : Esc+
 
 ## Fonts
 
+[Github](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font)
+
 Patch fonts for glyph like so
 ```
-docker run --rm -v ~/dev/dotfiles/fonts/input/Input_Fonts/Input/:/in -v  ~/dev/dotfiles/fonts/input/patched:/out nerdfonts/patcher
+docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out nerdfonts/patcher
 ```
+
+### SFMono
+[Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
 
 ## Tile Manager
 
@@ -166,7 +176,6 @@ Config ideas here https://bryce-s.com/yabai/
 ## Todos
 
 - Fix gist vim & remove gists
-- Re-enable github copilot
 - Tweak lsp mappings (refactoring & code actions?)
 - Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls
