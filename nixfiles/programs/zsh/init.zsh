@@ -49,8 +49,6 @@ export HEROKU_AC_ZSH_SETUP_PATH=/Users/albandiguer/Library/Caches/heroku/autocom
 test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 # export HEROKU_ORGANIZATION=<org>
 
-alias devbox="ssh ubuntu@51.68.38.158 -p 2222"
-
 alias dk="docker"
 alias dkc="docker-compose"
 

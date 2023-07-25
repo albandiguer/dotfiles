@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   # See this blog here
   # Copied from https://cmacr.ae/post/2020-05-13-yabai-module-in-nix-darwin-now-generally-available/
@@ -57,9 +58,11 @@
       yabai -m rule --add app="^Docker.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Finder.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Insomnia.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Licecap.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Maps.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Notes.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Notion.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Parallels\ Desktop.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Photo\ Booth.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Podcasts.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Postman.*$" sticky=on layer=above manage=off
@@ -69,8 +72,8 @@
       yabai -m rule --add app="^Stocks.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^System.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Todoist.*$" sticky=on layer=above manage=off
+      yabai -m rule --add app="^Transmission.*$" sticky=on layer=above manage=off
       yabai -m rule --add app="^Weather.*$" sticky=on layer=above manage=off
-      yabai -m rule --add app="^Licecap.*$" sticky=on layer=above manage=off
 
       echo "yabai configuration loaded.."
     '';
