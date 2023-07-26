@@ -24,6 +24,7 @@
     (builtins.readFile lua/snippets.lua)
     (builtins.readFile lua/vim-dispatch.lua)
     (builtins.readFile lua/markdown-preview.lua)
+    (builtins.readFile lua/neogen.lua)
   ];
   # TODO convert that to automatically pick all files? order? something like this?
   # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
@@ -222,6 +223,7 @@
       lspcontainers-nvim
       markdown-preview-nvim
       melange-nvim
+      neogen
       null-ls-nvim
       nvim-cmp
       nvim-grb256
