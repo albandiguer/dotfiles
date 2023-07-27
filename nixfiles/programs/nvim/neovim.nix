@@ -250,7 +250,7 @@
       vim-fugitive
       vim-gist
       vim-janah
-      vim-jsdoc # ftplugin?
+      # vim-jsdoc # ftplugin? NOTE: redundant with neogen?
       vim-mustache-handlebars
       vim-nix # ftplugin?
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)

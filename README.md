@@ -199,3 +199,4 @@ Config ideas here https://bryce-s.com/yabai/
 - test mermerd https://github.com/KarnerTh/mermerd
 - install nix-darwin & start services like lorri/yabai
 - https://github.com/danymat/neogen
+- chatgpt plugin?
