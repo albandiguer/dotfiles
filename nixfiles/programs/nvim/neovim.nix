@@ -25,6 +25,7 @@
     (builtins.readFile lua/vim-dispatch.lua)
     (builtins.readFile lua/markdown-preview.lua)
     (builtins.readFile lua/neogen.lua)
+    (builtins.readFile lua/neoai.lua)
   ];
   # TODO convert that to automatically pick all files? order? something like this?
   # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
@@ -109,17 +110,16 @@
     plugins = with pkgs.vimPlugins; let
       # can simplify with flake (avoid sha resolution) ?
       # https://www.reddit.com/r/NixOS/comments/mvk5l9/comment/gvqfag9/?utm_source=share&utm_medium=web2x&context=3
-      catppuccin-vim = pkgs.vimUtils.buildVimPlugin {
-        name = "catppuccin-vim";
-        src = pkgs.fetchFromGitHub {
-          owner = "catppuccin";
-          repo = "nvim";
-          rev = "22b34eb9f93430bc010dee1523743b62cd2700fc";
-          sha256 = "1cqc6pws6czdshzxmh89ryf2j1cc2n5maf8v5v6nh8yw02jqghk5";
-          fetchSubmodules = true;
-        };
-      };
-
+      # catppuccin-vim = pkgs.vimUtils.buildVimPlugin {
+      #   name = "catppuccin-vim";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "catppuccin";
+      #     repo = "nvim";
+      #     rev = "22b34eb9f93430bc010dee1523743b62cd2700fc";
+      #     sha256 = "1cqc6pws6czdshzxmh89ryf2j1cc2n5maf8v5v6nh8yw02jqghk5";
+      #     fetchSubmodules = true;
+      #   };
+      # };
       nvim-grb256 = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-grb256";
         src = pkgs.fetchFromGitHub {
@@ -131,27 +131,27 @@
         };
       };
 
-      vim-medic_chalk = pkgs.vimUtils.buildVimPlugin {
-        name = "vim-medic_chalk";
-        src = pkgs.fetchFromGitHub {
-          owner = "KonnorRogers";
-          repo = "vim-medic_chalk";
-          rev = "0f904307708315d418d0d64b4bb1bbd36f2b8044";
-          sha256 = "eNbdQ1DfSkGkFFAnGv7JjmFzPz0jE1yR3VV9B4aiQ4A=";
-          fetchSubmodules = false;
-        };
-      };
+      # vim-medic_chalk = pkgs.vimUtils.buildVimPlugin {
+      #   name = "vim-medic_chalk";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "KonnorRogers";
+      #     repo = "vim-medic_chalk";
+      #     rev = "0f904307708315d418d0d64b4bb1bbd36f2b8044";
+      #     sha256 = "eNbdQ1DfSkGkFFAnGv7JjmFzPz0jE1yR3VV9B4aiQ4A=";
+      #     fetchSubmodules = false;
+      #   };
+      # };
 
-      spaceduck-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "spaceduck-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "pineapplegiant";
-          repo = "spaceduck";
-          rev = "350491f19343b24fa85809242089caa02d4dadce";
-          sha256 = "sha256-lE8y9BA2a4y0B6O3+NyOS7numoltmzhArgwTAner2fE=";
-          fetchSubmodules = true;
-        };
-      };
+      # spaceduck-nvim = pkgs.vimUtils.buildVimPlugin {
+      #   name = "spaceduck-nvim";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "pineapplegiant";
+      #     repo = "spaceduck";
+      #     rev = "350491f19343b24fa85809242089caa02d4dadce";
+      #     sha256 = "sha256-lE8y9BA2a4y0B6O3+NyOS7numoltmzhArgwTAner2fE=";
+      #     fetchSubmodules = true;
+      #   };
+      # };
 
       shiretolin-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "shiretolin-nvim";
@@ -172,6 +172,17 @@
           repo = "vim-colors-paramount";
           rev = "a5601d36fb6932e8d1a6f8b37b179a99b1456798";
           sha256 = "sha256-j9nMjKYK7bqrGHprYp0ddLEWs1CNMudxXD13sOROVmY=";
+          fetchSubmodules = true;
+        };
+      };
+
+      neoai-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "neoai-nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "Bryley";
+          repo = "neoai.nvim";
+          rev = "248c2001d0b24e58049eeb6884a79860923cfe13";
+          sha256 = "haO7Qi2szWfTxWcknI7aJSKamQ/n6qIhIOxaO544IDY=";
           fetchSubmodules = true;
         };
       };
@@ -204,6 +215,9 @@
       #     ]
       # );
     in [
+      # neogen5 ?
+      # chatgpt
+
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       cmp-copilot
       # nerdtree
@@ -224,6 +238,8 @@
       markdown-preview-nvim
       melange-nvim
       neogen
+      neoai-nvim
+      nui-nvim # required by neoAI https://github.com/Bryley/neoai.nvim
       null-ls-nvim
       nvim-cmp
       nvim-grb256
@@ -232,7 +248,7 @@
       nvim-treesitter-context
       nvim-treesitter-with-plugins
       nvim-web-devicons
-      spaceduck-nvim
+      # spaceduck-nvim
       tabular
       telescope-nvim
       todo-comments-nvim

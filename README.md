@@ -65,6 +65,22 @@ Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and
 
 ![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
 
+```mermaid
+flowchart LR
+  cmp["
+    cmp
+    completion plugin
+  "]
+  null-ls["Null LS"]
+  nvim-lsp["nvim-lsp plugin"]
+  regular-lsp["Regular LSP"]
+  null-ls --> nvim-lsp
+  regular-lsp --> nvim-lsp
+  nvim-lsp --> cmp
+  
+
+```
+
 ### Shortcuts
 
 ### tips
@@ -142,6 +158,8 @@ conda install -n <env> numpy --update-deps --force-reinstall
 
 
 ```
+
+
 
 ## IAM & AWS
 
