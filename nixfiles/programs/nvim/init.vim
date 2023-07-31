@@ -1,4 +1,4 @@
-colorscheme jellybeans
+colorscheme melange
 
 " close all buffers but current https://stackoverflow.com/a/42071865/549563
 nnoremap ' :%bd\|e#<CR>
