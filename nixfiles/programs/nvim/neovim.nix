@@ -215,12 +215,10 @@
       #     ]
       # );
     in [
-      # neogen5 ?
-      # chatgpt
+      # feat chatgpt?
 
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       cmp-copilot
-      # nerdtree
       ack-vim
       ayu-vim
       cmp-buffer # nvim-cmp source for buffer words.
