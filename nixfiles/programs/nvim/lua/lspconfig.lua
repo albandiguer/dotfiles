@@ -55,18 +55,6 @@ local lsp_defaults = {
 -- 		})
 -- end
 
--- local format_on_save = function(client, bufnr)
--- 	if client.supports_method("textDocument/formatting") then
--- 		vim.api.nvim_clear_autocmds({ group = formatting_augroup, buffer = bufnr })
--- 		vim.api.nvim_create_autocmd("BufWritePre", {
--- 			group = formatting_augroup,
--- 			buffer = bufnr,
--- 			callback = function()
--- 				vim.lsp.buf.formatting_sync()
--- 			end,
--- 		})
--- end
-
 -- override global config
 -- :h lspconfig-global-defaults
 lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
@@ -86,6 +74,9 @@ vim.api.nvim_create_autocmd("User", {
 
 		-- Displays a function's signature information
 		bufmap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+
+		-- Displays available code actions
+		bufmap("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 	end,
 })
 

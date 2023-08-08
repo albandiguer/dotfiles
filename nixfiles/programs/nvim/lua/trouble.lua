@@ -3,8 +3,8 @@ require("trouble").setup({
 	-- or leave it empty to use the default settings
 	-- refer to the configuration section below
 	action_keys = {
-		cancel = ")", -- close the list
-		hover = "K", -- opens a small popup with the full multiline message
+		cancel = ")",   -- close the list
+		hover = "K",    -- opens a small popup with the full multiline message
 	},
 	auto_close = true, -- auto close list when empty
 	height = 14

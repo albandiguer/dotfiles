@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -85,7 +84,6 @@
       terraform-ls
       sqls
       # solargraph # -> put it in Gemfiles
-      # buf-language-server
       solargraph
       buf-language-server # buf
 
@@ -214,7 +212,8 @@
       #       tree-sitter-yaml
       #     ]
       # );
-    in [
+    in
+    [
       # feat chatgpt?
 
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
