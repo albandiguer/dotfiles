@@ -14,6 +14,7 @@
       github.copilot
       hashicorp.terraform
       ms-toolsai.jupyter
+      marp-team.marp-vscode
       # ms-vsliveshare.vsliveshare
     ];
     # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{

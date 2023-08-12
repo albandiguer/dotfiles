@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -25,6 +26,7 @@
     (builtins.readFile lua/markdown-preview.lua)
     (builtins.readFile lua/neogen.lua)
     (builtins.readFile lua/neoai.lua)
+    (builtins.readFile lua/devdocs.lua)
   ];
   # TODO convert that to automatically pick all files? order? something like this?
   # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
@@ -34,8 +36,9 @@
   # );
 
   # neovim ftplugins, TODO loop
-  home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
+  home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
+  home.file."${config.xdg.configHome}/nvim/after/ftplugin/markdown.lua".text = builtins.readFile after/ftplugin/markdown.lua;
   home.file."${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
 
   programs.neovim = {
@@ -185,6 +188,17 @@
         };
       };
 
+      nvim-devdocs = pkgs.vimUtils.buildVimPlugin {
+        name = "nvim-devdocs";
+        src = pkgs.fetchFromGitHub {
+          owner = "luckasRanarison";
+          repo = "nvim-devdocs";
+          rev = "e3da040acc8d6d0b87af6521315b95c6689c8bee";
+          sha256 = "sha256-8Wze4iiOIZymRZNnH+GLJxm4ld7i1dj571hfuIw5ltk=";
+          fetchSubmodules = false;
+        };
+      };
+
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       # nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
       #   plugins:
@@ -212,8 +226,7 @@
       #       tree-sitter-yaml
       #     ]
       # );
-    in
-    [
+    in [
       # feat chatgpt?
 
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
@@ -239,12 +252,14 @@
       nui-nvim # required by neoAI https://github.com/Bryley/neoai.nvim
       null-ls-nvim
       nvim-cmp
+      nvim-devdocs
       nvim-grb256
       nvim-lspconfig
       nvim-tree-lua
       nvim-treesitter-context
       nvim-treesitter-with-plugins
       nvim-web-devicons
+      plenary-nvim #dep for nvim-devdocs (async programming with coroutines)
       # spaceduck-nvim
       tabular
       telescope-nvim

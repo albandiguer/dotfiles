@@ -38,6 +38,7 @@
     # rnix-lsp
     # use lorri init in project directories to setup the shell.nix file
     awscli2
+    act # gh actions locally
     bash # macos is bash 3xx, need 4+
     bitwarden-cli
     buildpack # cloud native buildpacks, use pack...
