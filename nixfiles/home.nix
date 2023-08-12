@@ -83,6 +83,7 @@
         "Terminus"
         "UbuntuMono"
         "VictorMono"
+        "Iosevka"
       ];
     }) # fonts with devicons
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
