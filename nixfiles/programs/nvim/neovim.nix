@@ -272,6 +272,7 @@
       cmp-conventionalcommits
       cmp-nvim-lsp # nvim-cmp source for neovim's built-in language server client.
       cmp-path
+      cmp-git
       cmp-vsnip
       delimitMate
       editorconfig-nvim

@@ -16,7 +16,6 @@ cmp.setup({
 				return vim_item
 			end
 		}),
-
 	},
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -42,6 +41,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "vsnip" }, -- For vsnip users.
 		{ name = "copilot" }, -- copilot
+		{ name = "git" },   -- copilot
 		-- { name = 'luasnip' }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
