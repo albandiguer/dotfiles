@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # Overlay for nightly builds
   # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
@@ -13,50 +14,57 @@
           # rev = "master";
           rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7";
         in
-        builtins.fetchTarball {
-          url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
-        }
+          builtins.fetchTarball {
+            url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
+          }
       )
     )
   ];
 
-  # Lua files for neovim need to be in :h runtimepath
-  # https://github.com/nix-community/home-manager/issues/1834
-  # https://hhoeflin.github.io/nix/home_folder_nix/
-  # https://teu5us.github.io/nix-lib.html
-  home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
-    (builtins.readFile lua/airline.lua)
-    (builtins.readFile lua/settings.lua)
-    (builtins.readFile lua/treesitter.lua)
-    (builtins.readFile lua/cmp.lua)
-    (builtins.readFile lua/nvim-tree.lua)
-    (builtins.readFile lua/telescope.lua)
-    (builtins.readFile lua/lspconfig.lua)
-    (builtins.readFile lua/null-ls.lua)
-    (builtins.readFile lua/trouble.lua)
-    (builtins.readFile lua/todo-comments.lua)
-    (builtins.readFile lua/snippets.lua)
-    (builtins.readFile lua/vim-dispatch.lua)
-    (builtins.readFile lua/markdown-preview.lua)
-    (builtins.readFile lua/neogen.lua)
-    (builtins.readFile lua/neoai.lua)
-    (builtins.readFile lua/devdocs.lua)
-  ];
-  # TODO convert that to automatically pick all files? order? something like this?
-  # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
-  #   builtins.map
-  #     (n: (builtins.readFile "lua/${n}"))
-  #     (builtins.attrNames (builtins.readDir ./lua))
-  # );
+  home = {
+    # TODO convert that to automatically pick all files? order? something like this?
+    # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
+    #   builtins.map
+    #     (n: (builtins.readFile "lua/${n}"))
+    #     (builtins.attrNames (builtins.readDir ./lua))
+    # );
+    file = {
+      # Lua files for neovim need to be in :h runtimepath
+      # https://github.com/nix-community/home-manager/issues/1834
+      # https://hhoeflin.github.io/nix/home_folder_nix/
+      # https://teu5us.github.io/nix-lib.html
+      "${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
+        (builtins.readFile lua/airline.lua)
+        (builtins.readFile lua/settings.lua)
+        (builtins.readFile lua/treesitter.lua)
+        (builtins.readFile lua/cmp.lua)
+        (builtins.readFile lua/nvim-tree.lua)
+        (builtins.readFile lua/telescope.lua)
+        (builtins.readFile lua/lspconfig.lua)
+        (builtins.readFile lua/null-ls.lua)
+        (builtins.readFile lua/trouble.lua)
+        (builtins.readFile lua/todo-comments.lua)
+        (builtins.readFile lua/snippets.lua)
+        (builtins.readFile lua/vim-dispatch.lua)
+        (builtins.readFile lua/markdown-preview.lua)
+        (builtins.readFile lua/neogen.lua)
+        (builtins.readFile lua/neoai.lua)
+        (builtins.readFile lua/devdocs.lua)
+      ];
 
-  # neovim ftplugins, TODO loop
-  home.file."${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
-  home.file."${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
-  home.file."${config.xdg.configHome}/nvim/after/ftplugin/markdown.lua".text = builtins.readFile after/ftplugin/markdown.lua;
-  home.file."${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
+      # neovim ftplugins, TODO loop
+      "${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
+      "${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
+      "${config.xdg.configHome}/nvim/after/ftplugin/markdown.lua".text = builtins.readFile after/ftplugin/markdown.lua;
+      "${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
+    };
+  };
 
   programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
 
     # TODO load lua file see youtube video abt that, which?
     extraConfig = builtins.readFile ./init.vim;
@@ -252,8 +260,7 @@
         };
       };
       # TODO add theme
-    in
-    [
+    in [
       # feat chatgpt?
 
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
@@ -317,8 +324,5 @@
       vim-vsnip
       webapi-vim # used by vim-gist for api call
     ];
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
   };
 }
