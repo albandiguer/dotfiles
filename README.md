@@ -67,22 +67,24 @@ nix-prefetch-git url
 
 ### Languages Support
 
-Languages are being supported in NeoVim with few tools, `tree-sitter`, `cmp` and `nvim_lsp`
-
-![diag1](./docs/images/Untitled-2022-09-25-1426.svg)
-
+- tree-sitter: syntax support for most languages
+- cmp: completion plugin (tap into nvim-lsp, copilot, snippets engines etc.)
+- nvim-lsp: support for language server protocol, install them individually
+- null-ls: support for non-lsp tools to hook into the lsp client 
 ```mermaid
 flowchart LR
-  cmp["
-    cmp
-    completion plugin
-  "]
+  cmp["cmp"]
+  copilot["copilot"]
+  not-lsp["Non LSP tools"]
   null-ls["Null LS"]
   nvim-lsp["nvim-lsp plugin"]
   regular-lsp["Regular LSP"]
+  not-lsp --> null-ls
   null-ls --> nvim-lsp
   regular-lsp --> nvim-lsp
   nvim-lsp --> cmp
+  copilot --> cmp
+  vsnip --> cmp
 
 
 ```
