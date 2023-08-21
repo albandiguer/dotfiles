@@ -278,6 +278,7 @@
       friendly-snippets
       jellybeans-vim
       kanagawa-nvim
+      lspkind-nvim
       lspcontainers-nvim
       markdown-preview-nvim
       melange-nvim
