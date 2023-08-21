@@ -263,7 +263,6 @@
       # TODO add theme
     in [
       # feat chatgpt?
-
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       cmp-copilot
       ack-vim
@@ -274,10 +273,8 @@
       cmp-nvim-lsp # nvim-cmp source for neovim's built-in language server client.
       cmp-path
       cmp-git
-      cmp-vsnip
       delimitMate
       editorconfig-nvim
-      friendly-snippets
       jellybeans-vim
       kanagawa-nvim
       lspkind-nvim
@@ -324,8 +321,12 @@
       vim-slash # set of mappings for enhancing in-buffer search
       vim-surround
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
-      vim-vsnip
       webapi-vim # used by vim-gist for api call
+
+      cmp_luasnip
+      luasnip
+      # friendly-snippets
+      # vim-vsnip
     ];
   };
 }
