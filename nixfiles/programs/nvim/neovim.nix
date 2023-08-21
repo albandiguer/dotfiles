@@ -2,8 +2,23 @@
 , pkgs
 , ...
 }: {
-  # For black (python fixer) we allow broken
-  # nixpkgs.config.allowBroken = true;
+  # Overlay for nightly builds
+  # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
+  # currently failing  https://github.com/nix-community/neovim-nightly-overlay/issues/164
+  # Pin to the latest working commit for now https://github.com/nix-community/neovim-nightly-overlay/pull/177
+  nixpkgs.overlays = [
+    (
+      import (
+        let
+          # rev = "master";
+          rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7";
+        in
+        builtins.fetchTarball {
+          url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
+        }
+      )
+    )
+  ];
 
   # Lua files for neovim need to be in :h runtimepath
   # https://github.com/nix-community/home-manager/issues/1834
@@ -100,7 +115,7 @@
       vim-vint # for vimscripts
       python310Packages.black # python fmt
       python310Packages.flake8
-      hadolint # docker linter
+      # hadolint # docker linter # NOTE currently broken
       # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
       # rust-analyzer
