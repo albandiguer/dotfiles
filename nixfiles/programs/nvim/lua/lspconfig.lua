@@ -20,6 +20,7 @@
 
 
 local lspconfig = require("lspconfig")
+
 local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 -- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
 local lsp_defaults = {
@@ -126,10 +127,10 @@ lspconfig.marksman.setup {
 }
 
 -- Terraform
-require 'lspconfig'.terraformls.setup {}
+lspconfig.terraformls.setup {}
 
 -- Yaml
-require 'lspconfig'.yamlls.setup {}
+lspconfig.yamlls.setup {}
 
 -- SQL
--- require 'lspconfig'.sqls.setup {}
+-- lspconfig.sqls.setup {}

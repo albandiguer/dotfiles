@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # For black (python fixer) we allow broken
   # nixpkgs.config.allowBroken = true;
@@ -238,7 +237,8 @@
         };
       };
       # TODO add theme
-    in [
+    in
+    [
       # feat chatgpt?
 
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
