@@ -20,6 +20,8 @@
 
 
 local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+local util = require("lspconfig.util")
 
 local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 -- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
@@ -92,7 +94,7 @@ vim.api.nvim_create_autocmd("User", {
 lspconfig.solargraph.setup({
 	-- load this only if there is a .solargraph.yml file
 	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd()),
-	cmd = { "./bin/solargraph" }
+	cmd = { "./bin/lsp" }
 })
 
 -- Lua
@@ -134,3 +136,13 @@ lspconfig.yamlls.setup {}
 
 -- SQL
 -- lspconfig.sqls.setup {}
+
+-- Html (tx to nodePackages_latest.vscode-langservers-extracted)
+lspconfig.html.setup {
+	filetypes = { 'html' },
+	embeddedLanguages = {
+		css = true,
+		javascript = true,
+	},
+	provideFormatter = true
+}

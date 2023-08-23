@@ -109,8 +109,8 @@
       rnix-lsp
       terraform-ls
       sqls
-      # solargraph # -> put it in Gemfiles
-      solargraph
+      # solargraph
+      # ruby-lsp
       buf-language-server # buf
 
       # NULL-LS (format/diagnostic/code-actions etc) deps
@@ -120,10 +120,11 @@
       terraform # for terraform_fmt
       nodePackages.prettier
       # nodePackages.eslint
+      nodePackages_latest.vscode-langservers-extracted
       nodePackages_latest.yaml-language-server
-      vim-vint # for vimscripts
       python310Packages.black # python fmt
       python310Packages.flake8
+      vim-vint # for vimscripts
       # hadolint # docker linter # NOTE currently broken
       # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
