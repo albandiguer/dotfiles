@@ -55,7 +55,9 @@
         '';
       }
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
+      tmuxPlugins.sensible
       tmuxPlugins.yank
+      # tmuxPlugins.dracula
     ];
   };
 }
