@@ -22,7 +22,7 @@
       # commitizen
       # niv # TODO re-enable, currently broken (30/12/22) cycle dependency detected Painless dependencies for Nix projects
       # pomotroid # unsupported aarch64
-      # rnix-lsp
+      rnix-lsp
       # use lorri init in project directories to setup the shell.nix file
       awscli2
       act # gh actions locally
@@ -38,13 +38,14 @@
       heroku
       htop
       httpie
-      # iredis # slick redis client
+      iredis # slick redis client
       jq
       jwt-cli
       lato # used by AltaCV
       lorri
       marksman
-      # ngrok broken atm
+      ngrok # broken atm
+      ghc
       nix-prefetch-git
       nix-prefetch-github # no working at times cant verify sha256 sums
       nodejs
