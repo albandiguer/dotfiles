@@ -1,4 +1,4 @@
-colorscheme grb256
+colorscheme tokyonight-night
 
 " close all buffers but current https://stackoverflow.com/a/42071865/549563
 nnoremap ' :%bd\|e#<CR>

@@ -323,6 +323,7 @@
       vim-surround
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
       webapi-vim # used by vim-gist for api call
+      tokyonight-nvim
 
       cmp_luasnip
       luasnip

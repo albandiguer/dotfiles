@@ -20,8 +20,8 @@
 
 
 local lspconfig = require("lspconfig")
-local configs = require("lspconfig.configs")
-local util = require("lspconfig.util")
+-- local configs = require("lspconfig.configs")
+-- local util = require("lspconfig.util")
 
 local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 -- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
