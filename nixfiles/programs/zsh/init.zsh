@@ -11,6 +11,8 @@ fi
 if [ -f gh ]; then
 	source <(gh completion -s zsh)
 fi
+# https://buildpacks.io/docs/tools/pack/cli/pack_completion/
+. $(pack completion --shell zsh)
 
 alias nixsearch="nix search nixpkgs"
 
