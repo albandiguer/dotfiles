@@ -38,7 +38,7 @@
         (builtins.readFile lua/settings.lua)
         (builtins.readFile lua/treesitter.lua)
         (builtins.readFile lua/cmp.lua)
-        (builtins.readFile lua/hardtime.lua)
+        # (builtins.readFile lua/hardtime.lua)
         (builtins.readFile lua/nvim-tree.lua)
         (builtins.readFile lua/telescope.lua)
         (builtins.readFile lua/lspconfig.lua)
@@ -250,17 +250,16 @@
       #       tree-sitter-yaml
       #     ]
       # );
-
-      hardtime-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "hardtime-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "m4xshen";
-          repo = "hardtime.nvim";
-          rev = "6826c1fe8bebc63a6886833ca4ffed2fc6ec3382";
-          sha256 = "sha256-y3Bx16gbYdhfZkS67KIX7V93/y36bnBPglai0vqBvnU=";
-          fetchSubmodules = false;
-        };
-      };
+      # hardtime-nvim = pkgs.vimUtils.buildVimPlugin {
+      #   name = "hardtime-nvim";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "m4xshen";
+      #     repo = "hardtime.nvim";
+      #     rev = "6826c1fe8bebc63a6886833ca4ffed2fc6ec3382";
+      #     sha256 = "sha256-y3Bx16gbYdhfZkS67KIX7V93/y36bnBPglai0vqBvnU=";
+      #     fetchSubmodules = false;
+      #   };
+      # };
       # TODO add theme
     in [
       # feat chatgpt?
@@ -294,7 +293,7 @@
       nvim-treesitter-context
       nvim-treesitter-with-plugins
       nvim-web-devicons
-      hardtime-nvim
+      # hardtime-nvim
       plenary-nvim #dep for nvim-devdocs (async programming with coroutines)
       # spaceduck-nvim
       tabular
