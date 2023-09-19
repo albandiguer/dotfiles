@@ -32,6 +32,7 @@
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       deno
+      dive
       duf # disk space etc
       github-cli
       google-cloud-sdk # gcloud
@@ -84,6 +85,7 @@
       ".npmrc".source = dotfiles/.npmrc;
       ".editorconfig".source = dotfiles/.editorconfig;
       ".inputrc".source = dotfiles/.inputrc;
+      ".dive.yml".source = dotfiles/.dive.yml;
     };
 
     # Home Manager needs a bit of information about you and the
