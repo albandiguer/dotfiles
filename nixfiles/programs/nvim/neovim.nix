@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # Overlay for nightly builds
   # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
@@ -14,9 +13,9 @@
           # rev = "master";
           rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7";
         in
-          builtins.fetchTarball {
-            url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
-          }
+        builtins.fetchTarball {
+          url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
+        }
       )
     )
   ];
@@ -261,7 +260,8 @@
       #   };
       # };
       # TODO add theme
-    in [
+    in
+    [
       # feat chatgpt?
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       cmp-copilot
@@ -300,6 +300,7 @@
       telescope-nvim
       todo-comments-nvim
       trouble-nvim
+      # SchemaStore-nvim TODO
       vim-airline
       vim-better-whitespace
       vim-bookmarks

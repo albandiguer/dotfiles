@@ -16,7 +16,7 @@ g.mapleader = ","               -- set leader key to comma
 opt.colorcolumn = "80"          -- show 80 column
 opt.mouse = "a"                 -- enable mouse
 opt.relativenumber = true       -- show line numbers
-opt.cursorline = true           -- highlight current line
+opt.cursorline = false          -- highlight current line
 
 opt.ignorecase = true           -- search with ignore case
 opt.smartcase = true            -- search with smart case

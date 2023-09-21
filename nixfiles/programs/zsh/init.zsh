@@ -4,6 +4,7 @@
 export PATH="./bin:./node_modules/.bin:$HOME/.bin:$HOME/.npm-packages/bin:$PATH";
 export NODE_PATH=~/.npm-packages/lib/node_modules
 
+# Autocompletions
 source <(kubectl completion zsh)
 if [ -f minikube ]; then
 	source <(minikube completion zsh)
@@ -13,6 +14,12 @@ if [ -f gh ]; then
 fi
 # https://buildpacks.io/docs/tools/pack/cli/pack_completion/
 . $(pack completion --shell zsh)
+# heroku autocompletion
+export HEROKU_ORGANIZATION=<org>
+# $(heroku autocomplete:script zsh), NOTE not working, so we paste content of it
+HEROKU_AC_ZSH_SETUP_PATH=/Users/albandiguer/Library/Caches/heroku/autocomplete/zsh_setup && \
+	test -f $HEROKU_AC_ZSH_SETUP_PATH && \
+	source $HEROKU_AC_ZSH_SETUP_PATH;
 
 alias nixsearch="nix search nixpkgs"
 
@@ -45,11 +52,6 @@ alias td="todoist"
 alias tdl="todoist l"
 alias tda="todoist a"
 
-# heroku autocomplete setup
-# infered from instructions given typing: heroku autocomplete
-export HEROKU_AC_ZSH_SETUP_PATH=/Users/albandiguer/Library/Caches/heroku/autocomplete/zsh_setup;
-test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-# export HEROKU_ORGANIZATION=<org>
 
 alias dk="docker"
 alias dkc="docker-compose"

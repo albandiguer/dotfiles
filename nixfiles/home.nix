@@ -106,6 +106,7 @@
 
   imports = [
     ./programs/zsh/zsh.nix
+    ./programs/zsh/fish.nix
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/nvim/neovim.nix
@@ -118,3 +119,4 @@
     ./programs/skhd.nix
   ];
 }
+

@@ -14,8 +14,10 @@
     initExtra = builtins.readFile ./init.zsh;
 
     sessionVariables = {
-      ZSH_TMUX_AUTOSTART = "true";
-      ZSH_TMUX_AUTOCONNECT = "true";
+      # NOTE Both vars not doing anything as tmux plugin is not in the list?
+      # https://blog.wescale.fr/tmux-diviser-pour-mieux-regner
+      # ZSH_TMUX_AUTOSTART = "true";
+      # ZSH_TMUX_AUTOCONNECT = "true";
     };
 
     plugins = [
@@ -31,6 +33,8 @@
       }
     ];
 
+    # NOTE plugins redundant when completion is enabled directly from tool
+    # check what's implemented by plugins..
     oh-my-zsh = {
       enable = true;
       plugins = [

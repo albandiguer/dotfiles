@@ -14,6 +14,9 @@ require("nvim-tree").setup({
 	filters = {
 		dotfiles = false,
 	},
+	renderer = {
+		full_name = false
+	},
 })
 
 map('n', '<C-n>', ':NvimTreeToggle')
