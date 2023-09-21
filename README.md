@@ -27,6 +27,16 @@ Have services etc configured with nix
 
 On [github](https://github.com/LnL7/nix-darwin)
 
+### Shell & Login Shell config
+
+  - Set `/bin/sh` as the command to run by default in Terminall.app for when
+    things go wrong.
+  - Let iterm2, alacritty etc use the login shell. Let the tools use login
+    shells. List of acceptable shells is in `/etc/shells`, switch the login
+    shell with `chsh -s <full-path>`. Example `chsh -s /Users/name/.nix-profile/bin/fish`
+
+    note: this would be solved with nix-darwin `user.defaultUserShell` ?
+
 ## Help
 
 ### Fix Post MacOS upgrade

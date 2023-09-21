@@ -14,12 +14,6 @@ if [ -f gh ]; then
 fi
 # https://buildpacks.io/docs/tools/pack/cli/pack_completion/
 . $(pack completion --shell zsh)
-# heroku autocompletion
-export HEROKU_ORGANIZATION=<org>
-# $(heroku autocomplete:script zsh), NOTE not working, so we paste content of it
-HEROKU_AC_ZSH_SETUP_PATH=/Users/albandiguer/Library/Caches/heroku/autocomplete/zsh_setup && \
-	test -f $HEROKU_AC_ZSH_SETUP_PATH && \
-	source $HEROKU_AC_ZSH_SETUP_PATH;
 
 alias nixsearch="nix search nixpkgs"
 
@@ -49,9 +43,6 @@ setopt ignore_eof
 
 # todoist
 alias td="todoist"
-alias tdl="todoist l"
-alias tda="todoist a"
-
 
 alias dk="docker"
 alias dkc="docker-compose"
