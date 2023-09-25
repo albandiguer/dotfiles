@@ -27,6 +27,7 @@
       awscli2
       act # gh actions locally
       bash # macos is bash 3xx, need 4+
+      bat
       bitwarden-cli
       buildpack # cloud native buildpacks, use pack...
       curlie

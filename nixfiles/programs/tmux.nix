@@ -6,20 +6,15 @@
 }: {
   programs.tmux = {
     enable = true;
+    sensibleOnTop = true;
     keyMode = "vi";
+    # https://github.com/nix-community/home-manager/blob/a88df2fb101778bfd98a17556b3a2618c6c66091/modules/programs/tmux.nix#L275C9-L275C9
+    shell = "${pkgs.fish}/bin/fish"; # set $SHELL
+    terminal = "xterm-256color"; # set $TERM
+    mouse = true;
+    historyLimit = 25000;
     extraConfig = ''
-      set -ga terminal-overrides ",*col*:Tc"
-      # get rid of the half-second escape time for kakoune's escape key
-      set -sg escape-time 25
-
-      # mouse
-      set -g mouse on
-
-      # increase history size
-      set -g history-limit 25000
-
-      # set $TERM for tmux
-      # set-option -g default-terminal "tmux-256color"
+      # set -ga terminal-overrides ",*col*:Tc"
 
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"
@@ -55,9 +50,7 @@
         '';
       }
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
-      tmuxPlugins.sensible
       tmuxPlugins.yank
-      # tmuxPlugins.dracula
     ];
   };
 }

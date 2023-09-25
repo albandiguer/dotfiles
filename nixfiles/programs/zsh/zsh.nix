@@ -9,7 +9,7 @@
 
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
-    enableCompletion = true; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
+    enableCompletion = false; # bug atm, makes the tab clear term, let the zsh-nix-shell below handle
 
     initExtra = builtins.readFile ./init.zsh;
 
