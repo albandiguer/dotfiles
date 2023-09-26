@@ -127,7 +127,7 @@
       python310Packages.flake8
       vim-vint # for vimscripts
       shfmt # shell script formatter
-      # hadolint # docker linter # NOTE currently broken
+      hadolint # docker linter # NOTE currently broken
       # stylua => sumneko does it all now, has a formatter etc
       # elmPackages.elm-format
       # rust-analyzer
