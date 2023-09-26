@@ -19,14 +19,17 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra,
 		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.prettier.with({ filetypes = {
-			"yaml",
-			"json",
-			"javascript",
-			"handlebars",
-			"css",
-			"typescript"
-		} }), -- TODO switch to yamlfmt for yml
+		null_ls.builtins.formatting.shfmt,
+		null_ls.builtins.formatting.prettier.with({
+			filetypes = {
+				"yaml",
+				"json",
+				"javascript",
+				"handlebars",
+				"css",
+				"typescript"
+			}
+		}), -- TODO switch to yamlfmt for yml
 		null_ls.builtins.formatting.terraform_fmt,
 	},
 	debug = true,

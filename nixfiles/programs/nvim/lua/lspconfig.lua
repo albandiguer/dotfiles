@@ -146,3 +146,6 @@ lspconfig.html.setup {
 	},
 	provideFormatter = true
 }
+
+-- Bash
+lspconfig.bashls.setup {}
