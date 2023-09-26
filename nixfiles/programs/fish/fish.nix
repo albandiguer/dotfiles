@@ -8,8 +8,11 @@
     enable = true;
 
     shellAliases = {
+      vim = "nvim";
       # g = "git";
     };
+
+    # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
 
     shellAbbrs = {
       condaenvs = "conda env list";
