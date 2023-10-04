@@ -17,9 +17,9 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.diagnostics.hadolint, -- dockerfiles
 		null_ls.builtins.diagnostics.vint,
-		null_ls.builtins.formatting.alejandra,
-		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.shfmt,
+		null_ls.builtins.formatting.alejandra, -- nix
+		null_ls.builtins.formatting.black,   -- python
+		null_ls.builtins.formatting.shfmt,   -- bash
 		null_ls.builtins.formatting.prettier.with({
 			filetypes = {
 				"yaml",
@@ -30,7 +30,7 @@ null_ls.setup({
 				"typescript"
 			}
 		}), -- TODO switch to yamlfmt for yml
-		null_ls.builtins.formatting.terraform_fmt,
+		null_ls.builtins.formatting.terraform_fmt
 	},
 	debug = true,
 	-- format on save

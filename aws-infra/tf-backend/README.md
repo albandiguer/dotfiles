@@ -10,3 +10,7 @@ Considering
 ```shell
 terraform graph | dot -Tsvg > graph.svg
 ```
+
+# Todos
+
+- [ ] Fix the state, `tf destroy` fails atm
