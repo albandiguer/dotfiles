@@ -15,7 +15,8 @@ g.mapleader = ","               -- set leader key to comma
 
 opt.colorcolumn = "80"          -- show 80 column
 opt.mouse = "a"                 -- enable mouse
-opt.relativenumber = true       -- show line numbers
+opt.relativenumber = true       -- show relative line numbers
+opt.number = true               -- show current line numbers
 opt.cursorline = false          -- highlight current line
 
 opt.ignorecase = true           -- search with ignore case

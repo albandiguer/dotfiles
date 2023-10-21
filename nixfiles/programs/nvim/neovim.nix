@@ -40,6 +40,7 @@
         (builtins.readFile lua/cmp.lua)
         # (builtins.readFile lua/hardtime.lua)
         (builtins.readFile lua/nvim-tree.lua)
+        (builtins.readFile lua/nvim-notify.lua)
         (builtins.readFile lua/telescope.lua)
         (builtins.readFile lua/lspconfig.lua)
         (builtins.readFile lua/null-ls.lua)
@@ -296,6 +297,7 @@
       nvim-tree-lua
       nvim-treesitter-context
       nvim-treesitter-with-plugins
+      nvim-notify
       nvim-web-devicons
       # hardtime-nvim
       plenary-nvim #dep for nvim-devdocs (async programming with coroutines)
