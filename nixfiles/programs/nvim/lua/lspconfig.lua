@@ -107,18 +107,10 @@ lspconfig.lua_ls.setup({
 })
 
 -- Docker
-lspconfig.dockerls.setup {
-	before_init = function(params)
-		params.processId = vim.NIL
-	end,
-	cmd = require 'lspcontainers'.command('dockerls'),
-	root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-	settings = {
-		docker = {
-			formatter = true,
-		}
-	}
-}
+lspconfig.dockerls.setup {}
+
+-- Docker Compose, adjust root pattern
+-- lspconfig.docker_compose_language_service.setup {}
 
 -- Nix
 lspconfig.rnix.setup {}

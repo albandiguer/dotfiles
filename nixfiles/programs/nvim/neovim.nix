@@ -112,6 +112,7 @@
       # solargraph
       # ruby-lsp
       buf-language-server # buf
+      # docker-compose-language-service
 
       # NULL-LS (format/diagnostic/code-actions etc) deps
       alejandra # nix code formatter
@@ -123,6 +124,7 @@
       nodePackages_latest.vscode-langservers-extracted
       nodePackages_latest.yaml-language-server
       nodePackages_latest.bash-language-server
+      nodePackages_latest.dockerfile-language-server-nodejs
       python310Packages.black # python fmt
       python310Packages.flake8
       vim-vint # for vimscripts
@@ -280,7 +282,7 @@
       jellybeans-vim
       kanagawa-nvim
       lspkind-nvim
-      lspcontainers-nvim
+      # lspcontainers-nvim
       markdown-preview-nvim
       melange-nvim
       neogen
