@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   nixpkgs = {
     config = {
@@ -58,7 +57,7 @@
       slack
       skhd
       tldr # when man is tldr
-      todoist
+      # todoist
       tree
       watch
       wget

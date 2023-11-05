@@ -18,7 +18,7 @@ terraform {
   }
 }
 
-# Create a role to assume to interact with s3 resources 
+# Create a role to assume to interact with s3 resources
 data "aws_iam_policy_document" "resource_full_access" {
   statement {
     sid       = "FullAccess"
