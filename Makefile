@@ -12,13 +12,13 @@ upgrade-nix:
 rollback:
 	nix-channel --rollback
 
-tiling:
-	pgrep yabai | xargs kill -9 && yabai &
-	pgrep skhd | xargs kill -9 && skhd &
-
 tiling-stop:
 	pgrep yabai | xargs kill -9
 	pgrep skhd | xargs kill -9
+
+tiling: tiling-stop
+	yabai &
+	skhd &
 
 cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
