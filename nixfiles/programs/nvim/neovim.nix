@@ -117,11 +117,12 @@
       # NULL-LS (format/diagnostic/code-actions etc) deps
       alejandra # nix code formatter
       statix # nix lints
+      pgformatter # https://github.com/darold/pgFormatter
       # rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
       # nodePackages.eslint
-      nodePackages_latest.vscode-langservers-extracted
+      nodePackages_latest.vscode-langservers-extracted #html css json eslint
       nodePackages_latest.yaml-language-server
       nodePackages_latest.bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
