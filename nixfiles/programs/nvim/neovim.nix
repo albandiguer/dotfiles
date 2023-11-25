@@ -107,6 +107,7 @@
       cargo # rnix deps
       sumneko-lua-language-server # lua
       rnix-lsp
+      ruby-lsp
       terraform-ls
       sqls
       # solargraph
