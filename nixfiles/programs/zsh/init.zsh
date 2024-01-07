@@ -8,6 +8,10 @@ export PATH=\
 $HOME/.npm-packages/bin:\
 $PATH;
 
+export LIBRARY_PATH=\
+/opt/homebrew/lib:\
+$LIBRARY_PATH;
+
 export NODE_PATH=~/.npm-packages/lib/node_modules
 
 # Autocompletions
