@@ -92,10 +92,13 @@ vim.api.nvim_create_autocmd("User", {
 -- 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
 -- define settings in project .solargraph.yml
 lspconfig.solargraph.setup({
-	-- load this only if there is a .solargraph.yml file
 	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd()),
 	cmd = { "./bin/lsp" }
 })
+-- lspconfig.ruby_ls.setup({
+-- 	root_dir = lspconfig.util.root_pattern("Gemfile", vim.fn.getcwd()),
+-- 	cmd = { "./bin/lsp" }
+-- })
 
 -- Lua
 lspconfig.lua_ls.setup({

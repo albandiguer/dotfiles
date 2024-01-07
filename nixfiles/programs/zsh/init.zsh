@@ -1,7 +1,13 @@
 
 # Add local directory ./node_modules/.bin
 # + a global directory for `npm i -g` https://matthewrhone.dev/nixos-npm-globally
-export PATH="./bin:./node_modules/.bin:$HOME/.bin:$HOME/.npm-packages/bin:$PATH";
+export PATH=\
+./bin:\
+./node_modules/.bin:\
+/opt/homebrew/bin:\
+$HOME/.npm-packages/bin:\
+$PATH;
+
 export NODE_PATH=~/.npm-packages/lib/node_modules
 
 # Autocompletions
@@ -12,10 +18,9 @@ fi
 if [ -f gh ]; then
 	source <(gh completion -s zsh)
 fi
+
 # https://buildpacks.io/docs/tools/pack/cli/pack_completion/
 . $(pack completion --shell zsh)
-
-alias nixsearch="nix search nixpkgs"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -32,23 +37,19 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias condaenvs="conda env list"
-
-alias prettyjson="python3 -mjson.tool"
 # use: conda activate mlp | base to activate an environment
 # use: conda deactivate to deactivate environment
 
 # not closing shell on ctrl+d
 setopt ignore_eof
 
-# todoist
+# aliases
 alias td="todoist"
-
 alias dk="docker"
 alias dkc="docker-compose"
-
-# psql/libpq PATH
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+alias condaenvs="conda env list"
+alias prettyjson="python3 -mjson.tool"
+alias nixsearch="nix search nixpkgs"
 
 # function to rebase current branch on top of master, finding common ancestor as starting point
 function gri() {
@@ -59,3 +60,6 @@ function gri() {
 function diffib {
 	git merge-base origin/master HEAD|xargs -I _ git diff _ -- $1
 }
+
+eval "$(rbenv init - zsh)"
+

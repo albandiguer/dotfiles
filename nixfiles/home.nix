@@ -50,7 +50,7 @@
       nix-prefetch-git
       nix-prefetch-github # no working at times cant verify sha256 sums
       nodejs
-      ruby_3_2
+      # ruby_3_2 # NOTE global ruby, for rails dev favor rbenv+ruby-build coming with libyaml for psych etc
       # postman
       roboto-slab # used by AltaCV
       silver-searcher # get use to ag instead of ack
