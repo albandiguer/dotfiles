@@ -17,15 +17,26 @@ export EDITOR=nvim
 
 # Autocompletions
 source <(kubectl completion zsh)
+# Minikube
 if [ -f minikube ]; then
 	source <(minikube completion zsh)
 fi
+# Github
 if [ -f gh ]; then
 	source <(gh completion -s zsh)
 fi
-
-# https://buildpacks.io/docs/tools/pack/cli/pack_completion/
-. $(pack completion --shell zsh)
+# Buildpack https://buildpacks.io/docs/tools/pack/cli/pack_completion/
+if [ -f pack]; then
+	. $(pack completion --shell zsh)
+fi
+# Rbenv
+if [ -f rbenv ]; then
+	eval "$(rbenv init - zsh)"
+fi
+# Graphite
+if [ -f gt ]; then
+. <(gt completion)
+fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -66,8 +77,3 @@ function diffib {
 	git merge-base origin/master HEAD|xargs -I _ git diff _ -- $1
 }
 
-# rbenv init
-eval "$(rbenv init - zsh)"
-
-# graphite completion
-. <(gt completion)
