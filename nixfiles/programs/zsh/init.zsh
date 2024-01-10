@@ -22,21 +22,13 @@ if [ -f minikube ]; then
 	source <(minikube completion zsh)
 fi
 # Github
-if [ -f gh ]; then
-	source <(gh completion -s zsh)
-fi
+source <(gh completion -s zsh)
 # Buildpack https://buildpacks.io/docs/tools/pack/cli/pack_completion/
-if [ -f pack]; then
-	. $(pack completion --shell zsh)
-fi
+. $(pack completion --shell zsh)
 # Rbenv
-if [ -f rbenv ]; then
-	eval "$(rbenv init - zsh)"
-fi
+eval "$(rbenv init - zsh)"
 # Graphite
-if [ -f gt ]; then
 . <(gt completion)
-fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
