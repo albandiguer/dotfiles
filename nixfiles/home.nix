@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   nixpkgs = {
     config = {
@@ -53,6 +54,7 @@
       nodejs
       # ruby_3_2 # NOTE global ruby, for rails dev favor rbenv+ruby-build coming with libyaml for psych etc
       # postman
+      postgresql # dadbod requires psql
       roboto-slab # used by AltaCV
       silver-searcher # get use to ag instead of ack
       slack
