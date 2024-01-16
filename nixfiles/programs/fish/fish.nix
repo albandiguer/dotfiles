@@ -7,9 +7,16 @@
   programs.fish = {
     enable = true;
 
+    # Source here https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix
+
     shellAliases = {
       vim = "nvim";
-      # g = "git";
+      td = "todoist";
+      dk = "docker";
+      dkc = "docker-compose";
+      condaenvs = "conda env list";
+      prettyjson = "python3 -mjson.tool";
+      nixsearch = "nix search nixpkgs";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
