@@ -18,7 +18,6 @@
 -- 	end,
 -- }
 
-
 local lspconfig = require("lspconfig")
 -- local configs = require("lspconfig.configs")
 -- local util = require("lspconfig.util")
@@ -83,7 +82,6 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
-
 -- Ruby
 -- could just be a tcp connection, so no lspconfig, just raw lsp conf
 -- see bookmarks firefox/dev on pretto macbook
@@ -96,8 +94,8 @@ lspconfig.solargraph.setup({
 	cmd = { "./bin/lsp" }
 })
 -- lspconfig.ruby_ls.setup({
--- 	root_dir = lspconfig.util.root_pattern("Gemfile", vim.fn.getcwd()),
--- 	cmd = { "./bin/lsp" }
+-- 	cmd = { "./bin/lsp" },
+-- 	root_dir = lspconfig.util.root_pattern('Gemfile', '.git'),
 -- })
 
 -- Lua

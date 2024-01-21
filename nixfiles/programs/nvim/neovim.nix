@@ -315,17 +315,19 @@
       vim-bookmarks
       vim-colors-paramount
       vim-commentary
-      vim-devicons
       vim-dadbod
       vim-dadbod-completion
       vim-dadbod-ui
+      vim-devicons
       vim-dispatch
+      vim-dotenv
       vim-fugitive
       vim-gist
       vim-janah
       # vim-jsdoc # ftplugin? NOTE: redundant with neogen?
       vim-mustache-handlebars
       vim-nix # ftplugin?
+      vim-rails
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
       vim-slash # set of mappings for enhancing in-buffer search
