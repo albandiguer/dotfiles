@@ -27,7 +27,7 @@ function SendToTmuxPane(include_line)
 		current_line = ":" .. vim.fn.line('.')
 	end
 
-	local cmd = string.format("tmux send-keys -t ':.1' 'make rspec %s%s' C-m", current_file, current_line)
+	local cmd = string.format("tmux send-keys -t ':.1' 'make test %s%s' C-m", current_file, current_line)
 	vim.fn.system(cmd)
 end
 
