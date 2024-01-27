@@ -9,8 +9,8 @@
     sensibleOnTop = true;
     keyMode = "vi";
     # https://github.com/nix-community/home-manager/blob/a88df2fb101778bfd98a17556b3a2618c6c66091/modules/programs/tmux.nix#L275C9-L275C9
-    shell = "${pkgs.fish}/bin/fish"; # set $SHELL
-    terminal = "xterm-256color"; # set $TERM
+    shell = "${pkgs.zsh}/bin/zsh"; # set $SHELL
+    terminal = "tmux-256color"; # set $TERM
     mouse = true;
     historyLimit = 25000;
     extraConfig = ''
