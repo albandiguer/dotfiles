@@ -65,6 +65,8 @@
       watch
       wget
       yabai
+      rubyPackages.erb-formatter
+      # rubyPackages.htmlbeautifier
       python311Packages.ipykernel
       (nerdfonts.override {
         fonts = [
