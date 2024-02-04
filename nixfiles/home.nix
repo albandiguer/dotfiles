@@ -30,6 +30,7 @@
       bat
       bitwarden-cli
       buildpack # cloud native buildpacks, use pack...
+      commitlint
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       deno
@@ -65,8 +66,8 @@
       watch
       wget
       yabai
-      rubyPackages.erb-formatter
-      # rubyPackages.htmlbeautifier
+      # rubyPackages.erb-formatter
+      rubyPackages.htmlbeautifier
       python311Packages.ipykernel
       (nerdfonts.override {
         fonts = [

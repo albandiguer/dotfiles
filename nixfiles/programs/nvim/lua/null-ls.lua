@@ -12,17 +12,18 @@ null_ls.setup({
 		-- null_ls.builtins.diagnostics.rubocop, -- ruby static analysis, solargraph does that
 		-- null_ls.builtins.formatting.rubocop, -- ruby formatter
 		-- null_ls.builtins.formatting.stylua, -- sumneko now has a formatter
-		null_ls.builtins.code_actions.statix, --  for nix
+		null_ls.builtins.code_actions.statix,  --  for nix
+		null_ls.builtins.diagnostics.commitlint, -- conventional commits
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.flake8,
-		null_ls.builtins.diagnostics.hadolint, -- dockerfiles
+		null_ls.builtins.diagnostics.hadolint,    -- dockerfiles
 		null_ls.builtins.diagnostics.vint,
-		null_ls.builtins.formatting.alejandra, -- nix
-		null_ls.builtins.formatting.black,    -- python
-		null_ls.builtins.formatting.erb_format, -- eruby
-		-- null_ls.builtins.formatting.htmlbeautifier, -- html, eruby
-		null_ls.builtins.formatting.pg_format, -- pg sql
-		null_ls.builtins.formatting.shfmt,    -- bash
+		null_ls.builtins.formatting.alejandra,    -- nix
+		null_ls.builtins.formatting.black,        -- python
+		-- null_ls.builtins.formatting.erb_format, -- eruby
+		null_ls.builtins.formatting.htmlbeautifier, -- html, eruby
+		null_ls.builtins.formatting.pg_format,    -- pg sql
+		null_ls.builtins.formatting.shfmt,        -- bash
 		null_ls.builtins.formatting.prettier.with({
 			filetypes = {
 				"yaml",
