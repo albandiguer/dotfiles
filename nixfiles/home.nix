@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   nixpkgs = {
     config = {
@@ -66,7 +65,7 @@
       watch
       wget
       yabai
-      # rubyPackages.erb-formatter
+      rubyPackages.erb-formatter
       rubyPackages.htmlbeautifier
       python311Packages.ipykernel
       (nerdfonts.override {
