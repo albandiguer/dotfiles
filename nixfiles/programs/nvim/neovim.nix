@@ -304,6 +304,7 @@
       nvim-web-devicons
       # hardtime-nvim
       plenary-nvim #dep for nvim-devdocs (async programming with coroutines)
+      rose-pine
       # spaceduck-nvim
       tabular
       telescope-nvim
