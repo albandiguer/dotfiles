@@ -34,7 +34,7 @@
       # https://hhoeflin.github.io/nix/home_folder_nix/
       # https://teu5us.github.io/nix-lib.html
       "${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
-        (builtins.readFile lua/airline.lua)
+        (builtins.readFile lua/lualine.lua)
         (builtins.readFile lua/settings.lua)
         (builtins.readFile lua/treesitter.lua)
         (builtins.readFile lua/cmp.lua)
@@ -269,7 +269,8 @@
       #   };
       # };
       # TODO add theme
-    in [
+    in
+    [
       # feat chatgpt?
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       cmp-copilot
@@ -311,7 +312,7 @@
       todo-comments-nvim
       trouble-nvim
       # SchemaStore-nvim TODO
-      vim-airline
+      lualine-nvim
       vim-better-whitespace
       vim-bookmarks
       vim-colors-paramount
