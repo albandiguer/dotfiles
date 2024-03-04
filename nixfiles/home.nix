@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   nixpkgs = {
     config = {
@@ -97,6 +98,11 @@
     # paths it should manage.
     username = "albandiguer";
     homeDirectory = "/Users/albandiguer";
+
+    sessionPath = ["./bin" "/opt/homebrew/bin"];
+    sessionVariables = {
+      EDITOR = "${pkgs.neovim}/bin/nvim";
+    };
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage

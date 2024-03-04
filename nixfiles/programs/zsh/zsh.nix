@@ -5,7 +5,7 @@
   ...
 }: {
   programs.zsh = {
-    enable = true;
+    enable = false;
 
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
@@ -18,6 +18,7 @@
       # https://blog.wescale.fr/tmux-diviser-pour-mieux-regner
       # ZSH_TMUX_AUTOSTART = "true";
       # ZSH_TMUX_AUTOCONNECT = "true";
+      
     };
 
     plugins = [

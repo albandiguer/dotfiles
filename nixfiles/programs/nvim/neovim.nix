@@ -269,50 +269,55 @@
       #   };
       # };
       # TODO add theme
-    in
-    [
-      # feat chatgpt?
+    in [
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
-      cmp-copilot
+      # SchemaStore-nvim TODO
+      # feat chatgpt?
+      # hardtime-nvim
+      # lspcontainers-nvim
+      # spaceduck-nvim
+      # vim-jsdoc # ftplugin? NOTE: redundant with neogen?
+      # vim-vsnip
       ack-vim
       ayu-vim
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
       cmp-conventionalcommits
+      cmp-copilot
+      cmp-git
       cmp-nvim-lsp # nvim-cmp source for neovim's built-in language server client.
       cmp-path
-      cmp-git
+      cmp_luasnip
       delimitMate
       editorconfig-nvim
+      friendly-snippets
       jellybeans-vim
       kanagawa-nvim
       lspkind-nvim
-      # lspcontainers-nvim
+      lualine-nvim
+      luasnip
       markdown-preview-nvim
       melange-nvim
-      neogen
       neoai-nvim
+      neogen
       nui-nvim # required by neoAI https://github.com/Bryley/neoai.nvim
       null-ls-nvim
       nvim-cmp
       nvim-devdocs
       nvim-grb256
       nvim-lspconfig
+      nvim-notify
       nvim-tree-lua
       nvim-treesitter-context
       nvim-treesitter-with-plugins
-      nvim-notify
       nvim-web-devicons
-      # hardtime-nvim
       plenary-nvim #dep for nvim-devdocs (async programming with coroutines)
       rose-pine
-      # spaceduck-nvim
       tabular
       telescope-nvim
       todo-comments-nvim
+      tokyonight-nvim
       trouble-nvim
-      # SchemaStore-nvim TODO
-      lualine-nvim
       vim-better-whitespace
       vim-bookmarks
       vim-colors-paramount
@@ -326,22 +331,15 @@
       vim-fugitive
       vim-gist
       vim-janah
-      # vim-jsdoc # ftplugin? NOTE: redundant with neogen?
       vim-mustache-handlebars
       vim-nix # ftplugin?
-      vim-rails
       vim-obsession # keeping track on vim state for open files (cursor pos, open folds etc.)
       vim-prettier
+      vim-rails
       vim-slash # set of mappings for enhancing in-buffer search
       vim-surround
       vim-tmux-navigator # seamless ctrl-hjkl navigation with tmux
       webapi-vim # used by vim-gist for api call
-      tokyonight-nvim
-
-      cmp_luasnip
-      luasnip
-      friendly-snippets
-      # vim-vsnip
     ];
   };
 }
