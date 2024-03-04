@@ -13,7 +13,7 @@ export LIBRARY_PATH=\
 $LIBRARY_PATH;
 
 export NODE_PATH=~/.npm-packages/lib/node_modules
-export EDITOR=nvim
+# export EDITOR=nvim
 
 # Autocompletions
 source <(kubectl completion zsh)

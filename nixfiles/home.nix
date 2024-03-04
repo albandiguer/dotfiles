@@ -54,6 +54,7 @@
       nix-prefetch-github # no working at times cant verify sha256 sums
       nodejs
       # ruby_3_2 # NOTE global ruby, for rails dev favor rbenv+ruby-build coming with libyaml for psych etc
+      # oh-my-fish
       # postman
       postgresql # dadbod requires psql
       roboto-slab # used by AltaCV
@@ -101,7 +102,7 @@
 
     sessionPath = ["./bin" "/opt/homebrew/bin"];
     sessionVariables = {
-      EDITOR = "${pkgs.neovim}/bin/nvim";
+      EDITOR = "nvim";
     };
 
     # This value determines the Home Manager release that your
@@ -116,7 +117,7 @@
   };
 
   imports = [
-    ./programs/zsh/zsh.nix
+    # ./programs/zsh/zsh.nix
     ./programs/fish/fish.nix
     ./programs/fzf.nix
     ./programs/git.nix

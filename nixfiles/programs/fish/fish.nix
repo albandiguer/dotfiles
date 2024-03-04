@@ -36,6 +36,7 @@
     };
 
     plugins = [
+      # BUG makes `vim` cmd work somehow, nvim is borked to old version, not getting why
       {
         name = "nix-env";
         src = pkgs.fetchFromGitHub {

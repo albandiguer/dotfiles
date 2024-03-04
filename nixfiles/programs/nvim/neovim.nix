@@ -143,16 +143,7 @@
     plugins = with pkgs.vimPlugins; let
       # can simplify with flake (avoid sha resolution) ?
       # https://www.reddit.com/r/NixOS/comments/mvk5l9/comment/gvqfag9/?utm_source=share&utm_medium=web2x&context=3
-      # catppuccin-vim = pkgs.vimUtils.buildVimPlugin {
-      #   name = "catppuccin-vim";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "catppuccin";
-      #     repo = "nvim";
-      #     rev = "22b34eb9f93430bc010dee1523743b62cd2700fc";
-      #     sha256 = "1cqc6pws6czdshzxmh89ryf2j1cc2n5maf8v5v6nh8yw02jqghk5";
-      #     fetchSubmodules = true;
-      #   };
-      # };
+      #
       nvim-grb256 = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-grb256";
         src = pkgs.fetchFromGitHub {
@@ -161,39 +152,6 @@
           rev = "3115044059b3adcd12ea525994de6a255a8bf783";
           sha256 = "G5XG/4IuKZhbPR0JMpUjmctP5WPK7YwdR+WytNYcI2k=";
           fetchSubmodules = false;
-        };
-      };
-
-      # vim-medic_chalk = pkgs.vimUtils.buildVimPlugin {
-      #   name = "vim-medic_chalk";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "KonnorRogers";
-      #     repo = "vim-medic_chalk";
-      #     rev = "0f904307708315d418d0d64b4bb1bbd36f2b8044";
-      #     sha256 = "eNbdQ1DfSkGkFFAnGv7JjmFzPz0jE1yR3VV9B4aiQ4A=";
-      #     fetchSubmodules = false;
-      #   };
-      # };
-
-      # spaceduck-nvim = pkgs.vimUtils.buildVimPlugin {
-      #   name = "spaceduck-nvim";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "pineapplegiant";
-      #     repo = "spaceduck";
-      #     rev = "350491f19343b24fa85809242089caa02d4dadce";
-      #     sha256 = "sha256-lE8y9BA2a4y0B6O3+NyOS7numoltmzhArgwTAner2fE=";
-      #     fetchSubmodules = true;
-      #   };
-      # };
-
-      shiretolin-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "shiretolin-nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "yasukotelin";
-          repo = "shirotelin";
-          rev = "c486f6f1c88acb585859b8d96dd68eafeb14bbd3";
-          sha256 = "sha256-LkMJNIjkpOV4kBnn4XOzipA9DMtaYYwLpL5zcYK2LgE=";
-          fetchSubmodules = true;
         };
       };
 
@@ -232,54 +190,17 @@
       };
 
       nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
-      # nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
-      #   plugins:
-      #     with pkgs.tree-sitter-grammars; [
-      #       tree-sitter-c
-      #       # tree-sitter-cmake
-      #       tree-sitter-dockerfile
-      #       tree-sitter-elm
-      #       tree-sitter-graphql
-      #       tree-sitter-haskell
-      #       tree-sitter-hcl
-      #       tree-sitter-html
-      #       tree-sitter-javascript
-      #       tree-sitter-json
-      #       tree-sitter-json5
-      #       tree-sitter-lua
-      #       tree-sitter-markdown
-      #       tree-sitter-nix
-      #       # tree-sitter-python
-      #       # tree-sitter-ruby
-      #       # tree-sitter-tsx
-      #       # tree-sitter-typescript
-      #       # tree-sitter-mermaid
-      #       tree-sitter-vim
-      #       tree-sitter-yaml
-      #     ]
-      # );
-      # hardtime-nvim = pkgs.vimUtils.buildVimPlugin {
-      #   name = "hardtime-nvim";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "m4xshen";
-      #     repo = "hardtime.nvim";
-      #     rev = "6826c1fe8bebc63a6886833ca4ffed2fc6ec3382";
-      #     sha256 = "sha256-y3Bx16gbYdhfZkS67KIX7V93/y36bnBPglai0vqBvnU=";
-      #     fetchSubmodules = false;
-      #   };
-      # };
-      # TODO add theme
     in [
       # (plugin " schickling/vim-bufonly ") function to directly fetch plugins from git
       # SchemaStore-nvim TODO
       # feat chatgpt?
-      # hardtime-nvim
       # lspcontainers-nvim
       # spaceduck-nvim
       # vim-jsdoc # ftplugin? NOTE: redundant with neogen?
       # vim-vsnip
       ack-vim
       ayu-vim
+      catppuccin-nvim
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
       cmp-conventionalcommits

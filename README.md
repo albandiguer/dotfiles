@@ -229,7 +229,7 @@ Config ideas here https://bryce-s.com/yabai/
 - [x] Fix gist vim 
 - [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
 - [x] Cleanup gists
-- [ ] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
+- [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
 - [ ] install nix-darwin & start services like lorri/yabai
 - [ ] Tweak lsp mappings (refactoring & code actions?)
 - [ ] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
