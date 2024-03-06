@@ -25,5 +25,6 @@ cleanup:
 	home-manager expire-generations "-10 days"
 	# after expiring generations, run garbage collection
 	nix-store --gc || true
+	nix store optimise
 	#There is also a convenient little utility nix-collect-garbage, which when invoked with the -d (--delete-old) switch deletes all old generations of all profiles in /nix/var/nix/profiles
 	nix-collect-garbage -d

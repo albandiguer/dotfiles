@@ -18,7 +18,7 @@ export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/
 nix-shell '<home-manager>' -A install
 ```
 
-Symlink `nixfiles` to `~/.config/nixpkgs`
+Symlink `nixfiles` to `~/.config/home-manager`
 
 ```
  ln -s ~/dev/dotfiles/nixfiles ~/.config/home-manager

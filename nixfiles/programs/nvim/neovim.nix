@@ -38,7 +38,6 @@
         (builtins.readFile lua/settings.lua)
         (builtins.readFile lua/treesitter.lua)
         (builtins.readFile lua/cmp.lua)
-        # (builtins.readFile lua/hardtime.lua)
         (builtins.readFile lua/nvim-tree.lua)
         (builtins.readFile lua/nvim-notify.lua)
         (builtins.readFile lua/telescope.lua)
