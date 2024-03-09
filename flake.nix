@@ -36,9 +36,9 @@
     ...
   } @ inputs: let
     user = "albandiguer";
-    hostname = "Albans-MacBook-Air"; # scutil --get LocalHostName|pbcopy
-    m1Architecture = ["aarch64-darwin"];
-    forAllArchitectures = f: nixpkgs.lib.genAttrs darwinSystems f;
+    hostnames = ["Albans-MacBook-Air"]; # scutil --get LocalHostName|pbcopy
+    m1Architecture = "aarch64-darwin";
+    forAllHosts = f: nixpkgs.lib.genAttrs hostnames f; # https://teu5us.github.io/nix-lib.html#lib.attrsets.genattrs
   in {
     devShells = let
       pkgs = nixpkgs.legacyPackages.${m1Architecture};
@@ -50,10 +50,16 @@
         '';
       };
     };
-    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      modules = [
-        ./darwin-configuration.nix
-      ];
-    };
+    darwinConfigurations =
+      forAllHosts
+      (
+        hostname:
+          darwin.lib.darwinSystem {
+            modules = [
+              ./darwin-configuration.nix
+              ./home-manager.nix
+            ];
+          }
+      );
   };
 }
