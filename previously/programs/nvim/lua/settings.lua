@@ -11,22 +11,22 @@ function map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-g.mapleader = ","               -- set leader key to comma
+g.mapleader = ","         -- set leader key to comma
 
-opt.colorcolumn = "80"          -- show 80 column
-opt.mouse = "a"                 -- enable mouse
-opt.relativenumber = true       -- show relative line numbers
-opt.number = true               -- show current line numbers
-opt.cursorline = false          -- highlight current line
+opt.colorcolumn = "80"    -- show 80 column
+opt.mouse = "a"           -- enable mouse
+opt.relativenumber = true -- show relative line numbers
+opt.number = true         -- show current line numbers
+opt.cursorline = false    -- highlight current line
 
-opt.ignorecase = true           -- search with ignore case
-opt.smartcase = true            -- search with smart case
+opt.ignorecase = true     -- search with ignore case
+opt.smartcase = true      -- search with smart case
 
-opt.termguicolors = true        -- enable 24-bit RGB colors
+opt.termguicolors = true  -- enable 24-bit RGB colors
 
-g['context_nvim_no_redraw'] = 1 -- context-nvim avoid flickering
+-- g['context_nvim_no_redraw'] = 1 -- context-nvim avoid flickering
 
-g['loaded_perl_provider'] = 0   -- do not load perl provider (checkhealth happy)
+g['loaded_perl_provider'] = 0 -- do not load perl provider (checkhealth happy)
 
 
 map('i', '<C-l>', '<space>=>')

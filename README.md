@@ -2,31 +2,17 @@
 
 ## Setup
 
-### Nix
+### Install nix with installer
 
 ```shell
 sh <(curl -L https://nixos.org/nix/install)
 ```
+TODO change above for installer cmd
 
-### home-manager
-
-[Docs](https://nix-community.github.io/home-manager/options.xhtml)
-
-
-```shell
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-nix-shell '<home-manager>' -A install
-```
-
-Symlink `nixfiles` to `~/.config/home-manager`
-
-```
- ln -s ~/dev/dotfiles/nixfiles ~/.config/home-manager
-```
 
 ### nix-darwin
 
-Have services etc configured with nix
+TODO services etc configured with nix
 
 On [github](https://github.com/LnL7/nix-darwin)
 
@@ -43,9 +29,7 @@ On [github](https://github.com/LnL7/nix-darwin)
 ## Help
 
 ### Fix Post MacOS upgrade
-
 re-add in `/etc/zshrc`
-
 ```
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -53,26 +37,11 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 # End Nix
 ```
+NOTE: this is not needed with nix-darwin?
 
-## BAU commands
-
-Update environment and deps with
-
-```shell
-make update
-```
-
-Apply changes to home-manager config
-
-```shell
-make
-```
-
-Prefetch a package
-
-```shell
-nix-prefetch-git url
-```
+## Makefile
+Update environment and deps with `make update`
+Prefetch a package with `nix-prefetch-git url`
 
 **protip**: to figure sha256, can also run `make` with a wrong sha and it will give the right one
 
@@ -117,7 +86,6 @@ Search + Replace all and save
 ```
 
 #### Completion - CMP
-
 ```
 ctrl+space -> complete
 ctrl+b -> scroll docs up
@@ -140,14 +108,6 @@ gr -> References
 
 ```
 
-## Nix flakes config
-
-Added a config file in ~/.config/nix/nix.conf
-
-```nix
-experimental-features = nix-command flakes
-```
-
 ## Condas
 
 Python distro
@@ -163,27 +123,23 @@ https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
 ```
 # update conda itself
 conda update -n base conda
-
 # create an env
 conda create -n <env> python=3.10
-
 # update all package
 conda update --all
-
 # select a conda env
 conda activate <env>
-
 # deactivate
 conda deactivate
-
 # Install package
 conda install -n mlpy311 numpy --update-deps --force-reinstall
 conda install -n <env> numpy --update-deps --force-reinstall
-
-
 ```
 
 ## IAM & AWS
+
+TODO move to different repo
+
 
 `aws-infra` directory for the dets
 

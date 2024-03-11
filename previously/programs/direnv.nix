@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   # enable direnv to autostart nix-shell in directories
   # Create a file called .envrc in your project directory.
@@ -11,8 +12,9 @@
   # direnv allow .
   programs.direnv = {
     enable = true;
-    nix-direnv.enable = true;
+    nix-direnv = {
+      enable = true;
+      # optional for nix flakes support
+    };
   };
-  # optional for nix flakes support
-  # programs.direnv.nix-direnv.enableFlakes = true;
 }

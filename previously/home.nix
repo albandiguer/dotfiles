@@ -4,15 +4,12 @@
   lib,
   ...
 }: {
-  nixpkgs = {
-    config = {
-      # Avoid programs alike vscode copilot unfree licensed to complain
-      allowUnfree = true;
-
-      # For broken packages use the following
-      allowBroken = true;
-    };
-  };
+  # nixpkgs.config = {
+  #   # Avoid programs alike vscode copilot unfree licensed to complain
+  #   allowUnfree = true;
+  #   # For broken packages use the following
+  #   allowBroken = true;
+  # };
 
   home = {
     # Packages that should be installed to the user profile.
@@ -97,8 +94,8 @@
 
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
-    username = "albandiguer";
-    homeDirectory = "/Users/albandiguer";
+    # username = "albandiguer";
+    # homeDirectory = "/Users/albandiguer";
 
     sessionPath = ["./bin" "/opt/homebrew/bin"];
     sessionVariables = {

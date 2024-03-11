@@ -16,6 +16,7 @@
         in
           builtins.fetchTarball {
             url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
+            sha256 = "sha256:0mgjbqg6dcl1zilkij2pva8dwr4jg06sds1vvfk9nbyc4v1z6l20";
           }
       )
     )
