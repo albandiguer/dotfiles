@@ -1,54 +1,18 @@
-# 📺 Nix based dotfiles
+# 📺 Machines configurations
 
-## Setup
+Using nix-darwin, home-manager, neovim and a few others tools
 
-### Install nix with installer
-
+## Setup 
+- Install [nix with installer](https://github.com/DeterminateSystems/nix-installer) 
 ```shell
-sh <(curl -L https://nixos.org/nix/install)
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
-TODO change above for installer cmd
+- Clone this repo and run `make` in it
 
-
-### nix-darwin
-
-TODO services etc configured with nix
-
-On [github](https://github.com/LnL7/nix-darwin)
-
-### Shell & Login Shell config
-
-  - Set `/bin/sh` as the command to run by default in Terminall.app for when
-    things go wrong.
-  - Let iterm2, alacritty etc use the login shell. Let the tools use login
-    shells. List of acceptable shells is in `/etc/shells`, switch the login
-    shell with `chsh -s <full-path>`. Example `chsh -s /Users/name/.nix-profile/bin/fish`
-
-    note: this would be solved with nix-darwin `user.defaultUserShell` ?
-
-## Help
-
-### Fix Post MacOS upgrade
-re-add in `/etc/zshrc`
-```
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
-```
-NOTE: this is not needed with nix-darwin?
-
-## Makefile
-Update environment and deps with `make update`
-Prefetch a package with `nix-prefetch-git url`
-
-**protip**: to figure sha256, can also run `make` with a wrong sha and it will give the right one
 
 ## Neovim
 
-### Languages Support
-
+### Languages 
 - tree-sitter: syntax support for most languages
 - cmp: completion plugin (tap into nvim-lsp, copilot, snippets engines etc.)
 - nvim-lsp: support for language server protocol, install them individually
@@ -75,17 +39,11 @@ flowchart LR
 `!h gist-vim` for help, tldr add a `~/.gist-vim` with `token xxx` in it, token
 from gh with gist scope
 
-### Shortcuts
-
-### tips
-
+### Reminders/mappings
 Search + Replace all and save
+> Telescope Grep to find the string project wise, CTRL+Q to add them all to the Quickfix list and then ‘:cdo s/StringOne/StringTwo/g | update’
 
-```
- Telescope Grep to find the string project wise, CTRL+Q to add them all to the Quickfix list and then ‘:cdo s/StringOne/StringTwo/g | update’
-```
-
-#### Completion - CMP
+__Cmp__
 ```
 ctrl+space -> complete
 ctrl+b -> scroll docs up
@@ -93,22 +51,19 @@ ctrl+f -> scroll docs down
 enter -> confirm
 ```
 
-#### LSP
-
+__LSP__
 Default behaviour of Ctrl n comes from that, we overload it inside cmp settings
-
 [Improve completion popup menu | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
-
 ```
 H -> Hover information
 gt -> Type definition
 gs -> Signature
 gd -> Definition
 gr -> References
-
 ```
 
 ## Condas
+TODO flake all that
 
 Python distro
 
@@ -164,21 +119,10 @@ Right option key : Esc+
 ## Fonts
 
 [Github](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font)
-
 Patch fonts for glyph like so
-
 ```
 docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out nerdfonts/patcher
 ```
-
-### SFMono
-
-[Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
-
-## Tile Manager
-
-Yabai installed, launch it with `yabai`.
-Config ideas here https://bryce-s.com/yabai/
 
 ## Todos
 
@@ -187,8 +131,8 @@ Config ideas here https://bryce-s.com/yabai/
 - [x] Cleanup gists
 - [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
 - [x] install nix-darwin & start services like skhd/yabai
-- [ ] Tweak lsp mappings (refactoring & code actions?)
-- [ ] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
+- [x] Tweak lsp mappings (refactoring & code actions?)
+- [x] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - [x] configure friendly snippets (rails...)
 - [ ] Look at latex editor config with preview (saved in Pocket)
@@ -196,8 +140,10 @@ Config ideas here https://bryce-s.com/yabai/
 - [ ] markdown formatter
 - [ ] switch algo for rsa key to ed25519
 - [ ] https://github.com/danymat/neogen vs chatgpt plugin
-- [ ] Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls
+- [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] https://rsapkf.netlify.app/weblog/vim-tmux-italics
-- [ ] evaluate vsnips vs luasnip
+- [x] evaluate vsnips vs luasnip
+- [ ] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
+
