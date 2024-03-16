@@ -1,7 +1,7 @@
 default: update
 
 update:
-	nix run nix-darwin  -- switch --flake ~/dev/dotfiles/
+	nix run nix-darwin  -- switch --flake .
 
 upgrade-nix:
 	sudo nix upgrade-nix

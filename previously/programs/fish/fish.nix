@@ -10,7 +10,7 @@
     # Source here https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix
 
     shellAliases = {
-      # ls = "exa";
+      ls = "eza";
       cat = "bat";
     };
 

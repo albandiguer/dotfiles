@@ -31,7 +31,7 @@
         unstage = "restore --staged";
       };
       github.user = "albandiguer";
-      core.editor = "vim";
+      core.editor = "nvim";
       diff.tool = "nvim";
       add.interactive.useBuiltin = false;
       format.pretty = "format:%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(blue)%an%C(reset) %s";
