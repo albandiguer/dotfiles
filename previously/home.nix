@@ -4,13 +4,6 @@
   lib,
   ...
 }: {
-  # nixpkgs.config = {
-  #   # Avoid programs alike vscode copilot unfree licensed to complain
-  #   allowUnfree = true;
-  #   # For broken packages use the following
-  #   allowBroken = true;
-  # };
-
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
@@ -20,7 +13,6 @@
       # niv # TODO re-enable, currently broken (30/12/22) cycle dependency detected Painless dependencies for Nix projects
       # pomotroid # unsupported aarch64
       rnix-lsp
-      # use lorri init in project directories to setup the shell.nix file
       awscli2
       act # gh actions locally
       bash # macos is bash 3xx, need 4+
@@ -43,7 +35,6 @@
       jq
       jwt-cli
       lato # used by AltaCV
-      lorri
       marksman
       ngrok # broken atm
       ghc
@@ -57,13 +48,11 @@
       roboto-slab # used by AltaCV
       silver-searcher # get use to ag instead of ack
       slack
-      skhd
       tldr # when man is tldr
       # todoist
       tree
       watch
       wget
-      yabai
       rubyPackages.erb-formatter
       rubyPackages.htmlbeautifier
       python311Packages.ipykernel
@@ -124,7 +113,5 @@
     ./programs/vscode.nix
     ./programs/direnv.nix
     ./programs/home-manager.nix
-    ./programs/yabai.nix
-    ./programs/skhd.nix
   ];
 }
