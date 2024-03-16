@@ -6,8 +6,13 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    fzf
     eza
+    fzf
+    graphite-cli
+    iredis
+    marp-cli #https://github.com/marp-team/marp-cli
+    openssl
+    sqlite
   ];
 
   services = {
@@ -114,11 +119,13 @@
   homebrew = {
     enable = true;
     brews = [
-      "sqlite"
+      "libpq"
+      "libyaml"
+      "iredis"
     ];
-    # casks = [
-    #   graphite
-    # ];
+    casks = [
+      # "mark-text"
+    ];
   };
 
   # The platform the configuration will be used on.

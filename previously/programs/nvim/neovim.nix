@@ -94,6 +94,8 @@
       # rustfmt
       wget # used by lsp-installer , use :checkhealth in vim
       # texlive.combined.scheme-full
+      redis # dadbod deps
+      postgresql # dadbod deps
 
       # Telescope deps
       fd

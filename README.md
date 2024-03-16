@@ -9,7 +9,6 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```
 - Clone this repo and run `make` in it
 
-
 ## Neovim
 
 ### Languages 
