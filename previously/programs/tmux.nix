@@ -23,7 +23,7 @@
       bind '|' split-window -h -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
       bind l select-layout main-vertical
-      bind f display-popup -E "tmux -L list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+      bind f display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
       # unbind detach
       unbind-key -T prefix d
