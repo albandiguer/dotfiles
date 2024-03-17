@@ -12,7 +12,6 @@
       # commitizen
       # niv # TODO re-enable, currently broken (30/12/22) cycle dependency detected Painless dependencies for Nix projects
       # pomotroid # unsupported aarch64
-      # rnix-lsp
       awscli2
       act # gh actions locally
       bash # macos is bash 3xx, need 4+

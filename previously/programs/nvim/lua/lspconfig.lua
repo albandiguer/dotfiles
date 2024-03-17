@@ -114,7 +114,7 @@ lspconfig.dockerls.setup {}
 -- lspconfig.docker_compose_language_service.setup {}
 
 -- Nix
-lspconfig.rnix.setup {}
+lspconfig.nil_ls.setup {}
 
 -- Markdown
 lspconfig.marksman.setup {

@@ -96,27 +96,22 @@
       # texlive.combined.scheme-full
       redis # dadbod deps
       postgresql # dadbod deps
-
       # Telescope deps
       fd
       ripgrep
-
       universal-ctags
       # Treesitter
       tree-sitter
       # tree-sitter-grammars.tree-sitter-python
-
       # LSP deps
-      cargo # rnix deps
       sumneko-lua-language-server # lua
-      # rnix-lsp
       terraform-ls
       sqls
       # solargraph
       # ruby-lsp
+      nil # nix lang server
       buf-language-server # buf
       # docker-compose-language-service
-
       # NULL-LS (format/diagnostic/code-actions etc) deps
       alejandra # nix code formatter
       statix # nix lints
