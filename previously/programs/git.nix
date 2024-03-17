@@ -25,6 +25,7 @@
         lpwd = "log -- ."; # git log for files in current directory
         nb = "checkout -b";
         ps = "push";
+        rbc = "rebase --continue";
         reset = "reset HEAD";
         rup = "remote update --prune";
         s = "status";

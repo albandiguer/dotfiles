@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
