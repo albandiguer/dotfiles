@@ -26,7 +26,9 @@
         nb = "checkout -b";
         ps = "push";
         reset = "reset HEAD";
+        rup = "remote update --prune";
         s = "status";
+        sh = "show HEAD";
         shwo = "show";
         st = "status";
         unstage = "restore --staged";
