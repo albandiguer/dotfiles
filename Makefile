@@ -1,8 +1,11 @@
-default: update
+default: apply
+
+apply:
+	nix run nix-darwin -- switch --flake .
 
 update:
 	nix flake update
-	nix run nix-darwin -- switch --flake .
+	apply
 
 upgrade-nix:
 	sudo nix upgrade-nix
