@@ -96,6 +96,9 @@
         yabai -m window --grid 4:4:1:1:2:2
       '';
     };
+    lorri = {
+      enable = true;
+    };
   };
   nix.package = pkgs.nix; # TODO figure what is it
 
