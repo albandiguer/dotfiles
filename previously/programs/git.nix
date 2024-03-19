@@ -10,6 +10,7 @@
         aa = "add --all";
         amend = "commit --amend";
         b = "branch";
+        ba = "branch -a";
         br = "branch";
         c = "commit";
         chunkyadd = "add --patch";
