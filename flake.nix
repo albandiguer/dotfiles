@@ -32,8 +32,6 @@
   };
 
   outputs = {
-    self,
-    nixpkgs,
     home-manager,
     darwin,
     nix-homebrew,
@@ -41,7 +39,7 @@
     homebrew-core,
     homebrew-cask,
     ...
-  } @ inputs: let
+  }: let
     user = "albandiguer";
   in {
     darwinConfigurations = {
