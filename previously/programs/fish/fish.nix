@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   programs.fish = {
     enable = true;
 
@@ -12,6 +7,7 @@
     shellAliases = {
       ls = "eza";
       cat = "bat";
+      vim = "nvim";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
