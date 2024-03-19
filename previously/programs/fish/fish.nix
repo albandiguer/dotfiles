@@ -13,6 +13,7 @@
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
 
     shellAbbrs = {
+      bs = "brew search";
       c = "clear";
       condaenvs = "conda env list";
       dk = "docker";
@@ -27,8 +28,8 @@
     };
 
     functions = {
-      gri = "git merge-base origin/master HEAD|xargs git rebase -i";
-      diffib = "git merge-base origin/master HEAD|xargs -I _ git diff _ -- $argv[1]";
+      gri = "git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD|xargs git rebase -i";
+      diffib = "git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD|xargs -I _ git diff _ -- $argv[1]";
     };
 
     plugins = [
