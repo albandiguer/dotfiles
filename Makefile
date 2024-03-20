@@ -5,7 +5,6 @@ apply:
 
 update:
 	nix flake update
-	apply
 
 upgrade-nix:
 	sudo nix upgrade-nix

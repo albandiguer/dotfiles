@@ -125,8 +125,8 @@
       nodePackages_latest.bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
       # nodePackages_latest.sql-language-server
-      python310Packages.black # python fmt
-      python310Packages.flake8
+      # python310Packages.black # python fmt
+      # python310Packages.flake8
       vim-vint # for vimscripts
       shfmt # shell script formatter
       hadolint # docker linter # NOTE currently broken
@@ -238,7 +238,7 @@
       trouble-nvim
       vim-better-whitespace
       vim-bookmarks
-      vim-colors-paramount
+      # vim-colors-paramount
       vim-commentary
       vim-dadbod
       vim-dadbod-completion

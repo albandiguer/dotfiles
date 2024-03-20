@@ -145,4 +145,5 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] https://rsapkf.netlify.app/weblog/vim-tmux-italics
 - [x] evaluate vsnips vs luasnip
 - [ ] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
+- [x] branch -> mutli platform flake
 

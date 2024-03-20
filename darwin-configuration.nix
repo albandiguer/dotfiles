@@ -123,7 +123,11 @@
       "iredis"
     ];
     casks = [
-      # "mark-text"
+      "dash"
+      "licecap"
+      "monitorcontrol"
+      "notion"
+      "obsidian"
     ];
   };
 
