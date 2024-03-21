@@ -44,31 +44,29 @@
         window_gap = 8;
       };
       extraConfig = ''
-        yabai -m rule --add app="^1Password.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Asana.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Books.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Calendar.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Dash.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Discord.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Docker.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Finder.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Insomnia.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Licecap.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Maps.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Notes.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Notion.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Parallels\ Desktop.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Photo\ Booth.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Podcasts.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Postman.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Preview.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^QuickTime.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^RapidAPI.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Stocks.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^System.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Todoist.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Transmission.*$" sticky=on layer=above manage=off
-        yabai -m rule --add app="^Weather.*$" sticky=on layer=above manage=off
+        yabai -m rule --add app="1Password" manage=off
+        yabai -m rule --add app="Calendar" manage=off
+        yabai -m rule --add app="Dash" manage=off
+        yabai -m rule --add app="Discord" manage=off
+        yabai -m rule --add app="Docker" manage=off
+        yabai -m rule --add app="Finder" manage=off
+        yabai -m rule --add app="Insomnia" manage=off
+        yabai -m rule --add app="Licecap" manage=off
+        yabai -m rule --add app="Maps" manage=off
+        yabai -m rule --add app="Notes" manage=off
+        yabai -m rule --add app="Notion" manage=off
+        yabai -m rule --add app="Parallels\ Desktop" manage=off
+        yabai -m rule --add app="Photo\ Booth" manage=off
+        yabai -m rule --add app="Podcasts" manage=off
+        yabai -m rule --add app="Postman" manage=off
+        yabai -m rule --add app="Preview" manage=off
+        yabai -m rule --add app="QuickTime" manage=off
+        yabai -m rule --add app="RapidAPI" manage=off
+        yabai -m rule --add app="Stocks" manage=off
+        yabai -m rule --add app="System" manage=off
+        yabai -m rule --add app="Todoist" manage=off
+        yabai -m rule --add app="Transmission" manage=off
+        yabai -m rule --add app="Weather" manage=off
       '';
     };
     skhd = {
