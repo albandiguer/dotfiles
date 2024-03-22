@@ -61,6 +61,7 @@
       ".zcompdump"
       "*.log"
       "$XDG_CACHE_HOME/"
+      ".direnv/"
     ];
 
     diff-so-fancy.enable = true;
