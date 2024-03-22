@@ -20,6 +20,7 @@
         cp = "cherry-pick";
         d = "difftool";
         dc = "diff --cached";
+        fo = "fetch origin";
         l = "log --graph --date=short";
         last = "show HEAD";
         lpwd = "log -- ."; # git log for files in current directory
