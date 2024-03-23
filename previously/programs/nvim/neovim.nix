@@ -3,25 +3,6 @@
   pkgs,
   ...
 }: {
-  # Overlay for nightly builds
-  # Nightly nvim build https://github.com/nix-community/neovim-nightly-overlay
-  # currently failing  https://github.com/nix-community/neovim-nightly-overlay/issues/164
-  # Pin to the latest working commit for now https://github.com/nix-community/neovim-nightly-overlay/pull/177
-  nixpkgs.overlays = [
-    (
-      import (
-        let
-          rev = "master";
-          # rev = "c57746e2b9e3b42c0be9d9fd1d765f245c3827b7";
-        in
-          builtins.fetchTarball {
-            url = "https://github.com/nix-community/neovim-nightly-overlay/archive/${rev}.tar.gz";
-            sha256 = "sha256:0mgjbqg6dcl1zilkij2pva8dwr4jg06sds1vvfk9nbyc4v1z6l20";
-          }
-      )
-    )
-  ];
-
   home = {
     # TODO convert that to automatically pick all files? order? something like this?
     # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (

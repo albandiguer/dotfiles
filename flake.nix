@@ -2,6 +2,7 @@
   description = "Alban Diguer's nix config";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,8 +41,9 @@
     homebrew-core,
     homebrew-cask,
     ...
-  }: let
+  } @ inputs: let
     user = "albandiguer";
+    overlays = [inputs.neovim-nightly-overlay.overlay];
     commonDarwinModules = [
       ./darwin-configuration.nix
       home-manager.darwinModules.home-manager
@@ -67,6 +69,9 @@
           mutableTaps = false;
           autoMigrate = true;
         };
+      }
+      {
+        nixpkgs.overlays = overlays;
       }
     ];
   in {
