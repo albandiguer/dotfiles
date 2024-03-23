@@ -57,6 +57,7 @@
       ".netrwhist"
       ".terraform/"
       ".use_ruby_ls"
+      ".use_solargraph"
       ".vscode"
       ".zcompdump"
       "Session.vim"
