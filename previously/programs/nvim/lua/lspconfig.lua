@@ -93,10 +93,10 @@ lspconfig.solargraph.setup({
 	root_dir = lspconfig.util.root_pattern(".solargraph.yml", vim.fn.getcwd()),
 	cmd = { "./bin/lsp" }
 })
--- lspconfig.ruby_ls.setup({
--- 	cmd = { "./bin/lsp" },
--- 	root_dir = lspconfig.util.root_pattern('Gemfile', '.git'),
--- })
+lspconfig.ruby_ls.setup({
+	root_dir = lspconfig.util.root_pattern('.use_ruby_ls', '.git'),
+	cmd = { "./bin/lsp" },
+})
 
 -- Lua
 lspconfig.lua_ls.setup({
