@@ -28,15 +28,14 @@ opt.termguicolors = true  -- enable 24-bit RGB colors
 
 g['loaded_perl_provider'] = 0 -- do not load perl provider (checkhealth happy)
 
-
-map('i', '<C-l>', '<space>=>')
+-- map('i', '<C-l>', '<space>=>') -- using that mapping for snippets
 map('i', '<C-k>', '<space>->')
 map('i', '<C-c>', '<esc>')
 
-map('n', 'Q', '<Nop>')   -- disable ex mode
+map('n', 'Q', '<Nop>')  -- disable ex mode
 -- map('n', '<leader>y', '"+y') -- not necessary as we have set clipboard unamedplus, the same
-map('n', 'gp', '`[v`]')  -- reselect pasted text https://twitter.com/vim_tricks/status/1545065274369609728
-map('n', 'p', 'p`[v`]y') -- paste + select whats been pasted + yank it
+map('n', 'gp', '`[v`]') -- reselect pasted text https://twitter.com/vim_tricks/status/1545065274369609728
+-- map('n', 'p', 'p`[v`]y') -- paste + select whats been pasted + yank it -> not working in visual mode
 map('n', '<leader>m', ':Make')
 map('n', '<leader>d', ':Dispatch')
 map('n', '<leader>p', ':MarkdownPreview<CR>')
