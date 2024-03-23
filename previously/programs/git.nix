@@ -29,6 +29,7 @@
         rbc = "rebase --continue";
         reset = "reset HEAD";
         rup = "remote update --prune";
+        rv = "remote --verbose";
         s = "status";
         sh = "show HEAD";
         shwo = "show";
