@@ -19,6 +19,7 @@
       dkc = "docker compose";
       g = "git";
       gst = "git status";
+      cs = "gh copilot suggest";
       l = "ls -la";
       m = "make";
       ns = "nix search nixpkgs";
