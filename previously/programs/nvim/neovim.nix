@@ -98,6 +98,7 @@
       alejandra # nix code formatter
       statix # nix lints
       pgformatter # https://github.com/darold/pgFormatter
+      pyright
       # rubocop
       terraform # for terraform_fmt
       nodePackages.prettier

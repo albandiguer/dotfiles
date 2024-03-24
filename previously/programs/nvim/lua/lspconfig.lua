@@ -147,3 +147,6 @@ lspconfig.bashls.setup {}
 
 -- Tailwind
 lspconfig.tailwindcss.setup {}
+
+-- Python
+lspconfig.pyright.setup {}
