@@ -17,6 +17,7 @@
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       deno
+      devenv
       dive
       duf # disk space etc
       github-cli
