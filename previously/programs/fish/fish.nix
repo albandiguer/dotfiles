@@ -15,7 +15,6 @@
     shellAbbrs = {
       bs = "brew search";
       c = "clear";
-      condaenvs = "conda env list";
       dk = "docker";
       dkc = "docker compose";
       g = "git";
