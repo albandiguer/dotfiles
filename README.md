@@ -61,19 +61,6 @@ gd -> Definition
 gr -> References
 ```
 
-## IAM & AWS
-
-TODO move to different repo
-
-
-`aws-infra` directory for the dets
-
-Bootstrap `terraform` backend to store states and lockfiles of tf resources.
-The backend is in `s3` + `dynamodb`
-[tf-backend](aws-infra/tf-backend/README.md)
-
-Additional resources created in `/tf-misc`
-[tf-misc](aws-infra/tf-misc/tfdocs.md)
 
 ## Tmux
 
