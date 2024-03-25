@@ -126,6 +126,7 @@
       "monitorcontrol"
       "notion"
       "obsidian"
+      "raycast"
     ];
   };
 

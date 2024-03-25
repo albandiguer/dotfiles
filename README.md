@@ -94,6 +94,7 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [x] Fix gist vim 
 - [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
 - [x] Cleanup gists
+- [x]  Raycast
 - [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
 - [ ] switch algo for rsa key to ed25519
 - [ ] markdown formatter
