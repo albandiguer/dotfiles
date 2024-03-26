@@ -17,7 +17,7 @@
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       deno
-      devenv
+      # devenv
       dive
       duf # disk space etc
       github-cli
@@ -27,6 +27,7 @@
       htop
       httpie
       # iredis # slick redis client
+      # insomnia
       jq
       jwt-cli
       lato # used by AltaCV
