@@ -3,12 +3,9 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     eza
-    fzf
     graphite-cli
-    iredis
     marp-cli #https://github.com/marp-team/marp-cli
     openssl
-    sqlite
   ];
 
   services = {

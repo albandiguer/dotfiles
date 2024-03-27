@@ -22,11 +22,9 @@
       duf # disk space etc
       github-cli
       google-cloud-sdk # gcloud
-      # graphite-cli, dragging behind, using homebrew
       heroku
       htop
       httpie
-      # iredis # slick redis client
       # insomnia
       jq
       jwt-cli
