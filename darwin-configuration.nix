@@ -46,6 +46,7 @@
         yabai -m rule --add app="Dash" manage=off
         yabai -m rule --add app="Discord" manage=off
         yabai -m rule --add app="Docker" manage=off
+        yabai -m rule --add app="Docker\ Desktop" manage=off
         yabai -m rule --add app="Finder" manage=off
         yabai -m rule --add app="Insomnia" manage=off
         yabai -m rule --add app="Licecap" manage=off
