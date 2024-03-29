@@ -36,6 +36,7 @@
         shwo = "show";
         st = "status";
         unstage = "restore --staged";
+        recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n10 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
       };
       github.user = "albandiguer";
       core.editor = "nvim";
