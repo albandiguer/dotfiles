@@ -21,7 +21,7 @@
       dive
       duf # disk space etc
       github-cli
-      google-cloud-sdk # gcloud
+      google-cloud-sdk # gcloud, gsutils
       heroku
       htop
       httpie

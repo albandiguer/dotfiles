@@ -128,7 +128,7 @@ lspconfig.terraformls.setup {}
 lspconfig.yamlls.setup {}
 
 -- SQL
--- lspconfig.sqls.setup {}
+lspconfig.sqls.setup {}
 -- OR
 -- https://github.com/joe-re/sql-language-server
 

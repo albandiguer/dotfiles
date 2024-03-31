@@ -8,6 +8,7 @@
       ls = "eza";
       cat = "bat";
       vim = "nvim";
+      db = "nvim +DBUI";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
