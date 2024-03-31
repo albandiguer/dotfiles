@@ -90,11 +90,11 @@ vim.api.nvim_create_autocmd("User", {
 -- 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
 -- define settings in project .solargraph.yml
 lspconfig.solargraph.setup({
-	root_dir = lspconfig.util.root_pattern(".use_solargraph", vim.fn.getcwd()),
+	root_dir = lspconfig.util.root_pattern(".use_solargraph"),
 	cmd = { "./bin/lsp" }
 })
 lspconfig.ruby_ls.setup({
-	root_dir = lspconfig.util.root_pattern('.use_ruby_ls', '.git'),
+	root_dir = lspconfig.util.root_pattern('.use_ruby_ls'),
 	cmd = { "./bin/lsp" },
 })
 
