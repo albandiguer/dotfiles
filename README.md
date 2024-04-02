@@ -98,7 +98,6 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
 - [ ] switch algo for rsa key to ed25519
 - [ ] markdown formatter
-- [ ] https://rsapkf.netlify.app/weblog/vim-tmux-italics
 - [ ] https://github.com/danymat/neogen vs chatgpt plugin
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] editorconfig xdg

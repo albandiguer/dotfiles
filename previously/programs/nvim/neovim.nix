@@ -36,7 +36,7 @@
       ];
 
       # neovim ftplugins, TODO loop
-      "${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
+      # "${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
       "${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
       "${config.xdg.configHome}/nvim/after/ftplugin/markdown.lua".text = builtins.readFile after/ftplugin/markdown.lua;
       "${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
@@ -58,11 +58,11 @@
     # https://neovim.io/doc/user/provider.html
     withPython3 = true; # default is true so this redundant
     # Plugins for python3 provider:
-    extraPython3Packages = ps:
-      with ps; [
-        # black # not working for null-ls, require it in extraPackages
-        # flake8
-      ];
+    # extraPython3Packages = ps:
+    # with ps; [
+    # black # not working for null-ls, require it in extraPackages
+    # flake8
+    # ];
 
     # generatedConfigs thats where we would set things like nvchad
 

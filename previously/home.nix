@@ -3,10 +3,6 @@
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       # ack
-      # awless # https://github.com/wallix/awless
-      # commitizen
-      # niv # TODO re-enable, currently broken (30/12/22) cycle dependency detected Painless dependencies for Nix projects
-      # pomotroid # unsupported aarch64
       awscli2
       act # gh actions locally
       bash # macos is bash 3xx, need 4+
@@ -17,7 +13,6 @@
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       deno
-      # devenv
       dive
       duf # disk space etc
       github-cli
@@ -25,7 +20,6 @@
       heroku
       htop
       httpie
-      # insomnia
       jq
       jwt-cli
       lato # used by AltaCV

@@ -23,6 +23,7 @@
       l = "ls -la";
       m = "make";
       ns = "nix search nixpkgs";
+      nsn = "nix shell nixpkgs#";
       prettyjson = "python -m json.tool";
       td = "todoist";
     };

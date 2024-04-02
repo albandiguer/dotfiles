@@ -125,6 +125,7 @@
       "notion"
       "obsidian"
       "raycast"
+      "insomnia"
     ];
   };
 
