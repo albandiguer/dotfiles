@@ -27,10 +27,7 @@
       td = "todoist";
     };
 
-    functions = {
-      gri = "git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD|xargs git rebase -i";
-      diffib = "git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD|xargs -I _ git diff _ -- $argv[1]";
-    };
+    # functions = {};
 
     plugins = [
       # BUG makes `vim` cmd work somehow, nvim is borked to old version, not getting why

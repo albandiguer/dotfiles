@@ -20,6 +20,7 @@
         cp = "cherry-pick";
         d = "difftool";
         dc = "diff --cached";
+        dib = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs -I _ git diff _ -- $1; }; f";
         fo = "fetch origin";
         l = "log --graph --date=short";
         last = "show HEAD";
@@ -28,7 +29,9 @@
         ps = "push";
         rba = "rebase --abort";
         rbc = "rebase --continue";
+        recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n10 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
         reset = "reset HEAD";
+        ri = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs git rebase -i; }; f";
         rup = "remote update --prune";
         rv = "remote --verbose";
         s = "status";
@@ -36,7 +39,6 @@
         shwo = "show";
         st = "status";
         unstage = "restore --staged";
-        recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n10 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
       };
       github.user = "albandiguer";
       core.editor = "nvim";

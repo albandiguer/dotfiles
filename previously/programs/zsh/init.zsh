@@ -59,13 +59,3 @@ alias condaenvs="conda env list"
 alias prettyjson="python3 -mjson.tool"
 alias nixsearch="nix search nixpkgs"
 
-# function to rebase current branch on top of master, finding common ancestor as starting point
-function gri() {
-	git merge-base origin/master HEAD|xargs git rebase -i
-}
-
-# diff with common ancestor for path, all when path unspecified
-function diffib {
-	git merge-base origin/master HEAD|xargs -I _ git diff _ -- $1
-}
-
