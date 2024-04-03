@@ -16,10 +16,11 @@
     shellAbbrs = {
       bs = "brew search";
       c = "clear";
+      cs = "gh copilot suggest";
       dk = "docker";
       dkc = "docker compose";
       g = "git";
-      cs = "gh copilot suggest";
+      hk = "heroku";
       l = "ls -la";
       m = "make";
       ns = "nix search nixpkgs";
