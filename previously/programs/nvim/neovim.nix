@@ -31,6 +31,7 @@
         (builtins.readFile lua/vim-dispatch.lua)
         (builtins.readFile lua/markdown-preview.lua)
         (builtins.readFile lua/neogen.lua)
+        (builtins.readFile lua/obsidian.lua)
         (builtins.readFile lua/neoai.lua)
         (builtins.readFile lua/devdocs.lua)
       ];
@@ -80,7 +81,6 @@
       postgresql # dadbod deps
       # Telescope deps
       fd
-      ripgrep
       universal-ctags
       # Treesitter
       tree-sitter
@@ -99,6 +99,7 @@
       statix # nix lints
       pgformatter # https://github.com/darold/pgFormatter
       pyright
+      ripgrep # used by obsidian nvim
       # rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
@@ -212,6 +213,7 @@
       nvim-treesitter-context
       nvim-treesitter-with-plugins
       nvim-web-devicons
+      obsidian-nvim
       plenary-nvim #dep for nvim-devdocs (async programming with coroutines)
       rose-pine
       tabular

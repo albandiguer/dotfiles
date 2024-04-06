@@ -23,7 +23,7 @@
       jq
       jwt-cli
       lato # used by AltaCV
-      marksman
+      marksman # markdown lsp https://github.com/artempyanykh/marksman
       ngrok # broken atm
       ghc
       nix-prefetch-git
