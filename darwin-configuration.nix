@@ -42,6 +42,7 @@
       };
       extraConfig = ''
         yabai -m rule --add app="1Password" manage=off
+        yabai -m rule --add app="Bitwarden" manage=off
         yabai -m rule --add app="Calendar" manage=off
         yabai -m rule --add app="Dash" manage=off
         yabai -m rule --add app="Discord" manage=off

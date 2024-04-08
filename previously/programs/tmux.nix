@@ -10,6 +10,7 @@
     historyLimit = 25000;
     extraConfig = ''
       # set -ga terminal-overrides ",*col*:Tc"
+      set-option -g default-command "fish"
 
       # open new terminals in the same working directory
       bind '"' split-window -c "#{pane_current_path}"

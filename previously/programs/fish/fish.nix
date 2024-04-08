@@ -27,6 +27,7 @@
       nsn = "nix shell nixpkgs#";
       prettyjson = "python -m json.tool";
       td = "todoist";
+      tf = "terraform";
     };
 
     # functions = {};
