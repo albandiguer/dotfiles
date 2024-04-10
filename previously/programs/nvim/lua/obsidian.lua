@@ -6,11 +6,12 @@ require("obsidian").setup({
 	workspaces = {
 		{
 			name = "Reliable Brain",
-			path = "/Users/albandiguer/Google Drive/obsidian_vaults/Reliable Brain",
+			path = "/Users/albandiguer/Google Drive/obsidian_vaults/Reliable Brain", -- NOTE symlinked the folder as needed for second machine
+
 			-- `strict=true` here tells obsidian to use the `path` as the workspace/vault root,
 			-- even though the actual Obsidian vault root may be `~/vaults/personal/`.
 			strict = true,
-		}
+		},
 	},
 	daily_notes = {
 		-- Optional, if you keep daily notes in a separate directory.

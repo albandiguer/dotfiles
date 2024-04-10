@@ -95,8 +95,8 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
 - [x] Cleanup gists
 - [x] Raycast
-- [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
 - [x] obsidian neovim https://github.com/epwalsh/obsidian.nvim
+- [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
 - [ ] switch algo for rsa key to ed25519
 - [ ] markdown formatter
 - [ ] https://github.com/danymat/neogen vs chatgpt plugin
@@ -108,3 +108,4 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] tester devenv for python/ruby
 - [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
+- [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
