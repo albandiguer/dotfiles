@@ -6,6 +6,8 @@
     graphite-cli
     marp-cli #https://github.com/marp-team/marp-cli
     openssl
+    ruby_3_3
+    rubyPackages_3_3.rails
   ];
 
   services = {
