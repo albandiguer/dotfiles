@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
@@ -61,12 +65,13 @@
       # writeShellScriptBin "run-commands-on-git-revisions" "echo hellow world"
     ];
 
-    # Symlink dotfiles
+    # copy dotfiles
     file = {
       ".npmrc".source = dotfiles/.npmrc;
       ".editorconfig".source = dotfiles/.editorconfig;
       ".inputrc".source = dotfiles/.inputrc;
       ".dive.yml".source = dotfiles/.dive.yml;
+      "Google Drive".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Library/CloudStorage/GoogleDrive-alban.diguer@gmail.com/My Drive";
     };
 
     # Home Manager needs a bit of information about you and the
