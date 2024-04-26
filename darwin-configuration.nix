@@ -128,7 +128,7 @@
       "notion"
       "obsidian"
       "raycast"
-      "insomnia"
+      "httpie"
     ];
   };
 
