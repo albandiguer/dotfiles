@@ -28,6 +28,7 @@
       prettyjson = "python -m json.tool";
       td = "todoist";
       tf = "terraform";
+      ghs = "gh status";
     };
 
     # functions = {};
