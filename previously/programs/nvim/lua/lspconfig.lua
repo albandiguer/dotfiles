@@ -93,7 +93,7 @@ lspconfig.solargraph.setup({
 	root_dir = lspconfig.util.root_pattern(".use_solargraph"),
 	cmd = { "./bin/lsp" }
 })
-lspconfig.ruby_ls.setup({
+lspconfig.ruby_lsp.setup({
 	root_dir = lspconfig.util.root_pattern('.use_ruby_ls'),
 	cmd = { "./bin/lsp" },
 })
