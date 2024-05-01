@@ -31,7 +31,7 @@
         (builtins.readFile lua/vim-dispatch.lua)
         (builtins.readFile lua/markdown-preview.lua)
         (builtins.readFile lua/neogen.lua)
-        (builtins.readFile lua/obsidian.lua)
+        # (builtins.readFile lua/obsidian.lua)
         (builtins.readFile lua/neoai.lua)
         (builtins.readFile lua/devdocs.lua)
       ];
