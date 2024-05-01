@@ -109,3 +109,4 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] tester devenv for python/ruby
 - [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
+- [ ] neovim-devdocs

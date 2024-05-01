@@ -180,7 +180,6 @@
       # vim-jsdoc # ftplugin? NOTE: redundant with neogen?
       # vim-vsnip
       ack-vim
-      ayu-vim
       catppuccin-nvim
       cmp-buffer # nvim-cmp source for buffer words.
       cmp-cmdline # nvim-cmp source for command line
