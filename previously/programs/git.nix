@@ -29,7 +29,7 @@
         ps = "push";
         rba = "rebase --abort";
         rbc = "rebase --continue";
-        recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n10 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
+        recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n30 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
         reset = "reset HEAD";
         ri = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs git rebase -i; }; f";
         rup = "remote update --prune";
