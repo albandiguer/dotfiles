@@ -29,6 +29,7 @@
       td = "todoist";
       tf = "terraform";
       ghs = "gh status";
+      r = "bin/rails";
     };
 
     # functions = {};
