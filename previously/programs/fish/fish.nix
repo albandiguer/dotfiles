@@ -14,22 +14,22 @@
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
 
     shellAbbrs = {
+      b = "bin/bundle";
       bs = "brew search";
       c = "clear";
       cs = "gh copilot suggest";
       dk = "docker";
       dkc = "docker compose";
       g = "git";
+      ghs = "gh status";
       hk = "heroku";
       l = "ls -la";
       m = "make";
       ns = "nix search nixpkgs";
       nsn = "nix shell nixpkgs#";
       prettyjson = "python -m json.tool";
-      td = "todoist";
-      tf = "terraform";
-      ghs = "gh status";
       r = "bin/rails";
+      tf = "terraform";
     };
 
     # functions = {};
