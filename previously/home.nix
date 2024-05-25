@@ -6,14 +6,12 @@
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      # ack
       awscli2
       act # gh actions locally
       bash # macos is bash 3xx, need 4+
       bat
       bitwarden-cli
       buildpack # cloud native buildpacks, use pack...
-      commitlint
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       deno
@@ -33,15 +31,11 @@
       nix-prefetch-git
       nix-prefetch-github # no working at times cant verify sha256 sums
       nodejs
-      # ruby_3_2 # NOTE global ruby, for rails dev favor rbenv+ruby-build coming with libyaml for psych etc
-      # oh-my-fish
-      # postman
       postgresql # dadbod requires psql
       roboto-slab # used by AltaCV
       silver-searcher # get use to ag instead of ack
       slack
       tldr # when man is tldr
-      # todoist
       tree
       watch
       wget

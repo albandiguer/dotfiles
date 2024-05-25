@@ -95,7 +95,7 @@ lspconfig.solargraph.setup({
 })
 lspconfig.ruby_lsp.setup({
 	root_dir = lspconfig.util.root_pattern('.use_ruby_ls'),
-	cmd = { "./bin/lsp" },
+	cmd = { "./bin/bundle exec ruby-lsp" },
 })
 
 -- Lua

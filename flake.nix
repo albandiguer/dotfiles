@@ -43,7 +43,7 @@
     ...
   } @ inputs: let
     user = "albandiguer";
-    overlays = [inputs.neovim-nightly-overlay.overlay];
+    overlays = [inputs.neovim-nightly-overlay.overlays.default];
     commonDarwinModules = [
       ./darwin-configuration.nix
       home-manager.darwinModules.home-manager

@@ -75,6 +75,7 @@
       gcc # to compile tree-sitter grammar
       # nixfmt
       # rustfmt
+      commitlint
       wget # used by lsp-installer , use :checkhealth in vim
       # texlive.combined.scheme-full
       redis # dadbod deps
