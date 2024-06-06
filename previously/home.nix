@@ -10,7 +10,7 @@
       act # gh actions locally
       bash # macos is bash 3xx, need 4+
       bat
-      bitwarden-cli
+      # bitwarden-cli # not working
       buildpack # cloud native buildpacks, use pack...
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
