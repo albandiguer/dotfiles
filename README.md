@@ -110,3 +110,4 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
 - [ ] neovim-devdocs
+- [ ] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
