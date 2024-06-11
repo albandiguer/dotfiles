@@ -1,4 +1,4 @@
-colorscheme habamax 
+colorscheme habamax
 
 " close all buffers but current https://stackoverflow.com/a/42071865/549563
 nnoremap ' :%bd\|e#<CR>
@@ -8,6 +8,10 @@ set clipboard^=unnamed,unnamedplus
 "
 " when a bracket is inserted, briefly show the matching one
 set showmatch
+
+" execute command files, add a .vimrc.lua in your project for example to
+" config lsp
+set exrc
 
 " round misaligned indented code
 " https://twitter.com/vim_tricks/status/1545752287192170503

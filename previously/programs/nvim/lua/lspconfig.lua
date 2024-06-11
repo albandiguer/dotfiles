@@ -82,21 +82,21 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
--- Ruby
+-- Ruby NOTE: move to exrc, much tidier
 -- could just be a tcp connection, so no lspconfig, just raw lsp conf
 -- see bookmarks firefox/dev on pretto macbook
 -- https://github.com/castwide/vscode-solargraph#extension-settings
 -- DOCKER example :
 -- 	cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
 -- define settings in project .solargraph.yml
-lspconfig.solargraph.setup({
-	root_dir = lspconfig.util.root_pattern(".use_solargraph"),
-	cmd = { "./bin/lsp" }
-})
-lspconfig.ruby_lsp.setup({
-	root_dir = lspconfig.util.root_pattern('.use_ruby_ls'),
-	cmd = { "./bin/bundle exec ruby-lsp" },
-})
+-- lspconfig.solargraph.setup({
+-- 	root_dir = lspconfig.util.root_pattern(".use_solargraph"),
+-- 	cmd = { "./bin/lsp" }
+-- })
+-- lspconfig.ruby_lsp.setup({
+-- 	root_dir = lspconfig.util.root_pattern('.use_ruby_ls'),
+-- 	cmd = { "./bin/bundle exec ruby-lsp" },
+-- })
 
 -- Lua
 lspconfig.lua_ls.setup({
