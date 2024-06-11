@@ -6,17 +6,18 @@
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      awscli2
+      # bitwarden-cli # not working
       act # gh actions locally
+      awscli2
       bash # macos is bash 3xx, need 4+
       bat
-      # bitwarden-cli # not working
       buildpack # cloud native buildpacks, use pack...
       curlie
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
-      deno
+      # deno
       dive
       duf # disk space etc
+      # ghc
       github-cli
       google-cloud-sdk # gcloud, gsutils
       heroku
@@ -25,22 +26,21 @@
       jq
       jwt-cli
       lato # used by AltaCV
+      mise # pkg manager for programming langs https://github.com/jdx/mise
       marksman # markdown lsp https://github.com/artempyanykh/marksman
       ngrok # broken atm
-      ghc
       nix-prefetch-git
       nix-prefetch-github # no working at times cant verify sha256 sums
-      nodejs
       postgresql # dadbod requires psql
       roboto-slab # used by AltaCV
+      rubyPackages.erb-formatter
+      rubyPackages.htmlbeautifier
       silver-searcher # get use to ag instead of ack
       slack
       tldr # when man is tldr
       tree
       watch
       wget
-      rubyPackages.erb-formatter
-      rubyPackages.htmlbeautifier
       python311Packages.ipykernel
       (nerdfonts.override {
         fonts = [
@@ -100,5 +100,6 @@
     ./programs/vscode.nix
     ./programs/direnv.nix
     ./programs/home-manager.nix
+    ./programs/mise.nix
   ];
 }

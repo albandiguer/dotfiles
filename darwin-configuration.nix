@@ -2,12 +2,10 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    eza
+    eza # https://github.com/eza-community/eza
     graphite-cli
     marp-cli #https://github.com/marp-team/marp-cli
     openssl
-    ruby_3_3
-    rubyPackages_3_3.rails
   ];
 
   services = {
