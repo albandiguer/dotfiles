@@ -50,6 +50,7 @@
     # https://stackoverflow.com/questions/34216850/how-to-prevent-fish-shell-from-closing-when-typing-ctrl-d-eof
     interactiveShellInit = ''
       set -g fish_eof none
+      set -gx LANG en_AU.UTF-8
     '';
 
     # https://github.com/budimanjojo/tmux.fish
