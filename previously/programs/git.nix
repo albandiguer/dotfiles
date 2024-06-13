@@ -9,6 +9,7 @@
         a = "add";
         aa = "add --all";
         amend = "commit --amend";
+        amf = "commit --amend --no-edit";
         b = "branch";
         ba = "branch -a";
         br = "branch";
