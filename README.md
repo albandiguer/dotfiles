@@ -103,10 +103,10 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
-- [ ] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
+- [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
 - [ ] Look at latex editor config with preview (saved in Pocket)
 - [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
-- [ ] tester devenv for python/ruby
+- [x] tester ~devenv~ mise for python/ruby
 - [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
 - [ ] neovim-devdocs
