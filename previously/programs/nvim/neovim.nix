@@ -107,7 +107,7 @@
       # nodePackages.eslint
       nodePackages_latest.vscode-langservers-extracted #html css json eslint
       nodePackages_latest.yaml-language-server
-      nodePackages_latest.bash-language-server
+      # nodePackages_latest.bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
       # nodePackages_latest.sql-language-server
       python312Packages.black # python fmt
