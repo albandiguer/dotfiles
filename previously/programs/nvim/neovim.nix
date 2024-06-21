@@ -80,8 +80,7 @@
       # texlive.combined.scheme-full
       redis # dadbod deps
       postgresql # dadbod deps
-      # Telescope deps
-      fd
+      fd # Telescope deps
       universal-ctags
       # Treesitter
       tree-sitter
@@ -107,7 +106,8 @@
       # nodePackages.eslint
       nodePackages_latest.vscode-langservers-extracted #html css json eslint
       nodePackages_latest.yaml-language-server
-      # nodePackages_latest.bash-language-server
+      nodePackages_latest.bash-language-server
+      # bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
       # nodePackages_latest.sql-language-server
       python312Packages.black # python fmt
