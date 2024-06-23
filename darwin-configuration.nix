@@ -13,7 +13,7 @@
     nix-daemon.enable = true;
 
     yabai = {
-      enable = true;
+      enable = false;
       config = {
         mouse_follows_focus = "off";
         focus_follows_mouse = "off";
@@ -69,7 +69,7 @@
       '';
     };
     skhd = {
-      enable = true;
+      enable = false;
       skhdConfig = ''
         alt + cmd - h : yabai -m window --warp west
         alt + cmd - l : yabai -m window --warp east
