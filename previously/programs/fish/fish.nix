@@ -25,6 +25,7 @@
       hk = "heroku";
       l = "ls -la";
       m = "make";
+      n = "nix";
       ns = "nix search nixpkgs";
       nsn = "nix shell nixpkgs#";
       prettyjson = "python -m json.tool";
