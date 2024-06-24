@@ -107,6 +107,7 @@
       nodePackages_latest.vscode-langservers-extracted #html css json eslint
       nodePackages_latest.yaml-language-server
       nodePackages_latest.bash-language-server
+      nodePackages_latest.typescript-language-server
       # bash-language-server
       nodePackages_latest.dockerfile-language-server-nodejs
       # nodePackages_latest.sql-language-server
@@ -203,7 +204,7 @@
       neoai-nvim
       neogen
       nui-nvim # required by neoAI https://github.com/Bryley/neoai.nvim
-      null-ls-nvim
+      none-ls-nvim # long live null-ls
       nvim-cmp
       nvim-devdocs
       nvim-grb256

@@ -150,3 +150,6 @@ lspconfig.tailwindcss.setup {}
 
 -- Python
 lspconfig.pyright.setup {}
+
+-- Typescript
+lspconfig.tsserver.setup {}
