@@ -30,6 +30,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    homebrew-puma-tap = {
+      url = "github:puma/homebrew-puma";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -40,6 +44,7 @@
     homebrew-bundle,
     homebrew-core,
     homebrew-cask,
+    homebrew-puma-tap,
     ...
   } @ inputs: let
     user = "albandiguer";
@@ -65,6 +70,7 @@
             "homebrew/homebrew-core" = homebrew-core;
             "homebrew/homebrew-cask" = homebrew-cask;
             "homebrew/homebrew-bundle" = homebrew-bundle;
+            "puma/homebrew-puma" = homebrew-puma-tap;
           };
           mutableTaps = false;
           autoMigrate = true;

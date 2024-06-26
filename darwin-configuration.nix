@@ -118,6 +118,7 @@
       "libpq"
       "libyaml"
       "iredis"
+      "puma/puma/puma-dev"
     ];
     casks = [
       "dash"
