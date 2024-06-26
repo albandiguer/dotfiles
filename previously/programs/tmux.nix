@@ -36,6 +36,10 @@
       set-option -g pane-border-style fg=colour238
       set-window-option -g window-status-format '#[bg=colour8]#[fg=colour3] #I #[fg=colour15]#W#[fg=colour5]#F# '
       set-window-option -g window-status-current-format '#[bg=colour8]#[fg=colour3] #I #[bg=colour7]#[fg=colour8] #W#[fg=colour0]#F #[bg=colour8]'
+
+      # Fix nvim :healthcheck
+      set-option -sg escape-time 10
+      set-option -g focus-events on
     '';
 
     plugins = with pkgs; [
