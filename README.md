@@ -33,6 +33,14 @@ flowchart LR
   friendly-snippets --> luasnip
 ```
 
+## Mise(-en-place)
+
+[mise-en-place](https://mise.jdx.dev/dev-tools/shims.html)
+use `mise ls` to list currently installed language
+
+add shims directory to path so lsp etc are not lost
+`mise activate --shims`
+
 ## Gist
 
 `!h gist-vim` for help, tldr add a `~/.gist-vim` with `token xxx` in it, token

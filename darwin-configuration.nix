@@ -119,6 +119,7 @@
       "libyaml"
       "iredis"
       "puma/puma/puma-dev"
+      "postgresql@15"
     ];
     casks = [
       "dash"
