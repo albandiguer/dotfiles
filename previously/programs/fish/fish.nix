@@ -52,6 +52,7 @@
     interactiveShellInit = ''
       set -g fish_eof none
       set -gx LANG en_AU.UTF-8
+      set -gx PATH /Users/albandiguer/.local/share/mise/shims $PATH
     '';
 
     # https://github.com/budimanjojo/tmux.fish
