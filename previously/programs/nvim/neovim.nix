@@ -103,7 +103,7 @@
       # rubocop
       terraform # for terraform_fmt
       nodePackages.prettier
-      # nodePackages.eslint
+      nodePackages_latest.eslint
       nodePackages_latest.vscode-langservers-extracted #html css json eslint
       nodePackages_latest.yaml-language-server
       nodePackages_latest.bash-language-server

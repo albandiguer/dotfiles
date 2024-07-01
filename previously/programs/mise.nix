@@ -4,5 +4,7 @@
   lib,
   ...
 }: {
-  programs.mise.enable = true;
+  programs.mise = {
+    enable = true;
+  };
 }
