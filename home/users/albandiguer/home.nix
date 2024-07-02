@@ -54,12 +54,12 @@
 
     # copy dotfiles
     file = {
-      ".npmrc".source = dotfiles/.npmrc;
-      ".editorconfig".source = dotfiles/.editorconfig;
-      ".inputrc".source = dotfiles/.inputrc;
-      ".dive.yml".source = dotfiles/.dive.yml;
+      ".npmrc".source = ../../dotfiles/.npmrc;
+      ".editorconfig".source = ../../dotfiles/.editorconfig;
+      ".inputrc".source = ../../dotfiles/.inputrc;
+      ".dive.yml".source = ../../dotfiles/.dive.yml;
       # "Google Drive".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Library/CloudStorage/GoogleDrive-alban.diguer@gmail.com/My Drive";
-      ".default-gems".source = dotfiles/.default-gems; # TODO: move in mise.nix
+      ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix
     };
 
     # Home Manager needs a bit of information about you and the
@@ -84,17 +84,17 @@
   };
 
   imports = [
-    # ./programs/zsh/zsh.nix
-    ./programs/fish/fish.nix
-    ./programs/fzf.nix
-    ./programs/git.nix
-    ./programs/gh.nix
-    ./programs/nvim/neovim.nix
-    ./programs/starship.nix
-    ./programs/tmux.nix
-    ./programs/vscode.nix
-    ./programs/direnv.nix
-    ./programs/home-manager.nix
-    ./programs/mise.nix
+    # ../../zsh
+    ../../programs/fish
+    ../../programs/fzf.nix
+    ../../programs/git.nix
+    ../../programs/gh.nix
+    ../../programs/neovim
+    ../../programs/starship.nix
+    ../../programs/tmux.nix
+    ../../programs/vscode.nix
+    ../../programs/direnv.nix
+    ../../programs/home-manager.nix
+    ../../programs/mise.nix
   ];
 }

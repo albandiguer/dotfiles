@@ -19,9 +19,10 @@
         (builtins.readFile lua/settings.lua)
         (builtins.readFile lua/treesitter.lua)
 
-        # (builtins.readFile lua/obsidian.lua)
+        (builtins.readFile lua/obsidian.lua)
         (builtins.readFile lua/cmp.lua)
         (builtins.readFile lua/devdocs.lua)
+        # (builtins.readFile lua/lazy.lua)
         (builtins.readFile lua/lspconfig.lua)
         (builtins.readFile lua/lualine.lua)
         (builtins.readFile lua/markdown-preview.lua)
@@ -199,6 +200,7 @@
       friendly-snippets
       jellybeans-vim
       kanagawa-nvim
+      lazy-nvim
       lspkind-nvim
       lualine-nvim
       luasnip
