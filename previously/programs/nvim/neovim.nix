@@ -20,21 +20,22 @@
         (builtins.readFile lua/treesitter.lua)
 
         # (builtins.readFile lua/obsidian.lua)
-        (builtins.readFile lua/cmp.lua)
-        (builtins.readFile lua/devdocs.lua)
-        (builtins.readFile lua/lspconfig.lua)
-        (builtins.readFile lua/lualine.lua)
-        (builtins.readFile lua/markdown-preview.lua)
-        (builtins.readFile lua/neoai.lua)
-        (builtins.readFile lua/neogen.lua)
-        (builtins.readFile lua/null-ls.lua)
-        (builtins.readFile lua/nvim-notify.lua)
-        (builtins.readFile lua/nvim-tree.lua)
-        (builtins.readFile lua/snippets.lua)
-        (builtins.readFile lua/telescope.lua)
-        (builtins.readFile lua/todo-comments.lua)
-        (builtins.readFile lua/trouble.lua)
-        (builtins.readFile lua/vim-dispatch.lua)
+        # (builtins.readFile lua/cmp.lua)
+        # (builtins.readFile lua/devdocs.lua)
+        (builtins.readFile lua/lazy.lua)
+        # (builtins.readFile lua/lspconfig.lua)
+        # (builtins.readFile lua/lualine.lua)
+        # (builtins.readFile lua/markdown-preview.lua)
+        # (builtins.readFile lua/neoai.lua)
+        # (builtins.readFile lua/neogen.lua)
+        # (builtins.readFile lua/null-ls.lua)
+        # (builtins.readFile lua/nvim-notify.lua)
+        # (builtins.readFile lua/nvim-tree.lua)
+        # (builtins.readFile lua/snippets.lua)
+        # (builtins.readFile lua/telescope.lua)
+        # (builtins.readFile lua/todo-comments.lua)
+        # (builtins.readFile lua/trouble.lua)
+        # (builtins.readFile lua/vim-dispatch.lua)
       ];
 
       # neovim ftplugins, TODO copy dir
@@ -199,6 +200,7 @@
       friendly-snippets
       jellybeans-vim
       kanagawa-nvim
+      lazy-nvim
       lspkind-nvim
       lualine-nvim
       luasnip
