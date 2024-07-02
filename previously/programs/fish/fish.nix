@@ -21,7 +21,6 @@
       dk = "docker";
       dkc = "docker compose";
       g = "git";
-      ghs = "gh status";
       hk = "heroku";
       l = "ls -la";
       m = "make";

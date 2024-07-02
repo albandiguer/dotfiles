@@ -10,6 +10,7 @@
       aliases = {
         pcd = "pr create --draft";
         pvw = "pr view --web";
+        s = "status";
       };
     };
   };
