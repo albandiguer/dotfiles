@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }: {
   home = {
@@ -18,7 +17,6 @@
       dive
       duf # disk space etc
       # ghc
-      github-cli
       google-cloud-sdk # gcloud, gsutils
       heroku
       htop
@@ -94,6 +92,7 @@
     ./programs/fish/fish.nix
     ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/gh.nix
     ./programs/nvim/neovim.nix
     ./programs/starship.nix
     ./programs/tmux.nix
