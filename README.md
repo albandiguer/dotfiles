@@ -33,6 +33,19 @@ flowchart LR
   friendly-snippets --> luasnip
 ```
 
+### Ruby
+
+Why the current setup:
+
+- `withRuby=false` to use a pristine ruby environment (i.e. the one loaded in current directory with mise)
+- `=true` would install a ruby in nix store, when installing stuff from wihin neovim it would try to write to that nix store location and fail
+- in neovim type `:!gem env` to see whats exactly loaded. 
+- However mise installed ruby does not ship with `neovim` gem out of the box, it needs to be installed on every new version. Luckily [mise]() comes with that option with a file `~/.default-gems`, see `mise.nix` and that file in `dotfiles/`
+
+
+
+
+
 ## Mise(-en-place)
 
 [mise-en-place](https://mise.jdx.dev/dev-tools/shims.html)
@@ -40,6 +53,7 @@ use `mise ls` to list currently installed language
 
 add shims directory to path so lsp etc are not lost
 `mise activate --shims`
+
 
 ## Gist
 
