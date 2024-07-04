@@ -1,6 +1,6 @@
 {...}: {
   programs.starship = {
-    enable = false;
+    enable = true;
     settings = {
       add_newline = false;
 
@@ -11,12 +11,12 @@
       #   error_symbol = "[➜](bold red)";
       # };
 
-      ruby.disabled = true;
+      ruby.disabled = false;
       nodejs.disabled = true;
       package.disabled = true;
       docker_context.disabled = true;
       gcloud = {
-        disabled = false;
+        disabled = true;
         symbol = "🇬️ ";
       };
     };
