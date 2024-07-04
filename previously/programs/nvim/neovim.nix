@@ -95,6 +95,7 @@
       # ruby-lsp
       nil # nix lang server
       buf-language-server # buf
+      cmake-format
       # docker-compose-language-service
       # NULL-LS (format/diagnostic/code-actions etc) deps
       alejandra # nix code formatter

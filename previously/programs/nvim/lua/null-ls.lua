@@ -20,6 +20,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.vint,
 		null_ls.builtins.formatting.alejandra, -- nix
 		null_ls.builtins.formatting.black,   -- python
+		null_ls.builtins.formatting.cmake_format,
 		-- null_ls.builtins.formatting.erb_format, -- eruby
 		-- null_ls.builtins.formatting.htmlbeautifier, -- html, eruby
 		null_ls.builtins.formatting.pg_format, -- pg sql
