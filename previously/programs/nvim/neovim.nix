@@ -16,27 +16,28 @@
       # https://hhoeflin.github.io/nix/home_folder_nix/
       # https://teu5us.github.io/nix-lib.html
       "${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
-        (builtins.readFile lua/lualine.lua)
         (builtins.readFile lua/settings.lua)
         (builtins.readFile lua/treesitter.lua)
-        (builtins.readFile lua/cmp.lua)
-        (builtins.readFile lua/nvim-tree.lua)
-        (builtins.readFile lua/nvim-notify.lua)
-        (builtins.readFile lua/telescope.lua)
-        (builtins.readFile lua/lspconfig.lua)
-        (builtins.readFile lua/null-ls.lua)
-        (builtins.readFile lua/trouble.lua)
-        (builtins.readFile lua/todo-comments.lua)
-        (builtins.readFile lua/snippets.lua)
-        (builtins.readFile lua/vim-dispatch.lua)
-        (builtins.readFile lua/markdown-preview.lua)
-        (builtins.readFile lua/neogen.lua)
+
         # (builtins.readFile lua/obsidian.lua)
-        (builtins.readFile lua/neoai.lua)
+        (builtins.readFile lua/cmp.lua)
         (builtins.readFile lua/devdocs.lua)
+        (builtins.readFile lua/lspconfig.lua)
+        (builtins.readFile lua/lualine.lua)
+        (builtins.readFile lua/markdown-preview.lua)
+        (builtins.readFile lua/neoai.lua)
+        (builtins.readFile lua/neogen.lua)
+        (builtins.readFile lua/null-ls.lua)
+        (builtins.readFile lua/nvim-notify.lua)
+        (builtins.readFile lua/nvim-tree.lua)
+        (builtins.readFile lua/snippets.lua)
+        (builtins.readFile lua/telescope.lua)
+        (builtins.readFile lua/todo-comments.lua)
+        (builtins.readFile lua/trouble.lua)
+        (builtins.readFile lua/vim-dispatch.lua)
       ];
 
-      # neovim ftplugins, TODO loop
+      # neovim ftplugins, TODO copy dir
       "${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
       "${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
       "${config.xdg.configHome}/nvim/after/ftplugin/markdown.lua".text = builtins.readFile after/ftplugin/markdown.lua;
@@ -74,56 +75,55 @@
     # Extra packages available to nvim
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.extraPackages
     extraPackages = with pkgs; [
-      gcc # to compile tree-sitter grammar
+      # bash-language-server
+      # docker-compose-language-service
+      # elmPackages.elm-format
+      # haskellPackages.brittany
       # nixfmt
-      # rustfmt
-      commitlint
-      wget # used by lsp-installer , use :checkhealth in vim
-      # texlive.combined.scheme-full
-      redis # dadbod deps
-      postgresql # dadbod deps
-      fd # Telescope deps
-      universal-ctags
-      # Treesitter
-      tree-sitter
-      # tree-sitter-grammars.tree-sitter-python
-      # LSP deps
-      sumneko-lua-language-server # lua
-      terraform-ls
-      sqls
-      # solargraph
+      # nodePackages_latest.sql-language-server
+      # rubocop
       # ruby-lsp
-      nil # nix lang server
+      # rust-analyzer
+      # rustfmt
+      # solargraph
+      # stylua => sumneko does it all now, has a formatter etc
+      # texlive.combined.scheme-full
+      # tree-sitter-grammars.tree-sitter-python
+      alejandra # nix code formatter
       buf-language-server # buf
       cmake-format
-      # docker-compose-language-service
-      # NULL-LS (format/diagnostic/code-actions etc) deps
-      alejandra # nix code formatter
-      statix # nix lints
-      pgformatter # https://github.com/darold/pgFormatter
-      pyright
-      ripgrep # used by obsidian nvim
-      # rubocop
-      terraform # for terraform_fmt
-      nodePackages.prettier
+      commitlint
+      fd # Telescope deps
+      gcc # to compile tree-sitter grammar
+      hadolint # docker linter # NOTE currently broken
+      nil # nix lang server
+      nodePackages_latest.bash-language-server
+      nodePackages_latest.dockerfile-language-server-nodejs
       nodePackages_latest.eslint
+      nodePackages_latest.prettier
+      nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-langservers-extracted #html css json eslint
       nodePackages_latest.yaml-language-server
-      nodePackages_latest.bash-language-server
-      nodePackages_latest.typescript-language-server
-      # bash-language-server
-      nodePackages_latest.dockerfile-language-server-nodejs
-      # nodePackages_latest.sql-language-server
+      pgformatter # https://github.com/darold/pgFormatter
+      postgresql # dadbod deps
+      pyright
       python312Packages.black # python fmt
       python312Packages.flake8
-      vim-vint # for vimscripts
+      redis # dadbod deps
+      ripgrep # used by obsidian nvim
+      rubyPackages.erb-formatter
+      rubyPackages.htmlbeautifier
       shfmt # shell script formatter
-      hadolint # docker linter # NOTE currently broken
+      sqls
+      statix # nix lints
+      sumneko-lua-language-server # lua
       tailwindcss-language-server # tailwind lsp
-      # stylua => sumneko does it all now, has a formatter etc
-      # elmPackages.elm-format
-      # rust-analyzer
-      # haskellPackages.brittany
+      terraform # for terraform_fmt
+      terraform-ls
+      tree-sitter
+      universal-ctags
+      vim-vint # for vimscripts
+      wget # used by lsp-installer , use :checkhealth in vim
     ];
 
     plugins = with pkgs.vimPlugins; let

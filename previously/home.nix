@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
@@ -31,8 +28,6 @@
       nix-prefetch-github # no working at times cant verify sha256 sums
       postgresql # dadbod requires psql
       roboto-slab # used by AltaCV
-      rubyPackages.erb-formatter
-      rubyPackages.htmlbeautifier
       silver-searcher # get use to ag instead of ack
       slack
       tldr # when man is tldr
