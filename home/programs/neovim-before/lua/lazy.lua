@@ -7,5 +7,5 @@ require('lazy').setup({
 			},
 		}
 	},
-	install = { colorscheme = { "gruvbox" } }
+	install = { colorscheme = { "gruvbox" } },
 })

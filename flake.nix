@@ -50,13 +50,13 @@
     user = "albandiguer";
     overlays = [inputs.neovim-nightly-overlay.overlays.default];
     commonDarwinModules = [
-      ./darwin-configuration.nix
+      ./darwin/macbook.nix
       home-manager.darwinModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.${user} = import ./previously/home.nix;
-        users.users.albandiguer = {
+        home-manager.users.${user} = import ./home/users/${user}/home.nix;
+        users.users.${user} = {
           name = user;
           home = "/Users/albandiguer";
         };
@@ -81,6 +81,8 @@
       }
     ];
   in {
+    # TODO: here we put everything in that darwin config when it shall be split and more granular
+    # see https://github.com/Kidsan/nixos-config/blob/main/flake.nix
     darwinConfigurations = {
       # name figured with `scutil --get LocalHostName|pbcopy`
       Albans-MacBook-Air = darwin.lib.darwinSystem {modules = commonDarwinModules;};
