@@ -1,5 +1,21 @@
 # 📺 Machines configurations
 
+<!--toc:start-->
+- [Setup](#setup)
+- [Neovim](#neovim)
+  - [Languages](#languages)
+  - [Ruby](#ruby)
+- [Mise(-en-place)](#mise-en-place)
+- [Gist](#gist)
+  - [Reminders/mappings](#remindersmappings)
+- [Tmux](#tmux)
+  - [Keys](#keys)
+- [Fonts](#fonts)
+- [Todos](#todos)
+<!--toc:end-->
+
+---
+
 Using nix-darwin, home-manager, neovim and a few others tools
 
 ## Setup 
@@ -37,7 +53,7 @@ flowchart LR
 
 Why the current setup:
 
-- `withRuby=false` to use a pristine ruby environment (i.e. the one loaded in current directory with mise)
+- `withRuby=false` to use a pristine ruby environment (i.e. the one loaded in current directory with mise, or mason dir for anything lsp $HOME/.local/share/nvim/mason/)
 - `=true` would install a ruby in nix store, when installing stuff from wihin neovim it would try to write to that nix store location and fail
 - in neovim type `:!gem env` to see whats exactly loaded. 
 - However mise installed ruby does not ship with `neovim` gem out of the box, it needs to be installed on every new version. Luckily [mise]() comes with that option with a file `~/.default-gems`, see `mise.nix` and that file in `dotfiles/`
@@ -81,6 +97,7 @@ gt -> Type definition
 gs -> Signature
 gd -> Definition
 gr -> References
+ca -> Code action
 ```
 
 
@@ -105,32 +122,39 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 ## Todos
 
-- [x] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
-- [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
-- [x] install nix-darwin & start services like skhd/yabai
-- [x] get nvim from nighty builds overlay (0.10+)
-- [x] evaluate vsnips vs luasnip
-- [x] configure friendly snippets (rails...)
-- [x] branch -> mutli platform flake
-- [x] Tweak lsp mappings (refactoring & code actions?)
-- [x] Fix gist vim 
-- [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
-- [x] Cleanup gists
-- [x] Raycast
-- [x] obsidian neovim https://github.com/epwalsh/obsidian.nvim
-- [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
-- [ ] switch algo for rsa key to ed25519
-- [ ] markdown formatter
-- [ ] https://github.com/danymat/neogen vs chatgpt plugin
-- [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
-- [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-- [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
-- [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
-- [ ] Look at latex editor config with preview (saved in Pocket)
 - [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
-- [x] tester ~devenv~ mise for python/ruby
-- [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
-- [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
-- [ ] neovim-devdocs
-- [ ] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
 - [ ] https://github.com/kristijanhusak/vim-dadbod-completion
+- [ ] Look at latex editor config with preview (saved in Pocket)
+- [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
+- [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
+- [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+- [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
+- [ ] https://github.com/danymat/neogen vs chatgpt plugin
+- [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
+- [ ] markdown formatter
+- [ ] neovim-devdocs
+- [ ] switch algo for rsa key to ed25519
+- [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
+- [ ] [proselint]()
+
+<details><summary>Done</summary>
+
+- [x] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
+- [x] Cleanup gists
+- [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
+- [x] Fix gist vim 
+- [x] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
+- [x] Raycast
+- [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
+- [x] Tweak lsp mappings (refactoring & code actions?)
+- [x] branch -> mutli platform flake
+- [x] configure friendly snippets (rails...)
+- [x] evaluate vsnips vs luasnip
+- [x] get nvim from nighty builds overlay (0.10+)
+- [x] install nix-darwin & start services like skhd/yabai
+- [x] obsidian neovim https://github.com/epwalsh/obsidian.nvim
+- [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
+- [x] tester ~devenv~ mise for python/ruby
+- [x] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
+
+</details>
