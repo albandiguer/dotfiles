@@ -3,49 +3,40 @@
   pkgs,
   ...
 }: {
-  home = {
-    # TODO convert that to automatically pick all files? order? something like this?
-    # home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" (
-    #   builtins.map
-    #     (n: (builtins.readFile "lua/${n}"))
-    #     (builtins.attrNames (builtins.readDir ./lua))
-    # );
-    file = {
-      # Lua files for neovim need to be in :h runtimepath
-      # https://github.com/nix-community/home-manager/issues/1834
-      # https://hhoeflin.github.io/nix/home_folder_nix/
-      # https://teu5us.github.io/nix-lib.html
-      "${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
-        (builtins.readFile lua/settings.lua)
-        (builtins.readFile lua/treesitter.lua)
-
-        (builtins.readFile lua/obsidian.lua)
-        (builtins.readFile lua/cmp.lua)
-        (builtins.readFile lua/devdocs.lua)
-        # (builtins.readFile lua/lazy.lua)
-        (builtins.readFile lua/lspconfig.lua)
-        (builtins.readFile lua/lualine.lua)
-        (builtins.readFile lua/markdown-preview.lua)
-        (builtins.readFile lua/neoai.lua)
-        (builtins.readFile lua/neogen.lua)
-        (builtins.readFile lua/null-ls.lua)
-        (builtins.readFile lua/nvim-notify.lua)
-        (builtins.readFile lua/nvim-tree.lua)
-        (builtins.readFile lua/snippets.lua)
-        (builtins.readFile lua/telescope.lua)
-        (builtins.readFile lua/todo-comments.lua)
-        (builtins.readFile lua/trouble.lua)
-        (builtins.readFile lua/vim-dispatch.lua)
-      ];
-
-      # neovim ftplugins, TODO copy dir
-      "${config.xdg.configHome}/nvim/after/ftplugin/gitcommit.lua".text = builtins.readFile after/ftplugin/gitcommit.lua;
-      "${config.xdg.configHome}/nvim/after/ftplugin/lua.lua".text = builtins.readFile after/ftplugin/lua.lua;
-      "${config.xdg.configHome}/nvim/after/ftplugin/markdown.lua".text = builtins.readFile after/ftplugin/markdown.lua;
-      "${config.xdg.configHome}/nvim/after/ftplugin/ruby.lua".text = builtins.readFile after/ftplugin/ruby.lua;
-      "${config.xdg.configHome}/nvim/after/ftplugin/terraform.lua".text = builtins.readFile after/ftplugin/terraform.lua;
-    };
+  # Lua files for neovim need to be in :h runtimepath
+  # https://github.com/nix-community/home-manager/issues/1834
+  # https://hhoeflin.github.io/nix/home_folder_nix/
+  # https://teu5us.github.io/nix-lib.html
+  # type :rtp in neovim to understand this
+  home.file."${config.xdg.configHome}/nvim/" = {
+    source = ./nvim;
+    recursive = true;
   };
+
+  # Hacky thing here
+  home.file."${config.xdg.configHome}/nvim/lua/main.lua".text = builtins.concatStringsSep "\n" [
+    (builtins.readFile nvim/lua/settings.lua)
+    (builtins.readFile nvim/lua/treesitter.lua)
+
+    (builtins.readFile nvim/lua/obsidian.lua)
+    (builtins.readFile nvim/lua/cmp.lua)
+    (builtins.readFile nvim/lua/devdocs.lua)
+    # (builtins.readFilnvim/e lua/lazy.lua)
+    (builtins.readFile nvim/lua/lspconfig.lua)
+    (builtins.readFile nvim/lua/lualine.lua)
+    (builtins.readFile nvim/lua/markdown-preview.lua)
+    (builtins.readFile nvim/lua/neoai.lua)
+    (builtins.readFile nvim/lua/neogen.lua)
+    (builtins.readFile nvim/lua/null-ls.lua)
+    (builtins.readFile nvim/lua/nvim-notify.lua)
+    (builtins.readFile nvim/lua/nvim-tree.lua)
+    (builtins.readFile nvim/lua/snippets.lua)
+    (builtins.readFile nvim/lua/telescope.lua)
+    (builtins.readFile nvim/lua/todo-comments.lua)
+    (builtins.readFile nvim/lua/trouble.lua)
+    (builtins.readFile nvim/lua/vim-dispatch.lua)
+  ];
+
 
   programs.neovim = {
     enable = true;
@@ -53,8 +44,7 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    # TODO load lua file see youtube video abt that, which?
-    extraConfig = builtins.readFile ./init.vim;
+    extraConfig =  builtins.readFile ./init.vim;
 
     # Enable Python 3 provider.
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.withPython3
@@ -114,7 +104,7 @@
       ripgrep # used by obsidian nvim
       rubyPackages.erb-formatter
       rubyPackages.htmlbeautifier
-      shfmt # shell script formatter
+      shfmt # shell script formatter;
       sqls
       statix # nix lints
       sumneko-lua-language-server # lua

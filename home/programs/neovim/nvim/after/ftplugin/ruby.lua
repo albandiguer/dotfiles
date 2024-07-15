@@ -33,3 +33,5 @@ end
 
 vim.api.nvim_set_keymap('n', '<Leader>t', ':lua SendToTmuxPane(true)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>T', ':lua SendToTmuxPane(false)<CR>', { noremap = true, silent = true })
+
+-- allo bonjour

@@ -4,10 +4,10 @@ apply:
 	nix run nix-darwin -- switch --flake .
 	# nix run nix-darwin --no-eval-cache -- switch --flake .
 
-update:
+upgrade:
 	nix flake update
 
-upgrade-nix:
+update:
 	sudo nix upgrade-nix
 
 # Sometimes updating breaks things

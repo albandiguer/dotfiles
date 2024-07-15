@@ -1,6 +1,3 @@
-local opt = vim.opt
-local g = vim.g
-
 -- Functional wrapper for mapping custom keybindings
 -- example: map("n", "(", "Trouble")
 function map(mode, lhs, rhs, opts)
@@ -11,22 +8,21 @@ function map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-g.mapleader = ","          -- set leader key to comma
+vim.g.mapleader = ","          -- set leader key to comma
 
-opt.colorcolumn = "80"     -- show 80 column
-opt.mouse = "a"            -- enable mouse
-opt.relativenumber = false -- show relative line numbers
-opt.number = true          -- show current line numbers
-opt.cursorline = false     -- highlight current line
+vim.opt.colorcolumn = "80"     -- show 80 column
+vim.opt.mouse = "a"            -- enable mouse
+vim.opt.relativenumber = false -- show relative line numbers
+vim.opt.number = true          -- show current line numbers
+vim.opt.cursorline = false     -- highlight current line
+vim.opt.ignorecase = true      -- search with ignore case
+vim.opt.smartcase = true       -- search with smart case
 
-opt.ignorecase = true      -- search with ignore case
-opt.smartcase = true       -- search with smart case
-
-opt.termguicolors = true   -- enable 24-bit RGB colors
+vim.opt.termguicolors = true   -- enable 24-bit RGB colors
 
 -- g['context_nvim_no_redraw'] = 1 -- context-nvim avoid flickering
 
-g['loaded_perl_provider'] = 0 -- do not load perl provider (checkhealth happy)
+vim.g['loaded_perl_provider'] = 0 -- do not load perl provider (checkhealth happy)
 
 -- map('i', '<C-l>', '<space>=>') -- using that mapping for snippets
 map('i', '<C-k>', '<space>->')
