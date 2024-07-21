@@ -21,7 +21,7 @@
     (builtins.readFile nvim/lua/obsidian.lua)
     (builtins.readFile nvim/lua/cmp.lua)
     (builtins.readFile nvim/lua/devdocs.lua)
-    # (builtins.readFilnvim/e lua/lazy.lua)
+    # (builtins.readFile nvim/lua/lazy.lua)
     (builtins.readFile nvim/lua/lspconfig.lua)
     (builtins.readFile nvim/lua/lualine.lua)
     (builtins.readFile nvim/lua/markdown-preview.lua)
@@ -37,14 +37,13 @@
     (builtins.readFile nvim/lua/vim-dispatch.lua)
   ];
 
-
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraConfig =  builtins.readFile ./init.vim;
+    extraConfig = builtins.readFile ./init.vim;
 
     # Enable Python 3 provider.
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.withPython3

@@ -136,6 +136,13 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] switch algo for rsa key to ed25519
 - [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
 - [ ] [proselint]()
+- [ ] folds
+- [ ] yanky
+- [ ] explore kickstart.nvim 
+
+### Refacto happening
+
+- Neovim config
 
 <details><summary>Done</summary>
 

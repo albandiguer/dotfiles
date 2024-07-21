@@ -12,8 +12,8 @@ null_ls.setup({
 		-- null_ls.builtins.diagnostics.rubocop, -- ruby static analysis, solargraph does that
 		-- null_ls.builtins.formatting.rubocop, -- ruby formatter
 		-- null_ls.builtins.formatting.stylua, -- sumneko now has a formatter
-		null_ls.builtins.code_actions.statix,  --  for nix
-		null_ls.builtins.diagnostics.commitlint, -- conventional commits
+		null_ls.builtins.code_actions.statix, --  for nix
+		-- null_ls.builtins.diagnostics.commitlint, -- conventional commits
 		-- null_ls.builtins.diagnostics.eslint,
 		-- null_ls.builtins.diagnostics.flake8,
 		null_ls.builtins.diagnostics.hadolint, -- dockerfiles
