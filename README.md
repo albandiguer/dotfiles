@@ -144,6 +144,21 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 - Neovim config
 
+#### Kickstart
+- [x] Neotree ? included or byo
+- [ ] mason lsp on a per project, currently it starts both ruby and solargraph :/
+- [ ] figure some shortcuts 
+  - [ ] switch buffers
+- [ ] ~~added kickstarter as a submodule~~
+- [ ] Markdown preview
+- [ ] Dadbod
+- [ ] Colorschemes
+```shell
+git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/programs/kickstart-nvim/nvim/
+```
+=> although the idea is decent, in practice not good as for nix to work you need to check in changes in main git, related to derivation?
+- [ ] Install MarkdownPreview
+
 <details><summary>Done</summary>
 
 - [x] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
