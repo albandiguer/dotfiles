@@ -18,7 +18,7 @@
     (builtins.readFile nvim/lua/settings.lua)
     (builtins.readFile nvim/lua/treesitter.lua)
 
-    (builtins.readFile nvim/lua/obsidian.lua)
+    # (builtins.readFile nvim/lua/obsidian.lua)
     (builtins.readFile nvim/lua/cmp.lua)
     (builtins.readFile nvim/lua/devdocs.lua)
     # (builtins.readFile nvim/lua/lazy.lua)
