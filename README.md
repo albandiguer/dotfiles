@@ -150,9 +150,10 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] figure some shortcuts 
   - [ ] switch buffers
 - [ ] ~~added kickstarter as a submodule~~
-- [ ] Markdown preview
-- [ ] Dadbod
-- [ ] Colorschemes
+- [x] Markdown preview
+- [x] Dadbod
+- [ ] vim-dadbod-completion
+- [x] Colorschemes
 ```shell
 git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/programs/kickstart-nvim/nvim/
 ```
