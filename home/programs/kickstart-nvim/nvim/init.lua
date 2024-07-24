@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -776,8 +776,46 @@ require('lazy').setup({
     end,
   },
 
-
+  -- dadbod
   {
+    'tpope/vim-dadbod',
+    cmd = { 'DB', 'DBUI' },
+    keys = {
+      { '<leader>db', '<cmd>DBUI<CR>', { desc = 'Open DBUI' } },
+    },
+    config = function()
+      vim.g.db_ui_show_help = 0
+      vim.g.db_ui_win_position = 'left'
+      vim.g.db_ui_use_nerd_fonts = 1
+      vim.g.db_ui_winwidth = 35
+      vim.g.db_ui_winheight = 15
+      vim.g.db_ui_auto_execute_table_helpers = 1
+      vim.g.db_ui_table_helpers = {
+        postgres = {
+          select = 'SELECT * FROM %s LIMIT 100',
+          count = 'SELECT COUNT(*) FROM %s',
+          delete = 'DELETE FROM %s WHERE id = ?',
+          update = 'UPDATE %s SET name = ? WHERE id = ?',
+          insert = 'INSERT INTO %s (name) VALUES (?)',
+        },
+      }
+    end,
+  },
+  { 'kristijanhusak/vim-dadbod-completion', after = 'vim-dadbod' },
+  { 'kristijanhusak/vim-dadbod-ui',         after = 'vim-dadbod' },
+
+  -- markdown preview
+  {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && yarn install',
+    ft = { 'markdown' },
+    cmd = { 'MarkdownPreview' },
+    config = function()
+      vim.g.mkdp_auto_start = 0
+      vim.g.mkdp_auto_close = 0
+      vim.g.mkdp_refresh_slow = 0
+      vim.g.mkdp_browser = 'firefox'
+    end,
   },
 
   { -- You can easily change to a different colorscheme.
