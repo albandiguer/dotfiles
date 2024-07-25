@@ -776,48 +776,6 @@ require('lazy').setup({
     end,
   },
 
-  -- dadbod
-  {
-    'tpope/vim-dadbod',
-    cmd = { 'DB', 'DBUI' },
-    keys = {
-      { '<leader>db', '<cmd>DBUI<CR>', { desc = 'Open DBUI' } },
-    },
-    config = function()
-      vim.g.db_ui_show_help = 0
-      vim.g.db_ui_win_position = 'left'
-      vim.g.db_ui_use_nerd_fonts = 1
-      vim.g.db_ui_winwidth = 35
-      vim.g.db_ui_winheight = 15
-      vim.g.db_ui_auto_execute_table_helpers = 1
-      vim.g.db_ui_table_helpers = {
-        postgres = {
-          select = 'SELECT * FROM %s LIMIT 100',
-          count = 'SELECT COUNT(*) FROM %s',
-          delete = 'DELETE FROM %s WHERE id = ?',
-          update = 'UPDATE %s SET name = ? WHERE id = ?',
-          insert = 'INSERT INTO %s (name) VALUES (?)',
-        },
-      }
-    end,
-  },
-  { 'kristijanhusak/vim-dadbod-completion', after = 'vim-dadbod' },
-  { 'kristijanhusak/vim-dadbod-ui',         after = 'vim-dadbod' },
-
-  -- markdown preview
-  {
-    'iamcco/markdown-preview.nvim',
-    run = 'cd app && yarn install',
-    ft = { 'markdown' },
-    cmd = { 'MarkdownPreview' },
-    config = function()
-      vim.g.mkdp_auto_start = 0
-      vim.g.mkdp_auto_close = 0
-      vim.g.mkdp_refresh_slow = 0
-      vim.g.mkdp_browser = 'firefox'
-    end,
-  },
-
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -825,6 +783,7 @@ require('lazy').setup({
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     -- 'folke/tokyonight.nvim',
     'savq/melange-nvim',
+    -- 'slugbyte/lackluster.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
@@ -931,7 +890,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
