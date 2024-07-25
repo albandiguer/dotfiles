@@ -8,7 +8,7 @@ set clipboard^=unnamed,unnamedplus
 " when a bracket is inserted, briefly show the matching one
 set showmatch
 
-" execute command files, add a .vimrc.lua in your project for example to
+" execute command files, add a .nvim.lua in your project for example to
 " config lsp
 set exrc
 
