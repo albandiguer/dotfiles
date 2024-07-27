@@ -190,6 +190,21 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- enable exrc
 vim.opt.exrc = true
 
+-- colorcolumn
+vim.opt.colorcolumn = '80'
+
+-- quick arrow
+vim.keymap.set('i', '<C-k>', '<space>->')
+
+-- ctrl-c == esc
+vim.keymap.set('i', '<C-c>', '<esc>')
+
+-- a select all
+vim.keymap.set('n', '<C-a>', '<esc>ggVG<CR>') -- select all
+
+-- display previous buffer
+vim.keymap.set('n', ',,', '<c-^>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

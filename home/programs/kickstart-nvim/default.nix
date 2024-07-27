@@ -20,7 +20,7 @@ in {
     vimAlias = true;
     coc.enable = false;
     withNodeJs = true;
-    withRuby = false; # using mise instead
+    withRuby = false; # using mise, type `:!which ruby` to confirm
 
     plugins = [
       treesitterWithGrammars
