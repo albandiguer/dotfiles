@@ -145,7 +145,7 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] [proselint]()
 - [ ] folds
 - [ ] yanky
-- [ ] explore kickstart.nvim 
+- [x] explore kickstart.nvim 
 
 ### Refacto happening
 
@@ -154,7 +154,7 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 #### Kickstart
 - [x] Neotree ? included or byo
 - [x] Mason lsp on a per project, currently it starts both ruby and solargraph :/
-- [ ] Figure some mappings 
+- [x] Figure some mappings 
   - [x] Switch buffers leaderleader
   - [x] Open NeoTree
   - [x] Previous buffer
@@ -171,9 +171,10 @@ git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/progr
 - [ ] Code sideproject couple hours to get a hand of it
 - [x] Bookmarks
 - [x] Dispatch
-- [ ] Fugitive
+- [x] Fugitive
 - [ ] luasnip
 - [ ] copilot
+- [ ] prob with git amend 
 
 <details><summary>Done</summary>
 
