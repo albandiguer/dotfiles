@@ -167,13 +167,13 @@ git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/progr
 - [x] Dadbod
 - [x] vim-dadbod-completion
 - [x] Colorschemes
-- [ ] Filetype plugins
+- [x] Filetype plugins
 - [ ] Code sideproject couple hours to get a hand of it
 - [x] Bookmarks
 - [x] Dispatch
 - [x] Fugitive
 - [ ] luasnip
-- [ ] copilot
+- [x] copilot
 - [ ] prob with git amend 
 
 <details><summary>Done</summary>
