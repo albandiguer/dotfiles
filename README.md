@@ -53,14 +53,21 @@ flowchart LR
 
 Why the current setup:
 
-- `withRuby=false` to use a pristine ruby environment (i.e. the one loaded in current directory with mise, or mason dir for anything lsp $HOME/.local/share/nvim/mason/)
+- `withRuby=false` so neovim does not create its own ruby environment, but rather use mise (local or global). Note that mason also comes with its own ruby env if needs
 - `=true` would install a ruby in nix store, when installing stuff from wihin neovim it would try to write to that nix store location and fail
 - in neovim type `:!gem env` to see whats exactly loaded. 
 - However mise installed ruby does not ship with `neovim` gem out of the box, it needs to be installed on every new version. Luckily [mise]() comes with that option with a file `~/.default-gems`, see `mise.nix` and that file in `dotfiles/`
 
 
+### exrc
 
-
+Example, changing colorscheme and setting up a lsp natively bypassing mason
+(ruby_lsp intalled in Gemfile or in ~/.default-gems).
+```
+# .nvim.lua
+vim.cmd("colorscheme catppuccin")
+require("lspconfig").ruby_lsp.setup({})
+```
 
 ## Mise(-en-place)
 
@@ -146,19 +153,27 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 #### Kickstart
 - [x] Neotree ? included or byo
-- [ ] mason lsp on a per project, currently it starts both ruby and solargraph :/
-- [ ] figure some shortcuts 
-  - [ ] switch buffers
-- [ ] ~~added kickstarter as a submodule~~
-- [x] Markdown preview
-- [x] Dadbod
-- [x] vim-dadbod-completion
-- [x] Colorschemes
+- [x] Mason lsp on a per project, currently it starts both ruby and solargraph :/
+- [ ] Figure some mappings 
+  - [x] Switch buffers leaderleader
+  - [x] Open NeoTree
+  - [x] Previous buffer
+- [ ] ~~Added kickstarter as a submodule~~
 ```shell
 git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/programs/kickstart-nvim/nvim/
 ```
 => although the idea is decent, in practice not good as for nix to work you need to check in changes in main git, related to derivation?
-- [ ] Install MarkdownPreview
+- [x] Markdown preview
+- [x] Dadbod
+- [x] vim-dadbod-completion
+- [x] Colorschemes
+- [ ] Filetype plugins
+- [ ] Code sideproject couple hours to get a hand of it
+- [x] Bookmarks
+- [x] Dispatch
+- [ ] Fugitive
+- [ ] luasnip
+- [ ] copilot
 
 <details><summary>Done</summary>
 
