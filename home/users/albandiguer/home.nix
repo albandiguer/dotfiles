@@ -90,6 +90,7 @@
     ../../programs/git.nix
     ../../programs/gh.nix
     ../../programs/kickstart-nvim
+    # ../../programs/lazyvim
     ../../programs/starship.nix
     ../../programs/tmux.nix
     ../../programs/vscode.nix

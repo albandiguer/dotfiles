@@ -182,10 +182,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- vim.keymap.set('n', '<C-h>', '<Cmd>NvimTmuxNavigateLeft<CR>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-l>', '<Cmd>NvimTmuxNavigateRight<CR>', { desc = 'Move focus to the right window' })
+-- vim.keymap.set('n', '<C-j>', '<Cmd>NvimTmuxNavigateDown<CR>', { desc = 'Move focus to the lower window' })
+-- vim.keymap.set('n', '<C-k>', '<Cmd>NvimTmuxNavigateUp<CR>', { desc = 'Move focus to the upper window' })
 
 -- enable exrc
 vim.opt.exrc = true
@@ -286,7 +286,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -325,7 +325,7 @@ require('lazy').setup({
         -- This is only run then, not every time Neovim starts up.
         build = 'make',
 
-        -- `cond` is a condition used to determine whether this plugin should be
+        -- `conf` is a condition used to determine whether this plugin should be
         -- installed and loaded.
         cond = function()
           return vim.fn.executable 'make' == 1
@@ -334,7 +334,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -427,7 +427,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
@@ -482,7 +482,7 @@ require('lazy').setup({
           -- In this case, we create a function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LfP: ' .. desc })
           end
 
           -- Jump to the definition of the word under your cursor.
@@ -684,29 +684,54 @@ require('lazy').setup({
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
       {
-        'L3MON4D3/LuaSnip',
-        build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
-        end)(),
+        'saadparwaiz1/cmp_luasnip',
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          {
-            'rafamadriz/friendly-snippets',
-            config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
-            end,
+          'L3MON4D3/LuaSnip',
+          lazy = false,
+          build = (function()
+            -- Build Step is needed for regex support in snippets.
+            -- This step is not supported in many windows environments.
+            -- Remove the below condition to re-enable on windows.
+            if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+              return
+            end
+            return 'make install_jsregexp'
+          end)(),
+          dependencies = {
+            -- `friendly-snippets` contains a variety of premade snippets.
+            --    See the README about individual language/framework/plugin snippets:
+            --    https://github.com/rafamadriz/friendly-snippets
+            {
+              'rafamadriz/friendly-snippets',
+              config = function()
+                require('luasnip.loaders.from_vscode').lazy_load()
+              end,
+            },
           },
+          -- config = function()
+          --   require('luasnip.loaders.from_lua').load { paths = '~/.snippets' }
+          -- end,
         },
       },
-      'saadparwaiz1/cmp_luasnip',
+
+      -- copilot
+      {
+        'zbirenbaum/copilot-cmp',
+        event = 'InsertEnter',
+        config = function()
+          require('copilot_cmp').setup()
+        end,
+        dependencies = {
+          'zbirenbaum/copilot.lua',
+          cmd = 'Copilot',
+          config = function()
+            require('copilot').setup {
+              suggestion = { enabled = false },
+              panel = { enabled = false },
+            }
+          end,
+        },
+      },
 
       -- Adds other completion capabilities.
       --  nvim-cmp does not ship with all sources by default. They are split
@@ -718,10 +743,13 @@ require('lazy').setup({
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
       -- Extend filetypes to embed other snippets
-      luasnip.filetype_extend("ruby", { "rails" })
-      luasnip.filetype_extend("eruby", { "html" })
-      luasnip.config.setup {}
+      -- luasnip.config.setup {
+      -- require('luasnip.loaders.from_vscode').lazy_load(),
+      -- luasnip.filetype_extend('eruby', { 'html' }),
+      -- luasnip.filetype_extend('ruby', { 'rails' }),
+      -- }
 
       cmp.setup {
         snippet = {
@@ -790,17 +818,17 @@ require('lazy').setup({
             group_index = 0,
           },
           { name = 'nvim_lsp' },
-          { name = "copilot" }, -- not ideal to have it here, ideally we could add it from the plugin file instead
+          { name = 'copilot' }, -- not ideal to have it here, ideally we could add it from the plugin file instead
           { name = 'luasnip' },
           { name = 'path' },
         },
         formatting = {
-          format = require('lspkind').cmp_format({
-            mode = "symbol",
+          format = lspkind.cmp_format {
+            mode = 'symbol',
             max_width = 50,
-            symbol_map = { Copilot = "" }
-          })
-        }
+            symbol_map = { Copilot = '' },
+          },
+        },
       }
     end,
   },
@@ -881,10 +909,10 @@ require('lazy').setup({
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
+          init_selection = '<C-space>',
+          node_incremental = '<C-space>',
           scope_incremental = false,
-          node_decremental = "<bs>",
+          node_decremental = '<bs>',
         },
       },
       textobjects = { enable = true },
@@ -951,4 +979,5 @@ require('lazy').setup({
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
 -- vim: ts=2 sts=2 sw=2 et
