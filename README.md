@@ -132,7 +132,7 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] https://github.com/kristijanhusak/vim-dadbod-completion
 - [ ] Look at latex editor config with preview (saved in Pocket)
-- [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc)
+- [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc) - compare w/ mise
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
@@ -146,6 +146,7 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] folds
 - [ ] yanky
 - [x] explore kickstart.nvim 
+- [ ] obsidian neovim https://github.com/epwalsh/obsidian.nvim
 
 ### Refacto happening
 
@@ -164,17 +165,17 @@ git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/progr
 ```
 => although the idea is decent, in practice not good as for nix to work you need to check in changes in main git, related to derivation?
 - [x] Markdown preview
-- [x] Dadbod
+- [ ] Dadbod
 - [x] vim-dadbod-completion
 - [x] Colorschemes
 - [x] Filetype plugins
-- [ ] Code sideproject couple hours to get a hand of it
 - [x] Bookmarks
 - [x] Dispatch
 - [x] Fugitive
-- [ ] luasnip
+- [x] luasnip
 - [x] copilot
 - [ ] prob with git amend 
+- [ ] Code sideproject couple hours to get a hand of it
 
 <details><summary>Done</summary>
 
@@ -191,7 +192,6 @@ git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/progr
 - [x] evaluate vsnips vs luasnip
 - [x] get nvim from nighty builds overlay (0.10+)
 - [x] install nix-darwin & start services like skhd/yabai
-- [x] obsidian neovim https://github.com/epwalsh/obsidian.nvim
 - [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
 - [x] tester ~devenv~ mise for python/ruby
 - [x] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
