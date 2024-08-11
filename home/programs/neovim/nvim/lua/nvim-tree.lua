@@ -8,16 +8,16 @@ require("nvim-tree").setup({
 	view = {
 		width = {
 			min = 30,
-			max = 40
-		}
+			max = 40,
+		},
 	},
 	filters = {
 		dotfiles = false,
 	},
 	renderer = {
-		full_name = false
+		full_name = false,
 	},
 })
 
-map('n', '<C-n>', ':NvimTreeToggle')
-map('n', '<C-b>', ':NvimTreeFindFile<CR>')
+map("n", "<C-n>", ":NvimTreeToggle")
+map("n", "<C-b>", ":NvimTreeFindFile<CR>")

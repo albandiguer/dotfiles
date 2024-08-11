@@ -1,10 +1,16 @@
 {pkgs, ...}: let
-  treesitterWithGrammars = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+
+  treesitterWithPlugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
+    plugins: with plugins; [ 
+      tree-sitter-latex 
+    ]
+  );
 
   treesitter-parsers = pkgs.symlinkJoin {
     name = "treesitter-parsers";
-    paths = treesitterWithGrammars.dependencies;
+    paths = treesitterWithPlugins.dependencies;
   };
+
 in {
   home.packages = with pkgs; [
     ripgrep
@@ -22,9 +28,14 @@ in {
     withNodeJs = true;
     withRuby = false; # using mise, type `:!which ruby` to confirm
 
-    plugins = [
-      treesitterWithGrammars
+    plugins =  [
+      treesitterWithPlugins
     ];
+
+    # Require that albandiguer/init.lua file linked dynamically below
+    extraConfig = ''
+      lua require('albandiguer')
+    '';
   };
 
   home.file."./.config/nvim/" = {
@@ -33,6 +44,9 @@ in {
   };
 
   home.file."./.config/nvim/lua/albandiguer/init.lua".text = ''
+    -- Add treesitter plugin path
+    vim.opt.runtimepath:append("${treesitterWithPlugins}")
+    -- Add treesitter parsers path
     vim.opt.runtimepath:append("${treesitter-parsers}")
   '';
 
@@ -40,6 +54,6 @@ in {
   # we hardcode a symlink here so that we can refer to it in our lazy config
   home.file."./.local/share/nvim/nix/nvim-treesitter/" = {
     recursive = true;
-    source = treesitterWithGrammars;
+    source = treesitterWithPlugins;
   };
 }

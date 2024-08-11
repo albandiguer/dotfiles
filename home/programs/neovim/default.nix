@@ -206,6 +206,7 @@
       nvim-notify
       nvim-tree-lua
       nvim-treesitter-context
+      # nvim-treesitter.withAllGrammars # TODO this is good enough, no need var above?
       nvim-treesitter-with-plugins
       nvim-web-devicons
       obsidian-nvim
