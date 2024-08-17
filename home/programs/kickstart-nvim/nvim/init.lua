@@ -896,6 +896,7 @@ require('lazy').setup({
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
+      parser_install_dir = vim.fn.stdpath 'data' .. '/nix/nvim-treesitter',
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -908,6 +909,7 @@ require('lazy').setup({
       textobjects = { enable = true },
     },
     config = function(_, opts)
+      require 'albandiguer.treesitter-nix-paths' -- this is added in kickstart-nvim/default.nix
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
@@ -937,7 +939,6 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --

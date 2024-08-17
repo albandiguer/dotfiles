@@ -1,14 +1,10 @@
 {pkgs, ...}: let
 
-  treesitterWithPlugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (
-    plugins: with plugins; [ 
-      tree-sitter-latex 
-    ]
-  );
+  treesitterWithAllGrammars = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
 
-  treesitter-parsers = pkgs.symlinkJoin {
-    name = "treesitter-parsers";
-    paths = treesitterWithPlugins.dependencies;
+  treesitterParsers = pkgs.symlinkJoin {
+    name = "treesitterParsers";
+    paths = treesitterWithAllGrammars.dependencies;
   };
 
 in {
@@ -29,13 +25,7 @@ in {
     withRuby = false; # using mise, type `:!which ruby` to confirm
 
     plugins =  [
-      treesitterWithPlugins
     ];
-
-    # Require that albandiguer/init.lua file linked dynamically below
-    extraConfig = ''
-      lua require('albandiguer')
-    '';
   };
 
   home.file."./.config/nvim/" = {
@@ -43,17 +33,24 @@ in {
     recursive = true;
   };
 
-  home.file."./.config/nvim/lua/albandiguer/init.lua".text = ''
+  # Add treesitter-nix-paths.lua file so we can require it from lazy config function evaluated at runtimne
+  # Lazy cleans neovim runtimepath on start (see :set runtimepath?) so we re-add these after
+  home.file."./.config/nvim/lua/albandiguer/treesitter-nix-paths.lua".text = ''
     -- Add treesitter plugin path
-    vim.opt.runtimepath:append("${treesitterWithPlugins}")
+    vim.opt.runtimepath:prepend("${treesitterWithAllGrammars}")
     -- Add treesitter parsers path
-    vim.opt.runtimepath:append("${treesitter-parsers}")
+    vim.opt.runtimepath:prepend("${treesitterParsers}")
   '';
+  # TODO: here we need to require that file somwwhere
 
   # Treesitter is configured as a locally developed module in lazy.nvim
   # we hardcode a symlink here so that we can refer to it in our lazy config
+  # > ~/.local/share/nvim is where Neovim stores user-specific data that supports the operation, customization, and extension of the editor. It helps in managing plugins, storing runtime files, and keeping persistent data, all of which are crucial for a smooth and personalized Neovim experience.
+  # NOTE: so this is used in 
+  # parser_install_dir = vim.fn.stdpath 'data' .. '/nix/nvim-treesitter',
+  # verify it works fine
   home.file."./.local/share/nvim/nix/nvim-treesitter/" = {
     recursive = true;
-    source = treesitterWithPlugins;
+    source = treesitterWithAllGrammars;
   };
 }

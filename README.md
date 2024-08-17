@@ -25,49 +25,8 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```
 - Clone this repo and run `make` in it
 
-## Neovim
+## [Neovim](./home/programs/kickstart-nvim/README.md)
 
-### Languages 
-- tree-sitter: syntax support for most languages
-- cmp: completion plugin (tap into nvim-lsp, copilot, snippets engines etc.)
-- nvim-lsp: support for language server protocol, install them individually
-- null-ls: support for non-lsp tools to hook into the lsp client 
-```mermaid
-flowchart LR
-  cmp["cmp"]
-  copilot["copilot"]
-  not-lsp["Non LSP tools"]
-  null-ls["Null LS"]
-  nvim-lsp["nvim-lsp plugin"]
-  regular-lsp["Regular LSP"]
-  not-lsp --> null-ls
-  null-ls --> nvim-lsp
-  regular-lsp --> nvim-lsp
-  nvim-lsp --> cmp
-  copilot --> cmp
-  luasnip --> cmp
-  friendly-snippets --> luasnip
-```
-
-### Ruby
-
-Why the current setup:
-
-- `withRuby=false` so neovim does not create its own ruby environment, but rather use mise (local or global). Note that mason also comes with its own ruby env if needs
-- `=true` would install a ruby in nix store, when installing stuff from wihin neovim it would try to write to that nix store location and fail
-- in neovim type `:!gem env` to see whats exactly loaded. 
-- However mise installed ruby does not ship with `neovim` gem out of the box, it needs to be installed on every new version. Luckily [mise]() comes with that option with a file `~/.default-gems`, see `mise.nix` and that file in `dotfiles/`
-
-
-### exrc
-
-Example, changing colorscheme and setting up a lsp natively bypassing mason
-(ruby_lsp intalled in Gemfile or in ~/.default-gems).
-```
-# .nvim.lua
-vim.cmd("colorscheme catppuccin")
-require("lspconfig").ruby_lsp.setup({})
-```
 
 ## Mise(-en-place)
 
@@ -129,68 +88,20 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 ## Todos
 
-- [ ] Conventional commit tooling, look at nvim/after/ftplugin/gitcommit.lua and add a cli? Cocogitto? https://github.com/cocogitto/cocogitto seehttps://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
-- [ ] https://github.com/kristijanhusak/vim-dadbod-completion
-- [ ] Look at latex editor config with preview (saved in Pocket)
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc) - compare w/ mise
-- [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-- [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] https://github.com/danymat/neogen vs chatgpt plugin
-- [ ] https://neovimcraft.com/plugin/tadmccorkle/markdown.nvim/
-- [ ] markdown formatter
-- [ ] neovim-devdocs
 - [ ] switch algo for rsa key to ed25519
-- [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
-- [ ] [proselint]()
-- [ ] folds
-- [ ] yanky
-- [x] explore kickstart.nvim 
-- [ ] obsidian neovim https://github.com/epwalsh/obsidian.nvim
 
 ### Refacto happening
 
-- Neovim config
-
-#### Kickstart
-- [x] Neotree ? included or byo
-- [x] Mason lsp on a per project, currently it starts both ruby and solargraph :/
-- [x] Figure some mappings 
-  - [x] Switch buffers leaderleader
-  - [x] Open NeoTree
-  - [x] Previous buffer
-- [ ] ~~Added kickstarter as a submodule~~
-```shell
-git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/programs/kickstart-nvim/nvim/
-```
-=> although the idea is decent, in practice not good as for nix to work you need to check in changes in main git, related to derivation?
-- [x] Markdown preview
-- [ ] Dadbod
-- [x] vim-dadbod-completion
-- [x] Colorschemes
-- [x] Filetype plugins
-- [x] Bookmarks
-- [x] Dispatch
-- [x] Fugitive
-- [x] luasnip
-- [x] copilot
-- [ ] prob with git amend 
-- [ ] Code sideproject couple hours to get a hand of it
-
 <details><summary>Done</summary>
 
-- [x] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
 - [x] Cleanup gists
 - [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
-- [x] Fix gist vim 
-- [x] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
 - [x] Raycast
 - [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
-- [x] Tweak lsp mappings (refactoring & code actions?)
 - [x] branch -> mutli platform flake
-- [x] configure friendly snippets (rails...)
-- [x] evaluate vsnips vs luasnip
-- [x] get nvim from nighty builds overlay (0.10+)
 - [x] install nix-darwin & start services like skhd/yabai
 - [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
 - [x] tester ~devenv~ mise for python/ruby
