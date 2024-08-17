@@ -25,7 +25,9 @@ in {
     withRuby = false; # using mise, type `:!which ruby` to confirm
 
     plugins =  [
+      # treesitterWithAllGrammars
     ];
+
   };
 
   home.file."./.config/nvim/" = {

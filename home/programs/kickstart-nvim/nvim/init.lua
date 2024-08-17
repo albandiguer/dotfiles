@@ -888,13 +888,15 @@ require('lazy').setup({
     end,
   },
   {
-    'nvim-treesitter/nvim-treesitter',
+    -- 'nvim-treesitter/nvim-treesitter',
+    dir = vim.fn.stdpath 'data' .. '/nix/nvim-treesitter',
+    dev = true,
     build = ':TSUpdate',
     opts = {
       ensure_installed = {},
       auto_install = false,
       sync_install = false,
-      highlight = { enable = true },
+      highlight = { enable = false }, -- disabled as there is a bug, though color seem ok
       indent = { enable = true },
       parser_install_dir = vim.fn.stdpath 'data' .. '/nix/nvim-treesitter',
       incremental_selection = {
