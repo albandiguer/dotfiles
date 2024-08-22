@@ -16,7 +16,7 @@ require("obsidian").setup({
 	daily_notes = {
 		-- Optional, if you keep daily notes in a separate directory.
 		-- folder = "&#128198;" -- 📆
-		folder = "📆/YYYY/MM/DD"
+		folder = "📆",
 	},
 	-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 	completion = {
