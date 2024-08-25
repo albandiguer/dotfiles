@@ -18,4 +18,14 @@
       };
     };
   };
+
+  programs.wezterm = {
+    enable = true;
+    # extraConfig = ''
+    #   return {
+    #     font = wezterm.font("JetBrains Mono"),
+    #     font_size = 15.0
+    #   };
+    # '';
+  };
 }
