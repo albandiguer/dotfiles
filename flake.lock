@@ -179,6 +179,22 @@
         "type": "github"
       }
     },
+    "hashicorp-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1724143874,
+        "narHash": "sha256-6ayGA5XNNoh22+6SnnbKdG9VvwG99hU5Yc0tB235BKc=",
+        "owner": "hashicorp",
+        "repo": "homebrew-tap",
+        "rev": "4d203732da3ded257a236866d20fe73a3abe3d4f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hashicorp",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -384,6 +400,7 @@
     "root": {
       "inputs": {
         "darwin": "darwin",
+        "hashicorp-tap": "hashicorp-tap",
         "home-manager": "home-manager",
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",

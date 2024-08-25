@@ -28,6 +28,7 @@
         lpwd = "log -- ."; # git log for files in current directory
         nb = "checkout -b";
         ps = "push";
+        pushtostaging = "push origin HEAD:staging";
         rba = "rebase --abort";
         rbc = "rebase --continue";
         recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n30 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";

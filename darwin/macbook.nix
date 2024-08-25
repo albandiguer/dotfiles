@@ -119,7 +119,10 @@
       "libyaml"
       "iredis"
       "puma/puma/puma-dev"
+      # "hashicorp/tap/terraform"
       "postgresql@15"
+      "git-crypt"
+      "gpg"
     ];
     casks = [
       "dash"

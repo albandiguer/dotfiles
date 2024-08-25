@@ -34,6 +34,10 @@
       url = "github:puma/homebrew-puma";
       flake = false;
     };
+    hashicorp-tap = {
+      url = "github:hashicorp/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -45,6 +49,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-puma-tap,
+    hashicorp-tap,
     ...
   } @ inputs: let
     user = "albandiguer";
@@ -71,6 +76,7 @@
             "homebrew/homebrew-cask" = homebrew-cask;
             "homebrew/homebrew-bundle" = homebrew-bundle;
             "puma/homebrew-puma" = homebrew-puma-tap;
+            # "hashicorp/tap" = hashicorp-tap;
           };
           mutableTaps = false;
           autoMigrate = true;
