@@ -89,8 +89,7 @@
     ../../programs/fzf.nix
     ../../programs/git.nix
     ../../programs/gh.nix
-    ../../programs/kickstart-nvim
-    # ../../programs/lazyvim
+    ../../programs/neovim
     ../../programs/starship.nix
     ../../programs/tmux.nix
     ../../programs/vscode.nix
