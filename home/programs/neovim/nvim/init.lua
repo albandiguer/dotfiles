@@ -205,6 +205,10 @@ vim.keymap.set('n', '<C-a>', '<esc>ggVG<CR>') -- select all
 -- display previous buffer
 vim.keymap.set('n', ',,', '<c-^>')
 
+-- Use Ag (the Silver Searcher) instead of Ack for text searching
+vim.g.grepprg = 'ag --vimgrep'
+vim.g.grepformat = '%f:%l:%c:%m,%f:%l:%m'
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

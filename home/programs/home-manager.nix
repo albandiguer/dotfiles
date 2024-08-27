@@ -9,7 +9,7 @@
 
   # TODO: extract
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       # Change font to monaco nerd font
       font = {
