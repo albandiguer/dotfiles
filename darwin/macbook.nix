@@ -111,6 +111,10 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
 
   homebrew = {
     enable = true;
