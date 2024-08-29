@@ -127,6 +127,7 @@
       "postgresql@15"
       "git-crypt"
       "gpg"
+      "vips"
     ];
     casks = [
       "dash"

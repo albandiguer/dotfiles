@@ -1,13 +1,7 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }: {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  # TODO: extract
   programs.alacritty = {
     enable = false;
     settings = {
@@ -18,5 +12,4 @@
       };
     };
   };
-
 }

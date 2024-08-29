@@ -97,5 +97,7 @@
     ../../programs/direnv.nix
     ../../programs/home-manager.nix
     ../../programs/mise.nix
+    ../../programs/wezterm.nix
+    ../../programs/alacritty.nix
   ];
 }
