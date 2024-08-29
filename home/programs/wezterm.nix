@@ -7,7 +7,7 @@
     enable = true;
     extraConfig = ''
       local config = {};
-      config.color_scheme = 'Batman';
+      config.color_scheme = 'Catppuccin Macchiato (Gogh)'
       config.front_end = "WebGpu"; -- https://github.com/wez/wezterm/issues/5990#issuecomment-2295721814
       config.window_decorations = "RESIZE"; -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
       config.hide_tab_bar_if_only_one_tab = true;
