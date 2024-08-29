@@ -85,6 +85,8 @@
         },
       };
 
+      config.font = wezterm.font("Dank Mono", { weight = 'Bold' });
+
       return config;
     '';
   };

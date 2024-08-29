@@ -114,7 +114,10 @@
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
-  };
+  };  
+  # https://github.com/LnL7/nix-darwin/blob/master/tests/system-defaults-write.nix
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+  system.defaults.NSGlobalDomain.KeyRepeat = 1;
 
   homebrew = {
     enable = true;
