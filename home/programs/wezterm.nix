@@ -10,10 +10,11 @@
       -- https://patagia.dev/dln/nixos-config/src/commit/c71739fcd9a927757a804fc198d9b9fc9acc7d4d/.config/wezterm/wezterm.lua
 
       local config = {};
+      config.audible_bell = "Disabled"
       config.color_scheme = 'Catppuccin Macchiato (Gogh)'
       config.front_end = "WebGpu"; -- https://github.com/wez/wezterm/issues/5990#issuecomment-2295721814
-      config.window_decorations = "RESIZE"; -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
       config.hide_tab_bar_if_only_one_tab = true;
+      config.window_decorations = "RESIZE"; -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
       config.colors = {
         tab_bar = {
           -- The color of the strip that goes along the top of the window
