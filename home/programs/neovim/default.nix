@@ -28,10 +28,13 @@ in {
       treesitterWithAllGrammars
     ];
 
+    # xtra packages available to neovim
     extraPackages = with pkgs; [
+      # deno # for peek.nvim
       cargo
       nodePackages_latest.prettier
-      yamlfmt
+      # yamlfmt
+      yarn # mdpreview
     ];
 
   };
