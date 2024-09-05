@@ -131,6 +131,8 @@
       "git-crypt"
       "gpg"
       "vips"
+      "awsume"
+      "python-setuptools" # awsume deps
     ];
     casks = [
       "dash"

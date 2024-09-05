@@ -28,6 +28,10 @@ in {
       treesitterWithAllGrammars
     ];
 
+    extraPackages = with pkgs; [
+      cargo
+    ];
+
   };
 
   home.file."./.config/nvim/" = {
