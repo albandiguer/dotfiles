@@ -598,6 +598,15 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        yamlls = {
+          settings = {
+            yaml = {
+              format = {
+                enable = true,
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -608,6 +617,8 @@ require('lazy').setup({
               completion = {
                 callSnippet = 'Replace',
               },
+              -- enable format
+
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
@@ -674,7 +685,6 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         -- lua = { 'stylua' },
-        yaml = { 'yamlfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
