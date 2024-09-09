@@ -5,6 +5,7 @@
       # bitwarden-cli # not working
       act # gh actions locally
       awscli2
+      aws-sso-cli
       ssm-session-manager-plugin # https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
       bash # macos is bash 3xx, need 4+
       bat
