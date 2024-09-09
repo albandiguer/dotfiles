@@ -8,6 +8,7 @@
   };
 
 in {
+  # TODO nothing to do here? put in home.nix or extraPackages
   home.packages = with pkgs; [
     ripgrep
     fd
