@@ -6,6 +6,7 @@
     graphite-cli
     marp-cli #https://github.com/marp-team/marp-cli
     openssl
+    terraform
   ];
 
   services = {

@@ -30,6 +30,8 @@ in {
 
     extraPackages = with pkgs; [
       cargo
+      nodePackages_latest.prettier
+      yamlfmt
     ];
 
   };
