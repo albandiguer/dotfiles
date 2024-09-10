@@ -63,6 +63,7 @@
       set -gx LANG en_AU.UTF-8
       set -gx PATH /Users/albandiguer/.local/share/mise/shims $PATH
       set -gx PATH /Users/albandiguer/.npm-packages/bin $PATH
+      set -gx BAT_THEME "1337"
     '';
 
     # https://github.com/budimanjojo/tmux.fish
