@@ -34,7 +34,7 @@ in {
       # deno # for peek.nvim
       cargo
       nodePackages_latest.prettier
-      # yamlfmt
+      yamlfmt
       yarn # mdpreview
     ];
 
