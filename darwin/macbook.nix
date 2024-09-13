@@ -7,6 +7,7 @@
     marp-cli #https://github.com/marp-team/marp-cli
     openssl
     terraform
+    bruno
   ];
 
   services = {
