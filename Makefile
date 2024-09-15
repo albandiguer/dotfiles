@@ -12,7 +12,7 @@ update:
 
 # Sometimes updating breaks things
 rollback:
-	# TODO
+	nix-env --rollback
 
 tiling-stop:
 	pgrep yabai | xargs kill -9
@@ -26,3 +26,4 @@ cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
 	nix store gc || true
 	nix store optimise
+	nix-collect-garbage -d

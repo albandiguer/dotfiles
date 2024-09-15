@@ -4,6 +4,7 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
+    provider = "copilot",
     -- add any opts here
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
