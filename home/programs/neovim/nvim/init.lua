@@ -754,6 +754,9 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+
+      -- Codicons for completion icons
+      'mortepau/codicons.nvim'
     },
     config = function()
       -- See `:help cmp`
@@ -838,11 +841,39 @@ require('lazy').setup({
           { name = 'luasnip' },
           { name = 'path' },
         },
+        preset = 'codicons',
         formatting = {
           format = lspkind.cmp_format {
-            mode = 'symbol',
+            mode = 'symbol_text',
             max_width = 50,
-            symbol_map = { Copilot = '' },
+            symbol_map = {
+              Class = "󰠱",
+              Color = "󰏘",
+              Constant = "󰏿",
+              Constructor = "",
+              Copilot = "'",
+              Enum = "",
+              EnumMember = "",
+              Event = "",
+              Field = "󰜢",
+              File = "󰈙",
+              Folder = "󰉋",
+              Function = "󰊕",
+              Interface = "",
+              Keyword = "󰌋",
+              Method = "󰆧",
+              Module = "",
+              Operator = "󰆕",
+              Property = "󰜢",
+              Reference = "󰈇",
+              Snippet = "",
+              Struct = "󰙅",
+              Text = "󰉿",
+              TypeParameter = "",
+              Unit = "󰑭",
+              Value = "󰎠",
+              Variable = "󰀫",
+            },
           },
         },
       }
