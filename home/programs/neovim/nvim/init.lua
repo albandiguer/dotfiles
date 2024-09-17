@@ -639,12 +639,19 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'bashls',
+        'cssls',
+        'docker_compose_language_service',
         'dockerls',
         'hadolint',
         'lua_ls',
+        'mdformat',
         'nil_ls', -- nix lsp
+        'proselint',
+        'shellcheck',
+        'shfmt',
         'stylua', -- Used to format Lua code
         'terraformls',
+        'texlab',
         'tflint',
         'ts_ls',
         'yamlfmt',
