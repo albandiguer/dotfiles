@@ -340,7 +340,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -433,7 +433,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
@@ -649,7 +649,7 @@ require('lazy').setup({
         'proselint',
         'shellcheck',
         'shfmt',
-        'stylua', -- Used to format Lua code
+        'stylua', --  luals formating is mid
         'terraformls',
         'texlab',
         'tflint',
@@ -701,7 +701,7 @@ require('lazy').setup({
         }
       end,
       formatters_by_ft = {
-        -- lua = { 'stylua' },
+        lua = { 'stylua' },
         yaml = { 'yamlfmt' },
         javascript = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
@@ -772,7 +772,7 @@ require('lazy').setup({
       'hrsh7th/cmp-path',
 
       -- Codicons for completion icons
-      'mortepau/codicons.nvim'
+      'mortepau/codicons.nvim',
     },
     config = function()
       -- See `:help cmp`
@@ -863,32 +863,32 @@ require('lazy').setup({
             mode = 'symbol_text',
             max_width = 50,
             symbol_map = {
-              Class = "󰠱",
-              Color = "󰏘",
-              Constant = "󰏿",
-              Constructor = "",
+              Class = '󰠱',
+              Color = '󰏘',
+              Constant = '󰏿',
+              Constructor = '',
               Copilot = "'",
-              Enum = "",
-              EnumMember = "",
-              Event = "",
-              Field = "󰜢",
-              File = "󰈙",
-              Folder = "󰉋",
-              Function = "󰊕",
-              Interface = "",
-              Keyword = "󰌋",
-              Method = "󰆧",
-              Module = "",
-              Operator = "󰆕",
-              Property = "󰜢",
-              Reference = "󰈇",
-              Snippet = "",
-              Struct = "󰙅",
-              Text = "󰉿",
-              TypeParameter = "",
-              Unit = "󰑭",
-              Value = "󰎠",
-              Variable = "󰀫",
+              Enum = '',
+              EnumMember = '',
+              Event = '',
+              Field = '󰜢',
+              File = '󰈙',
+              Folder = '󰉋',
+              Function = '󰊕',
+              Interface = '',
+              Keyword = '󰌋',
+              Method = '󰆧',
+              Module = '',
+              Operator = '󰆕',
+              Property = '󰜢',
+              Reference = '󰈇',
+              Snippet = '',
+              Struct = '󰙅',
+              Text = '󰉿',
+              TypeParameter = '',
+              Unit = '󰑭',
+              Value = '󰎠',
+              Variable = '󰀫',
             },
           },
         },
