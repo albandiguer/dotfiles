@@ -46,14 +46,6 @@ from gh with gist scope
 Search + Replace all and save
 > Telescope Grep to find the string project wise, CTRL+Q to add them all to the Quickfix list and then ‘:cdo s/StringOne/StringTwo/g | update’
 
-__Cmp__
-```
-ctrl+space -> complete
-ctrl+b -> scroll docs up
-ctrl+f -> scroll docs down
-enter -> confirm
-```
-
 __LSP__
 Default behaviour of Ctrl n comes from that, we overload it inside cmp settings
 [Improve completion popup menu | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
@@ -90,19 +82,9 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc) - compare w/ mise
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-- [ ] https://github.com/danymat/neogen vs chatgpt plugin
+- [ ] ~~https://github.com/danymat/neogen vs chatgpt plugin~~
 - [ ] switch algo for rsa key to ed25519
-
-### Refacto happening
-
-<details><summary>Done</summary>
-
-- [x] Cleanup gists
-- [x] Configure fish and switch to it, bug with sensible-on-top switching back to /bin/zsh
-- [x] Raycast
 - [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
-- [x] branch -> mutli platform flake
-- [x] install nix-darwin & start services like skhd/yabai
 - [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
 - [x] tester ~devenv~ mise for python/ruby
 - [x] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
