@@ -942,6 +942,9 @@ require('lazy').setup({
       -- move selections around
       require('mini.move').setup {}
 
+      -- notify stuff
+      require('mini.notify').setup {}
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
