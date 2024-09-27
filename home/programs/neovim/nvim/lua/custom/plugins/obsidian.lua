@@ -1,9 +1,15 @@
 return {
   {
     'epwalsh/obsidian.nvim',
+    keys = {
+      { '<leader>os', ':ObsidianSearch<CR>', { noremap = true, silent = true, desc = 'Obsidian Search' } },
+      { '<leader>oo', ':ObsidianOpen<CR>', { noremap = true, silent = true, desc = 'Obsidian Open' } },
+      { '<leader>od', ':ObsidianDailies<CR>', { noremap = true, silent = true, desc = 'Obsidian Dailies' } },
+      { '<leader>ot', ':ObsidianToday<CR>', { noremap = true, silent = true, desc = 'Obsidian Today' } },
+    },
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = false,
-    enabled = false,
+    enabled = true,
     ft = 'markdown',
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
     -- event = {
@@ -23,7 +29,7 @@ return {
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
         -- folder = "&#128198;" -- 📆
-        folder = '📆/%Y',
+        folder = '📆/',
       },
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {
