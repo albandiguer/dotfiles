@@ -602,11 +602,13 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        -- opts here https://github.com/google/yamlfmt/blob/main/docs/config-file.md#configuration-1
+        -- https://www.reddit.com/r/neovim/comments/197t7my/question_how_to_configure_yamlls_formatter_with/
         yamlls = {
           settings = {
             yaml = {
               format = {
-                enable = true,
+                enable = true, -- yamlls format using prettier
               },
             },
           },
@@ -706,7 +708,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        yaml = { 'yamlfmt' },
+        -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
         javascript = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
