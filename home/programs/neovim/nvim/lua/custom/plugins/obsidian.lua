@@ -23,7 +23,7 @@ return {
       workspaces = {
         {
           name = 'Reliable Brain',
-          path = '~/Google Drive/obsidian_vaults/Reliable Brain',
+          path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/Google Drive/obsidian_vaults/Reliable Brain',
         },
       },
       daily_notes = {
