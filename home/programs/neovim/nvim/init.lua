@@ -656,6 +656,7 @@ require('lazy').setup({
         'shellcheck',
         'shfmt',
         'stylua', --  luals formating is mid
+        'tailwindcss',
         'terraformls',
         'texlab',
         'tflint',
