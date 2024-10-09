@@ -24,6 +24,7 @@ tiling: tiling-stop
 
 cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
+	nix-collect-garbage -d
 	nix store gc || true
 	nix store optimise
-	nix-collect-garbage -d
+
