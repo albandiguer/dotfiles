@@ -649,6 +649,7 @@ require('lazy').setup({
         'docker_compose_language_service',
         'dockerls',
         'hadolint',
+        'html',
         'lua_ls',
         'mdformat',
         'nil_ls', -- nix lsp
