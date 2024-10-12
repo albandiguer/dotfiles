@@ -9,6 +9,7 @@ upgrade-nix:
 
 up: upgrade-nix
 	nix flake update
+	make apply
 
 # Sometimes updating breaks things
 rollback:
