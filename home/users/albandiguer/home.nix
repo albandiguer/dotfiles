@@ -62,6 +62,7 @@
       ".dive.yml".source = ../../dotfiles/.dive.yml;
       # "Google Drive".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Library/CloudStorage/GoogleDrive-alban.diguer@gmail.com/My Drive";
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix
+      ".default-python-packages".source = ../../dotfiles/.default-python-packages;
     };
 
     # Home Manager needs a bit of information about you and the
