@@ -48,15 +48,16 @@
   homebrew = {
     enable = true;
     brews = [
-      "libpq"
-      "libyaml"
-      "iredis"
-      "puma/puma/puma-dev"
-      # "hashicorp/tap/terraform"
-      "postgresql@15"
       "git-crypt"
       "gpg"
+      "iredis"
+      "libpq"
+      "libyaml"
+      "postgresql@15"
+      "puma/puma/puma-dev"
+      "sapling"
       "vips" # Image processing library
+      # "hashicorp/tap/terraform"
       # "python-setuptools" # awsume deps
     ];
     casks = [
