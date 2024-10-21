@@ -91,8 +91,9 @@
 
       -- wezterm ls-fonts --list-system|grep Monaco
       -- config.font = wezterm.font("Monaco Nerd Font Mono", {weight="Book", stretch="Normal", style="Normal"});
-      config.font = wezterm.font("VictorMono Nerd Font", {weight="DemiBold", stretch="Normal", style="Normal"});
-      config.font_size = 14;
+      -- config.font = wezterm.font("VictorMono Nerd Font", {weight="DemiBold", stretch="Normal", style="Normal"});
+      config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"});
+      config.font_size = 13.4;
       config.line_height = 1.2;
 
       config.window_padding = {
