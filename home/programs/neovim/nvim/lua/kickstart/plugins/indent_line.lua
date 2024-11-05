@@ -4,8 +4,6 @@ return { -- Add indentation guides even on blank lines
   -- See `:help ibl`
   main = 'ibl',
   opts = {
-    indent = {
-      char = '│',
-    },
+    -- indent = { char = '|' },
   },
 }
