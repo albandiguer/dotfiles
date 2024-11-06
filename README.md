@@ -82,11 +82,8 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc) - compare w/ mise
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-- [ ] ~~https://github.com/danymat/neogen vs chatgpt plugin~~
 - [ ] switch algo for rsa key to ed25519
+- [ ] fix ibl scopes 
 - [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
-- [x] test mermerd https://github.com/KarnerTh/mermerd -> good, add it on pproject basis
-- [x] tester ~devenv~ mise for python/ruby
-- [x] ~~Use `niv` to check-in dependencies (home-manager & nixpkgs) versions [GitHub - ryantm/home-manager-template: A quick-start template for using home-manager in a more reproducible way.](https://github.com/ryantm/home-manager-template) [How I Nix](https://eevie.ro/posts/2022-01-24-how-i-nix.html)~~ -> flake
 
 </details>
