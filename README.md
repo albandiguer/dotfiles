@@ -1,18 +1,5 @@
 # 📺 Machines configurations
 
-<!--toc:start-->
-- [Setup](#setup)
-- [Neovim](#neovim)
-  - [Languages](#languages)
-  - [Ruby](#ruby)
-- [Mise(-en-place)](#mise-en-place)
-- [Gist](#gist)
-  - [Reminders/mappings](#remindersmappings)
-- [Tmux](#tmux)
-  - [Keys](#keys)
-- [Fonts](#fonts)
-- [Todos](#todos)
-<!--toc:end-->
 
 ---
 
@@ -26,6 +13,19 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 - Clone this repo and run `make` in it
 
 ## [Neovim](./home/programs/kickstart-nvim/README.md)
+
+
+## Uninstall
+
+```
+nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
+/nix/nix-installer uninstall
+```
+> [!NOTE]
+> for some reason i had to del manually the partition via disk util
+> after that step, reinstall following above 
+
+
 
 
 ## Mise(-en-place)
