@@ -966,41 +966,38 @@ require('lazy').setup({
     end,
   },
   {
-    -- 'nvim-treesitter/nvim-treesitter',
-    dir = vim.fn.stdpath 'data' .. '/nix/nvim-treesitter',
-    dev = true,
+    'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    opts = {
-      ensure_installed = {},
-      auto_install = false,
-      sync_install = false,
-      highlight = { enable = false }, -- disabled as there is a bug, though color seem ok
-      indent = { enable = true },
-      parser_install_dir = vim.fn.stdpath 'data' .. '/nix/nvim-treesitter',
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<C-space>',
-          node_incremental = '<C-space>',
-          scope_incremental = false,
-          node_decremental = '<bs>',
-        },
-      },
-      textobjects = { enable = true },
-    },
-    config = function(_, opts)
-      require 'albandiguer.treesitter-nix-paths' -- this is added in kickstart-nvim/default.nix
-      -- Prefer git instead of curl in order to improve connectivity in some environments
-      require('nvim-treesitter.install').prefer_git = true
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+    config = function()
+      local configs = require 'nvim-treesitter.configs'
 
-      -- There are additional nvim-treesitter modules that you can use to interact
-      -- with nvim-treesitter. You should go explore a few and see what interests you:
-      --
-      --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-      --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-      --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+      configs.setup {
+        ensure_installed = {
+          'c',
+          'html',
+          'javascript',
+          'lua',
+          'nix',
+          'query',
+          'ruby',
+          'vim',
+          'vimdoc',
+          'yaml',
+        },
+        sync_install = true,
+        highlight = { enable = true },
+        indent = { enable = true },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<C-space>',
+            node_incremental = '<C-space>',
+            scope_incremental = false,
+            node_decremental = '<bs>',
+          },
+        },
+        textobjects = { enable = true },
+      }
     end,
   },
 
