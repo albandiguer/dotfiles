@@ -654,6 +654,7 @@ require('lazy').setup({
         'mdformat',
         'nil_ls', -- nix lsp
         'proselint',
+        'prettier',
         'shellcheck',
         'shfmt',
         'stylua', --  luals formating is mid
