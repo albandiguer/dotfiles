@@ -52,6 +52,10 @@
           awslogs get $selected_group --timestamp --profile pretto-prod $filters
         end
       '';
+      miserefresh = ''
+        mise cache clean
+        mise ls-remote ruby
+      '';
     };
 
     plugins = [
