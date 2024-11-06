@@ -1,5 +1,4 @@
-# 📺 Machines configurations
-
+# 💾
 
 ---
 
@@ -13,6 +12,13 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 - Clone this repo and run `make` in it
 
 ## [Neovim](./home/programs/kickstart-nvim/README.md)
+
+### Fix markdown preview
+
+```
+cd ~/.local/share/nvim/lazy/markdown-preview.nvim/
+./install.sh
+```
 
 
 ## Uninstall
@@ -83,7 +89,6 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 - [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc) - compare w/ mise
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 - [ ] switch algo for rsa key to ed25519
-- [ ] fix ibl scopes 
 - [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
 
 </details>
