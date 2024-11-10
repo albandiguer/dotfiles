@@ -6,7 +6,7 @@ Using nix-darwin, home-manager, neovim and a few others tools
 
 ## Setup 
 - Install [nix with installer](https://github.com/DeterminateSystems/nix-installer) 
-```shell
+```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 - Clone this repo and run `make` in it
@@ -15,15 +15,15 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ### Fix markdown preview
 
-```
-cd ~/.local/share/nvim/lazy/markdown-preview.nvim/
+```bash
+cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
 ./install.sh
 ```
 
 
 ## Uninstall
 
-```
+```bash
 nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
 /nix/nix-installer uninstall
 ```
