@@ -20,6 +20,8 @@
       cs = "gh copilot suggest";
       dk = "docker";
       dkc = "docker compose";
+      dkcd = "docker compose down";
+      dkcud = "docker compose up -d";
       g = "git";
       hk = "heroku";
       l = "ls -la";
