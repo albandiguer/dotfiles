@@ -862,8 +862,9 @@ require('lazy').setup({
             group_index = 0,
           },
           { name = 'nvim_lsp' },
-          { name = 'copilot' }, -- not ideal to have it here, ideally we could add it from the plugin file instead
+          { name = 'vim-dadbod-completion' },
           { name = 'luasnip' },
+          { name = 'copilot' }, -- not ideal to have it here, ideally we could add it from the plugin file instead
           { name = 'path' },
         },
         preset = 'codicons',
