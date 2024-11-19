@@ -1,9 +1,11 @@
 return {
-	'sainnhe/sonokai',
-	'sainnhe/everforest',
-	'sainnhe/gruvbox-material',
-	'sainnhe/edge',
-	'catppuccin/nvim',
-	'savq/melange-nvim',
-	'slugbyte/lackluster.nvim',
+  'AlexvZyl/nordic.nvim',
+  'catppuccin/nvim',
+  'sainnhe/edge',
+  'sainnhe/everforest',
+  'sainnhe/gruvbox-material',
+  'sainnhe/sonokai',
+  'savq/melange-nvim',
+  'slugbyte/lackluster.nvim',
+  'olivercederborg/poimandres.nvim',
 }
