@@ -45,6 +45,9 @@ return {
         -- A map for custom variables, the key should be the variable and the value a function
         substitutions = {},
       },
+      ui = {
+        external_link_icon = { char = '📎', hl_group = 'ObsidianExtLinkIcon' }, -- characters to use as the icon for external links
+      },
 
       -- see below for full list of options 👇
     },
