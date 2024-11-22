@@ -14,11 +14,13 @@
   services = {
     # Auto upgrade nix package and the daemon service.
     nix-daemon.enable = true;
-
-    lorri = {
-      enable = true;
+    lorri.enable = true;
+    sketchybar = {
+      enable = false;
+      config = builtins.readFile ../home/dotfiles/sketchybarrc;
     };
   };
+
   nix.package = pkgs.nix; # TODO figure what is it
 
   # Necessary for using flakes on this system.
