@@ -55,14 +55,6 @@ Search + Replace all and save
 __LSP__
 Default behaviour of Ctrl n comes from that, we overload it inside cmp settings
 [Improve completion popup menu | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
-```
-H -> Hover information
-gt -> Type definition
-gs -> Signature
-gd -> Definition
-gr -> References
-ca -> Code action
-```
 
 
 ## Tmux

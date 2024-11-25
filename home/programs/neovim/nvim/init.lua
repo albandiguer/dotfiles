@@ -951,6 +951,9 @@ require('lazy').setup({
       -- move selections around
       require('mini.move').setup {}
 
+      -- highlight curorword
+      require('mini.cursorword').setup {}
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
