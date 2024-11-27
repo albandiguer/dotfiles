@@ -32,6 +32,7 @@
       prettyjson = "python -m json.tool";
       r = "bin/rails";
       tf = "terraform";
+      interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
     };
 
     functions = {
