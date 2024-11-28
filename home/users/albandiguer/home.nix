@@ -104,5 +104,6 @@
     ../../programs/mise.nix
     ../../programs/wezterm.nix
     ../../programs/alacritty.nix
+    ../../programs/lazygit.nix
   ];
 }
