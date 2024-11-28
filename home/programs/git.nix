@@ -37,7 +37,7 @@
         rup = "remote update --prune";
         rv = "remote --verbose";
         s = "status";
-        sh = "show HEAD";
+        sh = "show";
         shwo = "show";
         st = "status";
         unstage = "restore --staged";
