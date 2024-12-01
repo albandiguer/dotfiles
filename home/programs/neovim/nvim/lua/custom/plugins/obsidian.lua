@@ -2,10 +2,14 @@ return {
   {
     'epwalsh/obsidian.nvim',
     keys = {
-      { '<leader>os', ':ObsidianSearch<CR>', { noremap = true, silent = true, desc = 'Obsidian Search' } },
-      { '<leader>oo', ':ObsidianOpen<CR>', { noremap = true, silent = true, desc = 'Obsidian Open' } },
-      { '<leader>od', ':ObsidianDailies<CR>', { noremap = true, silent = true, desc = 'Obsidian Dailies' } },
-      { '<leader>ot', ':ObsidianToday<CR>', { noremap = true, silent = true, desc = 'Obsidian Today' } },
+      { '<leader>od', ':ObsidianDailies<CR>', { noremap = true, silent = true, desc = 'ObsidianDailies' } },
+      { '<leader>oen', ':ObsidianExtractNote<CR>', { noremap = true, silent = true, desc = 'ObsidianExtractNote' } },
+      { '<leader>on', ':ObsidianNew<CR>', { noremap = true, silent = true, desc = 'ObsidianNew' } },
+      { '<leader>ont', ':ObsidianNewFromTemplate<CR>', { noremap = true, silent = true, desc = 'ObsidianNewFromTemplate' } },
+      { '<leader>oo', ':ObsidianOpen<CR>', { noremap = true, silent = true, desc = 'ObsidianOpen' } },
+      { '<leader>os', ':ObsidianSearch<CR>', { noremap = true, silent = true, desc = 'ObsidianSearch' } },
+      { '<leader>ot', ':ObsidianToday<CR>', { noremap = true, silent = true, desc = 'ObsidianToday' } },
+      { '<leader>otc', ':ObsidianToggleCheckbox<CR>', { noremap = true, silent = true, desc = 'ObsidianToggleCheckbox' } },
     },
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = false,
