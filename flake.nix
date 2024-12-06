@@ -92,14 +92,6 @@
     darwinConfigurations = {
       # name figured with `scutil --get LocalHostName|pbcopy`
       Albans-MacBook-Air = darwin.lib.darwinSystem {modules = commonDarwinModules;};
-      Albans-MacBook-Pro = darwin.lib.darwinSystem {
-        modules =
-          commonDarwinModules
-          ++ [
-            {home-manager.users.${user}.programs.git.userEmail = nixpkgs.lib.mkForce "alban.diguer@pretto.fr";}
-            {home-manager.users.${user}.home.sessionVariables.OBSIDIAN_VAULT_PATH = "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Reliable Brain";}
-          ];
-      };
       Prettos-MacBook-Pro = darwin.lib.darwinSystem {
         modules =
           commonDarwinModules
