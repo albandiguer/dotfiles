@@ -62,7 +62,7 @@
       # "python-setuptools" # awsume deps
     ];
     casks = [
-      "dash"
+      # "dash"
       "licecap"
       "monitorcontrol"
       "notion"

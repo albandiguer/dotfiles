@@ -20,9 +20,9 @@
       config.window_decorations = "RESIZE"; -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
 
       -- wezterm ls-fonts --list-system|grep Monaco
-      config.font = wezterm.font("Monaco Nerd Font Mono", {weight="Book", stretch="Normal", style="Normal"});
+      -- config.font = wezterm.font("Monaco Nerd Font Mono", {weight="Book", stretch="Normal", style="Normal"});
       -- config.font = wezterm.font("VictorMono Nerd Font", {weight="DemiBold", stretch="Normal", style="Normal"});
-      -- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"});
+      config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"});
       config.font_size = 11.5;
       config.line_height = 1.2;
 
