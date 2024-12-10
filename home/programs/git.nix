@@ -31,6 +31,7 @@
         pushtostaging = "push origin HEAD:staging";
         rba = "rebase --abort";
         rbc = "rebase --continue";
+        rbo = "!f() { git rev-parse --abbrev-ref HEAD | xargs git rebase --onto $1; }; f";
         recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n30 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
         reset = "reset HEAD";
         ri = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs git rebase -i; }; f";
