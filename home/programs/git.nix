@@ -23,6 +23,7 @@
         dc = "diff --cached";
         dib = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs -I _ git diff _ -- $1; }; f";
         fo = "fetch origin";
+        frbo = "!f() { git fetch origin && git rev-parse --abbrev-ref origin/HEAD | xargs git rebase $1; }; f";
         l = "log --graph --date=short";
         last = "show HEAD";
         lpwd = "log -- ."; # git log for files in current directory
@@ -31,7 +32,7 @@
         pushtostaging = "push origin HEAD:staging";
         rba = "rebase --abort";
         rbc = "rebase --continue";
-        rbo = "!f() { git rev-parse --abbrev-ref HEAD | xargs git rebase origin/$1; }; f";
+        rbo = "!f() { git rev-parse --abbrev-ref origin/HEAD | xargs git rebase $1; }; f";
         recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n30 | fzf --reverse --bind 'enter:become(git checkout {})'; }; f";
         reset = "reset HEAD";
         ri = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs git rebase -i; }; f";
