@@ -37,21 +37,16 @@
       watch
       wget
       python311Packages.ipykernel
-      (nerdfonts.override {
-        fonts = [
-          "FantasqueSansMono"
-          "Hack"
-          "Hermit"
-          "Iosevka"
-          "JetBrainsMono"
-          "Lilex"
-          "Meslo"
-          "ShareTechMono"
-          "Terminus"
-          "UbuntuMono"
-          "VictorMono"
-        ];
-      }) # fonts with devicons
+      nerd-fonts.fantasque-sans-mono
+      nerd-fonts.hack
+      nerd-fonts.iosevka
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.lilex
+      # nerd-fonts.meslo
+      # nerd-fonts.share-tech-mono
+      # nerd-fonts.terminus
+      nerd-fonts.ubuntu-mono
+      nerd-fonts.victor-mono
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
       # writeShellScriptBin "run-commands-on-git-revisions" "echo hellow world"
     ];

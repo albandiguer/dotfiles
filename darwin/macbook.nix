@@ -43,7 +43,7 @@
     remapCapsLockToEscape = true;
   };  
   # https://github.com/LnL7/nix-darwin/blob/master/tests/system-defaults-write.nix
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 12;
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
 
   homebrew = {
