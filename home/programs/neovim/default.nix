@@ -5,9 +5,7 @@ in {
   home.packages = with pkgs; [
     ripgrep
     fd
-    lua-language-server
     rust-analyzer-unwrapped
-    black
   ];
 
   programs.neovim = {

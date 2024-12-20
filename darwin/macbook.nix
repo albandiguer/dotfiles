@@ -45,6 +45,10 @@
   # https://github.com/LnL7/nix-darwin/blob/master/tests/system-defaults-write.nix
   system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
+  
+  # Disable system sounds
+  system.defaults.NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
+  system.defaults.NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
 
   homebrew = {
     enable = true;

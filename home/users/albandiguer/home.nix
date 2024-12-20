@@ -36,7 +36,6 @@
       tree
       watch
       wget
-      python311Packages.ipykernel
       nerd-fonts.fantasque-sans-mono
       nerd-fonts.hack
       nerd-fonts.iosevka

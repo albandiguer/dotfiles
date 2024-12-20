@@ -78,7 +78,6 @@ docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out
 
 ## Todos
 
-- [ ] Switch tooling for python to Ruff? (lsp, formatting code acsh etc) - compare w/ mise
 - [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 - [ ] switch algo for rsa key to ed25519
 - [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
