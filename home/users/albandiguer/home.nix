@@ -4,7 +4,7 @@
     packages = with pkgs; [
       # bitwarden-cli # not working
       act # gh actions locally
-      awscli2
+      # awscli2 # in mise
       # aws-sso-cli not necessary
       ssm-session-manager-plugin # https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
       bash # macos is bash 3xx, need 4+

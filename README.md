@@ -76,10 +76,4 @@ Patch fonts for glyph like so
 docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out nerdfonts/patcher
 ```
 
-## Todos
 
-- [ ] editorconfig xdg https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-- [ ] switch algo for rsa key to ed25519
-- [x] SFMono [Gh](https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized)
-
-</details>
