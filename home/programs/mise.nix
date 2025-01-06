@@ -13,7 +13,7 @@
         gcloud = "latest";
         ruby = "latest";
         terraform = "latest";
-        postgres = "14.15";
+        # postgres = "14.15";
         aws-cli = "latest";
       };
     };
