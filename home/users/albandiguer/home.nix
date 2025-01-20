@@ -46,6 +46,7 @@
       # nerd-fonts.terminus
       nerd-fonts.ubuntu-mono
       nerd-fonts.victor-mono
+      nerd-fonts.zed-mono
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
       # writeShellScriptBin "run-commands-on-git-revisions" "echo hellow world"
     ];
