@@ -989,6 +989,7 @@ require('lazy').setup({
           'gitcommit',
           'graphql',
           'haskell',
+          'hcl',
           'html',
           'javascript',
           'jq',
