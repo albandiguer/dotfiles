@@ -30,6 +30,17 @@ Why the current setup:
 - `=true` would install a ruby in nix store, when installing stuff from wihin neovim it would try to write to that nix store location and fail
 - in neovim type `:!gem env` to see whats exactly loaded. 
 - However mise installed ruby does not ship with `neovim` gem out of the box, it needs to be installed on every new version. Luckily [mise]() comes with that option with a file `~/.default-gems`, see `mise.nix` and that file in `dotfiles/`
+- Add `ruby-lsp` in default-gems as well, can then have the following in `.nvim.lua` file inside the project to have ruby-lsp at work
+```
+require("lspconfig").ruby_lsp.setup({
+	cmd = { "mise", "x", "--", "ruby-lsp" },
+	init_options = {
+		formatter = "standard",
+		linters = { "standard" },
+	},
+})
+vim.cmd.colorscheme("melange")
+```
 
 
 ## exrc
