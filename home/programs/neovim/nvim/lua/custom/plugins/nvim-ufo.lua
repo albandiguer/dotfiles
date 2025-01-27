@@ -6,6 +6,19 @@ return {
   event = 'BufReadPost', -- load after buffer is loaded
   opts = {
     provider_selector = function(bufnr, filetype, buftype)
+      -- Liste des filetypes à exclure
+      local exclude_ft = {
+        ['nvimtree'] = true,
+        ['neo-tree'] = true,
+        ['dbui'] = true,
+        ['aerial'] = true,
+        ['undotree'] = true,
+        ['terminal'] = true,
+      }
+
+      if exclude_ft[filetype] then
+        return ''
+      end
       return { 'treesitter', 'indent' }
     end,
     -- Use nice folding symbols
