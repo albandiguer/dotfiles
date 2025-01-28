@@ -650,6 +650,7 @@ require('lazy').setup({
         'cssls',
         'docker_compose_language_service',
         'dockerls',
+        'erb-formatter',
         'hadolint',
         'html',
         'lua_ls',
@@ -661,6 +662,7 @@ require('lazy').setup({
         'ruff', -- python
         'shellcheck',
         'shfmt',
+        'stimulus_ls',
         'stylua', --  luals formating is mid
         'tailwindcss',
         'terraformls',
