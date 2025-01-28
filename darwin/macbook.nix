@@ -58,7 +58,7 @@
       "iredis"
       "libpq"
       "libyaml"
-      "postgresql@15"
+      "postgresql@15" # cant remember why, for dadbod?
       "puma/puma/puma-dev"
       "sapling"
       "vips" # Image processing library
@@ -73,6 +73,7 @@
       "obsidian"
       "raycast"
       "httpie"
+      "chatbox"
     ];
   };
 
