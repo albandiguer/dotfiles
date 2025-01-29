@@ -666,6 +666,7 @@ require('lazy').setup({
         'stylua', --  luals formating is mid
         'tailwindcss',
         'terraformls',
+        'latexindent',
         'texlab',
         'tflint',
         'ts_ls',
