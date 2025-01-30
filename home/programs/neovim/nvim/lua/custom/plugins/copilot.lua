@@ -1,3 +1,4 @@
+-- this is inside init.lua, surely because part of the default lazynvim distrib
 return {
   -- {
   --   'zbirenbaum/copilot-cmp',

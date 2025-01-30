@@ -2,18 +2,21 @@ local providers_opts = {
   copilot = {
     provider = 'copilot',
     copilot = {
-      model = 'claude-3.5-sonnet',
+      model = 'claude-3.5-sonnet', -- deepseek release soon ?
       -- max_tokens = 4096,
     },
   },
-  deepseek = {
+  deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
     provider = 'deepseek',
     vendors = {
       deepseek = {
         __inherited_from = 'openai',
         api_key_name = 'DEEPSEEK_API_KEY',
         endpoint = 'https://api.deepseek.com',
-        model = 'deepseek-reasoner',
+        model = 'deepseek-coder',
+        temperature = 0,
+        timeout = 10000,
+        max_tokens = 4096,
       },
     },
   },
