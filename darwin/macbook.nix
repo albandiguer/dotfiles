@@ -8,6 +8,8 @@
     openssl
     bruno
     awslogs
+    podman
+    lazydocker
   ];
 
   services = {

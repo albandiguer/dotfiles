@@ -9,6 +9,7 @@
       cat = "bat";
       vim = "nvim";
       db = "nvim +DBUI";
+      docker = "podman";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
@@ -26,6 +27,7 @@
       hk = "heroku";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
       l = "ls -la";
+      ld = "lazydocker";
       lg = "lazygit";
       m = "make";
       n = "nix";
@@ -92,6 +94,12 @@
       set -gx PATH /Users/albandiguer/.local/share/mise/shims $PATH
       set -gx PATH /Users/albandiguer/.npm-packages/bin $PATH
       set -gx BAT_THEME "1337"
+    
+      # Set DOCKER_HOST from podman machine if available
+      if command -v podman > /dev/null
+        and podman machine list --format json | jq -e '.[].Running' > /dev/null 2>&1
+        set -gx DOCKER_HOST (podman machine inspect | jq -r '.[0].ConnectionInfo.PodmanSocket.Path | sub("^"; "unix://")')
+      end
     '';
 
     # https://github.com/budimanjojo/tmux.fish
