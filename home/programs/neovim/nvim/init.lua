@@ -653,20 +653,20 @@ require('lazy').setup({
         'erb-formatter',
         'hadolint',
         'html',
+        'latexindent',
         'lua_ls',
         'mdformat',
         'nil_ls', -- nix lsp
         'prettier',
         'proselint',
-        'pyright', -- python
-        'ruff', -- python
+        'pyright', -- python static analyzer
+        'ruff', -- python linter & code formatter
         'shellcheck',
         'shfmt',
         'stimulus_ls',
         'stylua', --  luals formating is mid
         'tailwindcss',
         'terraformls',
-        'latexindent',
         'texlab',
         'tflint',
         'ts_ls',
