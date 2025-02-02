@@ -9,4 +9,5 @@ return {
   'sainnhe/sonokai',
   'savq/melange-nvim',
   'slugbyte/lackluster.nvim',
+  'vague2k/vague.nvim',
 }

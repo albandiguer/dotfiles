@@ -2,14 +2,15 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    awslogs
+    bruno
     eza # https://github.com/eza-community/eza
     graphite-cli
+    lazydocker
     marp-cli #https://github.com/marp-team/marp-cli
     openssl
-    bruno
-    awslogs
     podman
-    lazydocker
+    podman-compose
   ];
 
   services = {
@@ -63,6 +64,7 @@
       "postgresql@15" # cant remember why, for dadbod?
       "puma/puma/puma-dev"
       "sapling"
+      "tectonic"
       "vips" # Image processing library
       # "hashicorp/tap/terraform"
       # "python-setuptools" # awsume deps
