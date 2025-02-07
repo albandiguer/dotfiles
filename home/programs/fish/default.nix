@@ -9,7 +9,7 @@
       cat = "bat";
       vim = "nvim";
       db = "nvim +DBUI";
-      docker = "podman";
+      # docker = "podman";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
