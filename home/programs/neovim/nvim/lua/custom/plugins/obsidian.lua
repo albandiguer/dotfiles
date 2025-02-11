@@ -50,6 +50,7 @@ return {
         substitutions = {},
       },
       ui = {
+        enable = false,
         external_link_icon = { char = '📎', hl_group = 'ObsidianExtLinkIcon' }, -- characters to use as the icon for external links
       },
 

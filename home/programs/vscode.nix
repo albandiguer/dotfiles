@@ -18,6 +18,12 @@
       # ms-vsliveshare.vsliveshare
     ];
     # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+    #   name = "continue";
+    #   publisher = "continuedev";
+    #   version = "0.9.11";
+    #   sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # This will fail and show correct hash
+    # }];
+    # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
     #   name = "castwide.solargraph";
     #   publisher = "castwide";
     #   version = "v0.24.0";
