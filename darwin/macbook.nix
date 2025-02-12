@@ -13,6 +13,9 @@
     podman-compose
   ];
 
+  # Add this line to fix the GID mismatch
+  ids.gids.nixbld = 350;
+
   services = {
     lorri.enable = false; # too painful, use mise
     sketchybar = {
