@@ -14,9 +14,7 @@
   ];
 
   services = {
-    # Auto upgrade nix package and the daemon service.
-    nix-daemon.enable = true;
-    lorri.enable = true;
+    lorri.enable = false; # too painful, use mise
     sketchybar = {
       enable = false;
       config = builtins.readFile ../home/dotfiles/sketchybarrc;
@@ -53,6 +51,8 @@
   system.defaults.NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
   system.defaults.NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
 
+  # NOTE: brews will be available accross all user sessions on the machine,
+  # for example tectonic is needed by Audrey
   homebrew = {
     enable = true;
     brews = [
@@ -61,9 +61,9 @@
       "iredis"
       "libpq"
       "libyaml"
-      "postgresql@15" # cant remember why, for dadbod?
+      "postgresql@15" # cant remember why, for dadbod? mise it?
       "puma/puma/puma-dev"
-      "sapling"
+      # "sapling"
       "tectonic"
       "vips" # Image processing library
       # "hashicorp/tap/terraform"
