@@ -987,6 +987,7 @@ require('lazy').setup({
 
       configs.setup {
         ensure_installed = {
+          'apex',
           'bash',
           'dockerfile',
           'editorconfig',
