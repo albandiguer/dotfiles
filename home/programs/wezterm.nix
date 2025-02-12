@@ -12,8 +12,12 @@
       local config = {};
       config.audible_bell = "Disabled"
 
+      -- dark themes
       config.color_scheme = 'N0Tch2K (Gogh)'
       -- config.color_scheme = 'Harper'
+
+      -- light themes
+      -- config.color_scheme = 'Harmonic16 Light (base16)'
 
       config.front_end = "WebGpu"; -- https://github.com/wez/wezterm/issues/5990#issuecomment-2295721814
       config.hide_tab_bar_if_only_one_tab = true;
