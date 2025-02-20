@@ -13,7 +13,8 @@
       config.audible_bell = "Disabled"
 
       -- dark themes
-      config.color_scheme = 'N0Tch2K (Gogh)'
+      -- config.color_scheme = 'N0Tch2K (Gogh)'
+      config.color_scheme = "Catppuccin Mocha"
       -- config.color_scheme = 'Harper'
 
       -- light themes
