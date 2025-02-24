@@ -62,4 +62,6 @@ return {
       }
     end,
   },
+
+  -- TODO: switch for quarto mode ?
 }
