@@ -59,6 +59,7 @@
       ".dive.yml".source = ../../dotfiles/.dive.yml;
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix
       ".default-python-packages".source = ../../dotfiles/.default-python-packages;
+      ".default-node-packages".source = ../../dotfiles/.default-node-packages;
       # ".ghstackrc".source = ../../dotfiles/.ghstackrc;
     };
 

@@ -12,7 +12,7 @@
       # };
 
       ruby.disabled = false;
-      nodejs.disabled = true;
+      nodejs.disabled = false;
       package.disabled = true;
       docker_context.disabled = true;
       gcloud = {
