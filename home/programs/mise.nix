@@ -19,7 +19,7 @@
       };
 
       tasks = {
-        setup-molten = {
+        create-molten-venv = {
           run = [
             "mkdir -p ~/.virtualenvs"
             "uv venv --python $(which python3.13) ~/.virtualenvs/molten"
