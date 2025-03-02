@@ -15,6 +15,7 @@
         ruby = "latest";
         terraform = "latest";
         uv = "latest";
+        rust = "latest"; # need rustup for aider-chat deps (tiktoken)
       };
 
       tasks = {
