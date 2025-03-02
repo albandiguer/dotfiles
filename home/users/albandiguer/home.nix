@@ -2,7 +2,7 @@
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      # bitwarden-cli # not working
+      bitwarden-cli # not working
       act # gh actions locally
       # awscli2 # in mise
       # aws-sso-cli not necessary

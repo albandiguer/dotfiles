@@ -776,7 +776,7 @@ require('lazy').setup({
             require('copilot').setup {
               suggestion = { enabled = false },
               panel = { enabled = false },
-              model = 'sonnet-3.5',
+              model = 'sonnet-3.7',
             }
           end,
         },

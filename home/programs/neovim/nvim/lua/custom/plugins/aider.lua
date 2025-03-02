@@ -1,9 +1,9 @@
 return {
   'GeorgesAlkhouri/nvim-aider',
-  cmd = {
-    'AiderTerminalToggle',
-    'AiderHealth',
-  },
+  -- cmd = {
+  --   'AiderTerminalToggle',
+  --   'AiderHealth',
+  -- },
   keys = {
     { '<leader>A/', '<cmd>AiderTerminalToggle<cr>', desc = 'Open Aider' },
     { '<leader>As', '<cmd>AiderTerminalSend<cr>', desc = 'Send to Aider', mode = { 'n', 'v' } },
@@ -21,8 +21,38 @@ return {
     --- The below dependencies are optional
   },
   config = function()
-    require('nvim-aider').setup {
-      command = 'uv tool run --from aider-chat aider',
+    -- Function to get API key from Bitwarden
+    local function get_deepseek_api_key()
+      local handle = io.popen "bw get item 'platform.deepseek.com' | jq -r '.fields.[] | select(.name == \"api-key\").value'"
+      if not handle then
+        return nil
+      end
+      local result = handle:read '*a'
+      handle:close()
+      return result:gsub('%s+', '') -- Remove any whitespace
+    end
+
+    local api_key = get_deepseek_api_key()
+    if not api_key or api_key == '' then
+      vim.notify('Failed to get Deepseek API key from Bitwarden', vim.log.levels.ERROR)
+      return
+    end
+
+    require('aider').setup {
+      cmd = {
+        'uv',
+        'tool',
+        'run',
+        '--from',
+        'aider-chat',
+        'aider',
+        '--model',
+        'deepseek',
+        '--api-key',
+        'deepseek=' .. api_key,
+        '--pretty',
+        '--auto-commits',
+      },
     }
   end,
 }
