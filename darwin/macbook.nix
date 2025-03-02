@@ -13,8 +13,11 @@
     podman-compose
   ];
 
-  # Add this line to fix the GID mismatch
-  ids.gids.nixbld = 350;
+  # Ensure consistent nixbld group across machines
+  ids.gids.nixbld = 30000;
+  users.groups.nixbld = {
+    gid = 30000;
+  };
 
   services = {
     lorri.enable = false; # too painful, use mise
