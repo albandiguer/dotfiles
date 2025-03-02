@@ -2,7 +2,7 @@ local providers_opts = {
   copilot = {
     provider = 'copilot',
     copilot = {
-      model = 'claude-3.5-sonnet', -- deepseek release soon ?
+      model = 'claude-3.7-sonnet', -- deepseek release soon ?
       -- max_tokens = 4096,
     },
   },
