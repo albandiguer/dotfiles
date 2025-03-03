@@ -30,6 +30,9 @@ postgres 14
 gcloud   latest
 ruby   3.4.1
 ```
+### [Aider](https://aider.chat/docs/install.html)
+`uv tool install --force --python python3.12 aider-chat@latest`
+
 ## Uninstall
 ```bash
 nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
