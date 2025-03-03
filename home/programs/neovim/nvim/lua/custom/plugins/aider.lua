@@ -1,9 +1,9 @@
 return {
   'GeorgesAlkhouri/nvim-aider',
-  -- cmd = {
-  --   'AiderTerminalToggle',
-  --   'AiderHealth',
-  -- },
+  cmd = {
+    'AiderTerminalToggle',
+    'AiderHealth',
+  },
   keys = {
     { '<leader>A/', '<cmd>AiderTerminalToggle<cr>', desc = 'Open Aider' },
     { '<leader>As', '<cmd>AiderTerminalSend<cr>', desc = 'Send to Aider', mode = { 'n', 'v' } },
