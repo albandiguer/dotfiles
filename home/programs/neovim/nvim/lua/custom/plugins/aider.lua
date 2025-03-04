@@ -20,39 +20,25 @@ return {
     'folke/snacks.nvim',
     --- The below dependencies are optional
   },
+  -- config = true,
   config = function()
-    -- Function to get API key from Bitwarden
-    local function get_deepseek_api_key()
-      local handle = io.popen "bw get item 'platform.deepseek.com' | jq -r '.fields.[] | select(.name == \"api-key\").value'"
-      if not handle then
-        return nil
-      end
-      local result = handle:read '*a'
-      handle:close()
-      return result:gsub('%s+', '') -- Remove any whitespace
-    end
-
-    local api_key = get_deepseek_api_key()
-    if not api_key or api_key == '' then
-      vim.notify('Failed to get Deepseek API key from Bitwarden', vim.log.levels.ERROR)
-      return
-    end
-
-    require('aider').setup {
-      cmd = {
-        'uv',
-        'tool',
-        'run',
-        '--from',
-        'aider-chat',
-        'aider',
-        '--model',
-        'deepseek',
-        '--api-key',
-        'deepseek=' .. api_key,
-        '--pretty',
-        '--auto-commits',
-      },
+    require('nvim_aider').setup {
+      aider_cmd = 'uv tool run  --from aider-chat aider',
     }
   end,
 }
+-- return {
+--   'joshuavial/aider.nvim',
+--   opts = {
+--     -- your configuration comes here
+--     -- if you don't want to use the default settings
+--     auto_manage_context = true, -- automatically manage buffer context
+--     default_bindings = true, -- use default <leader>A keybindings
+--     debug = false, -- enable debug logging
+--     command = { 'uv', 'tool', 'run', '--from', 'aider-chat', 'aider' }, -- specify the full command
+--     keys = {
+--       { '<leader>Ao', '<cmd>AiderOpen<cr>', desc = 'Open Aider Session' },
+--       { '<leader>Am', '<cmd>AiderAddModifiedFiles<cr>', desc = 'Add Modified Files to Aider' },
+--     },
+--   },
+-- }

@@ -5,7 +5,6 @@
     # Source here https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix
 
     shellAliases = {
-      aider = "uv tool run --from aider-chat aider";
       cat = "bat";
       db = "nvim +DBUI";
       ls = "eza";
@@ -16,6 +15,7 @@
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
 
     shellAbbrs = {
+      aider = "uv tool run --from aider-chat aider";
       b = "bin/bundle";
       bs = "brew search";
       c = "clear";
