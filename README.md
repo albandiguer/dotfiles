@@ -30,8 +30,14 @@ postgres 14
 gcloud   latest
 ruby   3.4.1
 ```
-### [Aider](https://aider.chat/docs/install.html)
-`uv tool install --force --python python3.12 aider-chat@latest`
+#### uv
+##### molten
+create molten venv and add deps (see mise file) `uv task run create-molten-env`
+
+##### [aider](https://aider.chat/docs/install.html)
+`uv tool install --force --python python3.12 aider-chat@latest` 
+
+To upgrade `uv tool upgrade aider-chat`
 
 ## Uninstall
 ```bash
