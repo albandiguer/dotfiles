@@ -8,7 +8,7 @@
     enable = false;
     # package = pkgs.vscodium; # oss vscode not work with Copilot
 
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       asvetliakov.vscode-neovim
       # esbenp.prettier-vscode
       github.copilot

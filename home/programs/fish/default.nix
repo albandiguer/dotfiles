@@ -5,10 +5,11 @@
     # Source here https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix
 
     shellAliases = {
-      ls = "eza";
+      aider = "uv tool run --from aider-chat aider";
       cat = "bat";
-      vim = "nvim";
       db = "nvim +DBUI";
+      ls = "eza";
+      vim = "nvim";
       # docker = "podman";
     };
 
