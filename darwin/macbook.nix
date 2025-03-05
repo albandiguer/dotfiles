@@ -11,6 +11,7 @@
     openssl
     podman
     podman-compose
+    portaudio # [for aider voice](https://aider.chat/docs/install/optional.html#enable-voice-coding)
   ];
 
   # Ensure consistent nixbld group across machines
