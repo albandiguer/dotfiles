@@ -88,6 +88,7 @@
     # ../../zsh
     ../../programs/fish
     ../../programs/fzf.nix
+    ../../programs/carapace.nix
     ../../programs/git.nix
     ../../programs/gh.nix
     ../../programs/neovim

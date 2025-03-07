@@ -45,6 +45,7 @@
         unstage = "restore --staged";
       };
       github.user = "albandiguer";
+      init.defaultBranch = "main";
       core.editor = "nvim";
       diff.tool = "nvim";
       add.interactive.useBuiltin = false;
