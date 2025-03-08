@@ -71,6 +71,26 @@
     sessionPath = ["./bin" "/opt/homebrew/bin"];
     sessionVariables = {
       EDITOR = "nvim";
+
+      # Aider Everforest-ish theme
+      # Set the color for user input (soft sage green)
+      AIDER_USER_INPUT_COLOR = "#A7C080";
+      # Set the color for tool output (muted blue)
+      AIDER_TOOL_OUTPUT_COLOR = "#7FBBB3";
+      # Set the color for tool error messages (soft red)
+      AIDER_TOOL_ERROR_COLOR = "#E67E80";
+      # Set the color for tool warning messages (warm yellow)
+      AIDER_TOOL_WARNING_COLOR = "#DBBC7F";
+      # Set the color for assistant output (calm blue)
+      AIDER_ASSISTANT_OUTPUT_COLOR = "#83B6AF";
+      # Set the color for the completion menu (light sage)
+      AIDER_COMPLETION_MENU_COLOR = "#D3C6AA";
+      # Set the background color for the completion menu (dark background)
+      AIDER_COMPLETION_MENU_BG_COLOR = "#2D353B";
+      # Set the color for the current item in the completion menu (light text)
+      AIDER_COMPLETION_MENU_CURRENT_COLOR = "#D3C6AA";
+      # Set the background color for the current item in the completion menu (highlighted background)
+      AIDER_COMPLETION_MENU_CURRENT_BG_COLOR = "#475258";
     };
 
     # This value determines the Home Manager release that your
