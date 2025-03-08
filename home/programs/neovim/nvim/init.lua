@@ -656,6 +656,7 @@ require('lazy').setup({
         'latexindent',
         'lua_ls',
         'mdformat',
+        'marksman',
         'nil_ls', -- nix lsp
         'prettier',
         'proselint',
