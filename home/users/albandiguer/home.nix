@@ -18,7 +18,6 @@
       # ghc
       google-cloud-sdk # gcloud, gsutils
       heroku
-      htop
       httpie
       jq
       jwt-cli
@@ -106,6 +105,7 @@
   imports = [
     # ../../zsh
     ../../programs/fish
+    ../../programs/btop.nix
     ../../programs/fzf.nix
     ../../programs/carapace.nix
     ../../programs/git.nix
