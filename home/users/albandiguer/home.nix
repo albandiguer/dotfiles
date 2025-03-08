@@ -23,7 +23,6 @@
       jq
       jwt-cli
       lato # used by AltaCV
-      mise # pkg manager for programming langs https://github.com/jdx/mise
       marksman # markdown lsp https://github.com/artempyanykh/marksman
       ngrok # broken atm
       nix-prefetch-git
