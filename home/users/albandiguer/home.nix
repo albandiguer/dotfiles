@@ -17,7 +17,6 @@
       duf # disk space etc
       # ghc
       google-cloud-sdk # gcloud, gsutils
-      heroku
       httpie
       jq
       jwt-cli
