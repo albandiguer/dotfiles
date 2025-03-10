@@ -12,10 +12,11 @@
         aws-cli = "latest";
         gcloud = "latest";
         node = "latest";
+        postgres = "latest";
         ruby = "latest";
-        terraform = "latest";
-        uv = "latest";
         rust = "latest"; # need rustup for aider-chat deps (tiktoken)
+        terraform = "latest";
+        uv = "latest"; # shall it be in nix instead?
       };
 
       tasks = {

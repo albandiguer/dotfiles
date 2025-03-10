@@ -2,16 +2,24 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    # -- Cloud & DevOps --
     awslogs
-    bruno
-    eza # https://github.com/eza-community/eza
-    graphite-cli
-    lazydocker
-    marp-cli #https://github.com/marp-team/marp-cli
-    openssl
     podman
     podman-compose
-    portaudio # [for aider voice](https://aider.chat/docs/install/optional.html#enable-voice-coding)
+
+    # -- Development Tools --
+    bruno        # API Client & Testing Tool
+    graphite-cli # Git Client
+    lazydocker  # Docker TUI
+    openssl
+    icu         # mise postgres deps
+
+    # -- CLI Utilities --
+    eza         # https://github.com/eza-community/eza
+    portaudio   # for aider voice - https://aider.chat/docs/install/optional.html#enable-voice-coding
+
+    # -- Presentation & Communication --
+    marp-cli    # Markdown to Presentation tool
     slack
   ];
 
@@ -69,10 +77,9 @@
       "iredis"
       "libpq"
       "libyaml"
-      "postgresql@15" # cant remember why, for dadbod? mise it?
       "puma/puma/puma-dev"
       # "sapling"
-      "tectonic"
+      "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html 
       "vips" # Image processing library
       # "hashicorp/tap/terraform"
       # "python-setuptools" # awsume deps

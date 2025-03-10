@@ -5,22 +5,19 @@
       # Cloud & Infrastructure Tools
       # awscli2 # in mise
       # aws-sso-cli # not necessary
-      ssm-session-manager-plugin # https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
-      google-cloud-sdk # gcloud, gsutils
-      
+      # ssm-session-manager-plugin # https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+
       # Development Tools
       act # gh actions locally
       buildpack # cloud native buildpacks, use pack...
-      # deno
       dive # docker image inspection
-      postgresql # dadbod requires psql, use mise instead?
       ngrok # broken atm
-      
+
       # Git Tools
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       nix-prefetch-git
       nix-prefetch-github # not working at times cant verify sha256 sums
-      
+
       # Shell & CLI Utilities
       bash # macos is bash 3xx, need 4+
       bat # better cat
@@ -34,14 +31,14 @@
       tree # directory structure viewer
       watch # execute command periodically
       wget # file downloader
-      
+
       # Security & Credentials
       bitwarden-cli # not working
-      
+
       # Fonts
       lato # used by AltaCV
       roboto-slab # used by AltaCV
-      
+
       # Nerd Fonts
       nerd-fonts.fantasque-sans-mono
       nerd-fonts.hack
@@ -54,7 +51,7 @@
       nerd-fonts.ubuntu-mono
       nerd-fonts.victor-mono
       nerd-fonts.zed-mono
-      
+
       # Disabled/Legacy
       # ghc
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
