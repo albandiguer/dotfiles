@@ -98,6 +98,10 @@
       AIDER_COMPLETION_MENU_CURRENT_COLOR = "#D3C6AA";
       # Set the background color for the current item in the completion menu (highlighted background)
       AIDER_COMPLETION_MENU_CURRENT_BG_COLOR = "#475258";
+      # Attribute aider commits in the git committer name (default: True)
+      AIDER_ATTRIBUTE_COMMITTER=false;
+      # Prefix commit messages with 'aider: ' if aider authored the changes (default: False)
+      AIDER_ATTRIBUTE_COMMIT_MESSAGE_AUTHOR=true;
     };
 
     # This value determines the Home Manager release that your
