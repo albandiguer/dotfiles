@@ -101,7 +101,7 @@
       # Attribute aider commits in the git committer name (default: True)
       AIDER_ATTRIBUTE_COMMITTER="false";
       # Prefix commit messages with 'aider: ' if aider authored the changes (default: False)
-      AIDER_ATTRIBUTE_COMMIT_MESSAGE_AUTHOR="true";
+      AIDER_ATTRIBUTE_COMMIT_MESSAGE_AUTHOR="false";
     };
 
     # This value determines the Home Manager release that your
