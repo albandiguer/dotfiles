@@ -27,7 +27,7 @@
       # status line (thanks, Ju!)
       set-option -g status-justify left
       set-option -g status-left '#[bg=colour2] #[bg=colour8] #[bg=colour0] #S '
-      set-option -g status-left-length 16
+      set-option -g status-left-length 50
       set-option -g status-fg colour7
       set-option -g status-bg colour0
       set-option -g status-right '%a %R #[bg=colour8] #[bg=colour2] #[]'
