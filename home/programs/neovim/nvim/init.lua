@@ -653,10 +653,11 @@ require('lazy').setup({
         'erb-formatter',
         'hadolint',
         'html',
+        'jsonls',
         'latexindent',
         'lua_ls',
-        'mdformat',
         'marksman',
+        'mdformat',
         'nil_ls', -- nix lsp
         'prettier',
         'proselint',
