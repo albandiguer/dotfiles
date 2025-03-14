@@ -19,6 +19,16 @@ return {
         __inherited_from = 'copilot',
         model = 'claude-3.7-sonnet',
       },
+      copilot_claude_thought = {
+        __inherited_from = 'copilot',
+        model = 'claude-3.7-sonnet-thought',
+        temperature = 1,
+        max_tokens = 20000,
+      },
+      copilot_openai = {
+        __inherited_from = 'copilot',
+        model = 'gemini-2.0-flash-001',
+      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
