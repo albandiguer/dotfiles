@@ -1,15 +1,12 @@
-local providers_opts = {
-  copilot = {
-    provider = 'copilot',
-    copilot = {
-      model = 'claude-3.7-sonnet', -- deepseek release soon ?
-      -- max_tokens = 4096,
-    },
-  },
-  deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
-    provider = 'deepseek',
+return {
+  'yetone/avante.nvim',
+  event = 'VeryLazy',
+  lazy = false,
+  version = false, -- set this if you want to always pull the latest change
+  opts = {
+    provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
     vendors = {
-      deepseek = {
+      deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
         __inherited_from = 'openai',
         api_key_name = 'DEEPSEEK_API_KEY',
         endpoint = 'https://api.deepseek.com',
@@ -18,17 +15,12 @@ local providers_opts = {
         timeout = 10000,
         max_tokens = 4096,
       },
+      copilot_claude = { -- https://github.com/yetone/avante.nvim/issues/1566
+        __inherited_from = 'copilot',
+        model = 'claude-3.7-sonnet',
+      },
     },
   },
-}
-local selected_provider = 'copilot'
-
-return {
-  'yetone/avante.nvim',
-  event = 'VeryLazy',
-  lazy = false,
-  version = false, -- set this if you want to always pull the latest change
-  opts = providers_opts[selected_provider],
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make',
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
