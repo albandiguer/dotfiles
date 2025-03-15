@@ -22,7 +22,7 @@ return {
       copilot_claude_thought = {
         __inherited_from = 'copilot',
         model = 'claude-3.7-sonnet-thought',
-        temperature = 1,
+        temperature = 0.5,
         max_tokens = 20000,
       },
       copilot_openai = {
