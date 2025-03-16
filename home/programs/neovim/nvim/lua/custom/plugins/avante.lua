@@ -5,6 +5,15 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
+    cursor_applying_provider = 'copilot_claude_thought',
+    behaviour = {
+      enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
+    },
+    rag_service = {
+      enabled = true, -- Enables the RAG service
+      -- host_mount =  -- current directory
+      provider = 'copilot_openai', -- The provider to use for RAG service (e.g. openai or ollama)
+    },
     vendors = {
       deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
         __inherited_from = 'openai',
