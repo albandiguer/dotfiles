@@ -87,6 +87,7 @@
       # AIDER_MODEL = "github_copilot/claude-3.7-sonnet-thought";
       ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
       # AIDER_WEAK_MODEL = "github_copilot/claude-3.5-haiku";
+      AIDER_EDITOR = "nvim";
 
       # Aider Everforest-ish theme
       # Set the color for user input (soft sage green)
