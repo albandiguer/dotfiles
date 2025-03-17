@@ -93,6 +93,7 @@
       "raycast"
       "httpie"
       "chatbox"
+      "freetube"
     ];
   };
 
