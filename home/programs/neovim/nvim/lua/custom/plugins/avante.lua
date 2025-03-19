@@ -10,7 +10,7 @@ return {
       enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
     },
     rag_service = {
-      enabled = true, -- Enables the RAG service
+      enabled = false, -- Enables the RAG service
       -- host_mount =  -- current directory
       provider = 'copilot_openai', -- The provider to use for RAG service (e.g. openai or ollama)
     },
