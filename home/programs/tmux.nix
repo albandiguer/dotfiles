@@ -25,7 +25,6 @@
       unbind-key -T prefix d
 
       # status line (thanks, Ju!)
-      set -g status-right '#(gitmux "#{pane_current_path}")'
       set-option -g pane-active-border-style fg=colour2
       set-option -g pane-border-style fg=colour238
       set-option -g status-bg colour0
@@ -34,7 +33,7 @@
       set-option -g status-justify left
       set-option -g status-left '#[bg=colour2] #[bg=colour8] #[bg=colour0] #S '
       set-option -g status-left-length 50
-      set-option -g status-right '%a %R #[bg=colour8] #[bg=colour2] #[]'
+      set-option -g status-right '#(gitmux "#{pane_current_path}") %a %R #[bg=colour8] #[bg=colour2] #[]'
       set-window-option -g window-status-current-format '#[bg=colour8]#[fg=colour3] #I #[bg=colour7]#[fg=colour8] #W#[fg=colour0]#F #[bg=colour8]'
       set-window-option -g window-status-format '#[bg=colour8]#[fg=colour3] #I #[fg=colour15]#W#[fg=colour5]#F# '
 

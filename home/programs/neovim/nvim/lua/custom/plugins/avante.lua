@@ -7,7 +7,7 @@ return {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
     cursor_applying_provider = 'copilot_claude_thought',
     behaviour = {
-      enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
+      enable_cursor_planning_mode = false, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
     },
     rag_service = {
       enabled = false, -- Enables the RAG service
