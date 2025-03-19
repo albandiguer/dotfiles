@@ -13,6 +13,7 @@
     lazydocker  # Docker TUI
     openssl
     icu         # mise postgres deps
+    gitmux  # git tmux integration
 
     # -- CLI Utilities --
     eza         # https://github.com/eza-community/eza
