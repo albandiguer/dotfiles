@@ -978,6 +978,14 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
+      -- Disable statusline for NvimTree buffers
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'NvimTree',
+        callback = function()
+          vim.b.ministatusline_disable = true
+        end,
+      })
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
