@@ -2,11 +2,6 @@
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      # Cloud & Infrastructure Tools
-      # awscli2 # in mise
-      # aws-sso-cli # not necessary
-      # ssm-session-manager-plugin # https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
-
       # Development Tools
       act # gh actions locally
       buildpack # cloud native buildpacks, use pack...

@@ -15,6 +15,8 @@
     icu         # mise postgres deps
     gitmux  # git tmux integration
 
+    # -- Cloud & Infra --
+    ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
     # -- CLI Utilities --
     eza         # https://github.com/eza-community/eza
     portaudio   # for aider voice - https://aider.chat/docs/install/optional.html#enable-voice-coding
