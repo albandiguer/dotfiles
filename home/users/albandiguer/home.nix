@@ -4,7 +4,7 @@
     packages = with pkgs; [
       # Development Tools
       act # gh actions locally
-      buildpack # cloud native buildpacks, use pack...
+      buildpack # cloud native buildpacks, use pack..., checkout nixpacks
       dive # docker image inspection
       ngrok # broken atm
 
