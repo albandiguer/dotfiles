@@ -75,14 +75,7 @@
       EDITOR = "nvim";
 
 
-      ## Specify the model to use for the main chat 
-      ## NOTE: lookout for this badboy merged https://github.com/Aider-AI/aider/pull/3273
-      # models here https://github.com/Aider-AI/aider/pull/3273/files
-      # TODO: as soon as above merged, change the alias for aider to pass in model
-      # AIDER_MODEL = "github_copilot/claude-3.7-sonnet-thought";
-      # Specify the model to use for commit messages and chat history summarization (default depends on --model)
-      # AIDER_WEAK_MODEL = "github_copilot/gemini-2.0-flash-001";
-      ## Specify which editor to use for the /editor command
+      ## NOTE: model settings here https://github.com/Aider-AI/aider/blob/main/aider/resources/model-settings.yml
       AIDER_EDITOR = "nvim";
       # Only consider files in the current subtree of the git repository
       AIDER_SUBTREE_ONLY="true";

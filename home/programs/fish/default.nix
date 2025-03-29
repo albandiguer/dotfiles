@@ -15,7 +15,7 @@
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
 
     shellAbbrs = {
-      aider = "uvx --from aider-chat aider"; # same as: uv tool run --from aider-chat aider";
+      aider = "uvx --from aider-chat aider --model github_copilot/claude-3.7-sonnet"; # same as: uv tool run --from aider-chat aider";
       b = "bin/bundle";
       bs = "brew search";
       c = "clear";
