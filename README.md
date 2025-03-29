@@ -42,6 +42,16 @@ create molten venv and add deps (see mise file) `uv task run create-molten-env`
 
 To upgrade `uv tool upgrade aider-chat`
 
+## AI stuff
+✏️memo
+
+in Neovim:
+  1. copilot in neovim 
+  2. avante (copilot/sonnet-3.7)
+
+CLI:
+  1. aider (currently using copilot/sonnet-3.7)
+
 ## Uninstall
 ```bash
 nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
