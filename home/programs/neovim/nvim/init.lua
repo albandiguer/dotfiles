@@ -227,6 +227,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Function to delete all buffers except the current one
+vim.cmd [[
+  function! DeleteOtherBuffers()
+      let current = bufnr('%')
+      for buf in getbufinfo({'buflisted':1})
+          if buf.bufnr != current
+              execute 'bdelete' buf.bufnr
+          endif
+      endfor
+  endfunction
+
+  " Create the :BufOnly command
+  command! BufOnly call DeleteOtherBuffers()
+]]
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
