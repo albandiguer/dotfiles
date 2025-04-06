@@ -77,7 +77,7 @@ require("lspconfig").ruby_lsp.setup({})
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] [proselint]()
-- [ ] folds
+- [x] folds
 - [ ] yanky
 - [x] explore kickstart.nvim 
 - [ ] obsidian neovim https://github.com/epwalsh/obsidian.nvim
@@ -95,22 +95,4 @@ require("lspconfig").ruby_lsp.setup({})
 git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/programs/kickstart-nvim/nvim/
 ```
 => although the idea is decent, in practice not good as for nix to work you need to check in changes in main git, related to derivation?
-- [x] Markdown preview
-- [ ] Dadbod
-- [x] vim-dadbod-completion
-- [x] Colorschemes
-- [x] Filetype plugins
-- [x] Bookmarks
-- [x] Dispatch
-- [x] Fugitive
-- [x] luasnip
-- [x] copilot
-- [ ] prob with git amend 
-- [ ] Code sideproject couple hours to get a hand of it
-- [x] Give a try to [lazyvim](https://github.com/LazyVim/LazyVim/)?
-- [x] Fix gist vim 
-- [x] Tweak lsp mappings (refactoring & code actions?)
-- [x] configure friendly snippets (rails...)
-- [x] evaluate vsnips vs luasnip
-- [x] get nvim from nighty builds overlay (0.10+)
 - [ ] ~~Lsp for protobuf https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bufls~~
