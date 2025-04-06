@@ -78,6 +78,7 @@
   homebrew = {
     enable = true;
     brews = [
+      "bitwarden-cli"
       "git-crypt"
       "gpg"
       "iredis"
