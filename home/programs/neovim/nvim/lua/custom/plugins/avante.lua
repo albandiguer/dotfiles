@@ -7,10 +7,10 @@ return {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
     cursor_applying_provider = 'copilot_claude_thought',
     behaviour = {
-      enable_cursor_planning_mode = false, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
+      enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
     },
     rag_service = {
-      enabled = false, -- Enables the RAG service
+      enabled = true, -- Enables the RAG service
       -- host_mount =  -- current directory
       provider = 'copilot_openai', -- The provider to use for RAG service (e.g. openai or ollama)
     },
@@ -38,6 +38,9 @@ return {
         __inherited_from = 'copilot',
         model = 'gemini-2.0-flash-001',
       },
+    },
+    web_search_engine = {
+      provider = 'tavily',
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
