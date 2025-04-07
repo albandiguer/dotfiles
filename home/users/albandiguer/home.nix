@@ -74,35 +74,22 @@
     sessionVariables = {
       EDITOR = "nvim";
 
-
-      ## NOTE: model settings here https://github.com/Aider-AI/aider/blob/main/aider/resources/model-settings.yml
-      AIDER_EDITOR = "nvim";
-      # Only consider files in the current subtree of the git repository
-      AIDER_SUBTREE_ONLY="true";
-
-      # Aider Everforest-ish theme
-      # Set the color for user input (soft sage green)
-      AIDER_USER_INPUT_COLOR = "#A7C080";
-      # Set the color for tool output (muted blue)
-      AIDER_TOOL_OUTPUT_COLOR = "#7FBBB3";
-      # Set the color for tool error messages (soft red)
-      AIDER_TOOL_ERROR_COLOR = "#E67E80";
-      # Set the color for tool warning messages (warm yellow)
-      AIDER_TOOL_WARNING_COLOR = "#DBBC7F";
-      # Set the color for assistant output (calm blue)
-      AIDER_ASSISTANT_OUTPUT_COLOR = "#83B6AF";
-      # Set the color for the completion menu (light sage)
-      AIDER_COMPLETION_MENU_COLOR = "#D3C6AA";
-      # Set the background color for the completion menu (dark background)
-      AIDER_COMPLETION_MENU_BG_COLOR = "#2D353B";
-      # Set the color for the current item in the completion menu (light text)
-      AIDER_COMPLETION_MENU_CURRENT_COLOR = "#D3C6AA";
-      # Set the background color for the current item in the completion menu (highlighted background)
-      AIDER_COMPLETION_MENU_CURRENT_BG_COLOR = "#475258";
-      # Attribute aider commits in the git committer name (default: True)
-      AIDER_ATTRIBUTE_COMMITTER="false";
-      ## Attribute aider code changes in the git author name (default: True)
+      # Open .env.aider file for defaults and dets on each var
       AIDER_ATTRIBUTE_AUTHOR="false";
+      AIDER_ATTRIBUTE_COMMITTER="false";
+      AIDER_AUTO_COMMITS="false";
+      AIDER_EDITOR = "nvim";
+      AIDER_SUBTREE_ONLY="true";
+      # Aider Everforest-ish theme
+      AIDER_USER_INPUT_COLOR = "#A7C080";
+      AIDER_TOOL_OUTPUT_COLOR = "#7FBBB3";
+      AIDER_TOOL_ERROR_COLOR = "#E67E80";
+      AIDER_TOOL_WARNING_COLOR = "#DBBC7F";
+      AIDER_ASSISTANT_OUTPUT_COLOR = "#83B6AF";
+      AIDER_COMPLETION_MENU_COLOR = "#D3C6AA";
+      AIDER_COMPLETION_MENU_BG_COLOR = "#2D353B";
+      AIDER_COMPLETION_MENU_CURRENT_COLOR = "#D3C6AA";
+      AIDER_COMPLETION_MENU_CURRENT_BG_COLOR = "#475258";
     };
 
     # This value determines the Home Manager release that your
