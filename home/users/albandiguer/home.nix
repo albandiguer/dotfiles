@@ -55,13 +55,14 @@
 
     # copy dotfiles
     file = {
-      ".npmrc".source = ../../dotfiles/.npmrc;
-      ".editorconfig".source = ../../dotfiles/.editorconfig;
-      ".inputrc".source = ../../dotfiles/.inputrc;
-      ".dive.yml".source = ../../dotfiles/.dive.yml;
-      ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix
-      ".default-python-packages".source = ../../dotfiles/.default-python-packages;
+      ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix ?
       ".default-node-packages".source = ../../dotfiles/.default-node-packages;
+      ".default-python-packages".source = ../../dotfiles/.default-python-packages;
+      ".dive.yml".source = ../../dotfiles/.dive.yml;
+      ".editorconfig".source = ../../dotfiles/.editorconfig;
+      ".gitmux.conf".source = ../../dotfiles/.gitmux.yaml;
+      ".inputrc".source = ../../dotfiles/.inputrc;
+      ".npmrc".source = ../../dotfiles/.npmrc;
       # ".ghstackrc".source = ../../dotfiles/.ghstackrc;
     };
 

@@ -10,6 +10,12 @@ upgrade-nix:
 up: upgrade-nix
 	nix flake update
 	make apply
+	mise up
+	# TODO:
+	# nvim +Lazy\ update
+	# nvim +MasonToolsUpdate
+	# uv tool update
+
 
 # Sometimes updating breaks things
 rollback:
