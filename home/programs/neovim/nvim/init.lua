@@ -664,6 +664,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'bashls',
+        -- 'copilot-language-server', -- try this later, promising, swap the current copilot-cmp for regular lsp source
         'cssls',
         'docker_compose_language_service',
         'dockerls',
@@ -893,7 +894,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'vim-dadbod-completion' },
           { name = 'luasnip' },
-          { name = 'copilot' }, -- not ideal to have it here, ideally we could add it from the plugin file instead
+          { name = 'copilot' }, -- remove this eventually and use the copilot lsp?
           { name = 'path' },
         },
         preset = 'codicons',
