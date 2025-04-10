@@ -198,7 +198,7 @@ completion-menu-current-color: "#D3C6AA"
 completion-menu-current-bg-color: "#475258"
 
 ## Set the markdown code theme (default: default, other options include monokai, solarized-dark, solarized-light, or a Pygments builtin style, see https://pygments.org/styles for available themes)
-code-theme: lightbulb
+code-theme: github-dark
 ## Show diffs when committing changes (default: False)
 #show-diffs: false
 
