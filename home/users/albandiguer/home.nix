@@ -55,6 +55,7 @@
 
     # copy dotfiles
     file = {
+      ".aider.conf.yml".source = ../../dotfiles/.aider.conf.yml; 
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix ?
       ".default-node-packages".source = ../../dotfiles/.default-node-packages;
       ".default-python-packages".source = ../../dotfiles/.default-python-packages;
@@ -74,23 +75,6 @@
     sessionPath = ["./bin" "/opt/homebrew/bin"];
     sessionVariables = {
       EDITOR = "nvim";
-
-      # Open .env.aider file for defaults and dets on each var
-      AIDER_ATTRIBUTE_AUTHOR="false";
-      AIDER_ATTRIBUTE_COMMITTER="false";
-      AIDER_AUTO_COMMITS="false";
-      AIDER_EDITOR = "nvim";
-      AIDER_SUBTREE_ONLY="true";
-      # Aider Everforest-ish theme
-      AIDER_USER_INPUT_COLOR = "#A7C080";
-      AIDER_TOOL_OUTPUT_COLOR = "#7FBBB3";
-      AIDER_TOOL_ERROR_COLOR = "#E67E80";
-      AIDER_TOOL_WARNING_COLOR = "#DBBC7F";
-      AIDER_ASSISTANT_OUTPUT_COLOR = "#83B6AF";
-      AIDER_COMPLETION_MENU_COLOR = "#D3C6AA";
-      AIDER_COMPLETION_MENU_BG_COLOR = "#2D353B";
-      AIDER_COMPLETION_MENU_CURRENT_COLOR = "#D3C6AA";
-      AIDER_COMPLETION_MENU_CURRENT_BG_COLOR = "#475258";
     };
 
     # This value determines the Home Manager release that your
