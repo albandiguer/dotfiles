@@ -45,9 +45,10 @@ To upgrade `uv tool upgrade aider-chat`
 ## AI stuff
 ### in Neovim:
   1. copilot - change for agnostic tool ?
-  2. avante (copilot/sonnet-3.7)
+  2. avante (copilot/sonnet-3.7) - poor context
 ### CLI:
-  1. aider (currently using copilot/sonnet-3.7)
+  1. aider 
+  `aider --watch-files --model <pick> --provider-api_key <key>`
 
 ## Uninstall
 ```bash
