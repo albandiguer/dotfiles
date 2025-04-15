@@ -14,7 +14,7 @@ up: upgrade-nix
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate
-	# uv tool update
+	# uv tool update aider-chat
 
 
 # Sometimes updating breaks things
