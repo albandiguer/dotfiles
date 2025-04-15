@@ -5,7 +5,7 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
-    cursor_applying_provider = 'copilot_claude_thought',
+    cursor_applying_provider = 'copilot_claude',
     behaviour = {
       enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
     },
@@ -27,11 +27,13 @@ return {
       copilot_claude = { -- https://github.com/yetone/avante.nvim/issues/1566
         __inherited_from = 'copilot',
         model = 'claude-3.7-sonnet',
+        temperature = 0.3,
+        max_tokens = 10000,
       },
       copilot_claude_thought = {
         __inherited_from = 'copilot',
         model = 'claude-3.7-sonnet-thought',
-        temperature = 0.5,
+        temperature = 0.3,
         max_tokens = 20000,
       },
       copilot_openai = {
