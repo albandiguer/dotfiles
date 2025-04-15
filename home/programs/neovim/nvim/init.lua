@@ -193,6 +193,8 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 -- enable exrc
 vim.opt.exrc = true
+vim.opt.secure = true -- default when exrc is true
+vim.o.verbosefile = vim.fn.expand '~/.nvim_verbose.log' -- checkout this file for troubleshooting
 
 -- colorcolumn
 vim.opt.colorcolumn = '80'
