@@ -62,8 +62,9 @@ Example, changing colorscheme and setting up a lsp natively bypassing mason
 (ruby_lsp intalled in Gemfile or in ~/.default-gems).
 ```
 # .nvim.lua
-vim.cmd("colorscheme catppuccin")
-require("lspconfig").ruby_lsp.setup({})
+vim.cmd.colorscheme("catppuccin")
+-- require("lspconfig").ruby_lsp.setup({}) -- this became
+vim.lsp.enable('ruby_lsp')
 ```
 
 
