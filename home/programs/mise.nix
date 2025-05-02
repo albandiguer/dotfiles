@@ -18,6 +18,12 @@
         terraform = "latest";
         uv = "latest"; # shall it be in nix instead?
       };
+      
+      # https://github.com/jdx/mise/blob/main/settings.toml
+      settings = {
+        idiomatic_version_file = true; # .ruby-version etc
+        idiomatic_version_file_enable_tools = ["ruby" "node"];
+      };
 
       tasks = {
         create-molten-venv = {
