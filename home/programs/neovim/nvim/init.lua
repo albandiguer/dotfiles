@@ -87,6 +87,8 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+-- Create a dummy FileExplorer augroup to prevent errors in plugins using netrw
+vim.api.nvim_create_augroup('FileExplorer', { clear = true })
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -193,7 +195,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 -- enable exrc
 vim.opt.exrc = true
-vim.opt.secure = true -- default when exrc is true
+-- vim.opt.secure = false -- everything is allowed because .nvimrc or .nvim.lua is whitelisted
 vim.o.verbosefile = vim.fn.expand '~/.nvim_verbose.log' -- checkout this file for troubleshooting
 
 -- colorcolumn
