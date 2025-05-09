@@ -58,6 +58,9 @@ deactivate
 
 ## exrc
 
+Trust files manually using `:trust` command, remove some using `:trust ++deny`,
+see `:h trust` for doc.
+
 Example, changing colorscheme and setting up a lsp natively bypassing mason
 (ruby_lsp intalled in Gemfile or in ~/.default-gems).
 ```
