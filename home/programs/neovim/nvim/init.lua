@@ -679,7 +679,6 @@ require('lazy').setup({
         'latexindent',
         'lua_ls',
         'marksman',
-        'mdformat',
         'nil_ls', -- nix lsp
         'prettier',
         'proselint',
@@ -744,6 +743,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
         javascript = { 'prettier' },
+        markdown = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
