@@ -6,6 +6,10 @@ return {
   opts = {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
     cursor_applying_provider = 'copilot_claude',
+    -- overload config for FOTM gemini 2.5 https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L263
+    gemini = {
+      model = 'gemini-2.5-pro-preview-05-06',
+    },
     behaviour = {
       enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
     },
@@ -15,6 +19,7 @@ return {
       -- host_mount =  -- current directory
       provider = 'copilot_openai', -- The provider to use for RAG service (e.g. openai or ollama)
     },
+    -- custom providers https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L304
     vendors = {
       deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
         __inherited_from = 'openai',
