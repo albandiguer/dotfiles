@@ -10,4 +10,10 @@ return {
   'savq/melange-nvim',
   'slugbyte/lackluster.nvim',
   'vague2k/vague.nvim',
+  {
+    'wtfox/jellybeans.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {}, -- Optional
+  },
 }
