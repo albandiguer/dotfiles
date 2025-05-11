@@ -27,6 +27,8 @@
     marp-cli    # Markdown to Presentation tool
     slack
 
+    # -- AI --
+    ollama
   ];
 
   # Ensure consistent nixbld group across machines
@@ -41,6 +43,10 @@
       enable = false;
       config = builtins.readFile ../home/dotfiles/sketchybarrc;
     };
+    # ollama = { # NOTE: not yet available https://github.com/nix-darwin/nix-darwin/pull/972
+    #   enable = true;
+    #   loadModels = [ "llama3" "nomic-embed-text" ];
+    # };
   };
 
   nix.package = pkgs.nix; # TODO figure what is it

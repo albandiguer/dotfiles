@@ -15,9 +15,9 @@ return {
     },
     -- https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     rag_service = {
-      enabled = false, -- Enables the RAG service
+      enabled = true, -- Enables the RAG service
       -- host_mount =  -- current directory
-      provider = 'copilot_openai', -- The provider to use for RAG service (e.g. openai or ollama)
+      provider = 'ollama', -- The provider to use for RAG service (e.g. openai or ollama)
     },
     -- custom providers https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L304
     vendors = {
