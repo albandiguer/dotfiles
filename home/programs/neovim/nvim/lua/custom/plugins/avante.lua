@@ -16,8 +16,9 @@ return {
     -- https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     rag_service = {
       enabled = true, -- Enables the RAG service
-      -- host_mount =  -- current directory
+      host_mount = vim.fn.getcwd, -- current directory
       provider = 'ollama', -- The provider to use for RAG service (e.g. openai or ollama)
+      endpoint = 'http://localhost:11434', -- as described here https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     },
     -- custom providers https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L304
     vendors = {
