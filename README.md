@@ -61,6 +61,10 @@ create molten venv and add deps (see mise file) `uv task run create-molten-env`
 
 To upgrade `uv tool upgrade aider-chat`
 
+### Podman
+
+https://github.com/jesseduffield/lazydocker/issues/4#issuecomment-2594808943
+
 ## AI stuff
 
 ### in Neovim:

@@ -91,6 +91,7 @@
   imports = [
     # ../../zsh
     ../../programs/fish
+    ../../programs/bash.nix
     ../../programs/btop.nix
     ../../programs/fzf.nix
     ../../programs/carapace.nix

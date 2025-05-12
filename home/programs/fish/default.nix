@@ -9,7 +9,8 @@
       db = "nvim +DBUI";
       ls = "eza";
       vim = "nvim";
-      # docker = "podman";
+      docker = "podman";
+      docker-compose = "podman-compose";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
@@ -101,6 +102,13 @@
         and podman machine list --format json | jq -e '.[].Running' > /dev/null 2>&1
         set -gx DOCKER_HOST (podman machine inspect | jq -r '.[0].ConnectionInfo.PodmanSocket.Path | sub("^"; "unix://")')
       end
+    '';
+
+    # for non-interactive fish shells
+    shellInit = ''
+      # Docker -> Podman aliases for fish scripts
+      alias docker="podman"
+      alias docker-compose="podman-compose"
     '';
 
     # https://github.com/budimanjojo/tmux.fish

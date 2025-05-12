@@ -4,9 +4,10 @@
   environment.systemPackages = with pkgs; [
     # -- Cloud & DevOps --
     awslogs
+    localstack # aws mock 
     podman
     podman-compose
-    localstack # aws mock 
+    podman-desktop
 
     # -- Development Tools --
     bruno        # API Client & Testing Tool
