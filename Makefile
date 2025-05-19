@@ -1,7 +1,7 @@
 default: apply
 
 apply:
-	nix run nix-darwin -- switch --flake .
+	sudo nix run nix-darwin -- switch --flake .
 	# nix run nix-darwin --no-eval-cache -- switch --flake .
 
 upgrade-nix:

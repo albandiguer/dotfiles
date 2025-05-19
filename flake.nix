@@ -58,6 +58,7 @@
       ./darwin/macbook.nix
       home-manager.darwinModules.home-manager
       {
+        system.primaryUser = user;
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users.${user} = import ./home/users/${user}/home.nix;

@@ -9,6 +9,7 @@
       db = "nvim +DBUI";
       ls = "eza";
       vim = "nvim";
+      diff = "nvim -d";
       # docker = "podman";
     };
 
