@@ -35,13 +35,14 @@ Why the current setup:
 - Add `ruby-lsp` in default-gems as well, can then have the following in `.nvim.lua` file inside the project to have ruby-lsp at work
 
 ```
-require("lspconfig").ruby_lsp.setup({
+vim.lsp.config('ruby_lsp', {
 	cmd = { "mise", "x", "--", "ruby-lsp" },
 	init_options = {
 		formatter = "standard",
 		linters = { "standard" },
 	},
 })
+vim.lsp.enable('ruby_lsp')
 vim.cmd.colorscheme("melange")
 ```
 
@@ -70,6 +71,7 @@ Example, changing colorscheme and setting up a lsp natively bypassing mason
 # .nvim.lua
 vim.cmd.colorscheme("catppuccin")
 -- require("lspconfig").ruby_lsp.setup({}) -- this became
+vim.lsp.config('ruby_lsp', { settings })
 vim.lsp.enable('ruby_lsp')
 ```
 
