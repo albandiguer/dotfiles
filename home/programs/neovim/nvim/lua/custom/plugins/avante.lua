@@ -21,27 +21,33 @@ return {
       endpoint = 'http://localhost:11434', -- as described here https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     },
     -- custom providers https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L304
-    vendors = {
+    providers = {
       deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
         __inherited_from = 'openai',
         api_key_name = 'DEEPSEEK_API_KEY',
         endpoint = 'https://api.deepseek.com',
         model = 'deepseek-coder',
-        temperature = 0,
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 4096,
+        },
         timeout = 10000,
-        max_tokens = 4096,
       },
       copilot_claude = { -- https://github.com/yetone/avante.nvim/issues/1566
         __inherited_from = 'copilot',
         model = 'claude-3.7-sonnet',
-        temperature = 0.3,
-        max_tokens = 10000,
+        extra_request_body = {
+          temperature = 0.3,
+          max_tokens = 10000,
+        },
       },
       copilot_claude_thought = {
         __inherited_from = 'copilot',
         model = 'claude-3.7-sonnet-thought',
-        temperature = 0.3,
-        max_tokens = 20000,
+        extra_request_body = {
+          temperature = 0.3,
+          max_tokens = 10000,
+        },
       },
       copilot_openai = {
         __inherited_from = 'copilot',
@@ -57,14 +63,14 @@ return {
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
-    'stevearc/dressing.nvim',
     'nvim-lua/plenary.nvim',
     'MunifTanjim/nui.nvim',
     --- The below dependencies are optional,
     'echasnovski/mini.pick', -- for file_selector provider mini.pick
-    'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
     'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
     'ibhagwan/fzf-lua', -- for file_selector provider fzfim-web-devicons', -- or echasnovski/mini.icons
+    'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
+    'stevearc/dressing.nvim',
     'zbirenbaum/copilot.lua', -- for providers='copilot'
     {
       -- support for image pasting
