@@ -27,8 +27,9 @@
     marp-cli    # Markdown to Presentation tool
     slack
 
-    # -- AI --
+    # -- AI related --
     ollama
+    claude-code
   ];
 
   # Ensure consistent nixbld group across machines
