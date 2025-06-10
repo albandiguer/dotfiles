@@ -20,6 +20,7 @@
       b = "bin/bundle";
       bs = "brew search";
       c = "clear";
+      cc = "claude"; # claude code
       cs = "gh copilot suggest";
       dk = "docker";
       dkc = "docker compose";
