@@ -22,6 +22,7 @@
     # -- CLI Utilities --
     eza         # https://github.com/eza-community/eza
     portaudio   # for aider voice - https://aider.chat/docs/install/optional.html#enable-voice-coding
+    _1password-cli # 1Password CLI tool
 
     # -- Presentation & Communication --
     marp-cli    # Markdown to Presentation tool
@@ -108,6 +109,7 @@
       "httpie"
       "chatbox"
       "freetube"
+      "1password" # 1Password GUI application
     ];
   };
 
