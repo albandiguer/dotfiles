@@ -7,22 +7,21 @@ return {
   opts = {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
     cursor_applying_provider = 'copilot_claude',
-    -- overload config for FOTM gemini 2.5 https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L263
-    gemini = {
-      model = 'gemini-2.5-pro-preview-05-06',
-    },
     behaviour = {
       enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
     },
     -- https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     rag_service = {
-      enabled = true, -- Enables the RAG service
+      enabled = false, -- Enables the RAG service
       host_mount = vim.fn.getcwd, -- current directory
       provider = 'ollama', -- The provider to use for RAG service (e.g. openai or ollama)
       endpoint = 'http://localhost:11434', -- as described here https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     },
     -- custom providers https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L304
     providers = {
+      gemini = {
+        model = 'gemini-2.5-pro-preview-05-06', -- overload config for FOTM gemini 2.5 https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L263
+      },
       deepseek = { -- https://github.com/yetone/avante.nvim/pull/1038
         __inherited_from = 'openai',
         api_key_name = 'DEEPSEEK_API_KEY',
