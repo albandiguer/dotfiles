@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{lib, pkgs, ...}: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
@@ -33,11 +33,9 @@
     claude-code
   ];
 
-  # Ensure consistent nixbld group across machines
-  ids.gids.nixbld = 30000;
-  users.groups.nixbld = {
-    gid = 30000;
-  };
+  # default nixbld (nix build) group 
+  ids.gids.nixbld = lib.mkDefault 30000;
+  users.groups.nixbld.gid = lib.mkDefault 30000;
 
   services = {
     lorri.enable = false; # too painful, use mise
