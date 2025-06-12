@@ -890,6 +890,8 @@ require('lazy').setup({
     dependencies = {
       -- Copilot & supermaven
       { 'fang2hou/blink-copilot' },
+      -- Conventional commit
+      { 'disrupted/blink-cmp-conventional-commits' },
       -- Snippet Engine
       {
         'L3MON4D3/LuaSnip',
@@ -965,7 +967,7 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'copilot' },
+        default = { 'conventional_commits', 'lsp', 'path', 'snippets', 'lazydev', 'copilot' },
         per_filetype = {
           sql = { 'snippets', 'dadbod', 'buffer' },
         },
@@ -977,6 +979,16 @@ require('lazy').setup({
             module = 'blink-copilot',
             score_offset = 100,
             async = true,
+          },
+          conventional_commits = {
+            name = 'Conventional Commits',
+            module = 'blink-cmp-conventional-commits',
+            enabled = function()
+              return vim.bo.filetype == 'gitcommit'
+            end,
+            ---@module 'blink-cmp-conventional-commits'
+            ---@type blink-cmp-conventional-commits.Options
+            opts = {}, -- none so far
           },
         },
       },
