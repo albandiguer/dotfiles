@@ -29,7 +29,7 @@
       -- config.font = wezterm.font("VictorMono Nerd Font", {weight="DemiBold", stretch="Normal", style="Normal"});
       -- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"});
       config.font = wezterm.font("ZedMono Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"});
-      config.font_size = 11.9; -- 11.5
+      config.font_size = 12.8; -- 11.5
       config.line_height = 1.25; -- 1.2
 
       config.window_padding = {
