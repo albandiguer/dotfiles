@@ -5,5 +5,8 @@ return {
   },
   config = function()
     require('claude-code').setup()
+
+    -- add a keymap
+    vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
   end,
 }
