@@ -1,15 +1,9 @@
 return {
   'yetone/avante.nvim',
   event = 'VeryLazy',
-  enabled = false,
-  lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = 'copilot_claude', -- active model, builtins list here https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua#L47
-    cursor_applying_provider = 'copilot_claude',
-    behaviour = {
-      enable_cursor_planning_mode = true, -- enable cursor planning mode! https://github.com/yetone/avante.nvim/blob/main/cursor-planning-mode.md
-    },
     -- https://github.com/yetone/avante.nvim?tab=readme-ov-file#rag-service
     rag_service = {
       enabled = false, -- Enables the RAG service
@@ -54,6 +48,7 @@ return {
         model = 'gemini-2.0-flash-001',
       },
     },
+    -- search engine
     web_search_engine = {
       provider = 'tavily',
     },
@@ -67,9 +62,9 @@ return {
     'MunifTanjim/nui.nvim',
     --- The below dependencies are optional,
     'echasnovski/mini.pick', -- for file_selector provider mini.pick
+    'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
     'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
     'ibhagwan/fzf-lua', -- for file_selector provider fzfim-web-devicons', -- or echasnovski/mini.icons
-    'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
     'stevearc/dressing.nvim',
     'zbirenbaum/copilot.lua', -- for providers='copilot'
     {
