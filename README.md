@@ -53,7 +53,7 @@ ruby   3.4.1
 
 ##### molten
 
-create molten venv and add deps (see mise file) `uv task run create-molten-env`
+create [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file) `uv task run create-molten-env`
 
 ##### [aider](https://aider.chat/docs/install.html)
 
