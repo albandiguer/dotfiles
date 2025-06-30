@@ -22,8 +22,6 @@ in {
     extraPackages = with pkgs; [
       # deno # for peek.nvim
       cargo
-      # nodePackages_latest.prettier # --> mason?
-      # yamlfmt --> in mason
       yarn # mdpreview
     ];
 

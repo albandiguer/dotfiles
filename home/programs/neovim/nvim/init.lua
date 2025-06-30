@@ -839,7 +839,7 @@ require('lazy').setup({
       },
     },
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -854,6 +854,10 @@ require('lazy').setup({
           }
         end
       end,
+      -- Set default options
+      default_format_opts = {
+        lsp_format = 'fallback',
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
