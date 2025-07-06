@@ -7,6 +7,7 @@
     podman
     podman-compose
     localstack # aws mock 
+		bitwarden-desktop
 
     # -- Development Tools --
     bruno        # API Client & Testing Tool
@@ -99,15 +100,15 @@
     ];
     casks = [
       # "dash"
+      "1password" # 1Password GUI application
+      "chatbox"
+      "freetube"
+      "httpie"
       "licecap"
       "monitorcontrol"
       "notion"
       "obsidian"
       "raycast"
-      "httpie"
-      "chatbox"
-      "freetube"
-      "1password" # 1Password GUI application
     ];
   };
 
