@@ -1,6 +1,6 @@
 return {
   {
-    'epwalsh/obsidian.nvim',
+    'obsidian-nvim/obsidian.nvim',
     keys = {
       { '<leader>od', ':ObsidianDailies<CR>', { noremap = true, silent = true, desc = 'ObsidianDailies' } },
       { '<leader>oen', ':ObsidianExtractNote<CR>', { noremap = true, silent = true, desc = 'ObsidianExtractNote' } },

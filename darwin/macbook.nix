@@ -103,7 +103,7 @@
       "1password" # 1Password GUI application
       "chatbox"
       "freetube"
-      "httpie"
+      # "httpie"
       "licecap"
       "monitorcontrol"
       "notion"
