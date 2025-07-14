@@ -858,11 +858,12 @@ require('lazy').setup({
       default_format_opts = {
         lsp_format = 'fallback',
       },
-      formatters_by_ft = {
+      formatters_by_ft = { -- NOTE: when it's not coming from LSP, add config here
         lua = { 'stylua' },
         -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
         javascript = { 'prettier' },
         markdown = { 'prettier' },
+        eruby = { 'erb_format' }, -- FIX: cant make it work, see ConformInfo https://github.com/nebulab/erb-formatter?tab=readme-ov-file#with-neovim-conformnvim
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

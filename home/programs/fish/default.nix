@@ -6,7 +6,6 @@
 
 		shellAliases = {
 			cat = "bat";
-			db = "nvim +DBUI";
 			ls = "eza";
 			vim = "nvim";
 			diff = "nvim -d";
@@ -23,6 +22,7 @@
 			c = "clear";
 			cc = "claude"; # claude code
 			cs = "gh copilot suggest";
+			db = "nvim +DBUI";
 			dk = "docker";
 			dkc = "docker compose";
 			dkcd = "docker compose down";
