@@ -39,6 +39,8 @@
 			nsn = "nix shell nixpkgs#";
 			prettyjson = "python -m json.tool";
 			r = "bin/rails";
+			s = "bin/rspec";
+			sff = "bin/rspec --fail-fast";
 			tf = "terraform";
 		};
 
