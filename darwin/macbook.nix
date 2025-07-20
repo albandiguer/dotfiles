@@ -10,7 +10,7 @@
 		bitwarden-desktop
 
     # -- Development Tools --
-    bruno        # API Client & Testing Tool
+		# bruno # broken in 07/2025 
     graphite-cli # Git Client
     lazydocker  # Docker TUI
     openssl
@@ -101,6 +101,7 @@
     casks = [
       # "dash"
       "1password" # 1Password GUI application
+			"bruno"
       "chatbox"
       "freetube"
       # "httpie"
