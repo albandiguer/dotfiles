@@ -48,7 +48,10 @@
 			init.defaultBranch = "main";
 			core.editor = "nvim";
 			diff.tool = "nvim";
-			add.interactive.useBuiltin = false;
+			# add.interactive = {
+			# 	useBuiltin = false;
+			# 	diffFilter = "diff-so-fancy --patch";
+			# };
 			rebase.updateRefs = true;
 			format.pretty = "format:%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(blue)%an%C(reset) %s";
 			# core.excludesfile = ".gitignore";
@@ -77,7 +80,7 @@
 			"tags"
 		];
 
-		diff-so-fancy.enable = true;
+		# diff-so-fancy.enable = true;
 		# difftastic.enable = true;
 	};
 }
