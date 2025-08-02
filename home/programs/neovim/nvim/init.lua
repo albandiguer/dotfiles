@@ -780,8 +780,8 @@ require('lazy').setup({
         'cssls',
         'docker_compose_language_service',
         'dockerls',
-        'erb-formatter',
         'hadolint',
+        'herb-language-server', -- erb
         'html',
         'jsonls',
         'latexindent',
@@ -863,7 +863,6 @@ require('lazy').setup({
         -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
         javascript = { 'prettier' },
         markdown = { 'prettier' },
-        eruby = { 'erb_format' }, -- FIX: cant make it work, see ConformInfo https://github.com/nebulab/erb-formatter?tab=readme-ov-file#with-neovim-conformnvim
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
