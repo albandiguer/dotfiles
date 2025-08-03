@@ -2,14 +2,14 @@ return {
   {
     'obsidian-nvim/obsidian.nvim',
     keys = {
-      { '<leader>od', ':ObsidianDailies<CR>', { noremap = true, silent = true, desc = 'ObsidianDailies' } },
-      { '<leader>oen', ':ObsidianExtractNote<CR>', { noremap = true, silent = true, desc = 'ObsidianExtractNote' } },
-      { '<leader>on', ':ObsidianNew<CR>', { noremap = true, silent = true, desc = 'ObsidianNew' } },
-      { '<leader>ont', ':ObsidianNewFromTemplate<CR>', { noremap = true, silent = true, desc = 'ObsidianNewFromTemplate' } },
-      { '<leader>oo', ':ObsidianOpen<CR>', { noremap = true, silent = true, desc = 'ObsidianOpen' } },
-      { '<leader>os', ':ObsidianSearch<CR>', { noremap = true, silent = true, desc = 'ObsidianSearch' } },
-      { '<leader>ot', ':ObsidianToday<CR>', { noremap = true, silent = true, desc = 'ObsidianToday' } },
-      { '<leader>otc', ':ObsidianToggleCheckbox<CR>', { noremap = true, silent = true, desc = 'ObsidianToggleCheckbox' } },
+      { '<leader>od', ':Obsidian dailies<CR>', { noremap = true, silent = true, desc = 'ObsidianDailies' } },
+      { '<leader>oen', ':Obsidian extract_note<CR>', { noremap = true, silent = true, desc = 'ObsidianExtractNote' } },
+      { '<leader>on', ':Obsidian new<CR>', { noremap = true, silent = true, desc = 'ObsidianNew' } },
+      { '<leader>ont', ':Obsidian new_from_template<CR>', { noremap = true, silent = true, desc = 'ObsidianNewFromTemplate' } },
+      { '<leader>oo', ':Obsidian open<CR>', { noremap = true, silent = true, desc = 'ObsidianOpen' } },
+      { '<leader>os', ':Obsidian search<CR>', { noremap = true, silent = true, desc = 'ObsidianSearch' } },
+      { '<leader>ot', ':Obsidian today<CR>', { noremap = true, silent = true, desc = 'ObsidianToday' } },
+      { '<leader>otc', ':Obsidian toggle_checkbox<CR>', { noremap = true, silent = true, desc = 'ObsidianToggleCheckbox' } },
     },
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = false,
@@ -23,6 +23,7 @@ return {
     --   "BufNewFile path/to/my-vault/*.md",
     -- },
     opts = {
+      legacy_commands = false, -- use legacy commands, e.g. `:Obsidian today` instead of `:ObsidianToday`
       workspaces = {
         {
           name = 'Reliable Brain',
