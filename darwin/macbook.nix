@@ -19,6 +19,7 @@
 
     # -- Cloud & Infra --
     ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+		cloudflared
 
     # -- CLI Utilities --
     eza         # https://github.com/eza-community/eza
