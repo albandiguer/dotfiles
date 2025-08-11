@@ -79,6 +79,22 @@ To upgrade `uv tool upgrade aider-chat`
 1. aider
    `aider --watch-files --model <pick> --provider-api_key <key>`
 
+### Some MCPs
+
+```
+
+claude mcp add graphite gt mcp
+claude mcp add-json --scope user mdnlookup '{
+    "command": "docker",
+    "args": [
+      "run",
+      "-i",
+      "mdnlookup"
+    ]
+  }'
+
+```
+
 ## Uninstall
 
 ```bash
