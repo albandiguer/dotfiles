@@ -2,12 +2,15 @@
 	# List packages installed in system profile. To search by name, run:
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = with pkgs; [
-		# -- Cloud & DevOps --
+		# -- Cloud & DevOps/Infra --
 		awslogs
+		bitwarden-desktop
+		cloudflared
+		k3d
+		localstack # aws mock 
 		podman
 		podman-compose
-		localstack # aws mock 
-		bitwarden-desktop
+		ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
 
 		# -- Development Tools --
 		# bruno # broken in 07/2025 
@@ -17,9 +20,6 @@
 		icu         # mise postgres deps
 		gitmux  # git tmux integration
 
-		# -- Cloud & Infra --
-		ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
-		cloudflared
 
 		# -- CLI Utilities --
 		eza         # https://github.com/eza-community/eza
