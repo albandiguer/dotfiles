@@ -794,7 +794,7 @@ require('lazy').setup({
         'docker_compose_language_service',
         'dockerls',
         'hadolint',
-        'herb-language-server', -- erb
+        'herb_ls',
         'html',
         'jsonls',
         'latexindent',
