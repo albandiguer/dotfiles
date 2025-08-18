@@ -713,67 +713,13 @@ require('lazy').setup({
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
-      --  Add any additional override configuration in the following tables. Available keys are:
+      --  Add any additional override configuration to after/lsp folder, see LspInfo for options, for example:
       --  - cmd (table): Override the default command used to start the server
       --  - filetypes (table): Override the default list of associated filetypes for the server
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
-        -- opts here https://github.com/google/yamlfmt/blob/main/docs/config-file.md#configuration-1
-        -- https://www.reddit.com/r/neovim/comments/197t7my/question_how_to_configure_yamlls_formatter_with/
-        yamlls = {
-          settings = {
-            yaml = {
-              format = {
-                enable = true, -- yamlls format using prettier
-              },
-            },
-          },
-        },
-
-        lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
-
-        -- disable checks for .env https://github.com/LazyVim/LazyVim/discussions/4027#discussioncomment-10425524
-        -- FIXME:
-        bashls = {
-          handlers = {
-            ['textDocument/publishDiagnostics'] = function(err, res, ...)
-              local file_name = vim.fn.fnamemodify(vim.uri_to_fname(res.uri), ':t')
-              if string.match(file_name, '^%.env') == nil then
-                return vim.lsp.diagnostic.on_publish_diagnostics(err, res, ...)
-              end
-            end,
-          },
-        },
-      }
-
-      -- Ensure the servers and tools above are installed
+      --
       --
       -- To check the current status of installed tools and/or manually install
       -- other tools, you can run
@@ -786,8 +732,7 @@ require('lazy').setup({
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
+      local ensure_installed = {
         'bashls',
         'copilot-language-server', -- try this later, promising, swap the current copilot-cmp for regular lsp source
         'cssls',
@@ -816,7 +761,7 @@ require('lazy').setup({
         'ts_ls',
         'yamlfmt',
         'yamlls',
-      })
+      }
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -825,12 +770,7 @@ require('lazy').setup({
         automatic_enable = true,
         handlers = {
           function(server_name)
-            local server_config = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server_config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_config.capabilities or {})
-            vim.lsp.config(server_name, server_config)
+            vim.lsp.config(server_name, capabilities)
           end,
         },
       }
