@@ -7,7 +7,7 @@
 		bitwarden-desktop
 		cloudflared
 		k3d
-		localstack # aws mock 
+		# localstack # aws mock 
 		podman
 		podman-compose
 		ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
