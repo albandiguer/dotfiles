@@ -33,7 +33,7 @@ return {
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
         -- folder = "&#128198;" -- 📆
-        folder = 'Inbox/',
+        folder = 'Fleeting/',
       },
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {
