@@ -22,7 +22,7 @@
       # https://github.com/jdx/mise/blob/main/settings.toml
       settings = {
         idiomatic_version_file = true; # .ruby-version etc
-        idiomatic_version_file_enable_tools = ["ruby" "node"];
+        idiomatic_version_file_enable_tools = ["ruby" "node"]; # check out all settings: mise settings ls -a 
       };
 
       tasks = {
