@@ -817,12 +817,27 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
         javascript = { 'prettier' },
+        typescript = { 'prettier' }, -- ts_ls does not handle formatting
         markdown = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        prettier = {
+          -- will execute prettier only if the config file is found
+          condition = function()
+            local cwd = vim.fn.getcwd()
+            -- This checks for typical Prettier config files in the project root
+            return vim.loop.fs_realpath(cwd .. '/.prettierrc')
+              or vim.loop.fs_realpath(cwd .. '/.prettierrc.js')
+              or vim.loop.fs_realpath(cwd .. '/.prettierrc.json')
+              or vim.loop.fs_realpath(cwd .. '/.prettierrc.yaml')
+              or vim.loop.fs_realpath(cwd .. '/prettier.config.js')
+          end,
+        },
       },
     },
   },
