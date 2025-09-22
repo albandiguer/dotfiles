@@ -738,7 +738,6 @@ require('lazy').setup({
         'cssls',
         'docker_compose_language_service',
         'dockerls',
-        'hadolint',
         'herb_ls',
         'html',
         'jsonls',
