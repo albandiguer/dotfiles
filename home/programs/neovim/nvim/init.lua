@@ -738,6 +738,7 @@ require('lazy').setup({
         'cssls',
         'docker_compose_language_service',
         'dockerls',
+        'hadolint',
         'herb_ls',
         'html',
         'jsonls',
@@ -758,6 +759,8 @@ require('lazy').setup({
         'texlab',
         'tflint',
         'ts_ls',
+        'vue-language-server', -- handle html+css in .vue files
+        'vtsls', -- handle typescript in .vue files
         'yamlfmt',
         'yamlls',
       }
