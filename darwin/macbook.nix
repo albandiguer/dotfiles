@@ -26,6 +26,7 @@
 		portaudio   # for aider voice - https://aider.chat/docs/install/optional.html#enable-voice-coding
 		_1password-cli # 1Password CLI tool
 		sox # audio sampler, whisper deps
+		sshed # ssh config management
 
 		# -- Presentation & Communication --
 		marp-cli    # Markdown to Presentation tool

@@ -14,7 +14,7 @@
       ruby.disabled = false;
       nodejs.disabled = false;
       package.disabled = true;
-      docker_context.disabled = true;
+      docker_context.disabled = false;
       gcloud = {
         disabled = true;
         symbol = "🇬️ ";
