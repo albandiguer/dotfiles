@@ -42,7 +42,7 @@
 			s = "bin/rspec";
 			sff = "bin/rspec --fail-fast";
 			tf = "terraform";
-			ys = "yarn serve";
+			y = "yarn";
 		};
 
 		functions = {
