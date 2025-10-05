@@ -10,6 +10,7 @@
 		# localstack # aws mock 
 		podman
 		podman-compose
+		podlet # docker/compose -> quadlet 
 		ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
 
 		# -- Development Tools --
@@ -19,7 +20,6 @@
 		openssl
 		icu         # mise postgres deps
 		gitmux  # git tmux integration
-
 
 		# -- CLI Utilities --
 		eza         # https://github.com/eza-community/eza
