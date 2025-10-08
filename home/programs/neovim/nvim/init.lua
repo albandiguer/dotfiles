@@ -231,6 +231,13 @@ vim.keymap.set('n', ',,', '<c-^>')
 vim.g.grepprg = 'ag --vimgrep'
 vim.g.grepformat = '%f:%l:%c:%m,%f:%l:%m'
 
+-- Set filetype for .env.* files
+vim.filetype.add {
+  pattern = {
+    ['%.env%..*'] = 'sh',
+  },
+}
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
