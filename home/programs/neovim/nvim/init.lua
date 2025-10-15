@@ -235,6 +235,7 @@ vim.g.grepformat = '%f:%l:%c:%m,%f:%l:%m'
 vim.filetype.add {
   pattern = {
     ['%.env%..*'] = 'sh',
+    ['.*%.container'] = 'systemd', -- podman quadlets ft
   },
 }
 
