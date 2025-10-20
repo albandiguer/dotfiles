@@ -26,5 +26,5 @@ cleanup:
 	nix-collect-garbage -d
 	nix store gc || true
 	nix store optimise
-	mise prune
+	mise prune -y
 
