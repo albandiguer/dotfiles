@@ -14,7 +14,8 @@
 
       -- dark themes
       -- config.color_scheme = 'N0Tch2K (Gogh)'
-      config.color_scheme = "Catppuccin Mocha"
+      -- config.color_scheme = "Catppuccin Mocha"
+      config.color_scheme = "Harmonic16 Dark (base16)"
       -- config.color_scheme = 'Harper'
 
       -- light themes
