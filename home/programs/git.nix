@@ -1,9 +1,11 @@
 {
 	programs.git = {
 		enable = true;
-		userName = "Alban Diguer";
-		userEmail = "alban.diguer@gmail.com";
-		extraConfig = {
+		settings = {
+			user = {
+				name = "Alban Diguer";
+				email = "alban.diguer@gmail.com";
+			};
 			# colorUi = true;
 			alias = {
 				a = "add";

@@ -6,7 +6,7 @@
   users.groups.nixbld.gid = lib.mkForce 350;
   
   home-manager.users.albandiguer = {
-    programs.git.userEmail = lib.mkForce "alban.diguer@pretto.fr";
+    programs.git.settings.user.email = lib.mkForce "alban.diguer@pretto.fr";
     home.sessionVariables.OBSIDIAN_VAULT_PATH = 
       "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Reliable Brain";
   };
