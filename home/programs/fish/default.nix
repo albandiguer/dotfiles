@@ -17,6 +17,7 @@
 		shellAbbrs = {
 			aider = "uv tool run --from aider-chat aider"; 
 			b = "bin/bundle";
+			be = "bundle exec";
 			bd = "bin/dev";
 			bs = "brew search";
 			c = "clear";
