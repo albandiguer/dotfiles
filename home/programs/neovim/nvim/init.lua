@@ -1113,6 +1113,8 @@ require('lazy').setup({
       ensure_installed = {
         'apex',
         'bash',
+        'bibtex',
+        'cmake',
         'dockerfile',
         'editorconfig',
         'fish',
