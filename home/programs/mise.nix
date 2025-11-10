@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.mise = {
     enable = true;
     # see this for dotfiles https://mise.jdx.dev/lang/ruby.html#default-gems
@@ -18,11 +19,14 @@
         terraform = "latest";
         uv = "latest"; # shall it be in nix instead?
       };
-      
+
       # https://github.com/jdx/mise/blob/main/settings.toml
       settings = {
         idiomatic_version_file = true; # .ruby-version etc
-        idiomatic_version_file_enable_tools = ["ruby" "node"]; # check out all settings: mise settings ls -a 
+        idiomatic_version_file_enable_tools = [
+          "ruby"
+          "node"
+        ]; # check out all settings: mise settings ls -a
       };
 
       tasks = {

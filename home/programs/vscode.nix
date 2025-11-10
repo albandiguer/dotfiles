@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.vscode = {
     enable = false;
     # package = pkgs.vscodium; # oss vscode not work with Copilot

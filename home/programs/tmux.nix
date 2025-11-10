@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.tmux = {
     enable = true;
     sensibleOnTop = false; # NOTE not working with fish (reattach to user namespace? https://github.com/tmux-plugins/tmux-sensible/blob/master/sensible.tmux)
