@@ -749,6 +749,7 @@ require('lazy').setup({
         'lua_ls',
         'marksman',
         'nil_ls', -- nix lsp
+        -- 'nixfmt', -- nil_ls does not have a default fmt. no point delegating to it. but nixfmt unsupported on macos -> brew
         'prettier',
         'proselint',
         'pyright', -- python static analyzer
@@ -821,6 +822,7 @@ require('lazy').setup({
         javascript = { 'prettier' },
         typescript = { 'prettier' }, -- ts_ls does not handle formatting
         markdown = { 'prettier' },
+        nix = { 'nixfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

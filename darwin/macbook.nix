@@ -99,6 +99,7 @@
 			"libpq"
 			"libyaml"
 			"puma/puma/puma-dev"
+			"nixfmt"
 			# "sapling"
 			"tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html 
 			"vips" # Image processing library

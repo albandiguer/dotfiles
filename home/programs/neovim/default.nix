@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
 
-in {
+in
+{
   # TODO nothing to do here? put in home.nix or extraPackages
   home.packages = with pkgs; [
     ripgrep
@@ -16,7 +18,7 @@ in {
     withNodeJs = true;
     withRuby = false; # using mise, type `:!which ruby` to confirm
 
-    plugins =  [];
+    plugins = [ ];
 
     # xtra packages available to neovim
     extraPackages = with pkgs; [
