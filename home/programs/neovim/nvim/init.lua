@@ -738,7 +738,7 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = {
         'bashls',
-        'copilot-language-server', -- try this later, promising, swap the current copilot-cmp for regular lsp source
+        -- 'copilot-language-server',  inline completion not mature yet, rather use copilot plugin for now
         'cssls',
         'docker_compose_language_service',
         'dockerls',
