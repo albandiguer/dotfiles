@@ -1,25 +1,3 @@
--- require("lspconfig").solargraph.setup({
--- 	cmd = { "docker-compose", "run", "-t", "-p", "7658:7658", "--rm", "app", "solargraph", "stdio" },
--- 	settings = {
--- 		solargraph = {
--- 			transport = "stdio",
--- 			-- transport = "external",
--- 			-- externalServer = {
--- 			-- 	host = "localhost",
--- 			-- 	port = 7658
--- 			-- },
--- 			diagnostics = true,
--- 			init_options = {
--- 				formatting = true
--- 			}
--- 		}
--- 	}
--- })
---
--- NOTE this seems to be doing the trick
--- https://github.com/autozimu/LanguageClient-neovim/blob/next/INSTALL.md
-
--- FIXME: should actully be shared and whats in here is the TEST_CMD default value
 function SendToTmuxPane(include_line)
   local current_file = vim.fn.expand '%'
   local current_line = ''
@@ -28,7 +6,8 @@ function SendToTmuxPane(include_line)
     current_line = ':' .. vim.fn.line '.'
   end
 
-  local cmd = string.format("tmux send-keys -t ':.1' '%s %s%s' C-m", os.getenv 'TEST_CMD', current_file, current_line) -- NOTE set $TEST_CMD in project .envrc
+  -- Correctly quote TEST_CMD to handle multiple words
+  local cmd = string.format("tmux send-keys -t ':.1' 'sh -c \"%s %s%s\"' C-m", os.getenv('TEST_CMD'), current_file, current_line)
   vim.fn.system(cmd)
 end
 
