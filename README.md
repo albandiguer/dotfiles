@@ -48,12 +48,12 @@ ruby   3.4.1
 - for postgres, visit [asdf plugin page](https://github.com/smashedtoatoms/asdf-postgres)
   this is important
 
-  ```
-  export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"` && \
-  export MACOSX_DEPLOYMENT_TARGET=15.5 && \
-  export PATH="/opt/homebrew/opt/icu4c/bin:$PATH" `
-
-  ```
+```shell
+brew install gcc readline zlib curl ossp-uuid icu4c pkg-config
+export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig" && \
+export MACOSX_DEPLOYMENT_TARGET=26.1 && \
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH" 
+```
 
 #### uv
 
