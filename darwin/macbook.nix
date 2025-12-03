@@ -60,7 +60,20 @@
 	nix.package = pkgs.nix; # TODO figure what is it
 
 	# Necessary for using flakes on this system.
-	nix.settings.experimental-features = "nix-command flakes";
+	nix.settings = {
+		experimental-features = "nix-command flakes";
+		auto-optimise-store = true; # Optimize during builds
+	};
+
+	# Automatic Nix store optimization
+	nix.optimise.automatic = true;
+
+	# Automatic garbage collection
+	nix.gc = {
+		automatic = true;
+		interval = { Weekday = 7; }; # Run weekly on Sundays
+		options = "--delete-older-than 30d"; # Keep last 30 days
+	};
 
 	# Create /etc/zshrc that loads the nix-darwin environment.
 	programs = {
