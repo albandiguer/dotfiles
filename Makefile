@@ -23,7 +23,8 @@ rollback:
 
 cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
-	nix-collect-garbage --delete-older-than 30d || true
+	sudo nix-collect-garbage --delete-older-than 30d || true
+	sudo nix-collect-garbage -d
 	nix store gc || true
 	nix store optimise
 	mise prune -y
