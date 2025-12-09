@@ -18,8 +18,8 @@
     shellAbbrs = {
       aider = "uv tool run --from aider-chat aider";
       b = "bin/bundle";
-      be = "bundle exec";
       bd = "bin/dev";
+      be = "bundle exec";
       bs = "brew search";
       c = "clear";
       cc = "claude"; # claude code
@@ -41,6 +41,7 @@
       nsn = "nix shell nixpkgs#";
       oc = "opencode";
       prettyjson = "python -m json.tool";
+      ptui = "podman-tui";
       r = "bin/rails";
       s = "bin/rspec";
       sff = "bin/rspec --fail-fast";
