@@ -40,6 +40,7 @@ return {
         -- Optional, if you keep daily notes in a separate directory.
         -- folder = "&#128198;" -- 📆
         folder = 'diary 📔',
+        template = '_assets/templates/daily.md',
       },
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {
