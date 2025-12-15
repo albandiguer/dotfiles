@@ -13,7 +13,7 @@
         aws-cli = "latest";
         gcloud = "latest";
         node = "latest";
-        postgres = "latest";
+        # postgres = "latest";
         ruby = "latest";
         rust = "latest"; # need rustup for aider-chat deps (tiktoken)
         terraform = "latest";
