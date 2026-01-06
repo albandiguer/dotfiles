@@ -18,6 +18,7 @@
         rust = "latest"; # need rustup for aider-chat deps (tiktoken)
         terraform = "latest";
         uv = "latest"; # shall it be in nix instead?
+        "ubi:onlyati/quadlet-lsp" = "latest";
       };
 
       # https://github.com/jdx/mise/blob/main/settings.toml
