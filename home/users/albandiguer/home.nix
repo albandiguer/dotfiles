@@ -112,6 +112,6 @@
     ../../programs/wezterm.nix
     ../../programs/alacritty.nix
     ../../programs/lazygit.nix
-    ../../programs/claude-agents.nix
+    ../../programs/claude.nix
   ];
 }
