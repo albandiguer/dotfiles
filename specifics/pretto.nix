@@ -8,5 +8,6 @@
   home-manager.users.albandiguer = {
     programs.git.settings.user.email = lib.mkForce "alban.diguer@pretto.fr";
     home.sessionVariables.OBSIDIAN_VAULT_PATH = "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Reliable Brain";
+    home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER = "agents";
   };
 }
