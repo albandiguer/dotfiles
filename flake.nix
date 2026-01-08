@@ -34,6 +34,10 @@
       url = "github:hashicorp/homebrew-tap";
       flake = false;
     };
+    rails-ai-agents = {
+      url = "github:ThibautBaissac/rails_ai_agents";
+      flake = false;
+    };
   };
 
   outputs =
@@ -47,6 +51,7 @@
       homebrew-cask,
       homebrew-puma-tap,
       hashicorp-tap,
+      rails-ai-agents,
       ...
     }@inputs:
     let
@@ -59,6 +64,9 @@
           system.primaryUser = user;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit rails-ai-agents;
+          };
           home-manager.users.${user} = import ./home/users/${user}/home.nix;
           users.users.${user} = {
             name = user;

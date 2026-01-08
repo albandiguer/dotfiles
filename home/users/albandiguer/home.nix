@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home = {
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
@@ -55,7 +56,7 @@
 
     # copy dotfiles
     file = {
-      ".aider.conf.yml".source = ../../dotfiles/.aider.conf.yml; 
+      ".aider.conf.yml".source = ../../dotfiles/.aider.conf.yml;
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix ?
       ".default-node-packages".source = ../../dotfiles/.default-node-packages;
       ".default-python-packages".source = ../../dotfiles/.default-python-packages;
@@ -72,7 +73,10 @@
     # username = "albandiguer";
     # homeDirectory = "/Users/albandiguer";
 
-    sessionPath = ["./bin" "/opt/homebrew/bin"];
+    sessionPath = [
+      "./bin"
+      "/opt/homebrew/bin"
+    ];
     sessionVariables = {
       EDITOR = "nvim";
     };
@@ -108,5 +112,6 @@
     ../../programs/wezterm.nix
     ../../programs/alacritty.nix
     ../../programs/lazygit.nix
+    ../../programs/claude-agents.nix
   ];
 }
