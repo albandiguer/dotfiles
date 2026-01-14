@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    claude-code.url = "github:sadjow/claude-code-nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,11 +53,15 @@
       homebrew-puma-tap,
       hashicorp-tap,
       rails-ai-agents,
+      claude-code,
       ...
     }@inputs:
     let
       user = "albandiguer";
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+        inputs.claude-code.overlays.default
+      ];
       commonDarwinModules = [
         ./darwin/macbook.nix
         home-manager.darwinModules.home-manager
