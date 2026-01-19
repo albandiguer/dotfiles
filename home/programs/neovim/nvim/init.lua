@@ -820,7 +820,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- yaml = { 'yamlfmt' }, -- https://github.com/google/yamlfmt/issues/102
         javascript = { 'prettier' },
-        typescript = { 'prettier' }, -- ts_ls does not handle formatting
+        typescript = { 'prettier' }, -- let conform format js/ts, vtsls/ts_ls can work w/ prettier but setup is painful
         markdown = { 'prettier' },
         nix = { 'nixfmt' },
         -- Conform can also run multiple formatters sequentially
