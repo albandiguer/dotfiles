@@ -10,6 +10,7 @@
       ls = "eza";
       vim = "nvim";
       diff = "nvim -d";
+      gsd-up = "npx get-shit-done-cc@latest"; # maj gsd
       # docker = "podman";
     };
 
@@ -19,6 +20,7 @@
       aider = "uv tool run --from aider-chat aider";
       b = "bin/bundle";
       bd = "bin/dev";
+      br = "bin/rspec";
       be = "bundle exec";
       bs = "brew search";
       c = "clear";
@@ -30,7 +32,6 @@
       dkcd = "docker compose down";
       dkcud = "docker compose up -d";
       g = "git";
-      gsd = "npx get-shit-done-cc@latest";
       hk = "heroku";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
       l = "ls -la";
