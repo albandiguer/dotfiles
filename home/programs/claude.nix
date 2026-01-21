@@ -10,8 +10,9 @@ in
   # - hooks/: Git hooks (future)
   # - plugins/: Editor plugins (future)
 
-  home.file.".claude/agents" = {
-    source = "${rails-ai-agents}/${agentsSubfolder}";
-    recursive = true;
-  };
+  # NOTE: disabled for now
+  # home.file.".claude/agents" = {
+  #   source = "${rails-ai-agents}/${agentsSubfolder}";
+  #   recursive = true;
+  # };
 }
