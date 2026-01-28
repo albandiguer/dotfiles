@@ -15,4 +15,10 @@ in
   #   source = "${rails-ai-agents}/${agentsSubfolder}";
   #   recursive = true;
   # };
+
+  # Claude commands
+  home.file.".claude/commands" = {
+    source = ../dotfiles/.claude/commands;
+    recursive = true;
+  };
 }
