@@ -5,7 +5,7 @@
 {
   programs.gh = {
     enable = true;
-    extensions = with pkgs; [ gh-copilot ];
+    extensions = with pkgs; [ github-copilot-cli ];
     settings = {
       aliases = {
         pcd = "pr create --draft";
