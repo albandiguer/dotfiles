@@ -53,7 +53,7 @@
       }
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
       tmuxPlugins.yank
-      tmuxPlugins.fingers
+      # tmuxPlugins.fingers
     ];
   };
 }
