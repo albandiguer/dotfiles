@@ -762,8 +762,9 @@ require('lazy').setup({
         'terraformls',
         'texlab',
         'tflint',
-        'vue-language-server', -- handle html+css in .vue files
+        'tombi', -- toml
         'vtsls', -- handle typescript in .vue files
+        'vue-language-server', -- handle html+css in .vue files
         'yamlfmt',
         'yamlls',
       }
