@@ -35,6 +35,10 @@ return {
           name = 'Reliable Brain',
           path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/Google Drive/obsidian_vaults/Reliable Brain',
         },
+        {
+          name = 'Pretto',
+          path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/Google Drive/obsidian_vaults/Pretto',
+        },
       },
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
