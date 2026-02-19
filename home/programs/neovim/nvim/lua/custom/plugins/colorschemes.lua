@@ -1,5 +1,5 @@
 return {
-  'AlexvZyl/nordic.nvim',
+  'folke/tokyonight.nvim',
   'catppuccin/nvim',
   'olivercederborg/poimandres.nvim',
   'rebelot/kanagawa.nvim',
