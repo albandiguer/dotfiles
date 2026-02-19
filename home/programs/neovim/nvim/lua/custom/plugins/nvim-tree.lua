@@ -11,6 +11,9 @@ return {
     require('nvim-tree').setup {
       filters = {
         dotfiles = false,
+        custom = function(path)
+          return path:match '%-meta%.xml$' ~= nil
+        end,
       },
       view = {
         width = {

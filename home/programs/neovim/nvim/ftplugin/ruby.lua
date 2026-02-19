@@ -7,7 +7,7 @@ function SendToTmuxPane(include_line)
   end
 
   -- Correctly quote TEST_CMD to handle multiple words
-  local cmd = string.format("tmux send-keys -t ':.1' 'sh -c \"%s %s%s\"' C-m", os.getenv('TEST_CMD'), current_file, current_line)
+  local cmd = string.format("tmux send-keys -t ':.1' 'sh -c \"%s %s%s\"' C-m", os.getenv 'TEST_CMD', current_file, current_line)
   vim.fn.system(cmd)
 end
 
@@ -16,3 +16,4 @@ vim.api.nvim_set_keymap('n', '<Leader>T', ':lua SendToTmuxPane(false)<CR>', { no
 
 require('luasnip').filetype_extend('ruby', { 'rails' })
 require('luasnip').filetype_extend('eruby', { 'html' })
+

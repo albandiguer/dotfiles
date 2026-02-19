@@ -737,6 +737,7 @@ require('lazy').setup({
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = {
+        'apex-language-server',
         'bashls',
         -- 'copilot-language-server',  inline completion not mature yet, rather use copilot plugin for now
         'cssls',
