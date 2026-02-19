@@ -757,6 +757,7 @@ require('lazy').setup({
         'ruff', -- python linter & code formatter
         'shellcheck',
         'shfmt',
+        'snyk-ls',
         'stimulus_ls',
         'stylua', --  luals formating is mid
         'tailwindcss',
@@ -770,6 +771,16 @@ require('lazy').setup({
         'yamlls',
       }
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      vim.lsp.config('snyk_ls', {
+        init_options = {
+          token = vim.env.SNYK_TOKEN,
+          cliPath = vim.fn.stdpath 'data' .. '/mason/bin/snyk',
+          activateSnykOpenSource = 'true',
+          activateSnykCode = 'true',
+          activateSnykIac = 'true',
+        },
+      })
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
