@@ -1,3 +1,3 @@
 return {
-	'MattesGroeger/vim-bookmarks'
+  'MattesGroeger/vim-bookmarks',
 }
