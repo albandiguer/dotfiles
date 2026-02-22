@@ -761,7 +761,7 @@ require('lazy').setup({
         'stimulus_ls',
         'stylua', --  luals formating is mid
         'tailwindcss',
-        'terraformls',
+        -- 'terraformls', -- NOTE: broken for now
         'texlab',
         'tflint',
         'tombi', -- toml
