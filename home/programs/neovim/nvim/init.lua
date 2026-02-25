@@ -769,7 +769,6 @@ require('lazy').setup({
         'vue-language-server', -- handle html+css in .vue files
         'yamlfmt',
         'yamlls',
-        'harper_ls',
       }
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
