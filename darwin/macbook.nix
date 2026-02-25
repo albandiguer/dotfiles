@@ -131,6 +131,7 @@
       # "httpie"
       "licecap"
       "monitorcontrol"
+      "claude"
       "notion"
       "obsidian"
       "raycast"
