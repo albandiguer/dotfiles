@@ -1,4 +1,9 @@
-{ rails-ai-agents, config, ... }:
+{
+  rails-ai-agents,
+  config,
+  lib,
+  ...
+}:
 let
   # Default to "37signals_agents" for personal machine, override via CLAUDE_AGENTS_SUBFOLDER for work
   agentsSubfolder = config.home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER or "37signals_agents";
@@ -21,4 +26,9 @@ in
     source = ../dotfiles/.claude/commands;
     recursive = true;
   };
+
+  # MCP servers
+  home.activation.claudeMcpServers = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    $DRY_RUN_CMD claude mcp add --scope user serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context=claude-code --project-from-cwd 2>/dev/null || true
+  '';
 }
