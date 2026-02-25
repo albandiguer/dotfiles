@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-
-in
 {
   # TODO nothing to do here? put in home.nix or extraPackages
   home.packages = with pkgs; [
@@ -24,7 +21,7 @@ in
     extraPackages = with pkgs; [
       # deno # for peek.nvim
       cargo
-      yarn # mdpreview
+      yarn # md preview
     ];
 
   };
