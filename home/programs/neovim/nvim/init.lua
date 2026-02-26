@@ -844,15 +844,31 @@ require('lazy').setup({
       },
       formatters = {
         prettier = {
-          -- will execute prettier only if the config file is found
+          -- will execute prettier only if the config file is found or prettier is in package.json dependencies
           condition = function()
             local cwd = vim.fn.getcwd()
-            -- This checks for typical Prettier config files in the project root
-            return vim.loop.fs_realpath(cwd .. '/.prettierrc')
+            -- Check for typical Prettier config files in the project root
+            if
+              vim.loop.fs_realpath(cwd .. '/.prettierrc')
               or vim.loop.fs_realpath(cwd .. '/.prettierrc.js')
               or vim.loop.fs_realpath(cwd .. '/.prettierrc.json')
               or vim.loop.fs_realpath(cwd .. '/.prettierrc.yaml')
               or vim.loop.fs_realpath(cwd .. '/prettier.config.js')
+            then
+              return true
+            end
+            -- Also check for prettier in package.json dependencies/devDependencies
+            local package_json = cwd .. '/package.json'
+            if vim.loop.fs_realpath(package_json) then
+              local ok, content = pcall(vim.fn.readfile, package_json)
+              if ok and content then
+                local ok2, pkg = pcall(vim.fn.json_decode, table.concat(content, '\n'))
+                if ok2 and pkg then
+                  return (pkg.dependencies and pkg.dependencies['prettier'] ~= nil) or (pkg.devDependencies and pkg.devDependencies['prettier'] ~= nil)
+                end
+              end
+            end
+            return false
           end,
         },
       },
