@@ -135,6 +135,7 @@
       "notion"
       "obsidian"
       "raycast"
+      "font-sf-mono-nerd-font-ligaturized"
     ];
   };
 

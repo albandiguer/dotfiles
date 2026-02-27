@@ -35,6 +35,10 @@
       url = "github:hashicorp/homebrew-tap";
       flake = false;
     };
+    homebrew-sfmono-nerd-font = {
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
     rails-ai-agents = {
       url = "github:ThibautBaissac/rails_ai_agents";
       flake = false;
@@ -53,6 +57,7 @@
       homebrew-cask,
       homebrew-puma-tap,
       hashicorp-tap,
+      homebrew-sfmono-nerd-font,
       rails-ai-agents,
       claude-code,
       ...
@@ -91,6 +96,7 @@
               "homebrew/homebrew-bundle" = homebrew-bundle;
               "puma/homebrew-puma" = homebrew-puma-tap;
               # "hashicorp/tap" = hashicorp-tap;
+              "shaunsingh/SFMono-Nerd-Font-Ligaturized" = homebrew-sfmono-nerd-font;
             };
             mutableTaps = false;
             autoMigrate = true;
