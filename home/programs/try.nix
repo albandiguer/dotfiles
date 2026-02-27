@@ -1,6 +1,6 @@
 { try, ... }:
 {
-  imports = [ try.homeManagerModules.default ];
+  imports = [ try.homeModules.default ];
 
   programs.try = {
     enable = true;
