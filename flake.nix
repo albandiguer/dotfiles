@@ -39,6 +39,7 @@
       url = "github:ThibautBaissac/rails_ai_agents";
       flake = false;
     };
+    try.url = "github:tobi/try";
   };
 
   outputs =
@@ -71,6 +72,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             inherit rails-ai-agents;
+            try = inputs.try;
           };
           home-manager.users.${user} = import ./home/users/${user}/home.nix;
           users.users.${user} = {

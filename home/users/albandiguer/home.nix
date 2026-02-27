@@ -113,5 +113,6 @@
     ../../programs/alacritty.nix
     ../../programs/lazygit.nix
     ../../programs/claude.nix
+    ../../programs/try.nix
   ];
 }
