@@ -109,7 +109,7 @@
     ../../programs/direnv.nix
     ../../programs/home-manager.nix
     ../../programs/mise.nix
-    ../../programs/wezterm.nix
+    ../../programs/wezterm
     ../../programs/alacritty.nix
     ../../programs/lazygit.nix
     ../../programs/claude.nix
