@@ -75,6 +75,63 @@
         				mise cache clean
         				mise ls-remote ruby
         			'';
+      secrets-refresh = ''
+        			# --- 1Password (work keys) ---
+        			if command -v op > /dev/null 2>&1
+        				echo "Fetching from 1Password..."
+
+        				set -l items \
+        					"ANTHROPIC_API_KEY" "op://Work/Dev API Keys/ANTHROPIC_API_KEY" \
+        					"SNYK_TOKEN"        "op://Work/Dev API Keys/SNYK_TOKEN"
+
+        				set -l i 1
+        				while test $i -le (count $items)
+        					set -l key $items[$i]
+        					set -l path $items[(math $i + 1)]
+        					set -l val (op read $path 2>/dev/null)
+        					if test -n "$val"
+        						security add-generic-password -U -a $USER -s $key -w $val
+        						echo "  ✓ $key"
+        					else
+        						echo "  ✗ $key (not found — check vault path or op sign-in)"
+        					end
+        					set i (math $i + 2)
+        				end
+        			else
+        				echo "op not found, skipping 1Password"
+        			end
+
+        			# --- Bitwarden (personal keys) ---
+        			if command -v bw > /dev/null 2>&1
+        				echo "Fetching from Bitwarden..."
+        				set -l bw_session (bw unlock --raw 2>/dev/null)
+        				if test -n "$bw_session"
+        					set -gx BW_SESSION $bw_session
+        					set -l deepseek_key (bw get password "Deepseek API Key" 2>/dev/null)
+        					if test -n "$deepseek_key"
+        						security add-generic-password -U -a $USER -s "DEEPSEEK_API_KEY" -w $deepseek_key
+        						echo "  ✓ DEEPSEEK_API_KEY"
+        					else
+        						echo "  ✗ DEEPSEEK_API_KEY (not found — check Bitwarden item name)"
+        					end
+        				else
+        					echo "Bitwarden unlock failed, skipping"
+        				end
+        			else
+        				echo "bw not found, skipping Bitwarden"
+        			end
+
+        			echo "Done. Run secrets-load or open a new shell."
+        		'';
+      secrets-load = ''
+        			set -l keys ANTHROPIC_API_KEY SNYK_TOKEN DEEPSEEK_API_KEY
+        			for key in $keys
+        				set -l val (security find-generic-password -a $USER -s $key -w 2>/dev/null)
+        				if test -n "$val"
+        					set -gx $key $val
+        				end
+        			end
+        		'';
     };
 
     plugins = [
@@ -102,6 +159,7 @@
 
     # https://stackoverflow.com/questions/34216850/how-to-prevent-fish-shell-from-closing-when-typing-ctrl-d-eof
     interactiveShellInit = ''
+      			secrets-load
       			set -g fish_eof none
       			set -gx LANG en_AU.UTF-8
       			set -gx PATH /Users/albandiguer/.local/share/mise/shims $PATH

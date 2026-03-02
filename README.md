@@ -67,6 +67,10 @@ create [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see 
 
 To upgrade `uv tool upgrade aider-chat`
 
+## [Secret management](./SECRETS.md)
+
+API tokens (Anthropic, Snyk, Deepseek…) are stored in macOS Keychain and auto-loaded into the shell. See [SECRETS.md](./SECRETS.md) for setup and how to add new secrets.
+
 ## AI stuff
 
 ### in Neovim:
