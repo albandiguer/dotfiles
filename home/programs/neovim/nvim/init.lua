@@ -757,7 +757,7 @@ require('lazy').setup({
         'ruff', -- python linter & code formatter
         'shellcheck',
         'shfmt',
-        'snyk-ls',
+        -- 'snyk-ls',
         'stimulus_ls',
         'stylua', --  luals formating is mid
         'tailwindcss',
