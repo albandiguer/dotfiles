@@ -81,6 +81,7 @@
       "secrets.tfvars"
       "tags"
       ".claude/settings.local.json"
+      ".serena/"
       ".auto-claude/"
       ".auto-claude-security.json"
       ".auto-claude-status"
