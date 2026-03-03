@@ -80,6 +80,7 @@
       "node_modules/"
       "secrets.tfvars"
       "tags"
+      ".claude/settings.local.json"
       ".auto-claude/"
       ".auto-claude-security.json"
       ".auto-claude-status"
