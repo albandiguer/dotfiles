@@ -80,6 +80,13 @@
       "node_modules/"
       "secrets.tfvars"
       "tags"
+      ".auto-claude/"
+      ".auto-claude-security.json"
+      ".auto-claude-status"
+      ".claude_settings.json"
+      ".worktrees/"
+      ".security-key"
+      "logs/security/"
     ];
 
     # diff-so-fancy.enable = true;
