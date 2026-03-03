@@ -2,7 +2,13 @@ return {
   {
     'Rawnly/gist.nvim',
     cmd = { 'GistCreate', 'GistCreateFromFile', 'GistsList' },
-    config = true,
+    opts = {
+      platforms = {
+        github = {
+          private = true,
+        },
+      },
+    },
   },
   -- `GistsList` opens the selected gif in a terminal buffer,
   -- nvim-unception uses neovim remote rpc functionality to open the gist in an actual buffer
