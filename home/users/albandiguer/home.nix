@@ -8,6 +8,7 @@
       buildpack # cloud native buildpacks, use pack..., checkout nixpacks
       dive # docker image inspection
       ngrok # broken atm
+      overmind
 
       # Git Tools
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
