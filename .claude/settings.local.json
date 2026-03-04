@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "mcp__serena__search_for_pattern",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "mcp__serena__find_file"
     ]
   }
 }
