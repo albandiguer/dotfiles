@@ -20,7 +20,7 @@
       bind '|' split-window -h -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
       bind l select-layout main-vertical
-      bind f display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | fzf --reverse | xargs tmux switch-client -t"
+      bind f display-popup -E "tmux list-sessions | cut -d: -f1 | fzf --reverse --bind 'ctrl-x:execute(tmux kill-session -t {})+reload(tmux list-sessions | cut -d: -f1)' | xargs tmux switch-client -t"
 
       # unbind detach
       unbind-key -T prefix d
