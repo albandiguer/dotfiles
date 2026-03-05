@@ -23,26 +23,26 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'suketa/nvim-dap-ruby',
   },
   keys = function(_, keys)
     local dap = require 'dap'
     local dapui = require 'dapui'
     return {
-      -- Basic debugging keymaps, feel free to change to your liking!
-      { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },
-      { '<F1>', dap.step_into, desc = 'Debug: Step Into' },
-      { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
-      { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
-      { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+      { '<leader>bc', dap.continue, desc = 'Debug: Start/Continue' },
+      { '<leader>bi', dap.step_into, desc = 'Debug: Step Into' },
+      { '<leader>bo', dap.step_over, desc = 'Debug: Step Over' },
+      { '<leader>bO', dap.step_out, desc = 'Debug: Step Out' },
+      { '<leader>bb', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
-        '<leader>B',
+        '<leader>bB',
         function()
           dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
         end,
-        desc = 'Debug: Set Breakpoint',
+        desc = 'Debug: Set Conditional Breakpoint',
       },
-      -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-      { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
+      { '<leader>bu', dapui.toggle, desc = 'Debug: Toggle UI' },
+      { '<leader>bt', dap.terminate, desc = 'Debug: Terminate' },
       unpack(keys),
     }
   end,
@@ -101,5 +101,7 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    require('dap-ruby').setup()
   end,
 }

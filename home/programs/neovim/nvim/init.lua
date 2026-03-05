@@ -393,6 +393,7 @@ require('lazy').setup({
         { '<leader>o', group = '[O]bsidian', mode = { 'n' } },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
+        { '<leader>b', group = '[B]reakpoint/Debug' },
         { '<leader>t', group = '[T]oggle' },
       },
     },
