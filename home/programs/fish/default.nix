@@ -32,6 +32,7 @@
       dkcd = "docker compose down";
       dkcud = "docker compose up -d";
       g = "git";
+      ghd = "gh dash";
       hk = "heroku";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
       l = "ls -la";
