@@ -976,7 +976,7 @@ require('lazy').setup({
           draw = {
             -- We don't need label_description now because label and label_description are already
             -- combined together in label by colorful-menu.nvim.
-            columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+            columns = { { 'kind_icon' }, { 'label', gap = 1 }, { 'source_name' } },
             components = {
               label = {
                 text = function(ctx)

@@ -3,12 +3,8 @@ return {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
       { 'tpope/vim-dadbod', lazy = true },
+      { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
     },
-    after = 'vim-dadbod',
-    init = function()
-      -- Your DBUI configuration
-      vim.g.db_ui_use_nerd_fonts = 1
-    end,
     cmd = { 'DB', 'DBUI' },
     keys = {
       { '<leader>db', '<cmd>DBUI<CR>', { desc = 'Open DBUI' } },
@@ -21,6 +17,7 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
       vim.g.db_ui_winwidth = 35
       vim.g.db_ui_winheight = 15
+      vim.g.db_ui_use_expanded_output = 1
       vim.g.db_ui_auto_execute_table_helpers = 1
       vim.g.db_ui_table_helpers = {
         postgres = {
