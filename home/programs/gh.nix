@@ -1,13 +1,17 @@
 {
   pkgs,
-  lib,
+  gh-enhance,
   ...
 }:
+let
+  gh-enhance-pkg = pkgs.buildGoModule {
+    pname = "gh-enhance";
+    version = "latest";
+    src = gh-enhance;
+    vendorHash = "sha256-rgql0vsHAzWeubw4EYBu/yPmm2QeADsIeACWsbcWtSk"; # pkgs.lib.fakeHash;
+  };
+in
 {
-  home.activation.gh-extensions = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.gh}/bin/gh extension install dlvhdr/gh-enhance 2>/dev/null || true
-  '';
-
   xdg.configFile."gh-dash/config.yml".source = ../dotfiles/gh-dash/config.yml;
 
   programs.gh = {
@@ -15,6 +19,7 @@
     extensions = with pkgs; [
       github-copilot-cli
       gh-dash
+      gh-enhance-pkg
     ];
     settings = {
       aliases = {

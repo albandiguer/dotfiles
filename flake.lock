@@ -114,6 +114,22 @@
         "type": "github"
       }
     },
+    "gh-enhance": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771270523,
+        "narHash": "sha256-IHtI8wnPLMkqxdBFXqkt6inYMOIqKjdTKdZbTxIhPzo=",
+        "owner": "dlvhdr",
+        "repo": "gh-enhance",
+        "rev": "70d0f6c9c52ec6dfe72a82d5fa613c90c0e7662b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dlvhdr",
+        "repo": "gh-enhance",
+        "type": "github"
+      }
+    },
     "hashicorp-tap": {
       "flake": false,
       "locked": {
@@ -383,6 +399,7 @@
       "inputs": {
         "claude-code": "claude-code",
         "darwin": "darwin",
+        "gh-enhance": "gh-enhance",
         "hashicorp-tap": "hashicorp-tap",
         "home-manager": "home-manager",
         "homebrew-bundle": "homebrew-bundle",

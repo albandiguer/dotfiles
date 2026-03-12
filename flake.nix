@@ -43,6 +43,10 @@
       url = "github:ThibautBaissac/rails_ai_agents";
       flake = false;
     };
+    gh-enhance = {
+      url = "github:dlvhdr/gh-enhance";
+      flake = false;
+    };
     try.url = "github:tobi/try";
   };
 
@@ -59,6 +63,7 @@
       hashicorp-tap,
       homebrew-sfmono-nerd-font,
       rails-ai-agents,
+      gh-enhance,
       claude-code,
       ...
     }@inputs:
@@ -76,7 +81,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit rails-ai-agents;
+            inherit rails-ai-agents gh-enhance;
             try = inputs.try;
           };
           home-manager.users.${user} = import ./home/users/${user}/home.nix;
