@@ -109,33 +109,36 @@
     enable = true;
     brews = [
       "bitwarden-cli"
+      "claude-squad"
       "git-crypt"
       "gpg"
       "iredis"
       "libpq"
       "libyaml"
-      "puma/puma/puma-dev"
       "nixfmt"
-      # "sapling"
+      "puma/puma/puma-dev"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
       # "hashicorp/tap/terraform"
       # "python-setuptools" # awsume deps
+      # "sapling"
     ];
     casks = [
-      # "dash"
       "1password" # 1Password GUI application
+      "auto-claude"
       "bruno"
       "chatbox"
+      "claude"
+      "claude-island"
+      "font-sf-mono-nerd-font-ligaturized"
       "freetube"
-      # "httpie"
       "licecap"
       "monitorcontrol"
-      "claude"
       "notion"
       "obsidian"
       "raycast"
-      "font-sf-mono-nerd-font-ligaturized"
+      # "dash"
+      # "httpie"
     ];
   };
 

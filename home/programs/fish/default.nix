@@ -25,7 +25,7 @@
       bs = "brew search";
       c = "clear";
       cc = "claude"; # claude code
-      cs = "gh copilot suggest";
+      cs = "claude-squad";
       db = "nvim +DBUI";
       dk = "docker";
       dkc = "docker compose";
