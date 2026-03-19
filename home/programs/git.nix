@@ -60,6 +60,7 @@
     };
     ignores = [
       "$XDG_CACHE_HOME/"
+      "**/.claude/settings.local.json"
       "*.log"
       "*.swp"
       "*.tfstate.backup"
@@ -70,7 +71,6 @@
       ".auto-claude-security.json"
       ".auto-claude-status"
       ".auto-claude/"
-      ".claude/settings.local.json"
       ".claude_settings.json"
       ".direnv/"
       ".gem/"
