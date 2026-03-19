@@ -21,6 +21,9 @@ in
   #   recursive = true;
   # };
 
+  # Claude settings (permissions, plugins, env)
+  home.file.".claude/settings.json".source = ../dotfiles/.claude/settings.json;
+
   # Claude commands
   home.file.".claude/commands" = {
     source = ../dotfiles/.claude/commands;
