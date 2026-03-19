@@ -67,6 +67,8 @@ in
           "start-mcp-server"
           "--context=claude-code"
           "--project-from-cwd"
+          "--open-web-dashboard"
+          "False"
         ];
       };
     };
