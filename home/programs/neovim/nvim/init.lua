@@ -387,7 +387,7 @@ require('lazy').setup({
       spec = {
         { '<leader>A', group = '[A]ider' },
         { '<leader>a', group = '[a]vante' },
-        { '<leader>c', group = '[C]ode' },
+        { '<leader>c', group = '[C]laude' },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>o', group = '[O]bsidian', mode = { 'n' } },
