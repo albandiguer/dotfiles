@@ -395,6 +395,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>b', group = '[B]reakpoint/Debug' },
         { '<leader>t', group = '[T]oggle' },
+        { 'm', group = 'Book[m]arks' },
       },
     },
   },

@@ -18,6 +18,7 @@
 
     # -- Development Tools --
     # bruno # broken in 07/2025
+    git-crypt
     graphite-cli # Git Client
     lazydocker # Docker TUI
     openssl
@@ -110,7 +111,6 @@
     brews = [
       "bitwarden-cli"
       "claude-squad"
-      "git-crypt"
       "gpg"
       "iredis"
       "libpq"
