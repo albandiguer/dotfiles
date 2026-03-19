@@ -9,29 +9,69 @@ let
   agentsSubfolder = config.home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER or "37signals_agents";
 in
 {
-  # Claude Code configuration (~/.claude/)
-  # - agents/: Custom Claude agents
-  # - commands/: Custom commands (future)
-  # - hooks/: Git hooks (future)
-  # - plugins/: Editor plugins (future)
+  programs.claude-code = {
+    enable = true;
 
-  # NOTE: disabled for now
-  # home.file.".claude/agents" = {
-  #   source = "${rails-ai-agents}/${agentsSubfolder}";
-  #   recursive = true;
-  # };
+    settings = {
+      includeCoAuthoredBy = false;
+      alwaysThinkingEnabled = true;
+      voiceEnabled = true;
+      enabledPlugins = {
+        "dev-browser@dev-browser-marketplace" = true;
+        "ast-grep@ast-grep-marketplace" = true;
+        "lua-lsp@claude-plugins-official" = true;
+        "github@claude-plugins-official" = true;
+        "context7@claude-plugins-official" = true;
+      };
+      env = {
+        CLAUDE_CODE_MAX_OUTPUT_TOKENS = "64000";
+        MAX_THINKING_TOKENS = "31999";
+      };
+      permissions = {
+        allow = [
+          "Bash(bin/rspec:*)"
+          "Bash(bundle exec rspec:*)"
+          "Bash(bundle exec rubocop:*)"
+          "Bash(bundle show:*)"
+          "Bash(chmod +x:*)"
+          "Bash(export:*)"
+          "Bash(find:*)"
+          "Bash(gh:*)"
+          "Bash(git:*)"
+          "Bash(grep:*)"
+          "Bash(ls:*)"
+          "Bash(make:*)"
+          "Bash(node:*)"
+          "Bash(python3:*)"
+          "Bash(ruby:*)"
+          "Bash(tail:*)"
+          "Read"
+          "Search"
+          "WebFetch(domain:github.com)"
+          "mcp__claude_ai_Notion__notion-fetch"
+          "mcp__graphite__run_gt_cmd"
+          "mcp__serena__*"
+        ];
+      };
+    };
 
-  # Claude settings (permissions, plugins, env)
-  home.file.".claude/settings.json".source = ../dotfiles/.claude/settings.json;
+    commandsDir = ../dotfiles/.claude/commands;
 
-  # Claude commands
-  home.file.".claude/commands" = {
-    source = ../dotfiles/.claude/commands;
-    recursive = true;
+    mcpServers = {
+      serena = {
+        command = "uvx";
+        args = [
+          "--from"
+          "git+https://github.com/oraios/serena"
+          "serena"
+          "start-mcp-server"
+          "--context=claude-code"
+          "--project-from-cwd"
+        ];
+      };
+    };
+
+    # NOTE: disabled for now
+    # agentsDir = "${rails-ai-agents}/${agentsSubfolder}";
   };
-
-  # MCP servers
-  home.activation.claudeMcpServers = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    $DRY_RUN_CMD claude mcp add --scope user serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context=claude-code --project-from-cwd 2>/dev/null || true
-  '';
 }
