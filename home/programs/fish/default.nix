@@ -17,7 +17,6 @@
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
 
     shellAbbrs = {
-      aider = "uv tool run --from aider-chat aider";
       b = "bin/bundle";
       bd = "bin/dev";
       br = "bin/rspec";
