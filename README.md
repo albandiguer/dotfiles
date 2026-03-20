@@ -61,11 +61,7 @@ export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
 
 create [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file) `uv task run create-molten-env`
 
-##### [aider](https://aider.chat/docs/install.html)
 
-`uv tool install --force --python python3.12 aider-chat@latest`
-
-To upgrade `uv tool upgrade aider-chat`
 
 ## AI stuff
 
@@ -74,10 +70,7 @@ To upgrade `uv tool upgrade aider-chat`
 1. copilot - change for agnostic tool ?
 
 
-### CLI:
 
-1. aider
-   `aider --watch-files --model <pick> --provider-api_key <key>`
 
 ### Some MCPs
 

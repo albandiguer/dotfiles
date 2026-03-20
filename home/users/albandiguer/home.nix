@@ -58,7 +58,6 @@
 
     # copy dotfiles
     file = {
-      ".aider.conf.yml".source = ../../dotfiles/.aider.conf.yml;
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix ?
       ".default-node-packages".source = ../../dotfiles/.default-node-packages;
       ".default-python-packages".source = ../../dotfiles/.default-python-packages;

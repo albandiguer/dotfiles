@@ -58,7 +58,7 @@ The flake supports multiple machines with different git emails and Obsidian vaul
 ### Neovim Configuration
 Located at `home/programs/neovim/nvim/`:
 - Custom plugins in `lua/custom/plugins/`
-- AI tools: aider.lua, claude-code.lua
+- AI tools: claude-code.lua
 - Development: rails.lua, dadbod.lua, jupyter.lua
 
 ### Language/Runtime Management

@@ -15,7 +15,7 @@
         node = "latest";
         # postgres = "latest";
         ruby = "latest";
-        rust = "latest"; # need rustup for aider-chat deps (tiktoken)
+        rust = "latest";
         terraform = "latest";
         uv = "latest"; # shall it be in nix instead?
         "ubi:onlyati/quadlet-lsp" = "latest";
