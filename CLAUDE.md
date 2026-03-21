@@ -52,13 +52,13 @@ The flake supports multiple machines with different git emails and Obsidian vaul
 ### Key Tools
 - **Claude Code CLI** - Installed system-wide, aliased as `cc`
 - **Aider** - AI coding assistant with custom dark theme configuration
-- **Neovim** - Based on kickstart.nvim with AI integrations (Avante, Claude Code plugin)
+- **Neovim** - Based on kickstart.nvim with AI integrations (Claude Code plugin)
 - **Lazygit** - Visual git interface
 
 ### Neovim Configuration
 Located at `home/programs/neovim/nvim/`:
 - Custom plugins in `lua/custom/plugins/`
-- AI tools: aider.lua, avante.lua, claude-code.lua
+- AI tools: aider.lua, claude-code.lua
 - Development: rails.lua, dadbod.lua, jupyter.lua
 
 ### Language/Runtime Management

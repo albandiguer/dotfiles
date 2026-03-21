@@ -72,7 +72,7 @@ To upgrade `uv tool upgrade aider-chat`
 ### in Neovim:
 
 1. copilot - change for agnostic tool ?
-2. avante (copilot/sonnet-3.7) - poor context
+
 
 ### CLI:
 
