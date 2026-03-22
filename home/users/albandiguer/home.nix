@@ -15,6 +15,7 @@
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       nix-prefetch-git
       nix-prefetch-github # not working at times cant verify sha256 sums
+      worktrunk # [manage git worktree](https://github.com/max-sixty/worktrunk)
 
       # Shell & CLI Utilities
       bash # macos is bash 3xx, need 4+
