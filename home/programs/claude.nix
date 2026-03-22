@@ -55,7 +55,7 @@ in
       };
     };
 
-    commandsDir = ../dotfiles/.claude/commands;
+    commandsDir = lib.cleanSource ../dotfiles/.agents/commands;
 
     mcpServers = {
       serena = {
