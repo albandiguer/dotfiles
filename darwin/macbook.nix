@@ -40,7 +40,7 @@
     # ollama
     claude-code
     whisper-cpp # https://github.com/raycast/extensions/tree/603ada168a81f9acc062dc2ad524f157602423a7/extensions/whisper-dictation/#-whisper-dictation-for-raycast
-    opencode
+    # opencode  # Now managed via home-manager
     rtk # https://www.rtk-ai.app/#install - token savvy bash output for llm ingestion
   ];
 
