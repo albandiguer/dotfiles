@@ -18,6 +18,25 @@
       autoupdate = true;
       autoshare = false;
       model = "kimi/k2.5";
+
+      # MCP servers configuration
+      mcp = {
+        serena = {
+          type = "local";
+          command = [
+            "uvx"
+            "--from"
+            "git+https://github.com/oraios/serena"
+            "serena"
+            "start-mcp-server"
+            "--context=claude-code"
+            "--project-from-cwd"
+            "--open-web-dashboard"
+            "False"
+          ];
+          enabled = true;
+        };
+      };
     };
 
     # Global rules written to ~/.config/opencode/AGENTS.md
