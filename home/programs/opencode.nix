@@ -6,10 +6,9 @@
     # Global configuration settings
     # See: https://opencode.ai/docs/config/
     settings = {
-      theme = "catppuccin-frappe";
       autoupdate = true;
       autoshare = false;
-      model = "kimi/k2.5";
+      model = "moonshotai/kimi-k2.5";
 
       # MCP servers configuration
       mcp = {
@@ -46,6 +45,14 @@
       When making changes, ensure you maintain backward compatibility when possible.
     '';
   };
+
+  # TUI configuration - theme settings
+  home.file.".config/opencode/tui.json".text = ''
+    {
+      "$schema": "https://opencode.ai/tui.json",
+      "theme": "catppuccin-frappe"
+    }
+  '';
 
   # Symlink skills to OpenCode's skills directory
   home.file.".config/opencode/skills/find-skills" = {
