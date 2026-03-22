@@ -1,20 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.opencode = {
     enable = true;
 
-    # Map your existing .agents subdirectories to opencode concepts
-    # These will be symlinked from ~/.config/opencode/
-    #
-    # .agents/commands/ -> ~/.config/opencode/command/
-    # .agents/skills/ -> ~/.config/opencode/skills/
-    commands = ../dotfiles/.agents/commands;
-    skills = ../dotfiles/.agents/skills;
-
     # Global configuration settings
     # See: https://opencode.ai/docs/config/
     settings = {
-      theme = "opencode";
+      theme = "catppuccin-frappe";
       autoupdate = true;
       autoshare = false;
       model = "kimi/k2.5";
@@ -53,5 +45,11 @@
       Always prefer explicit, clear code over clever one-liners.
       When making changes, ensure you maintain backward compatibility when possible.
     '';
+  };
+
+  # Symlink skills to OpenCode's skills directory
+  home.file.".config/opencode/skills/find-skills" = {
+    source = lib.cleanSource ../dotfiles/.agents/skills/find-skills;
+    recursive = true;
   };
 }

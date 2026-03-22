@@ -1,7 +1,6 @@
 {
   rails-ai-agents,
   config,
-  lib,
   ...
 }:
 let
@@ -55,8 +54,6 @@ in
       };
     };
 
-    commandsDir = lib.cleanSource ../dotfiles/.agents/commands;
-
     mcpServers = {
       serena = {
         command = "uvx";
@@ -75,5 +72,11 @@ in
 
     # NOTE: disabled for now
     # agentsDir = "${rails-ai-agents}/${agentsSubfolder}";
+  };
+
+  # Symlink skills to Claude Code's global skills directory
+  home.file.".claude/skills/find-skills" = {
+    source = ../dotfiles/.agents/skills/find-skills;
+    recursive = true;
   };
 }
