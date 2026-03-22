@@ -85,8 +85,9 @@ keybindings:
       command: lazygit
     - key: C
       name: code review
-      command: "tmux new-window -c {{.RepoPath}} 'nvim -c \":silent Octo pr edit {{.PrNumber}}\"'"
-repoPaths: {}
+      command: 'tmux new-window -c {{.RepoPath}} ''nvim -c ":silent Octo pr edit {{.PrNumber}}"'''
+repoPaths:
+  albandiguer/*: ~/dev/*
 theme:
   ui:
     sectionsShowCount: true
