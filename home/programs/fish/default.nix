@@ -10,6 +10,7 @@
       ls = "eza";
       vim = "nvim";
       diff = "nvim -d";
+      skills = "npx skills";
       gsd-up = "npx get-shit-done-cc@latest"; # maj gsd
       # docker = "podman";
     };
