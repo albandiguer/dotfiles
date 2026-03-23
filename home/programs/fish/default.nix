@@ -49,6 +49,7 @@
       s = "bin/rspec";
       sff = "bin/rspec --fail-fast";
       tf = "terraform";
+      wts = "wt switch";
       y = "yarn";
     };
 
