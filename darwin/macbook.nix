@@ -138,6 +138,7 @@
       "notion"
       "obsidian"
       "raycast"
+      "conductor"
       # "dash"
       # "httpie"
     ];
