@@ -3,6 +3,8 @@ prSections:
     filters: is:open author:@me -is:draft
   - title: My Drafts
     filters: is:open author:@me is:draft
+  - title: Needs My Review (Named)
+    filters: is:open user-review-requested:@me -is:draft
   - title: Needs My Review
     filters: is:open review-requested:@me -is:draft
   - title: Involved
