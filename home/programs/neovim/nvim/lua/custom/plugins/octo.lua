@@ -6,7 +6,7 @@ return {
     enable_builtin = true,
   },
   keys = {
-    { '<leader>O', '<CMD>Octo search<CR>', desc = 'Octo fuzzy search' },
+    { '<leader>O', '<CMD>Octo<CR>', desc = 'Octo' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
