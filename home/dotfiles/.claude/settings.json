@@ -1,0 +1,42 @@
+{
+	"includeCoAuthoredBy": false,
+	"alwaysThinkingEnabled": true,
+	"voiceEnabled": true,
+	"enabledPlugins": {
+		"dev-browser@dev-browser-marketplace": true,
+		"ast-grep@ast-grep-marketplace": true,
+		"lua-lsp@claude-plugins-official": true,
+		"github@claude-plugins-official": true,
+		"context7@claude-plugins-official": true
+	},
+	"env": {
+		"CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000",
+		"MAX_THINKING_TOKENS": "31999"
+	},
+	"permissions": {
+		"allow": [
+			"Bash(bin/rspec:*)",
+			"Bash(bundle exec rspec:*)",
+			"Bash(bundle exec rubocop:*)",
+			"Bash(bundle show:*)",
+			"Bash(chmod +x:*)",
+			"Bash(export:*)",
+			"Bash(find:*)",
+			"Bash(gh:*)",
+			"Bash(git:*)",
+			"Bash(grep:*)",
+			"Bash(ls:*)",
+			"Bash(make:*)",
+			"Bash(node:*)",
+			"Bash(python3:*)",
+			"Bash(ruby:*)",
+			"Bash(tail:*)",
+			"Read",
+			"Search",
+			"WebFetch(domain:github.com)",
+			"mcp__claude_ai_Notion__notion-fetch",
+			"mcp__graphite__run_gt_cmd",
+			"mcp__serena__*"
+		]
+	}
+}
