@@ -37,7 +37,7 @@ repo:
 defaults:
   preview:
     open: true
-    width: 80
+    width: 160
   prsLimit: 20
   prApproveComment: LGTM
   issuesLimit: 20
@@ -90,6 +90,7 @@ keybindings:
       command: 'tmux new-window -c {{.RepoPath}} "wt switch pr:{{.PrNumber}} && nvim -c \":silent Octo pr edit {{.PrNumber}}\""'
 repoPaths:
   albandiguer/*: ~/dev/*
+  finspot/pretto: ~/dev/finspot/pretto
 theme:
   colors:
     text:
