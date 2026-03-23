@@ -82,16 +82,17 @@ defaults:
   refetchIntervalMinutes: 30
 keybindings:
   prs:
-    - key: T
+    - key: H
+      name: enHance PR
       command: gh enhance -R {{.RepoName}} {{.PrNumber}}
-    - key: g
-      name: laygit
+    - key: L
+      name: open Lazygit
       command: lazygit
-    - key: C
-      name: pr view
+    - key: E
+      name: Edit PR in neovim
       command: 'tmux new-window -c {{.RepoPath}} "nvim -c \":silent Octo pr edit {{.PrNumber}}\""'
-    - key: W
-      name: code review (full)
+    - key: F
+      name: Full review in worktree
       command: 'tmux new-window -c {{.RepoPath}} "wt switch pr:{{.PrNumber}} && nvim -c \":silent Octo pr edit {{.PrNumber}}\""'
 repoPaths:
   albandiguer/*: ~/dev/*
