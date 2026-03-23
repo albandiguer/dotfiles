@@ -11,6 +11,16 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 2. Clone this repo
 3. Run `make`
 
+## Uninstall 
+
+```bash
+nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
+/nix/nix-installer uninstall
+```
+
+> [!NOTE]
+> might need to del manually the partition via disk util
+
 ## Tools setup & memos
 
 > [!TIP] [ Patch fonts for glyph ](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font) with
@@ -35,16 +45,7 @@ cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
 
 ### [Mise(-en-place)](https://mise.jdx.dev/dev-tools/shims.html)
 
-- `mise ls` to list currently installed language
 - add shims directory to path so lsp etc are not lost `mise activate --shims`
-- use `.tools-versions` in projects to pinpoint specific versions, for example
-
-```#.tools-versions
-postgres 14
-gcloud   latest
-ruby   3.4.1
-```
-
 - for postgres, visit [asdf plugin page](https://github.com/smashedtoatoms/asdf-postgres)
   this is important
 
@@ -55,46 +56,8 @@ export MACOSX_DEPLOYMENT_TARGET=26.1 && \
 export PATH="/opt/homebrew/opt/icu4c/bin:$PATH" 
 ```
 
-#### uv
-
-##### molten
-
+### uv
+#### molten
 create [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file) `uv task run create-molten-env`
 
 
-
-## AI stuff
-
-### in Neovim:
-
-1. copilot - change for agnostic tool ?
-
-
-
-
-### Some MCPs
-
-```
-
-claude mcp add graphite gt mcp
-claude mcp add-json --scope user mdnlookup '{
-    "command": "docker",
-    "args": [
-      "run",
-      "-i",
-      "mdnlookup"
-    ]
-  }'
-
-```
-
-## Uninstall
-
-```bash
-nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
-/nix/nix-installer uninstall
-```
-
-> [!NOTE]
-> for some reason i had to del manually the partition via disk util
-> after that step, reinstall following above
