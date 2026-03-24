@@ -3,6 +3,7 @@ return {
   'stevearc/overseer.nvim',
   keys = {
     { '<leader>kr', '<cmd>OverseerRun<cr>', desc = 'Tas[k] Run' },
+    { '<leader>ks', '<cmd>OverseerShell<cr>', desc = 'Tas[k] Shell' },
     { '<leader>kk', '<cmd>OverseerToggle<cr>', desc = 'Tas[k] Toggle' },
     {
       '<leader>kt',
