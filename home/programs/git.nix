@@ -78,7 +78,6 @@
       ".netrwhist"
       ".nvim.lua"
       ".security-key"
-      ".serena/"
       ".terraform/"
       ".vscode"
       ".worktrees/"
