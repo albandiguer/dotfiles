@@ -86,21 +86,12 @@ vim.lsp.enable('ruby_lsp')
 - [ ] [latexindent](https://tex.stackexchange.com/questions/390433/how-can-i-install-latexindent-on-macos)
 - [ ] explore https://golangexample.com/command-line-tool-to-help-you-use-conventional-commit-messages/ if cz flaky
 - [ ] [proselint]()
-- [x] folds
 - [ ] yanky
-- [x] explore kickstart.nvim
 - [ ] obsidian neovim https://github.com/epwalsh/obsidian.nvim
 - Neovim config
 
 #### Kickstart
 
-- [x] Neotree ? included or byo
-- [x] Mason lsp on a per project, currently it starts both ruby and solargraph :/
-- [x] Figure some mappings
-  - [x] Switch buffers leaderleader
-  - [x] Open NeoTree
-  - [x] Previous buffer
-- [ ] ~~Added kickstarter as a submodule~~
 
 ```shell
 git submodule add https://github.com/albandiguer/kickstart.nvim.git ./home/programs/kickstart-nvim/nvim/
