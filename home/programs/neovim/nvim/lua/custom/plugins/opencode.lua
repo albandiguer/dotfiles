@@ -4,7 +4,6 @@ return {
   dependencies = {
     {
       'folke/snacks.nvim',
-      optional = true,
       opts = {
         input = {},
         picker = {
@@ -27,24 +26,62 @@ return {
   },
   config = function()
     ---@type opencode.Opts
-    vim.g.opencode_opts = {}
+    vim.g.opencode_opts = {
+      lsp = { enabled = true },
+    }
 
     vim.o.autoread = true
 
-    vim.keymap.set({ 'n', 'x' }, '<leader>oa', function()
+    -- README defaults
+    vim.keymap.set({ 'n', 'x' }, '<C-a>', function()
       require('opencode').ask('@this: ', { submit = true })
     end, { desc = 'Ask opencode' })
-    vim.keymap.set({ 'n', 'x' }, '<leader>ox', function()
+
+    vim.keymap.set({ 'n', 'x' }, '<C-x>', function()
       require('opencode').select()
     end, { desc = 'Execute opencode action' })
-    vim.keymap.set({ 'n', 't' }, '<leader>oc', function()
+
+    vim.keymap.set({ 'n', 't' }, '<leader>ot', function()
       require('opencode').toggle()
     end, { desc = 'Toggle opencode' })
-    vim.keymap.set('n', '<leader>ou', function()
+
+    -- Operator motions: go{motion} adds range, goo adds current line
+    vim.keymap.set({ 'n', 'x' }, 'go', function()
+      return require('opencode').operator '@this '
+    end, { expr = true, desc = 'Add range to opencode' })
+    vim.keymap.set('n', 'goo', function()
+      return require('opencode').operator('@this ') .. '_'
+    end, { expr = true, desc = 'Add current line to opencode' })
+
+    -- Scroll (README: <S-C-u> / <S-C-d>)
+    vim.keymap.set('n', '<S-C-u>', function()
       require('opencode').command 'session.half.page.up'
     end, { desc = 'Scroll opencode up' })
-    vim.keymap.set('n', '<leader>od', function()
+    vim.keymap.set('n', '<S-C-d>', function()
       require('opencode').command 'session.half.page.down'
     end, { desc = 'Scroll opencode down' })
+
+    -- Session management (not in README, leader-o namespace)
+    vim.keymap.set('n', '<leader>on', function()
+      require('opencode').command 'session.new'
+    end, { desc = 'New opencode session' })
+    vim.keymap.set('n', '<leader>os', function()
+      require('opencode').command 'session.select'
+    end, { desc = 'Select opencode session' })
+    vim.keymap.set('n', '<leader>ol', function()
+      require('opencode').command 'session.list'
+    end, { desc = 'List opencode sessions' })
+    vim.keymap.set('n', '<leader>oi', function()
+      require('opencode').command 'session.interrupt'
+    end, { desc = 'Interrupt opencode' })
+    vim.keymap.set('n', '<leader>ok', function()
+      require('opencode').command 'session.compact'
+    end, { desc = 'Compact opencode session' })
+    vim.keymap.set('n', '<leader>oz', function()
+      require('opencode').command 'session.undo'
+    end, { desc = 'Undo opencode action' })
+    vim.keymap.set('n', '<leader>oZ', function()
+      require('opencode').command 'session.redo'
+    end, { desc = 'Redo opencode action' })
   end,
 }
