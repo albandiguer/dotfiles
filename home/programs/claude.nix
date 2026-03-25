@@ -12,6 +12,10 @@ in
     enable = true;
 
     settings = {
+      statusLine = {
+        type = "command";
+        command = "~/.claude/statusline-command.sh";
+      };
       includeCoAuthoredBy = false;
       alwaysThinkingEnabled = true;
       voiceEnabled = true;
@@ -72,6 +76,56 @@ in
 
     # NOTE: disabled for now
     # agentsDir = "${rails-ai-agents}/${agentsSubfolder}";
+  };
+
+  # Statusline script
+  home.file.".claude/statusline-command.sh" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+      # Claude Code status line - inspired by Starship prompt defaults
+
+      input=$(cat)
+
+      cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
+      dir=$(basename "$cwd")
+      model=$(echo "$input" | jq -r '.model.display_name // ""')
+      used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
+
+      # Git branch (skip optional locks)
+      git_branch=""
+      if git_dir=$(git -C "$cwd" rev-parse --git-dir 2>/dev/null); then
+        git_branch=$(git -C "$cwd" -c gc.auto=0 symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" -c gc.auto=0 rev-parse --short HEAD 2>/dev/null)
+      fi
+
+      # Build parts
+      parts=()
+
+      # Directory (cyan)
+      parts+=("$(printf '\033[36m%s\033[0m' "$dir")")
+
+      # Git branch (magenta)
+      if [ -n "$git_branch" ]; then
+        parts+=("$(printf '\033[35m %s\033[0m' "$git_branch")")
+      fi
+
+      # Model (dim white)
+      if [ -n "$model" ]; then
+        parts+=("$(printf '\033[2m%s\033[0m' "$model")")
+      fi
+
+      # Context usage (yellow when > 70%, green otherwise)
+      if [ -n "$used_pct" ]; then
+        used_int=''${used_pct%.*}
+        if [ "''${used_int:-0}" -ge 70 ] 2>/dev/null; then
+          parts+=("$(printf '\033[33mctx %s%%\033[0m' "$used_pct")")
+        else
+          parts+=("$(printf '\033[32mctx %s%%\033[0m' "$used_pct")")
+        fi
+      fi
+
+      printf '%s' "$(IFS=' '; echo "''${parts[*]}")"
+    '';
   };
 
   # Symlink skills to Claude Code's global skills directory
