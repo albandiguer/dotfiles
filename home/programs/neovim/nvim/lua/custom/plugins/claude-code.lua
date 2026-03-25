@@ -1,17 +1,19 @@
 return {
-  'greggh/claude-code.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim', -- Required for git operations
+  'coder/claudecode.nvim',
+  opts = {
+    terminal = {
+      provider = 'native',
+      split_side = 'right',
+      split_width_percentage = 0.30,
+    },
   },
-  config = function()
-    require('claude-code').setup {
-      window = {
-        position = 'vertical', -- Use vertical split for the panel
-        split_ratio = 0.3, -- 30% of screen width for vertical split
-      },
-    }
-
-    -- add a keymap
-    vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
-  end,
+  keys = {
+    { '<leader>cc', '<cmd>ClaudeCode<cr>', desc = 'Toggle Claude Code' },
+    { '<leader>ca', '<cmd>ClaudeCodeSend<cr>', mode = 'v', desc = 'Ask Claude (send selection)' },
+    { '<leader>cx', '<cmd>ClaudeCodeFocus<cr>', desc = 'Execute/focus Claude Code' },
+    { '<leader>cr', '<cmd>ClaudeCode --resume<cr>', desc = 'Resume Claude' },
+    { '<leader>cb', '<cmd>ClaudeCodeAdd %<cr>', desc = 'Add current buffer' },
+    { '<leader>cA', '<cmd>ClaudeCodeDiffAccept<cr>', desc = 'Accept diff' },
+    { '<leader>cD', '<cmd>ClaudeCodeDiffDeny<cr>', desc = 'Deny diff' },
+  },
 }
