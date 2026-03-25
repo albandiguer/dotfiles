@@ -1093,12 +1093,16 @@ require('lazy').setup({
             local location = statusline.section_location { trunc_width = 75 }
             local search = statusline.section_searchcount { trunc_width = 75 }
 
+            local opencode_ok, opencode = pcall(require, 'opencode')
+            local opencode_status = opencode_ok and opencode.statusline() or ''
+
             return statusline.combine_groups {
               { hl = mode_hl, strings = { mode } },
               { hl = 'MiniStatuslineDevinfo', strings = { diff, diagnostics, lsp } },
               '%<', -- Mark general truncate point
               { hl = 'MiniStatuslineFilename', strings = { filename } },
               '%=', -- End left alignment
+              { hl = 'MiniStatuslineDevinfo', strings = { opencode_status } },
               { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
               { hl = mode_hl, strings = { search, location } },
             }
