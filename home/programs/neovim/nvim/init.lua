@@ -222,7 +222,7 @@ vim.keymap.set('i', '<C-k>', '<space>->')
 vim.keymap.set('i', '<C-c>', '<esc>')
 
 -- a select all
-vim.keymap.set('n', '<C-a>', '<esc>ggVG<CR>') -- select all
+vim.keymap.set('n', '<M-a>', '<esc>ggVG<CR>') -- select all
 
 -- display previous buffer
 vim.keymap.set('n', ',,', '<c-^>')
