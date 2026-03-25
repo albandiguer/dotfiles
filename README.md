@@ -46,15 +46,6 @@ cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
 ### [Mise(-en-place)](https://mise.jdx.dev/dev-tools/shims.html)
 
 - add shims directory to path so lsp etc are not lost `mise activate --shims`
-- for postgres, visit [asdf plugin page](https://github.com/smashedtoatoms/asdf-postgres)
-  this is important
-
-```shell
-brew install gcc readline zlib curl ossp-uuid icu4c pkg-config
-export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig" && \
-export MACOSX_DEPLOYMENT_TARGET=26.1 && \
-export PATH="/opt/homebrew/opt/icu4c/bin:$PATH" 
-```
 
 ### uv
 #### molten
