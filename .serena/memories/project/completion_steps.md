@@ -1,0 +1,1 @@
+After editing configs, run `make` (alias for `make apply`) to apply nix-darwin switch locally. For dependency bumps run `make up` to update flake inputs, apply, and refresh Mise toolchains. Use `make rollback` if the new generation misbehaves. No automated tests, but verify by reloading the shell or affected programs once nix rebuild completes.

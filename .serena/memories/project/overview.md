@@ -1,0 +1,1 @@
+Nix flake-based dotfiles repo that configures macOS via nix-darwin plus user environment via home-manager. Includes modular program configs under home/programs, machine-specific definitions under darwin/ and home/users, and integrates tools like Mise, Fish, tmux, Neovim, and AI assistants (Claude Code, Aider).
