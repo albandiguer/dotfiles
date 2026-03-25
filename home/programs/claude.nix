@@ -48,7 +48,6 @@ in
           "Search"
           "WebFetch(domain:github.com)"
           "mcp__claude_ai_Notion__notion-fetch"
-          "mcp__graphite__run_gt_cmd"
           "mcp__serena__*"
         ];
       };

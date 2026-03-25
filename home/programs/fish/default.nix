@@ -10,7 +10,6 @@
       ls = "eza";
       vim = "nvim";
       diff = "nvim -d";
-      skills = "npx skills";
       gsd-up = "npx get-shit-done-cc@latest"; # maj gsd
       # docker = "podman";
     };
@@ -47,6 +46,7 @@
       ptui = "podman-tui";
       r = "bin/rails";
       s = "bin/rspec";
+      skills = "npx skills";
       sff = "bin/rspec --fail-fast";
       tf = "terraform";
       wts = "wt switch";
