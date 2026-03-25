@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
   home = {
+    sessionVariables = {
+      GIT_SPICE_NO_GS_WARNING = "1";
+    };
+
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       # Development Tools
@@ -16,6 +20,7 @@
       nix-prefetch-git
       nix-prefetch-github # not working at times cant verify sha256 sums
       worktrunk # [manage git worktree](https://github.com/max-sixty/worktrunk)
+      git-spice
 
       # Shell & CLI Utilities
       bash # macos is bash 3xx, need 4+

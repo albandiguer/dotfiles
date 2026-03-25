@@ -120,6 +120,15 @@
       				and podman machine list --format json | jq -e '.[].Running' > /dev/null 2>&1
       				set -gx DOCKER_HOST (podman machine inspect | jq -r '.[0].ConnectionInfo.PodmanSocket.Path | sub("^"; "unix://")')
       			end
+
+      			# git-spice (gs) shell completion
+      			function __complete_gs
+      				set -lx COMP_LINE (commandline -cp)
+      				test -z (commandline -ct)
+      				and set COMP_LINE "$COMP_LINE "
+      				/etc/profiles/per-user/albandiguer/bin/gs
+      			end
+      			complete -f -c gs -a "(__complete_gs)"
       		'';
 
     # https://github.com/budimanjojo/tmux.fish
