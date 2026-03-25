@@ -47,6 +47,7 @@ in
           "Search"
           "WebFetch(domain:github.com)"
           "WebFetch(domain:raw.githubusercontent.com)"
+          "WebFetch(domain:api.github.com)"
           "mcp__claude_ai_Notion__notion-fetch"
           "mcp__serena__*"
         ];
