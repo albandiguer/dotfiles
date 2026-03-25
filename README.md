@@ -35,8 +35,7 @@ cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
 ./install.sh
 ```
 
-2. [ Disable C-Space binding ](https://apple.stackexchange.com/questions/423971/disable-controlspace-keyboard-shortcut) on MacOS so it's usable in nvim
-3. **Gist:**
+2. **Gist:**
    `!h gist-vim` for help, tldr add a `~/.gist-vim` with `token xxx` in it, token
    from gh with gist scope
    > [!TIP]

@@ -105,6 +105,15 @@
   system.defaults.NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
   system.defaults.NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
 
+  # Disable C-Space (input source switch) so it's usable in nvim
+  # https://apple.stackexchange.com/questions/423971/disable-controlspace-keyboard-shortcut
+  system.defaults.CustomUserPreferences."com.apple.symbolichotkeys" = {
+    AppleSymbolicHotKeys = {
+      "60" = { enabled = false; value = { parameters = [ 32 49 1048576 ]; type = "standard"; }; };
+      "61" = { enabled = false; value = { parameters = [ 32 49 1572864 ]; type = "standard"; }; };
+    };
+  };
+
   # NOTE: brews will be available accross all user sessions on the machine,
   # for example tectonic is needed by Audrey
   homebrew = {
