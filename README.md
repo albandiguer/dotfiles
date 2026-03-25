@@ -21,33 +21,26 @@ nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uni
 > [!NOTE]
 > might need to del manually the partition via disk util
 
-## Tools setup & memos
+## Fixes & tips 
 
-> [!TIP] [ Patch fonts for glyph ](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font) with
-> `docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v  ~/dev/dotfiles/fonts/out:/out nerdfonts/patcher`
+- Fonts
+    - [Patch glyph ](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font)
+        ```bash
+        docker run --rm -v ~/dev/dotfiles/fonts/in:/in \
+        -v  ~/dev/dotfiles/fonts/out:/out \
+        nerdfonts/patcher
+        ```
 
-### [Neovim](./home/programs/kickstart-nvim/README.md)
+- Markdown
+    - Fix markdown preview
+        ```bash
+        cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
+        ./install.sh
+        ```
 
-1. Fix markdown preview
-
-```bash
-cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
-./install.sh
-```
-
-2. **Gist:**
-   `!h gist-vim` for help, tldr add a `~/.gist-vim` with `token xxx` in it, token
-   from gh with gist scope
-   > [!TIP]
-   >
-   > - Use `gc` flag for interactive replace: `:cdo s/StringOne/StringTwo/gc | update`
-
-### [Mise(-en-place)](https://mise.jdx.dev/dev-tools/shims.html)
-
-- add shims directory to path so lsp etc are not lost `mise activate --shims`
-
-### uv
-#### molten
-create [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file) `uv task run create-molten-env`
+- Molten
+    - add [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file) 
+    ```bash
+        uv task run create-molten-env
 
 
