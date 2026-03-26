@@ -121,7 +121,7 @@ in
 
       # Git branch (magenta)
       if [ -n "$git_branch" ]; then
-        parts+=("$(printf '\033[35m %s\033[0m' "$git_branch")")
+        parts+=("$(printf '\033[35m%s\033[0m' "$git_branch")")
       fi
 
       # Model (dim white)
@@ -137,6 +137,30 @@ in
         else
           parts+=("$(printf '\033[32mctx %s%%\033[0m' "$used_pct")")
         fi
+      fi
+
+      # Rate limits (5-hour and 7-day)
+      five_pct=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+      week_pct=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+      rate_parts=()
+      if [ -n "$five_pct" ]; then
+        five_int=$(printf '%.0f' "$five_pct")
+        if [ "''${five_int:-0}" -ge 70 ] 2>/dev/null; then
+          rate_parts+=("$(printf '\033[33m5h:%s%%\033[0m' "$five_int")")
+        else
+          rate_parts+=("$(printf '\033[32m5h:%s%%\033[0m' "$five_int")")
+        fi
+      fi
+      if [ -n "$week_pct" ]; then
+        week_int=$(printf '%.0f' "$week_pct")
+        if [ "''${week_int:-0}" -ge 70 ] 2>/dev/null; then
+          rate_parts+=("$(printf '\033[33m7d:%s%%\033[0m' "$week_int")")
+        else
+          rate_parts+=("$(printf '\033[32m7d:%s%%\033[0m' "$week_int")")
+        fi
+      fi
+      if [ ''${#rate_parts[@]} -gt 0 ]; then
+        parts+=("$(IFS='/'; echo "''${rate_parts[*]}")")
       fi
 
       printf '%s' "$(IFS=' '; echo "''${parts[*]}")"
