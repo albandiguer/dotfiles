@@ -20,6 +20,7 @@
         ci = "commit";
         cih = "commit --reuse-message=HEAD";
         co = "checkout";
+        cot = "!git switch \"$(git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2)\"";
         cp = "cherry-pick";
         d = "difftool";
         dc = "diff --cached";
