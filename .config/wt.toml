@@ -60,7 +60,7 @@
 # post-switch = "echo -ne '\\033]0;{{ branch }}\\007'"
 
 [post-switch]
-tmux = "[ -n  \"TMUX\" ] && tmux rename-window {{ (repo ~ '-' ~ branch) | sanitize }}"
+tmux = "[ -n \"$TMUX\" ] && tmux rename-window \"{{ (repo ~ '-' ~ branch) | sanitize }}\""
 
 # Pre-Commit: Runs before committing during merge, BLOCKS (fail-fast)
 # Use for: formatters, linters, quick checks
