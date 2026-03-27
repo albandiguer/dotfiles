@@ -844,10 +844,14 @@ require('lazy').setup({
       },
       formatters = {
         prettier = {
-          -- will execute prettier only if the config file is found or prettier is in package.json dependencies
+          -- Always run prettier for markdown files regardless of location
           condition = function()
+            -- Always format markdown files
+            if vim.bo.filetype == 'markdown' then
+              return true
+            end
+            -- For other filetypes, check for config file or package.json
             local cwd = vim.fn.getcwd()
-            -- Check for typical Prettier config files in the project root
             if
               vim.loop.fs_realpath(cwd .. '/.prettierrc')
               or vim.loop.fs_realpath(cwd .. '/.prettierrc.js')
@@ -857,7 +861,6 @@ require('lazy').setup({
             then
               return true
             end
-            -- Also check for prettier in package.json dependencies/devDependencies
             local package_json = cwd .. '/package.json'
             if vim.loop.fs_realpath(package_json) then
               local ok, content = pcall(vim.fn.readfile, package_json)
