@@ -20,21 +20,44 @@ return {
             },
           },
         },
-        terminal = {},
       },
     },
   },
   config = function()
+    local opencode_cmd = 'opencode --port'
+    ---@type snacks.terminal.Opts
+    local snacks_terminal_opts = {
+      win = {
+        width = 0.55,
+        position = 'right',
+        enter = false,
+        on_win = function(win)
+          require('opencode.terminal').setup(win.win)
+        end,
+      },
+    }
+
     ---@type opencode.Opts
     vim.g.opencode_opts = {
       lsp = { enabled = true },
+      server = {
+        start = function()
+          require('snacks.terminal').open(opencode_cmd, snacks_terminal_opts)
+        end,
+        stop = function()
+          require('snacks.terminal').get(opencode_cmd, snacks_terminal_opts):close()
+        end,
+        toggle = function()
+          require('snacks.terminal').toggle(opencode_cmd, snacks_terminal_opts)
+        end,
+      },
     }
 
     vim.o.autoread = true
 
     -- README defaults
     vim.keymap.set({ 'n', 'x' }, '<C-a>', function()
-      require('opencode').ask('@this: ', { submit = true })
+      require('opencode').ask('', { submit = true })
     end, { desc = 'Ask opencode' })
 
     vim.keymap.set({ 'n', 'x' }, '<C-x>', function()
@@ -50,7 +73,7 @@ return {
       return require('opencode').operator '@this '
     end, { expr = true, desc = 'Add range to opencode' })
     vim.keymap.set('n', 'goo', function()
-      return require('opencode').operator('@this ') .. '_'
+      return require('opencode').operator '@this ' .. '_'
     end, { expr = true, desc = 'Add current line to opencode' })
 
     -- Scroll (README: <S-C-u> / <S-C-d>)
