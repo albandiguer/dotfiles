@@ -28,7 +28,7 @@ return {
     ---@type snacks.terminal.Opts
     local snacks_terminal_opts = {
       win = {
-        width = 0.55,
+        width = 0.5,
         position = 'right',
         enter = false,
         on_win = function(win)
