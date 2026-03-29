@@ -101,6 +101,7 @@
 
   imports = [
     # ../../zsh
+    ../../programs/eza.nix
     ../../programs/fish
     ../../programs/atuin.nix
     ../../programs/btop.nix

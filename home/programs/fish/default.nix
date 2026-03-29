@@ -7,7 +7,6 @@
 
     shellAliases = {
       cat = "bat";
-      ls = "eza";
       vim = "nvim";
       diff = "nvim -d";
       gsd-up = "npx get-shit-done-cc@latest"; # maj gsd
@@ -33,7 +32,7 @@
       g = "git";
       gd = "gh dash";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
-      l = "ls -la";
+      l = "eza -la";
       ld = "lazydocker";
       lg = "lazygit";
       m = "make";

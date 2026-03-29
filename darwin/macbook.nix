@@ -26,7 +26,6 @@
     gitmux # git tmux integration
 
     # -- CLI Utilities --
-    eza # https://github.com/eza-community/eza
 
     _1password-cli # 1Password CLI tool
     sox # audio sampler, whisper deps
