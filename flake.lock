@@ -379,22 +379,6 @@
         "type": "github"
       }
     },
-    "rails-ai-agents": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774529969,
-        "narHash": "sha256-gIyekgPtWf+aLebJO5VEuAZN7yTOYVyXLjxvuxaohik=",
-        "owner": "ThibautBaissac",
-        "repo": "rails_ai_agents",
-        "rev": "caca4e08143488dff66a924d759918253885e1ef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ThibautBaissac",
-        "repo": "rails_ai_agents",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "claude-code": "claude-code",
@@ -410,7 +394,6 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3",
-        "rails-ai-agents": "rails-ai-agents",
         "try": "try"
       }
     },

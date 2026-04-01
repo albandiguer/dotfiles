@@ -1,12 +1,4 @@
-{
-  rails-ai-agents,
-  config,
-  ...
-}:
-let
-  # Default to "37signals_agents" for personal machine, override via CLAUDE_AGENTS_SUBFOLDER for work
-  agentsSubfolder = config.home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER or "37signals_agents";
-in
+{ config, ... }:
 {
   programs.claude-code = {
     enable = true;
@@ -88,9 +80,6 @@ in
         ];
       };
     };
-
-    # NOTE: disabled for now
-    # agentsDir = "${rails-ai-agents}/${agentsSubfolder}";
   };
 
   # Statusline script

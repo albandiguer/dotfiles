@@ -39,10 +39,6 @@
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
-    rails-ai-agents = {
-      url = "github:ThibautBaissac/rails_ai_agents";
-      flake = false;
-    };
     gh-enhance = {
       url = "github:dlvhdr/gh-enhance";
       flake = false;
@@ -62,7 +58,6 @@
       homebrew-puma-tap,
       hashicorp-tap,
       homebrew-sfmono-nerd-font,
-      rails-ai-agents,
       gh-enhance,
       claude-code,
       ...
@@ -81,7 +76,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit rails-ai-agents gh-enhance;
+            inherit gh-enhance;
             try = inputs.try;
           };
           home-manager.users.${user} = import ./home/users/${user}/home.nix;
