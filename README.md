@@ -11,7 +11,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 2. Clone this repo
 3. Run `make`
 
-## Uninstall 
+## Uninstall
 
 ```bash
 nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uninstaller
@@ -21,26 +21,25 @@ nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uni
 > [!NOTE]
 > might need to del manually the partition via disk util
 
-## Fixes & tips 
+## Fixes & tips
 
-- Fonts
-    - [Patch glyph ](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font)
-        ```bash
-        docker run --rm -v ~/dev/dotfiles/fonts/in:/in \
-        -v  ~/dev/dotfiles/fonts/out:/out \
-        nerdfonts/patcher
-        ```
+- [Patch glyph ](https://github.com/ryanoasis/nerd-fonts#option-9-patch-your-own-font)
 
-- Markdown
-    - Fix markdown preview
-        ```bash
-        cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
-        ./install.sh
-        ```
+  ```bash
+  docker run --rm -v ~/dev/dotfiles/fonts/in:/in \
+  -v  ~/dev/dotfiles/fonts/out:/out \
+  nerdfonts/patcher
+  ```
 
-- Molten
-    - add [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file) 
-    ```bash
-        uv task run create-molten-env
+- Fix markdown preview
 
+  ```bash
+  cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
+  ./install.sh
+  ```
 
+- Add [molten](https://github.com/benlubas/molten-nvim) venv and add deps (see mise file)
+
+  ```bash
+      uv task run create-molten-env
+  ```
