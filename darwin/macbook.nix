@@ -116,6 +116,14 @@
         "65" = {
           enabled = false;
         };
+        # Disable 'Ctrl + Space' for Select previous input source
+        "60" = {
+          enabled = false;
+        };
+        # Disable 'Ctrl + Alt + Space' for Select next input source
+        "61" = {
+          enabled = false;
+        };
       };
     };
   };
