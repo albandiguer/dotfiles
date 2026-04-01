@@ -1063,7 +1063,16 @@ require('lazy').setup({
       --  - va)  - [V]isually select [A]round [)]paren
       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
       --  - ci'  - [C]hange [I]nside [']quote
-      require('mini.ai').setup { n_lines = 500 }
+      require('mini.ai').setup {
+        n_lines = 500,
+        mappings = {
+          -- Disable next/last text objects to avoid conflict with built-in treesitter incremental selection
+          around_next = '',
+          inside_next = '',
+          around_last = '',
+          inside_last = '',
+        },
+      }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
@@ -1095,7 +1104,7 @@ require('lazy').setup({
             local lsp = statusline.section_lsp { trunc_width = 75 }
             local filename = statusline.section_filename { trunc_width = 140 }
             local fileinfo = statusline.section_fileinfo { trunc_width = 120 }
-            local location = statusline.section_location { trunc_width = 75 }
+            local location = statusline.section_location()
             local search = statusline.section_searchcount { trunc_width = 75 }
 
             local opencode_ok, opencode = pcall(require, 'opencode')
@@ -1181,22 +1190,12 @@ require('lazy').setup({
           additional_vim_regex_highlighting = { 'ruby' },
         },
         indent = { enable = true, disable = { 'ruby' } },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = '<C-Space>',
-            node_incremental = '<C-Space>',
-            scope_incremental = false,
-            node_decremental = '<bs>',
-          },
-        },
-        textobjects = { enable = true },
       }
     end,
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
-    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
+    --    - Incremental selection: Built-in since Neovim v0.12 (an/in/]n/[n). See `:help treesitter-incremental-selection`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
