@@ -1041,11 +1041,13 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'AlexvZyl/nordic.nvim',
+    'catppuccin/nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      require('nordic').setup {}
-      vim.cmd.colorscheme 'nordic'
+      require('catppuccin').setup {
+        flavour = 'frappe',
+      }
+      vim.cmd.colorscheme 'catppuccin-frappe'
     end,
   },
 
