@@ -53,6 +53,17 @@
     };
 
     functions = {
+      wts = ''
+        set branch (string replace -ra '[/\\\\]' '-' $argv[1])
+        set session (tmux display-message -p '#S')/$branch
+        wt switch --create $argv
+        tmux new-session -d -s $session -n vim
+        tmux send-keys -t "$session:vim" nvim Enter
+        tmux new-window -t $session -n claude
+        tmux send-keys -t "$session:claude" claude Enter
+        tmux new-window -t $session -n shell
+        tmux switch-client -t $session
+      '';
       alogs = ''
         				function alogs
         					echo "Enter AWS profile (default: pretto-prod):"
