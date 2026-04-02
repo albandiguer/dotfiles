@@ -18,8 +18,8 @@
     shellAbbrs = {
       b = "bin/bundle";
       bd = "bin/dev";
-      br = "bin/rspec";
       be = "bundle exec";
+      br = "bin/rspec";
       bs = "brew search";
       c = "clear";
       cc = "claude"; # claude code
@@ -45,8 +45,8 @@
       ptui = "podman-tui";
       r = "bin/rails";
       s = "bin/rspec";
-      skills = "npx skills";
       sff = "bin/rspec --fail-fast";
+      skills = "npx skills";
       tf = "terraform";
       wts = "wt switch";
       y = "yarn";
