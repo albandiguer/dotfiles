@@ -12,6 +12,11 @@
       #   error_symbol = "[➜](bold red)";
       # };
 
+      directory = {
+        format = "[ $path]($style)[$read_only]($read_only_style) ";
+        style = "bold cyan";
+      };
+
       ruby.disabled = false;
       nodejs.disabled = false;
       package.disabled = true;
