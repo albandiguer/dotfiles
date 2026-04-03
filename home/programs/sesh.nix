@@ -13,6 +13,49 @@
         startup_command = "nvim";
       };
 
+      # Window layouts that can be reused across sessions
+      window = [
+        {
+          name = "editor";
+          startup_command = "nvim";
+        }
+        {
+          name = "ai";
+          startup_command = "opencode";
+        }
+        {
+          name = "term";
+          # No startup command - just a terminal
+        }
+      ];
+
+      # Session configurations
+      session = [
+        {
+          name = "dotfiles";
+          path = "~/dev/dotfiles";
+          startup_command = "nvim";
+          windows = [
+            "editor"
+            "ai"
+            "term"
+          ];
+        }
+      ];
+
+      # Wildcard config for projects under ~/dev only
+      wildcard = [
+        {
+          pattern = "~/dev/*";
+          startup_command = "nvim";
+          windows = [
+            "editor"
+            "ai"
+            "term"
+          ];
+        }
+      ];
+
       # Session root directories to scan
       root = [
         "~/dev"

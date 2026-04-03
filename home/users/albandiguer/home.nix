@@ -124,5 +124,6 @@
     ../../programs/opencode.nix
     ../../programs/try.nix
     ../../programs/sesh.nix
+    ../../programs/zoxide.nix
   ];
 }
