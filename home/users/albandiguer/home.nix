@@ -123,5 +123,6 @@
     ../../programs/claude.nix
     ../../programs/opencode.nix
     ../../programs/try.nix
+    ../../programs/sesh.nix
   ];
 }

@@ -20,7 +20,6 @@
       bind '|' split-window -h -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
       bind l select-layout main-vertical
-      bind f display-popup -E "tmux list-sessions | cut -d: -f1 | fzf --reverse --bind 'ctrl-x:execute(tmux kill-session -t {})+reload(tmux list-sessions | cut -d: -f1)' | xargs tmux switch-client -t"
 
       # unbind detach
       unbind-key -T prefix d
@@ -42,6 +41,31 @@
       # Fix nvim :healthcheck
       set-option -sg escape-time 10
       set-option -g focus-events on
+
+      # sesh recommended settings
+      bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt
+      set -g detach-on-destroy off  # don't exit from tmux when closing a session
+
+      # sesh quality of life bindings
+      bind-key "L" run-shell "sesh last"  # better last session switching
+      bind-key "9" run-shell "sesh connect --root $(pwd)"  # connect to root session
+      bind-key "W" run-shell "sesh window \"$(sesh window | fzf-tmux -p 60%,50% --prompt '🪟  ')\""  # window picker
+
+      # sesh session picker (prefix+f) - override default tmux switcher
+      bind-key "f" run-shell "sesh connect \"$(
+        sesh list --icons | fzf-tmux -p 80%,70% \\
+          --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \\
+          --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \\
+          --bind 'tab:down,btab:up' \\
+          --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \\
+          --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t --icons)' \\
+          --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c --icons)' \\
+          --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)' \\
+          --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \\
+          --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \\
+          --preview-window 'right:55%' \\
+          --preview 'sesh preview {}'
+      )\""
     '';
 
     plugins = with pkgs; [
