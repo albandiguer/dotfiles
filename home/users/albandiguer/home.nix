@@ -125,5 +125,6 @@
     ../../programs/try.nix
     ../../programs/sesh.nix
     ../../programs/zoxide.nix
+    ../../programs/worktrunk.nix
   ];
 }
