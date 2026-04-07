@@ -45,8 +45,6 @@
           "Bash(curl:*)"
           "Bash(export:*)"
           "Bash(find:*)"
-          "Bash(gh:*)"
-          "Bash(git:*)"
           "Bash(grep:*)"
           "Bash(ls:*)"
           "Bash(node:*)"
