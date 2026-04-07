@@ -47,9 +47,9 @@
       set -g detach-on-destroy off  # don't exit from tmux when closing a session
 
       # sesh quality of life bindings
-      bind-key "L" run-shell "sesh last"  # better last session switching
+      bind-key "l" run-shell "sesh last"  # better last session switching
       bind-key "9" run-shell "sesh connect --root $(pwd)"  # connect to root session
-      bind-key "W" run-shell "sesh window \"$(sesh window | fzf-tmux -p 60%,50% --prompt '🪟  ')\""  # window picker
+      # bind-key "W" run-shell "sesh window \"$(sesh window | fzf-tmux -p 60%,50% --prompt '🪟  ')\""  # window picker
 
       # sesh session picker (prefix+f) - override default tmux switcher
       bind-key "f" run-shell "sesh connect \"$(

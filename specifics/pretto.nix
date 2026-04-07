@@ -10,5 +10,7 @@
     home.sessionVariables.OBSIDIAN_VAULT_PATH = "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Reliable Brain";
     home.sessionVariables.PRETTO_OBSIDIAN_VAULT_PATH = "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Pretto";
     home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER = "agents";
+    # Use Claude Code on work laptop
+    home.sessionVariables.SESH_AI_COMMAND = "claude";
   };
 }

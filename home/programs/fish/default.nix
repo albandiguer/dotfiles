@@ -48,6 +48,7 @@
       sff = "bin/rspec --fail-fast";
       skills = "npx skills";
       tf = "terraform";
+      wtc = "wt create ";
       y = "yarn";
     };
 

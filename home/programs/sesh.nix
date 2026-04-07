@@ -10,44 +10,40 @@
     settings = {
       # Default session configuration (table format)
       default_session = {
-        startup_command = "nvim";
+        windows = [
+          "editor"
+          "ai"
+          "term"
+        ];
       };
 
       # Window layouts that can be reused across sessions
       window = [
         {
           name = "editor";
-          startup_command = "nvim";
+          startup_command = "nvim -c :Telescope find_files";
         }
         {
           name = "ai";
-          startup_command = "opencode";
+          startup_command = ''
+            if [ -n "$SESH_AI_COMMAND" ]; then
+              exec $SESH_AI_COMMAND
+            else
+              exec opencode
+            fi
+          '';
         }
         {
           name = "term";
+          startup_command = "ls";
           # No startup command - just a terminal
         }
       ];
 
-      # Session configurations
-      session = [
-        {
-          name = "dotfiles";
-          path = "~/dev/dotfiles";
-          startup_command = "nvim";
-          windows = [
-            "editor"
-            "ai"
-            "term"
-          ];
-        }
-      ];
-
-      # Wildcard config for projects under ~/dev only
+      # Wildcard config for projects
       wildcard = [
         {
-          pattern = "~/dev/*";
-          startup_command = "nvim";
+          pattern = "~/dev/**/*";
           windows = [
             "editor"
             "ai"
@@ -59,8 +55,6 @@
       # Session root directories to scan
       root = [
         "~/dev"
-        "~/projects"
-        "~/work"
       ];
 
       # Exclude patterns
