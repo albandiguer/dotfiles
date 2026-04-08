@@ -53,63 +53,9 @@
     };
 
     functions = {
-      wts = ''
-        set branch (string replace -ra '[/\\\\]' '-' $argv[1])
-        set session (tmux display-message -p '#S')/$branch
-        wt switch --create $argv
-        tmux new-session -d -s $session -n vim
-        tmux send-keys -t "$session:vim" nvim Enter
-        tmux new-window -t $session -n claude
-        tmux send-keys -t "$session:claude" claude Enter
-        tmux new-window -t $session -n shell
-        tmux switch-client -t $session
-      '';
-      alogs = ''
-        				function alogs
-        					echo "Enter AWS profile (default: pretto-prod):"
-        					read -l aws_profile
-        					if not set -q aws_profile
-        						set aws_profile pretto-prod
-        					end
-        					echo "Verifying AWS SSO session..."
-        					if not aws sso list-accounts --profile $aws_profile --config ~/.aws/config > /dev/null 2>&1
-        						aws sso login --profile $aws_profile
-        					end
-        					echo "Select log group..."
-        					set selected_group (awslogs groups --profile pretto-prod | fzf)
-        					echo "Add any filters you like..."
-        					read -l filters
-        					echo "Fetching logs..."
-        					awslogs get $selected_group --timestamp --profile pretto-prod $filters
-        				end
-        			'';
-      miserefresh = ''
-        				mise cache clean
-        				mise ls-remote ruby
-        			'';
-      wt = ''
-        				if test (count $argv) -ge 2; and test $argv[1] = "create"
-        					# Get worktrees before creation
-        					set -l before_worktrees (git worktree list --porcelain 2>/dev/null | grep "^worktree" | string replace "worktree " "")
-        					
-        					# Create the worktree
-        					command wt switch -c $argv[2] --no-cd
-        					set -l wt_status $status
-        					
-        					# If successful, find and add new worktree to zoxide
-        					if test $wt_status -eq 0
-        						set -l after_worktrees (git worktree list --porcelain 2>/dev/null | grep "^worktree" | string replace "worktree " "")
-        						for wt_path in $after_worktrees
-        							if not contains $wt_path $before_worktrees
-        								zoxide add $wt_path
-        								break
-        							end
-        						end
-        					end
-        				else
-        					command wt $argv
-        				end
-        			'';
+      alogs = builtins.readFile ./functions/alogs.fish;
+      miserefresh = builtins.readFile ./functions/miserefresh.fish;
+      wt = builtins.readFile ./functions/wt.fish;
     };
 
     plugins = [
