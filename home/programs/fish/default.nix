@@ -49,6 +49,7 @@
       skills = "npx skills";
       tf = "terraform";
       wtc = "wt create ";
+      x = "exit";
       y = "yarn";
     };
 
