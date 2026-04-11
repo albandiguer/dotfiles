@@ -143,9 +143,7 @@
       "puma/puma/puma-dev"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
-      # "hashicorp/tap/terraform"
       # "python-setuptools" # awsume deps
-      # "sapling"
     ];
     casks = [
       "1password" # 1Password GUI application
