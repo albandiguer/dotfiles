@@ -92,9 +92,7 @@
     source = ./claude/rtk-rewrite.sh;
   };
 
-  # Symlink skills to Claude Code's global skills directory
-  home.file.".claude/skills/find-skills" = {
-    source = ../dotfiles/.agents/skills/find-skills;
-    recursive = true;
-  };
+  # Symlink global skills lock file to repo (editable by skills CLI)
+  home.file.".agents/.skill-lock.json".source =
+    config.lib.file.mkOutOfStoreSymlink "/Users/albandiguer/dev/dotfiles/home/dotfiles/.agents/.skill-lock.json";
 }

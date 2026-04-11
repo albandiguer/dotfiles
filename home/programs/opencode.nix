@@ -96,9 +96,4 @@
     }
   '';
 
-  # Symlink skills to OpenCode's skills directory
-  home.file.".config/opencode/skills/find-skills" = {
-    source = lib.cleanSource ../dotfiles/.agents/skills/find-skills;
-    recursive = true;
-  };
 }

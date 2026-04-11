@@ -1,0 +1,23 @@
+{
+  "_comment": "Skills lock file for global agent skills. To add a new skill: npx skills add <owner/repo> --skill <name> -g -y. This file is symlinked to ~/.agents/.skill-lock.json via Nix. The actual install commands are in Makefile.",
+  "version": 3,
+  "skills": {
+    "caveman": {
+      "source": "juliusbrussee/caveman",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
+      "skillPath": "caveman/SKILL.md",
+      "skillFolderHash": "b1f418f4e7cbee5d18c209a48e3475132b49e7b1"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}
