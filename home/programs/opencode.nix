@@ -96,4 +96,8 @@
     }
   '';
 
+  # Caveman plugin — auto-activate caveman mode on session start
+  home.file.".config/opencode/plugins/caveman.ts".text =
+    builtins.readFile ./opencode/plugins/caveman.ts;
+
 }

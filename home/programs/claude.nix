@@ -23,6 +23,17 @@
         MAX_THINKING_TOKENS = "31999";
       };
       hooks = {
+        SessionStart = [
+          {
+            matcher = "";
+            hooks = [
+              {
+                type = "command";
+                command = "echo '/caveman full'";
+              }
+            ];
+          }
+        ];
         PreToolUse = [
           {
             matcher = "Bash";
