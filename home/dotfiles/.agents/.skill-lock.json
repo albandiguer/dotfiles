@@ -42,6 +42,15 @@
       "skillFolderHash": "16cfef941383949d7f9d2dca5b939e19e9eabf9f",
       "installedAt": "2026-04-11T00:30:23.117Z",
       "updatedAt": "2026-04-11T00:30:23.117Z"
+    },
+    "ubiquitous-language": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "ubiquitous-language/SKILL.md",
+      "skillFolderHash": "8c52deebe26f5a73a98b94ef844b20e4907c1671",
+      "installedAt": "2026-04-11T08:16:55.313Z",
+      "updatedAt": "2026-04-11T08:16:55.313Z"
     }
   },
   "dismissed": {
