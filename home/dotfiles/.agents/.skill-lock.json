@@ -51,6 +51,24 @@
       "skillFolderHash": "8c52deebe26f5a73a98b94ef844b20e4907c1671",
       "installedAt": "2026-04-11T08:16:55.313Z",
       "updatedAt": "2026-04-11T08:16:55.313Z"
+    },
+    "obsidian-cli": {
+      "source": "kepano/obsidian-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/kepano/obsidian-skills.git",
+      "skillPath": "skills/obsidian-cli/SKILL.md",
+      "skillFolderHash": "96254a554e480359de7b685571876f2e7f9ba57d",
+      "installedAt": "2026-04-11T19:16:56.583Z",
+      "updatedAt": "2026-04-11T19:16:56.583Z"
+    },
+    "obsidian-markdown": {
+      "source": "kepano/obsidian-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/kepano/obsidian-skills.git",
+      "skillPath": "skills/obsidian-markdown/SKILL.md",
+      "skillFolderHash": "5caf5d9e7de204f3904216857545f2aa36bcfcac",
+      "installedAt": "2026-04-11T19:19:27.293Z",
+      "updatedAt": "2026-04-11T19:19:27.293Z"
     }
   },
   "dismissed": {
