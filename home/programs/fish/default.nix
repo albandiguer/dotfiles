@@ -48,7 +48,7 @@
       sff = "bin/rspec --fail-fast";
       skills = "npx skills";
       tf = "terraform";
-      wtc = "wt create ";
+      wtc = "wt switch --create ";
       x = "exit";
       y = "yarn";
     };
@@ -56,7 +56,6 @@
     functions = {
       alogs = builtins.readFile ./functions/alogs.fish;
       miserefresh = builtins.readFile ./functions/miserefresh.fish;
-      wt = builtins.readFile ./functions/wt.fish;
     };
 
     plugins = [
