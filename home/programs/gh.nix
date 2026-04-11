@@ -8,7 +8,10 @@ let
     pname = "gh-enhance";
     version = "latest";
     src = gh-enhance;
-    vendorHash = "sha256-rgql0vsHAzWeubw4EYBu/yPmm2QeADsIeACWsbcWtSk"; # pkgs.lib.fakeHash;
+    vendorHash = "sha256-22MJ95wHwFbb9VDIc/pabOadn+gZsDD0czyKMvnwHXo=";
+
+    # Ignore the vendor directory in source and generate fresh vendor from go.mod
+    proxyVendor = true;
   };
 in
 {

@@ -14,6 +14,7 @@
     coc.enable = false;
     withNodeJs = true;
     withRuby = false; # using mise, type `:!which ruby` to confirm
+    withPython3 = true; # Explicitly set to silence warning
 
     plugins = [ ];
 
