@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
   ...
 }:
 {
@@ -10,15 +7,16 @@
     # see this for dotfiles https://mise.jdx.dev/lang/ruby.html#default-gems
     globalConfig = {
       tools = {
+        "ubi:onlyati/quadlet-lsp" = "latest";
+        # postgres = "latest";
         aws-cli = "latest";
         gcloud = "latest";
         node = "latest";
-        # postgres = "latest";
         ruby = "latest";
         rust = "latest";
         terraform = "latest";
         uv = "latest"; # shall it be in nix instead?
-        "ubi:onlyati/quadlet-lsp" = "latest";
+        pnpm = "latest";
       };
 
       # https://github.com/jdx/mise/blob/main/settings.toml
