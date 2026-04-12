@@ -21,6 +21,7 @@
       env = {
         CLAUDE_CODE_MAX_OUTPUT_TOKENS = "64000";
         MAX_THINKING_TOKENS = "31999";
+        CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1";
       };
       hooks = {
         SessionStart = [
