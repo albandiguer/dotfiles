@@ -379,6 +379,22 @@
         "type": "github"
       }
     },
+    "retlehs-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776026474,
+        "narHash": "sha256-/1PCjPokATO7b6UQ7PrDv8ZRtqiDYA3hQ0jrMyxudxw=",
+        "owner": "retlehs",
+        "repo": "homebrew-tap",
+        "rev": "4164fbf7765c36beaddb219619dcc54f48f349bb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "retlehs",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "claude-code": "claude-code",
@@ -394,6 +410,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3",
+        "retlehs-tap": "retlehs-tap",
         "try": "try"
       }
     },

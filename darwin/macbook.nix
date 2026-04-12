@@ -141,6 +141,7 @@
       "libyaml"
       "nixfmt"
       "puma/puma/puma-dev"
+      "retlehs/tap/quien"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
       # "python-setuptools" # awsume deps

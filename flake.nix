@@ -39,6 +39,10 @@
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
+    retlehs-tap = {
+      url = "github:retlehs/homebrew-tap";
+      flake = false;
+    };
     gh-enhance = {
       url = "github:dlvhdr/gh-enhance";
       flake = false;
@@ -58,6 +62,7 @@
       homebrew-puma-tap,
       hashicorp-tap,
       homebrew-sfmono-nerd-font,
+      retlehs-tap,
       gh-enhance,
       claude-code,
       ...
@@ -97,6 +102,7 @@
               "puma/homebrew-puma" = homebrew-puma-tap;
               # "hashicorp/tap" = hashicorp-tap;
               "shaunsingh/SFMono-Nerd-Font-Ligaturized" = homebrew-sfmono-nerd-font;
+              "retlehs/homebrew-tap" = retlehs-tap;
             };
             mutableTaps = false;
             autoMigrate = true;
