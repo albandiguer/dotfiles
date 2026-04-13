@@ -1,5 +1,5 @@
 {
-  "_comment": "Skills lock file for global agent skills. To add a new skill: npx skills add <owner/repo> --skill <name> -g -y. This file is symlinked to ~/.agents/.skill-lock.json via Nix. The actual install commands are in Makefile.",
+  "_comment": "Skills lock file for global agent skills. To add a new skill: npx skills add <owner/repo> --skill <name> -g -y. This file is symlinked to ~/.agents/skills-lock.json via Nix. The actual install commands are in Makefile.",
   "version": 3,
   "skills": {
     "caveman": {

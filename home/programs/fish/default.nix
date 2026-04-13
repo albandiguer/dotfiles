@@ -56,6 +56,7 @@
     functions = {
       alogs = builtins.readFile ./functions/alogs.fish;
       miserefresh = builtins.readFile ./functions/miserefresh.fish;
+      skills-install = builtins.readFile ./functions/skills-install.fish;
     };
 
     plugins = [
