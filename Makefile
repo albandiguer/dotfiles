@@ -3,8 +3,8 @@ default: apply
 apply:
 	sudo nix run nix-darwin -- switch --flake .
 	# nix run nix-darwin --no-eval-cache -- switch --flake .
-	# Restore skills from lock file
-	npx skills experimental_install || true
+	# Restore global skills from lock file
+	fish -c skills-install
 
 upgrade-nix:
 	sudo nix upgrade-nix
