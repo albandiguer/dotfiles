@@ -26,6 +26,7 @@
       cs = "claude-squad";
       db = "nvim +DBUI";
       dk = "docker";
+      dt = "diffity";
       dkc = "docker compose";
       dkcd = "docker compose down";
       dkcud = "docker compose up -d";
