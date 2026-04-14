@@ -26,10 +26,10 @@
       cs = "claude-squad";
       db = "nvim +DBUI";
       dk = "docker";
-      dt = "diffity";
       dkc = "docker compose";
       dkcd = "docker compose down";
       dkcud = "docker compose up -d";
+      dt = "diffity";
       g = "git";
       gd = "gh dash";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter

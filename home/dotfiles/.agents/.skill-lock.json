@@ -8,7 +8,7 @@
       "skillPath": "caveman/SKILL.md",
       "skillFolderHash": "825e13085d1515fe67881b2123f3bf9b34c26154",
       "installedAt": "2026-04-13T08:41:33.966Z",
-      "updatedAt": "2026-04-14T10:14:15.204Z"
+      "updatedAt": "2026-04-14T10:30:30.356Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -17,7 +17,7 @@
       "skillPath": "skills/find-skills/SKILL.md",
       "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
       "installedAt": "2026-04-13T08:41:35.852Z",
-      "updatedAt": "2026-04-14T10:14:17.403Z"
+      "updatedAt": "2026-04-14T10:30:50.700Z"
     },
     "grill-me": {
       "source": "mattpocock/skills",
@@ -26,7 +26,7 @@
       "skillPath": "grill-me/SKILL.md",
       "skillFolderHash": "2a1ad17028306ebe45f0e49703fa28b9b2e7f499",
       "installedAt": "2026-04-13T08:41:38.197Z",
-      "updatedAt": "2026-04-14T10:14:20.181Z"
+      "updatedAt": "2026-04-14T10:30:53.278Z"
     },
     "obsidian-cli": {
       "source": "kepano/obsidian-skills",
@@ -35,7 +35,7 @@
       "skillPath": "skills/obsidian-cli/SKILL.md",
       "skillFolderHash": "96254a554e480359de7b685571876f2e7f9ba57d",
       "installedAt": "2026-04-13T08:41:40.552Z",
-      "updatedAt": "2026-04-14T10:14:23.392Z"
+      "updatedAt": "2026-04-14T10:30:55.723Z"
     },
     "obsidian-markdown": {
       "source": "kepano/obsidian-skills",
@@ -44,7 +44,7 @@
       "skillPath": "skills/obsidian-markdown/SKILL.md",
       "skillFolderHash": "5caf5d9e7de204f3904216857545f2aa36bcfcac",
       "installedAt": "2026-04-13T08:41:42.868Z",
-      "updatedAt": "2026-04-14T10:14:26.054Z"
+      "updatedAt": "2026-04-14T10:30:58.235Z"
     },
     "prd-to-issues": {
       "source": "mattpocock/skills",
@@ -53,7 +53,7 @@
       "skillPath": "prd-to-issues/SKILL.md",
       "skillFolderHash": "16cfef941383949d7f9d2dca5b939e19e9eabf9f",
       "installedAt": "2026-04-13T08:41:45.411Z",
-      "updatedAt": "2026-04-14T10:14:28.750Z"
+      "updatedAt": "2026-04-14T10:31:00.829Z"
     },
     "ubiquitous-language": {
       "source": "mattpocock/skills",
@@ -62,7 +62,7 @@
       "skillPath": "ubiquitous-language/SKILL.md",
       "skillFolderHash": "8c52deebe26f5a73a98b94ef844b20e4907c1671",
       "installedAt": "2026-04-13T08:41:47.853Z",
-      "updatedAt": "2026-04-14T10:14:31.787Z"
+      "updatedAt": "2026-04-14T10:31:03.439Z"
     },
     "write-a-prd": {
       "source": "mattpocock/skills",
@@ -71,7 +71,7 @@
       "skillPath": "write-a-prd/SKILL.md",
       "skillFolderHash": "566c485ddc02f2338f1d5be6c0188db74e278678",
       "installedAt": "2026-04-13T08:41:50.090Z",
-      "updatedAt": "2026-04-14T10:14:34.562Z"
+      "updatedAt": "2026-04-14T10:31:05.990Z"
     },
     "diffity-diff": {
       "source": "kamranahmedse/diffity",
@@ -80,7 +80,7 @@
       "skillPath": "skills/diffity-diff/SKILL.md",
       "skillFolderHash": "0027328d13d719bf266fc3e0c713ccf189a20da1",
       "installedAt": "2026-04-14T09:45:49.214Z",
-      "updatedAt": "2026-04-14T09:45:49.214Z"
+      "updatedAt": "2026-04-14T10:30:32.954Z"
     },
     "diffity-resolve": {
       "source": "kamranahmedse/diffity",
@@ -89,7 +89,7 @@
       "skillPath": "skills/diffity-resolve/SKILL.md",
       "skillFolderHash": "4b32a9c77d7eecf81f3b64209fd14490a2618064",
       "installedAt": "2026-04-14T09:45:49.690Z",
-      "updatedAt": "2026-04-14T09:45:49.690Z"
+      "updatedAt": "2026-04-14T10:30:38.169Z"
     },
     "diffity-review": {
       "source": "kamranahmedse/diffity",
@@ -98,7 +98,7 @@
       "skillPath": "skills/diffity-review/SKILL.md",
       "skillFolderHash": "24527882f1485e435957703098ab24bb2391b432",
       "installedAt": "2026-04-14T09:45:50.187Z",
-      "updatedAt": "2026-04-14T09:45:50.187Z"
+      "updatedAt": "2026-04-14T10:30:43.348Z"
     },
     "diffity-resolve-tree": {
       "source": "kamranahmedse/diffity",
@@ -107,7 +107,7 @@
       "skillPath": "skills/diffity-resolve-tree/SKILL.md",
       "skillFolderHash": "bde33fadbd9ec7b724f308ab5a47b389263659dd",
       "installedAt": "2026-04-14T09:45:50.646Z",
-      "updatedAt": "2026-04-14T09:45:50.646Z"
+      "updatedAt": "2026-04-14T10:30:40.838Z"
     },
     "diffity-tree": {
       "source": "kamranahmedse/diffity",
@@ -116,7 +116,7 @@
       "skillPath": "skills/diffity-tree/SKILL.md",
       "skillFolderHash": "16bb89aa4c5ad5f02f5adb9368049836f4079e25",
       "installedAt": "2026-04-14T09:45:51.157Z",
-      "updatedAt": "2026-04-14T09:45:51.157Z"
+      "updatedAt": "2026-04-14T10:30:48.704Z"
     },
     "diffity-tour": {
       "source": "kamranahmedse/diffity",
@@ -125,7 +125,7 @@
       "skillPath": "skills/diffity-tour/SKILL.md",
       "skillFolderHash": "9fdd610e4ec558105d36f477ea6ffb200cb754e7",
       "installedAt": "2026-04-14T09:45:51.538Z",
-      "updatedAt": "2026-04-14T09:45:51.538Z"
+      "updatedAt": "2026-04-14T10:30:45.954Z"
     },
     "diffity-learn": {
       "source": "kamranahmedse/diffity",
@@ -134,7 +134,7 @@
       "skillPath": "skills/diffity-learn/SKILL.md",
       "skillFolderHash": "9289648de5b90ba4f4173714d13c2850cfb5a006",
       "installedAt": "2026-04-14T09:45:52.230Z",
-      "updatedAt": "2026-04-14T09:45:52.230Z"
+      "updatedAt": "2026-04-14T10:30:35.580Z"
     }
   },
   "dismissed": {
