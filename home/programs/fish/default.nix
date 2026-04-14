@@ -49,7 +49,8 @@
       sff = "bin/rspec --fail-fast";
       skills = "npx skills";
       tf = "terraform";
-      wtc = "wt switch --create ";
+      ws = "wt switch";
+      wsc = "wt switch --create ";
       x = "exit";
       y = "yarn";
     };
