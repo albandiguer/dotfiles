@@ -36,7 +36,7 @@
     };
 
     # Global rules written to ~/.config/opencode/AGENTS.md
-    rules = ''
+    context = ''
       # OpenCode Global Rules
 
       You are an AI coding assistant helping with software development tasks.
