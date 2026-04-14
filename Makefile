@@ -3,8 +3,6 @@ default: apply
 apply:
 	sudo nix run nix-darwin -- switch --flake .
 	# nix run nix-darwin --no-eval-cache -- switch --flake .
-	# Restore global skills from lock file
-	fish -c skills-install
 
 upgrade-nix:
 	sudo nix upgrade-nix
@@ -19,7 +17,9 @@ up: upgrade-nix
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate
 
-
+skills-installs:
+	# Restore global skills from lock file
+	fish -c skills-install
 
 # Sometimes updating breaks things
 rollback:
