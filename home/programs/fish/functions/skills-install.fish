@@ -1,4 +1,4 @@
-set lock_file ~/.agents/skills-lock.json
+set lock_file ~/.agents/.skill-lock.json
 
 if not test -f $lock_file
     echo "No skills lock file found at $lock_file"

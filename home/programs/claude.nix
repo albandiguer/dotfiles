@@ -104,7 +104,7 @@
     source = ./claude/rtk-rewrite.sh;
   };
 
-  # Symlink global skills lock file to repo (editable by skills CLI)
-  home.file.".agents/skills-lock.json".source =
-    config.lib.file.mkOutOfStoreSymlink "/Users/albandiguer/dev/dotfiles/home/dotfiles/.agents/skills-lock.json";
+  # Symlink skills lock file to repo — npx skills add writes here directly
+  home.file.".agents/.skill-lock.json".source =
+    config.lib.file.mkOutOfStoreSymlink "/Users/albandiguer/dev/dotfiles/home/dotfiles/.agents/.skill-lock.json";
 }
