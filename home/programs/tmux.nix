@@ -31,9 +31,7 @@
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
           set -g @catppuccin_flavor 'mocha'
-          set -g @catppuccin_status_modules_right "gitmux session date_time"
           set -g @catppuccin_date_time_text "%a %R"
-          set -g @catppuccin_gitmux_text '#(gitmux -cfg ~/.gitmux.conf "#{pane_current_path}")'
         '';
       }
     ];
