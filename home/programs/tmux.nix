@@ -26,20 +26,6 @@
       unbind-key -T prefix d
 
 
-      # status line (thanks, Ju!)
-      set-option -g pane-active-border-style fg=colour2
-      set-option -g pane-border-style fg=colour238
-      set-option -g status-bg colour0
-      set-option -g status-fg colour7
-      set-option -g status-interval 60
-      set-option -g status-justify left
-      set-option -g status-left '#[bg=colour2] #[bg=colour8] #[bg=colour0] #S '
-      set-option -g status-left-length 50
-      set-option -g status-right '#(gitmux -cfg ~/.gitmux.conf "#{pane_current_path}") %a %R #[bg=colour8] #[bg=colour2] #[]'
-      set-option -g status-right-length 120
-      set-window-option -g window-status-current-format '#[bg=colour8]#[fg=colour3] #I #[bg=colour7]#[fg=colour8] #W#[fg=colour0]#F #[bg=colour8]'
-      set-window-option -g window-status-format '#[bg=colour8]#[fg=colour3] #I #[fg=colour15]#W#[fg=colour5]#F# '
-
       # Fix nvim :healthcheck
       set-option -sg escape-time 10
       set-option -g focus-events on
@@ -80,6 +66,15 @@
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
       tmuxPlugins.yank
       # tmuxPlugins.fingers
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor 'mocha'
+          set -g @catppuccin_status_modules_right "gitmux session date_time"
+          set -g @catppuccin_date_time_text "%a %R"
+          set -g @catppuccin_gitmux_text '#(gitmux -cfg ~/.gitmux.conf "#{pane_current_path}")'
+        '';
+      }
     ];
   };
 }
