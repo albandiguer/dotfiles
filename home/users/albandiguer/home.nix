@@ -86,6 +86,7 @@
     ];
     sessionVariables = {
       EDITOR = "nvim";
+      DEFAULT_AI_AGENT = "opencode";
     };
 
     # This value determines the Home Manager release that your

@@ -1,0 +1,16 @@
+nerdfont: true # Enable nerdfont icons (prompted on first run)
+merge_strategy: rebase # Make workmux merge do rebase by default
+agent: $DEFAULT_AI_AGENT
+mode: session
+
+windows:
+  - name: editor
+    panes:
+      - command: nvim
+  - name: agent
+    panes:
+      - command: <agent>
+        focus: true
+  - name: shell
+    panes:
+      - {}

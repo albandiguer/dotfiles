@@ -26,11 +26,7 @@
         {
           name = "ai";
           startup_command = ''
-            if [ -n "$SESH_AI_COMMAND" ]; then
-              exec $SESH_AI_COMMAND
-            else
-              exec opencode
-            fi
+            exec ${"\${DEFAULT_AI_AGENT:-opencode}"}
           '';
         }
         {
