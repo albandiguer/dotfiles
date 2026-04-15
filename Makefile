@@ -12,7 +12,7 @@ up: upgrade-nix
 	make apply
 	mise up
 	# Check for skill updates
-	npx skills check
+	npx skills check -g
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate

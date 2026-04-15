@@ -48,6 +48,7 @@
       flake = false;
     };
     try.url = "github:tobi/try";
+    workmux.url = "github:raine/workmux";
   };
 
   outputs =
@@ -83,6 +84,7 @@
           home-manager.extraSpecialArgs = {
             inherit gh-enhance;
             try = inputs.try;
+            workmux = inputs.workmux;
           };
           home-manager.users.${user} = import ./home/users/${user}/home.nix;
           users.users.${user} = {
