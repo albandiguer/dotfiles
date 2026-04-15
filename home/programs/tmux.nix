@@ -31,7 +31,7 @@
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
           set -g @catppuccin_flavor 'mocha'
-          set -g @catppuccin_date_time_text "%a %R"
+          set -g @catppuccin_date_time_text " %a %R"
         '';
       }
     ];
