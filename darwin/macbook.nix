@@ -134,7 +134,6 @@
     enable = true;
     brews = [
       "bitwarden-cli"
-      "claude-squad"
       "gpg"
       "iredis"
       "libpq"
@@ -148,11 +147,9 @@
     ];
     casks = [
       "1password" # 1Password GUI application
-      "auto-claude"
       "bruno"
       "chatbox"
       "claude"
-      "claude-island"
       "font-sf-mono-nerd-font-ligaturized"
       "freetube"
       "licecap"
