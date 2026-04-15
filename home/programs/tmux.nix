@@ -20,9 +20,11 @@
       bind '|' split-window -h -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
       bind l select-layout main-vertical
+      bind-key "a" display-popup -d '#{pane_current_path}' -xC -yC -w90% -h90% -E "workmux dashboard"
 
-      # unbind detach
+      # unbind detach, use d for workmux dashboard
       unbind-key -T prefix d
+
 
       # status line (thanks, Ju!)
       set-option -g pane-active-border-style fg=colour2
