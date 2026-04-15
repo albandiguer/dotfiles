@@ -18,6 +18,12 @@
           set -g @resurrect-strategy-nvim 'session'
         '';
       }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+        '';
+      }
       tmuxPlugins.vim-tmux-navigator # navigate split panes with C-{h/j/k/l}
       tmuxPlugins.yank
       # tmuxPlugins.fingers
