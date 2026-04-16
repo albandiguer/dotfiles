@@ -39,7 +39,7 @@ return {
 
     ---@type opencode.Opts
     vim.g.opencode_opts = {
-      lsp = { enabled = true },
+      lsp = { enabled = false },
       server = {
         start = function()
           require('snacks.terminal').open(opencode_cmd, snacks_terminal_opts)
