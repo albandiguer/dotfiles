@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home = {
     sessionVariables = {
@@ -86,7 +86,7 @@
     ];
     sessionVariables = {
       EDITOR = "nvim";
-      DEFAULT_AI_AGENT = "opencode";
+      DEFAULT_AI_AGENT = lib.mkDefault "opencode";
     };
 
     # This value determines the Home Manager release that your
