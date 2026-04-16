@@ -15,6 +15,7 @@
         "dev-browser@dev-browser-marketplace" = true;
         "ast-grep@ast-grep-marketplace" = true;
         "lua-lsp@claude-plugins-official" = true;
+        "ruby-lsp@claude-plugins-official" = true;
         "github@claude-plugins-official" = true;
         "context7@claude-plugins-official" = true;
       };

@@ -10,6 +10,13 @@
       autoshare = false;
       model = "moonshotai/kimi-k2.5";
 
+      lsp = {
+        ruby-lsp = {
+          disabled = false;
+          extensions = [ ".rb" ".rake" ".gemspec" ".ru" ];
+        };
+      };
+
       # MCP servers configuration
       mcp = {
         serena = {
