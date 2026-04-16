@@ -32,6 +32,8 @@
         extraConfig = ''
           set -g @catppuccin_flavor 'mocha'
           set -g @catppuccin_date_time_text " %a %R"
+          set -g @catppuccin_window_text " #W"
+          set -g @catppuccin_window_current_text " #W"
         '';
       }
     ];
