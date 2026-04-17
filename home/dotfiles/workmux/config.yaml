@@ -5,13 +5,13 @@ mode: session
 
 files:
   copy:
-    - .nvim.lua
-    - .mise.local.toml
-    - .envrc
   symlinks:
     - .claude/
-    - .serena/
     - .config/
+    - .envrc
+    - .mise.local.toml
+    - .nvim.lua
+    - .serena/
 
 windows:
   - name: editor
