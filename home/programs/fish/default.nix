@@ -9,8 +9,6 @@
       cat = "bat";
       vim = "nvim";
       diff = "nvim -d";
-      gsd-up = "npx get-shit-done-cc@latest"; # maj gsd
-      # docker = "podman";
     };
 
     # NOTE some config here https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356
