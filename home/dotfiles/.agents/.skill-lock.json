@@ -135,6 +135,16 @@
       "skillFolderHash": "9289648de5b90ba4f4173714d13c2850cfb5a006",
       "installedAt": "2026-04-14T09:45:52.230Z",
       "updatedAt": "2026-04-14T10:30:35.580Z"
+    },
+    "linear-cli": {
+      "source": "schpet/linear-cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/schpet/linear-cli.git",
+      "skillPath": "skills/linear-cli/SKILL.md",
+      "skillFolderHash": "6f29c4345b675d4787e82ded44b90dd78625d50a",
+      "pluginName": "linear-cli",
+      "installedAt": "2026-04-23T14:35:45.550Z",
+      "updatedAt": "2026-04-23T14:35:45.550Z"
     }
   },
   "dismissed": {
