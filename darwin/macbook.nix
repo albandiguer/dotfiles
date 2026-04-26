@@ -148,7 +148,6 @@
     casks = [
       "1password" # 1Password GUI application
       "bruno"
-      "chatbox"
       "claude"
       "font-sf-mono-nerd-font-ligaturized"
       "freetube"
@@ -158,6 +157,7 @@
       "obsidian"
       "raycast"
       "conductor"
+      # "chatbox" -> openwebui
       # "dash"
       # "httpie"
     ];
