@@ -73,6 +73,7 @@
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
         inputs.claude-code.overlays.default
+        (_: prev: { direnv = prev.direnv.overrideAttrs (_: { doCheck = false; }); })
       ];
       commonDarwinModules = [
         ./darwin/macbook.nix
