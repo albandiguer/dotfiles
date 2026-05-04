@@ -103,7 +103,6 @@
           "Bash(python3:*)"
           "Bash(rtk gh pr diff *)"
           "Bash(rtk gh pr view *)"
-          "Bash(rtk git *)"
           "Bash(rtk read *)"
           "Bash(rtk rubocop *)"
           "Bash(ruby:*)"
