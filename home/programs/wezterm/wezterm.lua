@@ -23,7 +23,7 @@ config.window_decorations = "RESIZE" -- https://wezfurlong.org/wezterm/config/lu
 -- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"})
 config.font = wezterm.font("ZedMono Nerd Font Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
 -- config.font = wezterm.font("Liga SFMono Nerd Font", {weight="Medium", stretch="Normal", style="Normal"})
-config.font_size = 13.8 -- 11.5
+config.font_size = 12.8 -- 11.5
 config.line_height = 1.25 -- 1.2
 
 config.window_padding = {
