@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
       "skillPath": "caveman/SKILL.md",
-      "skillFolderHash": "825e13085d1515fe67881b2123f3bf9b34c26154",
+      "skillFolderHash": "f524c391d466fe35e0bdbe9707854fcb2be52b26",
       "installedAt": "2026-04-13T08:41:33.966Z",
-      "updatedAt": "2026-04-14T10:30:30.356Z"
+      "updatedAt": "2026-05-06T16:13:53.101Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -123,9 +123,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/kamranahmedse/diffity.git",
       "skillPath": "skills/diffity-tour/SKILL.md",
-      "skillFolderHash": "9fdd610e4ec558105d36f477ea6ffb200cb754e7",
+      "skillFolderHash": "c36738818238994c410217a8f088ea3aeaf542b1",
       "installedAt": "2026-04-14T09:45:51.538Z",
-      "updatedAt": "2026-04-14T10:30:45.954Z"
+      "updatedAt": "2026-05-06T16:13:55.220Z"
     },
     "diffity-learn": {
       "source": "kamranahmedse/diffity",
