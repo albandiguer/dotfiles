@@ -7,7 +7,7 @@
     # see this for dotfiles https://mise.jdx.dev/lang/ruby.html#default-gems
     globalConfig = {
       tools = {
-        "ubi:onlyati/quadlet-lsp" = "latest";
+        "github:onlyati/quadlet-lsp" = "latest";
         # postgres = "latest";
         aws-cli = "latest";
         gcloud = "latest";
