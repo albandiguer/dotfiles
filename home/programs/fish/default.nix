@@ -39,6 +39,7 @@
       n = "nix";
       ns = "nix search nixpkgs";
       nsn = "nix shell nixpkgs#";
+      ob = "obsidian";
       oc = "opencode";
       prettyjson = "python -m json.tool";
       ptui = "podman-tui";
