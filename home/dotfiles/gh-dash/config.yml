@@ -89,7 +89,7 @@ keybindings:
       name: open Lazygit
       command: lazygit
     - key: E
-      name: Edit PR in neovim
+      name: Edit PR in neovim/octo
       command: 'tmux new-window -c {{.RepoPath}} "nvim -c \":silent Octo pr edit
         {{.PrNumber}}\""'
     - key: F
