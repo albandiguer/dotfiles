@@ -13,6 +13,7 @@ up: upgrade-nix
 	mise up
 	# Check for skill updates
 	npx skills check -g
+	npm update -g 
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate
