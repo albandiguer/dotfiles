@@ -739,7 +739,6 @@ require('lazy').setup({
       local ensure_installed = {
         'apex-language-server',
         'bashls',
-        -- 'copilot-language-server',  inline completion not mature yet, rather use copilot plugin for now
         'cssls',
         'docker_compose_language_service',
         'dockerls',
@@ -878,28 +877,12 @@ require('lazy').setup({
     },
   },
 
-  { -- Copilot
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-
   { -- Autocompletion
     'saghen/blink.cmp',
     optional = true,
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
-      -- Copilot & supermaven
-      { 'fang2hou/blink-copilot' },
       -- Conventional commit
       { 'disrupted/blink-cmp-conventional-commits' },
       -- Snippet Engine
@@ -994,19 +977,13 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'conventional_commits', 'lsp', 'path', 'snippets', 'lazydev', 'copilot' },
+        default = { 'conventional_commits', 'lsp', 'path', 'snippets', 'lazydev' },
         per_filetype = {
           sql = { 'snippets', 'dadbod', 'buffer' },
         },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
-          copilot = {
-            name = 'copilot',
-            module = 'blink-copilot',
-            score_offset = 100,
-            async = true,
-          },
           conventional_commits = {
             name = 'Conventional Commits',
             module = 'blink-cmp-conventional-commits',
