@@ -9,7 +9,7 @@ files:
     - .claude/
     - .config/
     - .envrc
-    - .mise.local.toml
+    - mise.local.toml
     - .nvim.lua
     - .serena/
 
