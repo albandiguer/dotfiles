@@ -104,6 +104,7 @@
           "Bash(mise exec *)"
           "Bash(node:*)"
           "Bash(python3:*)"
+          "Bash(rtk find *)"
           "Bash(rtk gh checks *)"
           "Bash(rtk gh pr diff *)"
           "Bash(rtk gh pr status *)"
