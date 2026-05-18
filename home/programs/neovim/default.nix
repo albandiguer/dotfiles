@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, neovim-nightly-overlay, ... }:
 {
   # TODO nothing to do here? put in home.nix or extraPackages
   home.packages = with pkgs; [
@@ -9,7 +9,7 @@
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim;
+    package = neovim-nightly-overlay.packages.${pkgs.system}.default;
     vimAlias = true;
     coc.enable = false;
     withNodeJs = true;

@@ -71,7 +71,6 @@
     let
       user = "albandiguer";
       overlays = [
-        inputs.neovim-nightly-overlay.overlays.default
         inputs.claude-code.overlays.default
         (_: prev: { direnv = prev.direnv.overrideAttrs (_: { doCheck = false; }); })
       ];
@@ -86,6 +85,7 @@
             inherit gh-enhance;
             try = inputs.try;
             workmux = inputs.workmux;
+            neovim-nightly-overlay = inputs.neovim-nightly-overlay;
           };
           home-manager.users.${user} = import ./home/users/${user}/home.nix;
           users.users.${user} = {

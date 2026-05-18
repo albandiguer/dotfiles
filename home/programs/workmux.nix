@@ -1,7 +1,7 @@
 { workmux, pkgs, ... }:
 {
   home.packages = [
-    workmux.packages.${pkgs.stdenv.hostPlatform.system}.default
+    (workmux.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (_: { doCheck = false; }))
   ];
 
   programs.fish.interactiveShellInit = ''
