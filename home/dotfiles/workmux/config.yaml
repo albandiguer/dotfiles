@@ -5,12 +5,10 @@ mode: session
 
 files:
   copy:
+    - .env
   symlinks:
     - .claude/
     - .config/
-    - .env
-    - .env.development
-    - .env.test
     - .envrc
     - .nvim.lua
     - .serena/
