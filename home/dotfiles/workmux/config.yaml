@@ -8,10 +8,13 @@ files:
   symlinks:
     - .claude/
     - .config/
+    - .env
+    - .env.development
+    - .env.test
     - .envrc
-    - mise.local.toml
     - .nvim.lua
     - .serena/
+    - mise.local.toml
 
 windows:
   - name: editor
