@@ -76,7 +76,6 @@
       ".claude_settings.json"
       ".direnv/"
       ".gem/"
-      ".gitignore"
       ".netrwhist"
       ".nvim.lua"
       ".security-key"
