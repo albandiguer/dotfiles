@@ -1,17 +1,12 @@
+# workmux config template to include in subdirectories (monorepos for ex)
 nerdfont: true # Enable nerdfont icons (prompted on first run)
 merge_strategy: rebase # Make workmux merge do rebase by default
 agent: $DEFAULT_AI_AGENT
 mode: session
 
 files:
-  copy:
-    - .claude/settings.local.json
   symlink:
-    - .env
-    - .envrc
-    - .nvim.lua
-    - mise.local.toml
-    - .workmux.yaml
+    - "<global>"
 
 windows:
   - name: editor
@@ -26,5 +21,4 @@ windows:
     focus: true
 
 post-create:
-  - find . -name "mise.local.toml" -type l -exec mise trust {} \;
-  - nvim --headless -c "lua vim.secure.trust({action='allow', path=vim.fn.getcwd()..'/.nvim.lua'})" +qa
+  - "<global>"
