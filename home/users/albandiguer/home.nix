@@ -124,7 +124,7 @@
     ../../programs/claude.nix
     ../../programs/opencode.nix
     ../../programs/try.nix
-    ../../programs/sesh.nix
+    ../../programs/sesh
     ../../programs/zoxide.nix
     ../../programs/worktrunk.nix
     ../../programs/workmux.nix
