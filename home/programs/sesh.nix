@@ -62,6 +62,15 @@
     };
   };
 
+  # Wrapper around sesh list --icons that colorizes worktree entries amber.
+  # Sesh already detects worktrees and marks them with U+F418 (\xef\x90\x98);
+  # this script just makes them visually distinct in fzf.
+  home.packages = [
+    (pkgs.writeShellScriptBin "sesh-list-icons" ''
+      ${pkgs.sesh}/bin/sesh list --icons "$@" | perl -pe 'if (/\xef\x90\x98/) { s/\e\[[0-9;]*m//g; s/^/\e[38;5;214m/; s/$/\e[0m/ }'
+    '')
+  ];
+
   # Generate Fish completion for sesh
   home.file.".config/fish/completions/sesh.fish".source =
     pkgs.runCommand "sesh-fish-completion" { }
