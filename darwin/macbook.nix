@@ -132,6 +132,9 @@
   # for example tectonic is needed by Audrey
   homebrew = {
     enable = true;
+    taps = [
+      "coleam00/archon"
+    ];
     brews = [
       "bitwarden-cli"
       "gpg"
@@ -143,6 +146,7 @@
       "retlehs/tap/quien"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
+      "archon"
       # "python-setuptools" # awsume deps
     ];
     casks = [

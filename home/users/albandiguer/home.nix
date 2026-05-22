@@ -123,6 +123,7 @@
     ../../programs/lazygit.nix
     ../../programs/claude.nix
     ../../programs/opencode.nix
+    ../../programs/archon.nix
     ../../programs/try.nix
     ../../programs/sesh
     ../../programs/zoxide.nix

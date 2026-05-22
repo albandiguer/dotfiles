@@ -139,6 +139,15 @@
       "pluginName": "linear-cli",
       "installedAt": "2026-04-23T14:35:45.550Z",
       "updatedAt": "2026-05-07T13:36:09.448Z"
+    },
+    "archon": {
+      "source": "coleam00/archon",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coleam00/archon.git",
+      "skillPath": ".claude/skills/archon/SKILL.md",
+      "skillFolderHash": "fbfeb200c85e9fab1e37dc725c8b6732000377c1",
+      "installedAt": "2026-05-22T20:21:20.439Z",
+      "updatedAt": "2026-05-22T20:21:20.439Z"
     }
   },
   "dismissed": {
@@ -151,12 +160,14 @@
     "codex",
     "cursor",
     "deepagents",
+    "dexto",
     "firebender",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
     "opencode",
     "warp",
-    "claude-code"
+    "claude-code",
+    "pi"
   ]
 }

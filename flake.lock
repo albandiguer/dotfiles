@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "archon-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778769703,
+        "narHash": "sha256-k2kBUDVuEtRLfRhhveGa9XwM0PEqnfuX3HqhKtz6BSA=",
+        "owner": "coleam00",
+        "repo": "homebrew-archon",
+        "rev": "7f8bcc5b2cca981477e1ae7dd94a7d65d6f35013",
+        "type": "github"
+      },
+      "original": {
+        "owner": "coleam00",
+        "repo": "homebrew-archon",
+        "type": "github"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -413,6 +429,7 @@
     },
     "root": {
       "inputs": {
+        "archon-tap": "archon-tap",
         "claude-code": "claude-code",
         "darwin": "darwin",
         "gh-enhance": "gh-enhance",

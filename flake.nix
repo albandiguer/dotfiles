@@ -43,6 +43,10 @@
       url = "github:retlehs/homebrew-tap";
       flake = false;
     };
+    archon-tap = {
+      url = "github:coleam00/homebrew-archon";
+      flake = false;
+    };
     gh-enhance = {
       url = "github:dlvhdr/gh-enhance";
       flake = false;
@@ -64,6 +68,7 @@
       hashicorp-tap,
       homebrew-sfmono-nerd-font,
       retlehs-tap,
+      archon-tap,
       gh-enhance,
       claude-code,
       ...
@@ -106,6 +111,7 @@
               # "hashicorp/tap" = hashicorp-tap;
               "shaunsingh/SFMono-Nerd-Font-Ligaturized" = homebrew-sfmono-nerd-font;
               "retlehs/homebrew-tap" = retlehs-tap;
+              "coleam00/homebrew-archon" = archon-tap;
             };
             mutableTaps = false;
             autoMigrate = true;
