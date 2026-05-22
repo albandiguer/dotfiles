@@ -5,10 +5,10 @@
       "source": "juliusbrussee/caveman",
       "sourceType": "github",
       "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
-      "skillPath": "caveman/SKILL.md",
-      "skillFolderHash": "f524c391d466fe35e0bdbe9707854fcb2be52b26",
+      "skillPath": "skills/caveman/SKILL.md",
+      "skillFolderHash": "75b63aa9ec7bbb0e72bb6b3524ff6b576c14a05a",
       "installedAt": "2026-04-13T08:41:33.966Z",
-      "updatedAt": "2026-05-07T13:35:42.351Z"
+      "updatedAt": "2026-05-22T20:24:42.406Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -17,7 +17,7 @@
       "skillPath": "skills/find-skills/SKILL.md",
       "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
       "installedAt": "2026-04-13T08:41:35.852Z",
-      "updatedAt": "2026-05-07T13:36:04.390Z"
+      "updatedAt": "2026-05-22T20:24:59.927Z"
     },
     "grill-me": {
       "source": "mattpocock/skills",
@@ -27,7 +27,7 @@
       "skillFolderHash": "2a1ad17028306ebe45f0e49703fa28b9b2e7f499",
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-04-13T08:41:38.197Z",
-      "updatedAt": "2026-05-07T13:36:06.638Z"
+      "updatedAt": "2026-05-22T20:25:01.814Z"
     },
     "obsidian-cli": {
       "source": "kepano/obsidian-skills",
@@ -36,7 +36,7 @@
       "skillPath": "skills/obsidian-cli/SKILL.md",
       "skillFolderHash": "96254a554e480359de7b685571876f2e7f9ba57d",
       "installedAt": "2026-04-13T08:41:40.552Z",
-      "updatedAt": "2026-05-07T13:36:11.812Z"
+      "updatedAt": "2026-05-22T20:25:06.724Z"
     },
     "obsidian-markdown": {
       "source": "kepano/obsidian-skills",
@@ -45,7 +45,7 @@
       "skillPath": "skills/obsidian-markdown/SKILL.md",
       "skillFolderHash": "5caf5d9e7de204f3904216857545f2aa36bcfcac",
       "installedAt": "2026-04-13T08:41:42.868Z",
-      "updatedAt": "2026-05-07T13:36:14.273Z"
+      "updatedAt": "2026-05-22T20:25:08.552Z"
     },
     "to-issues": {
       "source": "mattpocock/skills",
@@ -55,7 +55,7 @@
       "skillFolderHash": "b38c5aa6ae5d6903e60d3f74a7aafd32d02f2c06",
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-04-13T08:41:45.411Z",
-      "updatedAt": "2026-05-07T13:36:16.562Z"
+      "updatedAt": "2026-05-22T20:25:10.403Z"
     },
     "to-prd": {
       "source": "mattpocock/skills",
@@ -65,7 +65,7 @@
       "skillFolderHash": "d6eff3e99a325d2d9c2acbe31b4d76fa5340a154",
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-04-13T08:41:50.090Z",
-      "updatedAt": "2026-05-07T13:36:18.779Z"
+      "updatedAt": "2026-05-22T20:25:12.288Z"
     },
     "diffity-diff": {
       "source": "kamranahmedse/diffity",
@@ -74,7 +74,7 @@
       "skillPath": "skills/diffity-diff/SKILL.md",
       "skillFolderHash": "0027328d13d719bf266fc3e0c713ccf189a20da1",
       "installedAt": "2026-04-14T09:45:49.214Z",
-      "updatedAt": "2026-05-07T13:35:45.244Z"
+      "updatedAt": "2026-05-22T20:24:44.858Z"
     },
     "diffity-resolve": {
       "source": "kamranahmedse/diffity",
@@ -83,7 +83,7 @@
       "skillPath": "skills/diffity-resolve/SKILL.md",
       "skillFolderHash": "4b32a9c77d7eecf81f3b64209fd14490a2618064",
       "installedAt": "2026-04-14T09:45:49.690Z",
-      "updatedAt": "2026-05-07T13:35:51.062Z"
+      "updatedAt": "2026-05-22T20:24:49.271Z"
     },
     "diffity-review": {
       "source": "kamranahmedse/diffity",
@@ -92,7 +92,7 @@
       "skillPath": "skills/diffity-review/SKILL.md",
       "skillFolderHash": "24527882f1485e435957703098ab24bb2391b432",
       "installedAt": "2026-04-14T09:45:50.187Z",
-      "updatedAt": "2026-05-07T13:35:56.727Z"
+      "updatedAt": "2026-05-22T20:24:54.003Z"
     },
     "diffity-resolve-tree": {
       "source": "kamranahmedse/diffity",
@@ -101,7 +101,7 @@
       "skillPath": "skills/diffity-resolve-tree/SKILL.md",
       "skillFolderHash": "bde33fadbd9ec7b724f308ab5a47b389263659dd",
       "installedAt": "2026-04-14T09:45:50.646Z",
-      "updatedAt": "2026-05-07T13:35:53.961Z"
+      "updatedAt": "2026-05-22T20:24:51.613Z"
     },
     "diffity-tree": {
       "source": "kamranahmedse/diffity",
@@ -110,7 +110,7 @@
       "skillPath": "skills/diffity-tree/SKILL.md",
       "skillFolderHash": "16bb89aa4c5ad5f02f5adb9368049836f4079e25",
       "installedAt": "2026-04-14T09:45:51.157Z",
-      "updatedAt": "2026-05-07T13:36:02.537Z"
+      "updatedAt": "2026-05-22T20:24:58.562Z"
     },
     "diffity-tour": {
       "source": "kamranahmedse/diffity",
@@ -119,7 +119,7 @@
       "skillPath": "skills/diffity-tour/SKILL.md",
       "skillFolderHash": "c36738818238994c410217a8f088ea3aeaf542b1",
       "installedAt": "2026-04-14T09:45:51.538Z",
-      "updatedAt": "2026-05-07T13:35:59.515Z"
+      "updatedAt": "2026-05-22T20:24:56.206Z"
     },
     "diffity-learn": {
       "source": "kamranahmedse/diffity",
@@ -128,7 +128,7 @@
       "skillPath": "skills/diffity-learn/SKILL.md",
       "skillFolderHash": "9289648de5b90ba4f4173714d13c2850cfb5a006",
       "installedAt": "2026-04-14T09:45:52.230Z",
-      "updatedAt": "2026-05-07T13:35:48.056Z"
+      "updatedAt": "2026-05-22T20:24:47.031Z"
     },
     "linear-cli": {
       "source": "schpet/linear-cli",
@@ -138,7 +138,7 @@
       "skillFolderHash": "6f29c4345b675d4787e82ded44b90dd78625d50a",
       "pluginName": "linear-cli",
       "installedAt": "2026-04-23T14:35:45.550Z",
-      "updatedAt": "2026-05-07T13:36:09.448Z"
+      "updatedAt": "2026-05-22T20:25:04.728Z"
     },
     "archon": {
       "source": "coleam00/archon",
@@ -147,7 +147,7 @@
       "skillPath": ".claude/skills/archon/SKILL.md",
       "skillFolderHash": "fbfeb200c85e9fab1e37dc725c8b6732000377c1",
       "installedAt": "2026-05-22T20:21:20.439Z",
-      "updatedAt": "2026-05-22T20:21:20.439Z"
+      "updatedAt": "2026-05-22T20:24:40.182Z"
     }
   },
   "dismissed": {
