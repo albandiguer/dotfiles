@@ -83,6 +83,7 @@
     sessionPath = [
       "./bin"
       "/opt/homebrew/bin"
+      "\${HOME}/.local/bin"
     ];
     sessionVariables = {
       EDITOR = "nvim";
