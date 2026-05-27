@@ -1,0 +1,9 @@
+fonts/
+secrets.yaml
+# Agent skills managed by npx skills CLI
+# Installed to: ~/.agents/skills/ (canonical) and ~/.claude/skills/ (symlink)
+home/dotfiles/.agents/skills/
+
+# Archon runtime artifacts — NEVER commit
+.archon/state/
+.archon/.env
