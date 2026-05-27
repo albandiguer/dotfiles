@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     # -- Cloud & DevOps/Infra --
     awslogs
-    bitwarden-desktop
+    # bitwarden-desktop # broken: compiler-rt-18 incompatible with Apple SDK 26.4, moved to homebrew cask
     cloudflared
     k3d
     # localstack # aws mock
@@ -151,6 +151,7 @@
     ];
     casks = [
       "1password" # 1Password GUI application
+      "bitwarden"
       "bruno"
       "claude"
       "font-sf-mono-nerd-font-ligaturized"
