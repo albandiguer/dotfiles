@@ -14,6 +14,7 @@ up: upgrade-nix
 	# Check for skill updates
 	npx skills check -g
 	npm update -g 
+	brew upgrade
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate
