@@ -26,6 +26,7 @@
         d = "difftool";
         dc = "diff --cached";
         dib = "!f() { git merge-base $(git rev-parse --abbrev-ref origin/HEAD) HEAD | xargs -I _ git diff _ -- $1; }; f";
+        lib = "!git log $(git merge-base origin/HEAD HEAD)..HEAD";
         fo = "fetch origin";
         frbo = "!f() { git fetch origin && git rev-parse --abbrev-ref origin/HEAD | xargs git rebase $1; }; f";
         l = "log --graph --date=short";
