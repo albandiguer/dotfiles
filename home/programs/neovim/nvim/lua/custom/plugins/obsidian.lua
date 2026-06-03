@@ -46,13 +46,6 @@ return {
         folder = 'diary 📔',
         template = '_assets/templates/daily.md',
       },
-      -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
-      completion = {
-        blink = true,
-        -- Trigger completion at 2 chars.
-        min_chars = 2,
-      },
-
       -- Where to put new notes. Valid options are
       -- _ "current_dir" - put new notes in same directory as the current buffer.
       -- _ "notes_subdir" - put new notes in the default notes subdirectory.
