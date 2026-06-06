@@ -24,6 +24,7 @@
     openssl
     icu # mise postgres deps
     gitmux # git tmux integration
+    posting # api cli client
 
     # -- CLI Utilities --
 
