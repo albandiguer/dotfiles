@@ -58,6 +58,7 @@
       alogs = builtins.readFile ./functions/alogs.fish;
       miserefresh = builtins.readFile ./functions/miserefresh.fish;
       skills-install = builtins.readFile ./functions/skills-install.fish;
+      wt-files = builtins.readFile ./functions/wt-files.fish;
     };
 
     plugins = [
