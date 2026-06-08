@@ -84,7 +84,9 @@
     zsh.enable = true; # default shell on catalina
     # direnv.enable = false; # in home-manager
   };
-  # programs.fish.enable = true;
+  programs.fish.enable = true;
+  environment.shells = [ "/run/current-system/sw/bin/fish" ];
+  users.users.albandiguer.shell = "/run/current-system/sw/bin/fish";
 
   # Set Git commit hash for darwin-version.
   # system.configurationRevision = self.rev or self.dirtyRev or null;
