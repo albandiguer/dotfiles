@@ -36,17 +36,6 @@
             ];
           }
         ];
-        UserPromptSubmit = [
-          {
-            matcher = "";
-            hooks = [
-              {
-                type = "command";
-                command = "workmux set-window-status working";
-              }
-            ];
-          }
-        ];
         PreToolUse = [
           {
             matcher = "Bash";
@@ -54,28 +43,6 @@
               {
                 type = "command";
                 command = "~/.claude/rtk-rewrite.sh";
-              }
-            ];
-          }
-        ];
-        PostToolUse = [
-          {
-            matcher = "";
-            hooks = [
-              {
-                type = "command";
-                command = "workmux set-window-status working";
-              }
-            ];
-          }
-        ];
-        Stop = [
-          {
-            matcher = "";
-            hooks = [
-              {
-                type = "command";
-                command = "workmux set-window-status done";
               }
             ];
           }
@@ -152,7 +119,6 @@
           "Bash(sesh list *)"
           "Bash(tail:*)"
           "Bash(tmux show-options *)"
-          "Bash(workmux config *)"
           "Bash(xargs cat *)"
           "Read"
           "Search"

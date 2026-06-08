@@ -48,7 +48,6 @@
       sff = "bin/rspec --fail-fast";
       skills = "npx skills";
       tf = "terraform";
-      wm = "workmux";
       ws = "wt switch";
       wsc = "wt switch --create ";
       x = "exit";

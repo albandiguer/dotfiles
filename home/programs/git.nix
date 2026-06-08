@@ -82,7 +82,6 @@
       ".security-key"
       ".terraform/"
       ".vscode"
-      ".workmux.yaml"
       ".worktrees/"
       ".zcompdump"
       "Session.vim"

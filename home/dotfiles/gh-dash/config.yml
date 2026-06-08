@@ -94,7 +94,7 @@ keybindings:
         {{.PrNumber}}\""'
     - key: F
       name: Full review in worktree
-      command: 'sh -c "cd {{.RepoPath}} && /etc/profiles/per-user/albandiguer/bin/workmux add --pr {{.PrNumber}} --session -o"'
+      command: 'sh -c "cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json headRefName --jq .headRefName | xargs wt switch --create"'
 repoPaths:
   albandiguer/*: ~/dev/*
   finspot/pretto: ~/dev/finspot/pretto

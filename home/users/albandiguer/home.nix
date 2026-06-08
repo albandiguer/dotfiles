@@ -130,6 +130,5 @@
     ../../programs/sesh
     ../../programs/zoxide.nix
     ../../programs/worktrunk.nix
-    ../../programs/workmux.nix
   ];
 }

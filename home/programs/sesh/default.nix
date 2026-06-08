@@ -62,10 +62,9 @@
     };
   };
 
-  # Groups worktrees under their parent session and colors them amber.
   home.packages = [
     (pkgs.writeShellScriptBin "sesh-list-icons" ''
-      exec ${pkgs.python3}/bin/python3 ${./sesh-list-icons.py} "$@"
+      exec sesh list --icons "$@"
     '')
   ];
 
