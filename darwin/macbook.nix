@@ -138,6 +138,7 @@
     brews = [
       "bitwarden-cli"
       "gpg"
+      "herdr"
       "iredis"
       "libpq"
       "libyaml"
