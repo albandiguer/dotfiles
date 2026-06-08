@@ -114,7 +114,7 @@
     ../../programs/gh.nix
     ../../programs/neovim
     ../../programs/starship.nix
-    ../../programs/tmux.nix
+    ../../programs/tmux
     ../../programs/kitty.nix
     ../../programs/vscode.nix
     ../../programs/direnv.nix
