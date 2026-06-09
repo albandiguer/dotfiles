@@ -21,6 +21,7 @@
       nix-prefetch-github # not working at times cant verify sha256 sums
       worktrunk # [manage git worktree](https://github.com/max-sixty/worktrunk)
       git-spice
+      lefthook # https://lefthook.dev/
 
       # Shell & CLI Utilities
       bash # macos is bash 3xx, need 4+

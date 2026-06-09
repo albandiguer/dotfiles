@@ -1,0 +1,10 @@
+post-checkout:
+  commands:
+    copy-env:
+      run: |
+        if [ "{0}" = "0000000000000000000000000000000000000000" ]; then
+          basePath=$(dirname "$(git rev-parse --git-common-dir)")
+          for p in .env .nvim.lua; do
+            cp "$basePath/$p" .
+          done
+        fi
