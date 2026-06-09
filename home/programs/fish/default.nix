@@ -35,7 +35,7 @@
       ld = "lazydocker";
       lg = "lazygit";
       m = "make";
-      mrd = "mise run dev";
+      mr = "mise run";
       n = "nix";
       ns = "nix search nixpkgs";
       nsn = "nix shell nixpkgs#";
