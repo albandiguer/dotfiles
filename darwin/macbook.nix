@@ -145,7 +145,6 @@
       "libpq"
       "libyaml"
       "nixfmt"
-      "puma/puma/puma-dev"
       "retlehs/tap/quien"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
@@ -158,16 +157,11 @@
       "bruno"
       "claude"
       "font-sf-mono-nerd-font-ligaturized"
-      "freetube"
       "licecap"
       "monitorcontrol"
       "notion"
       "obsidian"
       "raycast"
-      "conductor"
-      # "chatbox" -> openwebui
-      # "dash"
-      # "httpie"
     ];
   };
 

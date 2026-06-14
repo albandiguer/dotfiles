@@ -227,8 +227,8 @@ vim.keymap.set('n', '<M-a>', '<esc>ggVG<CR>') -- select all
 -- display previous buffer
 vim.keymap.set('n', ',,', '<c-^>')
 
--- Use Ag (the Silver Searcher) instead of Ack for text searching
-vim.g.grepprg = 'ag --vimgrep'
+-- Use ripgrep instead of Ack for text searching
+vim.g.grepprg = 'rg --vimgrep'
 vim.g.grepformat = '%f:%l:%c:%m,%f:%l:%m'
 
 -- [[ Basic Autocommands ]]

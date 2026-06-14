@@ -27,10 +27,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    homebrew-puma-tap = {
-      url = "github:puma/homebrew-puma";
-      flake = false;
-    };
+    # homebrew-puma-tap = {
+    #   url = "github:puma/homebrew-puma";
+    #   flake = false;
+    # };
     hashicorp-tap = {
       url = "github:hashicorp/homebrew-tap";
       flake = false;
@@ -63,7 +63,7 @@
       homebrew-bundle,
       homebrew-core,
       homebrew-cask,
-      homebrew-puma-tap,
+      # homebrew-puma-tap,
       hashicorp-tap,
       homebrew-sfmono-nerd-font,
       retlehs-tap,
@@ -76,7 +76,11 @@
       user = "albandiguer";
       overlays = [
         inputs.claude-code.overlays.default
-        (_: prev: { direnv = prev.direnv.overrideAttrs (_: { doCheck = false; }); })
+        (_: prev: {
+          direnv = prev.direnv.overrideAttrs (_: {
+            doCheck = false;
+          });
+        })
       ];
       commonDarwinModules = [
         ./darwin/macbook.nix
@@ -105,7 +109,7 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "homebrew/homebrew-bundle" = homebrew-bundle;
-              "puma/homebrew-puma" = homebrew-puma-tap;
+              # "puma/homebrew-puma" = homebrew-puma-tap;
               # "hashicorp/tap" = hashicorp-tap;
               "shaunsingh/SFMono-Nerd-Font-Ligaturized" = homebrew-sfmono-nerd-font;
               "retlehs/homebrew-tap" = retlehs-tap;
