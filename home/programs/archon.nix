@@ -12,6 +12,8 @@ in
         assistants:
           claude:
             claudeBinaryPath: ${claudeBinPath}
+          pi:
+            model: deepseek/deepseek-v4-pro
       '';
   };
 }
