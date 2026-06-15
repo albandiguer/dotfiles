@@ -127,6 +127,7 @@
     ../../programs/claude.nix
     ../../programs/opencode.nix
     ../../programs/archon.nix
+    ../../programs/pi.nix
     ../../programs/try.nix
     ../../programs/sesh
     ../../programs/zoxide.nix
