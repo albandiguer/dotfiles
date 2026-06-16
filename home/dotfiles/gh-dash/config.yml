@@ -37,8 +37,12 @@ repo:
   branchesRefetchIntervalSeconds: 30
   prsRefetchIntervalSeconds: 60
 defaults:
+  # open: false works around a gh-dash 4.24.1 crash in tmux popups: the popup
+  # never delivers the OSC-11 background-color reply, so markdownStyle stays nil
+  # and rendering a PR preview panics (fixed on gh-dash main, not yet released).
+  # syncSidebar early-returns when the sidebar is closed, avoiding the panic.
   preview:
-    open: true
+    open: false
     width: 160
   prsLimit: 20
   prApproveComment: LGTM
