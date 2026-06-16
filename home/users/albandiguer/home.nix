@@ -90,6 +90,8 @@
     sessionVariables = {
       EDITOR = "nvim";
       DEFAULT_AI_AGENT = lib.mkDefault "opencode";
+      ANTHROPIC_BASE_URL = "http://headroom.lab/";
+      OPENAI_BASE_URL = "http://headroom.lab/";
     };
 
     # This value determines the Home Manager release that your
