@@ -49,7 +49,7 @@ Flake supports multiple machines (different git emails, Obsidian vault paths):
 ### Package Management Layers
 
 1. **System packages** — core tools in darwin/macbook.nix (incl claude-code)
-2. **Homebrew** — special install needs (bitwarden-cli, git-crypt, puma-dev)
+2. **Homebrew** — special install needs (bitwarden-cli, git-crypt)
 3. **User packages** — CLI utils in home.nix
 4. **Language tools** — mise with version files
 
@@ -103,4 +103,3 @@ Mise handles: AWS CLI, Node.js, PostgreSQL, Ruby, Rust, Terraform, Python (UV)
 ## AI Development Focus
 
 Config optimized for AI-assisted dev — Claude Code, Aider, Neovim integrations. Fish shell has AI tool shortcuts, terminal env tuned for code interaction.
-

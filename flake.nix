@@ -27,10 +27,6 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    # homebrew-puma-tap = {
-    #   url = "github:puma/homebrew-puma";
-    #   flake = false;
-    # };
     hashicorp-tap = {
       url = "github:hashicorp/homebrew-tap";
       flake = false;
@@ -63,7 +59,6 @@
       homebrew-bundle,
       homebrew-core,
       homebrew-cask,
-      # homebrew-puma-tap,
       hashicorp-tap,
       homebrew-sfmono-nerd-font,
       retlehs-tap,
@@ -109,8 +104,6 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "homebrew/homebrew-bundle" = homebrew-bundle;
-              # "puma/homebrew-puma" = homebrew-puma-tap;
-              # "hashicorp/tap" = hashicorp-tap;
               "shaunsingh/SFMono-Nerd-Font-Ligaturized" = homebrew-sfmono-nerd-font;
               "retlehs/homebrew-tap" = retlehs-tap;
               "coleam00/homebrew-archon" = archon-tap;
