@@ -4,6 +4,7 @@
     enable = true;
 
     settings = {
+      model = "claude-opus-4-8";
       statusLine = {
         type = "command";
         command = "~/.claude/statusline-command.sh";
