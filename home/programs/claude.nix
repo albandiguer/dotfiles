@@ -5,6 +5,7 @@
 
     settings = {
       model = "claude-opus-4-8";
+      effortLevel = "xhigh";
       statusLine = {
         type = "command";
         command = "~/.claude/statusline-command.sh";
