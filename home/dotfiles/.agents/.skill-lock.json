@@ -19,16 +19,6 @@
       "installedAt": "2026-04-13T08:41:35.852Z",
       "updatedAt": "2026-05-22T20:24:59.927Z"
     },
-    "grill-me": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/productivity/grill-me/SKILL.md",
-      "skillFolderHash": "2a1ad17028306ebe45f0e49703fa28b9b2e7f499",
-      "pluginName": "mattpocock-skills",
-      "installedAt": "2026-04-13T08:41:38.197Z",
-      "updatedAt": "2026-05-22T20:25:01.814Z"
-    },
     "obsidian-cli": {
       "source": "kepano/obsidian-skills",
       "sourceType": "github",
@@ -46,25 +36,6 @@
       "skillFolderHash": "4723197c6dc59abc29819da87863b1ac20b96095",
       "installedAt": "2026-04-13T08:41:42.868Z",
       "updatedAt": "2026-06-14T22:49:38.789Z"
-    },
-    "to-issues": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/to-issues/SKILL.md",
-      "skillFolderHash": "b38c5aa6ae5d6903e60d3f74a7aafd32d02f2c06",
-      "pluginName": "mattpocock-skills",
-      "installedAt": "2026-04-13T08:41:45.411Z",
-      "updatedAt": "2026-05-22T20:25:10.403Z"
-    },
-    "to-prd": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/to-prd/SKILL.md",
-      "skillFolderHash": "fb4503f54bc618da08df2fd74109fbe57e4d8150",
-      "installedAt": "2026-04-13T08:41:50.090Z",
-      "updatedAt": "2026-06-06T19:47:22.083Z"
     },
     "diffity-diff": {
       "source": "kamranahmedse/diffity",
