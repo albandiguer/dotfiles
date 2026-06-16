@@ -92,10 +92,6 @@ keybindings:
     - key: L
       name: open Lazygit
       command: lazygit
-    - key: E
-      name: Edit PR in neovim/octo
-      command: 'tmux new-window -c {{.RepoPath}} "nvim -c \":silent Octo pr edit
-        {{.PrNumber}}\""'
     - key: F
       name: Full review in worktree
       command: 'sh -c "cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json headRefName --jq .headRefName | xargs wt switch --create"'
