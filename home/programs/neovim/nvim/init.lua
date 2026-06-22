@@ -172,6 +172,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Border on all floating windows (hover, signature help, completion docs)
+vim.o.winborder = 'rounded'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -1022,6 +1025,13 @@ require('lazy').setup({
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       vim.cmd.colorscheme 'jellybeans-muted'
+      -- Recolor float borders; re-applied on every colorscheme switch
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = function()
+          vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#ffb964' })
+        end,
+      })
+      vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#ffb964' })
     end,
   },
 
