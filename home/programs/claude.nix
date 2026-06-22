@@ -20,6 +20,7 @@
         "ruby-lsp@claude-plugins-official" = true;
         "github@claude-plugins-official" = true;
         "context7@claude-plugins-official" = true;
+        "ponytail@ponytail" = true;
       };
       env = {
         CLAUDE_CODE_MAX_OUTPUT_TOKENS = "64000";
