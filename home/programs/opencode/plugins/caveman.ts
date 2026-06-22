@@ -8,7 +8,10 @@ export const CavemanPlugin: Plugin = async ({ client }) => {
 		event: async ({ event }) => {
 			if (event.type === "session.created") {
 				// Send the caveman command to activate the skill
-				await client.session.prompt({ prompt: "/caveman full" })
+				await client.session.prompt({
+					path: { id: event.properties.info.id },
+					body: { parts: [{ type: "text", text: "/caveman full" }] },
+				})
 			}
 		},
 	}
