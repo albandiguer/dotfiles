@@ -1021,10 +1021,10 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'wtfox/jellybeans.nvim',
+    'savq/melange-nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      vim.cmd.colorscheme 'jellybeans-muted'
+      vim.cmd.colorscheme 'melange'
       -- Recolor float borders; re-applied on every colorscheme switch
       vim.api.nvim_create_autocmd('ColorScheme', {
         callback = function()
