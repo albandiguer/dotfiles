@@ -15,6 +15,7 @@
     podlet # docker/compose -> quadlet
     ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
     butane
+    lima
 
     # -- Development Tools --
     # bruno # broken in 07/2025
@@ -26,7 +27,6 @@
     gitmux # git tmux integration
 
     # -- CLI Utilities --
-
     _1password-cli # 1Password CLI tool
     sox # audio sampler, whisper deps
     sshed # ssh config management
