@@ -9,7 +9,6 @@
     cloudflared
     k3d
     # localstack # aws mock
-    podman
     podman-compose
     podman-tui
     podlet # docker/compose -> quadlet
@@ -145,6 +144,7 @@
       "libpq"
       "libyaml"
       "nixfmt"
+      "podman" # linux-only in nixpkgs; brew ships the darwin client + podman machine
       "retlehs/tap/quien"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
