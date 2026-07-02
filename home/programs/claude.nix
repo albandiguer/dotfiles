@@ -65,7 +65,7 @@
           "Bash(gem which *)"
           "Bash(git checkout *)"
           "Bash(grep:*)"
-          "Bash(gs --versionj)"
+          "Bash(gs --version)"
           "Bash(gs bc *)"
           "Bash(gs branch *)"
           "Bash(gs log *)"
