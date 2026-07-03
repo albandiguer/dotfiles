@@ -755,8 +755,7 @@ require('lazy').setup({
         -- 'nixfmt', -- nil_ls does not have a default fmt. no point delegating to it. but nixfmt unsupported on macos -> brew
         'prettier',
         'proselint',
-        'pyright', -- python static analyzer
-        'ruff', -- python linter & code formatter
+        'ruff', -- python linter & code formatter https://docs.astral.sh/
         'shellcheck',
         'shfmt',
         -- 'snyk-ls',
@@ -767,6 +766,7 @@ require('lazy').setup({
         'texlab',
         'tflint',
         'tombi', -- toml
+        'ty', -- python static analyzer https://docs.astral.sh/
         'vtsls', -- handle typescript in .vue files
         'vue-language-server', -- handle html+css in .vue files
         'yamlfmt',
