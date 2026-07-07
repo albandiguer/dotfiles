@@ -136,10 +136,13 @@
       };
     };
 
+    # ponytail: pydantic V1 breaks on python 3.14, pin to 3.12
     mcpServers = {
       serena = {
         command = "uvx";
         args = [
+          "--python"
+          "3.12"
           "--from"
           "git+https://github.com/oraios/serena"
           "serena"
