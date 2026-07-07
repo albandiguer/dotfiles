@@ -15,6 +15,7 @@
         ruby = "latest";
         rust = "latest";
         terraform = "latest";
+        pitchfork = "latest";
         uv = "latest"; # shall it be in nix instead?
         # Tools installed via uv (not declared here, installed imperatively):
         #   uv tool install git+https://github.com/cpatrickalves/plane-cli.git
