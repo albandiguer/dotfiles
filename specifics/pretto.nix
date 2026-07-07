@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
   # this is not right but came from anterior install or smt
@@ -12,5 +12,9 @@
     home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER = "agents";
     # Use Claude Code on work laptop
     home.sessionVariables.DEFAULT_AI_AGENT = "claude";
+    # Pretto-specific skill lock (adds linear-cli)
+    home.file.".agents/.skill-lock.json".source = lib.mkForce (
+      config.lib.file.mkOutOfStoreSymlink "/Users/albandiguer/dev/dotfiles/home/dotfiles/.agents/.skill-lock-pretto.json"
+    );
   };
 }
