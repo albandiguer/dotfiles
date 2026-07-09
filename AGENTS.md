@@ -58,7 +58,6 @@ Flake supports multiple machines (different git emails, Obsidian vault paths):
 ### Key Tools
 
 - **Claude Code CLI** — system-wide, aliased `cc`
-- **Aider** — AI coding assistant, custom dark theme
 - **Neovim** — kickstart.nvim base, AI integrations (Claude Code plugin)
 - **Lazygit** — visual git interface
 
@@ -102,4 +101,4 @@ Mise handles: AWS CLI, Node.js, PostgreSQL, Ruby, Rust, Terraform, Python (UV)
 
 ## AI Development Focus
 
-Config optimized for AI-assisted dev — Claude Code, Aider, Neovim integrations. Fish shell has AI tool shortcuts, terminal env tuned for code interaction.
+Config optimized for AI-assisted dev — Claude Code, Neovim integrations. Fish shell has AI tool shortcuts, terminal env tuned for code interaction.
