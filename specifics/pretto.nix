@@ -1,9 +1,23 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   # this is not right but came from anterior install or smt
   ids.gids.nixbld = lib.mkForce 350;
   users.groups.nixbld.gid = lib.mkForce 350;
+
+  # Work-only system packages
+  environment.systemPackages = with pkgs; [
+    _1password-cli
+    bruno
+    claude-code
+  ];
+
+  # Work-only Homebrew casks
+  homebrew.casks = [
+    "1password"
+    "bruno"
+    "notion"
+  ];
 
   home-manager.users.albandiguer = { config, ... }: {
     programs.git.settings.user.email = lib.mkForce "alban.diguer@pretto.fr";

@@ -18,7 +18,6 @@
 
     # -- Development Tools --
     # bruno # broken in 07/2025
-    git-crypt
     graphite-cli # Git Client
     lazydocker # Docker TUI
     openssl
@@ -26,17 +25,14 @@
     gitmux # git tmux integration
 
     # -- CLI Utilities --
-    _1password-cli # 1Password CLI tool
     sox # audio sampler, whisper deps
     sshed # ssh config management
 
     # -- Presentation & Communication --
     marp-cli # Markdown to Presentation tool
-    slack
 
     # -- AI related --
     # ollama
-    claude-code
     whisper-cpp # https://github.com/raycast/extensions/tree/603ada168a81f9acc062dc2ad524f157602423a7/extensions/whisper-dictation/#-whisper-dictation-for-raycast
     # opencode  # Now managed via home-manager
     rtk # https://www.rtk-ai.app/#install - token savvy bash output for llm ingestion
@@ -153,16 +149,14 @@
       # "python-setuptools" # awsume deps
     ];
     casks = [
-      "1password" # 1Password GUI application
       "bitwarden"
-      "bruno"
       "claude"
       "font-sf-mono-nerd-font-ligaturized"
       "licecap"
       "monitorcontrol"
-      "notion"
       "obsidian"
       "raycast"
+      "slack"
     ];
   };
 
