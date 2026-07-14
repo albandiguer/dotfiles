@@ -33,7 +33,7 @@
 
     # -- AI related --
     # ollama
-    whisper-cpp # https://github.com/raycast/extensions/tree/603ada168a81f9acc062dc2ad524f157602423a7/extensions/whisper-dictation/#-whisper-dictation-for-raycast
+    # whisper-cpp # https://github.com/raycast/extensions/tree/603ada168a81f9acc062dc2ad524f157602423a7/extensions/whisper-dictation/#-whisper-dictation-for-raycast
     # opencode  # Now managed via home-manager
     rtk # https://www.rtk-ai.app/#install - token savvy bash output for llm ingestion
   ];
@@ -59,7 +59,10 @@
   # Necessary for using flakes on this system.
   nix.settings = {
     experimental-features = "nix-command flakes";
-    trusted-users = [ "root" "albandiguer" ];
+    trusted-users = [
+      "root"
+      "albandiguer"
+    ];
     # auto-optimise-store = true; # Optimize during builds
   };
 
