@@ -87,11 +87,8 @@ defaults:
 keybindings:
   prs:
     - key: H
-      name: enHance PR
+      name: enHance PR (CI)
       command: gh enhance -R {{.RepoName}} {{.PrNumber}}
-    - key: L
-      name: open Lazygit
-      command: lazygit
     - key: F
       name: Full review in worktree
       command: 'sh -c "cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json headRefName --jq .headRefName | xargs wt switch --create"'
