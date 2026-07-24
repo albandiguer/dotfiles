@@ -162,6 +162,22 @@
         "type": "github"
       }
     },
+    "herdr-worktreeinclude": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783786378,
+        "narHash": "sha256-FrCFOFUG7vSK8qMFiwu9u7xvKMmbgKbo+HeoEyZNBBU=",
+        "owner": "tanshio",
+        "repo": "herdr-worktreeinclude",
+        "rev": "6da244b314882b4554434a6433156385e38df792",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tanshio",
+        "repo": "herdr-worktreeinclude",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -402,6 +418,7 @@
         "darwin": "darwin",
         "gh-enhance": "gh-enhance",
         "hashicorp-tap": "hashicorp-tap",
+        "herdr-worktreeinclude": "herdr-worktreeinclude",
         "home-manager": "home-manager",
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",

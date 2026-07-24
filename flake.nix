@@ -48,6 +48,10 @@
       flake = false;
     };
     try.url = "github:tobi/try";
+    herdr-worktreeinclude = {
+      url = "github:tanshio/herdr-worktreeinclude";
+      flake = false;
+    };
   };
 
   outputs =
@@ -65,6 +69,7 @@
       archon-tap,
       gh-enhance,
       claude-code,
+      herdr-worktreeinclude,
       ...
     }@inputs:
     let
@@ -89,7 +94,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit gh-enhance;
+            inherit gh-enhance herdr-worktreeinclude;
             try = inputs.try;
             neovim-nightly-overlay = inputs.neovim-nightly-overlay;
           };
