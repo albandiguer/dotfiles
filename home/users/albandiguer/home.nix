@@ -19,7 +19,6 @@
       cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       nix-prefetch-git
       nix-prefetch-github # not working at times cant verify sha256 sums
-      worktrunk # [manage git worktree](https://github.com/max-sixty/worktrunk)
       git-spice
       lefthook # https://lefthook.dev/
 
@@ -133,7 +132,6 @@
     ../../programs/try.nix
     ../../programs/sesh
     ../../programs/zoxide.nix
-    ../../programs/worktrunk.nix
     ../../programs/herdr.nix
   ];
 }

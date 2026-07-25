@@ -49,8 +49,6 @@
       skills = "npx skills";
       tf = "terraform";
       v = "nvim";
-      ws = "wt switch";
-      wsc = "wt switch --create ";
       x = "exit";
       y = "yarn";
     };

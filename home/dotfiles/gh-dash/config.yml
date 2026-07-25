@@ -91,7 +91,7 @@ keybindings:
       command: gh enhance -R {{.RepoName}} {{.PrNumber}}
     - key: F
       name: Full review in worktree
-      command: 'sh -c "cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json headRefName --jq .headRefName | xargs wt switch --create"'
+      command: 'sh -c "cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json headRefName --jq .headRefName | xargs herdr worktree create --branch $1 "'
 repoPaths:
   albandiguer/*: ~/dev/*
   finspot/pretto: ~/dev/finspot/pretto
