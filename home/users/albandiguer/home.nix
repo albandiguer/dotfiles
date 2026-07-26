@@ -123,7 +123,6 @@
     ../../programs/home-manager.nix
     ../../programs/mise.nix
     ../../programs/wezterm
-    ../../programs/alacritty.nix
     ../../programs/lazygit.nix
     ../../programs/claude.nix
     ../../programs/opencode.nix
