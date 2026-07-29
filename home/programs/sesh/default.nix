@@ -26,7 +26,7 @@
         {
           name = "ai";
           startup_command = ''
-            exec ${"\${DEFAULT_AI_AGENT:-opencode}"}
+            exec ${"\${DEFAULT_AI_AGENT:pi}"}
           '';
         }
         {

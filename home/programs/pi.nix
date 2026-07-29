@@ -8,7 +8,7 @@ let
     builtins.toJSON {
       providers.deepseek = {
         api = "openai-completions";
-        baseUrl = "http://headroom.lab/v1";
+        #baseUrl = "https://headroom.lab/v1";
         models = [
           {
             id = "deepseek-v4-pro";
