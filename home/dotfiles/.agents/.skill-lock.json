@@ -19,42 +19,6 @@
       "installedAt": "2026-04-13T08:41:35.852Z",
       "updatedAt": "2026-07-14T22:13:27.211Z"
     },
-    "diffity-diff": {
-      "source": "kamranahmedse/diffity",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/kamranahmedse/diffity.git",
-      "skillPath": "skills/diffity-diff/SKILL.md",
-      "skillFolderHash": "0027328d13d719bf266fc3e0c713ccf189a20da1",
-      "installedAt": "2026-04-14T09:45:49.214Z",
-      "updatedAt": "2026-05-22T20:24:44.858Z"
-    },
-    "diffity-review": {
-      "source": "kamranahmedse/diffity",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/kamranahmedse/diffity.git",
-      "skillPath": "skills/diffity-review/SKILL.md",
-      "skillFolderHash": "24527882f1485e435957703098ab24bb2391b432",
-      "installedAt": "2026-04-14T09:45:50.187Z",
-      "updatedAt": "2026-05-22T20:24:54.003Z"
-    },
-    "diffity-tour": {
-      "source": "kamranahmedse/diffity",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/kamranahmedse/diffity.git",
-      "skillPath": "skills/diffity-tour/SKILL.md",
-      "skillFolderHash": "c36738818238994c410217a8f088ea3aeaf542b1",
-      "installedAt": "2026-04-14T09:45:51.538Z",
-      "updatedAt": "2026-05-22T20:24:56.206Z"
-    },
-    "diffity-learn": {
-      "source": "kamranahmedse/diffity",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/kamranahmedse/diffity.git",
-      "skillPath": "skills/diffity-learn/SKILL.md",
-      "skillFolderHash": "9289648de5b90ba4f4173714d13c2850cfb5a006",
-      "installedAt": "2026-04-14T09:45:52.230Z",
-      "updatedAt": "2026-05-22T20:24:47.031Z"
-    },
     "archon": {
       "source": "coleam00/archon",
       "sourceType": "github",
