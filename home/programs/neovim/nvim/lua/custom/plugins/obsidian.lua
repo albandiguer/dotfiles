@@ -39,7 +39,7 @@ return {
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
         -- folder = "&#128198;" -- 📆
-        folder = 'diary 📔',
+        folder = 'weeklies',
         template = '_assets/templates/daily.md',
       },
       -- Where to put new notes. Valid options are
