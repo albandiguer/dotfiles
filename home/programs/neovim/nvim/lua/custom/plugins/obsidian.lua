@@ -5,9 +5,9 @@ return {
       { '<leader>obLn', ':Obsidian link_new<CR>', { noremap = true, silent = true, desc = 'Link New' } },
       { '<leader>obLs', ':Obsidian links<CR>', { noremap = true, silent = true, desc = 'Links' } },
       { '<leader>obT', ':Obsidian TOC<CR>', { noremap = true, silent = true, desc = 'TOC' } },
-      { '<leader>obe', ':Obsidian extract_note<CR>', { noremap = true, silent = true, desc = 'Extract Note' } },
+      { '<leader>obe', ':Obsidian extract_note<CR>', mode = 'v', desc = 'Extract Note' },
       { '<leader>obl', ':Obsidian link<CR>', { noremap = true, silent = true, desc = 'Link' } },
-      { '<leader>obn', ':Obsidian unique_note<CR>', { noremap = true, silent = true, desc = 'Unique Note' } },
+      { '<leader>obn', ':Obsidian unique_note<CR>', { noremap = true, silent = true, desc = 'Unique Note (inbox)' } },
       { '<leader>obo', ':Obsidian open<CR>', { noremap = true, silent = true, desc = 'Open in Desktop app' } },
       { '<leader>obq', ':Obsidian quick_switch<CR>', { noremap = true, silent = true, desc = 'Quick Switch' } },
       { '<leader>obr', ':Obsidian rename<CR>', { noremap = true, silent = true, desc = 'Rename' } },
@@ -45,27 +45,28 @@ return {
       -- Where to put new notes. Valid options are
       -- _ "current_dir" - put new notes in same directory as the current buffer.
       -- _ "notes_subdir" - put new notes in the default notes subdirectory.
-      new_notes_location = 'notes_subdir',
+      new_notes_location = 'current_dir',
 
-      -- Optional, customize how note IDs are generated given an optional title.
+      -- Optional, customize how note IDs are generated (used by extract_note).
       ---@param title string|?
       ---@return string
       note_id_func = function(title)
-        -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-        -- In this case a note with the title 'My new note' will be given an ID that looks
-        -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'.
-        -- You may have as many periods in the note ID as you'd like—the ".md" will be added automatically
-        local suffix = ''
-        if title ~= nil then
-          -- If title is given, transform it into valid file name.
-          suffix = title:gsub(' ', '-'):gsub('[^A-Za-z0-9-]', ''):lower()
+        local usec = vim.loop.gettimeofday()
+        local cs = math.floor((usec % 1000000) / 10000)
+        return os.date('%Y%m%d%H%M%S') .. string.format('%02d', cs)
+      end,
+
+      note_func = function(title)
+        local usec = vim.loop.gettimeofday()
+        local cs = math.floor((usec % 1000000) / 10000)
+        local id = os.date('%Y%m%d%H%M%S') .. string.format('%02d', cs)
+        if title and #title > 0 then
+          -- Extracted notes: same directory, timestamp filename
+          return id .. '.md'
         else
-          -- If title is nil, just add 4 random uppercase letters to the suffix.
-          for _ = 1, 4 do
-            suffix = suffix .. string.char(math.random(65, 90))
-          end
+          -- Unique notes: inbox folder, timestamp filename
+          return 'inbox/' .. id .. '.md'
         end
-        return tostring(os.time()) .. '-' .. suffix
       end,
 
       templates = {
