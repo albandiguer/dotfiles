@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
       "skillPath": "skills/caveman/SKILL.md",
-      "skillFolderHash": "166040c027f7764d43df36abc5df0079bfc6394b",
+      "skillFolderHash": "3e4386ca694c65a65ba84024f0fe2646a8c9076a",
       "installedAt": "2026-04-13T08:41:33.966Z",
-      "updatedAt": "2026-07-14T22:13:25.947Z"
+      "updatedAt": "2026-08-06T19:09:27.187Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -24,9 +24,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/coleam00/archon.git",
       "skillPath": ".claude/skills/archon/SKILL.md",
-      "skillFolderHash": "29599bb383f196e13edebe0835f24cdad5e5fb6f",
+      "skillFolderHash": "7a1ed8aa49eae30865faf75caea186ff24ef0b97",
       "installedAt": "2026-05-22T20:21:20.439Z",
-      "updatedAt": "2026-07-23T19:11:35.530Z"
+      "updatedAt": "2026-08-06T19:09:31.286Z"
     }
   },
   "dismissed": {

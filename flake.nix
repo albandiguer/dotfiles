@@ -81,8 +81,10 @@
             doCheck = false;
           });
           # ponytail: mise's oci setuid-bit test fails in the Nix build sandbox
-          mise = prev.mise.overrideAttrs (_: {
+          # and the pinned nixpkgs derivation misses cmake (libz-ng-sys needs it)
+          mise = prev.mise.overrideAttrs (old: {
             doCheck = false;
+            nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.cmake ];
           });
         })
       ];
