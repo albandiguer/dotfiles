@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     # -- Cloud & DevOps/Infra --
     awslogs
-    # bitwarden-desktop # broken: compiler-rt-18 incompatible with Apple SDK 26.4, moved to homebrew cask
     cloudflared
     k3d
     # localstack # aws mock
@@ -27,6 +26,8 @@
     # -- CLI Utilities --
     sox # audio sampler, whisper deps
     sshed # ssh config management
+    bitwarden-cli
+    bitwarden-desktop # broken: compiler-rt-18 incompatible with Apple SDK 26.4, moved to homebrew cask
 
     # -- Presentation & Communication --
     marp-cli # Markdown to Presentation tool
@@ -137,7 +138,6 @@
       "coleam00/archon"
     ];
     brews = [
-      "bitwarden-cli"
       "gpg"
       "iredis"
       "libpq"
@@ -151,7 +151,6 @@
       # "python-setuptools" # awsume deps
     ];
     casks = [
-      "bitwarden"
       "claude"
       "font-sf-mono-nerd-font-ligaturized"
       "licecap"

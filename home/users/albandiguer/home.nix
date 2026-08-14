@@ -39,9 +39,6 @@
       watch # execute command periodically
       wget # file downloader
 
-      # Security & Credentials
-      # bitwarden-cli # not working
-
       # Fonts
       lato # used by AltaCV
       roboto-slab # used by AltaCV
