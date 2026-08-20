@@ -122,7 +122,6 @@
     ../../programs/mise.nix
     ../../programs/wezterm
     ../../programs/lazygit.nix
-    ../../programs/claude.nix
     ../../programs/opencode.nix
     ../../programs/archon.nix
     ../../programs/pi.nix

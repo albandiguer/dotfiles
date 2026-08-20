@@ -20,8 +20,6 @@
       br = "bin/rspec";
       bs = "brew search";
       c = "clear";
-      cc = "claude"; # claude code
-      cs = "claude-squad";
       db = "nvim +DBUI";
       dk = "docker";
       dkc = "docker compose";

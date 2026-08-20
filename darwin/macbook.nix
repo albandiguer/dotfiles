@@ -151,7 +151,6 @@
       # "python-setuptools" # awsume deps
     ];
     casks = [
-      "claude"
       "font-sf-mono-nerd-font-ligaturized"
       "licecap"
       "monitorcontrol"
