@@ -27,9 +27,6 @@ source <(gh completion -s zsh)
 . $(pack completion --shell zsh)
 # Rbenv
 eval "$(rbenv init - zsh)"
-# Graphite
-. <(gt completion)
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/albandiguer/dev/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

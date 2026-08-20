@@ -17,7 +17,6 @@
 
     # -- Development Tools --
     # bruno # broken in 07/2025
-    graphite-cli # Git Client
     lazydocker # Docker TUI
     openssl
     icu # mise postgres deps
