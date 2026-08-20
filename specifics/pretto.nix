@@ -18,6 +18,7 @@
     "bruno"
     "claude"
     "notion"
+    "slack"
   ];
 
   home-manager.users.albandiguer = { config, ... }: {

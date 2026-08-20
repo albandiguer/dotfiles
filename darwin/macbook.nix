@@ -138,7 +138,6 @@
     ];
     brews = [
       "gpg"
-      "iredis"
       "libpq"
       "libyaml"
       "nixfmt"
@@ -155,7 +154,6 @@
       "monitorcontrol"
       "obsidian"
       "raycast"
-      "slack"
     ];
   };
 
