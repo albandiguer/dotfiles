@@ -49,7 +49,7 @@ Flake supports multiple machines (different git emails, Obsidian vault paths):
 ### Package Management Layers
 
 1. **System packages** — core tools in darwin/macbook.nix (incl claude-code)
-2. **Homebrew** — special install needs (bitwarden-cli, git-crypt)
+2. **Homebrew** — special install needs (not working in nix or not present)
 3. **User packages** — CLI utils in home.nix
 4. **Language tools** — mise with version files
 

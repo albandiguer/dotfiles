@@ -9,16 +9,12 @@
   environment.systemPackages = with pkgs; [
     _1password-cli
     bruno
-    claude-code
   ];
 
   # Work-only Homebrew casks
   homebrew.casks = [
     "1password"
-    "bruno"
-    "claude"
     "notion"
-    "slack"
   ];
 
   home-manager.users.albandiguer = { config, ... }: {

@@ -16,7 +16,6 @@
     lima # linux machine (microvms)
 
     # -- Development Tools --
-    # bruno # broken in 07/2025
     lazydocker # Docker TUI
     openssl
     icu # mise postgres deps
@@ -134,26 +133,24 @@
   homebrew = {
     enable = true;
     taps = [
-      "coleam00/archon"
     ];
     brews = [
       "gpg"
       "libpq"
-      "libyaml"
       "nixfmt"
-      "podman" # linux-only in nixpkgs; brew ships the darwin client + podman machine
       "retlehs/tap/quien"
       "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
       "vips" # Image processing library
-      "archon"
       # "python-setuptools" # awsume deps
     ];
     casks = [
+      "dash"
       "font-sf-mono-nerd-font-ligaturized"
       "licecap"
       "monitorcontrol"
       "obsidian"
       "raycast"
+      "slack"
     ];
   };
 

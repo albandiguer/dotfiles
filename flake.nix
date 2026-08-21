@@ -133,7 +133,9 @@
       # see https://github.com/Kidsan/nixos-config/blob/main/flake.nix
       darwinConfigurations = {
         # name figured with `scutil --get LocalHostName|pbcopy`
-        Albans-MacBook-Air = darwin.lib.darwinSystem { modules = commonDarwinModules; };
+        Albans-MacBook-Air = darwin.lib.darwinSystem {
+          modules = commonDarwinModules ++ [ ./specifics/alban.nix ];
+        };
         Prettos-MacBook-Pro = darwin.lib.darwinSystem {
           modules = commonDarwinModules ++ [ ./specifics/pretto.nix ];
         };

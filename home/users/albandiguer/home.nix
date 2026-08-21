@@ -11,7 +11,7 @@
       act # gh actions locally
       buildpack # cloud native buildpacks, use pack..., checkout nixpacks
       dive # docker image inspection
-      ngrok # broken atm
+      ngrok
       overmind
 
       # Git Tools
@@ -29,7 +29,6 @@
       bat # better cat
       curlie # curl with easy syntax
       duf # disk space etc
-      httpie # http client
       jq # json processing
       jwt-cli # jwt decoder
       posting # api cli client
@@ -42,8 +41,6 @@
       # Fonts
       lato # used by AltaCV
       roboto-slab # used by AltaCV
-
-      # Nerd Fonts
       nerd-fonts.fantasque-sans-mono
       nerd-fonts.hack
       nerd-fonts.iosevka
@@ -55,14 +52,8 @@
       nerd-fonts.ubuntu-mono
       nerd-fonts.victor-mono
       nerd-fonts.zed-mono
-
-      # Disabled/Legacy
-      # ghc
-      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/trivial-builders.nix#L246
-      # writeShellScriptBin "run-commands-on-git-revisions" "echo hellow world"
     ];
 
-    # copy dotfiles
     file = {
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix ?
       ".default-node-packages".source = ../../dotfiles/.default-node-packages;
