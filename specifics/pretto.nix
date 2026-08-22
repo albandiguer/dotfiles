@@ -24,6 +24,10 @@
     home.sessionVariables.DEFAULT_AI_AGENT = "claude";
     programs.fish.shellAbbrs = {
       cc = "claude"; # claude code
+      dk = "docker";
+      dkc = "docker compose";
+      dkcd = "docker compose down";
+      dkcud = "docker compose up -d";
     };
     # Pretto-specific skill lock (adds linear-cli)
     home.file.".agents/.skill-lock.json".source = lib.mkForce (

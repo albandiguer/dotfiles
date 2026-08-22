@@ -16,5 +16,12 @@
   # Archon config lives here: the binary is personal-only (Brewfile.Albans-MacBook-Air)
   home-manager.users.albandiguer = {
     imports = [ ../home/programs/archon.nix ];
+    # Container runtime is podman here (docker abbrs live on the work machine)
+    programs.fish.shellAbbrs = {
+      dk = "podman";
+      dkc = "podman-compose";
+      dkcd = "podman-compose down";
+      dkcud = "podman-compose up -d";
+    };
   };
 }

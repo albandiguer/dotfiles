@@ -21,10 +21,6 @@
       bs = "brew search";
       c = "clear";
       db = "nvim +DBUI";
-      dk = "docker";
-      dkc = "docker compose";
-      dkcd = "docker compose down";
-      dkcud = "docker compose up -d";
       dt = "diffity";
       g = "git";
       gd = "gh dash";
