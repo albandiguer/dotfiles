@@ -13,4 +13,8 @@
     podlet # docker/compose -> quadlet
   ];
 
+  # Archon config lives here: the binary is personal-only (Brewfile.Albans-MacBook-Air)
+  home-manager.users.albandiguer = {
+    imports = [ ../home/programs/archon.nix ];
+  };
 }
