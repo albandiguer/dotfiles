@@ -28,7 +28,7 @@ skills-installs:
 
 # Sometimes updating breaks things
 rollback:
-	nix-env --rollback
+	sudo nix run nix-darwin -- rollback --flake .
 
 cleanup:
 	#https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
