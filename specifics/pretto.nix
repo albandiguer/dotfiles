@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     _1password-cli
     bruno
+    ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
   ];
 
   home-manager.users.albandiguer = { config, ... }: {
