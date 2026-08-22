@@ -1,0 +1,3 @@
+# Work machine (Prettos-MacBook-Pro) Homebrew dependencies.
+cask "1password"
+cask "notion"

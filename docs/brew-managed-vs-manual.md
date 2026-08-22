@@ -1,64 +1,50 @@
-# Brew/Nix: managed packages by machine
+# Brew: managed via Brewfile (homebrew-bundle)
 
-Everything on this machine is now declared in the config — nothing manual remains.
+Homebrew dependencies are declared in `Brewfile` files, not in Nix. `make apply` runs `brew bundle` for the common `Brewfile` plus the machine-specific `Brewfile.<hostname>` if present.
 
-**Config layout:** `darwin/macbook.nix` = all machines · `specifics/alban.nix` = personal (Alban's MacBook Air) · `specifics/pretto.nix` = work (Prettos-MacBook-Pro)
+**Layout:** `homebrew/` directory at repo root:
+- `homebrew/Brewfile` — all machines (`darwin/macbook.nix` equivalent)
+- `homebrew/Brewfile.Albans-MacBook-Air` — personal (`specifics/alban.nix` equivalent)
+- `homebrew/Brewfile.Prettos-MacBook-Pro` — work (`specifics/pretto.nix` equivalent)
 
 **Rule:** if a package comes from Nix, it's not also installed via Brew.
 
 ## Packages
 
-| Package | Config | Manager |
+| Package | File | Type |
 |---|---|---|
-| archon | personal | Brew |
-| httpie (CLI) | personal | Nix |
-| httpie-desktop (GUI) | personal | Brew |
-| podman | personal | Brew |
-| qrencode | personal | Brew |
-| sandvault | personal | Brew |
-| bitwarden-cli | both | Nix |
-| dash | both | Brew |
-| font-sf-mono-nerd-font-ligaturized | both | Brew |
-| gnupg (`gpg`) | both | Brew¹ |
-| libpq | both | Brew |
-| licecap | both | Brew |
-| monitorcontrol | both | Brew |
-| nixfmt | both | Brew |
-| obsidian | both | Brew |
-| podman-compose | both | Nix |
-| podman-tui | both | Nix |
-| quien | both | Brew |
-| raycast | both | Brew |
-| slack | both | Brew |
-| tectonic | both | Brew |
-| vips | both | Brew |
-| 1password | work | Nix + Brew |
-| bruno | work | Nix + Brew |
-| claude | work | Nix + Brew |
-| notion | work | Brew |
+| archon | personal | brew |
+| httpie (GUI) | personal | cask |
+| podman | personal | brew |
+| qrencode | personal | brew |
+| sandvault | personal | brew |
+| dash | both | cask |
+| font-sf-mono-nerd-font-ligaturized | both | cask |
+| gnupg (`gpg`) | both | brew¹ |
+| libpq | both | brew |
+| licecap | both | cask |
+| monitorcontrol | both | cask |
+| nixfmt | both | brew |
+| obsidian | both | cask |
+| quien | both | brew |
+| raycast | both | cask |
+| slack | both | cask |
+| tectonic | both | brew |
+| vips | both | brew |
+| 1password | work | cask |
+| notion | work | cask |
 
 ¹ gnupg stays in Brew even though Nix has a copy — brew `vips` depends on the brew gnupg (via gpgme/poppler); the Nix copy can't serve brew binaries.
 
-## Removed
-
-| Package | Why |
-|---|---|
-| postgresql@15 | stray direct install, nothing depended on it |
-| open-mpi | stray direct install, nothing depended on it |
-| bitwarden-cli (brew) | redundant — already a Nix package |
-| bruno (this machine) | work-only app, kept only via `pretto.nix` |
-| libyaml (brew) | Nix closure already has it (transitive dep), nothing in Brew depended on it |
-| httpie (brew cask alias) | `httpie` cask was an alias of `httpie-desktop` — duplicate declaration |
-
 ## Taps
 
-| Tap | Source |
+| Tap | Where |
 |---|---|
-| `coleam00/archon` | `specifics/alban.nix` `homebrew.taps`; pinned via nix-homebrew in `flake.nix` (all machines) |
-| `retlehs/tap` | nix flake input (via nix-homebrew) |
-| `shaunsingh/sfmono-nerd-font-ligaturized` | nix flake input (via nix-homebrew) |
+| `coleam00/homebrew-archon` | `homebrew/Brewfile.Albans-MacBook-Air` |
 | `homebrew/core`, `homebrew/cask`, `homebrew/bundle` | built-in — always kept |
+
+> `retlehs/tap` (quien) and the sfmono-nerd-font tap were dropped — quien migrated to homebrew/core and the font cask to homebrew/cask.
 
 ## Policy
 
-Manual installs are fine and expected — no auto-cleanup. `homebrew.onActivation.cleanup` stays at the default `"none"`.
+Manual installs are fine and expected — no auto-cleanup (`brew bundle cleanup` is never run; remove an entry from the Brewfile and `brew uninstall` manually if you want it gone).

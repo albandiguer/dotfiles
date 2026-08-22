@@ -3,6 +3,8 @@ default: apply
 apply:
 	sudo nix run nix-darwin -- switch --flake .
 	# nix run nix-darwin --no-eval-cache -- switch --flake .
+	brew bundle --file=homebrew/Brewfile
+	@h=$$(scutil --get LocalHostName); if [ -f homebrew/Brewfile.$$h ]; then brew bundle --file=homebrew/Brewfile.$$h; fi
 
 upgrade-nix:
 	sudo nix upgrade-nix
@@ -14,7 +16,8 @@ up: upgrade-nix
 	# Check for skill updates
 	npx skills check -g
 	npm update -g 
-	brew upgrade
+	brew bundle --file=homebrew/Brewfile
+	@h=$$(scutil --get LocalHostName); if [ -f homebrew/Brewfile.$$h ]; then brew bundle --file=homebrew/Brewfile.$$h; fi
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate

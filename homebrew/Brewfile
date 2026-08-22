@@ -1,0 +1,19 @@
+# Homebrew packages shared by all machines.
+# Managed via `brew bundle` (see Makefile); machine-specific deps in Brewfile.<hostname>.
+
+# Formula (CLI tools)
+brew "gpg"
+brew "libpq"
+brew "nixfmt"
+brew "quien"
+brew "tectonic"
+brew "vips"
+
+# Casks (GUI apps)
+cask "dash"
+cask "font-sf-mono-nerd-font-ligaturized"
+cask "licecap"
+cask "monitorcontrol"
+cask "obsidian"
+cask "raycast"
+cask "slack"

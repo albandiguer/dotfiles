@@ -37,6 +37,7 @@
       tree # directory structure viewer
       watch # execute command periodically
       wget # file downloader
+      qrencode # generate a qr code
 
       # Fonts
       lato # used by AltaCV

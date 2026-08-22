@@ -11,12 +11,6 @@
     bruno
   ];
 
-  # Work-only Homebrew casks
-  homebrew.casks = [
-    "1password"
-    "notion"
-  ];
-
   home-manager.users.albandiguer = { config, ... }: {
     imports = [
       ../../home/programs/claude.nix

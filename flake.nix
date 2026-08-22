@@ -12,37 +12,6 @@
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
-    };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    hashicorp-tap = {
-      url = "github:hashicorp/homebrew-tap";
-      flake = false;
-    };
-    homebrew-sfmono-nerd-font = {
-      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
-      flake = false;
-    };
-    retlehs-tap = {
-      url = "github:retlehs/homebrew-tap";
-      flake = false;
-    };
-    archon-tap = {
-      url = "github:coleam00/homebrew-archon";
-      flake = false;
-    };
     gh-enhance = {
       url = "github:dlvhdr/gh-enhance";
       flake = false;
@@ -59,14 +28,6 @@
       nixpkgs,
       home-manager,
       darwin,
-      nix-homebrew,
-      homebrew-bundle,
-      homebrew-core,
-      homebrew-cask,
-      hashicorp-tap,
-      homebrew-sfmono-nerd-font,
-      retlehs-tap,
-      archon-tap,
       gh-enhance,
       claude-code,
       herdr-worktreeinclude,
@@ -104,23 +65,6 @@
           users.users.${user} = {
             name = user;
             home = "/Users/albandiguer";
-          };
-        }
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            inherit user;
-            enable = true;
-            taps = {
-              "homebrew/homebrew-core" = homebrew-core;
-              "homebrew/homebrew-cask" = homebrew-cask;
-              "homebrew/homebrew-bundle" = homebrew-bundle;
-              "shaunsingh/SFMono-Nerd-Font-Ligaturized" = homebrew-sfmono-nerd-font;
-              "retlehs/homebrew-tap" = retlehs-tap;
-              "coleam00/homebrew-archon" = archon-tap;
-            };
-            mutableTaps = false;
-            autoMigrate = true;
           };
         }
         {

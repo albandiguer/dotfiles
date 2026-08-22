@@ -128,32 +128,6 @@
     };
   };
 
-  # NOTE: brews will be available accross all user sessions on the machine,
-  # for example tectonic is needed by Audrey
-  homebrew = {
-    enable = true;
-    taps = [
-    ];
-    brews = [
-      "gpg"
-      "libpq"
-      "nixfmt"
-      "retlehs/tap/quien"
-      "tectonic" # latex https://tectonic-typesetting.github.io/book/latest/introduction/index.html
-      "vips" # Image processing library
-      # "python-setuptools" # awsume deps
-    ];
-    casks = [
-      "dash"
-      "font-sf-mono-nerd-font-ligaturized"
-      "licecap"
-      "monitorcontrol"
-      "obsidian"
-      "raycast"
-      "slack"
-    ];
-  };
-
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config = {

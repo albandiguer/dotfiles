@@ -8,8 +8,12 @@ macOS config via Nix flakes (nix-darwin + home-manager).
    ```bash
    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
    ```
-2. Clone this repo
-3. `make`
+2. Install [Homebrew](https://brew.sh):
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+3. Clone this repo
+4. `make` (runs `nix-darwin` switch + `brew bundle`)
 
 ## Uninstall
 

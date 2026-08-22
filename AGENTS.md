@@ -38,6 +38,7 @@ make cleanup
 - `darwin/macbook.nix` — macOS system packages/settings
 - `home/users/albandiguer/home.nix` — user env via home-manager
 - `home/programs/` — modular per-tool configs
+- `homebrew/Brewfile` — Homebrew deps, all machines; `homebrew/Brewfile.<hostname>` for machine-specific (applied by `make apply` via `brew bundle`)
 
 ### Machine-Specific Configurations
 
@@ -49,7 +50,7 @@ Flake supports multiple machines (different git emails, Obsidian vault paths):
 ### Package Management Layers
 
 1. **System packages** — core tools in darwin/macbook.nix (incl claude-code)
-2. **Homebrew** — special install needs (not working in nix or not present)
+2. **Homebrew** — special install needs (not working in nix or not present), declared in `homebrew/Brewfile`/`homebrew/Brewfile.<hostname>`
 3. **User packages** — CLI utils in home.nix
 4. **Language tools** — mise with version files
 

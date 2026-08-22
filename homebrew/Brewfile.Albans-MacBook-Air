@@ -1,0 +1,7 @@
+# Personal machine (Albans-MacBook-Air) Homebrew dependencies.
+tap "coleam00/homebrew-archon"
+
+brew "archon"
+brew "podman" # linux-only in nixpkgs; brew ships the darwin client + podman machine
+brew "sandvault"
+
