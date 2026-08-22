@@ -19,7 +19,6 @@
     lazydocker # Docker TUI
     openssl
     icu # mise postgres deps
-    gitmux # git tmux integration
 
     # -- CLI Utilities --
     sox # audio sampler, whisper deps
