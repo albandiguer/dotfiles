@@ -6,11 +6,7 @@
     # -- Cloud & DevOps/Infra --
     awslogs
     cloudflared
-    k3d
     # localstack # aws mock
-    podman-compose
-    podman-tui
-    podlet # docker/compose -> quadlet
     ssm-session-manager-plugin # aws ecs execute-command  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
     butane # fedora coreOs configs (see ignition [and](https://github.com/coreos/butane/blob/main/docs/getting-started.md))
     lima # linux machine (microvms)
