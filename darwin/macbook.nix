@@ -4,26 +4,8 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     # -- Cloud & DevOps/Infra --
-    awslogs
     cloudflared
-    # localstack # aws mock
-    butane # fedora coreOs configs (see ignition [and](https://github.com/coreos/butane/blob/main/docs/getting-started.md))
     lima # linux machine (microvms)
-
-    # -- CLI Utilities --
-    sox # audio sampler, whisper deps
-    sshed # ssh config management
-    bitwarden-cli
-    bitwarden-desktop
-
-    # -- Presentation & Communication --
-    marp-cli # Markdown to Presentation tool
-
-    # -- AI related --
-    # ollama
-    # whisper-cpp # https://github.com/raycast/extensions/tree/603ada168a81f9acc062dc2ad524f157602423a7/extensions/whisper-dictation/#-whisper-dictation-for-raycast
-    # opencode  # Now managed via home-manager
-    rtk # https://www.rtk-ai.app/#install - token savvy bash output for llm ingestion
   ];
 
   # default nixbld (nix build) group
@@ -31,7 +13,6 @@
   users.groups.nixbld.gid = lib.mkDefault 30000;
 
   services = {
-    lorri.enable = false; # too painful, use mise
     sketchybar = {
       enable = false;
       config = builtins.readFile ../home/dotfiles/sketchybarrc;

@@ -13,6 +13,9 @@
       dive # docker image inspection
       ngrok
       overmind
+      awslogs # aws cloudwatch logs CLI
+      rtk # token-savvy llm output (claude-code + opencode)
+      butane # fedora coreOS ignition configs
 
       # Git Tools
       diffnav # git diff pager with file tree (used by gh-dash)
@@ -37,6 +40,10 @@
       watch # execute command periodically
       wget # file downloader
       qrencode # generate a qr code
+      sshed # ssh config management
+      bitwarden-cli
+      bitwarden-desktop # GUI app, linked into user profile
+      sox # audio sampler, whisper deps
 
       # Fonts
       lato # used by AltaCV
