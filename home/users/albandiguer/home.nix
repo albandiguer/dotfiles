@@ -106,7 +106,6 @@
     ../../programs/neovim
     ../../programs/starship.nix
     ../../programs/tmux
-    ../../programs/vscode.nix
     ../../programs/direnv.nix
     ../../programs/home-manager.nix
     ../../programs/mise.nix
