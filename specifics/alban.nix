@@ -10,7 +10,6 @@
 
     # Podman toolchain (the client itself is brew: podman is linux-only in nixpkgs)
     podman-compose
-    podman-tui
     podlet # docker/compose -> quadlet
   ];
 

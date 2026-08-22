@@ -39,7 +39,6 @@
       ob = "obsidian";
       oc = "opencode";
       prettyjson = "python -m json.tool";
-      ptui = "podman-tui";
       r = "bin/rails";
       s = "bin/rspec";
       sff = "bin/rspec --fail-fast";
