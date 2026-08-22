@@ -18,7 +18,7 @@
     sox # audio sampler, whisper deps
     sshed # ssh config management
     bitwarden-cli
-    bitwarden-desktop # broken: compiler-rt-18 incompatible with Apple SDK 26.4, moved to homebrew cask
+    bitwarden-desktop
 
     # -- Presentation & Communication --
     marp-cli # Markdown to Presentation tool
