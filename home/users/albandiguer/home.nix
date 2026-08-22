@@ -24,7 +24,6 @@
       nix-prefetch-github # not working at times cant verify sha256 sums
       worktrunk # [manage git worktree](https://github.com/max-sixty/worktrunk)
       git-spice
-      lefthook # https://lefthook.dev/
       tuicr # code reviews
 
       # Shell & CLI Utilities
