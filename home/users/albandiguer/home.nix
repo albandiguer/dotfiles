@@ -18,12 +18,8 @@
       butane # fedora coreOS ignition configs
 
       # Git Tools
-      diffnav # git diff pager with file tree (used by gh-dash)
-      cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
       nix-prefetch-git
       nix-prefetch-github # not working at times cant verify sha256 sums
-      worktrunk # [manage git worktree](https://github.com/max-sixty/worktrunk)
-      git-spice
       tuicr # code reviews
 
       # Shell & CLI Utilities

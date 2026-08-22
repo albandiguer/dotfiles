@@ -1,4 +1,10 @@
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    cz-cli # conventional commits cli https://github.com/commitizen/cz-cli
+    git-spice # git worktree stack (gs)
+  ];
+
   programs.git = {
     enable = true;
     signing.format = "openpgp";

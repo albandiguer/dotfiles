@@ -15,6 +15,8 @@ let
   };
 in
 {
+  home.packages = [ pkgs.diffnav ]; # git diff pager with file tree (used by gh-dash)
+
   xdg.configFile."gh-dash/config.yml".source = ../dotfiles/gh-dash/config.yml;
 
   programs.gh = {
