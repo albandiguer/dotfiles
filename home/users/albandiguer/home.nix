@@ -33,7 +33,6 @@
       duf # disk space etc
       jq # json processing
       jwt-cli # jwt decoder
-      posting # api cli client
       tldr # when man is tldr
       tree # directory structure viewer
       watch # execute command periodically
