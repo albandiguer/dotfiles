@@ -32,7 +32,6 @@
       jq # json processing
       jwt-cli # jwt decoder
       posting # api cli client
-      ripgrep
       tldr # when man is tldr
       tree # directory structure viewer
       watch # execute command periodically
