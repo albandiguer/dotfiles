@@ -61,7 +61,6 @@
       ".default-python-packages".source = ../../dotfiles/.default-python-packages;
       ".dive.yml".source = ../../dotfiles/.dive.yml;
       ".editorconfig".source = ../../dotfiles/.editorconfig;
-      ".gitmux.conf".source = ../../dotfiles/.gitmux.yaml;
       ".inputrc".source = ../../dotfiles/.inputrc;
       ".npmrc".source = ../../dotfiles/.npmrc;
       # ".ghstackrc".source = ../../dotfiles/.ghstackrc;
