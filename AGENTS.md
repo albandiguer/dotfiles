@@ -27,7 +27,7 @@ make cleanup
 ### Development Tools
 
 - **Mise** — primary tool version manager (replaces asdf)
-- **Fish shell** — abbreviations: `cc` (claude), `lg` (lazygit), `g` (git)
+- **Fish shell** — abbreviations: `cc` (claude, work), `lg` (lazygit), `g` (git)
 - **Tmux** — vi-mode bindings
 
 ## Architecture
@@ -49,7 +49,7 @@ Flake supports multiple machines (different git emails, Obsidian vault paths):
 
 ### Package Management Layers
 
-1. **System packages** — core tools in darwin/macbook.nix (incl claude-code)
+1. **System packages** — core tools in darwin/macbook.nix
 2. **Homebrew** — special install needs (not working in nix or not present), declared in `homebrew/Brewfile`/`homebrew/Brewfile.<hostname>`
 3. **User packages** — CLI utils in home.nix
 4. **Language tools** — mise with version files
@@ -58,7 +58,7 @@ Flake supports multiple machines (different git emails, Obsidian vault paths):
 
 ### Key Tools
 
-- **Claude Code CLI** — system-wide, aliased `cc`
+- **Claude Code CLI** — work machine (programs.claude-code), aliased `cc`
 - **Neovim** — kickstart.nvim base, AI integrations (Claude Code plugin)
 - **Lazygit** — visual git interface
 
