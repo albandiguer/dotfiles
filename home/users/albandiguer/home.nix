@@ -79,8 +79,8 @@
     sessionVariables = {
       EDITOR = "nvim";
       DEFAULT_AI_AGENT = lib.mkDefault "pi";
-      ANTHROPIC_BASE_URL = "https://headroom.lab/";
-      OPENAI_BASE_URL = "https://headroom.lab/";
+      ANTHROPIC_BASE_URL = "http://headroom.lab/";
+      OPENAI_BASE_URL = "http://headroom.lab/";
     };
 
     # This value determines the Home Manager release that your
