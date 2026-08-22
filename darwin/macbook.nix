@@ -16,7 +16,6 @@
     lima # linux machine (microvms)
 
     # -- Development Tools --
-    lazydocker # Docker TUI
     openssl
     icu # mise postgres deps
 

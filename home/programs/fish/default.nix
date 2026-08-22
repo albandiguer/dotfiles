@@ -30,7 +30,6 @@
       gd = "gh dash";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
       l = "eza -la";
-      ld = "lazydocker";
       lg = "lazygit";
       m = "make";
       mr = "mise run";
