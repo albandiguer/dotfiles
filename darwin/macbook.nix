@@ -10,10 +10,6 @@
     butane # fedora coreOs configs (see ignition [and](https://github.com/coreos/butane/blob/main/docs/getting-started.md))
     lima # linux machine (microvms)
 
-    # -- Development Tools --
-    openssl
-    icu # mise postgres deps
-
     # -- CLI Utilities --
     sox # audio sampler, whisper deps
     sshed # ssh config management

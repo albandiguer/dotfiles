@@ -8,7 +8,6 @@
     globalConfig = {
       tools = {
         "github:onlyati/quadlet-lsp" = "latest";
-        # postgres = "latest";
         aws-cli = "latest";
         gcloud = "latest";
         node = "latest";
