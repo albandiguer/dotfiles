@@ -12,6 +12,10 @@
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Nix-managed Homebrew install (brew binary from the nix store)
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
     gh-enhance = {
       url = "github:dlvhdr/gh-enhance";
       flake = false;
@@ -69,6 +73,15 @@
         }
         {
           nixpkgs.overlays = overlays;
+        }
+        inputs.nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            inherit user;
+            enable = true;
+            # Brewfiles manage taps; nix only provides the brew binary
+            mutableTaps = true;
+          };
         }
       ];
     in

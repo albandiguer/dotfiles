@@ -4,17 +4,16 @@ Findings from a review of the repo layout. The skeleton (darwin/ + home/programs
 
 ## Fix
 
-| # | Issue | Fix |
-| - | ----- | --- |
-| 1 | `fonts/` is a stale duplicate of `misc/fonts/` — gitignored, empty `out/`, and README's docker patcher command points at `~/dev/dotfiles/fonts/in` (wrong path) | Delete `fonts/`, update README to `misc/fonts` |
-| 2 | `result` symlink (nix build artifact → `/nix/store`) is committed | Add to `.gitignore`, `git rm --cached result` |
-| 3 | `home/programs/sops/` — zero references anywhere, not imported | Delete |
-| 4 | `home/programs/zsh/` — import commented out in home.nix (stale path `../../zsh`) | Delete or re-enable |
-| 5 | `home/dotfiles/.agents/hooks/` + `.agents/plugins/` — `.keep` placeholders, nothing loads them | Delete |
+| #   | Issue                                                                                                                                                           | Fix                                            |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1   | `fonts/` is a stale duplicate of `misc/fonts/` — gitignored, empty `out/`, and README's docker patcher command points at `~/dev/dotfiles/fonts/in` (wrong path) | Delete `fonts/`, update README to `misc/fonts` |
+| 2   | `result` symlink (nix build artifact → `/nix/store`) is committed                                                                                               | Add to `.gitignore`, `git rm --cached result`  |
+| 3   | `home/programs/sops/` — zero references anywhere, not imported                                                                                                  | Delete                                         |
+| 5   | `home/dotfiles/.agents/hooks/` + `.agents/plugins/` — `.keep` placeholders, nothing loads them                                                                  | Delete                                         |
 
 ## Cosmetic
 
-- `darwin/macbook.nix` is the *shared* module for both machines — "macbook" misleads. Rename to `darwin/default.nix` (update `flake.nix` reference).
+- `darwin/macbook.nix` is the _shared_ module for both machines — "macbook" misleads. Rename to `darwin/default.nix` (update `flake.nix` reference).
 
 ## Keep as-is
 

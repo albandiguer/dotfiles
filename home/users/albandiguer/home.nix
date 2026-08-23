@@ -7,37 +7,32 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      # Development Tools
       act # gh actions locally
-      buildpack # cloud native buildpacks, use pack..., checkout nixpacks
-      dive # docker image inspection
-      ngrok
-      overmind
       awslogs # aws cloudwatch logs CLI
-      rtk # token-savvy llm output (claude-code + opencode)
-      butane # fedora coreOS ignition configs
-
-      # Git Tools
-      nix-prefetch-git
-      nix-prefetch-github # not working at times cant verify sha256 sums
-      tuicr # code reviews
-
-      # Shell & CLI Utilities
       bash # macos is bash 3xx, need 4+
       bat # better cat
+      bitwarden-cli # pwd manager CLI
+      bitwarden-desktop # GUI app, linked into user profile
+      buildpack # cloud native buildpacks, use pack..., checkout nixpacks
+      butane # fedora coreOS ignition configs
       curlie # curl with easy syntax
+      dive # docker image inspection
       duf # disk space etc
       jq # json processing
       jwt-cli # jwt decoder
+      ngrok # tunneling
+      nix-prefetch-git # obtain source hashes for fetchgit
+      nix-prefetch-github # fetch sources from github when using fetchFromGitHub
+      overmind # Procfile based process manager
+      qrencode # generate a qr code
+      rtk # token-savvy llm output (claude-code + opencode)
+      sox # audio sampler, whisper deps
+      sshed # ssh config management
       tldr # when man is tldr
       tree # directory structure viewer
+      tuicr # tui for code reviews
       watch # execute command periodically
       wget # file downloader
-      qrencode # generate a qr code
-      sshed # ssh config management
-      bitwarden-cli
-      bitwarden-desktop # GUI app, linked into user profile
-      sox # audio sampler, whisper deps
 
       # Fonts
       lato # used by AltaCV
@@ -95,7 +90,6 @@
   };
 
   imports = [
-    # ../../zsh
     ../../programs/eza.nix
     ../../programs/fish
     ../../programs/atuin.nix
