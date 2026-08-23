@@ -27,16 +27,19 @@ nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uni
 ## 🔧 Tips
 
 **Patch a font with Nerd Fonts glyphs:**
+
 ```bash
 docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v ~/dev/dotfiles/fonts/out:/out nerdfonts/patcher
 ```
 
 **Fix Neovim markdown preview:**
+
 ```bash
 cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app && ./install.sh
 ```
 
 **Set up Molten (Jupyter in Neovim):**
+
 ```bash
 uv task run create-molten-env
 ```
