@@ -20,6 +20,7 @@
       br = "bin/rspec";
       bs = "brew search";
       c = "clear";
+      cr = "tuicr";
       db = "nvim +DBUI";
       dt = "diffity";
       g = "git";
