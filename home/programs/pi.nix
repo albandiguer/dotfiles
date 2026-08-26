@@ -13,6 +13,15 @@ let
           {
             id = "deepseek-v4-pro";
             name = "DeepSeek V4 Pro";
+            # Per-million-token USD rates (peak): cacheRead = cache-hit, cacheWrite = cache-miss.
+            # ponytail: pi has no time-of-day pricing; off-peak is 50% cheaper, use peak here.
+            cost = {
+              input = 1.32;
+              output = 3.96;
+              cacheRead = 0.044;
+              cacheWrite = 1.32;
+            };
+
             contextWindow = 1000000;
             maxTokens = 384000;
             input = [ "text" ];
@@ -28,6 +37,15 @@ let
           {
             id = "deepseek-v4-flash";
             name = "DeepSeek V4 Flash";
+            # Per-million-token USD rates (peak): cacheRead = cache-hit, cacheWrite = cache-miss.
+            # ponytail: pi has no time-of-day pricing; off-peak is 50% cheaper, use peak here.
+            cost = {
+              input = 0.44;
+              output = 1.32;
+              cacheRead = 0.014;
+              cacheWrite = 0.44;
+            };
+
             contextWindow = 1000000;
             maxTokens = 384000;
             input = [ "text" ];
