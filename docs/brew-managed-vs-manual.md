@@ -14,9 +14,7 @@ Homebrew dependencies are declared in `Brewfile` files, not in Nix. `make apply`
 | Package | File | Type |
 |---|---|---|
 | archon | personal | brew |
-| httpie (GUI) | personal | cask |
 | podman | personal | brew |
-| qrencode | personal | brew |
 | sandvault | personal | brew |
 | dash | both | cask |
 | font-sf-mono-nerd-font-ligaturized | both | cask |

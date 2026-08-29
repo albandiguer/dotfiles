@@ -59,7 +59,6 @@
           "Bash(bundle exec rubocop:*)"
           "Bash(bundle show:*)"
           "Bash(curl:*)"
-          "Bash(diffity *)"
           "Bash(export:*)"
           "Bash(gem which *)"
           "Bash(git checkout *)"

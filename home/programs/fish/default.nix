@@ -22,7 +22,6 @@
       c = "clear";
       cr = "tuicr";
       db = "nvim +DBUI";
-      dt = "diffity";
       g = "git";
       gd = "gh dash";
       interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
