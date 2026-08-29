@@ -93,9 +93,6 @@
           "Bash(rtk proxy gh pr status *)"
           "Bash(rtk proxy gh pr view *)"
           "Bash(rtk proxy gh run view *)"
-          "Bash(rtk proxy git --no-pager diff *)"
-          "Bash(rtk proxy git branch *)"
-          "Bash(rtk proxy git diff *)"
           "Bash(rtk proxy git log *)"
           "Bash(rtk proxy git show *)"
           "Bash(rtk proxy git status)"
@@ -117,6 +114,15 @@
           "mcp__plugin_context7_context7__query-docs"
           "mcp__plugin_context7_context7__resolve-library-id"
           "mcp__serena__*"
+        ];
+        # — force file ops through Serena MCP.
+        deny = [
+          "Read"
+          "Write"
+          "Edit"
+          "Grep"
+          "Glob"
+          "LS"
         ];
       };
     };
