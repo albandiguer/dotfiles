@@ -35,6 +35,7 @@
       nsn = "nix shell nixpkgs#";
       ob = "obsidian";
       oc = "opencode";
+      p = "planecli";
       prettyjson = "python -m json.tool";
       r = "bin/rails";
       s = "bin/rspec";
