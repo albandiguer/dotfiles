@@ -42,9 +42,6 @@
       overlays = [
         inputs.claude-code.overlays.default
         (_: prev: {
-          direnv = prev.direnv.overrideAttrs (_: {
-            doCheck = false;
-          });
           # ponytail: mise's oci setuid-bit test fails in the Nix build sandbox
           # and the pinned nixpkgs derivation misses cmake (libz-ng-sys needs it)
           mise = prev.mise.overrideAttrs (old: {

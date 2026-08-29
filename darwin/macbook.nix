@@ -60,7 +60,6 @@
   programs = {
     # Create /etc/zshrc that loads the nix-darwin environment.
     zsh.enable = true; # default shell on catalina
-    # direnv.enable = false; # in home-manager
     fish.enable = true;
   };
 
