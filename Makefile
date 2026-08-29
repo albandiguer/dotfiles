@@ -15,9 +15,7 @@ up: upgrade-nix
 	mise up
 	# Check for skill updates
 	npx skills check -g
-	npm update -g 
-	brew bundle --file=homebrew/Brewfile
-	@h=$$(scutil --get LocalHostName); if [ -f homebrew/Brewfile.$$h ]; then brew bundle --file=homebrew/Brewfile.$$h; fi
+	npm update -g
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate
