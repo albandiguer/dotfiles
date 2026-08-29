@@ -53,7 +53,6 @@
     file = {
       ".default-gems".source = ../../dotfiles/.default-gems; # TODO: move in mise.nix ?
       ".default-node-packages".source = ../../dotfiles/.default-node-packages;
-      ".default-python-packages".source = ../../dotfiles/.default-python-packages;
       ".dive.yml".source = ../../dotfiles/.dive.yml;
       ".editorconfig".source = ../../dotfiles/.editorconfig;
       ".inputrc".source = ../../dotfiles/.inputrc;

@@ -16,7 +16,7 @@
         terraform = "latest";
         pitchfork = "latest";
         hk = "latest";
-        uv = "latest"; # shall it be in nix instead?
+        uv = "latest";
         # Tools installed via uv (not declared here, installed imperatively):
         #   uv tool install git+https://github.com/cpatrickalves/plane-cli.git
         #   uv tool install graphifyy

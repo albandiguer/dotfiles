@@ -24,7 +24,6 @@
       db = "nvim +DBUI";
       g = "git";
       gd = "gh dash";
-      interpret = "mise x python@3.11 -- interpreter"; # -- pip install open-interpreter
       l = "eza -la";
       lg = "lazygit";
       m = "make";
@@ -35,7 +34,6 @@
       ob = "obsidian";
       oc = "opencode";
       p = "planecli";
-      prettyjson = "python -m json.tool";
       r = "bin/rails";
       s = "bin/rspec";
       sff = "bin/rspec --fail-fast";

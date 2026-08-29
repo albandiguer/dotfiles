@@ -13,19 +13,20 @@ Nix flake dotfiles: macOS system config (nix-darwin, `darwin/`) + user env (home
 - `make rollback` — rollback nix-darwin generation
 - `make cleanup` — GC old generations
 
-## Layout
+## Layout (package layers in priority order)
 
-- `darwin/macbook.nix` — system packages/settings
-- `home/users/albandiguer/home.nix` — user env, imports the modules below
-- `home/programs/` — one module per tool (incl. `neovim/`, config at `home/programs/neovim/nvim/`, custom plugins in `lua/custom/plugins/`)
-- `homebrew/` — Brewfiles (all machines + per-hostname)
+| #   | Path                              | Contents                                                                    |
+| --- | --------------------------------- | --------------------------------------------------------------------------- |
+| 1   | `darwin/macbook.nix`              | system packages/settings (systemPackages)                                   |
+| 2   | `homebrew/`                       | Brewfiles, all machines + `Brewfile.<hostname>` — things nix can't/won't do |
+| 3   | `home/users/albandiguer/home.nix` | user env: CLI tools/fonts; imports `home/programs/` (one module per tool)   |
+| 4   | `mise`                            | language runtimes; defaults in `home/dotfiles/.default-*`                   |
 
-## Package layers (order)
+**Rule of thumb:** default to `home.packages` unless a package needs system-wide visibility (services, other users, boot context, root). Only container/VM/service tooling goes in systemPackages — currently just `lima` (VMs) and `cloudflared` (system service).
 
-1. `darwin/macbook.nix` — system packages
-2. `homebrew/` — things nix can't/won't do
-3. `home.nix` — user CLI tools/fonts
-4. `mise` — language runtimes; defaults in `home/dotfiles/.default-*`
+Neovim config lives at `home/programs/neovim/nvim/`, custom plugins in `lua/custom/plugins/`.
+
+**Open question:** `mise.nix` has `uv = "latest"; # shall it be in nix instead?` — decide; if yes, move to home.packages and let mise manage only versioned tools.
 
 ## Machine-specific
 
