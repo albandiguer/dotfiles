@@ -1,105 +1,41 @@
 # AGENTS.md
 
-Guidance for AI coding agents (Claude Code, OpenCode) in this repo.
+Guidance for AI coding agents in this repo.
 
-## Repository Overview
+## What this is
 
-**Nix Flake-based dotfiles config** — macOS system configs (nix-darwin) + user environments (home-manager). System settings in `darwin/`, user configs in `home/`.
+Nix flake dotfiles: macOS system config (nix-darwin, `darwin/`) + user env (home-manager, `home/`). Homebrew deps in `homebrew/`.
 
-## Common Commands
+## Commands
 
-### Configuration Management
+- `make` / `make apply` — apply changes (nix-darwin switch + `brew bundle`, incl. per-hostname `Brewfile.<hostname>`)
+- `make up` — update flake inputs + apply
+- `make rollback` — rollback nix-darwin generation
+- `make cleanup` — GC old generations
 
-```bash
-# Apply configuration changes
-make apply  # or just `make`
+## Layout
 
-# Update flake inputs and apply changes
-make up
+- `darwin/macbook.nix` — system packages/settings
+- `home/users/albandiguer/home.nix` — user env, imports the modules below
+- `home/programs/` — one module per tool (incl. `neovim/`, config at `home/programs/neovim/nvim/`, custom plugins in `lua/custom/plugins/`)
+- `homebrew/` — Brewfiles (all machines + per-hostname)
 
-# Rollback to previous generation if something breaks
-make rollback
+## Package layers (order)
 
-# Clean up old system generations
-make cleanup
-```
+1. `darwin/macbook.nix` — system packages
+2. `homebrew/` — things nix can't/won't do
+3. `home.nix` — user CLI tools/fonts
+4. `mise` — language runtimes; defaults in `home/dotfiles/.default-*`
 
-### Development Tools
+## Machine-specific
 
-- **Mise** — primary tool version manager (replaces asdf)
-- **Fish shell** — abbreviations: `cc` (claude, work), `lg` (lazygit), `g` (git)
-- **Tmux** — vi-mode bindings
-
-## Architecture
-
-### Flake Structure
-
-- `flake.nix` — main config, inputs/outputs
-- `darwin/macbook.nix` — macOS system packages/settings
-- `home/users/albandiguer/home.nix` — user env via home-manager
-- `home/programs/` — modular per-tool configs
-- `homebrew/Brewfile` — Homebrew deps, all machines; `homebrew/Brewfile.<hostname>` for machine-specific (applied by `make apply` via `brew bundle`)
-
-### Machine-Specific Configurations
-
-Flake supports multiple machines (different git emails, Obsidian vault paths):
+Multiple machines (different git email, Obsidian vault path):
 
 - `Albans-MacBook-Air` (personal)
 - `Prettos-MacBook-Pro` (work)
 
-### Package Management Layers
+## Adding a program
 
-1. **System packages** — core tools in darwin/macbook.nix
-2. **Homebrew** — special install needs (not working in nix or not present), declared in `homebrew/Brewfile`/`homebrew/Brewfile.<hostname>`
-3. **User packages** — CLI utils in home.nix
-4. **Language tools** — mise with version files
-
-## Development Environment
-
-### Key Tools
-
-- **Claude Code CLI** — work machine (programs.claude-code), aliased `cc`
-- **Neovim** — kickstart.nvim base, AI integrations (Claude Code plugin)
-- **Lazygit** — visual git interface
-
-### Neovim Configuration
-
-Located `home/programs/neovim/nvim/`:
-
-- Custom plugins: `lua/custom/plugins/`
-- AI: claude-code.lua
-- Dev: rails.lua, dadbod.lua, jupyter.lua
-
-### Language/Runtime Management
-
-Mise handles: AWS CLI, Node.js, PostgreSQL, Ruby, Rust, Terraform, Python (UV)
-
-- Config: `home/programs/mise.nix`
-- Defaults: `home/dotfiles/.default-*` files
-
-## Configuration Patterns
-
-### Adding New Programs
-
-1. Create `home/programs/program-name.nix`:
-
-```nix
-{pkgs, ...}: {
-  programs.programName = {
-    enable = true;
-    # configuration
-  };
-}
-```
-
-2. Import in `home/users/albandiguer/home.nix`
-3. `make apply` to activate
-
-### System vs User Packages
-
-- **System packages** (darwin/macbook.nix): core system tools, AI dev tools
-- **User packages** (home.nix): CLI utils, fonts, dev tools not needing system integration
-
-## AI Development Focus
-
-Config optimized for AI-assisted dev — Claude Code, Neovim integrations. Fish shell has AI tool shortcuts, terminal env tuned for code interaction.
+1. Create `home/programs/<name>.nix` (`{pkgs, ...}: { programs.<name> = {...}; }`)
+2. Import it in `home/users/albandiguer/home.nix`
+3. `make apply`
