@@ -17,7 +17,7 @@ Nix flake dotfiles: macOS system config (nix-darwin, `darwin/`) + user env (home
 
 | #   | Path                              | Contents                                                                    |
 | --- | --------------------------------- | --------------------------------------------------------------------------- |
-| 1   | `darwin/macbook.nix`              | system packages/settings (systemPackages)                                   |
+| 1   | `darwin/default.nix`              | system packages/settings (systemPackages)                                   |
 | 2   | `homebrew/`                       | Brewfiles, all machines + `Brewfile.<hostname>` — things nix can't/won't do |
 | 3   | `home/users/albandiguer/home.nix` | user env: CLI tools/fonts; imports `home/programs/` (one module per tool)   |
 | 4   | `mise`                            | language runtimes; defaults in `home/dotfiles/.default-*`                   |

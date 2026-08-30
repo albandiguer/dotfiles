@@ -51,7 +51,7 @@
         })
       ];
       commonDarwinModules = [
-        ./darwin/macbook.nix
+        ./darwin/default.nix
         home-manager.darwinModules.home-manager
         {
           system.primaryUser = user;

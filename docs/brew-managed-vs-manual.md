@@ -3,7 +3,7 @@
 Homebrew dependencies are declared in `Brewfile` files, not in Nix. `make apply` runs `brew bundle` for the common `Brewfile` plus the machine-specific `Brewfile.<hostname>` if present.
 
 **Layout:** `homebrew/` directory at repo root:
-- `homebrew/Brewfile` — all machines (`darwin/macbook.nix` equivalent)
+- `homebrew/Brewfile` — all machines (`darwin/default.nix` equivalent)
 - `homebrew/Brewfile.Albans-MacBook-Air` — personal (`specifics/alban.nix` equivalent)
 - `homebrew/Brewfile.Prettos-MacBook-Pro` — work (`specifics/pretto.nix` equivalent)
 
