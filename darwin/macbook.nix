@@ -32,8 +32,6 @@
   };
 
   nix = {
-    package = pkgs.nix; # TODO figure what is it
-
     # Necessary for using flakes on this system.
     settings = {
       experimental-features = "nix-command flakes";
