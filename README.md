@@ -29,7 +29,7 @@ nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uni
 **Patch a font with Nerd Fonts glyphs:**
 
 ```bash
-docker run --rm -v ~/dev/dotfiles/fonts/in:/in -v ~/dev/dotfiles/fonts/out:/out nerdfonts/patcher
+docker run --rm -v ~/dev/dotfiles/misc/fonts/in:/in -v ~/dev/dotfiles/misc/fonts/out:/out nerdfonts/patcher
 ```
 
 **Fix Neovim markdown preview:**
