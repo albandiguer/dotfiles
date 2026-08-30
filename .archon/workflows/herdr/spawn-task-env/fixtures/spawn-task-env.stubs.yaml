@@ -1,0 +1,11 @@
+fixture:
+  expect: completed
+  inputs:
+    task: "fix the sidebar flicker"
+spawn:
+  output: |
+    worktree: /tmp/spawn-task-env/fix-sidebar (branch task/fix-the-sidebar-flicker)
+    workspace: w99
+    editor tab: nvim
+    pi agent: pi-deadbeef - fix the sidebar flicker
+    tuicr tab: live working-tree diff

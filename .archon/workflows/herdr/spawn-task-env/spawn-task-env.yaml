@@ -1,0 +1,28 @@
+name: spawn-task-env
+description: |
+  Use when: "spawn a herdr worktree for <task>", "herdr env for <task>",
+  "start working on <task> in herdr".
+  Does: Create a git worktree in its own Herdr workspace with three tabs - an
+  editor, a pi agent preloaded with the task, and tuicr showing the live
+  working-tree diff. Launcher only: it builds the environment and returns; the
+  pi agent in its tab does the actual work.
+inputs:
+  task:
+    default: ""
+    description: Task handed to the pi agent. Falls back to the invocation message.
+  branch:
+    default: ""
+    description: Worktree branch name. Defaults to task/<slugified task>.
+  base:
+    default: ""
+    description: Base ref for the worktree (defaults to current branch).
+  editor:
+    default: ""
+    description: Editor to open in the editor tab (defaults to the EDITOR env var, else nvim).
+returns: spawn
+mutates_checkout: false
+nodes:
+  - id: spawn
+    script: spawn-task-env
+    runtime: uv
+    timeout: 300000
