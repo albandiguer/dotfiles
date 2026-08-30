@@ -9,7 +9,6 @@
       tools = {
         "github:onlyati/quadlet-lsp" = "latest";
         aws-cli = "latest";
-        gcloud = "latest";
         node = "latest";
         ruby = "latest";
         rust = "latest";

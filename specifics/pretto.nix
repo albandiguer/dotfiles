@@ -17,6 +17,7 @@
       ../../home/programs/claude.nix
     ];
     programs.git.settings.user.email = lib.mkForce "alban.diguer@pretto.fr";
+    programs.mise.globalConfig.tools.gcloud = "latest";
     home.sessionVariables.OBSIDIAN_VAULT_PATH = "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Reliable Brain";
     home.sessionVariables.PRETTO_OBSIDIAN_VAULT_PATH = "/Users/albandiguer/Google Drive/My Drive/obsidian_vaults/Pretto";
     home.sessionVariables.CLAUDE_AGENTS_SUBFOLDER = "agents";
