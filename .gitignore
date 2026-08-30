@@ -7,3 +7,6 @@ home/dotfiles/.agents/skills/
 # Archon runtime artifacts — NEVER commit
 .archon/state/
 .archon/.env
+
+# nix build artifact
+result
