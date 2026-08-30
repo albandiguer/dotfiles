@@ -57,7 +57,6 @@
       ".editorconfig".source = ../../dotfiles/.editorconfig;
       ".inputrc".source = ../../dotfiles/.inputrc;
       ".npmrc".source = ../../dotfiles/.npmrc;
-      # ".ghstackrc".source = ../../dotfiles/.ghstackrc;
     };
 
     # Home Manager needs a bit of information about you and the
