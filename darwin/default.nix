@@ -66,32 +66,36 @@
       remapCapsLockToEscape = true;
     };
     # https://github.com/LnL7/nix-darwin/blob/master/tests/system-defaults-write.nix
-    defaults.NSGlobalDomain.InitialKeyRepeat = 15;
-    defaults.NSGlobalDomain.KeyRepeat = 2;
+    defaults = {
+      NSGlobalDomain = {
+        InitialKeyRepeat = 15;
+        KeyRepeat = 2;
 
-    # Disable system sounds
-    defaults.NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
-    defaults.NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
+        # Disable system sounds
+        "com.apple.sound.beep.feedback" = 0;
+        "com.apple.sound.beep.volume" = 0.0;
+      };
 
-    # Disable Spotlight hotkeys (Cmd+Space and Cmd+Alt+Space) in favor of Raycast
-    defaults.CustomUserPreferences = {
-      "com.apple.symbolichotkeys" = {
-        AppleSymbolicHotKeys = {
-          # Disable 'Cmd + Space' for Spotlight Search
-          "64" = {
-            enabled = false;
-          };
-          # Disable 'Cmd + Alt + Space' for Finder search window
-          "65" = {
-            enabled = false;
-          };
-          # Disable 'Ctrl + Space' for Select previous input source
-          "60" = {
-            enabled = false;
-          };
-          # Disable 'Ctrl + Alt + Space' for Select next input source
-          "61" = {
-            enabled = false;
+      # Disable Spotlight hotkeys (Cmd+Space and Cmd+Alt+Space) in favor of Raycast
+      CustomUserPreferences = {
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            # Disable 'Cmd + Space' for Spotlight Search
+            "64" = {
+              enabled = false;
+            };
+            # Disable 'Cmd + Alt + Space' for Finder search window
+            "65" = {
+              enabled = false;
+            };
+            # Disable 'Ctrl + Space' for Select previous input source
+            "60" = {
+              enabled = false;
+            };
+            # Disable 'Ctrl + Alt + Space' for Select next input source
+            "61" = {
+              enabled = false;
+            };
           };
         };
       };
