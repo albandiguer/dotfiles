@@ -77,6 +77,11 @@
     # https://stackoverflow.com/questions/34216850/how-to-prevent-fish-shell-from-closing-when-typing-ctrl-d-eof
     interactiveShellInit = builtins.readFile ./interactiveShellInit.fish;
 
+    # bitwarden desktop ssh-agent socket
+    shellInit = ''
+      set -gx SSH_AUTH_SOCK "$HOME/.bitwarden-ssh-agent.sock"
+    '';
+
     # https://github.com/budimanjojo/tmux.fish
   };
 }
