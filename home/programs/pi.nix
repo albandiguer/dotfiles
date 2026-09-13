@@ -35,8 +35,8 @@ let
             };
           }
           {
-            id = "deepseek-v4-flash";
-            name = "DeepSeek V4 Flash";
+            id = "deepseek-flash";
+            name = "DeepSeek Flash";
             # Per-million-token USD rates (peak): cacheRead = cache-hit, cacheWrite = cache-miss.
             # ponytail: pi has no time-of-day pricing; off-peak is 50% cheaper, use peak here.
             cost = {

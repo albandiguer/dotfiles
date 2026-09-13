@@ -20,8 +20,8 @@ in
         # Pro = architecture/planning, Flash = implementation and cheap tasks.
         tiers:
           large: { provider: pi, model: deepseek/deepseek-v4-pro }
-          medium: { provider: pi, model: deepseek/deepseek-v4-flash }
-          small: { provider: pi, model: deepseek/deepseek-v4-flash }
+          medium: { provider: pi, model: deepseek/deepseek-flash }
+          small: { provider: pi, model: deepseek/deepseek-flash }
       '';
   };
 }
