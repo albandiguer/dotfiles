@@ -30,7 +30,6 @@
       sshed # ssh config management
       tldr # when man is tldr
       tree # directory structure viewer
-      tuicr # tui for code reviews
       watch # execute command periodically
       wget # file downloader
 
@@ -109,5 +108,6 @@
     ../../programs/zoxide.nix
     ../../programs/worktrunk.nix
     ../../programs/herdr.nix
+    ../../programs/tuicr.nix
   ];
 }
