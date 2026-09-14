@@ -29,6 +29,8 @@
       dkc = "podman-compose";
       dkcd = "podman-compose down";
       dkcud = "podman-compose up -d";
+      a = "archon";
+      aw = "archon workflow";
     };
   };
 }

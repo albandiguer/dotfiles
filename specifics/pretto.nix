@@ -27,6 +27,8 @@
         dkc = "docker compose";
         dkcd = "docker compose down";
         dkcud = "docker compose up -d";
+        a = "archon";
+        aw = "archon workflow";
       };
     };
     home.sessionVariables = {
