@@ -14,11 +14,13 @@
 
   home-manager.users.albandiguer = { config, ... }: {
     imports = [
-      ../../home/programs/claude.nix
+      ../home/programs/claude.nix
     ];
     programs = {
       git.settings.user.email = lib.mkForce "alban.diguer@pretto.fr";
       mise.globalConfig.tools.gcloud = "latest";
+      # Work-only: added on top of the common list in programs/mise.nix
+      mise.nodeDefaultPackages = [ "@schpet/linear-cli" ];
       fish.shellAbbrs = {
         cc = "claude"; # claude code
         dk = "docker";
