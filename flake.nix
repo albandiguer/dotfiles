@@ -16,10 +16,6 @@
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
     };
-    gh-enhance = {
-      url = "github:dlvhdr/gh-enhance";
-      flake = false;
-    };
     try.url = "github:tobi/try";
     herdr-worktreeinclude = {
       url = "github:tanshio/herdr-worktreeinclude";
@@ -32,7 +28,6 @@
       nixpkgs,
       home-manager,
       darwin,
-      gh-enhance,
       claude-code,
       herdr-worktreeinclude,
       ...
@@ -58,7 +53,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit gh-enhance herdr-worktreeinclude;
+            inherit herdr-worktreeinclude;
             try = inputs.try;
             neovim-nightly-overlay = inputs.neovim-nightly-overlay;
           };

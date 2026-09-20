@@ -84,14 +84,6 @@ defaults:
         width: 20
         hidden: true
   refetchIntervalMinutes: 30
-keybindings:
-  prs:
-    - key: H
-      name: enHance PR (CI)
-      command: gh enhance -R {{.RepoName}} {{.PrNumber}}
-    - key: F
-      name: Full review in worktree
-      command: 'sh -c "cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json headRefName --jq .headRefName | xargs wt switch --create"'
 repoPaths:
   albandiguer/*: ~/dev/*
   finspot/pretto: ~/dev/finspot/pretto

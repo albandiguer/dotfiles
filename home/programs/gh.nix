@@ -1,19 +1,7 @@
 {
   pkgs,
-  gh-enhance,
   ...
 }:
-let
-  gh-enhance-pkg = pkgs.buildGoModule {
-    pname = "gh-enhance";
-    version = "latest";
-    src = gh-enhance;
-    vendorHash = "sha256-rv2LbIsPgX0sjIhVyaGEaqAZgXbempIi8jfxaA7Tufs=";
-
-    # Ignore the vendor directory in source and generate fresh vendor from go.mod
-    proxyVendor = true;
-  };
-in
 {
   home.packages = [ pkgs.diffnav ]; # git diff pager with file tree (used by gh-dash)
 
@@ -24,7 +12,6 @@ in
     extensions = with pkgs; [
       github-copilot-cli
       gh-dash
-      gh-enhance-pkg
     ];
     settings = {
       aliases = {
