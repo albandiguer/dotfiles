@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 # Pi — multi-provider LLM agent CLI (https://github.com/earendil-works/pi)
 let
   # DeepSeek V4 models (absent from Pi's static catalog), without the apiKey:
@@ -67,6 +67,11 @@ in
   # Only for Archon: its bundled Pi SDK (unlike standalone Pi) requires a literal
   # inline apiKey for custom providers — no auth.json fallback, no $VAR expansion.
   # So inject the key from auth.json into models.json at activation.
+  # Symlink settings.json to the repo — pi writes lastChangelogVersion and
+  # Ctrl+S saves back here, so edits land in the dotfiles working tree.
+  home.file.".pi/agent/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "/Users/albandiguer/dev/dotfiles/home/dotfiles/.pi/agent/settings.json";
+
   home.activation.piModelsJson = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     authFile="$HOME/.pi/agent/auth.json"
     out="$HOME/.pi/agent/models.json"
