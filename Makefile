@@ -16,6 +16,8 @@ up: upgrade-nix
 	# Check for skill updates
 	npx skills check -g
 	npm update -g
+	pi update 
+	pi update --extensions
 	# TODO:
 	# nvim +Lazy\ update
 	# nvim +MasonToolsUpdate
