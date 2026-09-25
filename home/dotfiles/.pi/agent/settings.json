@@ -11,6 +11,7 @@
   ],
   "packages": [
     "npm:pi-serena-tools",
-    "git:github.com/DietrichGebert/ponytail"
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@upstash/context7-pi"
   ]
 }
