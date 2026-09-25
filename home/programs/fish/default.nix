@@ -15,12 +15,12 @@
 
     shellAbbrs = {
       b = "bin/bundle";
-      bd = "bin/dev";
       be = "bundle exec";
       br = "bin/rspec";
       bs = "brew search";
       c = "clear";
       cr = "tuicr";
+      d = "bin/dev";
       db = "nvim +DBUI";
       g = "git";
       gd = "gh dash";

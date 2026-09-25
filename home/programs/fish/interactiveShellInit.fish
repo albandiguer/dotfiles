@@ -15,6 +15,11 @@ if command -v podman > /dev/null
 	set -gx DOCKER_HOST (podman machine inspect | jq -r '.[0].ConnectionInfo.PodmanSocket.Path | sub("^"; "unix://")')
 end
 
+# beads (bd) shell completion
+if command -v bd > /dev/null
+    bd completion fish | source
+end
+
 # git-spice (gs) shell completion
 function __complete_gs
 	set -lx COMP_LINE (commandline -cp)
