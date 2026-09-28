@@ -1,0 +1,47 @@
+{
+  "providers": {
+    "deepseek": {
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "cost": {
+            "input": 1.32,
+            "output": 3.96,
+            "cacheRead": 0.044,
+            "cacheWrite": 1.32
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
+          "reasoning": true,
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "supportsDeveloperRole": false
+          }
+        },
+        {
+          "id": "deepseek-flash",
+          "name": "DeepSeek Flash",
+          "cost": {
+            "input": 0.44,
+            "output": 1.32,
+            "cacheRead": 0.014,
+            "cacheWrite": 0.44
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
+          "reasoning": true,
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "supportsDeveloperRole": false
+          }
+        }
+      ]
+    }
+  }
+}
