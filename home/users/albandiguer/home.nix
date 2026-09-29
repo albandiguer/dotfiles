@@ -94,6 +94,7 @@
     ../../programs/carapace.nix
     ../../programs/git.nix
     ../../programs/gh.nix
+    ../../programs/ghostty.nix
     ../../programs/neovim
     ../../programs/starship.nix
     ../../programs/tmux
