@@ -6,10 +6,10 @@
     package = pkgs.ghostty-bin;
     settings = {
       # https://ghostty.org/docs/config/reference
-      # matches home/programs/wezterm/wezterm.lua
       font-family = "VictorMono Nerd Font";
       font-style = "SemiBold";
-      font-size = 16;
+      font-size = 15;
+      adjust-cell-height = "20%";
     };
   };
 }
