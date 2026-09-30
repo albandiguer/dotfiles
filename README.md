@@ -32,8 +32,8 @@ nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uni
 docker run --rm -v ~/dev/dotfiles/misc/fonts/in:/in -v ~/dev/dotfiles/misc/fonts/out:/out nerdfonts/patcher
 ```
 
-**Set up Molten (Jupyter in Neovim):**
+**Rebuild the code knowledge graph** (see tool [graphify](https://github.com/safishamsi/graphify)):
 
 ```bash
-uv task run create-molten-env
+DEEPSEEK_API_KEY=<key> graphify .               # full build incl. docs; needs an LLM key, e.g. DEEPSEEK_API_KEY
 ```

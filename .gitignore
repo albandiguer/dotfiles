@@ -9,3 +9,5 @@ home/dotfiles/.agents/skills/
 
 # nix build artifact
 result
+
+graphify-out/

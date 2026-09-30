@@ -26,6 +26,8 @@ Nix flake dotfiles: macOS system config (nix-darwin, `darwin/`) + user env (home
 
 Neovim config lives at `home/programs/neovim/nvim/`, custom plugins in `lua/custom/plugins/`.
 
+See `docs/` for how things are managed outside Nix: `brew-managed-vs-manual.md`, `uv-tool-installs.md`.
+
 **Open question:** `mise.nix` has `uv = "latest"; # shall it be in nix instead?` — decide; if yes, move to home.packages and let mise manage only versioned tools.
 
 ## Machine-specific

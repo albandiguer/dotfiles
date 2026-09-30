@@ -1,0 +1,13 @@
+amends "package://github.com/jdx/hk/releases/download/v2.4.0/hk@2.4.0#/Config.pkl"
+
+hooks {
+  ["post-commit"] {
+    steps {
+      // Refresh the knowledge graph after each commit.
+      // Code-only update: local AST, no LLM key needed.
+      ["graphify"] {
+        check = "graphify update ."
+      }
+    }
+  }
+}
