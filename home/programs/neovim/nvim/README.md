@@ -46,19 +46,6 @@ vim.lsp.enable('ruby_lsp')
 vim.cmd.colorscheme("melange")
 ```
 
-## Molten
-
-to add a virtualenv and a kernel for molten use `mise task run molten-setup` (see mise config)
-
-```fish
-# activate venv
-source ~/.virtualenvs/molten/bin/activate.fish
-# list pkgs
-uv pip list
-# deactivate
-deactivate
-```
-
 ## exrc
 
 Trust files manually using `:trust` command, remove some using `:trust ++deny`,
