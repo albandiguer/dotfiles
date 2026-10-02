@@ -747,6 +747,7 @@ require('lazy').setup({
         'herb_ls',
         'html',
         'jsonls',
+        'fish_lsp',
         'latexindent',
         'lua_ls',
         'marksman',
