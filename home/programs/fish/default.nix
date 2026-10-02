@@ -84,4 +84,9 @@
 
     # https://github.com/budimanjojo/tmux.fish
   };
+
+  # Sourcing `bd completion fish` in interactiveShellInit doesn't stick: Home Manager
+  # rewrites fish_complete_path after it, which drops completions for a command that has
+  # no autoload file. Putting the sourcing *in* the autoload file runs it at Tab time.
+  home.file.".config/fish/completions/bd.fish".text = "bd completion fish | source";
 }
