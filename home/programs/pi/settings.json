@@ -1,20 +1,20 @@
 {
-  "lastChangelogVersion": "0.99.2",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-flash",
-  "defaultThinkingLevel": "medium",
-  "theme": "dark",
-  "enabledModels": [
-    "deepseek/deepseek-flash",
-    "deepseek/deepseek-v4-pro",
-    "opencode/kimi-k2.6"
-  ],
-  "packages": [
-    "git:github.com/DietrichGebert/ponytail",
-    "npm:@upstash/context7-pi",
-    "npm:graphify-pi",
-    "npm:pi-beads-extension",
-    "npm:pi-permissions",
-    "npm:pi-serena-tools"
-  ]
+	"lastChangelogVersion": "0.99.2",
+	"defaultProvider": "deepseek",
+	"defaultModel": "deepseek-flash",
+	"defaultThinkingLevel": "medium",
+	"theme": "dark",
+	"enabledModels": [
+		"deepseek/deepseek-flash",
+		"deepseek/deepseek-v4-pro",
+		"opencode/kimi-k2.6"
+	],
+	"packages": [
+		"git:github.com/DietrichGebert/ponytail",
+		"npm:@upstash/context7-pi",
+		"npm:graphify-pi",
+		"npm:pi-beads-extension",
+		"npm:pi-permissions",
+		"npm:pi-serena-tools"
+	]
 }
