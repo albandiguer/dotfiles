@@ -45,7 +45,7 @@ return {
       { '<leader>c', group = '[C]laude' },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      { '<leader>O', group = '[O]cto' },
+      { '<leader>p', group = '[P]i' },
       { '<leader>ob', group = '[Ob]sidian' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]earch' },

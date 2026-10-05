@@ -108,6 +108,16 @@ theme:
     table:
       showSeparator: true
       compact: false
+keybindings:
+  prs:
+    # review the selected PR in tuicr (code review TUI, vim keys, exports back
+    # to GitHub). `tuicr pr <owner/repo>#<N>` fetches the PR from the API, so
+    # no local checkout or `repoPaths` mapping is needed. Opens in a new tmux
+    # window with gh-dash's cwd inherited.
+    - key: b
+      name: review in tuicr
+      command: >
+        tmux new-window 'tuicr pr {{.RepoName}}#{{.PrNumber}}'
 pager:
   diff: diffnav
 confirmQuit: false
