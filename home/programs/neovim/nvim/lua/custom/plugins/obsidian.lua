@@ -5,9 +5,10 @@ return {
       { '<leader>obLn', ':Obsidian link_new<CR>', { noremap = true, silent = true, desc = 'Link New' } },
       { '<leader>obLs', ':Obsidian links<CR>', { noremap = true, silent = true, desc = 'Links' } },
       { '<leader>obT', ':Obsidian TOC<CR>', { noremap = true, silent = true, desc = 'TOC' } },
+      { '<leader>obd', ':Obsidian today<CR>', { noremap = true, silent = true, desc = 'Daily Note (today)' } },
+      { '<leader>obD', ':Obsidian dailies<CR>', { noremap = true, silent = true, desc = 'Daily Notes (pick)' } },
       { '<leader>obe', ':Obsidian extract_note<CR>', mode = 'v', desc = 'Extract Note' },
       { '<leader>obl', ':Obsidian link<CR>', { noremap = true, silent = true, desc = 'Link' } },
-      { '<leader>obn', ':Obsidian unique_note<CR>', { noremap = true, silent = true, desc = 'Unique Note (inbox)' } },
       { '<leader>obo', ':Obsidian open<CR>', { noremap = true, silent = true, desc = 'Open in Desktop app' } },
       { '<leader>obq', ':Obsidian quick_switch<CR>', { noremap = true, silent = true, desc = 'Quick Switch' } },
       { '<leader>obr', ':Obsidian rename<CR>', { noremap = true, silent = true, desc = 'Rename' } },
@@ -29,18 +30,20 @@ return {
       workspaces = {
         {
           name = 'Reliable Brain',
-          path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/Google Drive/obsidian_vaults/Reliable Brain',
+          path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/obsidian_vaults/Reliable Brain',
         },
         {
           name = 'Pretto',
-          path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/Google Drive/obsidian_vaults/Pretto',
+          path = os.getenv 'OBSIDIAN_VAULT_PATH' or '~/obsidian_vaults/Pretto',
         },
       },
       daily_notes = {
-        -- Optional, if you keep daily notes in a separate directory.
-        -- folder = "&#128198;" -- 📆
+        -- Matches Obsidian's daily-notes config in "Reliable Brain":
+        -- folder = "weeklies", format = "YYYY/[W]W" -> weeklies/2026/W23.md
+        -- `:Obsidian today` opens today's note, creating it from the template if missing.
         folder = 'weeklies',
-        template = '_assets/templates/daily.md',
+        date_format = 'YYYY/[W]W',
+        template = '_assets/templates/weekly.md',
       },
       -- Where to put new notes. Valid options are
       -- _ "current_dir" - put new notes in same directory as the current buffer.
@@ -53,20 +56,7 @@ return {
       note_id_func = function(title)
         local usec = vim.loop.gettimeofday()
         local cs = math.floor((usec % 1000000) / 10000)
-        return os.date('%Y%m%d%H%M%S') .. string.format('%02d', cs)
-      end,
-
-      note_func = function(title)
-        local usec = vim.loop.gettimeofday()
-        local cs = math.floor((usec % 1000000) / 10000)
-        local id = os.date('%Y%m%d%H%M%S') .. string.format('%02d', cs)
-        if title and #title > 0 then
-          -- Extracted notes: same directory, timestamp filename
-          return id .. '.md'
-        else
-          -- Unique notes: inbox folder, timestamp filename
-          return 'inbox/' .. id .. '.md'
-        end
+        return os.date '%Y%m%d%H%M%S' .. string.format('%02d', cs)
       end,
 
       templates = {
