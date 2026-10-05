@@ -13,13 +13,13 @@ in
           claude:
             claudeBinaryPath: ${claudeBinPath}
           pi:
-            model: deepseek/deepseek-v4-pro
+            model: deepseek/deepseek-flash
 
         # Model tiers — remap bundled workflows' small/medium/large refs (tier
         # provider wins over the workflow's pinned provider, per Archon docs).
         # Pro = architecture/planning, Flash = implementation and cheap tasks.
         tiers:
-          large: { provider: pi, model: deepseek/deepseek-v4-pro }
+          large: { provider: pi, model: deepseek/deepseek-flash }
           medium: { provider: pi, model: deepseek/deepseek-flash }
           small: { provider: pi, model: deepseek/deepseek-flash }
       '';
