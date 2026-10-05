@@ -1,6 +1,8 @@
 return {
   'schickling/vim-bufonly',
   keys = {
-    { "'", ':Bonly<CR>', 'Kill all but current buffer' },
+    -- NOTE: `<leader>bd` instead of the default `'`: mapping `'` shadows the
+    -- built-in mark-jump motion.
+    { '<leader>bd', ':Bonly<CR>', desc = 'Delete all but current buffer' },
   },
 }

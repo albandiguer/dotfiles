@@ -16,4 +16,3 @@ vim.api.nvim_set_keymap('n', '<Leader>T', ':lua SendToTmuxPane(false)<CR>', { no
 
 require('luasnip').filetype_extend('ruby', { 'rails' })
 require('luasnip').filetype_extend('eruby', { 'html' })
-

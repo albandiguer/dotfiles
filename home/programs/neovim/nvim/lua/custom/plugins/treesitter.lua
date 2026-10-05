@@ -1,0 +1,41 @@
+return {
+  'nvim-treesitter/nvim-treesitter',
+  branch = 'main',
+  build = ':TSUpdate',
+  config = function()
+    -- main branch (Neovim 0.10+): highlighting and indent are handled natively.
+    require('nvim-treesitter').setup {
+      ensure_installed = {
+        'apex',
+        'bash',
+        'bibtex',
+        'cmake',
+        'dockerfile',
+        'editorconfig',
+        'fish',
+        'gitcommit',
+        'gitignore',
+        'graphql',
+        'haskell',
+        'hcl',
+        'html',
+        'javascript',
+        'jq',
+        'json',
+        'lua',
+        'mermaid',
+        'nix',
+        'python',
+        'query',
+        'ruby',
+        'sql',
+        'terraform',
+        'typescript',
+        'vim',
+        'vimdoc',
+        'yaml',
+      },
+      auto_install = true,
+    }
+  end,
+}

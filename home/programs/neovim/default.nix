@@ -16,9 +16,7 @@
     withRuby = false; # using mise, type `:!which ruby` to confirm
     withPython3 = true; # Explicitly set to silence warning
 
-    plugins = [ ];
-
-    # xtra packages available to neovim
+    # extra packages available inside neovim
     extraPackages = with pkgs; [
       # deno # for peek.nvim
       cargo
