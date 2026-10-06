@@ -1,8 +1,15 @@
 {
-  "permissions": {
-    "deny": [
-      "Bash(git commit *)",
-      "Bash(git push *)"
-    ]
-  }
+	"permissions": {
+		"deny": [
+			"Bash(git commit *)",
+			"Bash(git push *)",
+			"Bash(*terraform*apply*)",
+			"Bash(*terraform*destroy*)",
+			"Bash(*terraform*import*)",
+			"Bash(*terraform*force-unlock*)",
+			"Bash(*terraform*state rm*)",
+			"Bash(*terraform*state mv*)",
+			"Bash(*terraform*state push*)"
+		]
+	}
 }
