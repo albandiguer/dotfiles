@@ -2,11 +2,12 @@ return {
   {
     'obsidian-nvim/obsidian.nvim',
     keys = {
+      { '<leader>obD', ':Obsidian dailies<CR>', { noremap = true, silent = true, desc = 'Daily Notes (pick)' } },
       { '<leader>obLn', ':Obsidian link_new<CR>', { noremap = true, silent = true, desc = 'Link New' } },
       { '<leader>obLs', ':Obsidian links<CR>', { noremap = true, silent = true, desc = 'Links' } },
       { '<leader>obT', ':Obsidian TOC<CR>', { noremap = true, silent = true, desc = 'TOC' } },
+      { '<leader>obb', ':Obsidian bookmarks<CR>', { noremap = true, silent = true, desc = 'Bookmarks' } },
       { '<leader>obd', ':Obsidian today<CR>', { noremap = true, silent = true, desc = 'Daily Note (today)' } },
-      { '<leader>obD', ':Obsidian dailies<CR>', { noremap = true, silent = true, desc = 'Daily Notes (pick)' } },
       { '<leader>obe', ':Obsidian extract_note<CR>', mode = 'v', desc = 'Extract Note' },
       { '<leader>obl', ':Obsidian link<CR>', { noremap = true, silent = true, desc = 'Link' } },
       { '<leader>obo', ':Obsidian open<CR>', { noremap = true, silent = true, desc = 'Open in Desktop app' } },
