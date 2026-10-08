@@ -32,6 +32,12 @@ nix --extra-experimental-features "nix-command flakes" run nix-darwin#darwin-uni
 docker run --rm -v ~/dev/dotfiles/misc/fonts/in:/in -v ~/dev/dotfiles/misc/fonts/out:/out nerdfonts/patcher
 ```
 
+**Fix Neovim markdown preview:**
+
+```bash
+cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app && ./install.sh
+```
+
 **Rebuild the code knowledge graph** (see tool [graphify](https://github.com/safishamsi/graphify)):
 
 ```bash
