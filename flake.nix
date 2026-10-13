@@ -43,6 +43,15 @@
             doCheck = false;
             nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.cmake ];
           });
+
+          # NOTE: sesh builds go-mockery 3.8.0 as a codegen step, but mockery's
+          # vendored x/tools only reads Go export data v4 while Go 1.27 emits
+          # v5, so mockery can't load packages. sesh's go.mod needs only 1.26.
+          sesh = prev.sesh.override { buildGo127Module = prev.buildGo126Module; };
+
+          # atuin's e2e (pty/capture) tests time out in the Nix build sandbox
+          # on aarch64-darwin; the CLI itself is fine.
+          atuin = prev.atuin.overrideAttrs (_: { doCheck = false; });
         })
       ];
       commonDarwinModules = [
