@@ -10,8 +10,10 @@ brew "tectonic"
 brew "vips"
 
 # Casks (GUI apps)
+cask "cryptomator"
 cask "dash"
 cask "font-sf-mono-nerd-font-ligaturized"
+cask "fuse-t" # kext-free FUSE provider; needed by Cryptomator to mount vaults
 cask "licecap"
 cask "ghostty"
 cask "monitorcontrol"
