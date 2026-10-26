@@ -21,6 +21,10 @@
       url = "github:tanshio/herdr-worktreeinclude";
       flake = false;
     };
+    herdr-workspace-manager = {
+      url = "github:razajamil/herdr-plugin-workspace-manager/v0.8.0";
+      flake = false;
+    };
   };
 
   outputs =
@@ -63,6 +67,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             inherit herdr-worktreeinclude;
+            inherit (inputs) herdr-workspace-manager;
             try = inputs.try;
             neovim-nightly-overlay = inputs.neovim-nightly-overlay;
           };

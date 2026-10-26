@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/razajamil/herdr-plugin-workspace-manager/v0.8.0/schema.json
+#
+# Applied automatically to every fresh worktree workspace.
+# The first tab replaces the initial tab; later tabs are appended.
+globalLayout: default
+
+layouts:
+  - id: default
+    tabs:
+      - title: nvim
+        panes:
+          - title: nvim
+            command: nvim .
+      - title: shell
+        panes:
+          - title: shell
+      - title: review
+        panes:
+          - title: review
+            command: tuicr
+      - title: lazygit
+        panes:
+          - title: lazygit
+            command: lazygit
+      - title: agent 1
+        panes:
+          - title: agent 1
+            agent: pi
+      - title: agent 2
+        panes:
+          - title: agent 2

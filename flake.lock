@@ -96,6 +96,23 @@
         "type": "github"
       }
     },
+    "herdr-workspace-manager": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787472887,
+        "narHash": "sha256-RxSu8rUBa+OOFMNznGVjRIjAXB5ovsuOY22mJ9yLrEw=",
+        "owner": "razajamil",
+        "repo": "herdr-plugin-workspace-manager",
+        "rev": "8302970a088b8dff4aca9a3d9034907d66be80a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "razajamil",
+        "ref": "v0.8.0",
+        "repo": "herdr-plugin-workspace-manager",
+        "type": "github"
+      }
+    },
     "herdr-worktreeinclude": {
       "flake": false,
       "locked": {
@@ -269,6 +286,7 @@
       "inputs": {
         "claude-code": "claude-code",
         "darwin": "darwin",
+        "herdr-workspace-manager": "herdr-workspace-manager",
         "herdr-worktreeinclude": "herdr-worktreeinclude",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
