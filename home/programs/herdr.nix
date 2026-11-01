@@ -11,6 +11,18 @@ let
     doCheck = false;
   };
 
+  # Upstream copies matches with `cp -p`, which follows symlinks and silently
+  # skips a symlink to a directory. In a repo whose `.beads` links to the parent
+  # checkout's database, the new worktree would end up with no `.beads` at all;
+  # recreate the link (target resolved) instead of copying it.
+  worktreeIncludePlugin = pkgs.runCommand "herdr-worktreeinclude-plugin" { } ''
+    cp -r ${herdr-worktreeinclude}/. $out
+    chmod -R u+w $out
+    substituteInPlace $out/copy-worktreeinclude.sh --replace-fail \
+      'cp -p "$abs" "$checkout/$f"' \
+      'if [ -L "$abs" ]; then ln -sfn "$(readlink -f "$abs")" "$checkout/$f"; else cp -p "$abs" "$checkout/$f"; fi'
+  '';
+
   workspaceManagerPlugin = pkgs.runCommand "herdr-workspace-manager-plugin" { } ''
     mkdir -p $out
     cat > $out/herdr-plugin.toml <<EOF
@@ -50,7 +62,7 @@ in
 
   home.activation.linkHerdrPlugins =
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      $DRY_RUN_CMD ${lib.getExe pkgs.herdr} plugin link ${herdr-worktreeinclude}
+      $DRY_RUN_CMD ${lib.getExe pkgs.herdr} plugin link ${worktreeIncludePlugin}
       $DRY_RUN_CMD ${lib.getExe pkgs.herdr} plugin link ${workspaceManagerPlugin}
     '';
 }
