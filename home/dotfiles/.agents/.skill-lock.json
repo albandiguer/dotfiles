@@ -24,9 +24,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/coleam00/archon.git",
       "skillPath": ".claude/skills/archon-cli/SKILL.md",
-      "skillFolderHash": "585eb0f1bdb7d317788ef02dbc38a0fc1a8ccc05",
+      "skillFolderHash": "27dc5aeb2b93d24e3c01ee33db3d7118f0eb4d47",
       "installedAt": "2026-08-30T19:27:32.824Z",
-      "updatedAt": "2026-10-31T18:54:28.591Z"
+      "updatedAt": "2026-11-09T03:03:45.374Z"
     },
     "herdr": {
       "source": "herdrdev/herdr",

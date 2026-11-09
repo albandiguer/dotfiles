@@ -56,6 +56,17 @@
           # atuin's e2e (pty/capture) tests time out in the Nix build sandbox
           # on aarch64-darwin; the CLI itself is fine.
           atuin = prev.atuin.overrideAttrs (_: { doCheck = false; });
+
+          # nixpkgs' cargo-setup-hook now exports RUSTONIG_SYSTEM_LIBONIG=1
+          # (link against system oniguruma), but tuicr's derivation supplies
+          # neither pkg-config nor oniguruma, so onig_sys fails to configure.
+          tuicr = prev.tuicr.overrideAttrs (old: {
+            nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.pkg-config ];
+            buildInputs = (old.buildInputs or [ ]) ++ [
+              prev.oniguruma
+              prev.libgit2
+            ];
+          });
         })
       ];
       commonDarwinModules = [
