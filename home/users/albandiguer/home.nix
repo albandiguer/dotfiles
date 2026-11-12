@@ -24,6 +24,7 @@
       nix-prefetch-git # obtain source hashes for fetchgit
       nix-prefetch-github # fetch sources from github when using fetchFromGitHub
       overmind # Procfile based process manager
+      plantuml # UML diagrams in markdown, for vellum.nvim's preview
       qrencode # generate a qr code
       rtk # token-savvy llm output (claude-code + opencode)
       sox # audio sampler, whisper deps
