@@ -19,6 +19,7 @@
     # extra packages available inside neovim
     extraPackages = with pkgs; [
       # deno # for peek.nvim
+      copilot-language-server # copilot.lua / copilot-lsp server, pinned instead of self-downloaded
       cargo
       yarn # md preview
     ];
