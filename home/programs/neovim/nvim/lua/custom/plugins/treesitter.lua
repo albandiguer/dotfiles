@@ -6,7 +6,6 @@ return {
     -- main branch (Neovim 0.10+): highlighting and indent are handled natively.
     require('nvim-treesitter').setup {
       ensure_installed = {
-        'apex',
         'bash',
         'bibtex',
         'cmake',
