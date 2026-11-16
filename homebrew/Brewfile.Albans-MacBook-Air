@@ -1,10 +1,10 @@
 # Personal machine (Albans-MacBook-Air) Homebrew dependencies.
 tap "coleam00/homebrew-archon"
-tap "zjrosen/perles"
+tap "vanderheijden86/tap"
 
 brew "archon"
+brew "b9s" # k9s-style TUI for beads issues
 brew "podman" # linux-only in nixpkgs; brew ships the darwin client + podman machine
 brew "sandvault"
 brew "beads"
-brew "perles" # TUI/UI for beads
 
