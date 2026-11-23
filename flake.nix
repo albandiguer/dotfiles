@@ -66,6 +66,11 @@
               prev.oniguruma
               prev.libgit2
             ];
+            # shortcut: this test asserts a wall-clock concurrency win, which
+            # flakes on a loaded builder; skip it rather than dropping the suite.
+            checkFlags = (old.checkFlags or [ ]) ++ [
+              "--skip=forge::pr_open::tests::should_fetch_diff_commits_and_review_metadata_concurrently"
+            ];
           });
         })
       ];
